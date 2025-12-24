@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>ตู้น้ำหยอดเหรียญ ขอนแก่น | ตู้น้ำ RO | ตู้น้ำมันหยอดเหรียญ | ตู้แลกเหรียญ | ขอนแก่นไฮเทค</title>
+  <meta name="description" content="ติดตั้งตู้น้ำหยอดเหรียญ/ตู้น้ำ RO ขอนแก่น ตู้น้ำมันหยอดเหรียญ และตู้แลกเหรียญ วางระบบครบ เดินไฟ เดินน้ำ ตั้งค่าการใช้งาน โทร/LINE 094-474-9874" />
+  <link rel="canonical" href="https://khonkaenhitech-service.github.io/khonkaenhitech/vending.html" />
+  <meta name="robots" content="index,follow" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+<div id="wrapper">
+  <div id="main"><div class="inner">
+    <header id="header">
+      <a href="index.html" class="logo"><strong>ขอนแก่นไฮเทค</strong></a>
+      <ul class="icons">
+        <li><a href="tel:0944749874" class="icon solid fa-phone"><span class="label">โทร</span></a></li>
+        <li><a href="https://line.me/ti/p/~KKHITECH" class="icon brands fa-line"><span class="label">LINE</span></a></li>
+      </ul>
+    </header>
+
+    <section>
+      <header class="main">
+        <h1>ตู้น้ำหยอดเหรียญ/ตู้น้ำ RO ขอนแก่น • ตู้น้ำมันหยอดเหรียญ • ตู้แลกเหรียญ</h1>
+      </header>
+
+      <h2>บริการที่ทำ</h2>
+      <ul>
+        <li>ติดตั้งตู้น้ำหยอดเหรียญ / ระบบกรองน้ำ RO</li>
+        <li>ติดตั้งตู้น้ำมันหยอดเหรียญ (ตามหน้างาน)</li>
+        <li>ติดตั้งตู้แลกเหรียญ (เหมาะกับร้านซักผ้า/หอพัก)</li>
+        <li>วางระบบไฟ/ระบบน้ำ/จุดติดตั้ง พร้อมทดสอบการใช้งาน</li>
+      </ul>
+
+      <ul class="actions">
+        <li><a class="button primary" href="tel:0944749874">โทร 094-474-9874</a></li>
+        <li><a class="button" href="https://line.me/ti/p/~KKHITECH">LINE: KKHITECH</a></li>
+        <li><a class="button" href="services.html">ดูบริการทั้งหมด</a></li>
+      </ul>
+    </section>
+  </div></div>
+
+  <div id="sidebar"><div class="inner">
+    <nav id="menu">
+      <header class="major"><h2>เมนู</h2></header>
+      <ul>
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="services.html">บริการทั้งหมด</a></li>
+        <li><a href="vending.html">ตู้น้ำ RO/ตู้น้ำมัน/ตู้แลกเหรียญ</a></li>
+        <li><a href="laundry.html">เครื่องซักผ้าหยอดเหรียญ/เครื่องอบ</a></li>
+        <li><a href="electrical.html">ไฟฟ้าแรงต่ำ-แรงสูง/หม้อแปลง/ตู้ MDB</a></li>
+      </ul>
+    </nav>
+    <section>
+      <header class="major"><h2>ติดต่อ</h2></header>
+      <ul class="contact">
+        <li class="icon solid fa-phone"><a href="tel:0944749874">094-474-9874</a></li>
+        <li class="icon brands fa-line"><a href="https://line.me/ti/p/~KKHITECH">LINE: KKHITECH</a></li>
+      </ul>
+    </section>
+    <footer id="footer"><p class="copyright">&copy; <span id="y"></span> ขอนแก่นไฮเทค</p></footer>
+  </div></div>
+</div>
+
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
