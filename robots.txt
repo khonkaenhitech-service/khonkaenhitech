@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://khonkaenhitech-service.github.io/khonkaenhitech/sitemap.xml
