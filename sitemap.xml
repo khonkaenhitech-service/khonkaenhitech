@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url><loc>https://khonkaenhitech-service.github.io/khonkaenhitech/</loc></url>
   <url><loc>https://khonkaenhitech-service.github.io/khonkaenhitech/services.html</loc></url>
   <url><loc>https://khonkaenhitech-service.github.io/khonkaenhitech/contact.html</loc></url>
@@ -8,9 +9,10 @@
   <url><loc>https://khonkaenhitech-service.github.io/khonkaenhitech/water.html</loc></url>
   <url><loc>https://khonkaenhitech-service.github.io/khonkaenhitech/vending.html</loc></url>
   <url><loc>https://khonkaenhitech-service.github.io/khonkaenhitech/internet.html</loc></url>
-  <url><loc>https://khonkaenhitech-service.github.io/khonkaenhitech/electrical.html</loc></url>
+
   <url><loc>https://khonkaenhitech-service.github.io/khonkaenhitech/security.html</loc></url>
+  <url><loc>https://khonkaenhitech-service.github.io/khonkaenhitech/electrical.html</loc></url>
   <url><loc>https://khonkaenhitech-service.github.io/khonkaenhitech/solar-air.html</loc></url>
   <url><loc>https://khonkaenhitech-service.github.io/khonkaenhitech/construction.html</loc></url>
-</urlset>
 
+</urlset>
