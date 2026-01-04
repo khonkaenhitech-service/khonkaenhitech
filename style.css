@@ -90,3 +90,14 @@
 
 /* Ensure body sections spacing looks clean */
 section + section{ margin-top: 28px; }
+
+#playAudioBtn, #stopAudioBtn {
+  border-radius: 12px;
+}
+@media (max-width: 600px){
+  .kh-audio .button.small{
+    width: 100%;
+    text-align: center;
+  }
+}
+
