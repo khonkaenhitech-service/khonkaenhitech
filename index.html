@@ -84,10 +84,11 @@
               <button id="stopAudioBtn" class="button small">■ หยุดเสียง</button>
               <span class="kh-audio-note">* เบราว์เซอร์ต้องให้กดก่อนถึงเล่นได้</span>
               <!-- ใส่ไฟล์เสียงของคุณ: /assets/audio/home.ogg หรือ home.mp3 -->
-              <audio id="homeAudio" preload="metadata" loop">
-                <source src="assets/audio/home.mp3" type="audio/mpeg">
-                <source src="assets/audio/home.ogg" type="audio/ogg">
-              </audio>
+              <audio id="homeAudio" preload="metadata" playsinline>
+           <source src="assets/audio/home.mp3" type="audio/mpeg">
+           <source src="assets/audio/home.ogg" type="audio/ogg">
+        </audio>
+
             </div>
           </div>
 
@@ -316,4 +317,5 @@ if (playBtn && stopBtn && a) {
 <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
