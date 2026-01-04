@@ -70,5 +70,28 @@ iframe{width:100%;border:0;border-radius:16px}
   border-radius: 12px;
 }
 
-a,a:visited,a:hover,a:focus,a:active,#menu,#menu *,.kh-badges,#menu .divider{opacity:1!important}a,a:visited,a:hover,a:focus,a:active{color:var(--accent)!important;text-decoration:none!important}
+/* ===== Force text always visible (Contact section fix) ===== */
+
+/* 1) ลิงก์/ข้อความ เข้มตลอด ไม่ให้จางตอนปกติ */
+a, a:visited, a:hover, a:focus, a:active {
+  opacity: 1 !important;
+  color: var(--accent) !important; /* ถ้าอยากให้เป็นสีขาว เปลี่ยนเป็น var(--txt) */
+  text-decoration: none !important;
+}
+
+/* 2) ถ้ามีบล็อกไหนโดน opacity รวมๆ ให้ทับเฉพาะโซน contact/menu */
+#menu, #menu * {
+  opacity: 1 !important;
+}
+
+/* 3) ถ้าตัว divider/ป้ายหัวข้อจาง ให้เข้มขึ้น */
+#menu .divider {
+  opacity: 1 !important;
+}
+
+/* 4) ถ้า badges ทำให้จาง ให้เข้มเต็ม */
+.kh-badges {
+  opacity: 1 !important;
+}
+
 
