@@ -84,7 +84,7 @@
               <button id="stopAudioBtn" class="button small">■ หยุดเสียง</button>
               <span class="kh-audio-note">* เบราว์เซอร์ต้องให้กดก่อนถึงเล่นได้</span>
               <!-- ใส่ไฟล์เสียงของคุณ: /assets/audio/home.ogg หรือ home.mp3 -->
-              <audio id="homeAudio" preload="none">
+              <audio id="homeAudio" preload="metadata" loop">
                 <source src="assets/audio/home.mp3" type="audio/mpeg">
                 <source src="assets/audio/home.ogg" type="audio/ogg">
               </audio>
@@ -270,16 +270,43 @@
   document.getElementById('y2').textContent = new Date().getFullYear();
 
   // audio controls (ต้องกดเอง)
-  const a = document.getElementById('homeAudio');
-  const playBtn = document.getElementById('playAudioBtn');
-  const stopBtn = document.getElementById('stopAudioBtn');
+const a = document.getElementById('homeAudio');
+const playBtn = document.getElementById('playAudioBtn');
+const stopBtn = document.getElementById('stopAudioBtn');
 
-  if (playBtn && stopBtn && a) {
-    playBtn.addEventListener('click', async () => {
-      try { a.currentTime = 0; await a.play(); } catch (e) {}
-    });
-    stopBtn.addEventListener('click', () => { a.pause(); a.currentTime = 0; });
-  }
+if (a) {
+  a.volume = 0.35; // ปรับความดัง
+}
+
+if (playBtn && stopBtn && a) {
+  const setState = (playing) => {
+    playBtn.disabled = playing;
+    stopBtn.disabled = !playing;
+  };
+
+  setState(false);
+
+  playBtn.addEventListener('click', async () => {
+    try {
+      a.currentTime = 0;
+      await a.play();
+      setState(true);
+    } catch (e) {
+      // ถ้าโดนบล็อค จะไม่พังหน้าเว็บ
+      setState(false);
+    }
+  });
+
+  stopBtn.addEventListener('click', () => {
+    a.pause();
+    a.currentTime = 0;
+    setState(false);
+  });
+
+  a.addEventListener('ended', () => setState(false));
+  a.addEventListener('pause', () => { if (a.currentTime === 0) setState(false); });
+}
+
 </script>
 
 <script src="assets/js/jquery.min.js"></script>
@@ -289,3 +316,4 @@
 <script src="assets/js/main.js"></script>
 </body>
 </html>
+
