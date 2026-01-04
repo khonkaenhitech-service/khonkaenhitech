@@ -69,3 +69,6 @@ iframe{width:100%;border:0;border-radius:16px}
 .image.main img {
   border-radius: 12px;
 }
+
+a,a:visited,a:hover,a:focus,a:active,#menu,#menu *,.kh-badges,#menu .divider{opacity:1!important}a,a:visited,a:hover,a:focus,a:active{color:var(--accent)!important;text-decoration:none!important}
+
