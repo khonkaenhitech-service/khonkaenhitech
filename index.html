@@ -1,9 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="th">
 <head>
-<!DOCTYPE HTML>
-<html lang="th">
-<head>
+  <!-- ✅ Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-140XHHEN8H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -11,17 +9,13 @@
     gtag('js', new Date());
     gtag('config', 'G-140XHHEN8H');
   </script>
-  <meta charset="utf-8" />
-  <title>ขอนแก่นไฮเทค...</title>
-  ...
-  
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
   <title>ขอนแก่นไฮเทค | ศูนย์รวมช่างขอนแก่น ติดตั้งเครื่องซักผ้าหยอดเหรียญ ไฟฟ้า กล้องวงจรปิด ครบวงจร</title>
-  
+
   <meta name="description" content="รับเหมาติดตั้งงานระบบในขอนแก่น: เครื่องซักผ้าหยอดเหรียญ ตู้น้ำ RO ระบบไฟฟ้าโรงงาน-บ้าน ตู้ MDB กล้องวงจรปิด อินเทอร์เน็ตหอพัก และงานก่อสร้าง โดยทีมช่างมืออาชีพ โทร 094-474-9874" />
-  
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="language" content="th" />
   <meta name="geo.region" content="TH-40" />
@@ -44,10 +38,18 @@
   <meta name="twitter:description" content="เครื่องซักผ้าหยอดเหรียญ ตู้น้ำ RO ระบบหยอดเหรียญ ไฟฟ้า CCTV อินเทอร์เน็ต โซล่าเซล แอร์ ก่อสร้าง" />
   <meta name="twitter:image" content="https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.jpg" />
 
+  <!-- ✅ Schema (แก้ครบ: priceRange + address + streetAddress + hasMap + sameAs array) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://khonkaenhitech-service.github.io/khonkaenhitech/#website",
+        "url": "https://khonkaenhitech-service.github.io/khonkaenhitech/",
+        "name": "ขอนแก่นไฮเทค",
+        "inLanguage": "th-TH"
+      },
       {
         "@type": "LocalBusiness",
         "@id": "https://khonkaenhitech-service.github.io/khonkaenhitech/#business",
@@ -57,42 +59,41 @@
         "image": "https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.jpg",
         "description": "ศูนย์บริการรับติดตั้งระบบหยอดเหรียญและงานระบบอาคารครบวงจรในขอนแก่น",
         "telephone": "+66944749874",
+
         "priceRange": "฿฿-฿฿฿",
+
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "ขอนแก่นไฮเทค (ดูพิกัดจาก Google Maps)",
           "addressLocality": "เมืองขอนแก่น",
           "addressRegion": "ขอนแก่น",
           "postalCode": "40000",
           "addressCountry": "TH"
         },
+
+        "hasMap": "https://maps.app.goo.gl/LyV85313vknT4hBE6",
+
         "geo": {
           "@type": "GeoCoordinates",
           "latitude": 16.4263489,
           "longitude": 102.8614127
         },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-          "opens": "08:00",
-          "closes": "18:00"
-        },
+
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "08:00",
+            "closes": "18:00"
+          }
+        ],
+
         "sameAs": [
           "https://line.me/ti/p/~KKHITECH",
           "https://www.facebook.com/Line0944749874",
-          "https://maps.app.goo.gl/LyV85313vknT4hBE6"
-        ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "reviewCount": "98"
-        }
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://khonkaenhitech-service.github.io/khonkaenhitech/#website",
-        "url": "https://khonkaenhitech-service.github.io/khonkaenhitech/",
-        "name": "ขอนแก่นไฮเทค",
-        "inLanguage": "th-TH"
+          "https://maps.app.goo.gl/LyV85313vknT4hBE6",
+          "https://www.google.com/maps/place/%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99%E0%B9%84%E0%B8%AE%E0%B9%80%E0%B8%97%E0%B8%84/@16.4298752,102.8649482,15z/data=!4m6!3m5!1s0x31228a2c8ac6d6af:0x921924f2e665b693!8m2!3d16.4263489!4d102.8614127!16s%2Fg%2F11f10sjt4s"
+        ]
       }
     ]
   }
@@ -100,7 +101,7 @@
 
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="style.css" />
-  
+
   <style>
     .features article { margin-bottom: 2em; }
     .features h3 a { text-decoration: none; border-bottom: none; color: inherit; }
@@ -161,7 +162,7 @@
           </div>
         </div>
       </section>
-      
+
       <section class="intro-seo">
         <header class="main">
           <h2>ศูนย์รวมช่างขอนแก่น (One Stop Service)</h2>
@@ -169,7 +170,7 @@
         <p><strong>ขอนแก่นไฮเทค</strong> คือผู้ให้บริการรับเหมาติดตั้งงานระบบอาคารที่ครบวงจรที่สุดในจังหวัดขอนแก่น เรามีทีมช่างผู้เชี่ยวชาญพร้อมดูแลคุณ ไม่ว่าจะเป็น <strong>งานติดตั้งเครื่องซักผ้าหยอดเหรียญ</strong> สำหรับหอพัก, <strong>งานเดินสายไฟโรงงาน</strong> ตู้ MDB, งานติดตั้ง <strong>กล้องวงจรปิด (CCTV)</strong> รวมถึงงาน <strong>ก่อสร้างและต่อเติมอาคาร</strong></p>
         <p>เราให้บริการครอบคลุมพื้นที่ <em>อ.เมืองขอนแก่น, มหาวิทยาลัยขอนแก่น (มข.), ศิลา, บ้านเป็ด, พระลับ, ท่าพระ</em> และอำเภอใกล้เคียง งานเล็กงานใหญ่เราไปหมด ไม่ทิ้งงาน พร้อมบริการหลังการขายที่รวดเร็ว</p>
       </section>
-      
+
       <section>
         <header class="major">
           <h2>บริการยอดนิยม</h2>
@@ -273,7 +274,7 @@
           <li><a href="index.html">หน้าแรก</a></li>
           <li><a href="services.html">รวมบริการทั้งหมด</a></li>
           <li><a href="contact.html">ติดต่อ / แผนที่ร้าน</a></li>
-          
+
           <li class="divider">บริการยอดนิยม</li>
           <li><a href="laundry.html">เครื่องซักผ้าหยอดเหรียญ</a></li>
           <li><a href="water.html">ตู้น้ำหยอดเหรียญ / RO</a></li>
@@ -285,7 +286,7 @@
           <li><a href="electrical.html">งานไฟฟ้า / ตู้ MDB</a></li>
           <li><a href="solar-air.html">โซล่าเซลล์ / แอร์</a></li>
           <li><a href="construction.html">รับสร้างบ้าน / ต่อเติม</a></li>
-          
+
           <li class="divider">ข้อมูลเพิ่มเติม</li>
           <li><a href="khonkaen-system.html">บทความ Local SEO</a></li>
           <li><a href="elements.html">ผลงาน & รีวิว (Portfolio)</a></li>
@@ -293,9 +294,11 @@
           <li class="divider">ติดต่อด่วน</li>
           <li><a href="tel:+66944749874">โทร 094-474-9874</a></li>
           <li><a href="https://line.me/ti/p/~KKHITECH">LINE: KKHITECH</a></li>
+          <li><a href="https://www.facebook.com/Line0944749874">Facebook Page</a></li>
+          <li><a href="https://maps.app.goo.gl/LyV85313vknT4hBE6">Google Maps</a></li>
         </ul>
       </nav>
-      
+
       <footer id="footer">
         <p class="copyright">© <span id="year"></span> ขอนแก่นไฮเทค. All rights reserved.</p>
       </footer>
@@ -327,18 +330,15 @@
     }
   }
 
-  playBtn.onclick = async ()=>{ a.currentTime=0; await a.play(); gate.style.display="none"; }
-  stopBtn.onclick = ()=>{ a.pause(); a.currentTime=0; }
+  if(playBtn) playBtn.onclick = async ()=>{ a.currentTime=0; await a.play(); if(gate) gate.style.display="none"; };
+  if(stopBtn) stopBtn.onclick = ()=>{ a.pause(); a.currentTime=0; };
 
   if(gateBtn){
-    gateBtn.onclick = async ()=>{
-      await a.play();
-      gate.style.display="none";
-    }
+    gateBtn.onclick = async ()=>{ await a.play(); if(gate) gate.style.display="none"; };
   }
 
   window.addEventListener('load', tryAutoplay);
-  document.addEventListener('pointerdown', ()=>{ if(a.paused) tryAutoplay(); }, {once:true});
+  document.addEventListener('pointerdown', ()=>{ if(a && a.paused) tryAutoplay(); }, {once:true});
 </script>
 
 <script src="assets/js/jquery.min.js"></script>
@@ -349,5 +349,3 @@
 
 </body>
 </html>
-
-
