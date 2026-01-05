@@ -1,4 +1,16 @@
 User-agent: *
 Allow: /
 
+# ซ่อนไฟล์ระบบที่ไม่จำเป็น
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /assets/sass/
+Disallow: /assets/webfonts/
+
+# อนุญาตให้ดูรูปภาพได้ (สำคัญสำหรับ Image SEO)
+Allow: /images/*.jpg
+Allow: /images/*.png
+Allow: /images/*.svg
+
+# ชี้เป้าแผนที่เว็บไซต์
 Sitemap: https://khonkaenhitech-service.github.io/khonkaenhitech/sitemap.xml
