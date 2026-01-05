@@ -1,136 +1,419 @@
-/* ===== Khon Kaen HiTech - Standard Add-on CSS ===== */
+/* ==========================================================================
+   KHON KAEN HITECH - GOD TIER MASTER STYLESHEET
+   ไฟล์นี้ควบคุมความสวยงามของทุกหน้า (SEO Optimized Layout)
+   ========================================================================== */
 
+/* 1. CORE VARIABLES & SETTINGS */
 :root {
-  --kh-gap: 16px;
-  --kh-radius: 14px;
-  --kh-border: rgba(0,0,0,.08);
+  --kh-primary: #f56a6a;       /* สีแดงหลัก (สีเดิมของ Theme) */
+  --kh-primary-dark: #c0392b;  /* สีแดงเข้ม (สำหรับ Hover/Headings) */
+  --kh-accent: #2c3e50;        /* สีน้ำเงินเข้ม (สำหรับตาราง/หัวข้อรอง) */
+  --kh-text: #333333;          /* สีตัวอักษรหลัก */
+  --kh-light: #f9f9f9;         /* สีพื้นหลังอ่อน */
+  --kh-border: rgba(0,0,0,0.1);
+  --kh-radius: 12px;           /* ความมนของมุม */
+  --kh-shadow: 0 4px 15px rgba(0,0,0,0.05); /* เงาแบบนุ่ม */
 }
 
-.kh-cta { display:flex; flex-wrap:wrap; gap:12px; margin:16px 0; }
-.kh-sub { margin-top:10px; line-height:1.7; }
+/* ปรับ Scrollbar ให้สวยงาม */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--kh-primary); }
 
-.kh-hero { margin-top: 10px; }
+/* ==========================================================================
+   2. TYPOGRAPHY & HEADINGS (SEO FRIENDLY)
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--kh-accent);
+  font-weight: 700;
+  margin-bottom: 0.8em;
+}
+
+h1.main {
+  color: var(--kh-primary-dark);
+  border-bottom: 3px solid var(--kh-primary);
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 1.5em;
+}
+
+h2 {
+  border-left: 5px solid var(--kh-primary);
+  padding-left: 15px;
+  background: linear-gradient(to right, rgba(245, 106, 106, 0.05), transparent);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* ลิงก์เบอร์โทรและไลน์ ให้เด่นชัด */
+a[href^="tel:"], a[href^="https://line.me"] {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   3. HERO SECTION (ส่วนหัวของหน้า)
+   ========================================================================== */
+.kh-hero { 
+  margin-top: 20px; 
+  margin-bottom: 40px;
+}
+
 .kh-hero-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 22px;
-  align-items: start;
-}
-.kh-hero-media img{
-  width:100%;
-  height:auto;
-  border-radius: var(--kh-radius);
-  border: 1px solid var(--kh-border);
+  gap: 30px;
+  align-items: center;
 }
 
-@media (max-width: 980px){
-  .kh-hero-grid{ grid-template-columns: 1fr; }
+.kh-hero-text h1 {
+  font-size: 2.2em;
+  line-height: 1.3;
+  margin-bottom: 15px;
 }
 
-.kh-audio { margin-top: 14px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
-.kh-audio-note{ font-size:.9em; opacity:.8; }
-
-.kh-cards{
-  display:grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--kh-gap);
-}
-@media (max-width: 980px){
-  .kh-cards{ grid-template-columns: 1fr; }
+.kh-sub {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+  border-left: 3px solid #ddd;
+  padding-left: 15px;
 }
 
-.kh-card{
-  display:block;
-  padding: 16px;
-  border: 1px solid var(--kh-border);
-  border-radius: var(--kh-radius);
-  text-decoration:none;
-  background: #fff;
-}
-.kh-card h3{ margin:0 0 8px 0; }
-.kh-card p{ margin:0; opacity:.9; line-height:1.6; }
-
-.kh-list { line-height:1.75; }
-.kh-faq h3 { margin-top: 18px; }
-.kh-footer { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--kh-border); opacity: .95; }
-
-.kh-embed{
-  border: 1px solid var(--kh-border);
-  border-radius: var(--kh-radius);
-  overflow: hidden;
-  background: #fff;
-}
-.kh-embed iframe{
+.kh-hero-media img {
   width: 100%;
-  min-height: 420px;
+  height: auto;
+  border-radius: var(--kh-radius);
+  box-shadow: var(--kh-shadow);
+  border: 1px solid var(--kh-border);
+  transition: transform 0.3s ease;
 }
 
-.kh-box{
-  border: 1px solid var(--kh-border);
+.kh-hero-media img:hover {
+  transform: scale(1.02);
+}
+
+/* CTA Buttons Container */
+.kh-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+@media (max-width: 980px) {
+  .kh-hero-grid { grid-template-columns: 1fr; }
+  .kh-hero-text { order: 2; }
+  .kh-hero-media { order: 1; margin-bottom: 20px; }
+}
+
+/* ==========================================================================
+   4. SEO TABLES (ตารางพื้นที่และราคา)
+   ========================================================================== */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 2em 0;
   border-radius: var(--kh-radius);
-  padding: 16px;
+  box-shadow: var(--kh-shadow);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
   background: #fff;
+  margin: 0; /* Reset margin because wrapper handles it */
 }
 
-/* Sidebar menu divider style (works with your <li class="divider">) */
-#menu ul li.divider{
-  margin: 12px 0 6px 0;
-  padding-top: 10px;
-  border-top: 1px solid rgba(0,0,0,.08);
-  font-weight: 700;
-  font-size: .95em;
-  opacity: .85;
+/* Default Table Style */
+table th {
+  background: var(--kh-accent);
+  color: #fff;
+  font-weight: 600;
+  padding: 15px;
+  text-align: left;
+  white-space: nowrap;
 }
 
-/* Make images look consistent */
-.image.main img{
+table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+
+table tr:nth-child(even) { background-color: #f8f9fa; }
+table tr:hover { background-color: #f1f1f1; transition: 0.2s; }
+
+/* Special Tables variations */
+/* ตารางโซล่าเซลล์ */
+.solar-table th { background: #f1c40f; color: #333; text-align: center; }
+.solar-table td { text-align: center; }
+
+/* ตารางเปรียบเทียบ (Security/Internet) */
+.compare-table th { background: #2c3e50; text-align: center; }
+.compare-table td { text-align: center; border-right: 1px solid #eee; }
+.compare-table td:first-child { text-align: left; font-weight: bold; background: #fafafa; }
+
+/* ตารางพื้นที่ให้บริการ (Zone) */
+.zone-table th { background: var(--kh-primary); }
+.zone-table td:first-child { font-weight: bold; color: var(--kh-primary-dark); width: 30%; }
+
+/* ==========================================================================
+   5. FEATURE CARDS & LISTS
+   ========================================================================== */
+/* Check List (ติ๊กถูก) */
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+.check-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.check-list li:before {
+  content: '✔'; /* หรือใช้ \f00c ถ้ามี FontAwesome */
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: #2ecc71; /* สีเขียว */
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Card Grid System */
+.kh-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.kh-card {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--kh-border);
+  border-radius: var(--kh-radius);
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.kh-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  border-color: var(--kh-primary);
+}
+
+.kh-card h3 { color: var(--kh-primary); margin-bottom: 10px; font-size: 1.2em; }
+.kh-card p { font-size: 0.9em; margin: 0; color: #666; }
+
+/* Project/Portfolio Card */
+.project-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: var(--kh-radius);
+  padding: 15px;
+  height: 100%;
+  box-shadow: var(--kh-shadow);
+}
+.project-card .image.fit { margin-bottom: 15px; }
+.project-card .image.fit img { border-radius: 8px; }
+.project-card h3 { font-size: 1.1em; margin-bottom: 0.5em; }
+
+/* ==========================================================================
+   6. ALERTS & BOXES (กล่องข้อความ)
+   ========================================================================== */
+/* กล่องสีขาวพื้นฐาน */
+.kh-box {
+  background: #fff;
+  padding: 20px;
   border-radius: var(--kh-radius);
   border: 1px solid var(--kh-border);
+  margin-bottom: 20px;
 }
 
-/* Ensure body sections spacing looks clean */
-section + section{ margin-top: 28px; }
-
-#playAudioBtn, #stopAudioBtn {
-  border-radius: 12px;
+/* กล่องแจ้งเตือน/เน้นย้ำ */
+.alert-box, .alert-security {
+  background-color: #fff3cd;
+  border-left: 5px solid #ffc107;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 2em 0;
+  color: #856404;
 }
-@media (max-width: 600px){
-  .kh-audio .button.small{
+.alert-box h3, .alert-security h3 { color: #856404; border: none; padding: 0; background: none; }
+
+/* กล่อง Highlight (How-to) */
+.highlight-box {
+  background-color: #e8f4fd;
+  border-left: 5px solid #3498db;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 2em 0;
+}
+
+/* Brand Box (โลโก้สินค้า) */
+.brand-box {
+  background: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  border-radius: var(--kh-radius);
+  border: 1px solid #eee;
+}
+.brand-list span {
+  display: inline-block;
+  background: #fff;
+  padding: 5px 15px;
+  margin: 5px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.9em;
+}
+
+/* ==========================================================================
+   7. AUDIO PLAYER & GATE
+   ========================================================================== */
+.kh-audio {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 15px;
+}
+.kh-audio button {
+  padding: 0 15px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 0.8em;
+}
+
+.kh-audio-gate {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  border: 2px solid var(--kh-primary);
+  max-width: 300px;
+  text-align: center;
+  animation: slideUp 0.5s ease;
+}
+@keyframes slideUp {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ==========================================================================
+   8. SIDEBAR & NAVIGATION (MENU)
+   ========================================================================== */
+/* หัวข้อหลักใน Sidebar */
+#menu ul li.divider {
+  margin: 20px 0 10px 0;
+  padding: 8px 10px;
+  font-weight: 800;
+  font-size: 0.9em;
+  color: #b30000; /* สีแดงเข้ม */
+  background: rgba(179,0,0,0.05);
+  border-left: 4px solid #b30000;
+  border-top: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ลิงก์ย่อย */
+#menu ul li:not(.divider) a {
+  padding-left: 15px;
+  transition: 0.2s;
+  border-bottom: none;
+}
+#menu ul li:not(.divider) a:hover {
+  color: var(--kh-primary);
+  padding-left: 20px; /* ขยับเล็กน้อยเมื่อ Hover */
+}
+
+/* Footer Copyright */
+.kh-footer, #footer {
+  font-size: 0.8em;
+  color: #aaa;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+/* ==========================================================================
+   9. UTILITIES & ICONS
+   ========================================================================== */
+.check-icon { color: #2ecc71; font-weight: bold; }
+.cross-icon { color: #e74c3c; font-weight: bold; }
+.highlight-green { color: #27ae60; font-weight: bold; }
+.brand-tag {
+  display: inline-block;
+  background: #eee;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  margin-right: 5px;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Map Embed Wrapper */
+.kh-embed {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  border-radius: var(--kh-radius);
+  border: 1px solid #ddd;
+}
+.kh-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ==========================================================================
+   10. MOBILE RESPONSIVENESS
+   ========================================================================== */
+@media screen and (max-width: 736px) {
+  .kh-hero-grid {
+    display: block; /* ซ้อนกันในแนวตั้ง */
+  }
+  
+  .kh-hero-text {
+    margin-bottom: 20px;
+  }
+  
+  .kh-cards {
+    grid-template-columns: 1fr; /* การ์ดเรียงแถวเดียว */
+  }
+  
+  .kh-cta {
+    flex-direction: column;
+  }
+  
+  .kh-cta .button {
     width: 100%;
     text-align: center;
   }
+  
+  table {
+    font-size: 0.9em; /* ลดขนาดตัวหนังสือในตาราง */
+  }
+  
+  th, td {
+    padding: 8px;
+  }
 }
-
-
-/* ===== Sidebar Section Headings (Main vs Sub) ===== */
-
-/* หัวข้อหลักในเมนู (divider) */
-#menu ul li.divider {
-  margin: 18px 0 10px 0;
-  padding: 10px 8px;
-  font-weight: 800;
-  font-size: 1.05em;
-  color: #b30000;                 /* 🔴 สีหัวข้อหลัก (แดงเข้ม) */
-  background: linear-gradient(
-    to right,
-    rgba(179,0,0,0.08),
-    rgba(179,0,0,0)
-  );
-  border-left: 4px solid #b30000; /* เส้นนำสายตา */
-  border-top: none;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-}
-
-/* เมนูย่อยใต้หัวข้อ */
-#menu ul li.divider + li a {
-  padding-left: 18px;
-  font-weight: 500;
-  color: #333;
-}
-
-/* Hover เมนูย่อย */
-#menu ul li a:hover {
-  color: #b30000;
-}
-
