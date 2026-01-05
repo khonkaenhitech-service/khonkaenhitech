@@ -99,8 +99,13 @@
   }
   </script>
 
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preload" href="assets/css/main.css" as="style" onload="this.rel='stylesheet'">
+<link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="style.css">
+</noscript>
+
 
   <style>
     .features article { margin-bottom: 2em; }
@@ -180,7 +185,11 @@
             </div>
           </div>
           <div class="kh-hero-media">
-            <img src="images/pic10.jpg" alt="ขอนแก่นไฮเทค ทีมช่างติดตั้งระบบอันดับ 1 ในขอนแก่น">
+            <img src="images/pic10.webp"
+     width="1200"
+     height="800"
+     fetchpriority="high"
+     alt="ขอนแก่นไฮเทค ทีมช่างติดตั้งระบบอันดับ 1 ในขอนแก่น">
           </div>
         </div>
       </section>
@@ -359,16 +368,18 @@
     gateBtn.onclick = async ()=>{ await a.play(); if(gate) gate.style.display="none"; };
   }
 
-  window.addEventListener('load', tryAutoplay);
-  document.addEventListener('pointerdown', ()=>{ if(a && a.paused) tryAutoplay(); }, {once:true});
+  setTimeout(tryAutoplay, 3000);
+  document.addEventListener('pointerdown', ()=>{ if(a && a.paused) tryAutoplay(); }, {once:flas});
 </script>
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/jquery.min.js" defer></script>
+<script src="assets/js/browser.min.js" defer></script>
+<script src="assets/js/breakpoints.min.js" defer></script>
+<script src="assets/js/util.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+
 
 </body>
 </html>
+
 
