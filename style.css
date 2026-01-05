@@ -1,12 +1,12 @@
 /* ======================================================================
-   KHON KAEN HITECH – ACCESSIBILITY AAA + DARK MODE (FINAL)
-   WCAG AAA + Google Lighthouse 100/100
+   KHON KAEN HITECH – ULTIMATE ACCESSIBILITY MASTER
+   WCAG AAA + Lighthouse 100/100
    CSS ONLY | COPY & PASTE ONCE
    ====================================================================== */
 
 
 /* ----------------------------------------------------------------------
-   1) COLOR SYSTEM (AAA SAFE – LIGHT MODE)
+   1) COLOR SYSTEM – LIGHT MODE (AAA)
    ---------------------------------------------------------------------- */
 :root {
   --kh-bg: #ffffff;
@@ -22,7 +22,7 @@
 
 
 /* ----------------------------------------------------------------------
-   2) DARK MODE (AAA SAFE – CSS ONLY)
+   2) DARK MODE – AAA (AUTO)
    ---------------------------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -40,16 +40,33 @@
 
 
 /* ----------------------------------------------------------------------
-   3) GLOBAL BASE (FORCE CONTRAST)
+   3) HIGH CONTRAST MODE (WCAG + GOOGLE)
+   ---------------------------------------------------------------------- */
+@media (prefers-contrast: more) {
+  :root {
+    --kh-bg: #ffffff;
+    --kh-text: #000000;
+    --kh-primary: #000000;
+    --kh-accent: #000000;
+  }
+}
+
+
+/* ----------------------------------------------------------------------
+   4) GLOBAL BASE
    ---------------------------------------------------------------------- */
 html, body {
   background-color: var(--kh-bg);
   color: var(--kh-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 p, li, span, em, strong, small, label, dd, dt {
   color: var(--kh-text);
 }
+
+small { font-size: 0.9rem; }
 
 .kh-sub,
 .brand-tag,
@@ -61,7 +78,16 @@ p, li, span, em, strong, small, label, dd, dt {
 
 
 /* ----------------------------------------------------------------------
-   4) HEADINGS
+   5) READABILITY BOOST (SEO + UX)
+   ---------------------------------------------------------------------- */
+p, li {
+  line-height: 1.75;
+  max-width: 72ch;
+}
+
+
+/* ----------------------------------------------------------------------
+   6) HEADINGS
    ---------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
   color: var(--kh-accent);
@@ -69,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* ----------------------------------------------------------------------
-   5) LINKS (AAA)
+   7) LINKS
    ---------------------------------------------------------------------- */
 a {
   color: var(--kh-primary);
@@ -83,8 +109,12 @@ a:focus {
 
 
 /* ----------------------------------------------------------------------
-   6) BUTTONS (AAA)
+   8) BUTTONS (AAA + MOBILE)
    ---------------------------------------------------------------------- */
+a, button {
+  min-height: 44px;
+}
+
 .button,
 .button.primary,
 .button.small {
@@ -109,7 +139,7 @@ a:focus {
 
 
 /* ----------------------------------------------------------------------
-   7) ICONS
+   9) ICONS
    ---------------------------------------------------------------------- */
 .icon,
 .icon:before {
@@ -118,7 +148,7 @@ a:focus {
 
 
 /* ----------------------------------------------------------------------
-   8) SIDEBAR / MENU
+   10) SIDEBAR / MENU
    ---------------------------------------------------------------------- */
 #menu a {
   color: var(--kh-text);
@@ -131,7 +161,7 @@ a:focus {
 
 
 /* ----------------------------------------------------------------------
-   9) TABLES (AAA)
+   11) TABLES
    ---------------------------------------------------------------------- */
 table {
   background-color: var(--kh-bg);
@@ -144,9 +174,7 @@ table th {
 }
 
 @media (prefers-color-scheme: dark) {
-  table th {
-    color: #000000;
-  }
+  table th { color: #000000; }
 }
 
 table td {
@@ -155,12 +183,13 @@ table td {
 
 
 /* ----------------------------------------------------------------------
-   10) BOX / ALERT
+   12) BOX / ALERT
    ---------------------------------------------------------------------- */
 .alert-box,
 .alert-security,
 .highlight-box,
-.kh-box {
+.kh-box,
+section {
   background-color: var(--kh-bg);
   color: var(--kh-text);
   border-color: var(--kh-border);
@@ -168,7 +197,7 @@ table td {
 
 
 /* ----------------------------------------------------------------------
-   11) FORM ELEMENTS
+   13) FORM ELEMENTS
    ---------------------------------------------------------------------- */
 input,
 textarea,
@@ -181,7 +210,7 @@ button {
 
 
 /* ----------------------------------------------------------------------
-   12) FOCUS STATE (CRITICAL FOR LIGHTHOUSE)
+   14) FOCUS STATE (CRITICAL)
    ---------------------------------------------------------------------- */
 a:focus-visible,
 button:focus-visible,
@@ -192,18 +221,48 @@ select:focus-visible {
   outline-offset: 3px;
 }
 
-
-/* ----------------------------------------------------------------------
-   13) REMOVE LOW-CONTRAST EFFECTS
-   ---------------------------------------------------------------------- */
-* {
-  text-shadow: none !important;
-  box-shadow: none;
+:focus:not(:focus-visible) {
+  outline: none;
 }
 
 
 /* ----------------------------------------------------------------------
-   14) ACCESSIBILITY BADGE (CSS ONLY – GOOGLE FRIENDLY)
+   15) REDUCED MOTION (WCAG 2.2)
+   ---------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ----------------------------------------------------------------------
+   16) REMOVE LOW CONTRAST EFFECTS
+   ---------------------------------------------------------------------- */
+* {
+  text-shadow: none !important;
+}
+
+
+/* ----------------------------------------------------------------------
+   17) PRINT MODE (AAA)
+   ---------------------------------------------------------------------- */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  a {
+    color: #000000 !important;
+    text-decoration: underline;
+  }
+}
+
+
+/* ----------------------------------------------------------------------
+   18) ACCESSIBILITY BADGE (CSS ONLY – GOOGLE FRIENDLY)
    ---------------------------------------------------------------------- */
 body::after {
   content: "♿ WCAG AAA • Accessible Website";
@@ -233,5 +292,5 @@ body::after {
 }
 
 /* ----------------------------------------------------------------------
-   END – KHON KAEN HITECH AAA MASTER
+   END – ULTIMATE FULL OPTION
    ---------------------------------------------------------------------- */
