@@ -385,70 +385,29 @@ table tr:hover { background-color: #f1f1f1; transition: 0.2s; }
 }
 
 /* =========================
-   MOBILE TOP MENU (FIX)
+   MOBILE FIX (KEEP THEME MENU WORKING)
+   - ไม่ไปทับระบบเมนูเดิมของ Theme
+   - แก้มือถือให้ #main เต็มจอ
+   - กันจุด/บูลเล็ตโผล่
    ========================= */
 
-/* ✅ กันจุด 3 จุด (bullet) โผล่ทุกที่ */
+/* กันจุด/บูลเล็ต (เช่น 3 จุดที่เห็นมุมบน) */
 ul, ol { list-style: none; margin: 0; padding: 0; }
 li { margin: 0; padding: 0; }
 
-/* Header layout ให้เป็น Top Bar */
-#header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-}
-
-/* ปุ่มเมนู (มือถือ/แท็บเล็ต) */
-.menu-btn{
-  border:1px solid var(--border);
-  background: var(--bg-section);
-  color: var(--text-main);
-  border-radius: 12px;
-  padding: 10px 12px;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1;
-  cursor: pointer;
-  z-index: 9999;
-}
-
-/* กันของล้นแนวนอน */
+/* กันเลื่อนล้นแนวนอน */
 html, body { overflow-x: hidden; }
 
-/* =========================
-   Mobile: เมนู dropdown ใต้ header
-   ========================= */
-@media (max-width: 980px){
-
-  #wrapper { display:block; }
-
-  /* ✅ ให้ Sidebar ไม่กินพื้นที่ซ้ายบนมือถือ */
-  #sidebar{
-    position: relative;
-    width: 100%;
-    height: auto;
-    border-right: 0;
-    display: block;          /* ต้องแสดง แต่จะพับด้วย max-height */
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .25s ease;
-  }
-
-  /* เปิดเมนู */
-  body.menu-open #sidebar{
-    max-height: 900px;       /* พอให้รายการเมนูโชว์หมด */
-  }
-
-  /* Main เต็มจอ */
+/* มือถือ: ให้เนื้อหาหลักเต็มจอ แต่ปล่อย #sidebar ให้ Theme คุมเอง */
+@media (max-width: 980px) {
   #main{
     margin-left: 0 !important;
     width: 100% !important;
   }
-
-  #main .inner{ padding: 22px 16px; }
-
-  /* กัน Hero บีบ */
-  .kh-hero-grid{ grid-template-columns: 1fr; }
+  #main .inner{
+    padding: 22px 16px !important;
+  }
+  .kh-hero-grid{
+    grid-template-columns: 1fr;
+  }
 }
