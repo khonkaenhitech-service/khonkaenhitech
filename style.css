@@ -290,6 +290,32 @@ td {
 /* =========================
    11. MOBILE / TABLET (FIX MENU SLIDE BUG)
    ========================= */
+/* ✅ Mobile Fix: ให้หน้าเว็บเต็มจอ ไม่โดนดันเพราะ sidebar */
 @media (max-width: 980px) {
 
-  /* ✅ สำคัญสุด: ทำให้ sidebar + main เรียงลงล่าง ไ*
+  /* ปลดล็อก layout แบบ desktop */
+  #wrapper { display: block; }
+
+  /* Sidebar ไม่ fixed บนมือถือ (ไม่กินพื้นที่ซ้าย) */
+  #sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: 0;
+  }
+
+  /* Main เต็มจอ */
+  #main {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  #main .inner {
+    padding: 22px 16px;
+  }
+
+  /* Hero stack ลงล่าง */
+  .kh-hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
