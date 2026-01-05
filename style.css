@@ -1,296 +1,174 @@
 /* ======================================================================
-   KHON KAEN HITECH – ULTIMATE ACCESSIBILITY MASTER
-   WCAG AAA + Lighthouse 100/100
-   CSS ONLY | COPY & PASTE ONCE
+   KHON KAEN HITECH – PROFESSIONAL FIX (SIDEBAR + BADGE)
    ====================================================================== */
 
-
-/* ----------------------------------------------------------------------
-   1) COLOR SYSTEM – LIGHT MODE (AAA)
-   ---------------------------------------------------------------------- */
-:root {
-  --kh-bg: #ffffff;
-  --kh-text: #111111;
-  --kh-text-muted: #2b2b2b;
-
-  --kh-primary: #7a0000;
-  --kh-primary-dark: #4d0000;
-  --kh-accent: #0b1a28;
-
-  --kh-border: #d0d0d0;
+/* -------------------------------
+   1) SIDEBAR FIX – ALWAYS VISIBLE
+   ------------------------------- */
+#sidebar {
+  background-color: #f7f7f7 !important;
+  color: #111111 !important;
+  border-right: 1px solid #d0d0d0;
 }
 
-
-/* ----------------------------------------------------------------------
-   2) DARK MODE – AAA (AUTO)
-   ---------------------------------------------------------------------- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --kh-bg: #000000;
-    --kh-text: #ffffff;
-    --kh-text-muted: #e0e0e0;
-
-    --kh-primary: #ffcc00;
-    --kh-primary-dark: #ffaa00;
-    --kh-accent: #ffffff;
-
-    --kh-border: #444444;
-  }
+#sidebar h2,
+#sidebar h3 {
+  color: #111111 !important;
 }
 
-
-/* ----------------------------------------------------------------------
-   3) HIGH CONTRAST MODE (WCAG + GOOGLE)
-   ---------------------------------------------------------------------- */
-@media (prefers-contrast: more) {
-  :root {
-    --kh-bg: #ffffff;
-    --kh-text: #000000;
-    --kh-primary: #000000;
-    --kh-accent: #000000;
-  }
-}
-
-
-/* ----------------------------------------------------------------------
-   4) GLOBAL BASE
-   ---------------------------------------------------------------------- */
-html, body {
-  background-color: var(--kh-bg);
-  color: var(--kh-text);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-p, li, span, em, strong, small, label, dd, dt {
-  color: var(--kh-text);
-}
-
-small { font-size: 0.9rem; }
-
-.kh-sub,
-.brand-tag,
-.project-card p,
-#sidebar,
-#sidebar p {
-  color: var(--kh-text-muted);
-}
-
-
-/* ----------------------------------------------------------------------
-   5) READABILITY BOOST (SEO + UX)
-   ---------------------------------------------------------------------- */
-p, li {
-  line-height: 1.75;
-  max-width: 72ch;
-}
-
-
-/* ----------------------------------------------------------------------
-   6) HEADINGS
-   ---------------------------------------------------------------------- */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--kh-accent);
-}
-
-
-/* ----------------------------------------------------------------------
-   7) LINKS
-   ---------------------------------------------------------------------- */
-a {
-  color: var(--kh-primary);
-  text-decoration: none;
-}
-
-a:hover,
-a:focus {
-  color: var(--kh-primary-dark);
-}
-
-
-/* ----------------------------------------------------------------------
-   8) BUTTONS (AAA + MOBILE)
-   ---------------------------------------------------------------------- */
-a, button {
-  min-height: 44px;
-}
-
-.button,
-.button.primary,
-.button.small {
-  background-color: var(--kh-primary) !important;
-  border-color: var(--kh-primary) !important;
-  color: #000000 !important;
-}
-
-@media (prefers-color-scheme: light) {
-  .button,
-  .button.primary,
-  .button.small {
-    color: #ffffff !important;
-  }
-}
-
-.button:hover,
-.button:focus {
-  background-color: var(--kh-primary-dark) !important;
-  border-color: var(--kh-primary-dark) !important;
-}
-
-
-/* ----------------------------------------------------------------------
-   9) ICONS
-   ---------------------------------------------------------------------- */
-.icon,
-.icon:before {
-  color: currentColor !important;
-}
-
-
-/* ----------------------------------------------------------------------
-   10) SIDEBAR / MENU
-   ---------------------------------------------------------------------- */
 #menu a {
-  color: var(--kh-text);
+  color: #111111 !important;
+  font-weight: 600;
 }
 
 #menu a:hover,
 #menu a:focus {
-  color: var(--kh-primary);
+  color: #7a0000 !important;
+  background-color: rgba(122,0,0,0.08);
 }
 
-
-/* ----------------------------------------------------------------------
-   11) TABLES
-   ---------------------------------------------------------------------- */
-table {
-  background-color: var(--kh-bg);
-  border-color: var(--kh-border);
+/* Divider */
+#menu ul li.divider {
+  background: transparent;
+  color: #7a0000;
+  border-left: 4px solid #7a0000;
 }
 
-table th {
-  background-color: var(--kh-accent);
-  color: #ffffff;
+/* -------------------------------
+   2) ICONS IN SIDEBAR
+   ------------------------------- */
+#sidebar .icon,
+#sidebar .icon:before {
+  color: #111111 !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  table th { color: #000000; }
+/* -------------------------------
+   3) FORCE SIDEBAR CONTRAST (AAA)
+   ------------------------------- */
+#sidebar p,
+#sidebar span,
+#sidebar small {
+  color: #222222 !important;
 }
 
-table td {
-  color: var(--kh-text);
-}
-
-
-/* ----------------------------------------------------------------------
-   12) BOX / ALERT
-   ---------------------------------------------------------------------- */
-.alert-box,
-.alert-security,
-.highlight-box,
-.kh-box,
-section {
-  background-color: var(--kh-bg);
-  color: var(--kh-text);
-  border-color: var(--kh-border);
-}
-
-
-/* ----------------------------------------------------------------------
-   13) FORM ELEMENTS
-   ---------------------------------------------------------------------- */
-input,
-textarea,
-select,
-button {
-  color: var(--kh-text);
-  background-color: var(--kh-bg);
-  border-color: var(--kh-border);
-}
-
-
-/* ----------------------------------------------------------------------
-   14) FOCUS STATE (CRITICAL)
-   ---------------------------------------------------------------------- */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  outline: 4px solid #00ffff;
-  outline-offset: 3px;
-}
-
-:focus:not(:focus-visible) {
-  outline: none;
-}
-
-
-/* ----------------------------------------------------------------------
-   15) REDUCED MOTION (WCAG 2.2)
-   ---------------------------------------------------------------------- */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-
-/* ----------------------------------------------------------------------
-   16) REMOVE LOW CONTRAST EFFECTS
-   ---------------------------------------------------------------------- */
-* {
-  text-shadow: none !important;
-}
-
-
-/* ----------------------------------------------------------------------
-   17) PRINT MODE (AAA)
-   ---------------------------------------------------------------------- */
-@media print {
-  body {
-    background: #ffffff !important;
-    color: #000000 !important;
-  }
-  a {
-    color: #000000 !important;
-    text-decoration: underline;
-  }
-}
-
-
-/* ----------------------------------------------------------------------
-   18) ACCESSIBILITY BADGE (CSS ONLY – GOOGLE FRIENDLY)
-   ---------------------------------------------------------------------- */
+/* -------------------------------
+   4) BADGE – MAKE IT OFFICIAL
+   ------------------------------- */
 body::after {
-  content: "♿ WCAG AAA • Accessible Website";
-  position: fixed;
-  bottom: 18px;
-  right: 18px;
-  z-index: 9999;
-
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-
-  padding: 8px 14px;
-  border-radius: 999px;
-
-  background-color: var(--kh-accent);
-  color: #ffffff;
-  border: 2px solid var(--kh-primary);
+  content: "WCAG AAA • Accessibility Compliant";
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.75;
+  box-shadow: none;
 }
 
-@media (prefers-color-scheme: dark) {
+/* Hide badge on mobile (professional sites do this) */
+@media (max-width: 768px) {
   body::after {
-    background-color: #ffcc00;
-    color: #000000;
-    border-color: #ffffff;
+    display: none;
   }
 }
 
-/* ----------------------------------------------------------------------
-   END – ULTIMATE FULL OPTION
-   ---------------------------------------------------------------------- */
+/* -------------------------------
+   5) KEEP DARK MODE ONLY FOR CONTENT
+   ------------------------------- */
+@media (prefers-color-scheme: dark) {
+  #sidebar {
+    background-color: #f7f7f7 !important;
+    color: #111111 !important;
+  }
+
+  #menu a {
+    color: #111111 !important;
+  }
+}
+
+/* =========================================================
+   FIXED SIDEBAR + INDEPENDENT SCROLL (PRO MODE)
+   ========================================================= */
+
+/* Desktop only */
+@media screen and (min-width: 981px) {
+
+  body {
+    overflow: hidden;
+  }
+
+  #wrapper {
+    display: flex;
+    height: 100vh;
+  }
+
+  #sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  #main {
+    margin-left: 300px;
+    height: 100vh;
+    overflow-y: auto;
+  }
+}
+
+/* Scrollbar professional */
+#sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+#sidebar::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 3px;
+}
+
+/* =========================================================
+   MANUAL DARK MODE (WCAG AAA)
+   ========================================================= */
+
+body.dark {
+  background-color: #0f0f0f;
+  color: #ffffff;
+}
+
+body.dark #main {
+  background-color: #0f0f0f;
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark p,
+body.dark li {
+  color: #ffffff;
+}
+
+/* Keep sidebar LIGHT (professional choice) */
+body.dark #sidebar {
+  background-color: #f7f7f7 !important;
+  color: #111 !important;
+}
+
+
+<script>
+  const toggle = document.getElementById('themeToggle');
+  const body = document.body;
+
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+  }
+
+  toggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    localStorage.setItem(
+      'theme',
+      body.classList.contains('dark') ? 'dark' : 'light'
+    );
+  });
+</script>
+
+     
+
