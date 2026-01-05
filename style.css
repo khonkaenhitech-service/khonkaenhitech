@@ -1,174 +1,225 @@
 /* ======================================================================
-   KHON KAEN HITECH – PROFESSIONAL FIX (SIDEBAR + BADGE)
+   KHON KAEN HITECH – OFFICIAL LIGHT MODE (WCAG AAA / GOV READY)
+   วางไฟล์นี้แทน style.css เดิมได้ทันที
    ====================================================================== */
 
-/* -------------------------------
-   1) SIDEBAR FIX – ALWAYS VISIBLE
-   ------------------------------- */
+/* =========================
+   1. ROOT VARIABLES
+   ========================= */
+:root {
+  --bg-main: #ffffff;
+  --bg-sidebar: #f4f4f4;
+  --bg-section: #ffffff;
+
+  --text-main: #111111;
+  --text-sub: #222222;
+  --text-muted: #444444;
+
+  --primary: #b30000;
+  --primary-hover: #7a0000;
+  --link: #0047ab;
+  --border: #d0d0d0;
+
+  --radius: 10px;
+}
+
+/* =========================
+   2. GLOBAL RESET
+   ========================= */
+html, body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================
+   3. TYPOGRAPHY (AAA)
+   ========================= */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-main);
+  font-weight: 700;
+  margin-bottom: 0.75em;
+}
+
+p, li {
+  color: var(--text-sub);
+  max-width: 72ch;
+}
+
+small {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* =========================
+   4. LINKS & BUTTONS
+   ========================= */
+a {
+  color: var(--link);
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--primary);
+}
+
+.button,
+button,
+input[type="submit"] {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius);
+  min-height: 44px;
+  padding: 0 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.button:hover,
+button:hover {
+  background: var(--primary-hover);
+}
+
+/* =========================
+   5. LAYOUT – MAIN / SIDEBAR
+   ========================= */
+#wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
 #sidebar {
-  background-color: #f7f7f7 !important;
-  color: #111111 !important;
-  border-right: 1px solid #d0d0d0;
+  width: 260px;
+  background: var(--bg-sidebar);
+  color: var(--text-main);
+  border-right: 1px solid var(--border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
 }
 
-#sidebar h2,
-#sidebar h3 {
-  color: #111111 !important;
+#main {
+  margin-left: 260px;
+  background: var(--bg-main);
+  padding: 40px;
+  width: calc(100% - 260px);
 }
 
-#menu a {
-  color: #111111 !important;
-  font-weight: 600;
+/* =========================
+   6. SIDEBAR MENU
+   ========================= */
+#menu ul {
+  list-style: none;
+  padding: 0;
 }
 
-#menu a:hover,
-#menu a:focus {
-  color: #7a0000 !important;
-  background-color: rgba(122,0,0,0.08);
+#menu ul li a {
+  display: block;
+  padding: 12px 18px;
+  color: var(--text-main);
+  text-decoration: none;
 }
 
-/* Divider */
+#menu ul li a:hover {
+  background: #eaeaea;
+  color: var(--primary);
+}
+
 #menu ul li.divider {
-  background: transparent;
-  color: #7a0000;
-  border-left: 4px solid #7a0000;
+  margin: 15px 0 5px;
+  padding: 8px 15px;
+  font-weight: 800;
+  font-size: 0.85em;
+  color: var(--primary);
+  border-left: 4px solid var(--primary);
 }
 
-/* -------------------------------
-   2) ICONS IN SIDEBAR
-   ------------------------------- */
-#sidebar .icon,
-#sidebar .icon:before {
-  color: #111111 !important;
+/* =========================
+   7. SECTIONS / BOXES
+   ========================= */
+section {
+  background: var(--bg-section);
+  margin-bottom: 40px;
 }
 
-/* -------------------------------
-   3) FORCE SIDEBAR CONTRAST (AAA)
-   ------------------------------- */
-#sidebar p,
-#sidebar span,
-#sidebar small {
-  color: #222222 !important;
+.kh-box {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 25px;
+  background: #ffffff;
 }
 
-/* -------------------------------
-   4) BADGE – MAKE IT OFFICIAL
-   ------------------------------- */
-body::after {
-  content: "WCAG AAA • Accessibility Compliant";
-  font-size: 11px;
-  font-weight: 600;
-  opacity: 0.75;
-  box-shadow: none;
+/* =========================
+   8. TABLES (AAA)
+   ========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-/* Hide badge on mobile (professional sites do this) */
-@media (max-width: 768px) {
-  body::after {
-    display: none;
+th {
+  background: #333333;
+  color: #ffffff;
+  padding: 12px;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-main);
+}
+
+/* =========================
+   9. ACCESSIBILITY
+   ========================= */
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }
 
-/* -------------------------------
-   5) KEEP DARK MODE ONLY FOR CONTENT
-   ------------------------------- */
-@media (prefers-color-scheme: dark) {
+/* =========================
+   10. MOBILE
+   ========================= */
+@media (max-width: 980px) {
   #sidebar {
-    background-color: #f7f7f7 !important;
-    color: #111111 !important;
-  }
-
-  #menu a {
-    color: #111111 !important;
-  }
-}
-
-/* =========================================================
-   FIXED SIDEBAR + INDEPENDENT SCROLL (PRO MODE)
-   ========================================================= */
-
-/* Desktop only */
-@media screen and (min-width: 981px) {
-
-  body {
-    overflow: hidden;
-  }
-
-  #wrapper {
-    display: flex;
-    height: 100vh;
-  }
-
-  #sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 300px;
-    height: 100vh;
-    overflow-y: auto;
-    z-index: 1000;
+    position: relative;
+    width: 100%;
+    height: auto;
   }
 
   #main {
-    margin-left: 300px;
-    height: 100vh;
-    overflow-y: auto;
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
   }
 }
 
-/* Scrollbar professional */
-#sidebar::-webkit-scrollbar {
-  width: 6px;
-}
-#sidebar::-webkit-scrollbar-thumb {
-  background: #c0c0c0;
-  border-radius: 3px;
-}
-
-/* =========================================================
-   MANUAL DARK MODE (WCAG AAA)
-   ========================================================= */
-
-body.dark {
-  background-color: #0f0f0f;
-  color: #ffffff;
-}
-
-body.dark #main {
-  background-color: #0f0f0f;
-}
-
-body.dark h1,
-body.dark h2,
-body.dark h3,
-body.dark p,
-body.dark li {
-  color: #ffffff;
-}
-
-/* Keep sidebar LIGHT (professional choice) */
-body.dark #sidebar {
-  background-color: #f7f7f7 !important;
-  color: #111 !important;
-}
-
-
-<script>
-  const toggle = document.getElementById('themeToggle');
-  const body = document.body;
-
-  if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark');
+/* =========================
+   11. PRINT (AAA)
+   ========================= */
+@media print {
+  body {
+    background: #ffffff;
+    color: #000000;
   }
-
-  toggle.addEventListener('click', () => {
-    body.classList.toggle('dark');
-    localStorage.setItem(
-      'theme',
-      body.classList.contains('dark') ? 'dark' : 'light'
-    );
-  });
-</script>
-
-     
-
+  a {
+    color: #000000;
+    text-decoration: underline;
+  }
+}
