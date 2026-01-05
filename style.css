@@ -384,36 +384,71 @@ table tr:hover { background-color: #f1f1f1; transition: 0.2s; }
   border: 0;
 }
 
-/* ==========================================================================
-   10. MOBILE RESPONSIVENESS
-   ========================================================================== */
-@media screen and (max-width: 736px) {
-  .kh-hero-grid {
-    display: block; /* ซ้อนกันในแนวตั้ง */
-  }
-  
-  .kh-hero-text {
-    margin-bottom: 20px;
-  }
-  
-  .kh-cards {
-    grid-template-columns: 1fr; /* การ์ดเรียงแถวเดียว */
-  }
-  
-  .kh-cta {
-    flex-direction: column;
-  }
-  
-  .kh-cta .button {
+/* =========================
+   MOBILE TOP MENU (FIX)
+   ========================= */
+
+/* ✅ กันจุด 3 จุด (bullet) โผล่ทุกที่ */
+ul, ol { list-style: none; margin: 0; padding: 0; }
+li { margin: 0; padding: 0; }
+
+/* Header layout ให้เป็น Top Bar */
+#header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+/* ปุ่มเมนู (มือถือ/แท็บเล็ต) */
+.menu-btn{
+  border:1px solid var(--border);
+  background: var(--bg-section);
+  color: var(--text-main);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* กันของล้นแนวนอน */
+html, body { overflow-x: hidden; }
+
+/* =========================
+   Mobile: เมนู dropdown ใต้ header
+   ========================= */
+@media (max-width: 980px){
+
+  #wrapper { display:block; }
+
+  /* ✅ ให้ Sidebar ไม่กินพื้นที่ซ้ายบนมือถือ */
+  #sidebar{
+    position: relative;
     width: 100%;
-    text-align: center;
+    height: auto;
+    border-right: 0;
+    display: block;          /* ต้องแสดง แต่จะพับด้วย max-height */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s ease;
   }
-  
-  table {
-    font-size: 0.9em; /* ลดขนาดตัวหนังสือในตาราง */
+
+  /* เปิดเมนู */
+  body.menu-open #sidebar{
+    max-height: 900px;       /* พอให้รายการเมนูโชว์หมด */
   }
-  
-  th, td {
-    padding: 8px;
+
+  /* Main เต็มจอ */
+  #main{
+    margin-left: 0 !important;
+    width: 100% !important;
   }
+
+  #main .inner{ padding: 22px 16px; }
+
+  /* กัน Hero บีบ */
+  .kh-hero-grid{ grid-template-columns: 1fr; }
 }
