@@ -114,6 +114,7 @@
     <div class="inner">
 
       <header id="header">
+        <button class="menu-btn" id="menuBtn" aria-controls="sidebar" aria-expanded="false">☰</button>
         <a href="index.html" class="logo"><strong>ขอนแก่นไฮเทค</strong></a>
         <ul class="icons">
           <li><a href="tel:+66944749874" class="icon solid fa-phone"><span class="label">โทร</span></a></li>
@@ -344,6 +345,20 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
+  <script>
+  (function () {
+    const btn = document.getElementById('menuBtn');
+    if (!btn) return;
+
+    btn.addEventListener('click', function () {
+      const open = document.body.classList.toggle('menu-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
+</script>
+
+  
 </body>
 </html>
+
 
