@@ -319,3 +319,63 @@ td {
     grid-template-columns: 1fr;
   }
 }
+/* =========================
+   11. MOBILE / TABLET (MENU TOGGLE)
+   ========================= */
+@media (max-width: 980px) {
+
+  #wrapper { display: block; }
+
+  /* ปุ่มเมนูบน header */
+  .menu-btn{
+    border:1px solid var(--border);
+    background: var(--bg-section);
+    color: var(--text-main);
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  /* header จัดแนวให้มีปุ่มเมนู */
+  #header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+  #header .logo{ margin-right:auto; }
+
+  /* sidebar ซ่อนไว้ก่อน */
+  #sidebar{
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: 0;
+    display: none;
+  }
+
+  /* เมื่อเปิดเมนู */
+  body.menu-open #sidebar{
+    display:block;
+  }
+
+  /* main เต็มจอ */
+  #main{
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  #main .inner{
+    padding: 22px 16px;
+  }
+
+  /* Hero ลงบรรทัดเดียว (กันบีบ) */
+  .kh-hero-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* กันเลื่อนล้นแนวนอน */
+html, body { overflow-x: hidden; }
