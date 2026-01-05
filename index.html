@@ -39,65 +39,62 @@
   <meta name="twitter:image" content="https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.jpg" />
 
   <!-- ✅ Schema (แก้ครบ: priceRange + address + streetAddress + hasMap + sameAs array) -->
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebSite",
-        "@id": "https://khonkaenhitech-service.github.io/khonkaenhitech/#website",
-        "url": "https://khonkaenhitech-service.github.io/khonkaenhitech/",
-        "name": "ขอนแก่นไฮเทค",
-        "inLanguage": "th-TH"
-      },
-      {
         "@type": "LocalBusiness",
         "@id": "https://khonkaenhitech-service.github.io/khonkaenhitech/#business",
         "name": "ขอนแก่นไฮเทค (Khon Kaen HiTech)",
-        "url": "https://khonkaenhitech-service.github.io/khonkaenhitech/",
-        "logo": "https://khonkaenhitech-service.github.io/khonkaenhitech/images/favicon.png",
         "image": "https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.jpg",
-        "description": "ศูนย์บริการรับติดตั้งระบบหยอดเหรียญและงานระบบอาคารครบวงจรในขอนแก่น",
         "telephone": "+66944749874",
-
-        "priceRange": "฿฿-฿฿฿",
-
+        "url": "https://khonkaenhitech-service.github.io/khonkaenhitech/",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "ขอนแก่นไฮเทค (ดูพิกัดจาก Google Maps)",
-          "addressLocality": "เมืองขอนแก่น",
-          "addressRegion": "ขอนแก่น",
+          "streetAddress": "39/7 ถนนศรีจันทร์ ซอยศรีจันทร์ 27 ตำบลในเมือง",
+          "addressLocality": "อำเภอเมืองขอนแก่น",
+          "addressRegion": "จังหวัดขอนแก่น",
           "postalCode": "40000",
           "addressCountry": "TH"
         },
-
-        "hasMap": "https://maps.app.goo.gl/LyV85313vknT4hBE6",
-
         "geo": {
           "@type": "GeoCoordinates",
           "latitude": 16.4263489,
           "longitude": 102.8614127
         },
-
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-            "opens": "08:00",
-            "closes": "18:00"
-          }
-        ],
-
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        },
         "sameAs": [
           "https://line.me/ti/p/~KKHITECH",
-          "https://www.facebook.com/Line0944749874",
-          "https://maps.app.goo.gl/LyV85313vknT4hBE6",
-          "https://www.google.com/maps/place/%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99%E0%B9%84%E0%B8%AE%E0%B9%80%E0%B8%97%E0%B8%84/@16.4298752,102.8649482,15z/data=!4m6!3m5!1s0x31228a2c8ac6d6af:0x921924f2e665b693!8m2!3d16.4263489!4d102.8614127!16s%2Fg%2F11f10sjt4s"
+          "https://www.facebook.com/Line0944749874"
         ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://khonkaenhitech-service.github.io/khonkaenhitech/#website",
+        "url": "https://khonkaenhitech-service.github.io/khonkaenhitech/",
+        "name": "ขอนแก่นไฮเทค",
+        "publisher": {
+          "@id": "https://khonkaenhitech-service.github.io/khonkaenhitech/#business"
+        }
       }
     ]
   }
   </script>
+ 
 
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="style.css" />
@@ -349,3 +346,4 @@
 
 </body>
 </html>
+
