@@ -398,7 +398,7 @@ li { margin: 0; padding: 0; }
 /* กันเลื่อนล้นแนวนอน */
 html, body { overflow-x: hidden; }
 
-/* มือถือ: ให้เนื้อหาหลักเต็มจอ แต่ปล่อย #sidebar ให้ Theme คุมเอง */
+/* ✅ Mobile Fix: main เต็มจอ แต่ไม่ยุ่งกับ sidebar ของธีม */
 @media (max-width: 980px) {
   #main{
     margin-left: 0 !important;
@@ -407,7 +407,14 @@ html, body { overflow-x: hidden; }
   #main .inner{
     padding: 22px 16px !important;
   }
-  .kh-hero-grid{
-    grid-template-columns: 1fr;
+  .kh-hero-grid{ grid-template-columns: 1fr; }
+}
+
+/* กันบูลเล็ต */
+ul, ol { list-style: none; margin: 0; padding: 0; }
+
+
+
+
   }
 }
