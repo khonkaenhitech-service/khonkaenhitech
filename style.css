@@ -101,3 +101,36 @@ section + section{ margin-top: 28px; }
   }
 }
 
+
+/* ===== Sidebar Section Headings (Main vs Sub) ===== */
+
+/* หัวข้อหลักในเมนู (divider) */
+#menu ul li.divider {
+  margin: 18px 0 10px 0;
+  padding: 10px 8px;
+  font-weight: 800;
+  font-size: 1.05em;
+  color: #b30000;                 /* 🔴 สีหัวข้อหลัก (แดงเข้ม) */
+  background: linear-gradient(
+    to right,
+    rgba(179,0,0,0.08),
+    rgba(179,0,0,0)
+  );
+  border-left: 4px solid #b30000; /* เส้นนำสายตา */
+  border-top: none;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* เมนูย่อยใต้หัวข้อ */
+#menu ul li.divider + li a {
+  padding-left: 18px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Hover เมนูย่อย */
+#menu ul li a:hover {
+  color: #b30000;
+}
+
