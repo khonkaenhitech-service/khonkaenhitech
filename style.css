@@ -1,6 +1,6 @@
 /* ======================================================================
    KHON KAEN HITECH – OFFICIAL LIGHT MODE (WCAG AAA / GOV READY)
-   วางไฟล์นี้แทน style.css เดิมได้ทันที
+   Responsive (Mobile-first patch) – Replace style.css with this file
    ====================================================================== */
 
 /* =========================
@@ -26,7 +26,10 @@
 /* =========================
    2. GLOBAL RESET
    ========================= */
+html { -webkit-text-size-adjust: 100%; }
 html, body {
+  margin: 0;
+  padding: 0;
   background: var(--bg-main);
   color: var(--text-main);
   font-size: 16px;
@@ -35,9 +38,18 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+
+body { overflow-x: hidden; }
+p, li, a, h1, h2, h3, h4, h5, h6 { overflow-wrap: anywhere; }
+
+/* Media always fit screen */
+img, video, canvas, svg { max-width: 100%; height: auto; display: block; }
+iframe, embed, object { max-width: 100%; }
+
+/* Code / table safety */
+pre { max-width: 100%; overflow-x: auto; }
+code { word-break: break-word; }
 
 /* =========================
    3. TYPOGRAPHY (AAA)
@@ -45,10 +57,10 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-main);
   font-weight: 700;
-  margin-bottom: 0.75em;
+  margin: 0 0 0.75em;
 }
 
-p, li {
+#main p, #main li {
   color: var(--text-sub);
   max-width: 72ch;
 }
@@ -61,29 +73,27 @@ small {
 /* =========================
    4. LINKS & BUTTONS
    ========================= */
-a {
-  color: var(--link);
-  text-decoration: underline;
-}
-a:hover {
-  color: var(--primary);
-}
+a { color: var(--link); text-decoration: underline; }
+a:hover { color: var(--primary); }
 
 .button,
 button,
-input[type="submit"] {
+input[type="submit"],
+input[type="button"] {
   background: var(--primary);
   color: #ffffff;
   border: none;
   border-radius: var(--radius);
-  min-height: 44px;
-  padding: 0 20px;
+  min-height: 44px;                 /* tap-friendly */
+  padding: 10px 20px;
   font-weight: 700;
   cursor: pointer;
 }
 
 .button:hover,
-button:hover {
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
   background: var(--primary-hover);
 }
 
@@ -95,23 +105,34 @@ button:hover {
   min-height: 100vh;
 }
 
+/* Sidebar */
 #sidebar {
   width: 260px;
   background: var(--bg-sidebar);
   color: var(--text-main);
   border-right: 1px solid var(--border);
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
+  top: 0; left: 0; bottom: 0;
+  height: 100vh;
+  height: 100dvh; /* better on mobile browsers */
   overflow-y: auto;
 }
 
+#sidebar .inner {
+  padding: 18px;
+}
+
+/* Main content */
 #main {
   margin-left: 260px;
   background: var(--bg-main);
-  padding: 40px;
   width: calc(100% - 260px);
+}
+
+#main .inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 28px;
 }
 
 /* =========================
@@ -120,13 +141,15 @@ button:hover {
 #menu ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 #menu ul li a {
   display: block;
-  padding: 12px 18px;
+  padding: 12px 14px;
   color: var(--text-main);
   text-decoration: none;
+  border-radius: 10px;
 }
 
 #menu ul li a:hover {
@@ -135,13 +158,17 @@ button:hover {
 }
 
 #menu ul li.divider {
-  margin: 15px 0 5px;
-  padding: 8px 15px;
+  margin: 14px 0 6px;
+  padding: 8px 12px;
   font-weight: 800;
   font-size: 0.85em;
   color: var(--primary);
   border-left: 4px solid var(--primary);
 }
+
+/* Footer */
+#footer { padding-top: 12px; }
+#footer .copyright { color: var(--text-muted); }
 
 /* =========================
    7. SECTIONS / BOXES
@@ -170,6 +197,7 @@ th {
   background: #333333;
   color: #ffffff;
   padding: 12px;
+  text-align: left;
 }
 
 td {
@@ -187,39 +215,136 @@ td {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
+  * { animation: none !important; transition: none !important; }
 }
 
 /* =========================
-   10. MOBILE
+   10. PAGE-SPECIFIC RESPONSIVE HELPERS
+   (for your existing HTML: kh-hero, features, row/col, actions)
+   ========================= */
+
+/* Hero layout (desktop/tablet) */
+.kh-hero { padding: 10px 0; }
+.kh-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 22px;
+  align-items: center;
+}
+.kh-hero-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+/* CTA wrap */
+.kh-cta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* Audio controls */
+.kh-audio {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.kh-audio-gate { padding: 10px 0; }
+.kh-audio-gate-box {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+/* Services cards grid (override theme if needed) */
+.features {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.features article { margin: 0 !important; }
+.features .content p { max-width: none; }
+
+/* Actions buttons */
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.actions .button { text-decoration: none; }
+
+/* If template uses .row / col-6 */
+.row { max-width: 100%; }
+.row > [class*="col-"] { max-width: 100%; }
+
+/* =========================
+   11. MOBILE / TABLET
    ========================= */
 @media (max-width: 980px) {
+  /* Sidebar becomes top section */
   #sidebar {
     position: relative;
     width: 100%;
     height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
   }
 
   #main {
     margin-left: 0;
     width: 100%;
-    padding: 20px;
   }
+
+  #main .inner {
+    padding: 22px 16px;
+  }
+
+  /* Hero stack */
+  .kh-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* CTA full width */
+  .kh-cta .button { width: 100%; }
+
+  /* Audio buttons full width */
+  .kh-audio { display: grid; gap: 10px; }
+  .kh-audio .button { width: 100%; }
+
+  /* Features to 1 column on phone */
+  .features { grid-template-columns: 1fr; }
+
+  /* Row/col stack */
+  .row { display: block !important; }
+  .row > [class*="col-"] { width: 100% !important; margin-bottom: 14px; }
+}
+
+/* Small phones */
+@media (max-width: 736px) {
+  #main .inner { padding: 18px 14px; }
+
+  /* Smaller headings */
+  header.main h1 { font-size: 1.55rem; line-height: 1.2; }
+  header.main h2 { font-size: 1.25rem; line-height: 1.25; }
+
+  /* Prevent long menu items from feeling tight */
+  #menu ul li a { padding: 12px 12px; }
+
+  /* Tables scroll instead of breaking layout */
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* Forms full width */
+  input, select, textarea { width: 100% !important; }
 }
 
 /* =========================
-   11. PRINT (AAA)
+   12. PRINT (AAA)
    ========================= */
 @media print {
-  body {
-    background: #ffffff;
-    color: #000000;
-  }
-  a {
-    color: #000000;
-    text-decoration: underline;
-  }
+  body { background: #ffffff; color: #000000; }
+  a { color: #000000; text-decoration: underline; }
 }
