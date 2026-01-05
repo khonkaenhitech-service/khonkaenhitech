@@ -1,7 +1,18 @@
+<!DOCTYPE HTML>
+<html lang="th">
 <head>
-  <!-- ===============================
-       BASIC / SEO
-  ================================ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-140XHHEN8H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-140XHHEN8H');
+  </script>
+  <meta charset="utf-8" />
+  <title>ขอนแก่นไฮเทค...</title>
+  ...
+  
+  <!-- ================= BASIC / SEO ================= -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,9 +27,7 @@
   <link rel="canonical" href="https://khonkaenhitech-service.github.io/khonkaenhitech/">
   <link rel="icon" href="images/favicon.png">
 
-  <!-- ===============================
-       PERFORMANCE (LCP / CSS)
-  ================================ -->
+  <!-- ================= PERFORMANCE (LCP / CSS) ================= -->
   <!-- Hero Image (LCP) -->
   <link rel="preload" as="image" href="images/pic10.webp" fetchpriority="high">
 
@@ -30,35 +39,29 @@
     <link rel="stylesheet" href="style.css">
   </noscript>
 
-  <!-- ===============================
-       OPEN GRAPH / SOCIAL
-  ================================ -->
+  <!-- ================= OPEN GRAPH ================= -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="th_TH">
   <meta property="og:site_name" content="ขอนแก่นไฮเทค">
-  <meta property="og:title" content="ขอนแก่นไฮเทค | ติดตั้งงานระบบครบวงจร ในขอนแก่น">
-  <meta property="og:description" content="เครื่องซักผ้าหยอดเหรียญ ตู้น้ำ RO ระบบไฟฟ้า CCTV อินเทอร์เน็ต โซล่าเซลล์ แอร์ ก่อสร้าง ในขอนแก่น">
+  <meta property="og:title" content="ขอนแก่นไฮเทค | งานระบบครบวงจร ขอนแก่น">
+  <meta property="og:description" content="ติดตั้งเครื่องซักผ้าหยอดเหรียญ ตู้น้ำ RO ไฟฟ้า CCTV อินเทอร์เน็ต โซล่าเซลล์ แอร์ ก่อสร้าง">
   <meta property="og:url" content="https://khonkaenhitech-service.github.io/khonkaenhitech/">
   <meta property="og:image" content="https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.webp">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ขอนแก่นไฮเทค | งานระบบ ขอนแก่น">
-  <meta name="twitter:description" content="ติดตั้งเครื่องซักผ้าหยอดเหรียญ งานไฟฟ้า CCTV อินเทอร์เน็ต โซล่าเซลล์ แอร์">
+  <meta name="twitter:description" content="เครื่องซักผ้าหยอดเหรียญ งานไฟฟ้า CCTV อินเทอร์เน็ต โซล่าเซลล์ แอร์">
   <meta name="twitter:image" content="https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.webp">
 
-  <!-- ===============================
-       LOCAL SEO (MAP PACK)
-  ================================ -->
+  <!-- ================= LOCAL SEO (MAP PACK) ================= -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://khonkaenhitech-service.github.io/khonkaenhitech/#business",
     "name": "ขอนแก่นไฮเทค",
     "url": "https://khonkaenhitech-service.github.io/khonkaenhitech/",
     "logo": "https://khonkaenhitech-service.github.io/khonkaenhitech/images/favicon.png",
     "image": "https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.webp",
-    "description": "ศูนย์บริการติดตั้งเครื่องซักผ้าหยอดเหรียญและงานระบบครบวงจรในจังหวัดขอนแก่น",
     "telephone": "+66944749874",
     "priceRange": "฿฿-฿฿฿",
     "address": {
@@ -83,9 +86,7 @@
   }
   </script>
 
-  <!-- ===============================
-       GOOGLE ANALYTICS (NON-BLOCK)
-  ================================ -->
+  <!-- ================= GOOGLE ANALYTICS ================= -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-140XHHEN8H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -94,3 +95,44 @@
     gtag('config', 'G-140XHHEN8H', { anonymize_ip: true });
   </script>
 </head>
+
+<body class="is-preload">
+<!-- ================= เนื้อหา BODY ของคุณ ใช้ของเดิมได้ทั้งหมด ================= -->
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const a = document.getElementById('homeAudio');
+  const playBtn = document.getElementById('playAudioBtn');
+  const stopBtn = document.getElementById('stopAudioBtn');
+  const gate = document.getElementById('audioGate');
+  const gateBtn = document.getElementById('audioGateBtn');
+
+  async function tryAutoplay(){
+    if(!a) return;
+    a.volume = 0.35;
+    a.loop = true;
+    try{
+      await a.play();
+      if(gate) gate.style.display="none";
+    }catch(e){
+      if(gate) gate.style.display="block";
+    }
+  }
+
+  if(playBtn) playBtn.onclick = async ()=>{ a.currentTime=0; await a.play(); if(gate) gate.style.display="none"; };
+  if(stopBtn) stopBtn.onclick = ()=>{ a.pause(); a.currentTime=0; };
+  if(gateBtn) gateBtn.onclick = async ()=>{ await a.play(); if(gate) gate.style.display="none"; };
+
+  setTimeout(tryAutoplay, 3000);
+  document.addEventListener('pointerdown', ()=>{ if(a && a.paused) tryAutoplay(); }, { once: true });
+</script>
+
+<script src="assets/js/jquery.min.js" defer></script>
+<script src="assets/js/browser.min.js" defer></script>
+<script src="assets/js/breakpoints.min.js" defer></script>
+<script src="assets/js/util.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+
+</body>
+</html>
