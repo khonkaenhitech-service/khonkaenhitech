@@ -358,9 +358,32 @@
   })();
 </script>
 
+  <script>
+  (function () {
+    const btn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    if (!btn || !sidebar) return;
+
+    btn.addEventListener('click', function () {
+      const open = document.body.classList.toggle('menu-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // ✅ กดลิงก์ในเมนูแล้วปิดเมนูอัตโนมัติ
+    sidebar.addEventListener('click', function (e) {
+      const a = e.target.closest('a');
+      if (!a) return;
+      document.body.classList.remove('menu-open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
+
+  
   
 </body>
 </html>
+
 
 
 
