@@ -1,239 +1,125 @@
-<!DOCTYPE HTML>
-<html lang="th">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<!-- =========================
+  แจ้งอาการซ่อม + ตารางแพ็กเกจเซอร์วิส
+  (วางไว้ใต้หัวข้อซ่อมตู้น้ำ)
+========================= -->
+<section id="repair-report">
+  <header class="major">
+    <h2>แจ้งอาการซ่อมตู้น้ำหยอดเหรียญ ขอนแก่น (ส่งข้อความเข้าเพจได้ทันที)</h2>
+  </header>
 
-  <title>ตู้น้ำหยอดเหรียญ ขอนแก่น | ตู้น้ำ RO | ระบบกรองน้ำ | ขอนแก่นไฮเทค</title>
-  <meta name="description" content="ขอนแก่นไฮเทค รับติดตั้งตู้น้ำหยอดเหรียญ ตู้น้ำ RO และระบบกรองน้ำในขอนแก่น วางระบบพร้อมใช้งานจริง เหมาะกับหอพัก ชุมชน อาคาร โทร/LINE 094-474-9874" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="language" content="th" />
-  <meta name="geo.region" content="TH-40" />
-  <meta name="geo.placename" content="Khon Kaen" />
+  <div class="kh-report-wrap">
+    <div class="kh-report-card">
+      <h3>ฟอร์มแจ้งอาการซ่อม (ช่างประเมินไว)</h3>
+      <p style="margin:0 0 12px 0;">
+        กรอกข้อมูลแล้วกด “ส่งเข้าแชทเพจ” ระบบจะทำข้อความให้ + คัดลอกให้ทันที เพื่อส่งใน Messenger
+      </p>
 
-  <link rel="canonical" href="https://khonkaenhitech-service.github.io/khonkaenhitech/water.html" />
-  <link rel="preload" as="image" href="images/water-ro-khonkaen.jpg">
-  <link rel="icon" href="images/favicon.png" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="th_TH" />
-  <meta property="og:site_name" content="ขอนแก่นไฮเทค" />
-  <meta property="og:title" content="ตู้น้ำหยอดเหรียญ ขอนแก่น | ตู้น้ำ RO | ขอนแก่นไฮเทค" />
-  <meta property="og:description" content="ติดตั้งตู้น้ำหยอดเหรียญ/RO และระบบกรองน้ำในขอนแก่น พร้อมวางระบบจริง โทร/LINE 094-474-9874" />
-  <meta property="og:url" content="https://khonkaenhitech-service.github.io/khonkaenhitech/water.html" />
-  <meta property="og:image" content="https://khonkaenhitech-service.github.io/khonkaenhitech/images/water-ro-khonkaen.jpg" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ตู้น้ำหยอดเหรียญ ขอนแก่น | ขอนแก่นไฮเทค" />
-  <meta name="twitter:description" content="รับติดตั้งตู้น้ำหยอดเหรียญ/RO ในขอนแก่น โทร/LINE 094-474-9874" />
-  <meta name="twitter:image" content="https://khonkaenhitech-service.github.io/khonkaenhitech/images/water-ro-khonkaen.jpg" />
-
-  <!-- Schema: Website + LocalBusiness + Service + Breadcrumb -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"WebSite",
-        "@id":"https://khonkaenhitech-service.github.io/khonkaenhitech/#website",
-        "url":"https://khonkaenhitech-service.github.io/khonkaenhitech/",
-        "name":"ขอนแก่นไฮเทค",
-        "inLanguage":"th-TH"
-      },
-      {
-        "@type":"LocalBusiness",
-        "@id":"https://khonkaenhitech-service.github.io/khonkaenhitech/#business",
-        "name":"ขอนแก่นไฮเทค",
-        "url":"https://khonkaenhitech-service.github.io/khonkaenhitech/",
-        "image":"https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.jpg",
-        "telephone":"+66944749874",
-        "sameAs":[
-          "https://line.me/ti/p/~KKHITECH",
-          "https://www.facebook.com/Line0944749874",
-          "https://maps.app.goo.gl/LyV85313vknT4hBE6"
-        ],
-        "geo":{
-          "@type":"GeoCoordinates",
-          "latitude":16.4263489,
-          "longitude":102.8614127
-        },
-        "areaServed":["ขอนแก่น","จังหวัดใกล้เคียง"]
-      },
-      {
-        "@type":"Service",
-        "@id":"https://khonkaenhitech-service.github.io/khonkaenhitech/water.html#service",
-        "name":"ติดตั้งตู้น้ำหยอดเหรียญ / ตู้น้ำ RO / ระบบกรองน้ำ ขอนแก่น",
-        "provider":{"@id":"https://khonkaenhitech-service.github.io/khonkaenhitech/#business"},
-        "areaServed":["ขอนแก่น","จังหวัดใกล้เคียง"],
-        "url":"https://khonkaenhitech-service.github.io/khonkaenhitech/water.html"
-      },
-      {
-        "@type":"BreadcrumbList",
-        "@id":"https://khonkaenhitech-service.github.io/khonkaenhitech/water.html#breadcrumb",
-        "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"หน้าแรก","item":"https://khonkaenhitech-service.github.io/khonkaenhitech/"},
-          {"@type":"ListItem","position":2,"name":"ตู้น้ำหยอดเหรียญ / RO","item":"https://khonkaenhitech-service.github.io/khonkaenhitech/water.html"}
-        ]
-      }
-    ]
-  }
-  </script>
-
-  <!-- FAQ Schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"ตู้น้ำ RO เหมาะกับพื้นที่แบบไหนในขอนแก่น?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"เหมาะกับหอพัก ชุมชน ร้านค้า และอาคารที่มีผู้ใช้งานประจำ ควรตรวจคุณภาพน้ำหน้างานก่อนเลือกระบบกรอง."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"ติดตั้งตู้น้ำหยอดเหรียญต้องเตรียมอะไรบ้าง?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"ต้องมีจุดน้ำเข้า จุดไฟ และพื้นที่วางตู้ที่ปลอดภัย ทีมงานขอนแก่นไฮเทคช่วยประเมินและแนะนำตำแหน่งติดตั้งให้เหมาะสม."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"รับติดตั้งนอกอำเภอเมืองขอนแก่นไหม?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"รับงานในขอนแก่นและจังหวัดใกล้เคียง สามารถส่งพิกัดและรูปหน้างานเพื่อประเมินเบื้องต้นได้."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body class="is-preload">
-<div id="wrapper">
-
-  <!-- MAIN -->
-  <div id="main">
-    <div class="inner">
-
-      <header id="header">
-        <a href="index.html" class="logo"><strong>ขอนแก่นไฮเทค</strong></a>
-        <ul class="icons">
-          <li><a href="tel:+66944749874" class="icon solid fa-phone"><span class="label">โทร</span></a></li>
-          <li><a href="https://line.me/ti/p/~KKHITECH" class="icon brands fa-line"><span class="label">LINE</span></a></li>
-          <li><a href="https://maps.app.goo.gl/LyV85313vknT4hBE6" class="icon solid fa-map-marker-alt"><span class="label">Maps</span></a></li>
-        </ul>
-      </header>
-
-      <section>
-        <header class="main">
-          <h1>ตู้น้ำหยอดเหรียญ ขอนแก่น • ตู้น้ำ RO • ระบบกรองน้ำ พร้อมใช้งานจริง</h1>
-        </header>
-
-        <span class="image main">
-          <img src="images/water-ro-khonkaen.jpg"
-               alt="ติดตั้งตู้น้ำหยอดเหรียญ RO ขอนแก่น โดยขอนแก่นไฮเทค"
-               loading="lazy" decoding="async">
-        </span>
-
-        <p>
-          <strong>ขอนแก่นไฮเทค</strong> รับติดตั้งตู้น้ำหยอดเหรียญ ตู้น้ำ RO และระบบกรองน้ำในขอนแก่น
-          วางระบบตามหน้างานจริง เน้นคุณภาพน้ำ ความปลอดภัย และการดูแลรักษาง่าย
-          สามารถดู <a href="services.html">รวมบริการทั้งหมด</a> หรือปรึกษาเรื่อง
-          <a href="electrical.html">งานไฟฟ้า/ตู้ MDB</a> เพิ่มเติมได้
-        </p>
-
-        <h2>บริการติดตั้งตู้น้ำหยอดเหรียญ / RO</h2>
-        <ul>
-          <li>ติดตั้งตู้น้ำหยอดเหรียญ / ตู้น้ำ RO</li>
-          <li>วางระบบกรองน้ำตามคุณภาพน้ำหน้างาน</li>
-          <li>เดินระบบไฟฟ้าและระบบท่อน้ำอย่างเป็นระเบียบ</li>
-          <li>แนะนำตำแหน่งติดตั้งเพื่อให้ใช้งานและขายได้จริง</li>
-        </ul>
-
-        <h2>เหมาะสำหรับพื้นที่</h2>
-        <ul>
-          <li>หอพัก / อพาร์ตเมนต์ / ชุมชน</li>
-          <li>โรงงาน / ร้านค้า / อาคารสำนักงาน</li>
-          <li>ผู้ลงทุนที่ต้องการระบบดูแลง่ายในระยะยาว</li>
-        </ul>
-
-        <div class="kh-cta">
-          <a class="button primary" href="tel:+66944749874">โทร 094-474-9874</a>
-          <a class="button" href="https://line.me/ti/p/~KKHITECH">LINE: KKHITECH</a>
-          <a class="button" href="services.html">ดูรวมบริการ</a>
-          <a class="button" href="contact.html">ติดต่อ/แผนที่</a>
+      <form id="repairForm" class="kh-report-form">
+        <div class="kh-field">
+          <label for="rName">ชื่อผู้ติดต่อ</label>
+          <input id="rName" name="rName" type="text" placeholder="เช่น คุณเอ" required>
         </div>
 
-        <p style="margin-top:12px;">
-          ✅ บริการติดตั้งตู้น้ำหยอดเหรียญ/RO ใน <strong>ขอนแก่น</strong> และพื้นที่ใกล้เคียง —
-          ทัก LINE ส่งพิกัด/รูปหน้างาน ประเมินไว
-        </p>
+        <div class="kh-field">
+          <label for="rPhone">เบอร์โทร</label>
+          <input id="rPhone" name="rPhone" type="tel" placeholder="เช่น 094-xxx-xxxx" required>
+        </div>
 
-      </section>
+        <div class="kh-field">
+          <label for="rSymptom">อาการเสีย/ปัญหา</label>
+          <textarea id="rSymptom" name="rSymptom" rows="4" placeholder="เช่น น้ำไม่ไหล / กินเหรียญ / ไฟไม่เข้า / น้ำมีกลิ่น / ปั๊มไม่ทำงาน" required></textarea>
+        </div>
 
+        <div class="kh-field">
+          <label for="rLocation">ทำเล/ที่ตั้งตู้</label>
+          <input id="rLocation" name="rLocation" type="text" placeholder="เช่น หอพักแถวกังสดาล / บ้านเป็ด / ในเมืองขอนแก่น" required>
+        </div>
+
+        <div class="kh-field">
+          <label for="rNote">รายละเอียดเพิ่ม (ถ้ามี)</label>
+          <input id="rNote" name="rNote" type="text" placeholder="เช่น รุ่นตู้ / ขนาดถัง / เคยเปลี่ยนไส้กรองล่าสุดเมื่อไหร่">
+        </div>
+
+        <div class="kh-actions">
+          <button type="submit" class="button primary big">💬 ส่งเข้าแชทเพจ (คัดลอกข้อความให้)</button>
+          <button type="button" id="copyMsgBtn" class="button big">📋 คัดลอกข้อความ</button>
+          <a class="button" href="tel:+66944749874">📞 โทรด่วน 094-474-9874</a>
+        </div>
+
+        <div class="kh-preview">
+          <label>ตัวอย่างข้อความที่จะส่งเข้าเพจ</label>
+          <textarea id="repairMessage" rows="6" readonly></textarea>
+          <small style="display:block;margin-top:6px;color:#666;">
+            *กดส่งแล้วระบบจะเปิด Messenger ของเพจให้คุณวางข้อความและส่งได้ทันที
+          </small>
+        </div>
+      </form>
+    </div>
+
+    <div class="kh-report-card">
+      <h3>แพ็กเกจเซอร์วิสตู้น้ำ (คนค้นหาเยอะมาก)</h3>
+      <p style="margin:0 0 12px 0;">
+        เหมาะกับหอพัก/ชุมชน/โรงงานที่อยากให้ตู้ “ขายต่อเนื่อง น้ำอร่อย ลูกค้าซื้อซ้ำ”
+      </p>
+
+      <div class="table-wrapper">
+        <table class="kh-pack-table">
+          <thead>
+            <tr>
+              <th>แพ็กเกจ</th>
+              <th>เหมาะกับใคร</th>
+              <th>สิ่งที่ได้</th>
+              <th>ราคา (ตัวอย่าง)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>รายครั้ง</strong></td>
+              <td>ตู้เริ่มมีปัญหา / อยากเช็คระบบ</td>
+              <td>
+                • ตรวจเช็คอาการ + เช็คแรงดัน/จุดรั่ว<br>
+                • วัดคุณภาพน้ำ (TDS) เบื้องต้น<br>
+                • แนะนำงานที่ควรทำ (พร้อมประเมินค่าใช้จ่าย)
+              </td>
+              <td><strong>เริ่มต้น xxx บาท</strong></td>
+            </tr>
+
+            <tr>
+              <td><strong>รายเดือน</strong></td>
+              <td>หอพัก/จุดขายประจำ (เน้นกันเสีย)</td>
+              <td>
+                • เข้าดูแลตามรอบ 1 ครั้ง/เดือน<br>
+                • เช็คระบบ + ล้างจุดเสี่ยงตามสภาพ<br>
+                • เตือนรอบเปลี่ยนไส้กรอง (ลดน้ำมีกลิ่น)<br>
+                • Priority นัดช่างไวกว่าแบบรายครั้ง
+              </td>
+              <td><strong>เริ่มต้น xxx บาท/เดือน</strong></td>
+            </tr>
+
+            <tr>
+              <td><strong>รายไตรมาส</strong></td>
+              <td>ต้องการคุมต้นทุน + เซอร์วิสเป็นรอบ</td>
+              <td>
+                • เข้าดูแล 1 ครั้ง/ไตรมาส<br>
+                • ล้างถังพักน้ำ/ทำความสะอาดระบบ (ตามเหมาะสม)<br>
+                • เช็คคุณภาพน้ำ + รายงานสรุปงาน<br>
+                • ลดโอกาส “ตู้เสียยาว” เสียยอดขาย
+              </td>
+              <td><strong>เริ่มต้น xxx บาท/ไตรมาส</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="kh-actions" style="margin-top:10px;">
+        <a class="button primary big" href="https://line.me/ti/p/~KKHITECH">💬 ขอราคาแพ็กเกจ (ไลน์ KKHITECH)</a>
+        <a class="button big" href="contact.html">📍 ดูแผนที่/ติดต่อร้าน</a>
+      </div>
+
+      <div class="kh-pack-note">
+        <strong>ทิป SEO ที่ทำให้คนทักเพิ่ม:</strong>
+        ใส่ “ราคาเริ่มต้น” แบบช่วง (เช่น 1,xxx–x,xxx) จะช่วยให้คนตัดสินใจเร็วขึ้น และคนค้นหา “ซ่อมตู้ราคา” เยอะมาก
+      </div>
     </div>
   </div>
-
-  <!-- SIDEBAR -->
-  <div id="sidebar">
-    <div class="inner">
-
-      <nav id="menu">
-        <header class="major"><h2>เมนู</h2></header>
-        <ul>
-          <li><a href="index.html">หน้าแรก</a></li>
-          <li><a href="services.html">รวมบริการทั้งหมด</a></li>
-          <li><a href="contact.html">ติดต่อ / แผนที่ร้าน</a></li>
-
-          <li class="divider">บริการยอดนิยม</li>
-          <li><a href="laundry.html">เครื่องซักผ้าหยอดเหรียญ</a></li>
-          <li><a href="water.html">ตู้น้ำหยอดเหรียญ / RO</a></li>
-          <li><a href="vending.html">ระบบหยอดเหรียญ</a></li>
-          <li><a href="internet.html">อินเทอร์เน็ต / ฮอตสปอตหอพัก</a></li>
-
-          <li class="divider">งานระบบและก่อสร้าง</li>
-          <li><a href="security.html">CCTV / คีย์การ์ด / ไม้กั้น</a></li>
-          <li><a href="electrical.html">งานไฟฟ้า / ตู้ MDB</a></li>
-          <li><a href="solar-air.html">โซล่าเซล / แอร์</a></li>
-          <li><a href="construction.html">รับสร้างบ้าน / ต่อเติม</a></li>
-          <li><a href="khonkaen-system.html">บทความ Local SEO (ขอนแก่น)</a></li>
-
-          <li class="divider">ติดต่อด่วน</li>
-          <li><a href="tel:+66944749874">โทร 094-474-9874</a></li>
-          <li><a href="https://line.me/ti/p/~KKHITECH">LINE: KKHITECH</a></li>
-          <li><a href="https://www.facebook.com/Line0944749874">Facebook Page</a></li>
-          <li><a href="https://maps.app.goo.gl/LyV85313vknT4hBE6">Google Maps</a></li>
-        </ul>
-      </nav>
-
-      <footer id="footer">
-        <p class="copyright">&copy; <span id="y"></span> ขอนแก่นไฮเทค</p>
-      </footer>
-    </div>
-  </div>
-
-</div>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
-
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-
-</body>
-</html>
+</section>
