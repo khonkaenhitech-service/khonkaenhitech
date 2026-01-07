@@ -102,3 +102,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }[s]));
   }
 });
+
+// ===== Reviews: random author + optional shuffle =====
+document.addEventListener("DOMContentLoaded", () => {
+  const pool = [
+    "ช่างแม็ก · ช่างประจำร้าน ขอนแก่นไฮเทค",
+    "คุณเหมียว · ฝ่ายขาย ขอนแก่นไฮเทค",
+    "ทีมขอนแก่นไฮเทค · แอดมิน/ทีมงาน"
+  ];
+
+  // 1) สุ่มชื่อผู้เขียนให้แต่ละรีวิว
+  document.querySelectorAll("[data-review-by]").forEach((el) => {
+    const pick = pool[Math.floor(Math.random() * pool.length)];
+    el.textContent = pick;
+  });
+
+  // 2) (เลือกได้) สุ่มลำดับรีวิวทุกครั้งที่รีเฟรช
+  const list = document.getElementById("khReviews");
+  if (!list) return;
+
+  const items = Array.from(list.querySelectorAll(".kh-review"));
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [items[i], items[j]] = [items[j], items[i]];
+  }
+  items.forEach((it) => list.appendChild(it));
+});
