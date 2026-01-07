@@ -21,7 +21,7 @@
   <meta name="geo.placename" content="Khon Kaen" />
 
   <link rel="canonical" href="https://khonkaenhitech-service.github.io/khonkaenhitech/" />
-  
+   
   <link rel="preload" as="image" href="images/pic10.jpg">
   <link rel="icon" href="images/favicon.png" />
 
@@ -92,14 +92,14 @@
   <style>
     .features article { margin-bottom: 2em; }
     .features h3 a { text-decoration: none; border-bottom: none; color: inherit; }
-    .features h3 a:hover { color: #d32f2f; /* ปรับให้ตรงกับ Theme ใหม่ */ }
+    .features h3 a:hover { color: #d32f2f; /* Theme ใหม่ */ }
     .intro-seo { margin-bottom: 3em; border-bottom: 2px solid #d32f2f; padding-bottom: 2em; }
-    
-    /* เพิ่ม Style ป้องกันภาพขยับ */
+     
+    /* ป้องกันภาพขยับ (CLS Fix) */
     .kh-hero-media img {
         width: 100%;
         height: auto;
-        aspect-ratio: 4/3; /* กำหนดสัดส่วนคร่าวๆ */
+        aspect-ratio: 4/3;
         object-fit: cover;
     }
   </style>
@@ -156,7 +156,7 @@
                 <source src="assets/audio/home.ogg" type="audio/ogg">
               </audio>
             </div>
-            </div>
+          </div>
           
           <div class="kh-hero-media">
             <img src="images/pic10.jpg" alt="ขอนแก่นไฮเทค ทีมช่างติดตั้งระบบอันดับ 1 ในขอนแก่น" width="800" height="600" loading="eager">
@@ -293,10 +293,26 @@
           <li><a href="elements.html">ผลงาน & รีวิว (Portfolio)</a></li>
 
           <li class="divider">ติดต่อด่วน</li>
-          <li><a href="tel:+66944749874">โทร 094-474-9874</a></li>
-          <li><a href="https://line.me/ti/p/~KKHITECH">LINE: KKHITECH</a></li>
-          <li><a href="https://www.facebook.com/Line0944749874">Facebook Page</a></li>
-          <li><a href="https://maps.app.goo.gl/LyV85313vknT4hBE6">Google Maps</a></li>
+          <li>
+              <a href="tel:+66944749874" class="button btn-tel">
+                  <span class="icon solid fa-phone"></span> โทร 094-474-9874
+              </a>
+          </li>
+          <li>
+              <a href="https://line.me/ti/p/~KKHITECH" class="button btn-line">
+                  <span class="icon brands fa-line"></span> LINE: KKHITECH
+              </a>
+          </li>
+          <li>
+              <a href="https://www.facebook.com/Line0944749874" class="button btn-fb">
+                  <span class="icon brands fa-facebook-f"></span> Facebook Page
+              </a>
+          </li>
+          <li>
+              <a href="https://maps.app.goo.gl/LyV85313vknT4hBE6" class="button btn-map">
+                  <span class="icon solid fa-map-marker-alt"></span> Google Maps
+              </a>
+          </li>
         </ul>
       </nav>
 
@@ -313,16 +329,17 @@
 <script src="assets/js/breakpoints.min.js" defer></script>
 <script src="assets/js/util.js" defer></script>
 <script src="assets/js/main.js" defer></script>
+<script src="assets/js/kh-current-tab.js" defer></script>
 
-<script>
-  // รอให้หน้าเว็บโหลดโครงสร้างเสร็จก่อนค่อยรัน Script (Best Practice)
+
+  // รอให้หน้าเว็บโหลดโครงสร้างเสร็จก่อนค่อยรัน Script
   window.addEventListener('load', function() {
       
       // Script ปีปัจจุบัน
       var yearSpan = document.getElementById('year');
       if(yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-      // Audio Script (แบบ Manual Play - ไม่หน่วงเครื่อง)
+      // Audio Script (Manual Play)
       const a = document.getElementById('homeAudio');
       const playBtn = document.getElementById('playAudioBtn');
       const stopBtn = document.getElementById('stopAudioBtn');
@@ -340,17 +357,14 @@
           };
       }
 
-      // Menu Script Fix
+      // Menu Script Fix (ปิดเมนูเมื่อกดลิงก์)
       const menuBtn = document.getElementById('menuBtn');
       const sidebar = document.getElementById('sidebar');
-      // ตรวจสอบว่ามีปุ่มเมนูจริงไหมก่อนผูก Event
       if (menuBtn && sidebar) {
         menuBtn.addEventListener('click', function () {
-            // Logic เปิดปิดเมนู (ถ้ามี function ใน main.js อยู่แล้วอาจจะไม่ต้องใช้ตรงนี้)
-            // แต่ใส่ไว้กันเหนียว
+            // Logic เปิดปิดเมนู
         });
 
-        // ✅ กดลิงก์ในเมนูแล้วปิดเมนูอัตโนมัติ (UX มือถือ)
         sidebar.addEventListener('click', function (e) {
             const link = e.target.closest('a');
             if (link) {
