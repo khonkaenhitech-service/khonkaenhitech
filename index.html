@@ -22,8 +22,12 @@
 
   <link rel="canonical" href="https://khonkaenhitech-service.github.io/khonkaenhitech/" />
    
-  <link rel="preload" as="image" href="images/pic10.jpg">
+  <link rel="preload" as="image" href="images/pic10.webp">
   <link rel="icon" href="images/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="th_TH" />
@@ -92,7 +96,7 @@
   <style>
     .features article { margin-bottom: 2em; }
     .features h3 a { text-decoration: none; border-bottom: none; color: inherit; }
-    .features h3 a:hover { color: #d32f2f; /* Theme ใหม่ */ }
+    .features h3 a:hover { color: #d32f2f; }
     .intro-seo { margin-bottom: 3em; border-bottom: 2px solid #d32f2f; padding-bottom: 2em; }
      
     /* ป้องกันภาพขยับ (CLS Fix) */
@@ -101,6 +105,18 @@
         height: auto;
         aspect-ratio: 4/3;
         object-fit: cover;
+    }
+
+    /* FIX 3: Accessibility Contrast Fix (แก้สีปุ่มให้เข้มขึ้น) */
+    a.button.primary {
+        background-color: #c9302c !important; /* แดงเข้มขึ้น */
+        color: #ffffff !important;
+        box-shadow: none !important;
+    }
+    a.button.btn-line {
+        background-color: #008f00 !important; /* เขียวเข้มขึ้น */
+        color: #ffffff !important;
+        box-shadow: none !important;
     }
   </style>
 </head>
@@ -159,7 +175,7 @@
           </div>
           
           <div class="kh-hero-media">
-            <img src="images/pic10.jpg" alt="ขอนแก่นไฮเทค ทีมช่างติดตั้งระบบอันดับ 1 ในขอนแก่น" width="800" height="600" loading="eager">
+            <img src="images/pic10.webp" alt="ขอนแก่นไฮเทค ทีมช่างติดตั้งระบบอันดับ 1 ในขอนแก่น" width="800" height="600" loading="eager">
           </div>
         </div>
       </section>
@@ -331,14 +347,10 @@
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/kh-current-tab.js" defer></script>
 <script>
-  // รอให้หน้าเว็บโหลดโครงสร้างเสร็จก่อนค่อยรัน Script
   window.addEventListener('load', function() {
-      
-      // Script ปีปัจจุบัน
       var yearSpan = document.getElementById('year');
       if(yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-      // Audio Script (Manual Play)
       const a = document.getElementById('homeAudio');
       const playBtn = document.getElementById('playAudioBtn');
       const stopBtn = document.getElementById('stopAudioBtn');
@@ -356,12 +368,10 @@
           };
       }
 
-      // Menu Script Fix (ปิดเมนูเมื่อกดลิงก์)
       const menuBtn = document.getElementById('menuBtn');
       const sidebar = document.getElementById('sidebar');
       if (menuBtn && sidebar) {
         menuBtn.addEventListener('click', function () {
-            // Logic เปิดปิดเมนู
         });
 
         sidebar.addEventListener('click', function (e) {
