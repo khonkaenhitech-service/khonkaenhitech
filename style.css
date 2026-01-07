@@ -487,15 +487,17 @@ html, body { overflow-x: hidden; }
 }
 
 /* 2. ปุ่ม LINE (สีเขียว) */
-.btn-line, a[href*="line.me"] {
-    background-color: #06c755 !important;
+.btn-line,
+a.button[href*="line.me"],
+#menu a[href*="line.me"]{
+    background-color: var(--kh-line-green) !important;
     color: #ffffff !important;
 }
-.btn-line:hover, a[href*="line.me"]:hover {
-    background-color: #05b54d !important;
-}
-
-/* 3. ปุ่ม Facebook (สีน้ำเงินแบรนด์) */
+.btn-line:hover,
+a.button[href*="line.me"]:hover,
+#menu a[href*="line.me"]:hover{
+    background-color: var(--kh-line-green2) !important;
+}/* 3. ปุ่ม Facebook (สีน้ำเงินแบรนด์) */
 .btn-fb {
     background-color: #1877f2 !important;
     color: #ffffff !important;
@@ -531,3 +533,13 @@ html, body { overflow-x: hidden; }
   padding-left: calc(1.65em - 4px) !important;
   border-radius: 10px;
 }
+
+
+/* =========================
+   Header Icons (Phone/LINE/Map) - สีสวยและไม่โดนสไตล์ปุ่มทับ
+   ========================= */
+#header .icons a.icon.brands.fa-line{ color: var(--kh-line-green) !important; }
+#header .icons a.icon.solid.fa-phone{ color: var(--kh-accent) !important; }
+#header .icons a.icon.solid.fa-map-marker-alt{ color: var(--kh-red2) !important; }
+
+.kh-sep{ opacity:.55; margin: 0 6px; font-weight: 900; }
