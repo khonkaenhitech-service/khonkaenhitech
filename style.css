@@ -438,3 +438,99 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
     height: 1250px;   /* Mobile: ยาวขึ้น */
   }
 }
+
+/* =========================
+   KH - Current Page Tab
+   ========================= */
+:root{
+  --kh-red:#ef4444;
+  --kh-red2:#b91c1c;
+  --kh-soft: rgba(239,68,68,.10);
+  --kh-line: rgba(17,24,39,.12);
+  --kh-shadow: 0 14px 34px rgba(0,0,0,.10);
+}
+
+.kh-loc{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding: 12px 14px;
+  margin: 6px 0 16px;
+  border-radius: 16px;
+  background:
+    radial-gradient(900px 240px at 15% 0%, rgba(239,68,68,.14), transparent 55%),
+    #fff;
+  border: 1px solid var(--kh-line);
+  box-shadow: var(--kh-shadow);
+  position: sticky;      /* เลื่อนแล้วแท็บยังอยู่ให้อ่านง่าย */
+  top: 10px;
+  z-index: 5;
+}
+
+.kh-loc__icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  background: linear-gradient(135deg, var(--kh-red), var(--kh-red2));
+  box-shadow: 0 10px 22px rgba(239,68,68,.20);
+  flex: 0 0 auto;
+}
+
+.kh-loc__text{ min-width: 0; }
+.kh-loc__kicker{
+  font-size: 12px;
+  letter-spacing: .2px;
+  color: rgba(17,24,39,.60);
+  line-height: 1.1;
+}
+.kh-loc__title{
+  font-size: 16px;
+  font-weight: 900;
+  color: #111827;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.kh-loc__title .kh-sep{
+  margin: 0 8px;
+  color: rgba(17,24,39,.35);
+  font-weight: 800;
+}
+
+.kh-loc__cta{
+  margin-left:auto;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--kh-soft);
+  border: 1px solid rgba(239,68,68,.22);
+  color: var(--kh-red2);
+  font-weight: 900;
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+.kh-loc__cta:hover{ background: rgba(239,68,68,.14); }
+
+@media (max-width: 980px){
+  .kh-loc{ top: 8px; }
+  .kh-loc__cta{ padding: 9px 10px; }
+}
+
+/* =========================
+   KH - Active Menu Highlight
+   ========================= */
+#menu ul li.active > a,
+#menu a.active{
+  background: rgba(239,68,68,.10) !important;
+  color: var(--kh-red2) !important;
+  font-weight: 900 !important;
+  border-left: 4px solid var(--kh-red) !important;
+  padding-left: calc(1.65em - 4px) !important;
+  border-radius: 10px;
+}
+#menu ul li.active > a:before{ color: var(--kh-red) !important; }
+
