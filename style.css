@@ -441,9 +441,8 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
     height: 1250px;   /* Mobile: ยาวขึ้น */
   }
 }
-
 /* =========================
-   KH - Current Page Tab
+   KH - Current Page Tab (สวยๆ)
    ========================= */
 :root{
   --kh-red:#ef4444;
@@ -465,7 +464,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
     #fff;
   border: 1px solid var(--kh-line);
   box-shadow: var(--kh-shadow);
-  position: sticky;      /* เลื่อนแล้วแท็บยังอยู่ให้อ่านง่าย */
+  position: sticky;
   top: 10px;
   z-index: 5;
 }
@@ -498,7 +497,6 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .kh-loc__title .kh-sep{
   margin: 0 8px;
   color: rgba(17,24,39,.35);
@@ -524,7 +522,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 }
 
 /* =========================
-   KH - Active Menu Highlight
+   KH - Active Menu Highlight (รู้ว่าอยู่หน้าไหน)
    ========================= */
 #menu ul li.active > a,
 #menu a.active{
@@ -536,4 +534,3 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   border-radius: 10px;
 }
 #menu ul li.active > a:before{ color: var(--kh-red) !important; }
-
