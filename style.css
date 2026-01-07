@@ -450,6 +450,27 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   --kh-soft: rgba(239,68,68,.10);
   --kh-line: rgba(17,24,39,.12);
   --kh-shadow: 0 14px 34px rgba(0,0,0,.10);
+
+  /* LINE */
+  --kh-line-green:#06C755;
+  --kh-line-green2:#05b34c;
+}
+
+.btn-line{
+  background: var(--kh-line-green) !important;
+  border-color: var(--kh-line-green) !important;
+  color:#fff !important;
+  font-weight: 900;
+}
+
+.btn-line:hover{
+  background: var(--kh-line-green2) !important;
+  border-color: var(--kh-line-green2) !important;
+}
+
+.btn-line:focus-visible{
+  outline: 3px solid rgba(6,199,85,.35);
+  outline-offset: 2px;
 }
 
 .kh-loc{
