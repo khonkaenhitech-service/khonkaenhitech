@@ -94,7 +94,7 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* ธีมสีส้มทอง และการปรับแต่งสไตล์ */
+    /* ธีมสีส้มทองขอนแก่นไฮเทค */
     :root { --kh-gold: #f59e0b; --kh-gold-dark: #d97706; }
     
     .features article { margin-bottom: 2em; }
@@ -110,25 +110,26 @@
         object-fit: cover;
     }
 
-    /* ปรับแต่ง Header Logo */
+    /* ปรับแต่ง Header: โลโก้ซ้าย + ไอคอนติดต่อขวาบน */
+    #header {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 15px 0 !important;
+    }
+
     #header .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; border-bottom: none; }
-    #header .logo img { height: 48px; width: auto; border-radius: 4px; }
+    #header .logo img { height: 50px; width: auto; border-radius: 4px; }
     #header .logo strong { color: var(--kh-gold-dark); font-size: 1.4em; }
 
-    /* ปุ่มติดต่อด่วน 3 สี */
-    .kh-quick-contact { 
-        margin: 25px 0; 
-        display: flex; 
-        gap: 20px; 
-        align-items: center; 
-        background: rgba(245, 158, 11, 0.05); 
-        padding: 15px; 
-        border-radius: 15px; 
-        border: 1px dashed var(--kh-gold); 
-        width: fit-content; 
+    /* กลุ่มไอคอนติดต่อขวาบนตามรูปที่วงกลม */
+    .kh-header-contacts {
+        display: flex;
+        gap: 18px;
+        align-items: center;
     }
-    .kh-quick-contact a { text-decoration: none; border-bottom: none; transition: transform 0.2s; display: inline-block; }
-    .kh-quick-contact a:hover { transform: scale(1.2); }
+    .kh-header-contacts a { text-decoration: none; border-bottom: none; transition: transform 0.2s; font-size: 1.6em; }
+    .kh-header-contacts a:hover { transform: scale(1.2); }
 
     /* Accessibility & Brand Colors */
     a.button.primary {
@@ -161,6 +162,12 @@
             <img src="images/logo-khonkaen.webp" alt="โลโก้ ขอนแก่นไฮเทค"> 
             <strong>ขอนแก่นไฮเทค</strong>
         </a>
+        
+        <div class="kh-header-contacts">
+            <a href="tel:+66944749874" class="icon solid fa-phone" style="color: #007bff;" title="โทรหาเรา"></a>
+            <a href="https://line.me/ti/p/~KKHITECH" class="icon brands fa-line" style="color: #00c300;" title="แอดไลน์"></a>
+            <a href="https://goo.gl/maps/16.4263489,102.8614127" class="icon solid fa-map-marker-alt" style="color: #dc3545;" title="ดูแผนที่"></a>
+        </div>
       </header>
 
       <section class="kh-hero">
@@ -174,13 +181,6 @@
               งานไฟฟ้า/ตู้ MDB • อินเทอร์เน็ตหอพัก • CCTV • คีย์การ์ด •
               โซล่าเซลล์ • แอร์ • ก่อสร้างต่อเติม
             </p>
-
-            <div class="kh-quick-contact">
-                <span style="font-weight: bold; color: #555;">ติดต่อด่วน:</span>
-                <a href="tel:+66944749874" class="icon solid fa-phone" style="color: #007bff; font-size: 1.8em;" title="โทรหาเรา"></a>
-                <a href="https://line.me/ti/p/~KKHITECH" class="icon brands fa-line" style="color: #00c300; font-size: 2.2em;" title="แอดไลน์"></a>
-                <a href="https://goo.gl/maps/YOUR_MAP_LINK" class="icon solid fa-map-marker-alt" style="color: #dc3545; font-size: 1.8em;" title="ดูแผนที่"></a>
-            </div>
 
             <div class="kh-cta">
               <a class="button primary" href="tel:+66944749874">โทร 094-474-9874</a>
