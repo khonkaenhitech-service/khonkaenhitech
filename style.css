@@ -608,3 +608,54 @@ a.button[href*="line.me"]:hover,
   .kh-review__top{ flex-direction:column; align-items:flex-start; }
   .kh-review__meta{ white-space:normal; overflow:visible; }
 }
+
+
+/* ===== Auto Reviews Marquee (ลื่นออโต้) ===== */
+.kh-reviews-marquee{
+  --kh-marquee-h: 0px;         /* JS จะใส่ให้ */
+  --kh-marquee-dur: 30s;       /* JS จะใส่ให้ */
+  height: 420px;               /* ปรับความสูงพื้นที่โชว์ */
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px;
+}
+
+/* ทำให้ดูเนียนขึ้นเวลามีเงา/ขอบ */
+.kh-reviews-marquee:before,
+.kh-reviews-marquee:after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  height:28px;
+  z-index:2;
+  pointer-events:none;
+  background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+.kh-reviews-marquee:after{
+  top:auto; bottom:0;
+  background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+.kh-reviews-marquee:before{ top:0; }
+.kh-reviews-marquee:after{ bottom:0; }
+
+.kh-reviews-track{
+  will-change: transform;
+  animation: khReviewsMarquee var(--kh-marquee-dur) linear infinite;
+}
+
+/* วางเมาส์/แตะค้าง = หยุดเลื่อน */
+.kh-reviews-marquee:hover .kh-reviews-track,
+.kh-reviews-marquee.is-paused .kh-reviews-track{
+  animation-play-state: paused;
+}
+
+@keyframes khReviewsMarquee{
+  from { transform: translateY(0); }
+  to   { transform: translateY(calc(-1 * var(--kh-marquee-h))); }
+}
+
+/* มือถือ: ลดความสูงลงหน่อย */
+@media (max-width: 980px){
+  .kh-reviews-marquee{ height: 360px; }
+}
+
