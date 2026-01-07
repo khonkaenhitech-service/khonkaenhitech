@@ -1414,6 +1414,14 @@ html, body { overflow-x: hidden; }
          url('assets/webfonts/fa-brands-400.woff') format('woff');
 }
 
+/* ซ่อนแถบตำแหน่งปัจจุบัน (Location Bar) ทั้งหมด */
+.kh-loc {
+    display: none !important;
+}
 
+/* ปรับระยะห่างด้านบนของเนื้อหาหลักใหม่เพื่อให้สมดุล */
+#main .inner {
+    padding-top: 2em !important;
+}
 
 
