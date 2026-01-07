@@ -259,4 +259,127 @@
 
 			});
 
+
+	/* =========================================================
+	   KH - Quick Contact Pills (Apply to every page)
+	   - Turns "ติดต่อด่วน" links into 4 capsule buttons (Tel/LINE/FB/Maps)
+	   - Works even if some pages have plain <a> links
+	   ========================================================= */
+	(function() {
+		// Prevent double init.
+		if (window.__khQuickContactPills) return;
+		window.__khQuickContactPills = true;
+
+		var $menu = $('#menu');
+		if ($menu.length === 0) return;
+
+		var $ul = $menu.children('ul');
+		if ($ul.length === 0) $ul = $menu.find('ul').first();
+		if ($ul.length === 0) return;
+
+		// Inject CSS once (so you don't need to edit style.css for this feature).
+		if ($('#khQuickContactPillsStyle').length === 0) {
+			$('<style id="khQuickContactPillsStyle">\
+#menu ul li a.button.kh-qc{\
+	width:100% !important;\
+	display:flex !important;\
+	flex-direction:column !important;\
+	align-items:center !important;\
+	justify-content:center !important;\
+	gap:6px !important;\
+	border:0 !important;\
+	border-radius:999px !important;\
+	padding:16px 12px !important;\
+	margin:10px 0 0 0 !important;\
+	line-height:1.15 !important;\
+	font-weight:900 !important;\
+	text-align:center !important;\
+	box-shadow:0 10px 18px rgba(0,0,0,.14) !important;\
+	letter-spacing:.2px !important;\
+}\
+#menu ul li a.button.kh-qc .icon{\
+	margin:0 !important;\
+	opacity:.95 !important;\
+	font-size:18px !important;\
+	line-height:1 !important;\
+}\
+#menu ul li a.button.kh-qc .kh-qc__txt{\
+	display:block !important;\
+	font-size:12px !important;\
+	text-transform:uppercase !important;\
+}\
+/* Colors */\
+#menu ul li a.button.kh-qc.btn-tel{background:#2c3e50 !important;color:#fff !important;}\
+#menu ul li a.button.kh-qc.btn-line{background:#06c755 !important;color:#fff !important;}\
+#menu ul li a.button.kh-qc.btn-fb{background:#1877f2 !important;color:#fff !important;}\
+#menu ul li a.button.kh-qc.btn-map{background:#ea4335 !important;color:#fff !important;}\
+#menu ul li a.button.kh-qc:hover{filter:brightness(1.05);}\
+#menu ul li a.button.kh-qc:active{transform:scale(.98);}\
+</style>').appendTo($head);
+		}
+
+		// Helpers
+		function findHrefStartsWith(prefix) {
+			var $a = $ul.find('a[href^="' + prefix + '"]').first();
+			return $a.length ? $a.attr('href') : '';
+		}
+		function findHrefContains(part) {
+			var $a = $ul.find('a[href*="' + part + '"]').first();
+			return $a.length ? $a.attr('href') : '';
+		}
+
+		// Prefer existing links (if a page already has them), fallback to defaults.
+		var telHref  = findHrefStartsWith('tel:') || 'tel:+66944749874';
+		var lineHref = findHrefContains('line.me') || 'https://line.me/ti/p/~KKHITECH';
+		var fbHref   = findHrefContains('facebook.com') || 'https://www.facebook.com/Line0944749874';
+		var mapHref  = findHrefContains('maps.app.goo.gl') || findHrefContains('google.com/maps') || 'https://maps.app.goo.gl/LyV85313vknT4hBE6';
+
+		// Display labels (ตามภาพ)
+		var telLabel  = 'โทร: 094-474-9874';
+		var lineLabel = 'LINE: KKHITECH';
+		var fbLabel   = 'FACEBOOK PAGE';
+		var mapLabel  = 'GOOGLE MAPS';
+
+		// Find the divider "ติดต่อด่วน"
+		var $divider = $ul.children('li.divider').filter(function() {
+			return $(this).text().trim().indexOf('ติดต่อด่วน') !== -1;
+		}).first();
+
+		if ($divider.length === 0) {
+			$divider = $('<li class="divider">ติดต่อด่วน</li>').appendTo($ul);
+		}
+
+		// Remove old items after divider until next divider
+		var $cur = $divider.next();
+		while ($cur.length && !$cur.hasClass('divider')) {
+			var $next = $cur.next();
+			$cur.remove();
+			$cur = $next;
+		}
+
+		// Insert our 4 buttons right after divider
+		function insertBtn(afterEl, href, btnClass, iconClass, label, newTab) {
+			var $a = $('<a></a>')
+				.attr('href', href)
+				.addClass('button kh-qc ' + btnClass)
+				.attr('aria-label', label);
+
+			if (newTab) $a.attr('target','_blank').attr('rel','noopener');
+
+			$a.append($('<span></span>').addClass('icon ' + iconClass));
+			$a.append($('<span></span>').addClass('kh-qc__txt').text(label));
+
+			var $li = $('<li></li>').append($a);
+			$li.insertAfter(afterEl);
+			return $li;
+		}
+
+		var $last = $divider;
+		$last = insertBtn($last, telHref,  'btn-tel', 'solid fa-phone',          telLabel,  false);
+		$last = insertBtn($last, lineHref, 'btn-line','brands fa-line',          lineLabel, false);
+		$last = insertBtn($last, fbHref,   'btn-fb',  'brands fa-facebook-f',    fbLabel,   true);
+		$last = insertBtn($last, mapHref,  'btn-map', 'solid fa-map-marker-alt', mapLabel,  true);
+
+	})();
+
 })(jQuery);
