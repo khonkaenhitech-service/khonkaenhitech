@@ -1,17 +1,13 @@
 User-agent: *
 Allow: /
 
-# ซ่อนไฟล์ระบบที่ไม่จำเป็น
-Disallow: /assets/css/
-Disallow: /assets/js/
-Disallow: /assets/sass/
-Disallow: /assets/webfonts/
+# เปิดให้ Google เข้าถึง CSS/JS เพื่อประมวลผลหน้าเว็บได้สมบูรณ์ (สำคัญมากสำหรับ Mobile SEO)
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/webfonts/
 
-# อนุญาตให้ดูรูปภาพได้ (สำคัญสำหรับ Image SEO)
-Allow: /images/*.jpg
-Allow: /images/*.png
-Allow: /images/*.webp
-Allow: /images/*.svg
+# อนุญาตให้ Index รูปภาพทุกประเภทรวมถึง WebP ที่คุณใช้
+Allow: /images/
 
 # ชี้เป้าแผนที่เว็บไซต์
 Sitemap: https://khonkaenhitech-service.github.io/khonkaenhitech/sitemap.xml
