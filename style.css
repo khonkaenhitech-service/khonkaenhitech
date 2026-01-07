@@ -468,6 +468,18 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   border-color: var(--kh-line-green2) !important;
 }
 
+a[href*="line.me"]{
+  background: var(--kh-line-green) !important;
+  border-color: var(--kh-line-green) !important;
+  color:#fff !important;
+  font-weight: 900;
+}
+a[href*="line.me"]:hover{
+  background: var(--kh-line-green2) !important;
+  border-color: var(--kh-line-green2) !important;
+}
+
+
 .btn-line:focus-visible{
   outline: 3px solid rgba(6,199,85,.35);
   outline-offset: 2px;
