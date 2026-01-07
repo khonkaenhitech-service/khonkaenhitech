@@ -2,59 +2,80 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/</loc>
-    <lastmod>2024-03-22</lastmod>
+    <lastmod>2026-01-08</lastmod>
     <priority>1.00</priority>
   </url>
+
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/services.html</loc>
+    <lastmod>2026-01-08</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/khonkaen-system.html</loc>
+    <lastmod>2026-01-08</lastmod>
     <priority>0.90</priority>
   </url>
+
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/laundry.html</loc>
+    <lastmod>2026-01-08</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/water.html</loc>
-    <priority>0.80</priority>
+    <lastmod>2026-01-08</lastmod>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/vending.html</loc>
+    <lastmod>2026-01-08</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/electrical.html</loc>
+    <lastmod>2026-01-08</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/security.html</loc>
+    <lastmod>2026-01-08</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/internet.html</loc>
+    <lastmod>2026-01-08</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/solar-air.html</loc>
+    <lastmod>2026-01-08</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/construction.html</loc>
+    <lastmod>2026-01-08</lastmod>
     <priority>0.80</priority>
   </url>
+
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/contact.html</loc>
+    <lastmod>2026-01-08</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/elements.html</loc>
+    <lastmod>2026-01-08</lastmod>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/generic.html</loc>
-    <priority>0.60</priority>
+    <lastmod>2026-01-08</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/accessibility.html</loc>
+    <lastmod>2026-01-08</lastmod>
+    <priority>0.50</priority>
   </url>
 </urlset>
