@@ -5,7 +5,6 @@
     <lastmod>2026-01-08</lastmod>
     <priority>1.00</priority>
   </url>
-
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/services.html</loc>
     <lastmod>2026-01-08</lastmod>
@@ -16,7 +15,6 @@
     <lastmod>2026-01-08</lastmod>
     <priority>0.90</priority>
   </url>
-
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/laundry.html</loc>
     <lastmod>2026-01-08</lastmod>
@@ -57,7 +55,6 @@
     <lastmod>2026-01-08</lastmod>
     <priority>0.80</priority>
   </url>
-
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/contact.html</loc>
     <lastmod>2026-01-08</lastmod>
@@ -70,11 +67,6 @@
   </url>
   <url>
     <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/generic.html</loc>
-    <lastmod>2026-01-08</lastmod>
-    <priority>0.50</priority>
-  </url>
-  <url>
-    <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/accessibility.html</loc>
     <lastmod>2026-01-08</lastmod>
     <priority>0.50</priority>
   </url>
