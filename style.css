@@ -621,3 +621,37 @@ html, body { overflow-x: hidden; }
 @media (prefers-reduced-motion: reduce){
   #menu ul li.active > a::after, #menu a.active::after { animation: none !important; }
 }
+
+
+/* =========================================
+   แก้ไขสีไอคอนใน Header (ทำให้เด่นและเป็นสี)
+   ========================================= */
+
+/* ปรับให้ไอคอนชัดขึ้นและใหญ่ขึ้น */
+#header .icons a.icon {
+    opacity: 1 !important;     /* เลิกทำจาง ให้ชัด 100% */
+    font-size: 1.3em;          /* ขยายขนาดให้ใหญ่ขึ้น */
+    transition: transform 0.2s; /* เพิ่มลูกเล่นขยับตอนชี้ */
+}
+
+/* ตั้งสีแยกตามชนิดไอคอน */
+#header .icons .fa-phone {
+    color: #007bff !important; /* รูปโทรศัพท์: สีฟ้าสด */
+}
+
+#header .icons .fa-line {
+    color: #00c300 !important; /* LINE: สีเขียวของไลน์ */
+}
+
+#header .icons .fa-map-marker-alt {
+    color: #dc3545 !important; /* หมุดแผนที่: สีแดง */
+}
+
+#header .icons .fa-facebook-f {
+    color: #1877f2 !important; /* Facebook: สีน้ำเงิน */
+}
+
+/* เพิ่มเอฟเฟกต์ตอนเอาเมาส์ไปชี้ (Hover) */
+#header .icons a.icon:hover {
+    transform: scale(1.2);     /* ขยายใหญ่ขึ้นนิดนึงตอนชี้ */
+}
