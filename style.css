@@ -418,3 +418,23 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 
   }
 }
+
+
+/* Facebook Embed – สูงขึ้น/เต็มกว้าง */
+.fb-embed{
+  width:100%;
+  max-width: 980px;   /* อยากให้เต็มหน้าเพิ่มเป็น 1200px ได้ */
+  margin: 0 auto;
+}
+
+.fb-iframe{
+  width:100% !important;
+  height: 900px;      /* Desktop */
+  border:0;
+}
+
+@media (max-width: 980px){
+  .fb-iframe{
+    height: 1250px;   /* Mobile: ยาวขึ้น */
+  }
+}
