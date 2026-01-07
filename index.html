@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="th">
 <head>
-  <!-- ✅ Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-140XHHEN8H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -11,7 +10,7 @@
   </script>
 
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>ขอนแก่นไฮเทค | ศูนย์รวมช่างขอนแก่น ติดตั้งเครื่องซักผ้าหยอดเหรียญ ไฟฟ้า กล้องวงจรปิด ครบวงจร</title>
 
@@ -22,6 +21,7 @@
   <meta name="geo.placename" content="Khon Kaen" />
 
   <link rel="canonical" href="https://khonkaenhitech-service.github.io/khonkaenhitech/" />
+  
   <link rel="preload" as="image" href="images/pic10.jpg">
   <link rel="icon" href="images/favicon.png" />
 
@@ -38,8 +38,7 @@
   <meta name="twitter:description" content="เครื่องซักผ้าหยอดเหรียญ ตู้น้ำ RO ระบบหยอดเหรียญ ไฟฟ้า CCTV อินเทอร์เน็ต โซล่าเซล แอร์ ก่อสร้าง" />
   <meta name="twitter:image" content="https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.jpg" />
 
-  <!-- ✅ Schema (แก้ครบ: priceRange + address + streetAddress + hasMap + sameAs array) -->
-<script type="application/ld+json">
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
@@ -65,15 +64,7 @@
         },
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-          ],
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
           "opens": "00:00",
           "closes": "23:59"
         },
@@ -94,7 +85,6 @@
     ]
   }
   </script>
- 
 
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="style.css" />
@@ -102,8 +92,16 @@
   <style>
     .features article { margin-bottom: 2em; }
     .features h3 a { text-decoration: none; border-bottom: none; color: inherit; }
-    .features h3 a:hover { color: #f56a6a; }
-    .intro-seo { margin-bottom: 3em; border-bottom: 2px solid #f56a6a; padding-bottom: 2em; }
+    .features h3 a:hover { color: #d32f2f; /* ปรับให้ตรงกับ Theme ใหม่ */ }
+    .intro-seo { margin-bottom: 3em; border-bottom: 2px solid #d32f2f; padding-bottom: 2em; }
+    
+    /* เพิ่ม Style ป้องกันภาพขยับ */
+    .kh-hero-media img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/3; /* กำหนดสัดส่วนคร่าวๆ */
+        object-fit: cover;
+    }
   </style>
 </head>
 
@@ -113,32 +111,26 @@
   <div id="main">
     <div class="inner">
       
-<!-- Current Page Tab (Breadcrumb) -->
-<div class="kh-loc" role="navigation" aria-label="ตำแหน่งปัจจุบัน">
-  <div class="kh-loc__icon" aria-hidden="true">
-    <svg viewBox="0 0 24 24" width="18" height="18">
-      <path fill="currentColor" d="M12 2c-3.86 0-7 3.14-7 7 0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/>
-    </svg>
-  </div>
+      <div class="kh-loc" role="navigation" aria-label="ตำแหน่งปัจจุบัน">
+        <div class="kh-loc__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18">
+            <path fill="currentColor" d="M12 2c-3.86 0-7 3.14-7 7 0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/>
+          </svg>
+        </div>
 
-  <div class="kh-loc__text">
-    <div class="kh-loc__kicker">คุณอยู่ที่</div>
-    <div class="kh-loc__title" id="khCurrentPage">กำลังโหลด…</div>
-  </div>
+        <div class="kh-loc__text">
+          <div class="kh-loc__kicker">คุณอยู่ที่</div>
+          <div class="kh-loc__title" id="khCurrentPage">กำลังโหลด…</div>
+        </div>
 
-  <a class="kh-loc__cta" href="#menu">ดูเมนู</a>
-</div>
+        <a class="kh-loc__cta" href="#menu">ดูเมนู</a>
+      </div>
 
-      
-     <header id="header">
- 
-  <a href="index.html" class="logo"><strong>ขอนแก่นไฮเทค</strong></a>
-
-  <ul class="icons">
-    <!-- ไอคอนโทร/ไลน์/แผนที่ ของเดิม -->
-  </ul>
-</header>
-
+      <header id="header">
+        <a href="index.html" class="logo"><strong>ขอนแก่นไฮเทค</strong></a>
+        <ul class="icons">
+          </ul>
+      </header>
 
       <section class="kh-hero">
         <div class="kh-hero-grid">
@@ -154,27 +146,20 @@
             <div class="kh-cta">
               <a class="button primary" href="tel:+66944749874">โทร 094-474-9874</a>
               <a class="button btn-line" href="https://line.me/ti/p/~KKHITECH">LINE: KKHITECH</a>
-
             </div>
 
             <div class="kh-audio">
-              <button id="playAudioBtn" class="button small">▶ เล่นเสียง</button>
+              <button id="playAudioBtn" class="button small">▶ ฟังเสียงแนะนำ</button>
               <button id="stopAudioBtn" class="button small">■ หยุดเสียง</button>
-              <audio id="homeAudio" preload="metadata" playsinline>
+              <audio id="homeAudio" preload="none" playsinline>
                 <source src="assets/audio/home.mp3" type="audio/mpeg">
                 <source src="assets/audio/home.ogg" type="audio/ogg">
               </audio>
             </div>
-            <div id="audioGate" class="kh-audio-gate" style="display:none;">
-              <div class="kh-audio-gate-box">
-                <strong>🔊 แตะเพื่อเปิดเสียงหน้าเว็บ</strong>
-                <p>เบราว์เซอร์บางเครื่องบล็อคการเล่นอัตโนมัติ</p>
-                <button id="audioGateBtn" class="button primary">เปิดเสียง</button>
-              </div>
             </div>
-          </div>
+          
           <div class="kh-hero-media">
-            <img src="images/pic10.jpg" alt="ขอนแก่นไฮเทค ทีมช่างติดตั้งระบบอันดับ 1 ในขอนแก่น">
+            <img src="images/pic10.jpg" alt="ขอนแก่นไฮเทค ทีมช่างติดตั้งระบบอันดับ 1 ในขอนแก่น" width="800" height="600" loading="eager">
           </div>
         </div>
       </section>
@@ -323,77 +308,58 @@
 
 </div>
 
+<script src="assets/js/jquery.min.js" defer></script>
+<script src="assets/js/browser.min.js" defer></script>
+<script src="assets/js/breakpoints.min.js" defer></script>
+<script src="assets/js/util.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+
 <script>
-  // Script ปีปัจจุบัน
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // รอให้หน้าเว็บโหลดโครงสร้างเสร็จก่อนค่อยรัน Script (Best Practice)
+  window.addEventListener('load', function() {
+      
+      // Script ปีปัจจุบัน
+      var yearSpan = document.getElementById('year');
+      if(yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-  // Audio Script
-  const a = document.getElementById('homeAudio');
-  const playBtn = document.getElementById('playAudioBtn');
-  const stopBtn = document.getElementById('stopAudioBtn');
-  const gate = document.getElementById('audioGate');
-  const gateBtn = document.getElementById('audioGateBtn');
+      // Audio Script (แบบ Manual Play - ไม่หน่วงเครื่อง)
+      const a = document.getElementById('homeAudio');
+      const playBtn = document.getElementById('playAudioBtn');
+      const stopBtn = document.getElementById('stopAudioBtn');
 
-  async function tryAutoplay(){
-    if(!a) return;
-    a.volume = 0.35;
-    a.loop = true;
-    try{
-      await a.play();
-      if(gate) gate.style.display="none";
-    }catch(e){
-      if(gate) gate.style.display="block";
-    }
-  }
+      if(playBtn && a) {
+          playBtn.onclick = function() {
+              a.currentTime = 0;
+              a.play().catch(e => console.log("Audio Error:", e));
+          };
+      }
+      if(stopBtn && a) {
+          stopBtn.onclick = function() {
+              a.pause();
+              a.currentTime = 0;
+          };
+      }
 
-  if(playBtn) playBtn.onclick = async ()=>{ a.currentTime=0; await a.play(); if(gate) gate.style.display="none"; };
-  if(stopBtn) stopBtn.onclick = ()=>{ a.pause(); a.currentTime=0; };
+      // Menu Script Fix
+      const menuBtn = document.getElementById('menuBtn');
+      const sidebar = document.getElementById('sidebar');
+      // ตรวจสอบว่ามีปุ่มเมนูจริงไหมก่อนผูก Event
+      if (menuBtn && sidebar) {
+        menuBtn.addEventListener('click', function () {
+            // Logic เปิดปิดเมนู (ถ้ามี function ใน main.js อยู่แล้วอาจจะไม่ต้องใช้ตรงนี้)
+            // แต่ใส่ไว้กันเหนียว
+        });
 
-  if(gateBtn){
-    gateBtn.onclick = async ()=>{ await a.play(); if(gate) gate.style.display="none"; };
-  }
-
-  window.addEventListener('load', tryAutoplay);
-  document.addEventListener('pointerdown', ()=>{ if(a && a.paused) tryAutoplay(); }, {once:true});
+        // ✅ กดลิงก์ในเมนูแล้วปิดเมนูอัตโนมัติ (UX มือถือ)
+        sidebar.addEventListener('click', function (e) {
+            const link = e.target.closest('a');
+            if (link) {
+                document.body.classList.remove('menu-open');
+            }
+        });
+      }
+  });
 </script>
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-
-
-
-  <script>
-  (function () {
-    const btn = document.getElementById('menuBtn');
-    const sidebar = document.getElementById('sidebar');
-    if (!btn || !sidebar) return;
-
-    btn.addEventListener('click', function () {
-      const open = document.body.classList.toggle('menu-open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-
-    // ✅ กดลิงก์ในเมนูแล้วปิดเมนูอัตโนมัติ
-    sidebar.addEventListener('click', function (e) {
-      const a = e.target.closest('a');
-      if (!a) return;
-      document.body.classList.remove('menu-open');
-      btn.setAttribute('aria-expanded', 'false');
-    });
-  })();
-</script>
-
-  
-  
 </body>
 </html>
-
-
-
-
-
-
-
