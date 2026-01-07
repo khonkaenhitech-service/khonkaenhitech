@@ -655,3 +655,28 @@ html, body { overflow-x: hidden; }
 #header .icons a.icon:hover {
     transform: scale(1.2);     /* ขยายใหญ่ขึ้นนิดนึงตอนชี้ */
 }
+
+/* ============================================================
+   FIX: แก้ปัญหา Font Display (เพื่อให้ Google PageSpeed ชอบ)
+   สั่งให้แสดงผลข้อความ/ไอคอนทันที (Swap) ไม่ต้องรอโหลดเสร็จ
+   ============================================================ */
+
+/* สำหรับไอคอนทั่วไป (Solid) เช่น รูปโทรศัพท์, แผนที่ */
+@font-face {
+    font-family: 'Font Awesome 5 Free';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('assets/webfonts/fa-solid-900.woff2') format('woff2'),
+         url('assets/webfonts/fa-solid-900.woff') format('woff');
+}
+
+/* สำหรับไอคอนแบรนด์ (Brands) เช่น LINE, Facebook */
+@font-face {
+    font-family: 'Font Awesome 5 Brands';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('assets/webfonts/fa-brands-400.woff2') format('woff2'),
+         url('assets/webfonts/fa-brands-400.woff') format('woff');
+}
