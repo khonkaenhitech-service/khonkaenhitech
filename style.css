@@ -852,3 +852,7 @@ a[href*="line.me"]:not(.button){
   background: rgba(211, 47, 47, 0.12) !important;
 }
 
+   #menu, #menu *{
+  text-shadow: none;
+}
+
