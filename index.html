@@ -22,6 +22,8 @@
   <link rel="preload" as="image" href="images/pic10.webp" fetchpriority="high">
   <link rel="icon" href="images/favicon.png" />
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
@@ -110,7 +112,7 @@
         object-fit: cover;
     }
 
-    /* ปรับแต่ง Header: โลโก้ซ้าย + ไอคอนติดต่อขวาบน */
+    /* --- ส่วนแก้ไข HEADER ตามที่ขอ --- */
     #header {
         display: flex !important;
         justify-content: space-between !important;
@@ -122,14 +124,30 @@
     #header .logo img { height: 50px; width: auto; border-radius: 4px; }
     #header .logo strong { color: var(--kh-gold-dark); font-size: 1.4em; }
 
-    /* กลุ่มไอคอนติดต่อขวาบนตามรูปที่วงกลม */
-    .kh-header-contacts {
+    /* ปรับแต่งกลุ่มไอคอนขวาบน */
+    #header .icons {
         display: flex;
-        gap: 18px;
+        gap: 15px; /* ระยะห่าง */
         align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
     }
-    .kh-header-contacts a { text-decoration: none; border-bottom: none; transition: transform 0.2s; font-size: 1.6em; }
-    .kh-header-contacts a:hover { transform: scale(1.2); }
+    
+    #header .icons li { margin: 0; padding: 0; }
+
+    #header .icons a { 
+        text-decoration: none; 
+        border-bottom: none; 
+        transition: transform 0.2s; 
+        font-size: 1.8em; /* ขนาดไอคอนใหญ่ขึ้นตามภาพ */
+    }
+    #header .icons a:hover { transform: scale(1.2); }
+
+    /* --- กำหนดสีไอคอน (ฟ้า, เขียว, แดง) --- */
+    #header .icons .fa-phone { color: #007bff !important; }        /* โทร: สีฟ้า */
+    #header .icons .fa-line { color: #00B900 !important; }         /* LINE: สีเขียว */
+    #header .icons .fa-map-marker-alt { color: #dc3545 !important; } /* แผนที่: สีแดง */
 
     /* Accessibility & Brand Colors */
     a.button.primary {
@@ -161,7 +179,7 @@
         <a href="index.html" class="logo">
             <img src="images/logo-khonkaen.webp" alt="โลโก้ ขอนแก่นไฮเทค"> 
             <strong>ขอนแก่นไฮเทค</strong>
-      </a>
+        </a>
         <ul class="icons">
           <li>
             <a href="tel:+66944749874" class="icon solid fa-phone" title="โทร 094-474-9874"><span class="label">โทร</span></a>
