@@ -1,281 +1,533 @@
 /* ==========================================================================
-   KHON KAEN HITECH – style.css (CLEAN FINAL)
-   - Global Header: Logo + Icons right on every page
-   - Menu: Active highlight always visible
-   - Sidebar: Contact buttons aligned + not clipped
-   - Hide top location bar (.kh-loc)
+   KHON KAEN HITECH - GOD TIER MASTER STYLESHEET
+   ไฟล์นี้ควบคุมความสวยงามของทุกหน้า (SEO Optimized Layout)
    ========================================================================== */
 
-/* ============ 1) VARIABLES ============ */
-:root{
-  --kh-primary:#c9302c;
-  --kh-primary-dark:#b71c1c;
-  --kh-accent:#2c3e50;
-  --kh-text:#333;
-  --kh-border:rgba(0,0,0,.10);
-  --kh-radius:12px;
-  --kh-shadow:0 4px 15px rgba(0,0,0,.06);
+/* 1. CORE VARIABLES & SETTINGS */
+:root {
+  /* แก้ไข: เปลี่ยนสีแดงให้เข้มขึ้น เพื่อให้ผ่านเกณฑ์ Google Audit (อ่านง่ายขึ้น) */
+  --kh-primary: #d32f2f;       /* แก้จาก #f56a6a เป็น #d32f2f */
+  --kh-primary-dark: #b71c1c;  /* แก้จาก #c0392b เป็น #b71c1c (เพื่อให้เข้มกว่าตัวบน) */
+  
+  /* ค่าอื่นๆ คงเดิม */
+  --kh-accent: #2c3e50;        /* สีน้ำเงินเข้ม */
+  --kh-text: #333333;          /* สีตัวอักษรหลัก */
+  --kh-light: #f9f9f9;         /* สีพื้นหลังอ่อน */
+  --kh-border: rgba(0,0,0,0.1);
+  --kh-radius: 12px;           /* ความมนของมุม */
+  --kh-shadow: 0 4px 15px rgba(0,0,0,0.05); /* เงาแบบนุ่ม */
 
-  --kh-gold:#fbbf24;
-  --kh-gold2:#f59e0b;
-  --kh-goldGlow:rgba(245,158,11,.35);
-
-  --kh-line:rgba(17,24,39,.12);
-  --kh-soft:rgba(201,48,44,.10);
+  /* KH Custom Colors */
+  --kh-red: #d32f2f;          /* ใช้โทนเดียวกับ primary */
+  --kh-red2: #b71c1c;
+  --kh-soft: rgba(211, 47, 47, 0.10);
+  --kh-line: rgba(17,24,39,.12);
+  --kh-line-green:#06C755;
+  --kh-line-green2:#05b34c;
 }
 
-html{
-  scroll-behavior:smooth;
-  text-rendering:optimizeLegibility;
-  -webkit-font-smoothing:antialiased;
+/* ปรับ Scrollbar ให้สวยงาม */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--kh-primary); }
+
+/* ==========================================================================
+   2. TYPOGRAPHY & HEADINGS (SEO FRIENDLY)
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--kh-accent);
+  font-weight: 700;
+  margin-bottom: 0.8em;
 }
 
-body{ color:var(--kh-text); }
-
-/* ============ 2) HIDE TOP BAR (ถ้าต้องการลบแถบ “คุณอยู่ที่…”) ============ */
-.kh-loc{ display:none !important; }
-
-/* ============ 3) HEADER (GLOBAL) ============ */
-#header{
-  width:100%;
-  display:flex !important;
-  align-items:center;
-  justify-content:space-between;
-  gap:14px;
-
-  padding:14px 0;
-  border-bottom:3px solid #d32f2f;
+h1.main {
+  color: var(--kh-primary-dark);
+  border-bottom: 3px solid var(--kh-primary);
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 1.5em;
 }
 
-/* LOGO AREA */
-#header .logo{
-  display:inline-flex !important;
+h2 {
+  border-left: 5px solid var(--kh-primary);
+  padding-left: 15px;
+  background: linear-gradient(to right, rgba(211, 47, 47, 0.05), transparent);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* ลิงก์เบอร์โทรและไลน์ ให้เด่นชัด */
+a[href^="tel:"], a[href^="https://line.me"] {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   3. HERO SECTION (ส่วนหัวของหน้า)
+   ========================================================================== */
+.kh-hero { 
+  margin-top: 20px; 
+  margin-bottom: 40px;
+}
+
+.kh-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.kh-hero-text h1 {
+  font-size: 2.2em;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.kh-sub {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+  border-left: 3px solid #ddd;
+  padding-left: 15px;
+}
+
+.kh-hero-media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--kh-radius);
+  box-shadow: var(--kh-shadow);
+  border: 1px solid var(--kh-border);
+  transition: transform 0.3s ease;
+}
+
+.kh-hero-media img:hover {
+  transform: scale(1.02);
+}
+
+/* CTA Buttons Container */
+.kh-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+@media (max-width: 980px) {
+  .kh-hero-grid { grid-template-columns: 1fr; }
+  .kh-hero-text { order: 2; }
+  .kh-hero-media { order: 1; margin-bottom: 20px; }
+}
+
+/* ==========================================================================
+   4. SEO TABLES (ตารางพื้นที่และราคา)
+   ========================================================================== */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 2em 0;
+  border-radius: var(--kh-radius);
+  box-shadow: var(--kh-shadow);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  margin: 0;
+}
+
+/* Default Table Style */
+table th {
+  background: var(--kh-accent);
+  color: #fff;
+  font-weight: 600;
+  padding: 15px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+
+table tr:nth-child(even) { background-color: #f8f9fa; }
+table tr:hover { background-color: #f1f1f1; transition: 0.2s; }
+
+/* Special Tables variations */
+.solar-table th { background: #f1c40f; color: #333; text-align: center; }
+.solar-table td { text-align: center; }
+
+.compare-table th { background: #2c3e50; text-align: center; }
+.compare-table td { text-align: center; border-right: 1px solid #eee; }
+.compare-table td:first-child { text-align: left; font-weight: bold; background: #fafafa; }
+
+.zone-table th { background: var(--kh-primary); }
+.zone-table td:first-child { font-weight: bold; color: var(--kh-primary-dark); width: 30%; }
+
+/* ==========================================================================
+   5. FEATURE CARDS & LISTS
+   ========================================================================== */
+/* Check List (ติ๊กถูก) */
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+.check-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.check-list li:before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: #2ecc71;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Card Grid System */
+.kh-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.kh-card {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--kh-border);
+  border-radius: var(--kh-radius);
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.kh-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  border-color: var(--kh-primary);
+}
+
+.kh-card h3 { color: var(--kh-primary); margin-bottom: 10px; font-size: 1.2em; }
+.kh-card p { font-size: 0.9em; margin: 0; color: #666; }
+
+/* Project/Portfolio Card */
+.project-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: var(--kh-radius);
+  padding: 15px;
+  height: 100%;
+  box-shadow: var(--kh-shadow);
+}
+.project-card .image.fit { margin-bottom: 15px; }
+.project-card .image.fit img { border-radius: 8px; }
+.project-card h3 { font-size: 1.1em; margin-bottom: 0.5em; }
+
+/* ==========================================================================
+   6. ALERTS & BOXES (กล่องข้อความ)
+   ========================================================================== */
+.kh-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: var(--kh-radius);
+  border: 1px solid var(--kh-border);
+  margin-bottom: 20px;
+}
+
+.alert-box, .alert-security {
+  background-color: #fff3cd;
+  border-left: 5px solid #ffc107;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 2em 0;
+  color: #856404;
+}
+.alert-box h3, .alert-security h3 { color: #856404; border: none; padding: 0; background: none; }
+
+.highlight-box {
+  background-color: #e8f4fd;
+  border-left: 5px solid #3498db;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 2em 0;
+}
+
+.brand-box {
+  background: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  border-radius: var(--kh-radius);
+  border: 1px solid #eee;
+}
+.brand-list span {
+  display: inline-block;
+  background: #fff;
+  padding: 5px 15px;
+  margin: 5px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.9em;
+}
+
+/* ==========================================================================
+   7. AUDIO PLAYER (แบบ Manual)
+   ========================================================================== */
+.kh-audio {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 15px;
+}
+.kh-audio button {
+  padding: 0 15px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 0.8em;
+}
+/* Audio Gate ถูกลบออกแล้วเพื่อ Performance */
+
+/* ==========================================================================
+   8. SIDEBAR & NAVIGATION (MENU)
+   ========================================================================== */
+#menu ul li.divider {
+  margin: 20px 0 10px 0;
+  padding: 8px 10px;
+  font-weight: 800;
+  font-size: 0.9em;
+  color: #b30000;
+  background: rgba(179,0,0,0.05);
+  border-left: 4px solid #b30000;
+  border-top: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#menu ul li:not(.divider) a {
+  padding-left: 15px;
+  transition: 0.2s;
+  border-bottom: none;
+}
+#menu ul li:not(.divider) a:hover {
+  color: var(--kh-primary);
+  padding-left: 20px;
+}
+
+.kh-footer, #footer {
+  font-size: 0.8em;
+  color: #aaa;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+/* ==========================================================================
+   9. UTILITIES & ICONS
+   ========================================================================== */
+.check-icon { color: #2ecc71; font-weight: bold; }
+.cross-icon { color: #e74c3c; font-weight: bold; }
+.highlight-green { color: #27ae60; font-weight: bold; }
+.brand-tag {
+  display: inline-block;
+  background: #eee;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  margin-right: 5px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.kh-embed {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+  border-radius: var(--kh-radius);
+  border: 1px solid #ddd;
+}
+.kh-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* =========================
+   MOBILE FIX
+   ========================= */
+ul, ol { list-style: none; margin: 0; padding: 0; }
+li { margin: 0; padding: 0; }
+html, body { overflow-x: hidden; }
+
+@media (max-width: 980px) {
+  #main{
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  #main .inner{
+    padding: 22px 16px !important;
+  }
+  .kh-hero-grid{ grid-template-columns: 1fr; }
+}
+
+/* =========================
+   KH - Current Page Tab (สวยๆ)
+   ========================= */
+.kh-loc{
+  display:flex;
   align-items:center;
   gap:12px;
-  text-decoration:none;
-  flex:0 1 auto;
-  min-width:0;
+  padding: 12px 14px;
+  margin: 6px 0 16px;
+  border-radius: 16px;
+  background: radial-gradient(900px 240px at 15% 0%, rgba(211, 47, 47, 0.14), transparent 55%), #fff;
+  border: 1px solid var(--kh-line);
+  box-shadow: 0 14px 34px rgba(0,0,0,.10);
+  position: sticky;
+  top: 10px;
+  z-index: 5;
 }
 
-/* fallback logo (ถ้าหน้าไหนไม่มี <img>) */
-#header .logo::before{
-  content:"";
-  width:52px;
-  height:52px;
-  flex:0 0 52px;
-  background:url("images/logo-khonkaen.webp") center/contain no-repeat;
-  border-radius:8px;
+.kh-loc__icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  background: linear-gradient(135deg, var(--kh-red), var(--kh-red2));
+  box-shadow: 0 10px 22px rgba(211, 47, 47, 0.20);
+  flex: 0 0 auto;
 }
 
-/* ถ้ามี <img> อยู่แล้ว ให้ใช้ <img> และซ่อน ::before */
-#header .logo:has(img)::before{ content:none; }
+.kh-loc__text{ min-width: 0; }
+.kh-loc__kicker{
+  font-size: 12px;
+  letter-spacing: .2px;
+  color: rgba(17,24,39,.60);
+  line-height: 1.1;
+}
+.kh-loc__title{
+  font-size: 16px;
+  font-weight: 900;
+  color: #111827;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kh-loc__cta{
+  margin-left:auto;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--kh-soft);
+  border: 1px solid rgba(211, 47, 47, 0.22);
+  color: var(--kh-red2);
+  font-weight: 900;
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+.kh-loc__cta:hover{ background: rgba(211, 47, 47, 0.14); }
 
-#header .logo img{
-  width:52px;
-  height:52px;
-  object-fit:contain;
-  display:block;
-  border-radius:8px;
+@media (max-width: 980px){
+  .kh-loc{ top: 8px; }
+  .kh-loc__cta{ padding: 9px 10px; }
 }
 
-#header .logo strong{
-  font-size:26px;
-  font-weight:900;
-  line-height:1;
-  color:#f26a00;
-  white-space:nowrap;
+/* =========================================
+   SIDEBAR ACTION BUTTONS (ปุ่มติดต่อ 4 สี)
+   ========================================= */
+
+/* จัดทรงปุ่มให้เต็มกรอบและสวยงาม */
+#menu ul li a.button {
+    width: 100% !important;      /* กว้างเต็ม */
+    display: block;              /* เป็นบล็อก */
+    text-align: center;          /* ตัวหนังสืออยู่กลาง */
+    margin-bottom: 8px;          /* เว้นระยะห่างระหว่างปุ่ม */
+    border: none !important;     /* เอาเส้นขอบออก */
+    border-radius: 50px;         /* ทำมุมมนๆ เหมือนแคปซูล */
+    font-weight: bold;
+    font-size: 0.9em;            /* ปรับขนาดตัวอักษรไม่ให้ล้น */
+    line-height: 2.5em;          /* จัดความสูงบรรทัด */
+    height: auto;
+    padding: 0 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15); /* เงาปุ่มลอยมีมิติ */
+    transition: all 0.2s ease;
 }
 
-/* ICONS RIGHT */
-#header .icons{
-  list-style:none;
-  margin:0 0 0 auto !important;
-  padding:0;
-
-  display:flex !important;
-  align-items:center;
-  gap:14px;
-}
-#header .icons li{ margin:0; padding:0; }
-
-#header .icons a.icon{
-  opacity:1 !important;
-  font-size:1.3em;
-  transition:transform .15s ease;
-}
-#header .icons a.icon:hover{ transform:scale(1.12); }
-
-#header .icons .fa-phone{ color:#007bff !important; }
-#header .icons .fa-line{ color:#00c300 !important; }
-#header .icons .fa-map-marker-alt{ color:#dc3545 !important; }
-#header .icons .fa-facebook-f{ color:#1877f2 !important; }
-
-@media (max-width:480px){
-  #header{ flex-wrap:wrap; }
-  #header .icons{ width:100%; justify-content:flex-end; }
+/* เอฟเฟกต์ตอนกดปุ่ม (ปุ่มยุบลง) */
+#menu ul li a.button:active {
+    transform: scale(0.98);
+    box-shadow: none;
 }
 
-/* ============ 4) CONTENT – HEADINGS (เบาๆ) ============ */
-header.main h1{
-  color:var(--kh-primary-dark);
-  border-bottom:3px solid var(--kh-primary);
-  display:inline-block;
-  padding-bottom:6px;
-  margin-bottom:1.2em;
+/* --- กำหนดสีแต่ละปุ่ม --- */
+
+/* 1. ปุ่มโทร (สีน้ำเงินเข้ม กรมท่า) */
+.btn-tel {
+    background-color: #2c3e50 !important;
+    color: #ffffff !important;
 }
-h2{
-  border-left:5px solid var(--kh-primary);
-  padding:6px 0 6px 14px;
-  background:linear-gradient(to right, rgba(201,48,44,.06), transparent);
+.btn-tel:hover {
+    background-color: #34495e !important;
 }
 
-/* ============ 5) IMAGES – CLS FIX ============ */
-.image.main img,
-.main-image img{
-  width:100%;
-  height:auto;
-  aspect-ratio:16/9;
-  object-fit:cover;
-  border-radius:var(--kh-radius);
-  box-shadow:var(--kh-shadow);
-  border:1px solid var(--kh-border);
-  display:block;
-  background:#eee;
+/* 2. ปุ่ม LINE (สีเขียว) */
+.btn-line, a[href*="line.me"] {
+    background-color: #06c755 !important;
+    color: #ffffff !important;
+}
+.btn-line:hover, a[href*="line.me"]:hover {
+    background-color: #05b54d !important;
 }
 
-/* ============ 6) SIDEBAR MENU BASE ============ */
-#menu ul{
-  list-style:none;
-  margin:0;
-  padding:0;
+/* 3. ปุ่ม Facebook (สีน้ำเงินแบรนด์) */
+.btn-fb {
+    background-color: #1877f2 !important;
+    color: #ffffff !important;
+}
+.btn-fb:hover {
+    background-color: #166fe5 !important;
 }
 
-#menu ul li.divider{
-  margin:18px 0 10px;
-  padding:8px 10px;
-  font-weight:900;
-  font-size:.9em;
-  color:#b30000;
-  background:rgba(179,0,0,.05);
-  border-left:4px solid #b30000;
-  letter-spacing:.5px;
+/* 4. ปุ่ม Google Maps (สีแดง Google) */
+.btn-map {
+    background-color: #ea4335 !important;
+    color: #ffffff !important;
+}
+.btn-map:hover {
+    background-color: #d33828 !important;
 }
 
-/* normal links */
-#menu ul li:not(.divider) > a{
-  border-bottom:none;
-  padding-left:15px;
-  transition:.15s ease;
-}
-#menu ul li:not(.divider) > a:hover{
-  color:var(--kh-primary);
-  padding-left:20px;
+/* ปรับระยะห่างไอคอนในปุ่ม */
+#menu ul li a.button .icon {
+    margin-right: 8px;
+    opacity: 0.9;
 }
 
-/* ============ 7) MENU ACTIVE HIGHLIGHT (แก้ “กดแล้วไม่ขึ้นสีพื้น”) ============ */
-/* รองรับทั้ง: a.active / li.active > a / aria-current */
-#menu ul li.active > a:not(.button),
-#menu a.active:not(.button),
-#menu a[aria-current="page"]:not(.button){
-  position:relative !important;
-  overflow:hidden !important;
-
-  border-left:4px solid var(--kh-gold2) !important;
-  padding-left:calc(1.65em - 4px) !important;
-
-  border-radius:12px !important;
-  color:#111827 !important;
-  font-weight:900 !important;
-
-  background:linear-gradient(90deg,
-    rgba(0,0,0,.18) 0%,
-    rgba(245,158,11,.18) 35%,
-    rgba(251,191,36,.14) 60%,
-    rgba(0,0,0,.14) 100%
-  ) !important;
-
-  box-shadow:
-    inset 0 0 0 1px rgba(245,158,11,.26),
-    0 10px 22px rgba(0,0,0,.08),
-    0 0 18px rgba(245,158,11,.10) !important;
-}
-
-/* shine เล็กๆ */
-#menu ul li.active > a:not(.button)::after,
-#menu a.active:not(.button)::after,
-#menu a[aria-current="page"]:not(.button)::after{
-  content:"";
-  position:absolute;
-  top:-45%;
-  left:-80%;
-  width:70%;
-  height:200%;
-  background:linear-gradient(90deg, rgba(255,255,255,0), rgba(253,230,138,.70), rgba(255,255,255,0));
-  transform:rotate(18deg);
-  opacity:.38;
-  pointer-events:none;
-  animation:khGoldShine 2.4s ease-in-out infinite;
-}
-
-@keyframes khGoldShine{
-  0%{ left:-90%; opacity:.08; }
-  25%{ opacity:.45; }
-  45%{ left:125%; opacity:.35; }
-  100%{ left:125%; opacity:.10; }
-}
-
-@media (prefers-reduced-motion: reduce){
-  #menu ul li.active > a::after,
-  #menu a.active::after{ animation:none !important; }
-}
-
-/* ============ 8) CONTACT BUTTONS IN MENU (แก้ปุ่มลอย/ตัวหนังสือโดนบีบ) ============ */
-/* ใช้กับลิงก์ที่มี class="button" */
-#menu a.button{
-  width:100% !important;
-
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  gap:10px !important;
-
-  height:auto !important;
-  line-height:1.2 !important;
-  padding:12px 14px !important;
-  margin:10px 0 8px !important;
-
-  border:none !important;
-  border-radius:999px !important;
-  font-weight:900 !important;
-  font-size:.92em !important;
-
-  box-shadow:0 10px 18px rgba(0,0,0,.10) !important;
-  overflow:hidden;
-}
-
-/* จัด icon ไม่ให้เด้งขึ้นบน */
-#menu a.button .icon{
-  margin:0 !important;
-  display:inline-flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-}
-#menu a.button .icon:before{
-  width:auto !important;
-  margin:0 !important;
-  line-height:1 !important;
-}
-
-/* สีปุ่ม */
-#menu a.button.btn-tel{ background:#2b3543 !important; color:#fff !important; }
-#menu a.button.btn-line{ background:#00a400 !important; color:#fff !important; }
-#menu a.button.btn-fb{ background:#1877f2 !important; color:#fff !important; }
-#menu a.button.btn-map{ background:#ea4335 !important; color:#fff !important; }
-
-#menu a.button:active{ transform:scale(.99); box-shadow:0 6px 12px rgba(0,0,0,.08) !important; }
-
-/* ============ 9) MOBILE SPACING ============ */
-@media (max-width:980px){
-  #main{ margin-left:0 !important; width:100% !important; }
-  #main .inner{ padding:22px 16px !important; }
+/* =========================
+   KH - Active Menu Highlight
+   ========================= */
+#menu ul li.active > a,
+#menu a.active{
+  background: rgba(211, 47, 47, 0.10) !important;
+  color: var(--kh-red2) !important;
+  font-weight: 900 !important;
+  border-left: 4px solid var(--kh-red) !important;
+  padding-left: calc(1.65em - 4px) !important;
+  border-radius: 10px;
 }
