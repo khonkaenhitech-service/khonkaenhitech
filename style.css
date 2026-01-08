@@ -349,7 +349,6 @@ h2{
    9) CONTACT BUTTONS – DELUXE PREMIUM (Psychology CTA)
    TEL / LINE / FB / MAP  (Icon top + text bottom)
    ========================= */
-#menu a.button.btn-tel,
 #menu a.button.btn-line,
 #menu a.button.btn-fb,
 #menu a.button.btn-map{
@@ -378,45 +377,6 @@ h2{
 
   position: relative;
   overflow: hidden;
-}
-
-/* icon badge */
-#menu a.button.btn-tel .icon,
-#menu a.button.btn-line .icon,
-#menu a.button.btn-fb .icon,
-#menu a.button.btn-map .icon{
-  margin:0 !important;
-  width:46px !important;
-  height:46px !important;
-  border-radius: var(--cta-badge-radius) !important;
-  display:grid !important;
-  place-items:center !important;
-  background: rgba(11,18,32,.10) !important;
-  border: 1px solid rgba(11,18,32,.10) !important;
-}
-#menu a.button.btn-tel .icon:before,
-#menu a.button.btn-line .icon:before,
-#menu a.button.btn-fb .icon:before,
-#menu a.button.btn-map .icon:before{
-  font-size:22px !important;
-  line-height:1 !important;
-}
-
-/* hover / active */
-#menu a.button.btn-tel:hover,
-#menu a.button.btn-line:hover,
-#menu a.button.btn-fb:hover,
-#menu a.button.btn-map:hover{
-  transform: translateY(-1px);
-  filter: brightness(1.04);
-  box-shadow: var(--cta-s2), inset 0 1px 0 rgba(255,255,255,.78) !important;
-}
-#menu a.button.btn-tel:active,
-#menu a.button.btn-line:active,
-#menu a.button.btn-fb:active,
-#menu a.button.btn-map:active{
-  transform: scale(.99);
-  box-shadow: 0 14px 28px rgba(0,0,0,.14), inset 0 2px 8px rgba(0,0,0,.10) !important;
 }
 
 /* LINE – Friendly chat */
