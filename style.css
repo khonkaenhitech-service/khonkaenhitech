@@ -1098,7 +1098,10 @@ a.icon.brands.fa-line {
 }
 
 /* เผื่อ divider มีเส้นบน/ล่างจากธีม */
-#menu ul li.divider + li > a{
-  border-top: none !important;
+#menu ul li.divider::before{
+  content:"◆";
+  margin-right: 8px;
+  color: rgba(168,121,16,.95);
 }
+
 
