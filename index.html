@@ -13,85 +13,120 @@
     <link rel="stylesheet" href="style.css" />
 
     <style>
-        /* 1. บังคับ Sidebar อยู่ซ้ายเสมอ */
+        /* 1. จัดโครงสร้าง Sidebar ให้อยู่ซ้าย (Desktop) */
         #wrapper {
             display: flex;
-            flex-direction: row-reverse !important; /* สลับด้าน */
+            flex-direction: row-reverse !important; 
         }
         #sidebar {
             border-right: 1px solid rgba(0,0,0,0.1);
             border-left: none !important;
-            background-color: #fcfcfc; /* พื้นหลัง Sidebar สีขาวนวล */
+            background-color: #fcfcfc;
         }
         
-        /* 2. ซ่อน Nav Bar แบบเก่า */
+        /* ซ่อน Top Nav เดิม */
         #nav-header { display: none !important; }
 
-        /* 3. ดีไซน์ปุ่มเมนู (Gold Luxury Style) */
+        /* 2. ดีไซน์เมนูธีมทอง (Gold Theme) */
         ul.menu-gold { list-style: none; padding: 0; margin: 0; }
         ul.menu-gold li { margin-bottom: 8px; padding: 0 !important; border: none !important; }
         
         .menu-btn {
             display: block;
-            background: linear-gradient(90deg, #fffcf5 0%, #ffffff 100%); /* ไล่สีครีม */
-            border-left: 5px solid #d4af37; /* แถบทองด้านซ้าย */
-            padding: 12px 20px;
+            background: linear-gradient(90deg, #fffcf5 0%, #ffffff 100%);
+            border-left: 5px solid #d4af37; /* สีทอง */
+            padding: 12px 15px;
             border-radius: 0 8px 8px 0;
             color: #333 !important;
             font-weight: 700;
+            font-size: 0.95em;
             text-decoration: none;
-            box-shadow: 2px 2px 6px rgba(0,0,0,0.04);
-            transition: all 0.3s;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.03);
             font-family: 'Sarabun', sans-serif;
-            position: relative;
         }
         
-        .menu-btn:hover {
-            background: linear-gradient(90deg, #ffecb3 0%, #ffffff 100%); /* สีทองอ่อนเมื่อชี้ */
-            padding-left: 25px; /* ขยับขวา */
-            color: #b71c1c !important; /* ตัวหนังสือแดงเลือดหมู */
-            border-left-color: #b71c1c;
+        .menu-btn:hover, .menu-btn:active {
+            background: #fff8e1;
+            color: #b71c1c !important;
+            padding-left: 20px;
         }
 
         /* หัวข้อหมวดหมู่ */
         .menu-header {
-            font-size: 0.85em; 
-            color: #a87910; /* สีทองเข้ม */
-            margin-top: 25px; 
-            margin-bottom: 8px; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            font-weight: 800;
-            padding-left: 5px;
+            font-size: 0.85em; color: #a87910; margin-top: 20px; margin-bottom: 5px; 
+            text-transform: uppercase; font-weight: 800; padding-left: 5px;
             border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
         }
 
-        /* ปุ่มติดต่อด่วน (ทองเข้มพรีเมียม) */
+        /* ปุ่มติดต่อด่วน (ทองเข้ม) */
         .btn-contact-gold {
-            background: linear-gradient(135deg, #fff8e1 0%, #ffc107 100%);
-            color: #8f5400 !important;
-            border-left: 5px solid #ff6f00;
-            box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3);
-        }
-        .btn-contact-gold:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(255, 193, 7, 0.5);
+            background: linear-gradient(135deg, #ffca28 0%, #ff6f00 100%);
+            color: #fff !important;
+            border-left: none;
+            text-align: center;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(255, 111, 0, 0.4);
         }
 
-        /* Responsive Fix (มือถือ) */
-        #sidebar .toggle {
-            left: 0 !important; top: 0;
-            background: rgba(255,255,255,0.95);
-            height: 4em; width: 5em;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        #sidebar .toggle:before { color: #d4af37; font-size: 1.8em; } /* ไอคอนสีทอง */
-
+        /* =========================================
+           MOBILE OPTIMIZATION (แก้ให้พอดีจอ Android)
+           ========================================= */
         @media screen and (max-width: 1280px) {
             #wrapper { flex-direction: column !important; }
-            #sidebar { left: 0; box-shadow: 5px 0 15px rgba(0,0,0,0.1); }
-            #sidebar.inactive { left: -26em; } 
+            
+            /* ปรับขนาด Sidebar ให้พอดีมือถือ (ไม่กว้างเกินไป) */
+            #sidebar {
+                width: 280px; /* ขนาดกำลังดีสำหรับมือถือ */
+                max-width: 80vw; /* ไม่เกิน 80% ของจอ */
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 10000;
+                box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+                transition: transform 0.3s ease;
+                overflow-y: auto; /* ให้เลื่อนเมนูได้ */
+            }
+
+            /* สถานะซ่อนเมนู (เลื่อนไปทางซ้ายจนพ้นจอ) */
+            #sidebar.inactive {
+                transform: translateX(-100%);
+                left: 0; /* รีเซ็ตค่าเดิม */
+                margin-left: 0 !important;
+            }
+
+            /* ปุ่มเปิดเมนู (Hamburger) */
+            #sidebar .toggle {
+                position: absolute;
+                top: 0;
+                left: 100%; /* ติดอยู่ขอบขวาของเมนู */
+                width: 50px;
+                height: 50px;
+                background: #d4af37; /* พื้นหลังสีทอง */
+                color: #fff;
+                text-align: center;
+                line-height: 50px;
+                cursor: pointer;
+                border-radius: 0 8px 8px 0;
+                box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+                text-indent: 0; /* โชว์ไอคอน */
+            }
+            
+            #sidebar .toggle:before {
+                content: '\f0c9'; /* ไอคอน 3 ขีด */
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+                font-size: 1.5em;
+                color: #fff; /* ไอคอนสีขาว */
+            }
+
+            /* เมื่อเมนูซ่อนอยู่ ให้ปุ่มลอยติดขอบจอซ้าย */
+            #sidebar.inactive .toggle {
+                position: fixed;
+                left: 0;
+                top: 10px;
+                border-radius: 0 8px 8px 0;
+            }
         }
     </style>
 </head>
