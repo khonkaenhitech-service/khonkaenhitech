@@ -1497,3 +1497,31 @@ html, body { overflow-x: hidden; }
   color:#f26a00;
 }
 
+/* === Fix: Header icons to far right === */
+#header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* โลโก้ฝั่งซ้าย */
+#header .logo{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ไอคอนฝั่งขวา */
+#header .icons{
+  margin-left: auto;          /* ดันไปขวาสุด */
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* กัน li มี margin แปลก ๆ จากธีม */
+#header .icons li{
+  margin: 0;
+  padding: 0;
+}
