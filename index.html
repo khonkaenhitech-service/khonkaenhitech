@@ -1,11 +1,14 @@
 <!DOCTYPE HTML>
 <html lang="th">
 <head>
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-M26CWCKV');</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-140XHHEN8H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-140XHHEN8H');
+  </script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -19,14 +22,8 @@
 
   <link rel="canonical" href="https://khonkaenhitech-service.github.io/khonkaenhitech/" />
    
-  <link rel="preload" as="image" href="images/pic10.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/pic10.jpg">
   <link rel="icon" href="images/favicon.png" />
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="th_TH" />
@@ -34,12 +31,12 @@
   <meta property="og:title" content="ขอนแก่นไฮเทค | ศูนย์รวมงานระบบและการติดตั้งครบวงจร" />
   <meta property="og:description" content="เครื่องซักผ้าหยอดเหรียญ ตู้น้ำ RO ระบบหยอดเหรียญ งานไฟฟ้า CCTV อินเทอร์เน็ต โซล่าเซล แอร์ ก่อสร้างต่อเติม ในขอนแก่น" />
   <meta property="og:url" content="https://khonkaenhitech-service.github.io/khonkaenhitech/" />
-  <meta property="og:image" content="https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.webp" />
+  <meta property="og:image" content="https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ขอนแก่นไฮเทค | บริการติดตั้งงานระบบ ขอนแก่น" />
   <meta name="twitter:description" content="เครื่องซักผ้าหยอดเหรียญ ตู้น้ำ RO ระบบหยอดเหรียญ ไฟฟ้า CCTV อินเทอร์เน็ต โซล่าเซล แอร์ ก่อสร้าง" />
-  <meta name="twitter:image" content="https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.webp" />
+  <meta name="twitter:image" content="https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.jpg" />
 
   <script type="application/ld+json">
   {
@@ -49,7 +46,7 @@
         "@type": "LocalBusiness",
         "@id": "https://khonkaenhitech-service.github.io/khonkaenhitech/#business",
         "name": "ขอนแก่นไฮเทค (Khon Kaen HiTech)",
-        "image": "https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.webp",
+        "image": "https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.jpg",
         "telephone": "+66944749874",
         "url": "https://khonkaenhitech-service.github.io/khonkaenhitech/",
         "address": {
@@ -89,20 +86,14 @@
   }
   </script>
 
-  <link rel="preload" href="assets/css/main.css" as="style">
-  <link rel="preload" href="style.css" as="style">
-  
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* ธีมสีส้มทองขอนแก่นไฮเทค */
-    :root { --kh-gold: #f59e0b; --kh-gold-dark: #d97706; }
-    
     .features article { margin-bottom: 2em; }
     .features h3 a { text-decoration: none; border-bottom: none; color: inherit; }
-    .features h3 a:hover { color: var(--kh-gold-dark); }
-    .intro-seo { margin-bottom: 3em; border-bottom: 2px solid var(--kh-gold); padding-bottom: 2em; }
+    .features h3 a:hover { color: #d32f2f; /* Theme ใหม่ */ }
+    .intro-seo { margin-bottom: 3em; border-bottom: 2px solid #d32f2f; padding-bottom: 2em; }
      
     /* ป้องกันภาพขยับ (CLS Fix) */
     .kh-hero-media img {
@@ -111,86 +102,34 @@
         aspect-ratio: 4/3;
         object-fit: cover;
     }
-
-    /* --- ส่วนแก้ไข HEADER ตามที่ขอ --- */
-    #header {
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 15px 0 !important;
-    }
-
-    #header .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; border-bottom: none; }
-    #header .logo img { height: 50px; width: auto; border-radius: 4px; }
-    #header .logo strong { color: var(--kh-gold-dark); font-size: 1.4em; }
-
-    /* ปรับแต่งกลุ่มไอคอนขวาบน */
-    #header .icons {
-        display: flex;
-        gap: 15px; /* ระยะห่าง */
-        align-items: center;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    #header .icons li { margin: 0; padding: 0; }
-
-    #header .icons a { 
-        text-decoration: none; 
-        border-bottom: none; 
-        transition: transform 0.2s; 
-        font-size: 1.8em; /* ขนาดไอคอนใหญ่ขึ้นตามภาพ */
-    }
-    #header .icons a:hover { transform: scale(1.2); }
-
-    /* --- กำหนดสีไอคอน (ฟ้า, เขียว, แดง) --- */
-    #header .icons .fa-phone { color: #007bff !important; }        /* โทร: สีฟ้า */
-    #header .icons .fa-line { color: #00B900 !important; }         /* LINE: สีเขียว */
-    #header .icons .fa-map-marker-alt { color: #dc3545 !important; } /* แผนที่: สีแดง */
-
-    /* Accessibility & Brand Colors */
-    a.button.primary {
-        background-color: var(--kh-gold) !important;
-        color: #ffffff !important;
-        box-shadow: 0 4px 10px rgba(245,158,11,0.3) !important;
-        border: none !important;
-    }
-    a.button.primary:hover { background-color: var(--kh-gold-dark) !important; }
-    
-    a.button.btn-line {
-        background-color: #008f00 !important;
-        color: #ffffff !important;
-        box-shadow: none !important;
-        border: none !important;
-    }
   </style>
 </head>
 
 <body class="is-preload">
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M26CWCKV"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <div id="wrapper">
+<div id="wrapper">
 
   <div id="main">
     <div class="inner">
       
+      <div class="kh-loc" role="navigation" aria-label="ตำแหน่งปัจจุบัน">
+        <div class="kh-loc__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18">
+            <path fill="currentColor" d="M12 2c-3.86 0-7 3.14-7 7 0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/>
+          </svg>
+        </div>
+
+        <div class="kh-loc__text">
+          <div class="kh-loc__kicker">คุณอยู่ที่</div>
+          <div class="kh-loc__title" id="khCurrentPage">กำลังโหลด…</div>
+        </div>
+
+        <a class="kh-loc__cta" href="#menu">ดูเมนู</a>
+      </div>
+
       <header id="header">
-        <a href="index.html" class="logo">
-            <img src="images/logo-khonkaen.webp" alt="โลโก้ ขอนแก่นไฮเทค"> 
-            <strong>ขอนแก่นไฮเทค</strong>
-        </a>
-         <ul class="icons">
-          <li>
-            <a href="tel:+66944749874" class="icon solid fa-phone" aria-label="โทร" title="โทร 094-474-9874"><span class="label">โทร</span></a>
-          </li>
-          <li>
-            <a href="https://line.me/ti/p/~KKHITECH" class="icon brands fa-line" aria-label="LINE" title="LINE: KKHITECH"><span class="label">LINE</span></a>
-          </li>
-          <li>
-            <a href="https://maps.app.goo.gl/LyV85313vknT4hBE6" class="icon solid fa-map-marker-alt" aria-label="แผนที่" title="Google Maps"><span class="label">แผนที่</span></a>
-          </li>
-        </ul>
+        <a href="index.html" class="logo"><strong>ขอนแก่นไฮเทค</strong></a>
+        <ul class="icons">
+          </ul>
       </header>
 
       <section class="kh-hero">
@@ -204,7 +143,6 @@
               งานไฟฟ้า/ตู้ MDB • อินเทอร์เน็ตหอพัก • CCTV • คีย์การ์ด •
               โซล่าเซลล์ • แอร์ • ก่อสร้างต่อเติม
             </p>
-
             <div class="kh-cta">
               <a class="button primary" href="tel:+66944749874">โทร 094-474-9874</a>
               <a class="button btn-line" href="https://line.me/ti/p/~KKHITECH">LINE: KKHITECH</a>
@@ -221,7 +159,7 @@
           </div>
           
           <div class="kh-hero-media">
-            <img src="images/pic10.webp" alt="ขอนแก่นไฮเทค ทีมช่างติดตั้งระบบอันดับ 1 ในขอนแก่น" width="800" height="600" loading="eager" fetchpriority="high">
+            <img src="images/pic10.jpg" alt="ขอนแก่นไฮเทค ทีมช่างติดตั้งระบบอันดับ 1 ในขอนแก่น" width="800" height="600" loading="eager">
           </div>
         </div>
       </section>
@@ -320,7 +258,7 @@
             <p>ไม่ต้องปวดหัวกับการจ้างช่างหลายทีม เราดูแลให้ทั้งระบบ น้ำ ไฟ อินเทอร์เน็ต กล้องวงจรปิด และงานโครงสร้าง ช่วยให้คุณควบคุมงบประมาณและเวลาได้ง่ายขึ้น</p>
           </div>
         </div>
-        <ul class="actions" style="margin-top: 20px;">
+        <ul class="actions">
           <li><a href="khonkaen-system.html" class="button">ดูพื้นที่ให้บริการทั้งหมด</a></li>
           <li><a href="elements.html" class="button">ชมผลงานติดตั้งจริง</a></li>
         </ul>
@@ -356,22 +294,22 @@
 
           <li class="divider">ติดต่อด่วน</li>
           <li>
-              <a href="tel:+66944749874" class="button btn-tel" style="background-color: var(--kh-gold) !important; color: #fff !important; width: 100%;">
+              <a href="tel:+66944749874" class="button btn-tel">
                   <span class="icon solid fa-phone"></span> โทร 094-474-9874
               </a>
           </li>
           <li>
-              <a href="https://line.me/ti/p/~KKHITECH" class="button btn-line" style="width: 100%;">
+              <a href="https://line.me/ti/p/~KKHITECH" class="button btn-line">
                   <span class="icon brands fa-line"></span> LINE: KKHITECH
               </a>
           </li>
           <li>
-              <a href="https://www.facebook.com/Line0944749874" class="button btn-fb" style="width: 100%;">
+              <a href="https://www.facebook.com/Line0944749874" class="button btn-fb">
                   <span class="icon brands fa-facebook-f"></span> Facebook Page
               </a>
           </li>
           <li>
-              <a href="https://maps.app.goo.gl/LyV85313vknT4hBE6" class="button btn-map" style="width: 100%;">
+              <a href="https://maps.app.goo.gl/LyV85313vknT4hBE6" class="button btn-map">
                   <span class="icon solid fa-map-marker-alt"></span> Google Maps
               </a>
           </li>
@@ -393,10 +331,14 @@
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/kh-current-tab.js" defer></script>
 <script>
+  // รอให้หน้าเว็บโหลดโครงสร้างเสร็จก่อนค่อยรัน Script
   window.addEventListener('load', function() {
+      
+      // Script ปีปัจจุบัน
       var yearSpan = document.getElementById('year');
       if(yearSpan) yearSpan.textContent = new Date().getFullYear();
 
+      // Audio Script (Manual Play)
       const a = document.getElementById('homeAudio');
       const playBtn = document.getElementById('playAudioBtn');
       const stopBtn = document.getElementById('stopAudioBtn');
@@ -412,6 +354,22 @@
               a.pause();
               a.currentTime = 0;
           };
+      }
+
+      // Menu Script Fix (ปิดเมนูเมื่อกดลิงก์)
+      const menuBtn = document.getElementById('menuBtn');
+      const sidebar = document.getElementById('sidebar');
+      if (menuBtn && sidebar) {
+        menuBtn.addEventListener('click', function () {
+            // Logic เปิดปิดเมนู
+        });
+
+        sidebar.addEventListener('click', function (e) {
+            const link = e.target.closest('a');
+            if (link) {
+                document.body.classList.remove('menu-open');
+            }
+        });
       }
   });
 </script>
