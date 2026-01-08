@@ -558,3 +558,46 @@
     ensureExtraInfoSection();
   }
 })();
+
+// ==============================
+// KH: Remove duplicate "บทความ LOCAL SEO" menu item (keep only one)
+// ==============================
+(function () {
+  function isExtraInfoItem(li) {
+    // เช็คว่า li นี้อยู่ใต้ divider "ข้อมูลเพิ่มเติม" ไหม
+    let prev = li.previousElementSibling;
+    while (prev) {
+      if (prev.classList && prev.classList.contains("divider")) {
+        return (prev.textContent || "").trim() === "ข้อมูลเพิ่มเติม";
+      }
+      prev = prev.previousElementSibling;
+    }
+    return false;
+  }
+
+  function removeDuplicateLocalSEO() {
+    const menuUl = document.querySelector("#menu > ul");
+    if (!menuUl) return;
+
+    const links = Array.from(menuUl.querySelectorAll('a[href*="khonkaen-system.html"]'));
+    if (links.length <= 1) return;
+
+    const items = links
+      .map(a => a.closest("li"))
+      .filter(Boolean);
+
+    // เลือกตัวที่อยู่ใต้ "ข้อมูลเพิ่มเติม" เป็นตัวหลัก (ถ้ามี)
+    let keepLi = items.find(isExtraInfoItem) || items[0];
+
+    // ลบตัวอื่นทิ้ง
+    items.forEach(li => {
+      if (li !== keepLi) li.remove();
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", removeDuplicateLocalSEO);
+  } else {
+    removeDuplicateLocalSEO();
+  }
+})();
