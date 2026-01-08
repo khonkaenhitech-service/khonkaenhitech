@@ -7,10 +7,11 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-M26CWCKV');</script>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-  <title>การเข้าถึงเว็บไซต์ (Accessibility) | นโยบายการใช้งาน | ขอนแก่นไฮเทค</title>
-  <meta name="description" content="นโยบายการเข้าถึงเว็บไซต์ (Accessibility Statement) ของขอนแก่นไฮเทค เรามุ่งมั่นพัฒนาเว็บไซต์ให้รองรับผู้ใช้งานทุกกลุ่ม รวมถึงผู้พิการและผู้สูงอายุ เพื่อการเข้าถึงข้อมูลอย่างเท่าเทียม" />
+  <title>นโยบายการเข้าถึงเว็บไซต์ (Accessibility) | มาตรฐานสากลเพื่อทุกคน | ขอนแก่นไฮเทค</title>
+  
+  <meta name="description" content="ที่ขอนแก่นไฮเทค 'ไม่มีใครถูกทิ้งไว้ข้างหลัง' เรายึดมั่นมาตรฐาน WCAG 2.1 เพื่อให้ผู้สูงอายุและผู้พิการเข้าถึงบริการล้างแอร์ ซ่อมไฟ และระบบรักษาความปลอดภัยได้อย่างเท่าเทียม" />
   <meta name="robots" content="index, follow" />
 
   <link rel="canonical" href="https://khonkaenhitech-service.github.io/khonkaenhitech/accessibility.html" />
@@ -21,141 +22,159 @@
   
   <style>
     /* Accessibility Specific Styles */
-    .acc-content ul { margin-bottom: 2em; }
-    .acc-content li { margin-bottom: 0.5em; }
-    .contact-box { background: #f9f9f9; padding: 20px; border-left: 5px solid #2ecc71; border-radius: 4px; }
+    .acc-content h1 { color: #2c3e50; font-weight: 800; }
+    .acc-content ul { margin-bottom: 2em; list-style: none; padding-left: 0; }
+    .acc-content li { margin-bottom: 1em; padding-left: 1.5em; position: relative; }
+    .acc-content li:before { content: "\f00c"; font-family: "Font Awesome 5 Free"; font-weight: 900; color: #27ae60; position: absolute; left: 0; top: 0; }
+    
+    .contact-box { 
+        background: #f0f9f4; 
+        padding: 30px; 
+        border-left: 6px solid #27ae60; 
+        border-radius: 8px; 
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        margin-top: 3em;
+    }
+    
+    /* High Contrast Focus for Accessibility */
+    a:focus, button:focus, input:focus {
+        outline: 3px solid #f1c40f !important;
+        outline-offset: 2px;
+    }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "นโยบายการเข้าถึงเว็บไซต์ (Accessibility Statement)",
+    "description": "นโยบายและมาตรฐานการออกแบบเว็บไซต์เพื่อการเข้าถึงอย่างเท่าเทียมของ ขอนแก่นไฮเทค",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ขอนแก่นไฮเทค",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://khonkaenhitech-service.github.io/khonkaenhitech/images/logo-khonkaen.webp"
+      }
+    }
+  }
+  </script>
 </head>
 
 <body class="is-preload">
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M26CWCKV"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
   <div id="wrapper">
+    <div id="main">
+      <div class="inner">
 
-  <div id="main">
-    <div class="inner">
-
-   
-
-      <<header id="header">
-  <a href="./" class="logo kh-brand">
-    <span class="kh-brand__img">
-      <img src="images/logo-khonkaen.webp"
-           alt="ขอนแก่นไฮเทค (Khon Kaen HiTech Service)"
-           width="44" height="44" loading="eager">
-    </span>
-
-    <span class="kh-brand__text">
-      <span class="kh-brand__th">ขอนแก่นไฮเทค</span>
-      <span class="kh-brand__en">Khon Kaen HiTech Service</span>
-    </span>
-  </a>
-        <ul class="icons">
-          <li><a class="icon solid fa-phone" href="tel:+66944749874"><span class="label">โทร</span></a></li>
-    <li><a class="icon brands fa-line" href="https://line.me/ti/p/~KKHITECH" target="_blank" rel="noopener"><span class="label">LINE</span></a></li>
-    <li><a class="icon solid fa-map-marker-alt" href="https://maps.app.goo.gl/LyV85313vknT4hBE6" target="_blank" rel="noopener"><span class="label">แผนที่</span></a></li>
-  </ul>
-      </header>
-
-      <section class="acc-content">
-        <header class="main">
-          <h1>นโยบายการเข้าถึงเว็บไซต์ (Accessibility Statement)</h1>
+        <header id="header">
+          <a href="index.html" class="logo kh-brand">
+            <span class="kh-brand__img">
+              <img src="images/logo-khonkaen.webp" alt="โลโก้ ขอนแก่นไฮเทค" width="44" height="44">
+            </span>
+            <span class="kh-brand__text">
+              <span class="kh-brand__th">ขอนแก่นไฮเทค</span>
+              <span class="kh-brand__en">Khon Kaen HiTech Service</span>
+            </span>
+          </a>
+          <ul class="icons">
+             </ul>
         </header>
 
-        <p>
-          เว็บไซต์ <strong>ขอนแก่นไฮเทค</strong> ให้ความสำคัญกับการเข้าถึงข้อมูลของผู้ใช้งานทุกกลุ่ม
-          โดยเราพยายามออกแบบและพัฒนาเว็บไซต์ให้สอดคล้องกับมาตรฐาน เพื่อให้ผู้พิการ ผู้สูงอายุ และผู้ใช้อุปกรณ์ช่วยเหลือต่างๆ สามารถใช้งานได้อย่างสะดวก
-        </p>
+        <section class="acc-content">
+          <header class="main">
+            <h1>เพราะเราเชื่อว่า "เทคโนโลยีต้องเท่าเทียม" <br><span style="font-size:0.6em; color:#7f8c8d;">(Accessibility Statement)</span></h1>
+          </header>
 
-        <hr class="major" />
+          <p style="font-size: 1.2em; line-height: 1.6;">
+            ในโลกออนไลน์ที่หมุนไว หลายเว็บไซต์อาจหลงลืมผู้ใช้งานบางกลุ่มไป... <br>
+            แต่ที่ <strong>ขอนแก่นไฮเทค</strong> เรามีปณิธานแน่วแน่ว่า <strong>"ต้องไม่มีลูกค้าคนไหนถูกทิ้งไว้ข้างหลัง"</strong>
+          </p>
+          <p>
+            ไม่ว่าคุณจะเป็นผู้สูงอายุที่สายตาเริ่มฝ้าฟาง, ผู้พิการทางสายตาที่ใช้โปรแกรมอ่านหน้าจอ, หรือผู้ที่มีข้อจำกัดทางกายภาพ 
+            เว็บไซต์นี้ถูกเขียนขึ้นด้วย Code มาตรฐานสากล เพื่อให้คุณเข้าถึงบริการช่างและข้อมูลต่างๆ ได้ง่ายที่สุดเท่าที่จะเป็นไปได้
+          </p>
 
-        <h2>มาตรฐานที่เรารองรับ</h2>
-        <ul>
-          <li><strong>WCAG 2.1 (Level AA):</strong> ปฏิบัติตามแนวทาง Web Content Accessibility Guidelines</li>
-          <li><strong>Semantic HTML:</strong> ใช้โครงสร้างโค้ดที่ถูกต้อง เพื่อให้โปรแกรมอ่านหน้าจอ (Screen Reader) ทำงานได้ดี</li>
-          <li><strong>Keyboard Navigation:</strong> รองรับการใช้งานผ่านแป้นพิมพ์ สำหรับผู้ที่ไม่สะดวกใช้เมาส์</li>
-          <li><strong>Responsive Design:</strong> แสดงผลได้ดีบนทุกหน้าจอ ทั้งมือถือ แท็บเล็ต และคอมพิวเตอร์</li>
-        </ul>
+          <hr class="major" />
 
-        <h2>ฟีเจอร์เพื่อการเข้าถึง</h2>
-        <ul>
-          <li><strong>High Contrast:</strong> เลือกใช้คู่สีที่มีความตัดกันสูง ทำให้อ่านง่าย สบายตา</li>
-          <li><strong>Alt Text:</strong> มีคำอธิบายรูปภาพสำหรับผู้ที่มีปัญหาด้านสายตา</li>
-          <li><strong>Focus Indicator:</strong> มีกรอบแสดงตำแหน่งเมื่อใช้แป้นพิมพ์เลื่อนดูเมนู</li>
-          <li><strong>Skip Links:</strong> ปุ่มลัดเพื่อข้ามไปยังเนื้อหาหลักได้ทันที</li>
-        </ul>
+          <h2>มาตรฐานที่เรายึดถือ (Our Commitment)</h2>
+          <p>เราไม่ได้แค่ออกแบบให้สวย แต่เราออกแบบให้ "ใช้ได้จริง" ตามหลักการ <strong>WCAG 2.1 (Web Content Accessibility Guidelines) ระดับ AA</strong> ดังนี้:</p>
+          
+          <ul>
+            <li><strong>Perceivable (รับรู้ได้):</strong> เราใช้คู่สีที่มีความตัดกันสูง (High Contrast) เพื่อให้อ่านง่าย และใส่คำอธิบายรูปภาพ (Alt Text) ในทุกจุดสำคัญ</li>
+            <li><strong>Operable (ใช้งานได้):</strong> เว็บไซต์รองรับการใช้งานผ่านแป้นพิมพ์ (Keyboard Navigation) 100% สำหรับผู้ที่ไม่สะดวกใช้เมาส์</li>
+            <li><strong>Understandable (เข้าใจได้):</strong> โครงสร้างเนื้อหาชัดเจน ไม่ซับซ้อน ใช้ภาษาที่เข้าใจง่าย ไม่ใช้ศัพทเทคนิคพร่ำเพรื่อ</li>
+            <li><strong>Robust (ยืดหยุ่น):</strong> รองรับการแสดงผลบนทุกอุปกรณ์ ตั้งแต่มือถือจอเล็กไปจนถึงคอมพิวเตอร์จอใหญ่ และรองรับ Screen Reader</li>
+          </ul>
 
-        <div class="contact-box">
-            <h3>แจ้งปัญหาการใช้งาน</h3>
-            <p>หากท่านพบปัญหาในการเข้าถึงข้อมูลส่วนใดของเว็บไซต์ หรือมีข้อเสนอแนะเพิ่มเติม กรุณาติดต่อเราได้ทันที เรายินดีปรับปรุงเพื่อการบริการที่ดียิ่งขึ้น</p>
-            <ul class="actions">
-                <li><a href="tel:+66944749874" class="button primary">โทร 094-474-9874</a></li>
-                <li><a href="https://line.me/ti/p/~KKHITECH" class="button">LINE: KKHITECH</a></li>
-            </ul>
+          <h2>ฟีเจอร์ที่เราตั้งใจทำเพื่อคุณ</h2>
+          <ul>
+            <li><strong>Skip to Content:</strong> ปุ่มลัดเพื่อข้ามเมนูไปยังเนื้อหาหลักได้ทันที (กด Tab บนคีย์บอร์ด)</li>
+            <li><strong>Semantic HTML:</strong> โครงสร้างโค้ดที่ถูกต้อง (H1, H2, Button, Label) ช่วยให้เครื่องมือช่วยเหลือทำงานได้แม่นยำ</li>
+            <li><strong>Focus Indicator:</strong> มีกรอบสีเหลืองชัดเจนเมื่อเลื่อนดูด้วยแป้นพิมพ์ เพื่อให้รู้ว่าคุณกำลังอยู่ที่ส่วนไหนของหน้า</li>
+          </ul>
+
+          <div class="contact-box">
+              <h3><i class="fas fa-heart" style="color:#e74c3c;"></i> พบปัญหาการใช้งาน? บอกเราได้ทันที</h3>
+              <p>
+                แม้เราจะพยายามอย่างที่สุด แต่เทคโนโลยีอาจมีข้อผิดพลาด หากท่านพบปัญหาในการเข้าถึงส่วนใดของเว็บไซต์ 
+                <strong>"โปรดอย่าเกรงใจที่จะบอกเรา"</strong> เราถือว่านั่นคือโอกาสในการปรับปรุงให้ดียิ่งขึ้น
+              </p>
+              <ul class="actions">
+                  <li><a href="tel:+66944749874" class="button primary icon solid fa-phone">แจ้งปัญหาโทร 094-474-9874</a></li>
+                  <li><a href="https://line.me/ti/p/~yourlineid" class="button icon brands fa-line">แจ้งผ่าน LINE</a></li>
+              </ul>
+          </div>
+
+        </section>
+
+      </div>
+    </div>
+
+    <div id="sidebar">
+        <div class="inner">
+            <nav id="menu">
+                <header class="major">
+                    <h2>เมนูบริการ</h2>
+                </header>
+                <ul>
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li><a href="air.html">ล้างแอร์ (โฟมฆ่าเชื้อ 99.99%)</a></li>
+                    <li><a href="laundry.html">ล้างเครื่องซักผ้า/หยอดเหรียญ</a></li>
+                    <li><a href="services.html">ล้างถังน้ำ/งานระบบน้ำ</a></li>
+                    <li><a href="cctv.html">กล้องวงจรปิด</a></li>
+                    <li><a href="solar.html">โซล่าเซลล์</a></li>
+                    <li><a href="electrical.html">ระบบไฟฟ้า</a></li>
+                    <li><a href="contact.html">ติดต่อเรา</a></li>
+                </ul>
+            </nav>
+            <section>
+                <header class="major">
+                    <h2>ติดต่อด่วน</h2>
+                </header>
+                <ul class="contact">
+                    <li class="icon solid fa-phone"><a href="tel:+66944749874">094-474-9874</a></li>
+                    <li class="icon solid fa-home">ขอนแก่น & จังหวัดใกล้เคียง</li>
+                </ul>
+            </section>
+            <footer id="footer">
+                <p class="copyright">© <span id="y"></span> ขอนแก่นไฮเทค</p>
+            </footer>
         </div>
-
-      </section>
-
     </div>
+
   </div>
 
-  <div id="sidebar">
-    <div class="inner">
-      <nav id="menu">
-        <header class="major"><h2>เมนู</h2></header>
-        <ul>
-          <li><a href="index.html">หน้าแรก</a></li>
-          <li><a href="services.html">รวมบริการทั้งหมด</a></li>
-          <li><a href="contact.html">ติดต่อ / แผนที่ร้าน</a></li>
-
-          <li class="divider">บริการยอดนิยม</li>
-          <li><a href="laundry.html">เครื่องซักผ้าหยอดเหรียญ</a></li>
-          <li><a href="water.html">ตู้น้ำหยอดเหรียญ / RO</a></li>
-          <li><a href="vending.html">ระบบหยอดเหรียญ</a></li>
-          <li><a href="internet.html">อินเทอร์เน็ต / ฮอตสปอตหอพัก</a></li>
-
-          <li class="divider">งานระบบและก่อสร้าง</li>
-          <li><a href="security.html">CCTV / คีย์การ์ด / ไม้กั้น</a></li>
-          <li><a href="electrical.html">งานไฟฟ้า / ตู้ MDB</a></li>
-          <li><a href="solar-air.html">โซล่าเซลล์ / แอร์</a></li>
-          <li><a href="construction.html">รับสร้างบ้าน / ต่อเติม</a></li>
-          <li><a href="khonkaen-system.html">บทความ Local SEO</a></li>
-
-          <li class="divider">ติดต่อด่วน</li>
-          <li><a href="tel:+66944749874">โทร 094-474-9874</a></li>
-          <li><a href="https://line.me/ti/p/~KKHITECH">LINE: KKHITECH</a></li>
-        </ul>
-      </nav>
-      <footer id="footer">
-        <p class="copyright">© <span id="y"></span> ขอนแก่นไฮเทค</p>
-      </footer>
-    </div>
-  </div>
-
-</div>
-
-<script src="assets/js/jquery.min.js" defer></script>
-<script src="assets/js/browser.min.js" defer></script>
-<script src="assets/js/breakpoints.min.js" defer></script>
-<script src="assets/js/util.js" defer></script>
-<script src="assets/js/main.js" defer></script>
-
-<script>
-  window.addEventListener('load', function() {
-      // Script ปีปัจจุบัน
-      var yearSpan = document.getElementById('y');
-      if(yearSpan) yearSpan.textContent = new Date().getFullYear();
-
-      // Mobile Menu Fix
-      const sidebar = document.getElementById('sidebar');
-      if (sidebar) {
-        sidebar.addEventListener('click', function (e) {
-            const link = e.target.closest('a');
-            if (link) { document.body.classList.remove('menu-open'); }
-        });
-      }
-  });
-</script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
