@@ -1,20 +1,367 @@
 /* ==========================================================================
-   KHON KAEN HITECH - GOD TIER MASTER STYLESHEET
-   ไฟล์นี้ควบคุมความสวยงามของทุกหน้า (SEO Optimized Layout)
+   KHON KAEN HITECH – MASTER style.css (Clean + Premium + Conversion)
+   ใช้ไฟล์นี้วางทับ style.css ทั้งหมดได้เลย
    ========================================================================== */
+
 /* =========================
-   LUX CLASSIC – Darker Active Menu
+   1) CORE VARIABLES
    ========================= */
 :root{
-  --lux-ink: #0b1220;                 /* ดำเข้มขึ้น */
-  --lux-gold: #a87910;                /* ทองเข้ม */
-  --lux-gold2:#f0d58a;                /* แชมเปญ */
-  --lux-bg: rgba(255, 244, 218, .98); /* ครีมเข้มขึ้น */
+  /* Brand base */
+  --kh-primary: #d32f2f;
+  --kh-primary-dark: #b71c1c;
+  --kh-accent: #2c3e50;
+  --kh-text: #111827;
+  --kh-light: #f9f9f9;
+  --kh-border: rgba(0,0,0,0.10);
+  --kh-radius: 12px;
+  --kh-shadow: 0 4px 15px rgba(0,0,0,0.05);
+
+  /* Soft helpers */
+  --kh-line: rgba(17,24,39,.12);
+  --kh-soft: rgba(211, 47, 47, 0.10);
+
+  /* Luxury menu palette (no red for menu states) */
+  --lux-ink: #0b1220;
+  --lux-gold: #a87910;
+  --lux-bg: rgba(255, 244, 218, .98);
   --lux-bg2: rgba(235, 217, 165, .38);
-  --lux-line: rgba(11,18,32,.14);
+
+  /* CTA Deluxe buttons */
+  --cta-ink: #0b1220;
+  --cta-gold-1: #fff4d9;
+  --cta-gold-2: #f3d59a;
+  --cta-gold-3: #d9b15a;
+  --cta-gold-ring: rgba(168,121,16,.38);
+  --cta-shadow-1: 0 18px 38px rgba(0,0,0,.16);
+  --cta-shadow-2: 0 24px 54px rgba(0,0,0,.20);
+  --cta-radius: 28px;
+  --cta-badge-radius: 18px;
 }
 
-/* Active/กดแล้ว */
+/* =========================
+   2) SCROLLBAR (Optional)
+   ========================= */
+::-webkit-scrollbar{ width: 8px; }
+::-webkit-scrollbar-track{ background: #f1f1f1; }
+::-webkit-scrollbar-thumb{ background: #ccc; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover{ background: var(--kh-primary); }
+
+/* =========================
+   3) TYPOGRAPHY
+   ========================= */
+h1,h2,h3,h4,h5,h6{
+  color: var(--kh-accent);
+  font-weight: 700;
+  margin-bottom: .8em;
+}
+
+h1.main{
+  color: var(--kh-primary-dark);
+  border-bottom: 3px solid var(--kh-primary);
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 1.5em;
+}
+
+h2{
+  border-left: 5px solid var(--kh-primary);
+  padding-left: 15px;
+  background: linear-gradient(to right, rgba(211,47,47,.05), transparent);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+a[href^="tel:"],
+a[href^="https://line.me"]{
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* =========================
+   4) HERO
+   ========================= */
+.kh-hero{
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.kh-hero-grid{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 30px;
+  align-items:center;
+}
+
+.kh-hero-text h1{
+  font-size: 2.2em;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.kh-sub{
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+  border-left: 3px solid #ddd;
+  padding-left: 15px;
+}
+
+.kh-hero-media img{
+  width:100%;
+  height:auto;
+  border-radius: var(--kh-radius);
+  box-shadow: var(--kh-shadow);
+  border: 1px solid var(--kh-border);
+  transition: transform .3s ease;
+}
+
+.kh-hero-media img:hover{ transform: scale(1.02); }
+
+.kh-cta{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+@media (max-width: 980px){
+  .kh-hero-grid{ grid-template-columns: 1fr; }
+  .kh-hero-text{ order: 2; }
+  .kh-hero-media{ order: 1; margin-bottom: 20px; }
+}
+
+/* =========================
+   5) TABLES
+   ========================= */
+.table-wrapper{
+  overflow-x:auto;
+  margin: 2em 0;
+  border-radius: var(--kh-radius);
+  box-shadow: var(--kh-shadow);
+}
+
+table{
+  width:100%;
+  border-collapse: collapse;
+  background:#fff;
+  margin:0;
+}
+
+table th{
+  background: var(--kh-accent);
+  color:#fff;
+  font-weight:600;
+  padding:15px;
+  text-align:left;
+  white-space:nowrap;
+}
+
+table td{
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+
+table tr:nth-child(even){ background:#f8f9fa; }
+table tr:hover{ background:#f1f1f1; transition:.2s; }
+
+.solar-table th{ background:#f1c40f; color:#333; text-align:center; }
+.solar-table td{ text-align:center; }
+
+.compare-table th{ background:#2c3e50; text-align:center; }
+.compare-table td{ text-align:center; border-right:1px solid #eee; }
+.compare-table td:first-child{ text-align:left; font-weight:700; background:#fafafa; }
+
+.zone-table th{ background: var(--kh-primary); }
+.zone-table td:first-child{ font-weight:700; color: var(--kh-primary-dark); width:30%; }
+
+/* =========================
+   6) FEATURE LISTS / CARDS
+   ========================= */
+.check-list{
+  list-style:none;
+  padding:0;
+  margin: 0 0 20px 0;
+}
+.check-list li{
+  position:relative;
+  padding-left:30px;
+  margin-bottom:10px;
+  line-height:1.5;
+}
+.check-list li:before{
+  content:'✔';
+  position:absolute;
+  left:0;
+  top:2px;
+  color:#2ecc71;
+  font-weight:900;
+  font-size: 1.1em;
+}
+
+.kh-cards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.kh-card{
+  display:block;
+  background:#fff;
+  border: 1px solid var(--kh-border);
+  border-radius: var(--kh-radius);
+  padding: 20px;
+  text-decoration:none;
+  color: inherit;
+  transition: all .3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,.02);
+}
+
+.kh-card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.10);
+  border-color: var(--kh-primary);
+}
+
+.kh-card h3{ color: var(--kh-primary); margin-bottom:10px; font-size: 1.2em; }
+.kh-card p{ font-size:.9em; margin:0; color:#666; }
+
+.project-card{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius: var(--kh-radius);
+  padding:15px;
+  height:100%;
+  box-shadow: var(--kh-shadow);
+}
+.project-card .image.fit{ margin-bottom:15px; }
+.project-card .image.fit img{ border-radius: 8px; }
+.project-card h3{ font-size: 1.1em; margin-bottom:.5em; }
+
+/* =========================
+   7) BOXES / ALERTS
+   ========================= */
+.kh-box{
+  background:#fff;
+  padding:20px;
+  border-radius: var(--kh-radius);
+  border: 1px solid var(--kh-border);
+  margin-bottom:20px;
+}
+
+.alert-box, .alert-security{
+  background:#fff3cd;
+  border-left: 5px solid #ffc107;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 2em 0;
+  color: #856404;
+}
+.alert-box h3, .alert-security h3{
+  color:#856404;
+  border:none;
+  padding:0;
+  background:none;
+}
+
+.highlight-box{
+  background:#e8f4fd;
+  border-left:5px solid #3498db;
+  padding:20px;
+  border-radius:4px;
+  margin: 2em 0;
+}
+
+.brand-box{
+  background:#f8f9fa;
+  padding:20px;
+  text-align:center;
+  border-radius: var(--kh-radius);
+  border: 1px solid #eee;
+}
+.brand-list span{
+  display:inline-block;
+  background:#fff;
+  padding: 5px 15px;
+  margin: 5px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  font-weight: 700;
+  color:#555;
+  font-size:.9em;
+}
+
+/* =========================
+   8) AUDIO
+   ========================= */
+.kh-audio{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-top:15px;
+}
+.kh-audio button{
+  padding: 0 15px;
+  height:35px;
+  line-height:35px;
+  font-size:.85em;
+}
+
+/* =========================
+   9) SIDEBAR MENU (Premium)
+   ========================= */
+
+/* Divider headings (No red / Luxury) */
+#menu ul li.divider{
+  margin: 18px 0 10px 0 !important;
+  padding: 10px 12px !important;
+  background: linear-gradient(90deg,
+    rgba(255, 244, 218, .96) 0%,
+    rgba(235, 217, 165, .38) 55%,
+    rgba(255, 255, 255, .70) 100%
+  ) !important;
+
+  color: var(--lux-ink) !important;
+  font-weight: 950 !important;
+  border-left: 5px solid var(--lux-gold) !important;
+  border-top: none !important;
+
+  border-radius: 12px !important;
+  box-shadow: 0 10px 22px rgba(0,0,0,.10),
+              inset 0 0 0 1px rgba(168,121,16,.18) !important;
+
+  text-transform: none !important;
+  letter-spacing: .4px !important;
+}
+#menu ul li.divider::before{
+  content:"◆";
+  margin-right: 8px;
+  color: rgba(168,121,16,.95);
+}
+
+/* Menu links (exclude divider and contact buttons) */
+#menu ul li:not(.divider) > a:not(.button){
+  color: rgba(11,18,32,.92) !important;
+  font-weight: 800 !important;
+  border-bottom: none !important;
+  padding-left: 15px;
+  transition: .2s;
+}
+#menu ul li:not(.divider) > a:not(.button):hover{
+  color: var(--lux-ink) !important;
+  padding-left: 20px;
+  background: linear-gradient(90deg,
+    rgba(255, 244, 218, .88) 0%,
+    rgba(235, 217, 165, .28) 60%,
+    rgba(255,255,255,.40) 100%
+  ) !important;
+  border-radius: 12px;
+}
+
+/* Active menu (Luxury) */
 #menu ul li.active > a:not(.button),
 #menu a.active:not(.button){
   background: linear-gradient(90deg,
@@ -26,389 +373,25 @@
   color: var(--lux-ink) !important;
   font-weight: 950 !important;
 
-  border-left: 5px solid var(--lux-gold) !important;     /* หนาขึ้น + เข้มขึ้น */
+  border-left: 5px solid var(--lux-gold) !important;
   padding-left: calc(1.65em - 5px) !important;
 
   border-radius: 12px !important;
-  box-shadow:
-    0 14px 28px rgba(0,0,0,.14),
-    inset 0 0 0 1px rgba(168,121,16,.18) !important;
+  box-shadow: 0 14px 28px rgba(0,0,0,.14),
+              inset 0 0 0 1px rgba(168,121,16,.18) !important;
 }
 
-/* Hover ให้เข้มขึ้นนิด */
-#menu ul li:not(.divider) > a:not(.button):hover{
-  background: linear-gradient(90deg,
-    rgba(255, 244, 218, .88) 0%,
-    rgba(235, 217, 165, .28) 60%,
-    rgba(255,255,255,.40) 100%
-  ) !important;
-
-  color: var(--lux-ink) !important;
-}
-
-/* ทำตัวหนังสือเมนูทั้งแถบให้เข้มขึ้นนิด */
-#menu ul li:not(.divider) > a:not(.button){
-  color: rgba(11,18,32,.92) !important;
-  font-weight: 800 !important;
-}
-
-
-/* ==========================================================================
-   2. TYPOGRAPHY & HEADINGS (SEO FRIENDLY)
-   ========================================================================== */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--kh-accent);
-  font-weight: 700;
-  margin-bottom: 0.8em;
-}
-
-h1.main {
-  color: var(--kh-primary-dark);
-  border-bottom: 3px solid var(--kh-primary);
-  display: inline-block;
-  padding-bottom: 5px;
-  margin-bottom: 1.5em;
-}
-
-h2 {
-  border-left: 5px solid var(--kh-primary);
-  padding-left: 15px;
-  background: linear-gradient(to right, rgba(211, 47, 47, 0.05), transparent);
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-/* ลิงก์เบอร์โทรและไลน์ ให้เด่นชัด */
-a[href^="tel:"], a[href^="https://line.me"] {
-  font-weight: bold;
-  text-decoration: none;
-}
-
-
-/* ==========================================================================
-   3. HERO SECTION (ส่วนหัวของหน้า)
-   ========================================================================== */
-.kh-hero { 
-  margin-top: 20px; 
-  margin-bottom: 40px;
-}
-
-.kh-hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 30px;
-  align-items: center;
-}
-
-.kh-hero-text h1 {
-  font-size: 2.2em;
-  line-height: 1.3;
-  margin-bottom: 15px;
-}
-
-.kh-sub {
-  font-size: 1.1em;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 20px;
-  border-left: 3px solid #ddd;
-  padding-left: 15px;
-}
-
-.kh-hero-media img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--kh-radius);
-  box-shadow: var(--kh-shadow);
-  border: 1px solid var(--kh-border);
-  transition: transform 0.3s ease;
-}
-
-.kh-hero-media img:hover {
-  transform: scale(1.02);
-}
-
-/* CTA Buttons Container */
-.kh-cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin: 25px 0;
-}
-
-@media (max-width: 980px) {
-  .kh-hero-grid { grid-template-columns: 1fr; }
-  .kh-hero-text { order: 2; }
-  .kh-hero-media { order: 1; margin-bottom: 20px; }
-}
-
-/* ==========================================================================
-   4. SEO TABLES (ตารางพื้นที่และราคา)
-   ========================================================================== */
-.table-wrapper {
-  overflow-x: auto;
-  margin: 2em 0;
-  border-radius: var(--kh-radius);
-  box-shadow: var(--kh-shadow);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fff;
-  margin: 0;
-}
-
-/* Default Table Style */
-table th {
-  background: var(--kh-accent);
-  color: #fff;
-  font-weight: 600;
-  padding: 15px;
-  text-align: left;
-  white-space: nowrap;
-}
-
-table td {
-  padding: 12px 15px;
-  border-bottom: 1px solid #eee;
-  color: #444;
-}
-
-table tr:nth-child(even) { background-color: #f8f9fa; }
-table tr:hover { background-color: #f1f1f1; transition: 0.2s; }
-
-/* Special Tables variations */
-.solar-table th { background: #f1c40f; color: #333; text-align: center; }
-.solar-table td { text-align: center; }
-
-.compare-table th { background: #2c3e50; text-align: center; }
-.compare-table td { text-align: center; border-right: 1px solid #eee; }
-.compare-table td:first-child { text-align: left; font-weight: bold; background: #fafafa; }
-
-.zone-table th { background: var(--kh-primary); }
-.zone-table td:first-child { font-weight: bold; color: var(--kh-primary-dark); width: 30%; }
-
-/* ==========================================================================
-   5. FEATURE CARDS & LISTS
-   ========================================================================== */
-/* Check List (ติ๊กถูก) */
-.check-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 20px 0;
-}
-.check-list li {
-  position: relative;
-  padding-left: 30px;
-  margin-bottom: 10px;
-  line-height: 1.5;
-}
-.check-list li:before {
-  content: '✔';
-  position: absolute;
-  left: 0;
-  top: 2px;
-  color: #2ecc71;
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-/* Card Grid System */
-.kh-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  margin: 20px 0;
-}
-
-.kh-card {
-  display: block;
-  background: #fff;
-  border: 1px solid var(--kh-border);
-  border-radius: var(--kh-radius);
-  padding: 20px;
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-}
-
-.kh-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  border-color: var(--kh-primary);
-}
-
-.kh-card h3 { color: var(--kh-primary); margin-bottom: 10px; font-size: 1.2em; }
-.kh-card p { font-size: 0.9em; margin: 0; color: #666; }
-
-/* Project/Portfolio Card */
-.project-card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: var(--kh-radius);
-  padding: 15px;
-  height: 100%;
-  box-shadow: var(--kh-shadow);
-}
-.project-card .image.fit { margin-bottom: 15px; }
-.project-card .image.fit img { border-radius: 8px; }
-.project-card h3 { font-size: 1.1em; margin-bottom: 0.5em; }
-
-/* ==========================================================================
-   6. ALERTS & BOXES (กล่องข้อความ)
-   ========================================================================== */
-.kh-box {
-  background: #fff;
-  padding: 20px;
-  border-radius: var(--kh-radius);
-  border: 1px solid var(--kh-border);
-  margin-bottom: 20px;
-}
-
-.alert-box, .alert-security {
-  background-color: #fff3cd;
-  border-left: 5px solid #ffc107;
-  padding: 20px;
-  border-radius: 4px;
-  margin: 2em 0;
-  color: #856404;
-}
-.alert-box h3, .alert-security h3 { color: #856404; border: none; padding: 0; background: none; }
-
-.highlight-box {
-  background-color: #e8f4fd;
-  border-left: 5px solid #3498db;
-  padding: 20px;
-  border-radius: 4px;
-  margin: 2em 0;
-}
-
-.brand-box {
-  background: #f8f9fa;
-  padding: 20px;
-  text-align: center;
-  border-radius: var(--kh-radius);
-  border: 1px solid #eee;
-}
-.brand-list span {
-  display: inline-block;
-  background: #fff;
-  padding: 5px 15px;
-  margin: 5px;
-  border-radius: 20px;
-  border: 1px solid #ddd;
-  font-weight: 600;
-  color: #555;
-  font-size: 0.9em;
-}
-
-/* ==========================================================================
-   7. AUDIO PLAYER (แบบ Manual)
-   ========================================================================== */
-.kh-audio {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-top: 15px;
-}
-.kh-audio button {
-  padding: 0 15px;
-  height: 35px;
-  line-height: 35px;
-  font-size: 0.8em;
-}
-/* Audio Gate ถูกลบออกแล้วเพื่อ Performance */
-
-/* ==========================================================================
-   8. SIDEBAR & NAVIGATION (MENU)
-   ========================================================================== */
-#menu ul li.divider {
-  margin: 20px 0 10px 0;
-  padding: 8px 10px;
-  font-weight: 800;
-  font-size: 0.9em;
-  color: #b30000;
-  background: rgba(179,0,0,0.05);
-  border-left: 4px solid #b30000;
-  border-top: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-#menu ul li:not(.divider) a {
-  padding-left: 15px;
-  transition: 0.2s;
-  border-bottom: none;
-}
-#menu ul li:not(.divider) a:hover {
-  color: var(--kh-primary);
-  padding-left: 20px;
-}
-
-.kh-footer, #footer {
-  font-size: 0.8em;
+/* Footer */
+.kh-footer, #footer{
+  font-size: .85em;
   color: #aaa;
   margin-top: 30px;
   padding-top: 20px;
   border-top: 1px solid #eee;
 }
 
-
-/* ==========================================================================
-   9. UTILITIES & ICONS
-   ========================================================================== */
-.check-icon { color: #2ecc71; font-weight: bold; }
-.cross-icon { color: #e74c3c; font-weight: bold; }
-.highlight-green { color: #27ae60; font-weight: bold; }
-.brand-tag {
-  display: inline-block;
-  background: #eee;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 0.75em;
-  margin-right: 5px;
-  color: #666;
-  margin-top: 5px;
-}
-
-.kh-embed {
-  position: relative;
-  overflow: hidden;
-  padding-top: 56.25%;
-  border-radius: var(--kh-radius);
-  border: 1px solid #ddd;
-}
-.kh-embed iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
 /* =========================
-   MOBILE FIX
-   ========================= */
-ul, ol { list-style: none; margin: 0; padding: 0; }
-li { margin: 0; padding: 0; }
-html, body { overflow-x: hidden; }
-
-@media (max-width: 980px) {
-  #main{
-    margin-left: 0 !important;
-    width: 100% !important;
-  }
-  #main .inner{
-    padding: 22px 16px !important;
-  }
-  .kh-hero-grid{ grid-template-columns: 1fr; }
-}
-
-/* =========================
-   KH - Current Page Tab (สวยๆ)
+   10) CURRENT PAGE TAB (Luxury – no red)
    ========================= */
 .kh-loc{
   display:flex;
@@ -417,7 +400,9 @@ html, body { overflow-x: hidden; }
   padding: 12px 14px;
   margin: 6px 0 16px;
   border-radius: 16px;
-  background: radial-gradient(900px 240px at 15% 0%, rgba(211, 47, 47, 0.14), transparent 55%), #fff;
+  background:
+    radial-gradient(900px 240px at 15% 0%, rgba(168,121,16,.14), transparent 55%),
+    #fff;
   border: 1px solid var(--kh-line);
   box-shadow: 0 14px 34px rgba(0,0,0,.10);
   position: sticky;
@@ -432,8 +417,8 @@ html, body { overflow-x: hidden; }
   display:grid;
   place-items:center;
   color:#fff;
-  background: linear-gradient(135deg, var(--kh-red), var(--kh-red2));
-  box-shadow: 0 10px 22px rgba(211, 47, 47, 0.20);
+  background: linear-gradient(135deg, #d9b15a, #a87910);
+  box-shadow: 0 10px 22px rgba(168,121,16,.20);
   flex: 0 0 auto;
 }
 
@@ -457,222 +442,34 @@ html, body { overflow-x: hidden; }
   margin-left:auto;
   padding: 10px 12px;
   border-radius: 12px;
-  background: var(--kh-soft);
-  border: 1px solid rgba(211, 47, 47, 0.22);
-  color: var(--kh-red2);
+  background: rgba(255, 244, 218, .85);
+  border: 1px solid rgba(168,121,16,.22);
+  color: #0b1220;
   font-weight: 900;
   text-decoration: none;
   flex: 0 0 auto;
 }
-.kh-loc__cta:hover{ background: rgba(211, 47, 47, 0.14); }
+.kh-loc__cta:hover{ background: rgba(255, 244, 218, .98); }
 
 @media (max-width: 980px){
   .kh-loc{ top: 8px; }
   .kh-loc__cta{ padding: 9px 10px; }
 }
 
-/* =========================================
-   SIDEBAR ACTION BUTTONS (ปุ่มติดต่อ 4 สี)
-   ========================================= */
-
-/* จัดทรงปุ่มให้เต็มกรอบและสวยงาม */
-#menu ul li a.button {
-    width: 100% !important;      /* กว้างเต็ม */
-    display: block;              /* เป็นบล็อก */
-    text-align: center;          /* ตัวหนังสืออยู่กลาง */
-    margin-bottom: 8px;          /* เว้นระยะห่างระหว่างปุ่ม */
-    border: none !important;     /* เอาเส้นขอบออก */
-    border-radius: 50px;         /* ทำมุมมนๆ เหมือนแคปซูล */
-    font-weight: bold;
-    font-size: 0.9em;            /* ปรับขนาดตัวอักษรไม่ให้ล้น */
-    line-height: 2.5em;          /* จัดความสูงบรรทัด */
-    height: auto;
-    padding: 0 10px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.15); /* เงาปุ่มลอยมีมิติ */
-    transition: all 0.2s ease;
-}
-
-/* เอฟเฟกต์ตอนกดปุ่ม (ปุ่มยุบลง) */
-#menu ul li a.button:active {
-    transform: scale(0.98);
-    box-shadow: none;
-}
-
-/* --- กำหนดสีแต่ละปุ่ม --- */
-
-/* 1. ปุ่มโทร (สีน้ำเงินเข้ม กรมท่า) */
-.btn-tel {
-    background-color: #e6e7e7 !important !important;
-    color: #020 !important;
-}
-.btn-tel:hover {
-    background-color: #34495e !important;
-}
-
-/* 2. ปุ่ม LINE (สีเขียว) */
-.btn-line, a[href*="line.me"] {
-    background-color: #1bff00 !important;
-    color: #000000 !important;
-}
-.btn-line:hover, a[href*="line.me"]:hover {
-    background-color: #ffffff !important;
-}
-a.icon.brands.fa-line {
-    background-color: #ffffff !important;
-    color: #53b756 !important;
-}
-/* 3. ปุ่ม Facebook (สีน้ำเงินแบรนด์) */
-.btn-fb {
-    background-color: #1877f2 !important;
-    color: #ffffff !important;
-}
-.btn-fb:hover {
-    background-color: #166fe5 !important;
-}
-
-/* 4. ปุ่ม Google Maps (สีแดง Google) */
-.btn-map {
-    background-color: #ea4335 !important;
-    color: #6b1010 !important;
-}
-.btn-map:hover {
-    background-color: #d33828 !important;
-}
-
-/* ปรับระยะห่างไอคอนในปุ่ม */
-#menu ul li a.button .icon {
-    margin-right: 8px;
-    opacity: 0.9;
-}
-
 /* =========================
-   KH - Active Menu Highlight
+   11) REVIEWS (keep readable, luxury accent)
    ========================= */
-#menu ul li.active > a,
-#menu a.active{
-  background: rgba(211, 47, 47, 0.10) !important;
-  color: var(--kh-red2) !important;
-  font-weight: 900 !important;
-  border-left: 4px solid var(--kh-red) !important;
-  padding-left: calc(1.65em - 4px) !important;
-  border-radius: 10px;
-}
-/* =========================================================
-   KH – CONTACT QUICK BUTTONS (Icon Top + Text Bottom)
-   ทำให้ไอคอน/ตัวหนังสือสมส่วน อ่านชัด สะดุดตา
-   ========================================================= */
-
-#menu a.button.btn-tel,
-#menu a.button.btn-line,
-#menu a.button.btn-fb,
-#menu a.button.btn-map{
-  width: 100% !important;
-  display: flex !important;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  gap: 8px;
-  min-height: 96px;
-  padding: 14px 14px !important;
-
-  border: none !important;
-  border-radius: 28px !important;
-
-  text-align: center;
-  font-weight: 900;
-  font-size: 14px;
-  line-height: 1.15;
-  letter-spacing: .2px;
-  white-space: normal;
-
-  box-shadow: 0 12px 24px rgba(0,0,0,.18);
-  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
-}
-
-/* ไอคอนเป็น “ป้าย” กลม ๆ เพิ่มความเด่น */
-#menu a.button.btn-tel .icon,
-#menu a.button.btn-line .icon,
-#menu a.button.btn-fb .icon,
-#menu a.button.btn-map .icon{
-  margin: 0 !important;             /* ทับ margin-right เดิม */
-  width: 46px;
-  height: 46px;
-  border-radius: 18px;
-  display: grid;
-  place-items: center;
-  background: rgba(255,255,255,.18);
-}
-
-/* ขยายไอคอน (FontAwesome ผ่าน :before) */
-#menu a.button.btn-tel .icon:before,
-#menu a.button.btn-line .icon:before,
-#menu a.button.btn-fb .icon:before,
-#menu a.button.btn-map .icon:before{
-  font-size: 22px;
-  line-height: 1;
-}
-
-/* โฮเวอร์/กด */
-#menu a.button.btn-tel:hover,
-#menu a.button.btn-line:hover,
-#menu a.button.btn-fb:hover,
-#menu a.button.btn-map:hover{
-  transform: translateY(-1px);
-  filter: brightness(1.03);
-  box-shadow: 0 16px 30px rgba(0,0,0,.22);
-}
-
-#menu a.button.btn-tel:active,
-#menu a.button.btn-line:active,
-#menu a.button.btn-fb:active,
-#menu a.button.btn-map:active{
-  transform: scale(.99);
-  box-shadow: 0 10px 18px rgba(0,0,0,.16);
-}
-
-/* มือถือ: ลดนิดแต่ยังชัด */
-@media (max-width: 980px){
-  #menu a.button.btn-tel,
-  #menu a.button.btn-line,
-  #menu a.button.btn-fb,
-  #menu a.button.btn-map{
-    min-height: 88px;
-    font-size: 13.5px;
-  }
-  #menu a.button.btn-tel .icon,
-  #menu a.button.btn-line .icon,
-  #menu a.button.btn-fb .icon,
-  #menu a.button.btn-map .icon{
-    width: 42px;
-    height: 42px;
-    border-radius: 16px;
-  }
-  #menu a.button.btn-tel .icon:before,
-  #menu a.button.btn-line .icon:before,
-  #menu a.button.btn-fb .icon:before,
-  #menu a.button.btn-map .icon:before{
-    font-size: 20px;
-  }
-}
-
-
-
-/* ==========================================================================
-   10. REVIEWS (Auto Scroll / Marquee)
-   ========================================================================== */
 .kh-review-hint{
   margin-top: -8px;
   margin-bottom: 12px;
-  font-size: 0.9em;
+  font-size: .95em;
   color: rgba(17,24,39,.62);
 }
 
-/* รีวิวแบบเรียงบรรทัด */
 .kh-review{
   background:#fff;
   border:1px solid var(--kh-line);
-  border-left:4px solid var(--kh-red);
+  border-left:4px solid var(--lux-gold);
   border-radius:16px;
   padding:14px 16px;
   box-shadow: 0 10px 28px rgba(0,0,0,.06);
@@ -684,7 +481,7 @@ a.icon.brands.fa-line {
   gap:12px;
 }
 .kh-stars{
-  color: var(--kh-primary);
+  color: var(--lux-gold);
   letter-spacing: 1px;
   font-size: 14px;
   font-weight: 900;
@@ -711,21 +508,20 @@ a.icon.brands.fa-line {
 }
 .kh-review__by{
   font-weight: 900;
-  color: var(--kh-red2);
+  color: var(--lux-gold);
 }
 
-/* รีวิวเลื่อนอัตโนมัติ (แนวตั้ง) */
+/* Marquee */
 .kh-reviews-marquee{
-  --kh-marquee-h: 0px;       /* JS จะใส่ให้ */
-  --kh-marquee-dur: 30s;     /* JS จะใส่ให้ */
-  height: 420px;             /* ปรับความสูงพื้นที่โชว์ */
+  --kh-marquee-h: 0px;
+  --kh-marquee-dur: 30s;
+  height: 420px;
   overflow: hidden;
   position: relative;
   border-radius: 16px;
   border: 1px solid var(--kh-line);
   background: #fff;
 }
-
 .kh-reviews-marquee:before,
 .kh-reviews-marquee:after{
   content:"";
@@ -751,136 +547,23 @@ a.icon.brands.fa-line {
   will-change: transform;
   animation: khReviewsMarquee var(--kh-marquee-dur) linear infinite;
 }
-
 .kh-reviews-marquee:hover .kh-reviews-track,
 .kh-reviews-marquee.is-paused .kh-reviews-track{
   animation-play-state: paused;
 }
-
 @keyframes khReviewsMarquee{
   from { transform: translateY(0); }
   to   { transform: translateY(calc(-1 * var(--kh-marquee-h))); }
 }
-
 @media (max-width: 980px){
   .kh-reviews-marquee{ height: 360px; }
   .kh-review__top{ flex-direction: column; align-items:flex-start; }
   .kh-review__meta{ white-space: normal; overflow: visible; }
-} /* ✅ ต้องมีบรรทัดนี้ปิด @media */
-
-
-/* =========================================================
-   KH – CONTACT QUICK BUTTONS (PC + Mobile)
-   ========================================================= */
-
-#menu a.button.btn-tel,
-#menu a.button.btn-line,
-#menu a.button.btn-fb,
-#menu a.button.btn-map{
-  width:100% !important;
-  display:flex !important;
-  flex-direction:column !important;
-  align-items:center !important;
-  justify-content:center !important;
-
-  gap:8px !important;
-  min-height:96px !important;
-  padding:14px 14px !important;
-
-  text-align:center !important;
-  font-weight:900 !important;
-  font-size:14px !important;
-  line-height:1.15 !important;
-  letter-spacing:.2px !important;
-  white-space:normal !important;
-
-  border-radius:28px !important;
-}
-
-/* กล่องไอคอน */
-#menu a.button.btn-tel .icon,
-#menu a.button.btn-line .icon,
-#menu a.button.btn-fb .icon,
-#menu a.button.btn-map .icon{
-  margin:0 !important;            /* ทับ margin-right เดิม */
-  width:46px !important;
-  height:46px !important;
-  border-radius:18px !important;
-  display:grid !important;
-  place-items:center !important;
-  background: rgba(255,255,255,.18) !important;
-}
-
-/* ขยายไอคอนจริง (FontAwesome ผ่าน :before) */
-#menu a.button.btn-tel .icon:before,
-#menu a.button.btn-line .icon:before,
-#menu a.button.btn-fb .icon:before,
-#menu a.button.btn-map .icon:before{
-  font-size:22px !important;
-  line-height:1 !important;
-}
-
-/* มือถือ: ลดขนาดนิดแต่ยังชัด */
-@media (max-width: 980px){
-  #menu a.button.btn-tel,
-  #menu a.button.btn-line,
-  #menu a.button.btn-fb,
-  #menu a.button.btn-map{
-    min-height:88px !important;
-    font-size:13.5px !important;
-  }
-  #menu a.button.btn-tel .icon,
-  #menu a.button.btn-line .icon,
-  #menu a.button.btn-fb .icon,
-  #menu a.button.btn-map .icon{
-    width:42px !important;
-    height:42px !important;
-    border-radius:16px !important;
-  }
-  #menu a.button.btn-tel .icon:before,
-  #menu a.button.btn-line .icon:before,
-  #menu a.button.btn-fb .icon:before,
-  #menu a.button.btn-map .icon:before{
-    font-size:20px !important;
-  }
-/* =========================
-   SIDEBAR MENU – TEXT DARKER
-   ========================= */
-
-/* ลิงก์เมนูปกติ (ไม่ใช่ divider และไม่ใช่ปุ่มติดต่อด่วน) */
-#menu ul li:not(.divider) > a:not(.button){
-  color: #111827 !important;      /* ดำเข้ม อ่านชัด */
-  font-weight: 800 !important;    /* หนักขึ้น */
-  opacity: 1 !important;
-}
-
-/* เมนูย่อย/ตัวอักษรเล็ก ถ้ามี */
-#menu ul li:not(.divider) > a:not(.button) span{
-  color: inherit !important;
-}
-
-/* ตอนเอาเมาส์ชี้ (PC) */
-#menu ul li:not(.divider) > a:not(.button):hover{
-  color: #b71c1c !important;      /* แดงเข้มตามธีม */
-}
-
-/* เมนูที่ active (หน้าปัจจุบัน) ให้เข้มกว่าเดิม */
-#menu ul li.active > a:not(.button),
-#menu a.active:not(.button){
-  color: #111827 !important;
-  font-weight: 900 !important;
-  background: rgba(211, 47, 47, 0.12) !important;
-}
-
-   #menu, #menu *{
-  text-shadow: none;
 }
 
 /* =========================
-   TOP RIGHT ICONS – ALL PAGES
-   (โทร / LINE / แผนที่) ใน Header
+   12) TOP RIGHT ICONS (Header)
    ========================= */
-
 #header ul.icons{
   display:flex !important;
   align-items:center !important;
@@ -889,11 +572,7 @@ a.icon.brands.fa-line {
   margin:0 !important;
   padding:0 !important;
 }
-
-#header ul.icons li{
-  margin:0 !important;
-  padding:0 !important;
-}
+#header ul.icons li{ margin:0 !important; padding:0 !important; }
 
 #header ul.icons a{
   width:34px;
@@ -902,24 +581,16 @@ a.icon.brands.fa-line {
   display:grid !important;
   place-items:center !important;
 
-  background: rgba(211,47,47,.08);
-  border: 1px solid rgba(211,47,47,.22);
-  color: #b71c1c !important;
+  background: rgba(255, 244, 218, .80);
+  border: 1px solid rgba(168,121,16,.22);
+  color: var(--lux-ink) !important;
   text-decoration:none !important;
 }
+#header ul.icons a:hover{ background: rgba(255, 244, 218, .98); }
+#header ul.icons a:before{ font-size:16px; line-height:1; }
 
-#header ul.icons a:hover{
-  background: rgba(211,47,47,.14);
-}
-
-/* ทำให้ขนาดไอคอนเท่ากัน */
-#header ul.icons a:before{
-  font-size:16px;
-  line-height:1;
-}
-
-   /* =========================
-   HEADER BRAND (Logo + 2 Lines)
+/* =========================
+   13) HEADER BRAND (Logo + 2 lines + Gold/Orange stroke)
    ========================= */
 #header{
   display:flex;
@@ -942,13 +613,13 @@ a.icon.brands.fa-line {
   border-radius:10px;
   overflow:hidden;
   flex:0 0 auto;
-  box-shadow: 0 10px 20px rgba(0,0,0,.12);
-  border: 1px solid rgba(0,0,0,.08);
   background:#fff;
   display:grid;
   place-items:center;
-}
 
+  border: 1px solid rgba(212,175,55,.45) !important;
+  box-shadow: 0 10px 22px rgba(0,0,0,.14) !important;
+}
 #header .kh-brand__img img{
   width:100%;
   height:100%;
@@ -963,45 +634,10 @@ a.icon.brands.fa-line {
 }
 
 #header .kh-brand__th{
-  font-weight: 900;
-  font-size: 18px;
-  color: #111827;
-}
-
-#header .kh-brand__en{
-  margin-top: 3px;
-  font-weight: 800;
-  font-size: 12px;
-  letter-spacing: .4px;
-  color: rgba(17,24,39,.62);
-}
-
-/* มือถือ: ลดให้พอดี */
-@media (max-width: 980px){
-  #header .kh-brand__img{ width:40px; height:40px; }
-  #header .kh-brand__th{ font-size:16px; }
-  #header .kh-brand__en{ font-size:11px; }
-}
-
-/* =========================================================
-   HEADER BRAND – Gold/Orange Text + Black Outline + Floating
-   ใช้กับ #header .kh-brand__th / .kh-brand__en เท่านั้น
-   ========================================================= */
-
-#header .kh-brand__th,
-#header .kh-brand__en{
-  /* กันธีมเดิมขีดเส้นใต้ */
-  border-bottom: none !important;
-  text-decoration: none !important;
-}
-
-/* ชื่อไทย: ขอนแก่นไฮเทค (เด่นสุด) */
-#header .kh-brand__th{
   font-weight: 950;
   font-size: 18px;
   line-height: 1.05;
 
-  /* สีทอง-ส้มแบบไล่เฉด */
   background: linear-gradient(180deg,
     #fff1c2 0%,
     #ffd27a 22%,
@@ -1013,10 +649,7 @@ a.icon.brands.fa-line {
   background-clip: text;
   color: transparent;
 
-  /* ขอบดำ (รองรับ Chrome/Edge/Safari) */
   -webkit-text-stroke: 1.2px rgba(0,0,0,.92);
-
-  /* เงา 3D + ลอย */
   text-shadow:
     0 1px 0 rgba(0,0,0,.55),
     0 2px 0 rgba(0,0,0,.45),
@@ -1024,7 +657,6 @@ a.icon.brands.fa-line {
     0 10px 26px rgba(0,0,0,.18);
 }
 
-/* ชื่ออังกฤษ: Khon Kaen HiTech Service (เล็กกว่า แต่ยังทอง) */
 #header .kh-brand__en{
   margin-top: 3px;
   font-weight: 900;
@@ -1047,178 +679,139 @@ a.icon.brands.fa-line {
     0 5px 12px rgba(0,0,0,.18);
 }
 
-/* กล่องโลโก้ให้ดูเข้าธีม (มีขอบทองบาง ๆ) */
-#header .kh-brand__img{
-  border: 1px solid rgba(212,175,55,.45) !important;
-  box-shadow: 0 10px 22px rgba(0,0,0,.14) !important;
-}
-
-/* มือถือ: ลดขนาดให้พอดี */
 @media (max-width: 980px){
-  #header .kh-brand__th{ font-size: 16px; -webkit-text-stroke: 1.1px rgba(0,0,0,.92); }
-  #header .kh-brand__en{ font-size: 11px; -webkit-text-stroke: .9px rgba(0,0,0,.88); }
+  #header .kh-brand__img{ width:40px; height:40px; }
+  #header .kh-brand__th{ font-size:16px; -webkit-text-stroke: 1.1px rgba(0,0,0,.92); }
+  #header .kh-brand__en{ font-size:11px; -webkit-text-stroke: .9px rgba(0,0,0,.88); }
 }
 
-/* Fallback (กรณีบางเบราว์เซอร์ไม่รองรับ clip text) */
 @supports not (-webkit-background-clip: text){
-  #header .kh-brand__th, #header .kh-brand__en{
-    color: #f6b84a !important;
+  #header .kh-brand__th,
+  #header .kh-brand__en{
+    color:#f6b84a !important;
+    -webkit-text-stroke: 0 !important;
   }
-/* =========================================
-   LUX DIVIDER (เมนูหัวข้อ) – No Red / Classic Premium
-   ========================================= */
-#menu ul li.divider{
-  /* ขนาด/ระยะ */
-  margin: 18px 0 10px 0 !important;
-  padding: 10px 12px !important;
-
-  /* สีแบบหรู (ครีม-ทอง) */
-  background: linear-gradient(90deg,
-    rgba(255, 244, 218, .96) 0%,
-    rgba(235, 217, 165, .38) 55%,
-    rgba(255, 255, 255, .70) 100%
-  ) !important;
-
-  /* ตัวหนังสือเข้ม อ่านชัด */
-  color: #0b1220 !important;
-  font-weight: 950 !important;
-
-  /* แถบซ้ายทองหม่น (แทนแดง) */
-  border-left: 5px solid #a87910 !important;
-
-  /* ทำให้ดูเป็น “แถบหัวข้อ” แบบพรีเมียม */
-  border-radius: 12px !important;
-  box-shadow:
-    0 10px 22px rgba(0,0,0,.10),
-    inset 0 0 0 1px rgba(168,121,16,.18) !important;
-
-  /* ลดความแข็งของ uppercase เดิม (ถ้าคุณอยากให้ยังเป็นตัวใหญ่ ให้ลบ 2 บรรทัดนี้ทิ้ง) */
-  text-transform: none !important;
-  letter-spacing: .4px !important;
 }
 
-/* เผื่อ divider มีเส้นบน/ล่างจากธีม */
-#menu ul li.divider::before{
-  content:"◆";
-  margin-right: 8px;
-  color: rgba(168,121,16,.95);
-}
-
-/* =========================================
-   LUX CTA – TEL BUTTON (Warm Premium)
-   ทำให้ดูน่าโทร/น่าซื้อ ไม่มืดเกิน
-   ========================================= */
-
-/* ปุ่มโทร */
-#menu a.button.btn-tel{
-  background: linear-gradient(180deg,
-    #fff4d9 0%,
-    #f3d59a 55%,
-    #d9b15a 100%
-  ) !important;
-
-  color: #0b1220 !important;                 /* ตัวหนังสือเข้ม อ่านชัด */
-  border: 1px solid rgba(168,121,16,.35) !important;
-
-  box-shadow:
-    0 16px 34px rgba(0,0,0,.16),
-    inset 0 1px 0 rgba(255,255,255,.65) !important;
-}
-
-/* กล่องไอคอนในปุ่มโทร */
-#menu a.button.btn-tel .icon{
-  background: rgba(11,18,32,.10) !important; /* เข้มแบบนุ่ม */
-  border: 1px solid rgba(11,18,32,.10) !important;
-}
-
-/* ไอคอนโทรให้เด่นและหรู */
-#menu a.button.btn-tel .icon:before{
-  color: #0b1220 !important;
-}
-
-/* Hover/Active: กระตุ้นให้กด */
-#menu a.button.btn-tel:hover{
-  filter: brightness(1.04) !important;
-  transform: translateY(-1px);
-  box-shadow:
-    0 20px 40px rgba(0,0,0,.18),
-    inset 0 1px 0 rgba(255,255,255,.70) !important;
-}
-
-#menu a.button.btn-tel:active{
-  transform: scale(.99);
-  box-shadow:
-    0 12px 24px rgba(0,0,0,.14),
-    inset 0 2px 6px rgba(0,0,0,.10) !important;
-}
-
-/* =========================================================
-   PSYCHOLOGY CTA – 4 CONTACT BUTTONS (Premium Warm)
-   วางท้ายสุดของ style.css
-   ========================================================= */
-
-:root{
-  --cta-ink: #0b1220;                 /* ดำหมึก */
-  --cta-warm1: #fff4d9;               /* ครีมอุ่น */
-  --cta-warm2: #f3d59a;               /* แชมเปญ */
-  --cta-warm3: #d9b15a;               /* ทองหม่น */
-  --cta-ring: rgba(168,121,16,.35);   /* ขอบทอง */
-  --cta-shadow: 0 18px 38px rgba(0,0,0,.16);
-}
-
-/* ให้ 4 ปุ่มดู “กดได้” ชัดขึ้น */
+/* =========================
+   14) CONTACT BUTTONS – DELUXE PREMIUM (4 buttons) [ONE BLOCK]
+   (TEL/LINE/FB/MAP) Icon top + Text bottom + Psychology
+   ========================= */
 #menu a.button.btn-tel,
 #menu a.button.btn-line,
 #menu a.button.btn-fb,
 #menu a.button.btn-map{
-  border: 1px solid var(--cta-ring) !important;
-  box-shadow: var(--cta-shadow), inset 0 1px 0 rgba(255,255,255,.70) !important;
+  width:100% !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  gap:8px !important;
+  min-height:96px !important;
+  padding:14px 14px !important;
+
+  border-radius: var(--cta-radius) !important;
+  border: 1px solid var(--cta-gold-ring) !important;
+
+  text-align:center !important;
+  font-weight: 950 !important;
+  font-size: 14px !important;
+  line-height: 1.15 !important;
+  letter-spacing: .2px !important;
+  white-space: normal !important;
+
+  box-shadow: var(--cta-shadow-1), inset 0 1px 0 rgba(255,255,255,.75) !important;
   transition: transform .15s ease, filter .15s ease, box-shadow .15s ease !important;
+
+  position: relative;
+  overflow: hidden;
 }
 
-/* Hover/Active = เพิ่มแรงจูงใจ */
+/* badge icon */
+#menu a.button.btn-tel .icon,
+#menu a.button.btn-line .icon,
+#menu a.button.btn-fb .icon,
+#menu a.button.btn-map .icon{
+  margin:0 !important;
+  width:46px !important;
+  height:46px !important;
+  border-radius: var(--cta-badge-radius) !important;
+  display:grid !important;
+  place-items:center !important;
+  background: rgba(11,18,32,.10) !important;
+  border: 1px solid rgba(11,18,32,.10) !important;
+}
+#menu a.button.btn-tel .icon:before,
+#menu a.button.btn-line .icon:before,
+#menu a.button.btn-fb .icon:before,
+#menu a.button.btn-map .icon:before{
+  font-size:22px !important;
+  line-height:1 !important;
+}
+
+/* hover / active */
 #menu a.button.btn-tel:hover,
 #menu a.button.btn-line:hover,
 #menu a.button.btn-fb:hover,
 #menu a.button.btn-map:hover{
   transform: translateY(-1px);
   filter: brightness(1.04);
-  box-shadow: 0 22px 44px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.75) !important;
+  box-shadow: var(--cta-shadow-2), inset 0 1px 0 rgba(255,255,255,.78) !important;
 }
-
 #menu a.button.btn-tel:active,
 #menu a.button.btn-line:active,
 #menu a.button.btn-fb:active,
 #menu a.button.btn-map:active{
   transform: scale(.99);
-  box-shadow: 0 14px 28px rgba(0,0,0,.14), inset 0 2px 8px rgba(0,0,0,.10) !important;
+  box-shadow: 0 14px 28px rgba(0,0,0,.14),
+              inset 0 2px 8px rgba(0,0,0,.10) !important;
 }
 
-/* กล่องไอคอนให้ดูเป็น “badge” */
-#menu a.button.btn-tel .icon,
-#menu a.button.btn-line .icon,
-#menu a.button.btn-fb .icon,
-#menu a.button.btn-map .icon{
-  background: rgba(11,18,32,.10) !important;
-  border: 1px solid rgba(11,18,32,.10) !important;
-}
-
-/* =========================================================
-   สีแต่ละปุ่ม (จิตวิทยา)
-   - โทร: อุ่น/มั่นใจ (ปุ่มหลัก)
-   - LINE: นุ่ม/เป็นกันเอง (แชท)
-   - Facebook: น่าเชื่อถือ/ติดตาม
-   - Maps: ชัดเจน/นำทาง
-   ========================================================= */
-
-/* 1) TEL – ปุ่มหลัก (Warm Gold) */
+/* TEL – Primary CTA (Warm Gold) */
 #menu a.button.btn-tel{
-  background: linear-gradient(180deg, var(--cta-warm1) 0%, var(--cta-warm2) 55%, var(--cta-warm3) 100%) !important;
+  background: linear-gradient(180deg, var(--cta-gold-1) 0%, var(--cta-gold-2) 55%, var(--cta-gold-3) 100%) !important;
   color: var(--cta-ink) !important;
-}
-#menu a.button.btn-tel .icon:before{ color: var(--cta-ink) !important; }
 
-/* 2) LINE – อุ่น+เขียวนิด (Friendly Chat) */
+  /* make it stand out */
+  min-height: 108px !important;
+  box-shadow:
+    0 26px 56px rgba(0,0,0,.22),
+    0 0 0 1px rgba(168,121,16,.22),
+    inset 0 1px 0 rgba(255,255,255,.80) !important;
+}
+#menu a.button.btn-tel .icon{
+  width:52px !important;
+  height:52px !important;
+  border-radius:20px !important;
+}
+#menu a.button.btn-tel .icon:before{ color: var(--cta-ink) !important; font-size:24px !important; }
+
+/* subtle premium shine */
+#menu a.button.btn-tel::after{
+  content:"";
+  position:absolute;
+  inset:-40% -60%;
+  background: linear-gradient(120deg,
+    rgba(255,255,255,0) 35%,
+    rgba(255,255,255,.35) 50%,
+    rgba(255,255,255,0) 65%
+  );
+  transform: translateX(-30%) rotate(10deg);
+  opacity: .45;
+  pointer-events:none;
+}
+#menu a.button.btn-tel:hover::after{
+  transform: translateX(30%) rotate(10deg);
+  transition: transform .55s ease;
+  opacity: .55;
+}
+@media (prefers-reduced-motion: no-preference){
+  #menu a.button.btn-tel{ animation: telPulse 2.6s ease-in-out infinite; }
+  @keyframes telPulse{ 0%,100%{ filter:brightness(1); } 50%{ filter:brightness(1.03); } }
+}
+
+/* LINE – Friendly chat */
 #menu a.button.btn-line{
   background: linear-gradient(180deg, #f3fff7 0%, #c7f3d7 55%, #74d39a 100%) !important;
   color: #06351f !important;
@@ -1227,7 +820,7 @@ a.icon.brands.fa-line {
 #menu a.button.btn-line .icon{ background: rgba(6,53,31,.10) !important; border-color: rgba(6,53,31,.10) !important; }
 #menu a.button.btn-line .icon:before{ color: #06351f !important; }
 
-/* 3) FB – น่าเชื่อถือ+สุภาพ (Trust) */
+/* FB – Trust */
 #menu a.button.btn-fb{
   background: linear-gradient(180deg, #f3f8ff 0%, #cfe2ff 55%, #88b4ff 100%) !important;
   color: #0b1a38 !important;
@@ -1236,14 +829,54 @@ a.icon.brands.fa-line {
 #menu a.button.btn-fb .icon{ background: rgba(11,26,56,.10) !important; border-color: rgba(11,26,56,.10) !important; }
 #menu a.button.btn-fb .icon:before{ color: #0b1a38 !important; }
 
-/* 4) MAP – อุ่น+ครีม (Clear direction) */
+/* MAP – Clear direction */
 #menu a.button.btn-map{
   background: linear-gradient(180deg, #fff7ec 0%, #ffe2c0 55%, #f4b27f 100%) !important;
   color: #3a1d0b !important;
   border-color: rgba(244,178,127,.55) !important;
 }
 #menu a.button.btn-map .icon{ background: rgba(58,29,11,.10) !important; border-color: rgba(58,29,11,.10) !important; }
-#menu a.button.btn-map .icon:before{ color: #3a1d0b !important;
+#menu a.button.btn-map .icon:before{ color: #3a1d0b !important; }
+
+/* Mobile tuning for 4 buttons */
+@media (max-width: 980px){
+  #menu a.button.btn-tel,
+  #menu a.button.btn-line,
+  #menu a.button.btn-fb,
+  #menu a.button.btn-map{
+    min-height: 88px !important;
+    font-size: 13.5px !important;
+  }
+  #menu a.button.btn-tel{ min-height: 98px !important; }
+
+  #menu a.button.btn-tel .icon,
+  #menu a.button.btn-line .icon,
+  #menu a.button.btn-fb .icon,
+  #menu a.button.btn-map .icon{
+    width:42px !important;
+    height:42px !important;
+    border-radius:16px !important;
+  }
+  #menu a.button.btn-tel .icon{
+    width:46px !important;
+    height:46px !important;
+    border-radius:18px !important;
+  }
+
+  #menu a.button.btn-tel .icon:before,
+  #menu a.button.btn-line .icon:before,
+  #menu a.button.btn-fb .icon:before,
+  #menu a.button.btn-map .icon:before{
+    font-size:20px !important;
+  }
+  #menu a.button.btn-tel .icon:before{ font-size:22px !important; }
 }
 
-   
+/* =========================
+   15) MOBILE LAYOUT SAFETY
+   ========================= */
+html, body{ overflow-x: hidden; }
+@media (max-width: 980px){
+  #main{ margin-left: 0 !important; width: 100% !important; }
+  #main .inner{ padding: 22px 16px !important; }
+}
