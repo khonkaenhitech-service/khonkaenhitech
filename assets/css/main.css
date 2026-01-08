@@ -1351,7 +1351,7 @@ ul.icons {
     ul.icons li:last-child {
       padding-right: 0; }
     ul.icons li .icon {
-      color: #ff4400; }
+      color: #1500ff; }
       ul.icons li .icon:before {
         font-size: 1.25em; }
 
@@ -2272,6 +2272,7 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+
 
 
 
