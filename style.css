@@ -1424,30 +1424,44 @@ html, body { overflow-x: hidden; }
     padding-top: 2em !important;
 }
 
-/* KH Header Logo (All pages) */
+/* =========================
+   KH GLOBAL LOGO (CSS only)
+   ทำให้โลโก้ขึ้นเหมือนกันทุกหน้า
+   ========================= */
+
+/* จัดแถวโลโก้ + ข้อความ */
+#header .logo{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+}
+
+/* ถ้าบางหน้ารูปแตกเพราะ path relative -> ใช้ absolute ของ GitHub Pages แทน */
+#header .logo::before{
+  content:"";
+  width:52px;
+  height:52px;
+  flex:0 0 52px;
+  background:url("/khonkaenhitech/images/logo-khonkaen.webp") center/contain no-repeat;
+  border-radius:8px; /* ไม่อยากโค้งเปลี่ยนเป็น 0 */
+}
+
+/* ซ่อน <img> เดิม เพื่อไม่ให้ซ้ำ (HTML ไม่ต้องแก้) */
+#header .logo img{
+  display:none !important;
+}
+
+/* สไตล์ข้อความ “ขอนแก่นไฮเทค” */
+#header .logo strong{
+  font-size:26px;
+  font-weight:900;
+  line-height:1;
+  color:#f26a00;
+}
+
+/* เส้นแดงใต้หัวเว็บเหมือนตัวอย่าง */
 #header{
-  padding: 14px 0;
-  border-bottom: 3px solid #d32f2f; /* เส้นแดงใต้เหมือนรูป */
-}
-
-#header .kh-logo{
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-}
-
-#header .kh-logo img{
-  width: 52px;
-  height: 52px;
-  object-fit: contain;
-  display: block;
-  border-radius: 8px; /* ถ้าไม่อยากโค้ง เปลี่ยนเป็น 0 */
-}
-
-#header .kh-logo .kh-logo-text{
-  font-size: 26px;
-  font-weight: 900;
-  line-height: 1;
-  color: #f26a00; /* โทนส้มของข้อความ */
+  padding:14px 0;
+  border-bottom:3px solid #d32f2f;
 }
