@@ -1,151 +1,158 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // 1) หา container ของหน้าเพื่อ "ฉีด" แท็บเข้าไปอัตโนมัติ
-  const inner =
-    document.querySelector("#main .inner") ||
-    document.querySelector("#main") ||
-    document.body;
+/* ==========================================================================
+   KH CURRENT TAB + GLOBAL HEADER INJECTOR
+   - Highlight current menu item (#menu) on every page
+   - Ensure header logo + icons exist on every page
+   ========================================================================== */
 
-  if (!inner) return;
-
-
-    // แทรกไว้บนสุดของคอนเทนต์
-    inner.insertBefore(wrap.firstChild, inner.firstChild);
+(function () {
+  function cleanUrl(u) {
+    return (u || "").split("#")[0].split("?")[0];
   }
 
-  const out = document.getElementById("khCurrentPage");
-  if (!out) return;
+  function getCurrentFile() {
+    let file = (location.pathname.split("/").pop() || "").toLowerCase();
+    if (!file) file = "index.html";
+    return file;
+  }
 
-  // 3) หาเมนู/ลิงก์ที่ตรงกับหน้าปัจจุบัน เพื่อเอาชื่อมาโชว์ + ไฮไลต์
-  const menu = document.querySelector("#menu");
-  const links = menu ? Array.from(menu.querySelectorAll("a")) : [];
+  function ensureHeader() {
+    const header = document.getElementById("header");
+    if (!header) return;
 
-  const currentFile = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
+    // --- LOGO ---
+    let logo = header.querySelector("a.logo");
+    if (!logo) {
+      logo = document.createElement("a");
+      logo.className = "logo";
+      logo.href = "index.html";
+      header.prepend(logo);
+    }
 
-  const clearActive = () => {
-    if (!menu) return;
-    menu.querySelectorAll("li.active").forEach(li => li.classList.remove("active"));
-    menu.querySelectorAll("a.active").forEach(a => a.classList.remove("active"));
-  };
+    let strong = logo.querySelector("strong");
+    if (!strong) {
+      strong = document.createElement("strong");
+      strong.textContent = "ขอนแก่นไฮเทค";
+      logo.appendChild(strong);
+    }
 
-  const getParentLabel = (a) => {
-    const li = a.closest("li");
-    const parentUL = li ? li.closest("ul") : null;
-    const parentLI = parentUL ? parentUL.closest("li") : null;
-    const opener = parentLI ? parentLI.querySelector(".opener") : null;
-    return opener ? opener.textContent.trim() : "";
-  };
+    // ใส่ <img> ถ้ายังไม่มี
+    let img = logo.querySelector("img");
+    if (!img) {
+      img = document.createElement("img");
+      img.src = "images/logo-khonkaen.webp";
+      img.alt = "โลโก้ ขอนแก่นไฮเทค";
+      img.loading = "eager";
+      img.decoding = "async";
+      logo.insertBefore(img, strong);
+    }
 
-  let activeLink = null;
+    // --- ICONS ---
+    let icons = header.querySelector("ul.icons");
+    if (!icons) {
+      icons = document.createElement("ul");
+      icons.className = "icons";
+      header.appendChild(icons);
+    }
 
-  for (const a of links) {
-    const href = (a.getAttribute("href") || "").trim();
-    if (!href) continue;
-
-    // ข้ามลิงก์นอก
-    if (href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:")) continue;
-
-    // เอาแค่ชื่อไฟล์มาเทียบ (กันกรณีอยู่ในโฟลเดอร์)
-    const hrefFile = href.split("#")[0].split("?")[0].split("/").pop()?.toLowerCase();
-    if (hrefFile && hrefFile === currentFile) {
-      activeLink = a;
-      break;
+    // ถ้าว่าง -> เติม 3 ไอคอน
+    if (icons.children.length === 0) {
+      icons.innerHTML = `
+        <li>
+          <a href="tel:+66944749874" class="icon solid fa-phone" aria-label="โทร" title="โทร 094-474-9874">
+            <span class="label">โทร</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://line.me/ti/p/~KKHITECH" class="icon brands fa-line" aria-label="LINE" title="LINE: KKHITECH">
+            <span class="label">LINE</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://maps.app.goo.gl/LyV85313vknT4hBE6" class="icon solid fa-map-marker-alt" aria-label="แผนที่" title="Google Maps">
+            <span class="label">แผนที่</span>
+          </a>
+        </li>
+      `;
     }
   }
 
-  // fallback: ใช้หัวข้อ h1/h2 ถ้าไม่มีเมนูให้เทียบ
-  const fallbackTitle =
-    document.querySelector("h1")?.textContent?.trim() ||
-    document.querySelector("h2")?.textContent?.trim() ||
-    "หน้าหลัก";
+  function enhanceMenuContacts() {
+    const menu = document.querySelector("#menu");
+    if (!menu) return;
 
-  clearActive();
+    const links = menu.querySelectorAll('a[href]');
+    links.forEach(a => {
+      const href = a.getAttribute("href") || "";
+      const h = href.toLowerCase();
 
-  if (activeLink) {
-    const label = activeLink.textContent.trim();
-    const parent = getParentLabel(activeLink);
+      // ทำปุ่มเฉพาะลิงก์ติดต่อ
+      const isTel = h.startsWith("tel:");
+      const isLine = h.includes("line.me/");
+      const isFb = h.includes("facebook.com");
+      const isMap = h.includes("maps.app.goo.gl") || h.includes("google.com/maps");
 
-    out.innerHTML = parent
-      ? `${escapeHtml(parent)} <span class="kh-sep">›</span> ${escapeHtml(label)}`
-      : escapeHtml(label);
+      if (!(isTel || isLine || isFb || isMap)) return;
 
-    // ไฮไลต์เมนู
-    activeLink.classList.add("active");
-    const li = activeLink.closest("li");
-    if (li) li.classList.add("active");
+      // ใส่ class button ถ้ายังไม่มี
+      if (!a.classList.contains("button")) a.classList.add("button");
 
-    const parentLI = li?.closest("ul")?.closest("li");
-    if (parentLI) parentLI.classList.add("active");
-  } else {
-    out.textContent = fallbackTitle;
-  }
-
-  function escapeHtml(str){
-    return String(str).replace(/[&<>"']/g, s => ({
-      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
-    }[s]));
-  }
-});
-
-/* ===== Reviews Auto Marquee ===== */
-document.addEventListener("DOMContentLoaded", () => {
-  // 1) สุ่มชื่อผู้เขียนรีวิว (สลับกันแบบ random)
-  const pool = [
-    "ช่างแม็ก · ช่างประจำร้าน ขอนแก่นไฮเทค",
-    "คุณเหมียว · ฝ่ายขาย ขอนแก่นไฮเทค",
-    "ทีมขอนแก่นไฮเทค · แอดมิน/ทีมงาน"
-  ];
-
-  document.querySelectorAll("[data-review-by]").forEach((el) => {
-    const pick = pool[Math.floor(Math.random() * pool.length)];
-    el.textContent = pick;
-  });
-
-  // 2) ทำรีวิวเลื่อนอัตโนมัติแบบลื่น (แนวตั้ง)
-  const marquee = document.getElementById("khReviewsMarquee");
-  const track = document.getElementById("khReviewsTrack");
-  if (!marquee || !track) return;
-
-  let resizeTimer = null;
-
-  const setupMarquee = () => {
-    // ลบ clone เก่า (กันซ้ำ)
-    track.querySelectorAll('[data-clone="1"]').forEach((n) => n.remove());
-
-    const items = Array.from(track.children);
-    if (items.length < 2) return;
-
-    // วัดความสูง "ชุดจริง" ก่อนทำซ้ำ
-    const originalHeight = track.scrollHeight;
-
-    // ทำซ้ำอีก 1 รอบ เพื่อเลื่อนวนเนียน
-    items.forEach((node) => {
-      const clone = node.cloneNode(true);
-      clone.setAttribute("data-clone", "1");
-      track.appendChild(clone);
+      // ใส่สี + ไอคอน
+      if (isTel) {
+        a.classList.add("btn-tel");
+        if (!a.querySelector(".icon")) a.insertAdjacentHTML("afterbegin", `<span class="icon solid fa-phone"></span>`);
+      } else if (isLine) {
+        a.classList.add("btn-line");
+        if (!a.querySelector(".icon")) a.insertAdjacentHTML("afterbegin", `<span class="icon brands fa-line"></span>`);
+      } else if (isFb) {
+        a.classList.add("btn-fb");
+        if (!a.querySelector(".icon")) a.insertAdjacentHTML("afterbegin", `<span class="icon brands fa-facebook-f"></span>`);
+      } else if (isMap) {
+        a.classList.add("btn-map");
+        if (!a.querySelector(".icon")) a.insertAdjacentHTML("afterbegin", `<span class="icon solid fa-map-marker-alt"></span>`);
+      }
     });
+  }
 
-    marquee.style.setProperty("--kh-marquee-h", `${originalHeight}px`);
+  function setActiveMenu() {
+    const file = getCurrentFile();
+    const links = document.querySelectorAll("#menu a[href]");
 
-    // ตั้งความเร็ว: px ต่อวินาที (เลขน้อย = ช้า, เลขมาก = เร็ว)
-    const pxPerSec = 45;
-    const dur = Math.max(18, originalHeight / pxPerSec);
-    marquee.style.setProperty("--kh-marquee-dur", `${dur}s`);
-  };
+    links.forEach(a => {
+      const href = a.getAttribute("href") || "";
+      const h = href.toLowerCase();
 
-  setupMarquee();
+      // ข้ามลิงก์ภายนอก/โทร/ไลน์/แฮช
+      if (h.startsWith("http") || h.startsWith("tel:") || h.startsWith("mailto:") || h.startsWith("#")) return;
 
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(setupMarquee, 160);
-  });
+      const cleaned = cleanUrl(href);
+      let target = (cleaned.split("/").pop() || "").toLowerCase();
+      if (!target) target = "index.html";
 
-  marquee.addEventListener(
-    "touchstart",
-    () => {
-      marquee.classList.add("is-paused");
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => marquee.classList.remove("is-paused"), 2500);
-    },
-    { passive: true }
-  );
-});
+      // reset ก่อน
+      a.classList.remove("active");
+      a.removeAttribute("aria-current");
+      const li0 = a.closest("li");
+      if (li0) li0.classList.remove("active");
+
+      // set active
+      if (target === file) {
+        a.classList.add("active");
+        a.setAttribute("aria-current", "page");
+        const li = a.closest("li");
+        if (li) li.classList.add("active");
+      }
+    });
+  }
+
+  function init() {
+    ensureHeader();
+    enhanceMenuContacts();
+    setActiveMenu();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
