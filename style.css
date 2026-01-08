@@ -1,33 +1,29 @@
 /* ==========================================================================
-   KHON KAEN HITECH - GOD TIER MASTER STYLESHEET (FINAL FIXED)
-   ไฟล์นี้ควบคุมความสวยงามของทุกหน้า + แก้ไข Performance/SEO ครบจบ
+   KHON KAEN HITECH - GOD TIER MASTER STYLESHEET
+   ไฟล์นี้ควบคุมความสวยงามของทุกหน้า (SEO Optimized Layout)
    ========================================================================== */
 
 /* 1. CORE VARIABLES & SETTINGS */
 :root {
-  /* แก้ไข: ใช้สีที่ผ่านเกณฑ์ Contrast Ratio (AA/AAA) ของ Google */
-  --kh-primary: #c9302c;       /* แดงเข้ม (ผ่านเกณฑ์) */
-  --kh-primary-dark: #b71c1c;  /* แดงเลือดหมู */
+  /* แก้ไข: เปลี่ยนสีแดงให้เข้มขึ้น เพื่อให้ผ่านเกณฑ์ Google Audit (อ่านง่ายขึ้น) */
+  --kh-primary: #d32f2f;       /* แก้จาก #f56a6a เป็น #d32f2f */
+  --kh-primary-dark: #b71c1c;  /* แก้จาก #c0392b เป็น #b71c1c (เพื่อให้เข้มกว่าตัวบน) */
   
-  /* ค่าอื่นๆ */
+  /* ค่าอื่นๆ คงเดิม */
   --kh-accent: #2c3e50;        /* สีน้ำเงินเข้ม */
   --kh-text: #333333;          /* สีตัวอักษรหลัก */
   --kh-light: #f9f9f9;         /* สีพื้นหลังอ่อน */
   --kh-border: rgba(0,0,0,0.1);
   --kh-radius: 12px;           /* ความมนของมุม */
-  --kh-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  --kh-shadow: 0 4px 15px rgba(0,0,0,0.05); /* เงาแบบนุ่ม */
 
   /* KH Custom Colors */
-  --kh-red: #c9302c;           
+  --kh-red: #d32f2f;          /* ใช้โทนเดียวกับ primary */
   --kh-red2: #b71c1c;
-  --kh-soft: rgba(201, 48, 44, 0.10);
+  --kh-soft: rgba(211, 47, 47, 0.10);
   --kh-line: rgba(17,24,39,.12);
-  
-  /* สีทองสำหรับเมนู Active */
-  --kh-gold: #fbbf24;
-  --kh-gold2: #f59e0b;
-  --kh-gold3: #fde68a;
-  --kh-goldGlow: rgba(245,158,11,.42);
+  --kh-line-green:#06C755;
+  --kh-line-green2:#05b34c;
 }
 
 /* ปรับ Scrollbar ให้สวยงาม */
@@ -56,11 +52,12 @@ h1.main {
 h2 {
   border-left: 5px solid var(--kh-primary);
   padding-left: 15px;
-  background: linear-gradient(to right, rgba(201, 48, 44, 0.05), transparent);
+  background: linear-gradient(to right, rgba(211, 47, 47, 0.05), transparent);
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
+/* ลิงก์เบอร์โทรและไลน์ ให้เด่นชัด */
 a[href^="tel:"], a[href^="https://line.me"] {
   font-weight: bold;
   text-decoration: none;
@@ -96,14 +93,9 @@ a[href^="tel:"], a[href^="https://line.me"] {
   padding-left: 15px;
 }
 
-/* --- FIX: แก้ไขภาพกระตุก (CLS Fix) --- */
 .kh-hero-media img {
   width: 100%;
   height: auto;
-  /* เพิ่มส่วนนี้เพื่อล็อกสัดส่วนภาพไม่ให้ขยับตอนโหลด */
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  
   border-radius: var(--kh-radius);
   box-shadow: var(--kh-shadow);
   border: 1px solid var(--kh-border);
@@ -114,6 +106,7 @@ a[href^="tel:"], a[href^="https://line.me"] {
   transform: scale(1.02);
 }
 
+/* CTA Buttons Container */
 .kh-cta {
   display: flex;
   flex-wrap: wrap;
@@ -128,7 +121,7 @@ a[href^="tel:"], a[href^="https://line.me"] {
 }
 
 /* ==========================================================================
-   4. SEO TABLES
+   4. SEO TABLES (ตารางพื้นที่และราคา)
    ========================================================================== */
 .table-wrapper {
   overflow-x: auto;
@@ -144,6 +137,7 @@ table {
   margin: 0;
 }
 
+/* Default Table Style */
 table th {
   background: var(--kh-accent);
   color: #fff;
@@ -162,6 +156,7 @@ table td {
 table tr:nth-child(even) { background-color: #f8f9fa; }
 table tr:hover { background-color: #f1f1f1; transition: 0.2s; }
 
+/* Special Tables variations */
 .solar-table th { background: #f1c40f; color: #333; text-align: center; }
 .solar-table td { text-align: center; }
 
@@ -175,6 +170,7 @@ table tr:hover { background-color: #f1f1f1; transition: 0.2s; }
 /* ==========================================================================
    5. FEATURE CARDS & LISTS
    ========================================================================== */
+/* Check List (ติ๊กถูก) */
 .check-list {
   list-style: none;
   padding: 0;
@@ -196,6 +192,7 @@ table tr:hover { background-color: #f1f1f1; transition: 0.2s; }
   font-size: 1.1em;
 }
 
+/* Card Grid System */
 .kh-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -224,6 +221,7 @@ table tr:hover { background-color: #f1f1f1; transition: 0.2s; }
 .kh-card h3 { color: var(--kh-primary); margin-bottom: 10px; font-size: 1.2em; }
 .kh-card p { font-size: 0.9em; margin: 0; color: #666; }
 
+/* Project/Portfolio Card */
 .project-card {
   background: #fff;
   border: 1px solid #eee;
@@ -237,7 +235,7 @@ table tr:hover { background-color: #f1f1f1; transition: 0.2s; }
 .project-card h3 { font-size: 1.1em; margin-bottom: 0.5em; }
 
 /* ==========================================================================
-   6. ALERTS & BOXES
+   6. ALERTS & BOXES (กล่องข้อความ)
    ========================================================================== */
 .kh-box {
   background: #fff;
@@ -285,7 +283,7 @@ table tr:hover { background-color: #f1f1f1; transition: 0.2s; }
 }
 
 /* ==========================================================================
-   7. UTILITIES
+   7. AUDIO PLAYER (แบบ Manual)
    ========================================================================== */
 .kh-audio {
   display: flex;
@@ -299,25 +297,10 @@ table tr:hover { background-color: #f1f1f1; transition: 0.2s; }
   line-height: 35px;
   font-size: 0.8em;
 }
-
-.kh-embed {
-  position: relative;
-  overflow: hidden;
-  padding-top: 56.25%;
-  border-radius: var(--kh-radius);
-  border: 1px solid #ddd;
-}
-.kh-embed iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
+/* Audio Gate ถูกลบออกแล้วเพื่อ Performance */
 
 /* ==========================================================================
-   8. SIDEBAR & MENU
+   8. SIDEBAR & NAVIGATION (MENU)
    ========================================================================== */
 #menu ul li.divider {
   margin: 20px 0 10px 0;
@@ -350,50 +333,169 @@ table tr:hover { background-color: #f1f1f1; transition: 0.2s; }
   border-top: 1px solid #eee;
 }
 
-/* =========================================
-   9. ACTION BUTTONS (FIXED CONTRAST)
-   ========================================= */
-#menu ul li a.button {
+/* ==========================================================================
+   9. UTILITIES & ICONS
+   ========================================================================== */
+.check-icon { color: #2ecc71; font-weight: bold; }
+.cross-icon { color: #e74c3c; font-weight: bold; }
+.highlight-green { color: #27ae60; font-weight: bold; }
+.brand-tag {
+  display: inline-block;
+  background: #eee;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  margin-right: 5px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.kh-embed {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+  border-radius: var(--kh-radius);
+  border: 1px solid #ddd;
+}
+.kh-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* =========================
+   MOBILE FIX
+   ========================= */
+ul, ol { list-style: none; margin: 0; padding: 0; }
+li { margin: 0; padding: 0; }
+html, body { overflow-x: hidden; }
+
+@media (max-width: 980px) {
+  #main{
+    margin-left: 0 !important;
     width: 100% !important;
-    display: block;
-    text-align: center;
-    margin-bottom: 8px;
-    border: none !important;
-    border-radius: 50px;
+  }
+  #main .inner{
+    padding: 22px 16px !important;
+  }
+  .kh-hero-grid{ grid-template-columns: 1fr; }
+}
+
+/* =========================
+   KH - Current Page Tab (สวยๆ)
+   ========================= */
+.kh-loc{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding: 12px 14px;
+  margin: 6px 0 16px;
+  border-radius: 16px;
+  background: radial-gradient(900px 240px at 15% 0%, rgba(211, 47, 47, 0.14), transparent 55%), #fff;
+  border: 1px solid var(--kh-line);
+  box-shadow: 0 14px 34px rgba(0,0,0,.10);
+  position: sticky;
+  top: 10px;
+  z-index: 5;
+}
+
+.kh-loc__icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  background: linear-gradient(135deg, var(--kh-red), var(--kh-red2));
+  box-shadow: 0 10px 22px rgba(211, 47, 47, 0.20);
+  flex: 0 0 auto;
+}
+
+.kh-loc__text{ min-width: 0; }
+.kh-loc__kicker{
+  font-size: 12px;
+  letter-spacing: .2px;
+  color: rgba(17,24,39,.60);
+  line-height: 1.1;
+}
+.kh-loc__title{
+  font-size: 16px;
+  font-weight: 900;
+  color: #111827;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kh-loc__cta{
+  margin-left:auto;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--kh-soft);
+  border: 1px solid rgba(211, 47, 47, 0.22);
+  color: var(--kh-red2);
+  font-weight: 900;
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+.kh-loc__cta:hover{ background: rgba(211, 47, 47, 0.14); }
+
+@media (max-width: 980px){
+  .kh-loc{ top: 8px; }
+  .kh-loc__cta{ padding: 9px 10px; }
+}
+
+/* =========================================
+   SIDEBAR ACTION BUTTONS (ปุ่มติดต่อ 4 สี)
+   ========================================= */
+
+/* จัดทรงปุ่มให้เต็มกรอบและสวยงาม */
+#menu ul li a.button {
+    width: 100% !important;      /* กว้างเต็ม */
+    display: block;              /* เป็นบล็อก */
+    text-align: center;          /* ตัวหนังสืออยู่กลาง */
+    margin-bottom: 8px;          /* เว้นระยะห่างระหว่างปุ่ม */
+    border: none !important;     /* เอาเส้นขอบออก */
+    border-radius: 50px;         /* ทำมุมมนๆ เหมือนแคปซูล */
     font-weight: bold;
-    font-size: 0.9em;
-    line-height: 2.5em;
+    font-size: 0.9em;            /* ปรับขนาดตัวอักษรไม่ให้ล้น */
+    line-height: 2.5em;          /* จัดความสูงบรรทัด */
     height: auto;
     padding: 0 10px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15); /* เงาปุ่มลอยมีมิติ */
     transition: all 0.2s ease;
 }
 
+/* เอฟเฟกต์ตอนกดปุ่ม (ปุ่มยุบลง) */
 #menu ul li a.button:active {
     transform: scale(0.98);
     box-shadow: none;
 }
 
-/* --- FIX: สีปุ่มผ่านเกณฑ์ AAA --- */
-/* 1. ปุ่มโทร (สีแดงเข้ม - เปลี่ยนจากเดิม) */
-.btn-tel, a.button.primary {
-    background-color: #c9302c !important; /* แดงเข้มที่ผ่าน Audit */
+/* --- กำหนดสีแต่ละปุ่ม --- */
+
+/* 1. ปุ่มโทร (สีน้ำเงินเข้ม กรมท่า) */
+.btn-tel {
+    background-color: #2c3e50 !important;
     color: #ffffff !important;
 }
-.btn-tel:hover, a.button.primary:hover {
-    background-color: #b71c1c !important;
+.btn-tel:hover {
+    background-color: #34495e !important;
 }
 
-/* 2. ปุ่ม LINE (สีเขียวเข้ม - เปลี่ยนจากเดิม) */
+/* 2. ปุ่ม LINE (สีเขียว) */
 .btn-line, a[href*="line.me"] {
-    background-color: #008f00 !important; /* เขียวเข้มที่ผ่าน Audit (ของเดิมอ่อนไป) */
+    background-color: #06c755 !important;
     color: #ffffff !important;
 }
 .btn-line:hover, a[href*="line.me"]:hover {
-    background-color: #006400 !important;
+    background-color: #05b54d !important;
 }
 
-/* 3. ปุ่ม Facebook */
+/* 3. ปุ่ม Facebook (สีน้ำเงินแบรนด์) */
 .btn-fb {
     background-color: #1877f2 !important;
     color: #ffffff !important;
@@ -402,7 +504,7 @@ table tr:hover { background-color: #f1f1f1; transition: 0.2s; }
     background-color: #166fe5 !important;
 }
 
-/* 4. ปุ่ม Maps */
+/* 4. ปุ่ม Google Maps (สีแดง Google) */
 .btn-map {
     background-color: #ea4335 !important;
     color: #ffffff !important;
@@ -411,76 +513,37 @@ table tr:hover { background-color: #f1f1f1; transition: 0.2s; }
     background-color: #d33828 !important;
 }
 
+/* ปรับระยะห่างไอคอนในปุ่ม */
 #menu ul li a.button .icon {
     margin-right: 8px;
     opacity: 0.9;
 }
 
-/* ==========================================================================
-   10. MOBILE FIXES & TAB STYLE
-   ========================================================================== */
-ul, ol { list-style: none; margin: 0; padding: 0; }
-li { margin: 0; padding: 0; }
-html, body { overflow-x: hidden; }
-
-@media (max-width: 980px) {
-  #main { margin-left: 0 !important; width: 100% !important; }
-  #main .inner { padding: 22px 16px !important; }
-}
-
-.kh-loc {
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding: 12px 14px;
-  margin: 6px 0 16px;
-  border-radius: 16px;
-  background: radial-gradient(900px 240px at 15% 0%, rgba(201, 48, 44, 0.14), transparent 55%), #fff;
-  border: 1px solid var(--kh-line);
-  box-shadow: 0 14px 34px rgba(0,0,0,.10);
-  position: sticky;
-  top: 10px;
-  z-index: 5;
-}
-
-.kh-loc__icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 14px;
-  display:grid;
-  place-items:center;
-  color:#fff;
-  background: linear-gradient(135deg, var(--kh-red), var(--kh-red2));
-  box-shadow: 0 10px 22px rgba(201, 48, 44, 0.20);
-  flex: 0 0 auto;
-}
-
-.kh-loc__text { min-width: 0; }
-.kh-loc__kicker { font-size: 12px; letter-spacing: .2px; color: rgba(17,24,39,.60); line-height: 1.1; }
-.kh-loc__title { font-size: 16px; font-weight: 900; color: #111827; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.kh-loc__cta {
-  margin-left:auto;
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: var(--kh-soft);
-  border: 1px solid rgba(201, 48, 44, 0.22);
-  color: var(--kh-red2);
-  font-weight: 900;
-  text-decoration: none;
-  flex: 0 0 auto;
-}
-.kh-loc__cta:hover { background: rgba(201, 48, 44, 0.14); }
-
-@media (max-width: 980px){
-  .kh-loc{ top: 8px; }
-  .kh-loc__cta{ padding: 9px 10px; }
+/* =========================
+   KH - Active Menu Highlight
+   ========================= */
+#menu ul li.active > a,
+#menu a.active{
+  background: rgba(211, 47, 47, 0.10) !important;
+  color: var(--kh-red2) !important;
+  font-weight: 900 !important;
+  border-left: 4px solid var(--kh-red) !important;
+  padding-left: calc(1.65em - 4px) !important;
+  border-radius: 10px;
 }
 
 /* ==========================================================================
-   11. REVIEWS (MARQUEE)
+   10. REVIEWS (Auto Scroll / Marquee)
    ========================================================================== */
-.kh-review-hint { margin-top: -8px; margin-bottom: 12px; font-size: 0.9em; color: rgba(17,24,39,.62); }
-.kh-review {
+.kh-review-hint{
+  margin-top: -8px;
+  margin-bottom: 12px;
+  font-size: 0.9em;
+  color: rgba(17,24,39,.62);
+}
+
+/* รีวิวแบบเรียงบรรทัด */
+.kh-review{
   background:#fff;
   border:1px solid var(--kh-line);
   border-left:4px solid var(--kh-red);
@@ -488,105 +551,93 @@ html, body { overflow-x: hidden; }
   padding:14px 16px;
   box-shadow: 0 10px 28px rgba(0,0,0,.06);
 }
-.kh-review__top { display:flex; align-items:center; justify-content:space-between; gap:12px; }
-.kh-stars { color: var(--kh-primary); letter-spacing: 1px; font-size: 14px; font-weight: 900; flex: 0 0 auto; }
-.kh-review__meta { font-size: 13px; color: rgba(17,24,39,.62); min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.kh-review__title { margin: 8px 0 6px; font-size: 16px; font-weight: 900; color: #111827; }
-.kh-review__text { margin: 0; color: rgba(17,24,39,.78); line-height: 1.75; }
-.kh-review__by { font-weight: 900; color: var(--kh-red2); }
+.kh-review__top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.kh-stars{
+  color: var(--kh-primary);
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 900;
+  flex: 0 0 auto;
+}
+.kh-review__meta{
+  font-size: 13px;
+  color: rgba(17,24,39,.62);
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kh-review__title{
+  margin: 8px 0 6px;
+  font-size: 16px;
+  font-weight: 900;
+  color: #111827;
+}
+.kh-review__text{
+  margin: 0;
+  color: rgba(17,24,39,.78);
+  line-height: 1.75;
+}
+.kh-review__by{
+  font-weight: 900;
+  color: var(--kh-red2);
+}
 
-.kh-reviews-marquee {
-  --kh-marquee-h: 0px; 
-  --kh-marquee-dur: 30s;
-  height: 420px;
+/* รีวิวเลื่อนอัตโนมัติ (แนวตั้ง) */
+.kh-reviews-marquee{
+  --kh-marquee-h: 0px;       /* JS จะใส่ให้ */
+  --kh-marquee-dur: 30s;     /* JS จะใส่ให้ */
+  height: 420px;             /* ปรับความสูงพื้นที่โชว์ */
   overflow: hidden;
   position: relative;
   border-radius: 16px;
   border: 1px solid var(--kh-line);
   background: #fff;
 }
-.kh-reviews-marquee:before, .kh-reviews-marquee:after {
-  content:""; position:absolute; left:0; right:0; height:28px; z-index:2; pointer-events:none;
+
+.kh-reviews-marquee:before,
+.kh-reviews-marquee:after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  height:28px;
+  z-index:2;
+  pointer-events:none;
   background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0));
 }
-.kh-reviews-marquee:after { top:auto; bottom:0; background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0)); }
-.kh-reviews-marquee:before { top:0; }
-
-.kh-reviews-track {
-  display:flex; flex-direction:column; gap:12px; padding: 6px 0;
-  will-change: transform; animation: khReviewsMarquee var(--kh-marquee-dur) linear infinite;
+.kh-reviews-marquee:after{
+  top:auto; bottom:0;
+  background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
 }
-.kh-reviews-marquee:hover .kh-reviews-track { animation-play-state: paused; }
+.kh-reviews-marquee:before{ top:0; }
+.kh-reviews-marquee:after{ bottom:0; }
 
-@keyframes khReviewsMarquee {
+.kh-reviews-track{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  padding: 6px 0;
+  will-change: transform;
+  animation: khReviewsMarquee var(--kh-marquee-dur) linear infinite;
+}
+
+.kh-reviews-marquee:hover .kh-reviews-track,
+.kh-reviews-marquee.is-paused .kh-reviews-track{
+  animation-play-state: paused;
+}
+
+@keyframes khReviewsMarquee{
   from { transform: translateY(0); }
   to   { transform: translateY(calc(-1 * var(--kh-marquee-h))); }
 }
 
-/* ==========================================================================
-   12. FINAL: GLOSSY GOLD MENU (GOD TIER)
-   ========================================================================== */
-#menu ul li.active > a,
-#menu a.active,
-#menu ul li.active > span.opener {
-  position: relative !important;
-  overflow: hidden !important;
-  
-  border-left: 4px solid var(--kh-gold2) !important;
-  padding-left: calc(1.65em - 4px) !important;
-  
-  border-radius: 12px !important;
-  color:#111827 !important;
-  font-weight: 900 !important;
-  
-  background: linear-gradient(90deg,
-    rgba(0,0,0,.22) 0%,
-    rgba(245,158,11,.16) 35%,
-    rgba(251,191,36,.12) 60%,
-    rgba(0,0,0,.16) 100%
-  ) !important;
-  
-  box-shadow:
-    inset 0 0 0 1px rgba(245,158,11,.26),
-    inset 0 10px 18px rgba(253,230,138,.12),
-    0 10px 22px rgba(0,0,0,.08),
-    0 0 18px rgba(245,158,11,.12) !important;
-}
-
-/* Gloss Overlay */
-#menu ul li.active > a::before,
-#menu a.active::before,
-#menu ul li.active > span.opener::before {
-  content:""; position:absolute; left:0; right:0; top:0; height:55%;
-  background: linear-gradient(180deg, rgba(255,255,255,.60), rgba(255,255,255,.18), rgba(255,255,255,0));
-  opacity:.42; pointer-events:none;
-}
-
-/* Shine Sweep Animation */
-#menu ul li.active > a::after,
-#menu a.active::after,
-#menu ul li.active > span.opener::after {
-  content:""; position:absolute; top:-45%; left:-80%; width:70%; height:200%;
-  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(253,230,138,.78), rgba(255,255,255,0));
-  transform: rotate(18deg); opacity:.46; pointer-events:none;
-  animation: khGoldShine 2.4s ease-in-out infinite;
-}
-
-@keyframes khGoldShine {
-  0%    { left:-90%; opacity:.10; }
-  25%   { opacity:.58; }
-  45%   { left:125%; opacity:.52; }
-  100%  { left:125%; opacity:.12; }
-}
-
-#menu a:hover {
-  box-shadow: inset 0 0 0 1px rgba(245,158,11,.34), 0 10px 24px rgba(0,0,0,.10), 0 0 18px var(--kh-goldGlow) !important;
-}
-
-#menu a:focus-visible {
-  outline: 3px solid rgba(245,158,11,.45); outline-offset: 2px; border-radius: 12px;
-}
-
-@media (prefers-reduced-motion: reduce){
-  #menu ul li.active > a::after, #menu a.active::after { animation: none !important; }
+@media (max-width: 980px){
+  .kh-reviews-marquee{ height: 360px; }
+  .kh-review__top{ flex-direction: column; align-items:flex-start; }
+  .kh-review__meta{ white-space: normal; overflow: visible; }
 }
