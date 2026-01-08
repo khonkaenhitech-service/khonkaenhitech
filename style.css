@@ -489,10 +489,10 @@ html, body { overflow-x: hidden; }
 /* 2. ปุ่ม LINE (สีเขียว) */
 .btn-line, a[href*="line.me"] {
     background-color: #06c755 !important;
-    color: #06c755 !important;
+    color: #ffffff !important;
 }
 .btn-line:hover, a[href*="line.me"]:hover {
-    background-color: #06c755 !important;
+    background-color: #ffffff !important;
 }
 
 /* 3. ปุ่ม Facebook (สีน้ำเงินแบรนด์) */
