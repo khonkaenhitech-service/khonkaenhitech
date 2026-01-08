@@ -384,13 +384,10 @@
 
 })(jQuery);
 
-// ==============================
-// KH Fix Logo Path (GitHub Pages)
-// Make sure logo works on every page
-// ==============================
+
+// KH Fix Logo Path (GitHub Pages project /khonkaenhitech/)
 (function () {
-  const BASE = "/khonkaenhitech/";
-  const ABS_LOGO = BASE + "images/logo-khonkaen.webp";
+  const ABS_LOGO = "/khonkaenhitech/images/logo-khonkaen.webp";
 
   function fixLogo() {
     const img = document.querySelector("#header .logo img");
@@ -398,24 +395,15 @@
 
     const src = (img.getAttribute("src") || "").trim();
 
-    // ถ้าใส่เป็น relative เช่น images/logo-khonkaen.webp หรือ ./images/logo-khonkaen.webp
-    // ให้บังคับเป็น absolute ของ GitHub Pages เพื่อไม่ให้หายทุกหน้า
-    if (
-      src === "images/logo-khonkaen.webp" ||
-      src === "./images/logo-khonkaen.webp" ||
-      src.endsWith("/images/logo-khonkaen.webp")
-    ) {
+    // ถ้าเป็น relative ให้บังคับเป็น absolute
+    if (src === "images/logo-khonkaen.webp" || src === "./images/logo-khonkaen.webp") {
       img.setAttribute("src", ABS_LOGO);
     }
 
-    // กันพลาด: ถ้ารูปโหลดพัง ให้ fallback ไป absolute
-    img.addEventListener(
-      "error",
-      function () {
-        if (img.src !== location.origin + ABS_LOGO) img.src = ABS_LOGO;
-      },
-      { once: true }
-    );
+    // ถ้าโหลดพัง ให้ fallback ไป absolute
+    img.addEventListener("error", () => {
+      img.src = ABS_LOGO;
+    }, { once: true });
   }
 
   if (document.readyState === "loading") {
@@ -424,5 +412,3 @@
     fixLogo();
   }
 })();
-
-
