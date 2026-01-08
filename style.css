@@ -75,175 +75,84 @@ h2::after {
   .map-btn { color: #2c3e50; background: #fff; }
   .repair-btn { color: #fff; background: var(--kh-primary); }
 }
+/* ==========================================================================
+   SIDEBAR GOLD THEME (เมนูทองด้านซ้าย)
+   ========================================================================== */
 
-<!DOCTYPE HTML>
-<html lang="th">
-<head>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M26CWCKV');</script>
-    
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <title>ช่างขอนแก่น รับเหมางานระบบ | ล้างแอร์ ไฟฟ้า กล้องวงจรปิด โซล่าเซลล์ | ขอนแก่นไฮเทค</title>
-    <meta name="description" content="ศูนย์รวมช่างขอนแก่น อันดับ 1 รับล้างแอร์ ติดตั้งโซล่าเซลล์ลดค่าไฟ กล้องวงจรปิด ซ่อมไฟฟ้า และทำร้านสะดวกซัก บริการด่วนในเมืองขอนแก่น" />
-    <meta name="keywords" content="ช่างขอนแก่น, ล้างแอร์ขอนแก่น, ร้านกล้องวงจรปิด ขอนแก่น, ติดโซล่าเซลล์ ขอนแก่น" />
-    
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="style.css" />
-    
-    <style>#nav-header { display: none; }</style>
-</head>
-<body class="is-preload">
+/* 1. ปรับตำแหน่ง Sidebar ให้อยู่ด้านซ้าย */
+#wrapper {
+    display: flex;
+    flex-direction: row-reverse; /* สลับให้ Sidebar (ตัวหลัง) มาอยู่ซ้ายสุด */
+}
 
-<div id="wrapper">
+/* 2. ดีไซน์ปุ่มเมนู (ตามภาพตัวอย่าง) */
+#menu ul li {
+    border-top: none !important;
+    padding: 0 !important;
+    margin-bottom: 10px;
+}
 
-    <div id="main">
-        <div class="inner">
-            
-            <header id="header">
-                <a href="index.html" class="logo kh-brand">
-                    <span class="kh-brand__img"><img src="images/logo-khonkaen.webp" alt="โลโก้"></span>
-                    <span class="kh-brand__text"><span class="kh-brand__th">ขอนแก่นไฮเทค</span></span>
-                </a>
-                <ul class="icons">
-                    <li><a href="tel:0944749874" class="icon solid fa-phone"><span class="label">โทร</span></a></li>
-                    <li><a href="https://line.me/ti/p/~KKHITECH" class="icon brands fa-line"><span class="label">Line</span></a></li>
-                </ul>
-            </header>
+/* สไตล์หัวข้อเมนู (แถบทอง) */
+.menu-gold-header {
+    background: linear-gradient(90deg, #fff8e1 0%, #ffffff 100%); /* ไล่สีครีมทอง */
+    border-left: 5px solid #a87910; /* แถบทองด้านซ้าย */
+    padding: 12px 15px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+    font-weight: 800;
+    color: #333 !important;
+    display: block;
+    position: relative;
+    transition: 0.3s;
+}
 
-            <section class="kh-hero">
-                <div class="kh-hero-grid">
-                    <div class="kh-hero-text">
-                        <header class="main">
-                            <h1>ศูนย์รวมช่างขอนแก่น<br><span style="color:#c0392b;">ไฟฟ้า แอร์ กล้องวงจรปิด</span></h1>
-                        </header>
-                        <div class="trust-badge">
-                            <span class="score">4.9/5</span> <span class="kh-stars">★★★★★</span>
-                        </div>
-                        <p><strong>"เจ็บมาเยอะกับช่างทิ้งงาน?"</strong> ให้ขอนแก่นไฮเทคดูแล เรามีหน้าร้านจริง รับประกันงานซ่อม</p>
-                        <ul class="actions">
-                            <li><a href="tel:+66944749874" class="button primary big">โทรปรึกษาช่าง</a></li>
-                        </ul>
-                    </div>
-                    <div class="kh-hero-media">
-                        <img src="images/pic10.webp" alt="ช่างขอนแก่น" style="width:100%; border-radius:12px;">
-                    </div>
-                </div>
-            </section>
+.menu-gold-header:hover {
+    background: linear-gradient(90deg, #ffe082 0%, #ffffff 100%);
+    padding-left: 20px; /* ขยับเมื่อเอาเมาส์ชี้ */
+}
 
-            <section>
-                <header class="main"><h2>บริการยอดนิยม</h2></header>
-                <div class="features">
-                    <article>
-                        <div class="icon"><span class="fa fa-snowflake"></span></div>
-                        <div class="content">
-                            <h3><a href="air.html">ล้างแอร์ / ซ่อมแอร์</a></h3>
-                            <p>ล้างสะอาดด้วยโฟมฆ่าเชื้อ แก้แอร์ไม่เย็น น้ำหยด</p>
-                        </div>
-                    </article>
-                    <article>
-                        <div class="icon"><span class="fa fa-coins"></span></div>
-                        <div class="content">
-                            <h3><a href="laundry.html">เครื่องซักผ้าหยอดเหรียญ</a></h3>
-                            <p>ลงทุนร้านสะดวกซัก กล่องหยอดเหรียญ QR Code</p>
-                        </div>
-                    </article>
-                    <article>
-                        <div class="icon"><span class="fa fa-video"></span></div>
-                        <div class="content">
-                            <h3><a href="cctv.html">กล้องวงจรปิด (CCTV)</a></h3>
-                            <p>ภาพสี 24 ชม. ดูออนไลน์ผ่านมือถือได้ทั่วโลก</p>
-                        </div>
-                    </article>
-                    <article>
-                        <div class="icon"><span class="fa fa-bolt"></span></div>
-                        <div class="content">
-                            <h3><a href="electrical.html">งานไฟฟ้า & ตู้ MDB</a></h3>
-                            <p>แก้ไฟรั่ว ไฟช็อต เดินสายไฟโรงงาน อาคารพาณิชย์</p>
-                        </div>
-                    </article>
-                </div>
-            </section>
+/* สไตล์ลิงก์ย่อย */
+.menu-sub-link {
+    padding: 8px 0 8px 20px !important;
+    border-bottom: 1px solid #eee !important;
+    font-size: 0.9em;
+    color: #555 !important;
+}
+.menu-sub-link:hover {
+    color: #d32f2f !important;
+}
 
-        </div>
-    </div>
+/* 3. ปุ่ม Toggle (3 ขีด) สำหรับมือถือ */
+#sidebar .toggle {
+    background-color: transparent;
+    color: #333;
+    height: 4em;
+    width: 4em;
+    top: 0;
+    left: 0; /* ย้ายปุ่มมาซ้าย */
+    text-align: center;
+    line-height: 4em;
+    position: fixed; /* ลอยติดจอ */
+    z-index: 10001;
+}
+#sidebar .toggle:before {
+    content: '\f0c9'; /* ไอคอน 3 ขีด */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 1.5em;
+    color: #a87910; /* สีทอง */
+}
 
-    <div id="sidebar">
-        <div class="inner">
-            
-            <section id="search" class="alt">
-                <form method="post" action="#">
-                    <input type="text" name="query" id="query" placeholder="ค้นหาบริการ..." />
-                </form>
-            </section>
-
-            <nav id="menu">
-                <header class="major">
-                    <h2>เมนูบริการ</h2>
-                </header>
-                <ul>
-                    <li>
-                        <a href="index.html" class="menu-gold-header">หน้าแรก</a>
-                    </li>
-                    <li>
-                        <a href="services.html" class="menu-gold-header">รวมบริการทั้งหมด</a>
-                    </li>
-                    <li>
-                        <a href="contact.html" class="menu-gold-header">ติดต่อ / แผนที่ร้าน</a>
-                    </li>
-
-                    <li>
-                        <span class="opener menu-gold-header">🔹 บริการยอดนิยม</span>
-                        <ul>
-                            <li><a href="laundry.html" class="menu-sub-link">เครื่องซักผ้าหยอดเหรียญ</a></li>
-                            <li><a href="water.html" class="menu-sub-link">ตู้น้ำหยอดเหรียญ / RO</a></li>
-                            <li><a href="vending.html" class="menu-sub-link">ระบบหยอดเหรียญ</a></li>
-                            <li><a href="internet.html" class="menu-sub-link">อินเทอร์เน็ต / ฮอตสปอต</a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <span class="opener menu-gold-header">🔸 งานระบบและก่อสร้าง</span>
-                        <ul>
-                            <li><a href="security.html" class="menu-sub-link">CCTV / คีย์การ์ด / ไม้กั้น</a></li>
-                            <li><a href="electrical.html" class="menu-sub-link">งานไฟฟ้า / ตู้ MDB</a></li>
-                            <li><a href="solar.html" class="menu-sub-link">โซล่าเซลล์ / แอร์</a></li>
-                            <li><a href="construction.html" class="menu-sub-link">รับสร้างบ้าน / ต่อเติม</a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <span class="opener menu-gold-header">ℹ️ ข้อมูลเพิ่มเติม</span>
-                        <ul>
-                            <li><a href="khonkaen-system.html" class="menu-sub-link">บทความ Local SEO</a></li>
-                            <li><a href="elements.html" class="menu-sub-link">ผลงาน & รีวิว</a></li>
-                        </ul>
-                    </li>
-                    
-                    <li>
-                        <a href="tel:0944749874" class="menu-gold-header" style="background: linear-gradient(90deg, #fff3e0 0%, #ffcc80 100%); color:#e65100 !important;">📞 ติดต่อด่วน</a>
-                    </li>
-                </ul>
-            </nav>
-
-            <footer id="footer">
-                <p class="copyright">© <span id="y"></span> ขอนแก่นไฮเทค</p>
-            </footer>
-
-        </div>
-        
-        <a href="#sidebar" class="toggle">Toggle</a>
-    </div>
-
-</div>
-
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-<script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-</script>
-
-</body>
-</html>
+/* ปรับแต่งสำหรับมือถือ */
+@media screen and (max-width: 1280px) {
+    #sidebar {
+        left: 0; /* Sidebar ออกมาจากซ้าย */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+    }
+    #sidebar.inactive {
+        left: -26em; /* ซ่อนไปทางซ้าย */
+    }
+    #wrapper {
+        flex-direction: column; /* มือถือเรียงแนวตั้ง */
+    }
+}
