@@ -672,3 +672,59 @@ html, body{ overflow-x:hidden; }
   src:url('assets/webfonts/fa-brands-400.woff2') format('woff2'),
       url('assets/webfonts/fa-brands-400.woff') format('woff');
 }
+
+
+/* =========================================================
+   KH HEADER GLOBAL (Logo + Title left, Icons far right)
+   - Works on all pages (CSS only)
+   - Logo file must exist at: images/logo-khonkaen.webp
+   ========================================================= */
+
+/* 1) Header layout: left/right */
+#header{
+  width:100%;
+  display:flex !important;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+
+/* 2) Logo area */
+#header .logo{
+  display:inline-flex !important;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+/* ถ้าหน้าไหนมี <img> อยู่แล้ว ให้คุมขนาด */
+#header .logo img{
+  width:52px;
+  height:52px;
+  object-fit:contain;
+  display:block;
+  border-radius:8px;
+}
+
+/* 3) ถ้าหน้าไหน "ไม่มี <img>" ให้สร้างโลโก้ด้วย CSS (ยังได้ทุกหน้า) */
+#header .logo::before{
+  content:"";
+  width:52px;
+  height:52px;
+  flex:0 0 52px;
+  background:url("images/logo-khonkaen.webp") center/contain no-repeat;
+  border-radius:8px;
+}
+
+/* 4) Title style */
+#header .logo strong{
+  font-size:26px;
+  font-weight:900;
+  line-height:1;
+  color:#f26a00;
+}
+
+/* 5) Icons to far right */
+#header .icons{
+  margin-left:auto !importan
