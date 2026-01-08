@@ -1,7 +1,8 @@
 /* ==========================================================================
    KHON KAEN HITECH - PERFORMANCE OPTIMIZED STYLESHEET (CLEAN FINAL)
-   - Clean: no duplicates / no conflicts
-   - Header: logo <img> + icons align right
+   - No duplicates / no conflicts
+   - Header: logo (img or css-fallback) + icons right
+   - Fix: hide kh-loc bar (top mini bar)
    - Optimized: CLS/LCP helpers
    ========================================================================== */
 
@@ -39,7 +40,7 @@ html{
 ::-webkit-scrollbar-thumb{ background:#ccc; border-radius:4px; }
 ::-webkit-scrollbar-thumb:hover{ background:var(--kh-primary); }
 
-/* ==========================================================================
+/* ========================================================================== 
    2) TYPOGRAPHY
    ========================================================================== */
 h1,h2,h3,h4,h5,h6{
@@ -67,7 +68,7 @@ a[href^="tel:"], a[href^="https://line.me"]{
   text-decoration:none;
 }
 
-/* ==========================================================================
+/* ========================================================================== 
    3) HERO / IMAGES (CLS FIX)
    ========================================================================== */
 .kh-hero{
@@ -129,7 +130,7 @@ a[href^="tel:"], a[href^="https://line.me"]{
   .kh-hero-media{ order:1; margin-bottom:20px; }
 }
 
-/* ==========================================================================
+/* ========================================================================== 
    4) SEO TABLES + CONTENT VISIBILITY
    ========================================================================== */
 .table-wrapper, #footer, .kh-cards, .features{
@@ -179,7 +180,7 @@ table tr:hover{ background:#f1f1f1; transition:.2s; }
 .zone-table th{ background:var(--kh-primary); }
 .zone-table td:first-child{ font-weight:700; color:var(--kh-primary-dark); width:30%; }
 
-/* ==========================================================================
+/* ========================================================================== 
    5) FEATURE CARDS
    ========================================================================== */
 .check-list{ list-style:none; padding:0; margin:0 0 20px; }
@@ -226,19 +227,7 @@ table tr:hover{ background:#f1f1f1; transition:.2s; }
 .kh-card h3{ color:var(--kh-primary); margin-bottom:10px; font-size:1.2em; }
 .kh-card p{ font-size:.9em; margin:0; color:#666; }
 
-.project-card{
-  background:#fff;
-  border:1px solid #eee;
-  border-radius:var(--kh-radius);
-  padding:15px;
-  height:100%;
-  box-shadow:var(--kh-shadow);
-}
-.project-card .image.fit{ margin-bottom:15px; }
-.project-card .image.fit img{ border-radius:8px; }
-.project-card h3{ font-size:1.1em; margin-bottom:.5em; }
-
-/* ==========================================================================
+/* ========================================================================== 
    6) ALERTS / BOXES
    ========================================================================== */
 .kh-box{
@@ -257,12 +246,6 @@ table tr:hover{ background:#f1f1f1; transition:.2s; }
   margin:2em 0;
   color:#856404;
 }
-.alert-box h3, .alert-security h3{
-  color:#856404;
-  border:none;
-  padding:0;
-  background:none;
-}
 
 .highlight-box{
   background:#e8f4fd;
@@ -272,42 +255,9 @@ table tr:hover{ background:#f1f1f1; transition:.2s; }
   margin:2em 0;
 }
 
-.brand-box{
-  background:#f8f9fa;
-  padding:20px;
-  text-align:center;
-  border-radius:var(--kh-radius);
-  border:1px solid #eee;
-}
-
-.brand-list span{
-  display:inline-block;
-  background:#fff;
-  padding:5px 15px;
-  margin:5px;
-  border-radius:20px;
-  border:1px solid #ddd;
-  font-weight:700;
-  color:#555;
-  font-size:.9em;
-}
-
-/* ==========================================================================
+/* ========================================================================== 
    7) EMBEDS / UTILITIES
    ========================================================================== */
-.kh-audio{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  margin-top:15px;
-}
-.kh-audio button{
-  padding:0 15px;
-  height:35px;
-  line-height:35px;
-  font-size:.8em;
-}
-
 .kh-embed{
   position:relative;
   overflow:hidden;
@@ -323,7 +273,7 @@ table tr:hover{ background:#f1f1f1; transition:.2s; }
   border:0;
 }
 
-/* ==========================================================================
+/* ========================================================================== 
    8) SIDEBAR / MENU
    ========================================================================== */
 #menu ul, #menu ol{ list-style:none; margin:0; padding:0; }
@@ -351,15 +301,7 @@ table tr:hover{ background:#f1f1f1; transition:.2s; }
   padding-left:20px;
 }
 
-.kh-footer, #footer{
-  font-size:.8em;
-  color:#aaa;
-  margin-top:30px;
-  padding-top:20px;
-  border-top:1px solid #eee;
-}
-
-/* ==========================================================================
+/* ========================================================================== 
    9) ACTION BUTTONS (MENU)
    ========================================================================== */
 #menu ul li a.button{
@@ -367,8 +309,8 @@ table tr:hover{ background:#f1f1f1; transition:.2s; }
   display:flex !important;
   align-items:center;
   justify-content:center;
-
   text-align:center;
+
   margin-bottom:8px;
   border:none !important;
   border-radius:50px;
@@ -381,22 +323,12 @@ table tr:hover{ background:#f1f1f1; transition:.2s; }
   transition:all .2s ease;
   min-height:44px;
 }
+#menu ul li a.button:active{ transform:scale(.98); box-shadow:none; }
 
-#menu ul li a.button:active{
-  transform:scale(.98);
-  box-shadow:none;
-}
-
-.btn-tel, a.button.primary{
-  background:#c9302c !important;
-  color:#fff !important;
-}
+.btn-tel, a.button.primary{ background:#c9302c !important; color:#fff !important; }
 .btn-tel:hover, a.button.primary:hover{ background:#b71c1c !important; }
 
-.btn-line, a[href*="line.me"]{
-  background:#008f00 !important;
-  color:#fff !important;
-}
+.btn-line, a[href*="line.me"]{ background:#008f00 !important; color:#fff !important; }
 .btn-line:hover, a[href*="line.me"]:hover{ background:#006400 !important; }
 
 .btn-fb{ background:#1877f2 !important; color:#fff !important; }
@@ -407,7 +339,7 @@ table tr:hover{ background:#f1f1f1; transition:.2s; }
 
 #menu ul li a.button .icon{ margin-right:8px; opacity:.9; }
 
-/* ==========================================================================
+/* ========================================================================== 
    10) MOBILE LAYOUT
    ========================================================================== */
 html, body{ overflow-x:hidden; }
@@ -417,7 +349,7 @@ html, body{ overflow-x:hidden; }
   #main .inner{ padding:22px 16px !important; }
 }
 
-/* ==========================================================================
+/* ========================================================================== 
    11) REVIEWS (MARQUEE)
    ========================================================================== */
 .kh-review-hint{
@@ -473,20 +405,6 @@ html, body{ overflow-x:hidden; }
   content-visibility:auto;
   contain-intrinsic-size:1px 420px;
 }
-
-.kh-reviews-marquee:before, .kh-reviews-marquee:after{
-  content:"";
-  position:absolute; left:0; right:0;
-  height:28px; z-index:2;
-  pointer-events:none;
-  background:linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0));
-}
-.kh-reviews-marquee:after{
-  top:auto; bottom:0;
-  background:linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
-}
-.kh-reviews-marquee:before{ top:0; }
-
 .kh-reviews-track{
   display:flex;
   flex-direction:column;
@@ -495,16 +413,14 @@ html, body{ overflow-x:hidden; }
   will-change:transform;
   animation:khReviewsMarquee var(--kh-marquee-dur) linear infinite;
 }
-
 .kh-reviews-marquee:hover .kh-reviews-track{ animation-play-state:paused; }
-
 @keyframes khReviewsMarquee{
   from{ transform:translateY(0); }
   to{ transform:translateY(calc(-1 * var(--kh-marquee-h))); }
 }
 
-/* ==========================================================================
-   12) GLOSSY GOLD MENU ACTIVE
+/* ========================================================================== 
+   12) GOLD MENU ACTIVE
    ========================================================================== */
 #menu ul li.active > a,
 #menu a.active,
@@ -532,61 +448,28 @@ html, body{ overflow-x:hidden; }
     0 10px 22px rgba(0,0,0,.08),
     0 0 18px rgba(245,158,11,.12) !important;
 }
-
-#menu ul li.active > a::before,
-#menu a.active::before,
-#menu ul li.active > span.opener::before{
-  content:"";
-  position:absolute; left:0; right:0; top:0;
-  height:55%;
-  background:linear-gradient(180deg, rgba(255,255,255,.60), rgba(255,255,255,.18), rgba(255,255,255,0));
-  opacity:.42;
-  pointer-events:none;
-}
-
-#menu ul li.active > a::after,
-#menu a.active::after,
-#menu ul li.active > span.opener::after{
-  content:"";
-  position:absolute;
-  top:-45%;
-  left:-80%;
-  width:70%;
-  height:200%;
-  background:linear-gradient(90deg, rgba(255,255,255,0), rgba(253,230,138,.78), rgba(255,255,255,0));
-  transform:rotate(18deg);
-  opacity:.46;
-  pointer-events:none;
-  animation:khGoldShine 2.4s ease-in-out infinite;
-}
-
-@keyframes khGoldShine{
-  0%{ left:-90%; opacity:.10; }
-  25%{ opacity:.58; }
-  45%{ left:125%; opacity:.52; }
-  100%{ left:125%; opacity:.12; }
-}
-
 #menu a:hover{
   box-shadow:
     inset 0 0 0 1px rgba(245,158,11,.34),
     0 10px 24px rgba(0,0,0,.10),
     0 0 18px var(--kh-goldGlow) !important;
 }
-
 #menu a:focus-visible{
   outline:3px solid rgba(245,158,11,.45);
   outline-offset:2px;
   border-radius:12px;
 }
 
-@media (prefers-reduced-motion:reduce){
-  #menu ul li.active > a::after,
-  #menu a.active::after{ animation:none !important; }
-}
+/* ========================================================================== 
+   13) HIDE TOP "LOCATION BAR" (kh-loc) + remove leftover gap
+   ========================================================================== */
+.kh-loc{ display:none !important; }
 
-/* ==========================================================================
-   13) HEADER (FINAL) — logo + icons align right
+/* (บางหน้าอาจมี padding-top เยอะจาก kh-loc เดิม) */
+#main .inner{ padding-top:2em !important; }
+
+/* ========================================================================== 
+   14) HEADER GLOBAL — logo-khonkaen.webp + text + icons right
    ========================================================================== */
 #header{
   width:100%;
@@ -599,22 +482,40 @@ html, body{ overflow-x:hidden; }
   border-bottom:3px solid #d32f2f;
 }
 
-/* logo */
+/* Left: logo container */
 #header .logo{
-  display:inline-flex;
+  display:inline-flex !important;
   align-items:center;
   gap:12px;
   text-decoration:none;
-  flex:0 1 auto;
+  white-space:nowrap;
 }
-#header .logo::before{ content:none !important; } /* block pseudo logo if ever existed */
 
+/* ถ้าหน้าไหนมี <img> ใช้ <img> ก่อน */
 #header .logo img{
   width:52px;
   height:52px;
   object-fit:contain;
   display:block !important;
   border-radius:8px;
+}
+
+/* fallback: ถ้าหน้าไหนไม่มี <img> จะขึ้นโลโก้จาก CSS */
+#header .logo::before{
+  content:"";
+  width:52px;
+  height:52px;
+  flex:0 0 52px;
+  background:url("images/logo-khonkaen.webp") center/contain no-repeat;
+  border-radius:8px;
+}
+
+/* ถ้ามี <img> อยู่แล้ว ไม่ต้องซ้ำ ::before */
+#header .logo img + strong{ /* กัน strong อยู่ติด img */
+  margin-left:0;
+}
+#header .logo:has(img)::before{
+  content:none;
 }
 
 #header .logo strong{
@@ -624,16 +525,18 @@ html, body{ overflow-x:hidden; }
   color:#f26a00;
 }
 
-/* icons */
+/* Right: icons */
 #header .icons{
   list-style:none;
   margin:0 0 0 auto !important;
   padding:0;
 
-  display:flex;
+  display:flex !important;
   align-items:center;
   gap:14px;
+  justify-content:flex-end;
 }
+
 #header .icons li{ margin:0; padding:0; }
 
 #header .icons a.icon{
@@ -643,6 +546,7 @@ html, body{ overflow-x:hidden; }
 }
 #header .icons a.icon:hover{ transform:scale(1.15); }
 
+/* icon colors */
 #header .icons .fa-phone{ color:#007bff !important; }
 #header .icons .fa-line{ color:#00c300 !important; }
 #header .icons .fa-map-marker-alt{ color:#dc3545 !important; }
@@ -651,10 +555,13 @@ html, body{ overflow-x:hidden; }
 @media (max-width:480px){
   #header{ flex-wrap:wrap; }
   #header .icons{ width:100%; justify-content:flex-end; }
+  #header .logo strong{ font-size:20px; }
+  #header .logo img{ width:44px; height:44px; }
+  #header .logo::before{ width:44px; height:44px; flex-basis:44px; }
 }
 
-/* ==========================================================================
-   14) Font Awesome swap (single set)
+/* ========================================================================== 
+   15) Font Awesome swap (single set)
    ========================================================================== */
 @font-face{
   font-family:'Font Awesome 5 Free';
@@ -672,59 +579,3 @@ html, body{ overflow-x:hidden; }
   src:url('assets/webfonts/fa-brands-400.woff2') format('woff2'),
       url('assets/webfonts/fa-brands-400.woff') format('woff');
 }
-
-
-/* =========================================================
-   KH HEADER GLOBAL (Logo + Title left, Icons far right)
-   - Works on all pages (CSS only)
-   - Logo file must exist at: images/logo-khonkaen.webp
-   ========================================================= */
-
-/* 1) Header layout: left/right */
-#header{
-  width:100%;
-  display:flex !important;
-  align-items:center;
-  justify-content:space-between;
-  gap:14px;
-}
-
-/* 2) Logo area */
-#header .logo{
-  display:inline-flex !important;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-  white-space:nowrap;
-}
-
-/* ถ้าหน้าไหนมี <img> อยู่แล้ว ให้คุมขนาด */
-#header .logo img{
-  width:52px;
-  height:52px;
-  object-fit:contain;
-  display:block;
-  border-radius:8px;
-}
-
-/* 3) ถ้าหน้าไหน "ไม่มี <img>" ให้สร้างโลโก้ด้วย CSS (ยังได้ทุกหน้า) */
-#header .logo::before{
-  content:"";
-  width:52px;
-  height:52px;
-  flex:0 0 52px;
-  background:url("images/logo-khonkaen.webp") center/contain no-repeat;
-  border-radius:8px;
-}
-
-/* 4) Title style */
-#header .logo strong{
-  font-size:26px;
-  font-weight:900;
-  line-height:1;
-  color:#f26a00;
-}
-
-/* 5) Icons to far right */
-#header .icons{
-  margin-left:auto !importan
