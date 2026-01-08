@@ -579,3 +579,82 @@ html, body{ overflow-x:hidden; }
   src:url('assets/webfonts/fa-brands-400.woff2') format('woff2'),
       url('assets/webfonts/fa-brands-400.woff') format('woff');
 }
+
+/* =========================================================
+   FIX: ปุ่ม "ติดต่อด่วน" ใน Sidebar (#menu) ให้เข้าที่
+   - ตัดเส้นพาด/เส้นใต้จากธีมเดิม
+   - จัดไอคอน + ข้อความให้อยู่กึ่งกลาง (แนวนอน)
+   ========================================================= */
+
+#sidebar #menu ul li a.button{
+  /* กันธีมเดิมทำให้เป็นเส้น/ขอบแปลก ๆ */
+  border: 0 !important;
+  border-bottom: 0 !important;
+  background-image: none !important;
+  text-decoration: none !important;
+  box-shadow: none;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+/* จัดเฉพาะปุ่มติดต่อด่วน (ที่มี class btn-...) */
+#sidebar #menu ul li a.button.btn-tel,
+#sidebar #menu ul li a.button.btn-line,
+#sidebar #menu ul li a.button.btn-fb,
+#sidebar #menu ul li a.button.btn-map{
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+
+  padding: 12px 14px !important;
+  min-height: 56px !important;
+
+  border-radius: 999px !important;
+  line-height: 1.15 !important;
+
+  /* เงาให้นุ่ม */
+  box-shadow: 0 10px 22px rgba(0,0,0,.12) !important;
+}
+
+/* ไอคอนให้เป็นก้อนเดียว ไม่เด้งขึ้นบน */
+#sidebar #menu ul li a.button.btn-tel .icon,
+#sidebar #menu ul li a.button.btn-line .icon,
+#sidebar #menu ul li a.button.btn-fb .icon,
+#sidebar #menu ul li a.button.btn-map .icon{
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 1.6em;
+  height: 1.6em;
+  margin: 0 !important;
+  line-height: 1 !important;
+}
+
+/* กัน margin/padding จาก li ของธีม */
+#sidebar #menu ul li{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ระยะห่างระหว่างปุ่ม (สวยขึ้น) */
+#sidebar #menu ul li a.button.btn-tel,
+#sidebar #menu ul li a.button.btn-line,
+#sidebar #menu ul li a.button.btn-fb,
+#sidebar #menu ul li a.button.btn-map{
+  margin: 10px 0 0 0 !important;
+}
+
+/* สีปุ่ม (กันโดนธีมทับ) */
+#sidebar #menu a.button.btn-tel{ background:#223242 !important; color:#fff !important; }
+#sidebar #menu a.button.btn-line{ background:#00c300 !important; color:#fff !important; }
+#sidebar #menu a.button.btn-fb{ background:#1877f2 !important; color:#fff !important; }
+#sidebar #menu a.button.btn-map{ background:#ea4335 !important; color:#fff !important; }
+
+/* Hover */
+#sidebar #menu a.button.btn-tel:hover{ filter: brightness(.95); }
+#sidebar #menu a.button.btn-line:hover{ filter: brightness(.95); }
+#sidebar #menu a.button.btn-fb:hover{ filter: brightness(.95); }
+#sidebar #menu a.button.btn-map:hover{ filter: brightness(.95); }
