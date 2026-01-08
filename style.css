@@ -28,7 +28,7 @@
 
 /* ปรับ Scrollbar ให้สวยงาม */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-track { background: #000000; }
 ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--kh-primary); }
 
@@ -488,13 +488,16 @@ html, body { overflow-x: hidden; }
 
 /* 2. ปุ่ม LINE (สีเขียว) */
 .btn-line, a[href*="line.me"] {
-    background-color: #06c755 !important;
-    color: #ffffff !important;
+    background-color: #1bff00 !important;
+    color: #000000 !important;
 }
 .btn-line:hover, a[href*="line.me"]:hover {
     background-color: #ffffff !important;
 }
-
+a.icon.brands.fa-line {
+    background-color: #ffffff !important;
+    color: #53b756 !important;
+}
 /* 3. ปุ่ม Facebook (สีน้ำเงินแบรนด์) */
 .btn-fb {
     background-color: #1877f2 !important;
