@@ -672,3 +672,54 @@
     boot();
   }
 })();
+(() => {
+  if (window.__KH_ACTIVE_MENU_DONE__) return;
+  window.__KH_ACTIVE_MENU_DONE__ = true;
+
+  const norm = (x) => {
+    if (!x) return "index.html";
+    x = String(x).split("#")[0].split("?")[0].trim();
+    const parts = x.split("/");
+    let last = parts.pop() || parts.pop() || "";
+    last = decodeURIComponent(last).toLowerCase();
+    if (!last || last.endsWith("/")) return "index.html";
+    return last;
+  };
+
+  const run = () => {
+    const menu = document.querySelector("#menu");
+    if (!menu) return false;
+
+    const current = norm(window.location.pathname);
+
+    menu.querySelectorAll("li.active, a.active").forEach(el => el.classList.remove("active"));
+
+    menu.querySelectorAll("a[href]").forEach(a => {
+      const href = a.getAttribute("href");
+      if (!href) return;
+      if (href.startsWith("http") || href.startsWith("tel:") || href.startsWith("mailto:") || href.startsWith("#")) return;
+
+      const target = norm(href);
+      const match = current === target || (current === "index.html" && (target === "" || target === "index.html"));
+      if (match) {
+        a.classList.add("active");
+        const li = a.closest("li");
+        if (li) li.classList.add("active");
+      }
+    });
+
+    return true;
+  };
+
+  const boot = () => {
+    let tries = 0;
+    const tick = () => {
+      if (run()) return;
+      if (++tries < 20) setTimeout(tick, 120);
+    };
+    tick();
+  };
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot, { once: true });
+  else boot();
+})();
