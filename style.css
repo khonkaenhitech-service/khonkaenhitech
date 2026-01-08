@@ -419,51 +419,6 @@ h2{
   box-shadow: 0 14px 28px rgba(0,0,0,.14), inset 0 2px 8px rgba(0,0,0,.10) !important;
 }
 
-/* TEL – Primary CTA (Warm Gold + larger) */
-#menu a.button.btn-tel{
-  background: linear-gradient(180deg, var(--cta-g1) 0%, var(--cta-g2) 55%, var(--cta-g3) 100%) !important;
-  color: var(--cta-ink) !important;
-
-  min-height: 108px !important;
-  box-shadow:
-    0 26px 56px rgba(0,0,0,.22),
-    0 0 0 1px rgba(168,121,16,.22),
-    inset 0 1px 0 rgba(255,255,255,.80) !important;
-}
-#menu a.button.btn-tel .icon{
-  width:52px !important;
-  height:52px !important;
-  border-radius:20px !important;
-}
-#menu a.button.btn-tel .icon:before{
-  color: var(--cta-ink) !important;
-  font-size:24px !important;
-}
-
-/* premium shine */
-#menu a.button.btn-tel::after{
-  content:"";
-  position:absolute;
-  inset:-40% -60%;
-  background: linear-gradient(120deg,
-    rgba(255,255,255,0) 35%,
-    rgba(255,255,255,.35) 50%,
-    rgba(255,255,255,0) 65%
-  );
-  transform: translateX(-30%) rotate(10deg);
-  opacity: .45;
-  pointer-events:none;
-}
-#menu a.button.btn-tel:hover::after{
-  transform: translateX(30%) rotate(10deg);
-  transition: transform .55s ease;
-  opacity: .55;
-}
-@media (prefers-reduced-motion: no-preference){
-  #menu a.button.btn-tel{ animation: telPulse 2.6s ease-in-out infinite; }
-  @keyframes telPulse{ 0%,100%{ filter:brightness(1); } 50%{ filter:brightness(1.03); } }
-}
-
 /* LINE – Friendly chat */
 #menu a.button.btn-line{
   background: linear-gradient(180deg, #f3fff7 0%, #c7f3d7 55%, #74d39a 100%) !important;
@@ -489,208 +444,145 @@ h2{
   border-color: rgba(244,178,127,.55) !important;
 }
 #menu a.button.btn-map .icon{ background: rgba(58,29,11,.10) !important; border-color: rgba(58,29,11,.10) !important; }
-#menu a.button.btn-map .icon:before{ color: #3a1d0b !important; }
-
-/* Mobile tuning */
-@media (max-width: 980px){
-  #menu a.button.btn-tel,
-  #menu a.button.btn-line,
-  #menu a.button.btn-fb,
-  #menu a.button.btn-map{
-    min-height: 88px !important;
-    font-size: 13.5px !important;
-  }
-  #menu a.button.btn-tel{ min-height: 98px !important; }
-
-  #menu a.button.btn-tel .icon,
-  #menu a.button.btn-line .icon,
-  #menu a.button.btn-fb .icon,
-  #menu a.button.btn-map .icon{
-    width:42px !important;
-    height:42px !important;
-    border-radius:16px !important;
-  }
-  #menu a.button.btn-tel .icon{
-    width:46px !important;
-    height:46px !important;
-    border-radius:18px !important;
-  }
-
-  #menu a.button.btn-tel .icon:before,
-  #menu a.button.btn-line .icon:before,
-  #menu a.button.btn-fb .icon:before,
-  #menu a.button.btn-map .icon:before{
-    font-size:20px !important;
-  }
-  #menu a.button.btn-tel .icon:before{ font-size:22px !important; }
-}
-
-/* =========================
-   10) REVIEWS (Luxury)
-   ========================= */
-.kh-review-hint{
-  margin-top: -8px;
-  margin-bottom: 12px;
-  font-size: .95em;
-  color: rgba(17,24,39,.62);
-}
-.kh-review{
-  background:#fff;
-  border:1px solid var(--line);
-  border-left:4px solid var(--gold);
-  border-radius:16px;
-  padding:14px 16px;
-  box-shadow: 0 10px 28px rgba(0,0,0,.06);
-}
-.kh-review__top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-}
-.kh-stars{
-  color: var(--gold);
-  letter-spacing: 1px;
-  font-size: 14px;
-  font-weight: 900;
-  flex: 0 0 auto;
-}
-.kh-review__meta{
-  font-size: 13px;
-  color: rgba(17,24,39,.62);
-  min-width: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.kh-review__title{
-  margin: 8px 0 6px;
-  font-size: 16px;
-  font-weight: 900;
-  color: #111827;
-}
-.kh-review__text{
-  margin: 0;
-  color: rgba(17,24,39,.78);
-  line-height: 1.75;
-}
-.kh-review__by{
-  font-weight: 900;
-  color: var(--gold);
-}
-
-/* =========================
-   11) FOOTER
-   ========================= */
-#footer{
-  font-size: .85em;
-  color: #aaa;
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid #eee;
-}
-
-/* =========================
-   12) MOBILE SAFETY
-   ========================= */
-html, body{ overflow-x: hidden; }
-@media (max-width: 980px){
-  #main{ margin-left: 0 !important; width: 100% !important; }
-  #main .inner{ padding: 22px 16px !important; }
+#menu a.button.btn-map .icon:before{ color: #3a1d0b !important;
 }
 /* =========================================================
-   TEL BUTTON – IVORY / PEARL GREY (Premium, not dark)
-   วาง "ท้ายสุดของ style.css" เพื่อทับของเดิม
+   1) TEL BUTTON – YELLOW PREMIUM (เหมือนรูป)
+   2) ACTIVE MENU – NEW COLOR + SHINE/SHADOW RUN FOREVER
+   วางท้ายสุดของ style.css
    ========================================================= */
 
+/* ---------- 1) ปุ่มโทรสีเหลือง (ปุ่มใน sidebar) ---------- */
 #menu a.button.btn-tel{
-  /* ขาวนวลออกเทา (ไม่เทาหม่น) */
+  position: relative !important;
+  overflow: hidden !important;
+
   background: linear-gradient(180deg,
-    #ffffff 0%,
-    #f7f6f3 38%,
-    #efede7 72%,
-    #e8e5de 100%
+    #fff27a 0%,
+    #ffe100 42%,
+    #ffc800 100%
   ) !important;
 
-  color: #0b1220 !important; /* ตัวหนังสือเข้ม อ่านชัด */
-  border: 1px solid rgba(168,121,16,.26) !important;
+  color: #111827 !important;
+  border: 1px solid rgba(0,0,0,.10) !important;
 
-  /* ลุคพรีเมียม: เงานุ่ม + ไฮไลท์ด้านใน */
   box-shadow:
-    0 26px 56px rgba(0,0,0,.18),
-    0 0 0 1px rgba(255,255,255,.55),
-    inset 0 1px 0 rgba(255,255,255,.92),
-    inset 0 -10px 24px rgba(0,0,0,.04) !important;
-
-  /* ปิด pulse เดิม (ถ้ามี) ให้ดูหรูนิ่ง ๆ */
-  animation: none !important;
+    0 22px 46px rgba(0,0,0,.22),
+    inset 0 1px 0 rgba(255,255,255,.75) !important;
 }
 
-/* กล่องไอคอนในปุ่มโทร: ให้เป็น badge เทาอ่อนหรู */
+/* ไอคอนในปุ่มโทรให้ดูเป็นเหรียญ/แบดจ์ */
 #menu a.button.btn-tel .icon{
-  background: linear-gradient(180deg,
-    rgba(11,18,32,.06) 0%,
-    rgba(11,18,32,.10) 100%
-  ) !important;
-
-  border: 1px solid rgba(11,18,32,.10) !important;
-
-  /* ให้ดูเป็นชิ้นงานพรีเมียม */
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.55),
-    0 10px 22px rgba(0,0,0,.10) !important;
+  background: rgba(0,0,0,.10) !important;
+  border: 1px solid rgba(0,0,0,.10) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.35) !important;
 }
-
 #menu a.button.btn-tel .icon:before{
   color: #0b1220 !important;
 }
 
-/* Shine เบา ๆ ให้ดูแพง (ไม่แสบตา) */
+/* เงาวิ่งเบา ๆ บนปุ่มโทร (ช่วยให้ “น่ากด”) */
 #menu a.button.btn-tel::after{
   content:"";
   position:absolute;
-  inset:-40% -60%;
+  top:-60%;
+  left:-70%;
+  width:60%;
+  height:220%;
   background: linear-gradient(120deg,
-    rgba(255,255,255,0) 38%,
-    rgba(255,255,255,.40) 50%,
-    rgba(255,255,255,0) 62%
+    rgba(255,255,255,0) 35%,
+    rgba(255,255,255,.55) 50%,
+    rgba(255,255,255,0) 65%
   );
-  transform: translateX(-26%) rotate(10deg);
-  opacity: .35;
+  transform: skewX(-15deg);
+  opacity:.55;
   pointer-events:none;
+  animation: khTelShine 2.8s linear infinite;
+}
+@keyframes khTelShine{
+  0%   { left:-80%; }
+  100% { left:130%; }
 }
 
+/* Hover/Active ให้รู้สึก “กดได้จริง” */
 #menu a.button.btn-tel:hover{
-  filter: brightness(1.02) !important;
+  filter: brightness(1.03) !important;
   transform: translateY(-1px);
   box-shadow:
-    0 30px 64px rgba(0,0,0,.20),
-    0 0 0 1px rgba(168,121,16,.18),
-    inset 0 1px 0 rgba(255,255,255,.95),
-    inset 0 -12px 26px rgba(0,0,0,.04) !important;
+    0 28px 60px rgba(0,0,0,.24),
+    inset 0 1px 0 rgba(255,255,255,.80) !important;
 }
-
-#menu a.button.btn-tel:hover::after{
-  transform: translateX(28%) rotate(10deg);
-  transition: transform .55s ease;
-  opacity: .45;
-}
-
 #menu a.button.btn-tel:active{
   transform: scale(.99);
   box-shadow:
-    0 18px 38px rgba(0,0,0,.16),
-    inset 0 2px 10px rgba(0,0,0,.08) !important;
+    0 16px 34px rgba(0,0,0,.18),
+    inset 0 2px 10px rgba(0,0,0,.12) !important;
 }
 
-/* มือถือ: ยังสวยและชัด */
-@media (max-width: 980px){
-  #menu a.button.btn-tel{
-    min-height: 98px !important;
-  }
-  #menu a.button.btn-tel .icon{
-    width:46px !important;
-    height:46px !important;
-    border-radius:18px !important;
+/* ---------- 2) เมนูเวลาถูกกด (active) เปลี่ยนสี + เงาวิ่งตลอด ---------- */
+/* ใช้กับเมนูปกติเท่านั้น (ไม่โดนปุ่มติดต่อด่วน) */
+#menu ul li.active > a:not(.button),
+#menu a.active:not(.button){
+  position: relative !important;
+  overflow: hidden !important;
+
+  /* สีใหม่: “ครีม-แชมเปญ” หรู (ไม่แดง) */
+  background: linear-gradient(90deg,
+    rgba(255,255,255,.92) 0%,
+    rgba(255,241,200,.85) 50%,
+    rgba(255,255,255,.92) 100%
+  ) !important;
+
+  color: #0b1220 !important;
+  font-weight: 950 !important;
+
+  border-left: 6px solid rgba(168,121,16,.95) !important;
+  border-radius: 14px !important;
+
+  box-shadow:
+    0 14px 26px rgba(0,0,0,.14),
+    inset 0 0 0 1px rgba(168,121,16,.18) !important;
+}
+
+/* แสง/เงาวิ่งตลอดบนเมนู active */
+#menu ul li.active > a:not(.button)::after,
+#menu a.active:not(.button)::after{
+  content:"";
+  position:absolute;
+  top:-65%;
+  left:-80%;
+  width:60%;
+  height:240%;
+  background: linear-gradient(120deg,
+    rgba(255,255,255,0) 38%,
+    rgba(255,255,255,.60) 50%,
+    rgba(255,255,255,0) 62%
+  );
+  transform: skewX(-18deg);
+  opacity:.45;
+  pointer-events:none;
+  animation: khMenuShine 2.4s linear infinite;
+}
+@keyframes khMenuShine{
+  0%   { left:-85%; }
+  100% { left:135%; }
+}
+
+/* Hover เมนูปกติให้เข้าธีมเดียวกัน */
+#menu ul li:not(.divider) > a:not(.button):hover{
+  background: linear-gradient(90deg,
+    rgba(255,255,255,.90) 0%,
+    rgba(255,241,200,.55) 55%,
+    rgba(255,255,255,.86) 100%
+  ) !important;
+  color:#0b1220 !important;
+}
+
+/* เคารพคนไม่ชอบแอนิเมชัน */
+@media (prefers-reduced-motion: reduce){
+  #menu a.button.btn-tel::after,
+  #menu ul li.active > a:not(.button)::after,
+  #menu a.active:not(.button)::after{
+    animation: none !important;
   }
 }
