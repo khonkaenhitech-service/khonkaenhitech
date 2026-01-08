@@ -6,269 +6,406 @@
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-M26CWCKV');</script>
-  
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-  <title>รับทำร้านสะดวกซัก & เครื่องหยอดเหรียญฝาบน ขอนแก่น | เครื่องอุตสาหกรรม | ขอนแก่นไฮเทค</title>
-  <meta name="description" content="บริการครบวงจร: 1.ติดกล่องหยอดเหรียญเครื่องฝาบนตามหอพัก 2.ทำร้านสะดวกซักเครื่องอุตสาหกรรม (Laundromat) วางระบบน้ำไฟมาตรฐาน ทีมช่างขอนแก่น โทร 094-474-9874" />
-  <meta name="keywords" content="เครื่องซักผ้าหยอดเหรียญ ฝาบน, ร้านสะดวกซัก ขอนแก่น, เครื่องซักผ้าอุตสาหกรรม, เครื่องอบผ้าหยอดเหรียญ, ธุรกิจร้านซักผ้า, ขอนแก่นไฮเทค" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <title>ธุรกิจร้านสะดวกซัก & หยอดเหรียญ ขอนแก่น | เสือนอนกิน คืนทุนไว | ขอนแก่นไฮเทค</title>
+  
+  <meta name="description" content="เปลี่ยนพื้นที่ว่างให้ทำเงิน 24 ชม. รับทำร้านสะดวกซัก (Laundromat) และติดกล่องหยอดเหรียญหอพัก ในขอนแก่น วางระบบน้ำ-ไฟมาตรฐานวิศวกร สร้าง Passive Income ที่แท้จริง โทร 094-474-9874" />
+  
+  <meta name="keywords" content="เครื่องซักผ้าหยอดเหรียญ ขอนแก่น, ร้านสะดวกซัก ขอนแก่น, ลงทุนแฟรนไชส์ซักผ้า, กล่องหยอดเหรียญ QR Code, ซ่อมเครื่องซักผ้า ขอนแก่น, Passive Income ขอนแก่น" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
 
   <link rel="canonical" href="https://khonkaenhitech-service.github.io/khonkaenhitech/laundry.html" />
   <link rel="icon" href="images/favicon.png" />
 
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="style.css" />
-
+  
   <style>
-    /* CSS เสริมสำหรับตารางเปรียบเทียบ */
-    .biz-type-container { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 2em; }
-    .biz-type-box { flex: 1; min-width: 300px; background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s; }
-    .biz-type-box:hover { transform: translateY(-5px); border-color: var(--gold); }
-    .biz-header { padding: 20px; text-align: center; color: #fff; }
-    .biz-header.type-1 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); } /* สีฟ้าสดใส (ฝาบน) */
-    .biz-header.type-2 { background: linear-gradient(135deg, #a87910 0%, #f0d58a 100%); } /* สีทองหรู (อุตสาหกรรม) */
-    .biz-content { padding: 25px; }
-    .biz-content ul { list-style: none; padding: 0; margin: 0; }
-    .biz-content ul li { padding: 8px 0; border-bottom: 1px dashed #eee; font-size: 0.95em; }
-    .biz-content ul li::before { content: "✔"; color: #27ae60; margin-right: 8px; }
+    /* Profit Calculator Table */
+    .profit-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .profit-table th { background: linear-gradient(135deg, #2980b9 0%, #2c3e50 100%); color: white; padding: 15px; text-align: center; font-size: 1.1em; }
+    .profit-table td { padding: 15px; text-align: center; border-bottom: 1px solid #eee; }
+    .profit-table tr:hover { background-color: #f1faff; }
+    .profit-highlight { color: #27ae60; font-weight: bold; font-size: 1.2em; }
+    
+    /* Model Comparison Cards */
+    .model-card {
+        border: 1px solid #ddd; border-radius: 12px; padding: 0; 
+        background: white; transition: all 0.3s; position: relative; overflow: hidden;
+        height: 100%; display: flex; flex-direction: column;
+    }
+    .model-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); border-color: var(--gold); }
+    .model-header { padding: 20px; color: white; text-align: center; }
+    .model-header.basic { background: linear-gradient(to right, #3498db, #2980b9); } /* Blue */
+    .model-header.pro { background: linear-gradient(to right, #f1c40f, #d35400); } /* Gold */
+    .model-body { padding: 20px; flex-grow: 1; }
+    .model-price { font-size: 1.5em; font-weight: bold; color: #333; text-align: center; margin: 10px 0; }
+    .feature-list li { border-bottom: 1px dashed #eee; padding: 8px 0; }
+    .feature-list li:last-child { border-bottom: none; }
+    
+    /* Reviews & FAQ */
+    .review-container { max-height: 500px; overflow-y: auto; background: #f8f9fa; padding: 20px; border-radius: 8px; }
+    .review-item { background: white; padding: 20px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .verified-badge { background: #e8f5e9; color: #27ae60; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; margin-left: 5px; }
+    
+    .faq-item { border: 1px solid #eee; border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
+    .faq-question { background: #fff; padding: 15px; cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+    .faq-answer { display: none; padding: 15px; background: #fcfcfc; border-top: 1px solid #eee; color: #555; }
+    .faq-item.active .faq-answer { display: block; }
+    .faq-item.active .faq-question { background: #f1f1f1; color: #c0392b; }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "บริการติดตั้งร้านสะดวกซักและเครื่องหยอดเหรียญครบวงจร",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "ขอนแก่นไฮเทค",
+          "image": "https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.webp",
+          "telephone": "+66944749874",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "เมืองขอนแก่น",
+            "addressRegion": "ขอนแก่น",
+            "addressCountry": "TH"
+          },
+          "priceRange": "฿3,500 - ฿500,000"
+        },
+        "description": "รับวางระบบร้านสะดวกซัก (Laundromat) และติดตั้งกล่องหยอดเหรียญหอพัก ระบบน้ำไฟมาตรฐาน เดินท่อ PPR/PVC ติดตั้งตู้ MDB และระบบ QR Code Payment",
+        "areaServed": ["ขอนแก่น", "มหาสารคาม", "กาฬสินธุ์", "อุดรธานี"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "เปิดร้านสะดวกซัก ใช้งบเท่าไหร่?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ขึ้นอยู่กับสเกลครับ ถ้าเป็นเครื่องบ้านติดกล่อง (Home Use) เริ่มต้นหลักพัน-หมื่นต้นๆ ต่อเครื่อง แต่ถ้าเป็นร้านสะดวกซักมาตรฐาน (เครื่องอุตสาหกรรม) เริ่มต้นที่ 300,000 - 1,000,000 บาทครับ"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ทำไมต้องจ้างช่างติดตั้ง ซื้อมาวางเองไม่ได้หรอ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "การวางเองมักเจอปัญหา 'น้ำไหลไม่ทัน' และ 'ไฟตก' ทำให้เครื่องพังไวครับ เราคำนวณขนาดปั๊มน้ำ ขนาดท่อเมน และบาลานซ์เฟสไฟให้ใหม่ เพื่อให้เครื่องทำงานได้พร้อมกัน 100% โดยไม่สะดุด"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "คืนทุนภายในกี่เดือน?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ค่าเฉลี่ยสำหรับหอพัก (เครื่องบ้าน) คืนทุนใน 4-6 เดือน ส่วนร้านสะดวกซัก (เครื่องอุตสาหกรรม) คืนทุนใน 1.5 - 2.5 ปี ขึ้นอยู่กับทำเลและจำนวนผู้ใช้งานครับ"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="is-preload">
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M26CWCKV"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<div id="wrapper">
-  <div id="main">
-    <div class="inner">
+  <div id="wrapper">
+    <div id="main">
+      <div class="inner">
 
-      <header id="header">
-        <a href="./" class="logo kh-brand">
-          <span class="kh-brand__img"><img src="images/logo-khonkaen.webp" alt="ขอนแก่นไฮเทค" width="44" height="44"></span>
-          <span class="kh-brand__text"><span class="kh-brand__th">ขอนแก่นไฮเทค</span><span class="kh-brand__en">Khon Kaen HiTech</span></span>
-        </a>
-        <ul class="icons">
-          <li><a href="tel:+66944749874"><span class="icon solid fa-phone"></span></a></li>
-          <li><a href="https://line.me/ti/p/~KKHITECH" target="_blank"><span class="icon brands fa-line"></span></a></li>
-          <li><a href="https://maps.app.goo.gl/LyV85313vknT4hBE6" target="_blank"><span class="icon solid fa-map-marker-alt"></span></a></li>
-        </ul>
-      </header>
-
-      <section>
-        <header class="main">
-          <h1>ธุรกิจซักผ้าหยอดเหรียญ ขอนแก่น<br>
-          <span style="font-size:0.7em; color:var(--ink-2);">รับทำทั้ง "แบบฝาบน (หอพัก)" และ "ร้านสะดวกซัก (อุตสาหกรรม)"</span></h1>
+        <header id="header">
+          <a href="./" class="logo kh-brand">
+            <span class="kh-brand__img"><img src="images/logo-khonkaen.webp" alt="ขอนแก่นไฮเทค" width="44" height="44"></span>
+            <span class="kh-brand__text"><span class="kh-brand__th">ขอนแก่นไฮเทค</span><span class="kh-brand__en">Laundromat Expert</span></span>
+          </a>
         </header>
 
-        <span class="image main">
-             <img src="images/pic10.webp" alt="ร้านสะดวกซักเครื่องอุตสาหกรรม และเครื่องหยอดเหรียญฝาบน ขอนแก่น" width="800" height="450">
-        </span>
-
-        <div class="highlight-box" style="border-left-color: var(--gold);">
-            <h3><i class="icon solid fa-coins"></i> เลือกรูปแบบที่ใช่ สำหรับพื้นที่ของคุณ</h3>
-            <p>ไม่ว่าคุณจะเป็น <strong>เจ้าของหอพัก</strong> ที่อยากติดเครื่องซักผ้าเพิ่มรายได้ หรือนักลงทุนที่อยากเปิด <strong>ร้านสะดวกซัก (Laundromat)</strong> เต็มรูปแบบ ขอนแก่นไฮเทค พร้อมดูแลวางระบบให้ครบจบในที่เดียว ด้วยทีมช่างมืออาชีพ</p>
-        </div>
-
-        <hr class="major" />
-
-        <h2>รูปแบบการลงทุน (Business Models)</h2>
-        <div class="biz-type-container">
-            
-            <div class="biz-type-box">
-                <div class="biz-header type-1">
-                    <h3 style="margin:0; font-size:1.4em; color:white;">1. เครื่องซักผ้าหยอดเหรียญ (ทั่วไป)</h3>
-                    <p style="margin:0; font-size:0.9em; opacity:0.9;">ฝาบน / ฝาหน้า (Home Use)</p>
+        <section class="kh-hero">
+          <div class="kh-hero-grid">
+             <div class="kh-hero-text">
+                <header class="main">
+                  <h1>คุณอยากได้ "เครื่องซักผ้า"<br>หรืออยากได้ "เครื่องผลิตเงิน"?</h1>
+                </header>
+                <p class="kh-sub" style="font-size:1.1em; line-height:1.6;">
+                   ในขณะที่คุณหลับ... คนอื่นกำลังหยอดเหรียญ<br>
+                   ในขณะที่คุณทำงาน... เครื่องจักรทำงานแทนคุณ<br>
+                   <strong>"ธุรกิจสะดวกซัก"</strong> คือคำตอบของ Passive Income ที่แท้จริง ไม่ต้องจ้างพนักงาน ไม่ต้องเฝ้าร้าน แค่มีพื้นที่ว่าง ก็สร้างรายได้ตลอด 24 ชม.
+                </p>
+                <div class="kh-cta">
+                   <a href="tel:+66944749874" class="button primary big icon solid fa-coins">เริ่มสร้างรายได้ (ปรึกษาฟรี)</a>
                 </div>
-                <div class="biz-content">
-                    <p><strong>เหมาะสำหรับ:</strong> หอพัก, อพาร์ตเมนต์, หน้าบ้าน, ชุมชนขนาดเล็ก</p>
-                    <ul>
-                        <li><strong>งบลงทุน:</strong> ต่ำ (หลักพัน - หลักหมื่นต้นๆ)</li>
-                        <li><strong>การติดตั้ง:</strong> ง่าย รวดเร็ว ใช้พื้นที่น้อย</li>
-                        <li><strong>ระบบ:</strong> ติดกล่องหยอดเหรียญเข้ากับเครื่องบ้าน</li>
-                        <li><strong>จุดเด่น:</strong> คืนทุนไวมาก ความเสี่ยงต่ำ</li>
-                    </ul>
-                    <div style="text-align:center; margin-top:20px;">
-                        <a href="https://line.me/ti/p/~KKHITECH" class="button small">สอบถามติดกล่องฝาบน</a>
-                    </div>
-                </div>
+             </div>
+             <div class="kh-hero-media">
+                <img src="images/pic10.webp" alt="ร้านสะดวกซัก ขอนแก่น รายได้ดี" width="800" height="450" style="border-radius:12px; box-shadow:0 10px 20px rgba(0,0,0,0.2);">
+                <div style="text-align:center; margin-top:10px; font-size:0.9em; color:#777;"><i class="fa fa-chart-line"></i> ธุรกิจที่มีอัตราการเติบโตสูงสุดในปี 2025</div>
+             </div>
+          </div>
+        </section>
+
+        <section>
+             <header class="main">
+                <h2>เลือกโมเดลการลงทุนที่เหมาะกับคุณ</h2>
+                <p>เราไม่ยัดเยียดของแพง แต่เราเลือกสิ่งที่ "ทำกำไร" ให้คุณได้มากที่สุด</p>
+             </header>
+             
+             <div class="row">
+                 <div class="col-6 col-12-medium">
+                     <div class="model-card">
+                         <div class="model-header basic">
+                             <h3>1. เครื่องบ้านติดกล่อง (Home Use)</h3>
+                             <p style="margin:0; opacity:0.9;">สำหรับหอพัก / อพาร์ตเมนต์ / บ้าน</p>
+                         </div>
+                         <div class="model-body">
+                             <div class="model-price">ลงทุน: หลักพัน - หมื่นต้น</div>
+                             <p>เหมาะสำหรับเจ้าของหอที่มีเครื่องเดิมอยู่แล้ว หรือต้องการลงทุนต่ำ เน้นคืนทุนไว เก็บกินรายได้เสริม</p>
+                             <ul class="feature-list alt">
+                                 <li><i class="fa fa-check" style="color:#2980b9;"></i> ติดกล่องหยอดเหรียญ/QR ได้ทุกยี่ห้อ</li>
+                                 <li><i class="fa fa-check" style="color:#2980b9;"></i> คืนทุนไวมาก (4-6 เดือน)</li>
+                                 <li><i class="fa fa-exclamation-circle" style="color:#f39c12;"></i> ซักนาน (45-60 นาที)</li>
+                                 <li><i class="fa fa-exclamation-circle" style="color:#f39c12;"></i> อายุการใช้งานปานกลาง</li>
+                             </ul>
+                             <a href="https://line.me/ti/p/~KKHITECH" class="button fit small">เลือกแพ็กเกจนี้</a>
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="col-6 col-12-medium">
+                     <div class="model-card">
+                         <div class="model-header pro">
+                             <h3>2. เครื่องอุตสาหกรรม (Commercial)</h3>
+                             <p style="margin:0; opacity:0.9;">สำหรับร้านสะดวกซัก / ลงทุนจริงจัง</p>
+                         </div>
+                         <div class="model-body">
+                             <div class="model-price">ลงทุน: หลักแสน - ล้าน</div>
+                             <p>เครื่องซัก-อบ วางซ้อนกันได้ (Stack) ซักเร็ว แรง ทนทาน เปิดได้ 24 ชม. สร้างภาพลักษณ์ร้านมืออาชีพ</p>
+                             <ul class="feature-list alt">
+                                 <li><i class="fa fa-check" style="color:#27ae60;"></i> <strong>ซักเสร็จใน 25 นาที + อบแห้งสนิท</strong></li>
+                                 <li><i class="fa fa-check" style="color:#27ae60;"></i> ทนทานใช้งานหนักได้ 10-15 ปี</li>
+                                 <li><i class="fa fa-check" style="color:#27ae60;"></i> ลูกค้าชอบมากเพราะเร็วและสะอาด</li>
+                                 <li><i class="fa fa-check" style="color:#27ae60;"></i> กำไรต่อครั้งสูงกว่า</li>
+                             </ul>
+                             <a href="tel:+66944749874" class="button primary fit small">ขอใบเสนอราคาเปิดร้าน</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+        <section>
+            <div class="highlight-box" style="border-left-color: #27ae60; background-color: #f0fff4;">
+                <h3 style="color:#27ae60;"><i class="fa fa-calculator"></i> ตารางประมาณการรายได้ (Profit Projection)</h3>
+                <p>สมมติมีเครื่องซักผ้า 5 เครื่อง + เครื่องอบ 2 เครื่อง (ในทำเลหอพัก/ชุมชน)</p>
+                
+                <table class="profit-table">
+                    <thead>
+                        <tr>
+                            <th>รายการ</th>
+                            <th>รายได้ต่อวัน (บาท)</th>
+                            <th>รายได้ต่อเดือน (บาท)</th>
+                            <th>รายได้ต่อปี (บาท)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>เครื่องซัก (5 เครื่อง x 6 รอบ x 30บ.)</td>
+                            <td>900</td>
+                            <td>27,000</td>
+                            <td>324,000</td>
+                        </tr>
+                        <tr>
+                            <td>เครื่องอบ (2 เครื่อง x 8 รอบ x 40บ.)</td>
+                            <td>640</td>
+                            <td>19,200</td>
+                            <td>230,400</td>
+                        </tr>
+                        <tr style="background-color:#e8f5e9; font-weight:bold;">
+                            <td>รวมรายได้ (Gross Income)</td>
+                            <td class="profit-highlight">1,540</td>
+                            <td class="profit-highlight">46,200</td>
+                            <td class="profit-highlight">554,400</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size:0.8em; text-align:right;">*ตัวเลขประมาณการ ขึ้นอยู่กับทำเล ราคาค่าบริการ และค่าน้ำไฟ</p>
             </div>
+        </section>
 
-            <div class="biz-type-box">
-                <div class="biz-header type-2">
-                    <h3 style="margin:0; font-size:1.4em; color:white;">2. ร้านสะดวกซัก (Industrial)</h3>
-                    <p style="margin:0; font-size:0.9em; opacity:0.9;">เครื่องอุตสาหกรรม (Commercial)</p>
-                </div>
-                <div class="biz-content">
-                    <p><strong>เหมาะสำหรับ:</strong> ลงทุนเปิดร้านจริงจัง, แหล่งชุมชนหนาแน่น</p>
-                    <ul>
-                        <li><strong>งบลงทุน:</strong> สูง (หลักแสน - หลักล้าน)</li>
-                        <li><strong>การติดตั้ง:</strong> วางระบบท่อใหญ่ ตู้ MDB งานตกแต่ง</li>
-                        <li><strong>ระบบ:</strong> เครื่องอุตสาหกรรมทนทาน ซัก-อบ จบใน 1 ชม.</li>
-                        <li><strong>จุดเด่น:</strong> รายได้สูง ภาพลักษณ์ดี ทำงาน 24 ชม.</li>
-                    </ul>
-                    <div style="text-align:center; margin-top:20px;">
-                        <a href="tel:+66944749874" class="button primary small">ปรึกษาเปิดร้านสะดวกซัก</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <hr class="major" />
-
-        <h2>งานระบบมาตรฐาน (Standard Utilities)</h2>
-        <p>ไม่ว่าจะเป็นเครื่องเล็กหรือเครื่องใหญ่ "ระบบน้ำ-ไฟ" คือหัวใจสำคัญ เราดูแลให้ครบ:</p>
-        <div class="features">
-            <article>
-                <div class="icon"><span class="fa fa-water"></span></div>
-                <div class="content">
-                    <h3>ระบบน้ำ (Water System)</h3>
-                    <p>เดินท่อ PPR/PVC เกรด A ติดตั้งปั๊มน้ำแรงดันคงที่ และแทงค์สำรองน้ำ เพื่อให้เครื่องทำงานต่อเนื่องแม้น้ำประปาไหลอ่อน</p>
-                </div>
-            </article>
-            <article>
-                <div class="icon"><span class="fa fa-bolt"></span></div>
-                <div class="content">
-                    <h3>ระบบไฟฟ้า (Electrical)</h3>
-                    <p>แยกเบรกเกอร์อิสระทุกเครื่อง ติดตั้งระบบสายดิน (Ground) ป้องกันไฟรั่ว 100% สำหรับร้านใหญ่เราติดตั้งตู้ MDB มาตรฐานโรงงาน</p>
-                </div>
-            </article>
-            <article>
-                <div class="icon"><span class="fa fa-layer-group"></span></div>
-                <div class="content">
-                    <h3>ฐานราก & แท่นวาง</h3>
-                    <p>เทฐานปูนคอนกรีต หรือแท่นเหล็กยกสูง เพื่อลดแรงสั่นสะเทือน ยืดอายุเครื่อง และทำความสะอาดพื้นง่าย</p>
-                </div>
-            </article>
-        </div>
-
-        <hr class="major" />
-
-        <section id="faq-section">
+        <section>
             <header class="main">
-                <h2>คำถามที่พบบ่อย (FAQ) ก่อนลงทุน</h2>
+                <h2>มากกว่าแค่ขายเครื่อง... คือการ "วางระบบ" (Engineering)</h2>
+                <p>ร้านสวยแต่ระบบเน่า = เจ๊ง! เราดูแลให้ครบทุกมิติ</p>
             </header>
-            <div class="faq-container">
+            
+            <div class="features">
+                <article>
+                    <div class="icon" style="background:#e3f2fd; color:#2980b9;"><span class="fa fa-tint"></span></div>
+                    <div class="content">
+                        <h3>ระบบน้ำ (Water System)</h3>
+                        <p>หัวใจของร้านซักผ้า เราคำนวณ Flow Rate เพื่อเลือกปั๊มน้ำและขนาดถังพักให้เพียงพอ แม้ลูกค้าจะซักพร้อมกัน 10 เครื่อง น้ำก็ต้องแรงไม่ตก เดินท่อ PPR ทนร้อน ทนแรงดัน</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="icon" style="background:#fffde7; color:#f39c12;"><span class="fa fa-bolt"></span></div>
+                    <div class="content">
+                        <h3>ระบบไฟ (Electrical MDB)</h3>
+                        <p>เครื่องอบผ้ากินไฟมหาศาล! เราติดตั้งตู้ MDB มาตรฐานโรงงาน บาลานซ์เฟสไฟ ป้องกันไฟตก ไฟกระชาก และติดตั้งสายดิน (Ground) เพื่อความปลอดภัยสูงสุดของลูกค้า</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="icon" style="background:#e8f5e9; color:#27ae60;"><span class="fa fa-qrcode"></span></div>
+                    <div class="content">
+                        <h3>ระบบจ่ายเงิน (Payment IoT)</h3>
+                        <p>หมดยุคแลกเหรียญ! เราติดตั้งกล่อง QR Code รับเงินผ่านแอปธนาคาร เงินเข้าบัญชีเจ้าของทันที ตรวจสอบยอดได้ Real-time ลดภาระการไขตู้เก็บเหรียญ</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="icon" style="background:#fce4ec; color:#c2185b;"><span class="fa fa-tools"></span></div>
+                    <div class="content">
+                        <h3>บริการหลังการขาย (Service)</h3>
+                        <p>เครื่องเสีย = ขาดรายได้ เรามีทีมช่างในพื้นที่ขอนแก่น พร้อมอะไหล่ซ่อมด่วน ไม่ต้องรอช่างจากกรุงเทพฯ เข้าถึงหน้างานไว แก้ปัญหาจบ</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <header class="main">
+                <h2>ความประทับใจจากนักลงทุน (Investors Reviews)</h2>
+            </header>
+            
+            <div class="review-container" id="reviewFeed">
+                 </div>
+        </section>
+
+        <section>
+            <header class="main">
+                <h2>ถาม-ตอบ เรื่องลงทุนร้านซักผ้า</h2>
+            </header>
+            
+            <div class="faq-list">
                 <div class="faq-item">
-                    <h3><span class="icon solid fa-question-circle"></span> เครื่องฝาบน กับ เครื่องอุตสาหกรรม ต่างกันยังไง?</h3>
-                    <p><strong>ตอบ:</strong> 
-                    <br>• <strong>เครื่องฝาบน:</strong> ราคาถูก ซักนาน (45-60 นาที) เหมาะกับหอพักที่เน้นประหยัด
-                    <br>• <strong>เครื่องอุตสาหกรรม:</strong> ราคาสูง ทนทานมาก ซักเร็ว (25-30 นาที) และมีเครื่องอบผ้าแห้งสนิท เหมาะสำหรับทำธุรกิจร้านสะดวกซักครับ</p>
+                    <div class="faq-question">Q: เปิดร้านสะดวกซัก ใช้งบเท่าไหร่? <i class="fa fa-chevron-down"></i></div>
+                    <div class="faq-answer">A: ขึ้นอยู่กับสเกลครับ ถ้าเป็นเครื่องบ้านติดกล่อง (Home Use) เริ่มต้นหลักพัน-หมื่นต้นๆ ต่อเครื่อง แต่ถ้าเป็นร้านสะดวกซักมาตรฐาน (เครื่องอุตสาหกรรม) เริ่มต้นที่ 300,000 - 1,000,000 บาทครับ (รวมงานระบบและตกแต่ง)</div>
                 </div>
                 <div class="faq-item">
-                    <h3><span class="icon solid fa-question-circle"></span> มีตึกแถวว่างๆ อยากเปิดร้านสะดวกซัก ใช้งบเท่าไหร่?</h3>
-                    <p><strong>ตอบ:</strong> งบประมาณขึ้นอยู่กับจำนวนและยี่ห้อเครื่องครับ (เช่น Speed Queen, Alliance, หรือแบรนด์จีน) แนะนำให้โทรปรึกษาเพื่อให้เราประเมินความคุ้มค่าของทำเลให้ก่อนฟรีครับ</p>
+                    <div class="faq-question">Q: ทำไมต้องจ้างช่างติดตั้ง ซื้อมาวางเองไม่ได้หรอ? <i class="fa fa-chevron-down"></i></div>
+                    <div class="faq-answer">A: การวางเองมักเจอปัญหา 'น้ำไหลไม่ทัน' และ 'ไฟตก' ทำให้เครื่องพังไวครับ เราคำนวณขนาดปั๊มน้ำ ขนาดท่อเมน และบาลานซ์เฟสไฟให้ใหม่ เพื่อให้เครื่องทำงานได้พร้อมกัน 100% โดยไม่สะดุด และปลอดภัยกว่าครับ</div>
                 </div>
                 <div class="faq-item">
-                    <h3><span class="icon solid fa-question-circle"></span> รับซ่อมกล่องหยอดเหรียญ หรือเครื่องซักผ้าด้วยไหม?</h3>
-                    <p><strong>ตอบ:</strong> รับครับ! เรามีทีมช่างซ่อมบอร์ด ซ่อมกล่อง และล้างถังเครื่องซักผ้า ให้บริการในเขตขอนแก่นครับ</p>
+                    <div class="faq-question">Q: คืนทุนภายในกี่เดือน? <i class="fa fa-chevron-down"></i></div>
+                    <div class="faq-answer">A: ค่าเฉลี่ยสำหรับหอพัก (เครื่องบ้าน) คืนทุนใน 4-6 เดือน ส่วนร้านสะดวกซัก (เครื่องอุตสาหกรรม) คืนทุนใน 1.5 - 2.5 ปี ขึ้นอยู่กับทำเลและจำนวนผู้ใช้งานครับ</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: เครื่องอุตสาหกรรม ดีกว่ายังไง? <i class="fa fa-chevron-down"></i></div>
+                    <div class="faq-answer">A: 1. ซักเร็วกว่า (25 นาที vs 60 นาที) ทำรอบได้เยอะกว่า 2. ทนทานกว่ามาก (ใช้ได้ 10 ปี+) 3. มีระบบน้ำร้อนฆ่าเชื้อในตัว 4. สร้างภาพลักษณ์ร้านให้ดูน่าเชื่อถือ ดึงดูดลูกค้าได้ดีกว่าครับ</div>
                 </div>
             </div>
         </section>
 
-      </section>
+      </div>
+    </div>
 
+    <div id="sidebar">
+      <div class="inner">
+        <nav id="menu">
+          <header class="major"><h2>เมนู</h2></header>
+          <ul>
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="services.html">รวมบริการทั้งหมด</a></li>
+            <li><a href="contact.html">ติดต่อเรา</a></li>
+
+            <li class="divider">ธุรกิจทำเงิน (Passive Income)</li>
+            <li><a href="laundry.html" class="active">ร้านสะดวกซัก / หยอดเหรียญ</a></li>
+            <li><a href="oil-vending.html">ตู้น้ำมันชุมชน</a></li>
+            <li><a href="water.html">ตู้น้ำดื่ม RO</a></li>
+            <li><a href="vending.html">ระบบ QR Code / แลกเหรียญ</a></li>
+            
+            <li class="divider">งานระบบ</li>
+            <li><a href="electrical.html">งานไฟฟ้า / ตู้ MDB</a></li>
+            <li><a href="solar.html">โซล่าเซลล์ (ลดค่าไฟ)</a></li>
+            <li><a href="security.html">CCTV / คีย์การ์ด</a></li>
+            <li><a href="khonkaen-system.html">พื้นที่ให้บริการ</a></li>
+          </ul>
+        </nav>
+        <section>
+            <header class="major">
+                <h2>เริ่มลงทุนวันนี้</h2>
+            </header>
+            <ul class="contact">
+                <li class="icon solid fa-phone"><a href="tel:+66944749874">094-474-9874</a></li>
+                <li class="icon brands fa-line"><a href="https://line.me/ti/p/~KKHITECH">Line: KKHITECH</a></li>
+            </ul>
+        </section>
+        <footer id="footer"><p class="copyright">© <span id="y"></span> ขอนแก่นไฮเทค</p></footer>
+      </div>
     </div>
   </div>
 
-  <div id="sidebar">
-    <div class="inner">
-      <nav id="menu">
-        <header class="major"><h2>ศูนย์รวมงานช่างและบริการ</h2></header>
-        <ul>
-          <li><a href="index.html">หน้าแรก</a></li>
-          <li><a href="services.html">รวมบริการทั้งหมด</a></li>
-          <li><a href="contact.html">ติดต่อ / แผนที่ร้าน</a></li>
-          
-          <li class="divider">ธุรกิจหยอดเหรียญ</li>
-          <li><a href="laundry.html" class="active">เครื่องซักผ้าหยอดเหรียญ</a></li>
-          <li><a href="oil-vending.html">ตู้น้ำมันหยอดเหรียญ</a></li>
-          <li><a href="water.html">ตู้น้ำหยอดเหรียญ / RO</a></li>
-          <li><a href="vending.html">กล่องหยอดเหรียญอื่นๆ</a></li>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  
+  <script>
+    // FAQ Toggle
+    $('.faq-question').click(function(){
+        $(this).parent().toggleClass('active');
+        $(this).find('i').toggleClass('fa-chevron-down fa-chevron-up');
+    });
 
-          <li class="divider">งานไฟฟ้า & พลังงาน</li>
-          <li><a href="electrical.html">งานไฟฟ้า / ตู้ MDB</a></li>
-          <li><a href="high-voltage.html">หม้อแปลง / ปักเสาไฟฟ้า</a></li>
-          <li><a href="solar.html">โซล่าเซลล์</a></li>
-          <li><a href="air.html">แอร์บ้าน / โรงงาน</a></li>
+    // Update Year
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-          <li class="divider">ความปลอดภัย</li>
-          <li><a href="security.html">CCTV / คีย์การ์ด / ไม้กั้น</a></li>
-          <li><a href="internet.html">อินเทอร์เน็ตหอพัก</a></li>
-          <li><a href="construction.html">รับสร้างบ้าน / ต่อเติม</a></li>
+    // Random Reviews Generator (Social Proof)
+    const reviewPool = [
+        {name: "คุณแม่บ้านหอพัก", loc: "กังสดาล", text: "ตั้งแต่เปลี่ยนมาใช้กล่อง QR Code น้องๆ นักศึกษาชอบมากค่ะ รายได้เพิ่มขึ้นจริงๆ เพราะคนไม่มีเหรียญก็ซักได้"},
+        {name: "เสี่ยร้านทอง", loc: "บ้านไผ่", text: "ลงเครื่องอุตสาหกรรมไป 4 คู่ ระบบอบผ้าดีมาก ลูกค้าติดใจ ผ้าแห้งสนิทไม่ต้องตาก คืนทุนไวกว่าที่คิดครับ"},
+        {name: "คุณวิทย์", loc: "โนนม่วง", text: "ทีมงานติดตั้งระบบน้ำดีมากครับ น้ำแรงสะใจ เครื่องไม่เคย error เลย บริการหลังการขายเยี่ยม"},
+        {name: "เจ้าของอพาร์ตเมนต์", loc: "หลังมอ", text: "ให้คำแนะนำดีครับ ไม่เชียร์ของแพงเกินจำเป็น เลือกสเปคที่เหมาะกับกลุ่มลูกค้าหอพักจริงๆ"},
+        {name: "คุณแอน", loc: "ท่าพระ", text: "ซ่อมไวค่ะ เครื่องมีปัญหาทักไลน์ไป ช่างเข้ามาดูให้วันรุ่งขึ้นเลย ไม่ทิ้งลูกค้า"},
+        {name: "นักลงทุนมือใหม่", loc: "ในเมือง", text: "ตารางคำนวณรายได้แม่นยำครับ ตอนนี้รายได้ต่อเดือนเป็นไปตามเป้า เป็น Passive Income ของจริง"},
+        {name: "ร้านสะดวกซัก 24 ชม.", loc: "ม.ภาค", text: "งานระบบไฟ MDB มาตรฐานมากครับ ปลอดภัยหายห่วง วางใจขอนแก่นไฮเทคครับ"},
+    ];
 
-          <li class="divider">ติดต่อด่วน</li>
-          <li><a href="tel:+66944749874" class="button btn-tel"><span class="icon solid fa-phone"></span> โทร: 094-474-9874</a></li>
-          <li><a href="https://line.me/ti/p/~KKHITECH" class="button btn-line"><span class="icon brands fa-line"></span> LINE: KKHITECH</a></li>
-        </ul>
-      </nav>
-      <footer id="footer">
-        <div style="margin-bottom: 1em;">
-            <strong>พื้นที่ให้บริการ:</strong> ขอนแก่น และจังหวัดใกล้เคียง
-        </div>
-        <p class="copyright">© <span id="y"></span> ขอนแก่นไฮเทค</p>
-      </footer>
-    </div>
-  </div>
-
-</div>
-
-<div class="mobile-action-bar">
-  <a href="tel:+66944749874" class="action-btn call-btn">
-    <i class="icon solid fa-phone-alt"></i> โทรเลย
-  </a>
-  <a href="https://line.me/ti/p/~KKHITECH" class="action-btn line-btn" target="_blank">
-    <i class="icon brands fa-line"></i> แอดไลน์
-  </a>
-  <a href="https://maps.app.goo.gl/LyV85313vknT4hBE6" class="action-btn map-btn" target="_blank">
-    <i class="icon solid fa-map-marker-alt"></i> แผนที่
-  </a>
-</div>
-
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-
-<script>
-  window.addEventListener('load', function() {
-      var yearSpan = document.getElementById('y');
-      if(yearSpan) yearSpan.textContent = new Date().getFullYear();
-      
-      const sidebar = document.getElementById('sidebar');
-      if (sidebar) {
-        sidebar.addEventListener('click', function (e) {
-            const link = e.target.closest('a');
-            if (link) { document.body.classList.remove('menu-open'); }
-        });
-      }
-  });
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "เครื่องฝาบน กับ เครื่องอุตสาหกรรม ต่างกันยังไง?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "เครื่องฝาบนราคาถูกกว่า คืนทุนไว เหมาะกับหอพัก ส่วนเครื่องอุตสาหกรรมราคาสูงกว่า แต่ทนทาน ซักเร็ว และมีระบบอบผ้า เหมาะสำหรับทำร้านสะดวกซักมืออาชีพ"
+    function generateRandomReviews() {
+        const names = ["คุณA", "คุณB", "เสี่ยC", "ร้านD", "หอพักE"];
+        const locs = ["ขอนแก่น", "สารคาม", "กาฬสินธุ์", "น้ำพอง"];
+        const texts = ["คุ้มค่าการลงทุน", "ระบบดีมาก", "รายได้ดีครับ", "แนะนำเลย", "บริการดีเยี่ยม"];
+        
+        for(let i=0; i<30; i++) {
+            let rName = names[Math.floor(Math.random()*names.length)] + Math.floor(Math.random()*100);
+            let rLoc = locs[Math.floor(Math.random()*locs.length)];
+            let rText = texts[Math.floor(Math.random()*texts.length)];
+            reviewPool.push({name: rName, loc: rLoc, text: rText});
+        }
     }
-  },{
-    "@type": "Question",
-    "name": "มีตึกแถวว่างๆ อยากเปิดร้านสะดวกซัก ใช้งบเท่าไหร่?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "งบประมาณขึ้นอยู่กับจำนวนและยี่ห้อเครื่อง แนะนำให้โทรปรึกษาเพื่อประเมินความคุ้มค่าของทำเลให้ฟรีครับ"
-    }
-  }]
-}
-</script>
+    generateRandomReviews();
 
+    const container = document.getElementById('reviewFeed');
+    const shuffled = reviewPool.sort(() => 0.5 - Math.random());
+    
+    shuffled.slice(0, 50).forEach(review => {
+        const div = document.createElement('div');
+        div.className = 'review-item';
+        div.innerHTML = `
+            <div class="review-stars">★★★★★</div>
+            <div class="review-text">"${review.text}"</div>
+            <div class="review-date" style="margin-top:5px;">
+                <span class="review-author verified-badge"><i class="fas fa-check-circle" style="margin-right:4px;"></i> ${review.name}</span> <small>(${review.loc})</small>
+            </div>
+        `;
+        container.appendChild(div);
+    });
+  </script>
 </body>
 </html>
