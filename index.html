@@ -13,11 +13,8 @@
     <title>ช่างขอนแก่น รับเหมางานระบบ | ล้างแอร์ ไฟฟ้า กล้องวงจรปิด โซล่าเซลล์ | ขอนแก่นไฮเทค</title>
     
     <meta name="description" content="ศูนย์รวมช่างขอนแก่น อันดับ 1 รับล้างแอร์ ติดตั้งโซล่าเซลล์ลดค่าไฟ กล้องวงจรปิด ซ่อมไฟฟ้า และทำร้านสะดวกซัก บริการด่วนในเมืองขอนแก่น มหาสารคาม กาฬสินธุ์ มีหน้าร้านจริง โทร 094-474-9874" />
-    
-    <meta name="keywords" content="ช่างขอนแก่น, ล้างแอร์ขอนแก่น, ร้านกล้องวงจรปิด ขอนแก่น, ติดโซล่าเซลล์ ขอนแก่น, รับเหมาไฟฟ้า ขอนแก่น, เครื่องซักผ้าหยอดเหรียญ, ช่างประปา ขอนแก่น" />
+    <meta name="keywords" content="ช่างขอนแก่น, ล้างแอร์ขอนแก่น, ร้านกล้องวงจรปิด ขอนแก่น, ติดโซล่าเซลล์ ขอนแก่น, รับเหมาไฟฟ้า ขอนแก่น, เครื่องซักผ้าหยอดเหรียญ" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta name="geo.region" content="TH-40" />
-    <meta name="geo.placename" content="Khon Kaen" />
     
     <link rel="canonical" href="https://khonkaenhitech-service.github.io/khonkaenhitech/" />
     <link rel="icon" href="images/favicon.png" />
@@ -25,291 +22,262 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="style.css" />
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "HomeAndConstructionBusiness",
-        "name": "ขอนแก่นไฮเทค (Khon Kaen HiTech Service)",
-        "image": "https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.webp",
-        "url": "https://khonkaenhitech-service.github.io/khonkaenhitech/",
-        "telephone": "+66944749874",
-        "priceRange": "฿฿",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "เมืองขอนแก่น",
-            "addressLocality": "ขอนแก่น",
-            "addressRegion": "ขอนแก่น",
-            "postalCode": "40000",
-            "addressCountry": "TH"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "16.4329",
-            "longitude": "102.8236"
-        },
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-            "opens": "08:00",
-            "closes": "18:00"
-        },
-        "sameAs": [
-            "https://www.facebook.com/khonkaenhitech"
-        ]
-    }
-    </script>
+    <style>
+        /* ซ่อน Sidebar เดิม */
+        #sidebar { display: none !important; }
+        #wrapper { flex-direction: column; }
+        #main > .inner { padding: 0 20px; max-width: 1200px; margin: 0 auto; }
+
+        /* --- Top Navigation Bar Styles --- */
+        #nav-header {
+            background: #fff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky; top: 0; z-index: 9999;
+            padding: 0 20px;
+            font-family: 'Sarabun', sans-serif;
+        }
+        .nav-container {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            height: 70px;
+        }
+        
+        /* Logo */
+        .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #333; }
+        .nav-logo img { height: 45px; width: auto; }
+        .nav-logo span { font-weight: 800; font-size: 1.2em; color: #d32f2f; }
+
+        /* Menu Links (Desktop) */
+        .nav-menu { display: flex; list-style: none; margin: 0; padding: 0; gap: 5px; }
+        .nav-item { position: relative; }
+        .nav-link {
+            display: block; padding: 10px 15px;
+            text-decoration: none; color: #444; font-weight: 600; font-size: 0.95em;
+            border-bottom: 2px solid transparent; transition: 0.3s; border-radius: 5px;
+        }
+        .nav-link:hover, .nav-link.active { color: #d32f2f; background: #fff5f5; }
+        
+        /* Dropdown */
+        .dropdown-menu {
+            display: none; position: absolute; top: 100%; left: 0;
+            background: #fff; min-width: 240px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            border-radius: 8px; padding: 10px 0;
+            list-style: none; border-top: 3px solid #d32f2f;
+        }
+        .nav-item:hover .dropdown-menu { display: block; animation: fadeIn 0.2s ease; }
+        .dropdown-item a {
+            display: block; padding: 10px 20px; color: #555; text-decoration: none;
+            transition: 0.2s; border-bottom: 1px solid #f9f9f9;
+        }
+        .dropdown-item a:hover { background: #f0f0f0; color: #d32f2f; padding-left: 25px; }
+        
+        /* CTA Button */
+        .nav-cta {
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            color: #fff !important; padding: 8px 25px !important;
+            border-radius: 50px; font-weight: bold; margin-left: 15px;
+            box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+        }
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(211, 47, 47, 0.5); }
+
+        /* Mobile Hamburger */
+        .menu-toggle { display: none; font-size: 1.8em; color: #333; cursor: pointer; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- Responsive (Mobile) --- */
+        @media (max-width: 980px) {
+            .menu-toggle { display: block; }
+            .nav-menu {
+                display: none; position: absolute; top: 70px; left: 0; width: 100%;
+                background: #fff; flex-direction: column; padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1); gap: 0;
+            }
+            .nav-menu.active { display: flex; }
+            .nav-item { width: 100%; border-bottom: 1px solid #eee; }
+            .dropdown-menu {
+                position: static; display: none; box-shadow: none; border-top: none;
+                background: #f9f9f9; padding-left: 20px;
+            }
+            .nav-item.open .dropdown-menu { display: block; }
+            .nav-link { padding: 15px; display: flex; justify-content: space-between; }
+            .nav-cta { margin: 20px 0; text-align: center; width: 100%; display: block; }
+        }
+    </style>
 </head>
 
 <body class="is-preload">
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M26CWCKV"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <nav id="nav-header">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo-khonkaen.webp" alt="โลโก้">
+                <span>ขอนแก่นไฮเทค</span>
+            </a>
 
-<div id="wrapper">
-    <div id="main">
-        <div class="inner">
+            <div class="menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
 
-            <header id="header">
-                <a href="./" class="logo kh-brand">
-                    <span class="kh-brand__img"><img src="images/logo-khonkaen.webp" alt="รับเหมางานระบบ ขอนแก่น" width="44" height="44"></span>
-                    <span class="kh-brand__text">
-                        <span class="kh-brand__th">ขอนแก่นไฮเทค</span>
-                        <span class="kh-brand__en">Khon Kaen HiTech Service</span>
-                    </span>
-                </a>
-                <ul class="icons">
-                    <li><a class="icon solid fa-phone" href="tel:+66944749874"><span class="label">โทร</span></a></li>
-                    <li><a class="icon brands fa-line" href="https://line.me/ti/p/~KKHITECH" target="_blank"><span class="label">LINE</span></a></li>
-                </ul>
-            </header>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link">หน้าแรก</a></li>
+                
+                <li class="nav-item" onclick="toggleMobileDropdown(this)">
+                    <a href="#" class="nav-link">ธุรกิจทำเงิน <i class="fas fa-chevron-down" style="font-size:0.7em;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a href="laundry.html">🧺 ร้านสะดวกซัก / หยอดเหรียญ</a></li>
+                        <li class="dropdown-item"><a href="oil-vending.html">⛽ ตู้น้ำมันหยอดเหรียญ</a></li>
+                        <li class="dropdown-item"><a href="water.html">💧 ตู้น้ำดื่ม RO / เปลี่ยนไส้กรอง</a></li>
+                        <li class="dropdown-item"><a href="vending.html">💰 กล่อง QR Code / ตู้แลกเหรียญ</a></li>
+                    </ul>
+                </li>
 
-            <section class="kh-hero">
-                <div class="kh-hero-grid">
-                    <div class="kh-hero-text">
-                        <header class="main">
-                            <h1 style="font-size: 2.2em; line-height: 1.3;">ศูนย์รวมช่างขอนแก่น<br>ดูแลครบ <span style="color:#c0392b;">ไฟฟ้า แอร์ กล้องวงจรปิด</span></h1>
-                        </header>
-                        
-                        <div class="trust-badge">
-                            <span class="score">4.9/5</span>
-                            <span class="kh-stars">★★★★★</span>
-                            <span class="text">รีวิวจากลูกค้าจริงกว่า 5,000 ราย ในขอนแก่น</span>
+                <li class="nav-item" onclick="toggleMobileDropdown(this)">
+                    <a href="#" class="nav-link">งานระบบ <i class="fas fa-chevron-down" style="font-size:0.7em;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a href="air.html">❄️ ล้างแอร์ / ซ่อมแอร์</a></li>
+                        <li class="dropdown-item"><a href="electrical.html">⚡ งานไฟฟ้า / ตู้ MDB</a></li>
+                        <li class="dropdown-item"><a href="services.html">🚿 ล้างถังน้ำ / งานประปา</a></li>
+                        <li class="dropdown-item"><a href="internet.html">📶 อินเทอร์เน็ตหอพัก WiFi</a></li>
+                        <li class="dropdown-item"><a href="solar.html">☀️ โซล่าเซลล์ ลดค่าไฟ</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item" onclick="toggleMobileDropdown(this)">
+                    <a href="#" class="nav-link">ความปลอดภัย <i class="fas fa-chevron-down" style="font-size:0.7em;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a href="cctv.html">📹 กล้องวงจรปิด CCTV</a></li>
+                        <li class="dropdown-item"><a href="gate.html">🚧 ประตูรีโมท / ไม้กั้นรถ</a></li>
+                        <li class="dropdown-item"><a href="security.html">🛡️ ระบบกันขโมย / คีย์การ์ด</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item" onclick="toggleMobileDropdown(this)">
+                    <a href="#" class="nav-link">เพิ่มเติม <i class="fas fa-chevron-down" style="font-size:0.7em;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a href="construction.html">🔨 รับเหมาก่อสร้าง / ต่อเติม</a></li>
+                        <li class="dropdown-item"><a href="elements.html">📸 ผลงานติดตั้งจริง</a></li>
+                        <li class="dropdown-item"><a href="khonkaen-system.html">📍 พื้นที่ให้บริการ</a></li>
+                        <li class="dropdown-item"><a href="generic.html">📚 บทความน่ารู้</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link nav-cta">ติดต่อเรา</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="wrapper">
+        <div id="main">
+            <div class="inner">
+                
+                <section class="kh-hero" style="margin-top:20px;">
+                    <div class="kh-hero-grid">
+                        <div class="kh-hero-text">
+                            <header class="main">
+                                <h1 style="font-size: 2.2em; line-height: 1.3;">ศูนย์รวมช่างขอนแก่น<br>ดูแลครบ <span style="color:#c0392b;">ไฟฟ้า แอร์ กล้องวงจรปิด</span></h1>
+                            </header>
+                            
+                            <div class="trust-badge">
+                                <span class="score">4.9/5</span>
+                                <span class="kh-stars">★★★★★</span>
+                                <span class="text">รีวิวจากลูกค้าจริงกว่า 5,000 ราย</span>
+                            </div>
+
+                            <p class="kh-sub" style="font-size: 1.1em;">
+                                <strong>"เจ็บมาเยอะกับช่างทิ้งงาน?"</strong> ให้ขอนแก่นไฮเทคดูแล<br>
+                                เราคือมืออาชีพตัวจริง มีหน้าร้าน ไม่หนี ไม่โกง รับประกันงานซ่อม<br>
+                                ให้บริการครอบคลุม <strong>ขอนแก่น, มหาสารคาม, กาฬสินธุ์</strong>
+                            </p>
+                            
+                            <div class="kh-cta">
+                                <a href="tel:+66944749874" class="button primary big icon solid fa-phone-volume">ปรึกษาช่างฟรี (คลิกเลย)</a>
+                            </div>
                         </div>
+                        <div class="kh-hero-media">
+                            <img src="images/pic10.webp" alt="ทีมงานช่างขอนแก่น รับเหมาติดตั้ง" width="800" height="450" style="box-shadow: var(--shadow); border-radius: 8px;" loading="eager">
+                        </div>
+                    </div>
+                </section>
 
-                        <p class="kh-sub" style="font-size: 1.1em;">
-                            <strong>"เจ็บมาเยอะกับช่างทิ้งงาน?"</strong> ให้ขอนแก่นไฮเทคดูแล<br>
-                            เราคือมืออาชีพตัวจริง มีหน้าร้าน ไม่หนี ไม่โกง รับประกันงานซ่อม<br>
-                            ให้บริการครอบคลุม <strong>ขอนแก่น, มหาสารคาม, กาฬสินธุ์</strong> และพื้นที่ใกล้เคียง
+                <section>
+                    <div class="highlight-box" style="border-left: 5px solid #d32f2f; background-color: #fff5f5; padding: 1.5em; border-radius: 4px;">
+                        <h3 style="color: #c0392b; font-weight: bold;"><i class="icon solid fa-exclamation-circle"></i> เตือนภัย! ของถูก อาจแลกมาด้วย "ไฟไหม้"</h3>
+                        <p style="margin-bottom: 0;">
+                            ลูกค้ากว่า 40% ที่มาหาเรา คือคนที่ <em>"เจ็บจากช่างเถื่อน"</em> งานไม่จบ สายไฟไม่ได้มาตรฐาน 
+                            <br>ที่ <strong>ขอนแก่นไฮเทค</strong> เราใช้อุปกรณ์เกรด A และมีวิศวกรคุมงาน ยอมจ่ายเพิ่มนิดหน่อย แลกกับความปลอดภัย... <strong>คุ้มกว่าไหมครับ?</strong>
                         </p>
-                        
-                        <div class="kh-cta">
-                            <a href="tel:+66944749874" class="button primary big icon solid fa-phone-volume">ปรึกษาช่างฟรี (คลิกเลย)</a>
+                    </div>
+                </section>
+
+                <section>
+                    <header class="main">
+                        <h2>เสียงตอบรับจากลูกค้า (Reviews)</h2>
+                    </header>
+                    <div class="kh-reviews-marquee" id="khReviewsMarquee">
+                        <div class="kh-reviews-track" id="khReviewsTrack">
+                            <article class="kh-review">
+                                <div class="kh-review__top"><div class="kh-stars">★★★★★</div><div class="kh-review__meta">ร้านทองในเมือง</div></div>
+                                <h3 class="kh-review__title">“ช่างมาไว แก้ปัญหาจบจริง”</h3>
+                                <p class="kh-review__text">ระบบกันขโมยรวน โทรเรียกตอนเช้า บ่ายเข้ามาดูให้เลย จบงานไว ไม่ทิ้งลูกค้า แนะนำครับ</p>
+                            </article>
+                            <article class="kh-review">
+                                <div class="kh-review__top"><div class="kh-stars">★★★★★</div><div class="kh-review__meta">หอพักบ้านเป็ด</div></div>
+                                <h3 class="kh-review__title">“เครื่องซักผ้าทำเงินดีมาก”</h3>
+                                <p class="kh-review__text">ติดตั้งระบบหยอดเหรียญกับที่นี่ ระบบเสถียร เงินเข้าตรง ซ่อมบำรุงดูแลดีตลอดครับ</p>
+                            </article>
+                            <article class="kh-review">
+                                <div class="kh-review__top"><div class="kh-stars">★★★★★</div><div class="kh-review__meta">โรงงานน้ำพอง</div></div>
+                                <h3 class="kh-review__title">“งานระบบไฟได้มาตรฐาน”</h3>
+                                <p class="kh-review__text">จ้างเดินตู้ MDB และสายไฟเครื่องจักร งานเรียบร้อย ผ่านตรวจความปลอดภัยฉลุยครับ</p>
+                            </article>
                         </div>
                     </div>
-                    <div class="kh-hero-media">
-                        <img src="images/pic10.webp" alt="ทีมงานช่างขอนแก่น รับเหมาติดตั้ง" width="800" height="450" style="box-shadow: var(--shadow); border-radius: 8px;" loading="eager">
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <section>
-                <div class="highlight-box" style="border-left: 5px solid #d32f2f; background-color: #fff5f5; padding: 1.5em; border-radius: 4px;">
-                    <h3 style="color: #c0392b; font-weight: bold;"><i class="icon solid fa-exclamation-circle"></i> เตือนภัย! ของถูก อาจแลกมาด้วย "ไฟไหม้"</h3>
-                    <p style="margin-bottom: 0;">
-                        ลูกค้ากว่า 40% ที่มาหาเรา คือคนที่ <em>"เจ็บจากช่างเถื่อน"</em> งานไม่จบ สายไฟไม่ได้มาตรฐาน เสี่ยงลัดวงจร 
-                        <br>ที่ <strong>ขอนแก่นไฮเทค</strong> เราใช้อุปกรณ์เกรด A และมีวิศวกรคุมงาน ยอมจ่ายเพิ่มนิดหน่อย แลกกับความปลอดภัยของบ้านราคาหลายล้าน... <strong>คุ้มกว่าไหมครับ?</strong>
-                    </p>
-                </div>
-            </section>
+                <div id="static-faq-placeholder"></div>
 
-            <section>
-                <header class="main">
-                    <h2>บริการของเรา (Our Services)</h2>
-                    <p>คลิกเพื่อดูรายละเอียดแต่ละบริการ</p>
-                </header>
-                <div class="features">
-                    
-                    <article>
-                        <div class="icon" style="background:#e0f7fa; color:#006064;"><span class="fa fa-snowflake"></span></div>
-                        <div class="content">
-                            <h3><a href="air.html" title="บริการล้างแอร์ ขอนแก่น">ล้างแอร์ & ซ่อมแอร์</a></h3>
-                            <p>ล้างใหญ่ด้วยโฟมฆ่าเชื้อ แก้ปัญหาน้ำหยด แอร์ไม่เย็น เติมน้ำยา <a href="air.html">ดูราคาล้างแอร์</a></p>
-                        </div>
-                    </article>
-
-                    <article>
-                        <div class="icon" style="background:#e8eaf6; color:#1a237e;"><span class="fa fa-coins"></span></div>
-                        <div class="content">
-                            <h3><a href="laundry.html" title="ร้านสะดวกซัก ขอนแก่น">เครื่องซักผ้าหยอดเหรียญ</a></h3>
-                            <p>ลงทุนร้านสะดวกซัก หรือติดกล่องหยอดเหรียญหอพัก สร้าง Passive Income <a href="laundry.html">ดูแพ็กเกจลงทุน</a></p>
-                        </div>
-                    </article>
-
-                    <article>
-                        <div class="icon" style="background:#fffde7; color:#fbc02d;"><span class="fa fa-sun"></span></div>
-                        <div class="content">
-                            <h3><a href="solar.html" title="ติดตั้งโซล่าเซลล์ ขอนแก่น">โซล่าเซลล์ (Solar Cell)</a></h3>
-                            <p>ลดค่าไฟบ้าน 30-60% ระบบ On-Grid มาตรฐานวิศวกร คืนทุนไว <a href="solar.html">คำนวณจุดคุ้มทุน</a></p>
-                        </div>
-                    </article>
-
-                    <article>
-                        <div class="icon" style="background:#fce4ec; color:#c2185b;"><span class="fa fa-video"></span></div>
-                        <div class="content">
-                            <h3><a href="cctv.html" title="กล้องวงจรปิด ขอนแก่น">กล้องวงจรปิด (CCTV)</a></h3>
-                            <p>ภาพสี 24 ชม. ดูออนไลน์ทั่วโลก ชัดระดับเห็นทะเบียนรถ <a href="cctv.html">ดูตัวอย่างภาพ</a></p>
-                        </div>
-                    </article>
-
-                    <article>
-                        <div class="icon" style="background:#eceff1; color:#455a64;"><span class="fa fa-bolt"></span></div>
-                        <div class="content">
-                            <h3><a href="electrical.html" title="ช่างไฟฟ้า ขอนแก่น">งานไฟฟ้า & ตู้ MDB</a></h3>
-                            <p>แก้ไขไฟรั่ว ไฟช็อต เดินสายไฟโรงงาน อาคารพาณิชย์ โดยช่างมืออาชีพ <a href="electrical.html">เรียกช่างไฟ</a></p>
-                        </div>
-                    </article>
-
-                    <article>
-                        <div class="icon" style="background:#fff3e0; color:#e65100;"><span class="fa fa-tint"></span></div>
-                        <div class="content">
-                            <h3><a href="services.html" title="ล้างถังน้ำ ขอนแก่น">ล้างถังน้ำ (1,000L+)</a></h3>
-                            <p>ขจัดตะกอนก้นถัง ฆ่าเชื้อโรค สำหรับบ้านและโรงงาน <a href="services.html">ดูรายละเอียด</a></p>
-                        </div>
-                    </article>
-
-                    <article>
-                        <div class="icon" style="background:#e1f5fe; color:#0288d1;"><span class="fa fa-glass-whiskey"></span></div>
-                        <div class="content">
-                            <h3><a href="water.html" title="ตู้น้ำหยอดเหรียญ ขอนแก่น">ตู้น้ำดื่ม & เปลี่ยนไส้กรอง</a></h3>
-                            <p>ซ่อมตู้น้ำ เปลี่ยนไส้กรอง RO ดูแลระบบน้ำดื่มสะอาด <a href="water.html">แจ้งซ่อมตู้</a></p>
-                        </div>
-                    </article>
-
-                    <article>
-                        <div class="icon" style="background:#f3e5f5; color:#8e24aa;"><span class="fa fa-door-open"></span></div>
-                        <div class="content">
-                            <h3><a href="gate.html" title="ประตูรีโมท ขอนแก่น">ประตูรีโมท & ไม้กั้น</a></h3>
-                            <p>ไม่ต้องลงรถตากฝน ติดตั้งมอเตอร์ประตูรั้วอัตโนมัติ <a href="gate.html">ดูรุ่นมอเตอร์</a></p>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <section>
-                <header class="main">
-                    <h2>พื้นที่ให้บริการ (Service Area)</h2>
-                </header>
-                <p>
-                    เราให้บริการครอบคลุมทั่ว <strong>จังหวัดขอนแก่น</strong> และพื้นที่ใกล้เคียง ทีมช่างพร้อมเดินทางด่วนไปยัง:
-                    <a href="khonkaen-system.html">อ.เมืองขอนแก่น</a>, 
-                    <a href="khonkaen-system.html">บ้านเป็ด</a>, 
-                    <a href="khonkaen-system.html">ศิลา</a>, 
-                    <a href="khonkaen-system.html">ท่าพระ</a>, 
-                    <a href="khonkaen-system.html">น้ำพอง</a>, 
-                    <a href="khonkaen-system.html">บ้านไผ่</a>, 
-                    <a href="khonkaen-system.html">ชุมแพ</a>, 
-                    รวมถึงจังหวัดใกล้เคียง 
-                    <strong>มหาสารคาม (กันทรวิชัย/โกสุมพิสัย)</strong> และ <strong>กาฬสินธุ์</strong>
-                </p>
-                <ul class="actions">
-                    <li><a href="khonkaen-system.html" class="button">เช็คพื้นที่บริการทั้งหมด</a></li>
-                </ul>
-            </section>
-
-            <section>
-                <header class="main">
-                    <h2>เสียงตอบรับจากลูกค้า (Reviews)</h2>
-                </header>
-                <div class="kh-reviews-marquee" id="khReviewsMarquee">
-                    <div class="kh-reviews-track" id="khReviewsTrack">
-                        <article class="kh-review">
-                            <div class="kh-review__top"><div class="kh-stars">★★★★★</div><div class="kh-review__meta">ร้านทองในเมือง</div></div>
-                            <h3 class="kh-review__title">“ช่างมาไว แก้ปัญหาจบจริง”</h3>
-                            <p class="kh-review__text">ระบบกันขโมยรวน โทรเรียกตอนเช้า บ่ายเข้ามาดูให้เลย จบงานไว ไม่ทิ้งลูกค้า แนะนำครับ</p>
-                        </article>
-                        <article class="kh-review">
-                            <div class="kh-review__top"><div class="kh-stars">★★★★★</div><div class="kh-review__meta">หอพักบ้านเป็ด</div></div>
-                            <h3 class="kh-review__title">“เครื่องซักผ้าทำเงินดีมาก”</h3>
-                            <p class="kh-review__text">ติดตั้งระบบหยอดเหรียญกับที่นี่ ระบบเสถียร เงินเข้าตรง ซ่อมบำรุงดูแลดีตลอดครับ</p>
-                        </article>
-                        <article class="kh-review">
-                            <div class="kh-review__top"><div class="kh-stars">★★★★★</div><div class="kh-review__meta">โรงงานน้ำพอง</div></div>
-                            <h3 class="kh-review__title">“งานระบบไฟได้มาตรฐาน”</h3>
-                            <p class="kh-review__text">จ้างเดินตู้ MDB และสายไฟเครื่องจักร งานเรียบร้อย ผ่านตรวจความปลอดภัยฉลุยครับ</p>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <div id="static-faq-placeholder"></div>
-
+            </div>
         </div>
     </div>
 
-    <div id="sidebar">
-        <div class="inner">
-            <nav id="menu">
-                <header class="major">
-                    <h2>เมนูบริการ</h2>
-                </header>
-                <ul>
-                    <li><a href="index.html">หน้าแรก</a></li>
-                    <li><a href="air.html">ล้างแอร์ / ซ่อมแอร์</a></li>
-                    <li><a href="laundry.html">เครื่องซักผ้าหยอดเหรียญ</a></li>
-                    <li><a href="cctv.html">กล้องวงจรปิด</a></li>
-                    <li><a href="solar.html">โซล่าเซลล์</a></li>
-                    <li><a href="electrical.html">งานไฟฟ้า</a></li>
-                    <li><a href="services.html">บริการทั้งหมด</a></li>
-                    <li><a href="contact.html">ติดต่อเรา</a></li>
-                </ul>
-            </nav>
-
-            <section>
-                <header class="major">
-                    <h2>ติดต่อด่วน</h2>
-                </header>
-                <p>เปิดบริการทุกวัน 08:00 - 18:00 น.</p>
-                <ul class="contact">
-                    <li class="icon solid fa-phone"><a href="tel:+66944749874">094-474-9874</a></li>
-                    <li class="icon brands fa-line"><a href="https://line.me/ti/p/~KKHITECH">KKHITECH</a></li>
-                    <li class="icon solid fa-home">เมืองขอนแก่น จ.ขอนแก่น</li>
-                </ul>
-            </section>
-
-            <footer id="footer">
-                <p class="copyright">© <span id="y"></span> ขอนแก่นไฮเทค</p>
-            </footer>
-        </div>
+    <div class="mobile-action-bar">
+        <a href="tel:+66944749874" class="action-btn call-btn">
+            <i class="icon solid fa-phone-alt"></i> โทรเลย
+        </a>
+        <a href="https://line.me/ti/p/~KKHITECH" class="action-btn line-btn" target="_blank">
+            <i class="icon brands fa-line"></i> แอดไลน์
+        </a>
+        <a href="https://maps.app.goo.gl/LyV85313vknT4hBE6" class="action-btn map-btn" target="_blank">
+            <i class="icon solid fa-map-marker-alt"></i> แผนที่
+        </a>
     </div>
 
-</div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/kh-current-tab.js"></script>
+    <script>
+        // Update Year
+        document.getElementById('y').textContent = new Date().getFullYear();
 
-<div class="kh-social-float">
-  <a href="tel:+66944749874" class="kh-app-btn tel" data-label="โทรหาช่าง"><i class="icon solid fa-phone"></i></a>
-  <a href="https://line.me/ti/p/~KKHITECH" target="_blank" class="kh-app-btn line" data-label="ไลน์ KKHITECH"><i class="icon brands fa-line"></i></a>
-  <a href="https://m.me/Line0944749874" target="_blank" class="kh-app-btn fb" data-label="Facebook Page"><i class="icon brands fa-facebook-f"></i></a>
-</div>
+        // Script ควบคุมเมนูมือถือ
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
 
-<div class="mobile-action-bar">
-  <a href="tel:+66944749874" class="action-btn call-btn">
-    <i class="icon solid fa-phone-alt"></i> โทรเลย
-  </a>
-  <a href="https://line.me/ti/p/~KKHITECH" class="action-btn line-btn" target="_blank">
-    <i class="icon brands fa-line"></i> แอดไลน์
-  </a>
-  <a href="https://maps.app.goo.gl/LyV85313vknT4hBE6" class="action-btn map-btn" target="_blank">
-    <i class="icon solid fa-map-marker-alt"></i> แผนที่
-  </a>
-</div>
-
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/kh-current-tab.js"></script>
-<script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+        function toggleMobileDropdown(element) {
+            // เฉพาะหน้าจอมือถือ (กว้างน้อยกว่า 980px) ให้กดแล้ว Dropdown กางออก
+            if (window.innerWidth <= 980) {
+                element.classList.toggle('open');
+            }
+        }
+    </script>
 
 </body>
 </html>
