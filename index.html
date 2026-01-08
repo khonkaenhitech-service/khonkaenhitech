@@ -6,80 +6,92 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>ช่างขอนแก่น รับเหมางานระบบ | ล้างแอร์ ไฟฟ้า กล้องวงจรปิด โซล่าเซลล์ | ขอนแก่นไฮเทค</title>
-    <meta name="description" content="ศูนย์รวมช่างขอนแก่น อันดับ 1 รับล้างแอร์ ติดตั้งโซล่าเซลล์ลดค่าไฟ กล้องวงจรปิด ซ่อมไฟฟ้า และทำร้านสะดวกซัก บริการด่วนในเมืองขอนแก่น มหาสารคาม กาฬสินธุ์ มีหน้าร้านจริง โทร 094-474-9874" />
+    <meta name="description" content="ศูนย์รวมช่างขอนแก่น อันดับ 1 รับล้างแอร์ ติดตั้งโซล่าเซลล์ลดค่าไฟ กล้องวงจรปิด ซ่อมไฟฟ้า และทำร้านสะดวกซัก บริการด่วนในเมืองขอนแก่น มหาสารคาม กาฬสินธุ์" />
     <meta name="keywords" content="ช่างขอนแก่น, ล้างแอร์ขอนแก่น, ร้านกล้องวงจรปิด ขอนแก่น, ติดโซล่าเซลล์ ขอนแก่น, รับเหมาไฟฟ้า ขอนแก่น" />
     
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="style.css" />
 
     <style>
-        /* 1. บังคับ Sidebar มาอยู่ซ้าย */
+        /* 1. บังคับ Sidebar อยู่ซ้ายเสมอ */
         #wrapper {
             display: flex;
-            flex-direction: row-reverse !important; /* สลับด้านให้ Sidebar มาซ้าย */
+            flex-direction: row-reverse !important; /* สลับด้าน */
         }
         #sidebar {
             border-right: 1px solid rgba(0,0,0,0.1);
             border-left: none !important;
+            background-color: #fcfcfc; /* พื้นหลัง Sidebar สีขาวนวล */
         }
         
-        /* 2. ซ่อน Top Nav Bar เดิม (ถ้ามี) */
+        /* 2. ซ่อน Nav Bar แบบเก่า */
         #nav-header { display: none !important; }
 
-        /* 3. ดีไซน์ปุ่มเมนูทอง (Gold Luxury) ตามรูป */
+        /* 3. ดีไซน์ปุ่มเมนู (Gold Luxury Style) */
         ul.menu-gold { list-style: none; padding: 0; margin: 0; }
-        ul.menu-gold li { margin-bottom: 12px; padding: 0 !important; border: none !important; }
+        ul.menu-gold li { margin-bottom: 8px; padding: 0 !important; border: none !important; }
         
         .menu-btn {
             display: block;
-            background: linear-gradient(90deg, #fff8e1 0%, #ffffff 100%); /* พื้นหลังครีมทอง */
-            border-left: 5px solid #a87910; /* แถบทองด้านซ้าย */
+            background: linear-gradient(90deg, #fffcf5 0%, #ffffff 100%); /* ไล่สีครีม */
+            border-left: 5px solid #d4af37; /* แถบทองด้านซ้าย */
             padding: 12px 20px;
             border-radius: 0 8px 8px 0;
             color: #333 !important;
-            font-weight: 800;
+            font-weight: 700;
             text-decoration: none;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.04);
             transition: all 0.3s;
             font-family: 'Sarabun', sans-serif;
             position: relative;
         }
         
         .menu-btn:hover {
-            background: linear-gradient(90deg, #ffe082 0%, #ffffff 100%);
-            padding-left: 25px; /* ขยับขวาเมื่อชี้ */
-            color: #d32f2f !important;
+            background: linear-gradient(90deg, #ffecb3 0%, #ffffff 100%); /* สีทองอ่อนเมื่อชี้ */
+            padding-left: 25px; /* ขยับขวา */
+            color: #b71c1c !important; /* ตัวหนังสือแดงเลือดหมู */
+            border-left-color: #b71c1c;
         }
 
         /* หัวข้อหมวดหมู่ */
         .menu-header {
-            font-size: 0.85em; color: #888; margin-top: 20px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold;
+            font-size: 0.85em; 
+            color: #a87910; /* สีทองเข้ม */
+            margin-top: 25px; 
+            margin-bottom: 8px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            font-weight: 800;
+            padding-left: 5px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
         }
 
-        /* ปุ่มติดต่อด่วน (ทองเข้ม) */
+        /* ปุ่มติดต่อด่วน (ทองเข้มพรีเมียม) */
         .btn-contact-gold {
-            background: linear-gradient(135deg, #fff3e0 0%, #ffcc80 100%);
-            color: #e65100 !important;
-            border-left: 5px solid #ef6c00;
+            background: linear-gradient(135deg, #fff8e1 0%, #ffc107 100%);
+            color: #8f5400 !important;
+            border-left: 5px solid #ff6f00;
+            box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3);
+        }
+        .btn-contact-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 193, 7, 0.5);
         }
 
-        /* 4. ปรับแต่งปุ่ม Toggle (Hamburger) */
+        /* Responsive Fix (มือถือ) */
         #sidebar .toggle {
-            left: 0 !important; /* ย้ายมาซ้าย */
-            top: 0;
+            left: 0 !important; top: 0;
+            background: rgba(255,255,255,0.95);
             height: 4em; width: 5em;
-            background: rgba(255,255,255,0.9);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        #sidebar .toggle:before {
-            color: #a87910; /* ไอคอนสีทอง */
-            font-size: 1.5em;
-        }
+        #sidebar .toggle:before { color: #d4af37; font-size: 1.8em; } /* ไอคอนสีทอง */
 
-        /* Responsive Fix */
         @media screen and (max-width: 1280px) {
             #wrapper { flex-direction: column !important; }
             #sidebar { left: 0; box-shadow: 5px 0 15px rgba(0,0,0,0.1); }
-            #sidebar.inactive { left: -26em; } /* ซ่อนไปทางซ้าย */
+            #sidebar.inactive { left: -26em; } 
         }
     </style>
 </head>
@@ -182,12 +194,6 @@
     <div id="sidebar">
         <div class="inner">
             
-            <section id="search" class="alt">
-                <form method="post" action="#">
-                    <input type="text" name="query" id="query" placeholder="ค้นหาบริการ..." />
-                </form>
-            </section>
-
             <nav id="menu">
                 <header class="major">
                     <h2>เมนู</h2>
@@ -198,23 +204,24 @@
                     <li><a href="services.html" class="menu-btn">รวมบริการทั้งหมด</a></li>
                     <li><a href="contact.html" class="menu-btn">ติดต่อ / แผนที่ร้าน</a></li>
 
-                    <div class="menu-header">🔹 บริการยอดนิยม</div>
+                    <div class="menu-header">◆ บริการยอดนิยม</div>
                     <li><a href="laundry.html" class="menu-btn">เครื่องซักผ้าหยอดเหรียญ</a></li>
                     <li><a href="water.html" class="menu-btn">ตู้น้ำหยอดเหรียญ / RO</a></li>
                     <li><a href="vending.html" class="menu-btn">ระบบหยอดเหรียญ</a></li>
                     <li><a href="internet.html" class="menu-btn">อินเทอร์เน็ต / ฮอตสปอต</a></li>
 
-                    <div class="menu-header">🔸 งานระบบและก่อสร้าง</div>
+                    <div class="menu-header">◆ งานระบบและก่อสร้าง</div>
                     <li><a href="security.html" class="menu-btn">CCTV / คีย์การ์ด / ไม้กั้น</a></li>
                     <li><a href="electrical.html" class="menu-btn">งานไฟฟ้า / ตู้ MDB</a></li>
                     <li><a href="solar.html" class="menu-btn">โซล่าเซลล์ / แอร์</a></li>
                     <li><a href="construction.html" class="menu-btn">รับสร้างบ้าน / ต่อเติม</a></li>
 
-                    <div class="menu-header">ℹ️ ข้อมูลเพิ่มเติม</div>
+                    <div class="menu-header">◆ ข้อมูลเพิ่มเติม</div>
                     <li><a href="khonkaen-system.html" class="menu-btn">บทความ Local SEO</a></li>
                     <li><a href="elements.html" class="menu-btn">ผลงาน & รีวิว (Portfolio)</a></li>
+                    <li><a href="generic.html" class="menu-btn">บทความน่ารู้</a></li>
                     
-                    <div class="menu-header" style="margin-top:30px;"></div>
+                    <div class="menu-header" style="margin-top:20px; border-bottom:none;"></div>
                     <li><a href="tel:0944749874" class="menu-btn btn-contact-gold">📞 ติดต่อด่วน</a></li>
                 </ul>
             </nav>
