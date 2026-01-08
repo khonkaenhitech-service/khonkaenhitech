@@ -1,6 +1,6 @@
 /* ==========================================================================
-   KHON KAEN HITECH – LUXURY FULL SYSTEM style.css
-   รวม: Theme Luxury, Floating Widgets, Mobile Bar, Fixed Reviews
+   KHON KAEN HITECH – LUXURY FULL SYSTEM style.css (Repair Button Added)
+   รวม: Theme Luxury, Floating Widgets (4 ปุ่ม), Mobile Bar (4 ปุ่ม), Fixed Reviews
    ========================================================================== */
 
 /* =========================
@@ -74,7 +74,7 @@ a:hover { color: var(--gold); border-bottom-color: var(--gold); }
 img { max-width: 100%; height: auto; border-radius: var(--radius); }
 
 /* =========================
-   3) COMPONENTS (Buttons & Boxes)
+   3) COMPONENTS
    ========================= */
 .button {
   border-radius: 50px !important;
@@ -224,6 +224,7 @@ ul.check-list li::before { content: "✔"; position: absolute; left: 0; color: #
 #menu a.button.btn-line { background: linear-gradient(180deg, #f0fff4 0%, #c6f6d5 100%) !important; color: #044622 !important; border: 1px solid #48bb78 !important; }
 #menu a.button.btn-fb { background: linear-gradient(180deg, #ebf8ff 0%, #bee3f8 100%) !important; color: #1a365d !important; border: 1px solid #63b3ed !important; }
 #menu a.button.btn-map { background: linear-gradient(180deg, #fffaf0 0%, #feebc8 100%) !important; color: #744210 !important; border: 1px solid #f6ad55 !important; }
+
 #menu a.button:hover { transform: translateY(-3px); filter: brightness(1.02); box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important; }
 
 /* =========================
@@ -254,7 +255,7 @@ ul.check-list li::before { content: "✔"; position: absolute; left: 0; color: #
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;
 }
 
-/* Source Icons (NEW) */
+/* Source Icons */
 .kh-review-source {
   display: inline-flex; align-items: center; gap: 6px; font-size: 0.85em; font-weight: 600;
   padding: 4px 10px; border-radius: 4px; color: #555; background: #f9f9f9; border: 1px solid #eee;
@@ -302,7 +303,7 @@ ul.check-list li::before { content: "✔"; position: absolute; left: 0; color: #
 @media (max-width: 480px) { .kh-slide img { height: 250px; } }
 
 /* =========================
-   8) FLOATING SOCIAL (Desktop)
+   8) FLOATING SOCIAL (Desktop - 4 Buttons)
    ========================= */
 .kh-social-float {
   position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
@@ -325,16 +326,16 @@ ul.check-list li::before { content: "✔"; position: absolute; left: 0; color: #
 }
 .kh-app-btn:hover::after { opacity: 1; transform: translateX(0); }
 /* App Colors */
+.kh-app-btn.tel { background: linear-gradient(135deg, #ffb300 0%, #ff8f00 100%); animation: pulseGold 2s infinite; }
 .kh-app-btn.line { background: linear-gradient(135deg, #06c755 0%, #00b900 100%); border: 1px solid rgba(255,255,255,0.2); }
 .kh-app-btn.fb { background: linear-gradient(135deg, #1877f2 0%, #0056b3 100%); border: 1px solid rgba(255,255,255,0.2); }
-.kh-app-btn.tiktok { background: linear-gradient(135deg, #000000 0%, #252525 100%); border: 1px solid rgba(255,255,255,0.2); text-shadow: 2px 2px 0px #fe2c55, -2px -2px 0px #25f4ee; }
-.kh-app-btn.tel { background: linear-gradient(135deg, #ffb300 0%, #ff8f00 100%); animation: pulseGold 2s infinite; }
+.kh-app-btn.repair { background: linear-gradient(135deg, #ff4d4d 0%, #cc0000 100%); border: 1px solid rgba(255,255,255,0.2); }
+
 @keyframes pulseGold { 0% { box-shadow: 0 0 0 0 rgba(255, 179, 0, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(255, 179, 0, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 179, 0, 0); } }
-/* Hide on Mobile */
 @media (max-width: 768px) { .kh-social-float { display: none; } }
 
 /* =========================
-   9) MOBILE STICKY BAR (4 Buttons)
+   9) MOBILE STICKY BAR (4 Buttons: Tel/Line/Repair/FB)
    ========================= */
 .mobile-action-bar { display: none; }
 @media screen and (max-width: 768px) {
@@ -348,9 +349,11 @@ ul.check-list li::before { content: "✔"; position: absolute; left: 0; color: #
     text-decoration: none !important; font-size: 0.7em; font-weight: bold;
     border-bottom: none !important; border-right: 1px solid #f5f5f5; transition: background 0.2s;
   }
+  .action-btn:last-child { border-right: none; }
   .action-btn i { font-size: 1.3em; margin-bottom: 2px; }
+  
   .call-btn { background: linear-gradient(135deg, #fff8e1 0%, #fff 100%); color: #a87910 !important; }
   .line-btn { background: #06c755; color: #fff !important; }
+  .repair-btn { background: #d32f2f; color: #fff !important; } /* ปุ่มซ่อมด่วน สีแดง */
   .fb-btn { background: #1877f2; color: #fff !important; }
-  .tiktok-btn { background: #000; color: #fff !important; border-right: none; }
 }
