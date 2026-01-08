@@ -7,35 +7,53 @@
    MENU ACTIVE = GOLD/ORANGE
    ========================= */
 
+/* =========================
+   LUX CLASSIC – Active Menu (No Red)
+   ========================= */
 :root{
-  --kh-gold: #d4af37;
-  --kh-gold2:#ffb84d;
-  --kh-gold3:#d97706; /* ส้มทองเข้ม */
-  --kh-gold-soft: rgba(217,119,6,.14);
+  --lux-ink: #111827;                 /* ดำหมึก */
+  --lux-ink2: rgba(17,24,39,.72);
+  --lux-gold: #c9a227;                /* ทองหม่น */
+  --lux-gold2:#e7cf8a;                /* แชมเปญ */
+  --lux-bg: rgba(255, 249, 235, .92); /* ครีมอุ่น */
+  --lux-bg2: rgba(255, 255, 255, .65);
+  --lux-line: rgba(17,24,39,.12);
 }
 
-/* เมนูที่ active (หน้าปัจจุบัน/กดแล้ว) */
-#menu ul li.active > a,
-#menu a.active{
+/* Active/กดแล้ว (เฉพาะเมนู ไม่รวมปุ่มติดต่อด่วน) */
+#menu ul li.active > a:not(.button),
+#menu a.active:not(.button){
   background: linear-gradient(90deg,
-    rgba(255,184,77,.22) 0%,
-    rgba(212,175,55,.18) 55%,
-    rgba(255,184,77,.10) 100%
+    var(--lux-bg) 0%,
+    rgba(231,207,138,.28) 55%,
+    var(--lux-bg2) 100%
   ) !important;
 
-  color: #111827 !important;                 /* ตัวหนังสือเข้ม */
+  color: var(--lux-ink) !important;
   font-weight: 900 !important;
 
-  border-left: 4px solid var(--kh-gold3) !important;   /* แถบซ้ายส้มทอง */
+  border-left: 4px solid var(--lux-gold) !important;
   padding-left: calc(1.65em - 4px) !important;
 
   border-radius: 12px !important;
   box-shadow: 0 10px 22px rgba(0,0,0,.10) !important;
 }
 
-/* ตอนเอาเมาส์ชี้ (PC) ให้เป็นโทนทองนิดๆ */
-#menu ul li:not(.divider) > a:hover{
-  background: var(--kh-gold-soft);
+/* Hover (PC) ให้หรูแบบเบา ๆ */
+#menu ul li:not(.divider) > a:not(.button):hover{
+  background: linear-gradient(90deg,
+    rgba(255, 249, 235, .70) 0%,
+    rgba(231,207,138,.18) 60%,
+    rgba(255,255,255,.55) 100%
+  ) !important;
+  color: var(--lux-ink) !important;
+}
+
+/* Focus (คีย์บอร์ด/มือถือบางรุ่น) */
+#menu ul li:not(.divider) > a:not(.button):focus-visible{
+  outline: 3px solid rgba(201,162,39,.35);
+  outline-offset: 3px;
+  border-radius: 12px;
 }
 
 /* ==========================================================================
