@@ -383,3 +383,46 @@
 	})();
 
 })(jQuery);
+
+// ==============================
+// KH Fix Logo Path (GitHub Pages)
+// Make sure logo works on every page
+// ==============================
+(function () {
+  const BASE = "/khonkaenhitech/";
+  const ABS_LOGO = BASE + "images/logo-khonkaen.webp";
+
+  function fixLogo() {
+    const img = document.querySelector("#header .logo img");
+    if (!img) return;
+
+    const src = (img.getAttribute("src") || "").trim();
+
+    // ถ้าใส่เป็น relative เช่น images/logo-khonkaen.webp หรือ ./images/logo-khonkaen.webp
+    // ให้บังคับเป็น absolute ของ GitHub Pages เพื่อไม่ให้หายทุกหน้า
+    if (
+      src === "images/logo-khonkaen.webp" ||
+      src === "./images/logo-khonkaen.webp" ||
+      src.endsWith("/images/logo-khonkaen.webp")
+    ) {
+      img.setAttribute("src", ABS_LOGO);
+    }
+
+    // กันพลาด: ถ้ารูปโหลดพัง ให้ fallback ไป absolute
+    img.addEventListener(
+      "error",
+      function () {
+        if (img.src !== location.origin + ABS_LOGO) img.src = ABS_LOGO;
+      },
+      { once: true }
+    );
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", fixLogo);
+  } else {
+    fixLogo();
+  }
+})();
+
+
