@@ -2,59 +2,56 @@
    KHON KAEN HITECH - GOD TIER MASTER STYLESHEET
    ไฟล์นี้ควบคุมความสวยงามของทุกหน้า (SEO Optimized Layout)
    ========================================================================== */
-
 /* =========================
-   MENU ACTIVE = GOLD/ORANGE
-   ========================= */
-
-/* =========================
-   LUX CLASSIC – Active Menu (No Red)
+   LUX CLASSIC – Darker Active Menu
    ========================= */
 :root{
-  --lux-ink: #111827;                 /* ดำหมึก */
-  --lux-ink2: rgba(17,24,39,.72);
-  --lux-gold: #c9a227;                /* ทองหม่น */
-  --lux-gold2:#e7cf8a;                /* แชมเปญ */
-  --lux-bg: rgba(255, 249, 235, .92); /* ครีมอุ่น */
-  --lux-bg2: rgba(255, 255, 255, .65);
-  --lux-line: rgba(17,24,39,.12);
+  --lux-ink: #0b1220;                 /* ดำเข้มขึ้น */
+  --lux-gold: #a87910;                /* ทองเข้ม */
+  --lux-gold2:#f0d58a;                /* แชมเปญ */
+  --lux-bg: rgba(255, 244, 218, .98); /* ครีมเข้มขึ้น */
+  --lux-bg2: rgba(235, 217, 165, .38);
+  --lux-line: rgba(11,18,32,.14);
 }
 
-/* Active/กดแล้ว (เฉพาะเมนู ไม่รวมปุ่มติดต่อด่วน) */
+/* Active/กดแล้ว */
 #menu ul li.active > a:not(.button),
 #menu a.active:not(.button){
   background: linear-gradient(90deg,
     var(--lux-bg) 0%,
-    rgba(231,207,138,.28) 55%,
-    var(--lux-bg2) 100%
+    var(--lux-bg2) 55%,
+    rgba(255,255,255,.50) 100%
   ) !important;
 
   color: var(--lux-ink) !important;
-  font-weight: 900 !important;
+  font-weight: 950 !important;
 
-  border-left: 4px solid var(--lux-gold) !important;
-  padding-left: calc(1.65em - 4px) !important;
+  border-left: 5px solid var(--lux-gold) !important;     /* หนาขึ้น + เข้มขึ้น */
+  padding-left: calc(1.65em - 5px) !important;
 
   border-radius: 12px !important;
-  box-shadow: 0 10px 22px rgba(0,0,0,.10) !important;
+  box-shadow:
+    0 14px 28px rgba(0,0,0,.14),
+    inset 0 0 0 1px rgba(168,121,16,.18) !important;
 }
 
-/* Hover (PC) ให้หรูแบบเบา ๆ */
+/* Hover ให้เข้มขึ้นนิด */
 #menu ul li:not(.divider) > a:not(.button):hover{
   background: linear-gradient(90deg,
-    rgba(255, 249, 235, .70) 0%,
-    rgba(231,207,138,.18) 60%,
-    rgba(255,255,255,.55) 100%
+    rgba(255, 244, 218, .88) 0%,
+    rgba(235, 217, 165, .28) 60%,
+    rgba(255,255,255,.40) 100%
   ) !important;
+
   color: var(--lux-ink) !important;
 }
 
-/* Focus (คีย์บอร์ด/มือถือบางรุ่น) */
-#menu ul li:not(.divider) > a:not(.button):focus-visible{
-  outline: 3px solid rgba(201,162,39,.35);
-  outline-offset: 3px;
-  border-radius: 12px;
+/* ทำตัวหนังสือเมนูทั้งแถบให้เข้มขึ้นนิด */
+#menu ul li:not(.divider) > a:not(.button){
+  color: rgba(11,18,32,.92) !important;
+  font-weight: 800 !important;
 }
+
 
 /* ==========================================================================
    2. TYPOGRAPHY & HEADINGS (SEO FRIENDLY)
