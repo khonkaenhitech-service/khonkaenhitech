@@ -489,7 +489,7 @@ html, body { overflow-x: hidden; }
 /* 2. ปุ่ม LINE (สีเขียว) */
 .btn-line, a[href*="line.me"] {
     background-color: #06c755 !important;
-    color: #ffffff !important;
+    color: #000000 !important;
 }
 .btn-line:hover, a[href*="line.me"]:hover {
     background-color: #05b54d !important;
@@ -823,4 +823,32 @@ a[href*="line.me"]:not(.button){
   #menu a.button.btn-map .icon:before{
     font-size:20px !important;
   }
+/* =========================
+   SIDEBAR MENU – TEXT DARKER
+   ========================= */
+
+/* ลิงก์เมนูปกติ (ไม่ใช่ divider และไม่ใช่ปุ่มติดต่อด่วน) */
+#menu ul li:not(.divider) > a:not(.button){
+  color: #111827 !important;      /* ดำเข้ม อ่านชัด */
+  font-weight: 800 !important;    /* หนักขึ้น */
+  opacity: 1 !important;
 }
+
+/* เมนูย่อย/ตัวอักษรเล็ก ถ้ามี */
+#menu ul li:not(.divider) > a:not(.button) span{
+  color: inherit !important;
+}
+
+/* ตอนเอาเมาส์ชี้ (PC) */
+#menu ul li:not(.divider) > a:not(.button):hover{
+  color: #b71c1c !important;      /* แดงเข้มตามธีม */
+}
+
+/* เมนูที่ active (หน้าปัจจุบัน) ให้เข้มกว่าเดิม */
+#menu ul li.active > a:not(.button),
+#menu a.active:not(.button){
+  color: #111827 !important;
+  font-weight: 900 !important;
+  background: rgba(211, 47, 47, 0.12) !important;
+}
+
