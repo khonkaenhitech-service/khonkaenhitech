@@ -412,3 +412,53 @@
     fixLogo();
   }
 })();
+
+
+// ==============================
+// KH: Ensure top-right header icons exist on every page
+// ==============================
+(function () {
+  const ICONS_HTML = `
+    <li>
+      <a href="tel:+66944749874" class="icon solid fa-phone" title="โทร 094-474-9874">
+        <span class="label">โทร</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://line.me/ti/p/~KKHITECH" class="icon brands fa-line" title="LINE: KKHITECH">
+        <span class="label">LINE</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://maps.app.goo.gl/LyV85313vknT4hBE6" class="icon solid fa-map-marker-alt" title="Google Maps">
+        <span class="label">แผนที่</span>
+      </a>
+    </li>
+  `;
+
+  function ensureHeaderIcons() {
+    const header = document.querySelector("#header");
+    if (!header) return;
+
+    // หา UL.icons ถ้ามีอยู่แล้ว
+    let ul = header.querySelector("ul.icons");
+
+    // ถ้าไม่มี -> สร้างใหม่
+    if (!ul) {
+      ul = document.createElement("ul");
+      ul.className = "icons";
+      header.appendChild(ul);
+    }
+
+    // ถ้าว่าง/มีไม่ครบ -> เติมให้ครบ
+    if (ul.querySelectorAll("li").length < 3) {
+      ul.innerHTML = ICONS_HTML;
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", ensureHeaderIcons);
+  } else {
+    ensureHeaderIcons();
+  }
+})();
