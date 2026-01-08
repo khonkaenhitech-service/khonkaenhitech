@@ -489,10 +489,10 @@ html, body { overflow-x: hidden; }
 /* 2. ปุ่ม LINE (สีเขียว) */
 .btn-line, a[href*="line.me"] {
     background-color: #06c755 !important;
-    color: #000000 !important;
+    color: #06c755 !important;
 }
 .btn-line:hover, a[href*="line.me"]:hover {
-    background-color: #05b54d !important;
+    background-color: #06c755 !important;
 }
 
 /* 3. ปุ่ม Facebook (สีน้ำเงินแบรนด์) */
@@ -630,13 +630,7 @@ html, body { overflow-x: hidden; }
   }
 }
 
-/* กันเผลอทำลิงก์ line.me ทั่วเว็บกลายเป็นปุ่มเขียว (จาก selector เดิมของคุณ) */
-a[href*="line.me"]:not(.button){
-  background: transparent !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-}
+
 
 /* ==========================================================================
    10. REVIEWS (Auto Scroll / Marquee)
