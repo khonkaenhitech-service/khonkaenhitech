@@ -3,34 +3,40 @@
    ไฟล์นี้ควบคุมความสวยงามของทุกหน้า (SEO Optimized Layout)
    ========================================================================== */
 
-/* 1. CORE VARIABLES & SETTINGS */
-:root {
-  /* แก้ไข: เปลี่ยนสีแดงให้เข้มขึ้น เพื่อให้ผ่านเกณฑ์ Google Audit (อ่านง่ายขึ้น) */
-  --kh-primary: #d32f2f;       /* แก้จาก #f56a6a เป็น #d32f2f */
-  --kh-primary-dark: #b71c1c;  /* แก้จาก #c0392b เป็น #b71c1c (เพื่อให้เข้มกว่าตัวบน) */
-  
-  /* ค่าอื่นๆ คงเดิม */
-  --kh-accent: #2c3e50;        /* สีน้ำเงินเข้ม */
-  --kh-text: #333333;          /* สีตัวอักษรหลัก */
-  --kh-light: #f9f9f9;         /* สีพื้นหลังอ่อน */
-  --kh-border: rgba(0,0,0,0.1);
-  --kh-radius: 12px;           /* ความมนของมุม */
-  --kh-shadow: 0 4px 15px rgba(0,0,0,0.05); /* เงาแบบนุ่ม */
+/* =========================
+   MENU ACTIVE = GOLD/ORANGE
+   ========================= */
 
-  /* KH Custom Colors */
-  --kh-red: #d32f2f;          /* ใช้โทนเดียวกับ primary */
-  --kh-red2: #b71c1c;
-  --kh-soft: rgba(211, 47, 47, 0.10);
-  --kh-line: rgba(17,24,39,.12);
-  --kh-line-green:#06C755;
-  --kh-line-green2:#05b34c;
+:root{
+  --kh-gold: #d4af37;
+  --kh-gold2:#ffb84d;
+  --kh-gold3:#d97706; /* ส้มทองเข้ม */
+  --kh-gold-soft: rgba(217,119,6,.14);
 }
 
-/* ปรับ Scrollbar ให้สวยงาม */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #000000; }
-::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--kh-primary); }
+/* เมนูที่ active (หน้าปัจจุบัน/กดแล้ว) */
+#menu ul li.active > a,
+#menu a.active{
+  background: linear-gradient(90deg,
+    rgba(255,184,77,.22) 0%,
+    rgba(212,175,55,.18) 55%,
+    rgba(255,184,77,.10) 100%
+  ) !important;
+
+  color: #111827 !important;                 /* ตัวหนังสือเข้ม */
+  font-weight: 900 !important;
+
+  border-left: 4px solid var(--kh-gold3) !important;   /* แถบซ้ายส้มทอง */
+  padding-left: calc(1.65em - 4px) !important;
+
+  border-radius: 12px !important;
+  box-shadow: 0 10px 22px rgba(0,0,0,.10) !important;
+}
+
+/* ตอนเอาเมาส์ชี้ (PC) ให้เป็นโทนทองนิดๆ */
+#menu ul li:not(.divider) > a:hover{
+  background: var(--kh-gold-soft);
+}
 
 /* ==========================================================================
    2. TYPOGRAPHY & HEADINGS (SEO FRIENDLY)
