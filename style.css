@@ -1104,4 +1104,146 @@ a.icon.brands.fa-line {
   color: rgba(168,121,16,.95);
 }
 
+/* =========================================
+   LUX CTA – TEL BUTTON (Warm Premium)
+   ทำให้ดูน่าโทร/น่าซื้อ ไม่มืดเกิน
+   ========================================= */
 
+/* ปุ่มโทร */
+#menu a.button.btn-tel{
+  background: linear-gradient(180deg,
+    #fff4d9 0%,
+    #f3d59a 55%,
+    #d9b15a 100%
+  ) !important;
+
+  color: #0b1220 !important;                 /* ตัวหนังสือเข้ม อ่านชัด */
+  border: 1px solid rgba(168,121,16,.35) !important;
+
+  box-shadow:
+    0 16px 34px rgba(0,0,0,.16),
+    inset 0 1px 0 rgba(255,255,255,.65) !important;
+}
+
+/* กล่องไอคอนในปุ่มโทร */
+#menu a.button.btn-tel .icon{
+  background: rgba(11,18,32,.10) !important; /* เข้มแบบนุ่ม */
+  border: 1px solid rgba(11,18,32,.10) !important;
+}
+
+/* ไอคอนโทรให้เด่นและหรู */
+#menu a.button.btn-tel .icon:before{
+  color: #0b1220 !important;
+}
+
+/* Hover/Active: กระตุ้นให้กด */
+#menu a.button.btn-tel:hover{
+  filter: brightness(1.04) !important;
+  transform: translateY(-1px);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.18),
+    inset 0 1px 0 rgba(255,255,255,.70) !important;
+}
+
+#menu a.button.btn-tel:active{
+  transform: scale(.99);
+  box-shadow:
+    0 12px 24px rgba(0,0,0,.14),
+    inset 0 2px 6px rgba(0,0,0,.10) !important;
+}
+
+/* =========================================================
+   PSYCHOLOGY CTA – 4 CONTACT BUTTONS (Premium Warm)
+   วางท้ายสุดของ style.css
+   ========================================================= */
+
+:root{
+  --cta-ink: #0b1220;                 /* ดำหมึก */
+  --cta-warm1: #fff4d9;               /* ครีมอุ่น */
+  --cta-warm2: #f3d59a;               /* แชมเปญ */
+  --cta-warm3: #d9b15a;               /* ทองหม่น */
+  --cta-ring: rgba(168,121,16,.35);   /* ขอบทอง */
+  --cta-shadow: 0 18px 38px rgba(0,0,0,.16);
+}
+
+/* ให้ 4 ปุ่มดู “กดได้” ชัดขึ้น */
+#menu a.button.btn-tel,
+#menu a.button.btn-line,
+#menu a.button.btn-fb,
+#menu a.button.btn-map{
+  border: 1px solid var(--cta-ring) !important;
+  box-shadow: var(--cta-shadow), inset 0 1px 0 rgba(255,255,255,.70) !important;
+  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease !important;
+}
+
+/* Hover/Active = เพิ่มแรงจูงใจ */
+#menu a.button.btn-tel:hover,
+#menu a.button.btn-line:hover,
+#menu a.button.btn-fb:hover,
+#menu a.button.btn-map:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+  box-shadow: 0 22px 44px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.75) !important;
+}
+
+#menu a.button.btn-tel:active,
+#menu a.button.btn-line:active,
+#menu a.button.btn-fb:active,
+#menu a.button.btn-map:active{
+  transform: scale(.99);
+  box-shadow: 0 14px 28px rgba(0,0,0,.14), inset 0 2px 8px rgba(0,0,0,.10) !important;
+}
+
+/* กล่องไอคอนให้ดูเป็น “badge” */
+#menu a.button.btn-tel .icon,
+#menu a.button.btn-line .icon,
+#menu a.button.btn-fb .icon,
+#menu a.button.btn-map .icon{
+  background: rgba(11,18,32,.10) !important;
+  border: 1px solid rgba(11,18,32,.10) !important;
+}
+
+/* =========================================================
+   สีแต่ละปุ่ม (จิตวิทยา)
+   - โทร: อุ่น/มั่นใจ (ปุ่มหลัก)
+   - LINE: นุ่ม/เป็นกันเอง (แชท)
+   - Facebook: น่าเชื่อถือ/ติดตาม
+   - Maps: ชัดเจน/นำทาง
+   ========================================================= */
+
+/* 1) TEL – ปุ่มหลัก (Warm Gold) */
+#menu a.button.btn-tel{
+  background: linear-gradient(180deg, var(--cta-warm1) 0%, var(--cta-warm2) 55%, var(--cta-warm3) 100%) !important;
+  color: var(--cta-ink) !important;
+}
+#menu a.button.btn-tel .icon:before{ color: var(--cta-ink) !important; }
+
+/* 2) LINE – อุ่น+เขียวนิด (Friendly Chat) */
+#menu a.button.btn-line{
+  background: linear-gradient(180deg, #f3fff7 0%, #c7f3d7 55%, #74d39a 100%) !important;
+  color: #06351f !important;
+  border-color: rgba(6,199,85,.35) !important;
+}
+#menu a.button.btn-line .icon{ background: rgba(6,53,31,.10) !important; border-color: rgba(6,53,31,.10) !important; }
+#menu a.button.btn-line .icon:before{ color: #06351f !important; }
+
+/* 3) FB – น่าเชื่อถือ+สุภาพ (Trust) */
+#menu a.button.btn-fb{
+  background: linear-gradient(180deg, #f3f8ff 0%, #cfe2ff 55%, #88b4ff 100%) !important;
+  color: #0b1a38 !important;
+  border-color: rgba(24,119,242,.28) !important;
+}
+#menu a.button.btn-fb .icon{ background: rgba(11,26,56,.10) !important; border-color: rgba(11,26,56,.10) !important; }
+#menu a.button.btn-fb .icon:before{ color: #0b1a38 !important; }
+
+/* 4) MAP – อุ่น+ครีม (Clear direction) */
+#menu a.button.btn-map{
+  background: linear-gradient(180deg, #fff7ec 0%, #ffe2c0 55%, #f4b27f 100%) !important;
+  color: #3a1d0b !important;
+  border-color: rgba(244,178,127,.55) !important;
+}
+#menu a.button.btn-map .icon{ background: rgba(58,29,11,.10) !important; border-color: rgba(58,29,11,.10) !important; }
+#menu a.button.btn-map .icon:before{ color: #3a1d0b !important;
+}
+
+   
