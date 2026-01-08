@@ -531,6 +531,112 @@ html, body { overflow-x: hidden; }
   padding-left: calc(1.65em - 4px) !important;
   border-radius: 10px;
 }
+/* =========================================================
+   KH – CONTACT QUICK BUTTONS (Icon Top + Text Bottom)
+   ทำให้ไอคอน/ตัวหนังสือสมส่วน อ่านชัด สะดุดตา
+   ========================================================= */
+
+#menu a.button.btn-tel,
+#menu a.button.btn-line,
+#menu a.button.btn-fb,
+#menu a.button.btn-map{
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+  min-height: 96px;
+  padding: 14px 14px !important;
+
+  border: none !important;
+  border-radius: 28px !important;
+
+  text-align: center;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 1.15;
+  letter-spacing: .2px;
+  white-space: normal;
+
+  box-shadow: 0 12px 24px rgba(0,0,0,.18);
+  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+}
+
+/* ไอคอนเป็น “ป้าย” กลม ๆ เพิ่มความเด่น */
+#menu a.button.btn-tel .icon,
+#menu a.button.btn-line .icon,
+#menu a.button.btn-fb .icon,
+#menu a.button.btn-map .icon{
+  margin: 0 !important;             /* ทับ margin-right เดิม */
+  width: 46px;
+  height: 46px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.18);
+}
+
+/* ขยายไอคอน (FontAwesome ผ่าน :before) */
+#menu a.button.btn-tel .icon:before,
+#menu a.button.btn-line .icon:before,
+#menu a.button.btn-fb .icon:before,
+#menu a.button.btn-map .icon:before{
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* โฮเวอร์/กด */
+#menu a.button.btn-tel:hover,
+#menu a.button.btn-line:hover,
+#menu a.button.btn-fb:hover,
+#menu a.button.btn-map:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+  box-shadow: 0 16px 30px rgba(0,0,0,.22);
+}
+
+#menu a.button.btn-tel:active,
+#menu a.button.btn-line:active,
+#menu a.button.btn-fb:active,
+#menu a.button.btn-map:active{
+  transform: scale(.99);
+  box-shadow: 0 10px 18px rgba(0,0,0,.16);
+}
+
+/* มือถือ: ลดนิดแต่ยังชัด */
+@media (max-width: 980px){
+  #menu a.button.btn-tel,
+  #menu a.button.btn-line,
+  #menu a.button.btn-fb,
+  #menu a.button.btn-map{
+    min-height: 88px;
+    font-size: 13.5px;
+  }
+  #menu a.button.btn-tel .icon,
+  #menu a.button.btn-line .icon,
+  #menu a.button.btn-fb .icon,
+  #menu a.button.btn-map .icon{
+    width: 42px;
+    height: 42px;
+    border-radius: 16px;
+  }
+  #menu a.button.btn-tel .icon:before,
+  #menu a.button.btn-line .icon:before,
+  #menu a.button.btn-fb .icon:before,
+  #menu a.button.btn-map .icon:before{
+    font-size: 20px;
+  }
+}
+
+/* กันเผลอทำลิงก์ line.me ทั่วเว็บกลายเป็นปุ่มเขียว (จาก selector เดิมของคุณ) */
+a[href*="line.me"]:not(.button){
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
 
 /* ==========================================================================
    10. REVIEWS (Auto Scroll / Marquee)
