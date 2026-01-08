@@ -355,6 +355,7 @@ table tr:hover { background-color: #f1f1f1; transition: 0.2s; }
   border-top: 1px solid #eee;
 }
 
+
 /* ==========================================================================
    9. UTILITIES & ICONS
    ========================================================================== */
@@ -1063,4 +1064,41 @@ a.icon.brands.fa-line {
   #header .kh-brand__th, #header .kh-brand__en{
     color: #f6b84a !important;
   }
+/* =========================================
+   LUX DIVIDER (เมนูหัวข้อ) – No Red / Classic Premium
+   ========================================= */
+#menu ul li.divider{
+  /* ขนาด/ระยะ */
+  margin: 18px 0 10px 0 !important;
+  padding: 10px 12px !important;
+
+  /* สีแบบหรู (ครีม-ทอง) */
+  background: linear-gradient(90deg,
+    rgba(255, 244, 218, .96) 0%,
+    rgba(235, 217, 165, .38) 55%,
+    rgba(255, 255, 255, .70) 100%
+  ) !important;
+
+  /* ตัวหนังสือเข้ม อ่านชัด */
+  color: #0b1220 !important;
+  font-weight: 950 !important;
+
+  /* แถบซ้ายทองหม่น (แทนแดง) */
+  border-left: 5px solid #a87910 !important;
+
+  /* ทำให้ดูเป็น “แถบหัวข้อ” แบบพรีเมียม */
+  border-radius: 12px !important;
+  box-shadow:
+    0 10px 22px rgba(0,0,0,.10),
+    inset 0 0 0 1px rgba(168,121,16,.18) !important;
+
+  /* ลดความแข็งของ uppercase เดิม (ถ้าคุณอยากให้ยังเป็นตัวใหญ่ ให้ลบ 2 บรรทัดนี้ทิ้ง) */
+  text-transform: none !important;
+  letter-spacing: .4px !important;
 }
+
+/* เผื่อ divider มีเส้นบน/ล่างจากธีม */
+#menu ul li.divider + li > a{
+  border-top: none !important;
+}
+
