@@ -1,5 +1,5 @@
 /* ==========================================================================
-   KHON KAEN HITECH – LUXURY MASTER style.css (SEO + Psychology + Premium)
+   KHON KAEN HITECH – LUXURY MASTER style.css (Updated: Gold Tel Button)
    Replace whole style.css with this file.
    ========================================================================== */
 
@@ -63,18 +63,17 @@ a:hover{ color: var(--gold); }
 
 ::selection{ background: rgba(168,121,16,.18); }
 
-/* Keyboard accessibility (good for UX audits) */
+/* Keyboard accessibility */
 :focus-visible{
   outline: 3px solid var(--focus);
   outline-offset: 3px;
   border-radius: 10px;
 }
 
-/* Images: prevent overflow */
 img{ max-width: 100%; height: auto; }
 
 /* =========================
-   3) GLOBAL BUTTON POLISH (Luxury feel)
+   3) GLOBAL BUTTON POLISH
    ========================= */
 .button{
   border-radius: 14px !important;
@@ -86,12 +85,8 @@ img{ max-width: 100%; height: auto; }
 }
 
 /* =========================
-   4) HEADER (Brand + Top-right icons)
+   4) HEADER
    ========================= */
-/* Works with BOTH:
-   - <a class="kh-brand">...</a>  (new)
-   - <a class="logo"><strong>...</strong></a> (existing fallback)
-*/
 #header{
   display:flex;
   align-items:center;
@@ -110,7 +105,7 @@ img{ max-width: 100%; height: auto; }
   text-shadow: 0 1px 0 rgba(0,0,0,.55), 0 6px 14px rgba(0,0,0,.22);
 }
 
-/* New brand (if you use kh-brand markup) */
+/* New brand */
 #header .kh-brand{
   display:flex !important;
   align-items:center;
@@ -161,15 +156,8 @@ img{ max-width: 100%; height: auto; }
   -webkit-text-stroke: 1px rgba(0,0,0,.88);
   text-shadow: 0 1px 0 rgba(0,0,0,.45), 0 5px 12px rgba(0,0,0,.18);
 }
-@supports not (-webkit-background-clip: text){
-  #header .kh-brand__th,
-  #header .kh-brand__en{
-    color:#f6b84a !important;
-    -webkit-text-stroke: 0 !important;
-  }
-}
 
-/* Top-right icons (if you have ul.icons in header) */
+/* Top-right icons */
 #header ul.icons{
   display:flex !important;
   align-items:center !important;
@@ -194,7 +182,7 @@ img{ max-width: 100%; height: auto; }
 #header ul.icons a:before{ font-size:16px; line-height:1; }
 
 /* =========================
-   5) TYPOGRAPHY HEADINGS (SEO friendly)
+   5) TYPOGRAPHY
    ========================= */
 h1,h2,h3,h4,h5,h6{
   color: var(--kh-accent);
@@ -210,7 +198,7 @@ h2{
 }
 
 /* =========================
-   6) HERO (reduce CLS + premium)
+   6) HERO
    ========================= */
 .kh-hero{ margin-top: 20px; margin-bottom: 40px; }
 .kh-hero-grid{
@@ -247,7 +235,7 @@ h2{
 }
 
 /* =========================
-   7) FEATURES (Luxury cards: “บริการยอดนิยม”)
+   7) FEATURES
    ========================= */
 .features article{
   background: var(--paper);
@@ -263,7 +251,6 @@ h2{
   border-color: rgba(168,121,16,.28);
 }
 
-/* Icon badge */
 .features article > .icon{
   width:52px;
   height:52px;
@@ -276,11 +263,9 @@ h2{
   box-shadow: 0 12px 26px rgba(0,0,0,.10);
 }
 
-/* Title link */
 .features h3 a{ text-decoration:none; border-bottom:none; color: var(--ink); }
 .features h3 a:hover{ color: var(--gold); }
 
-/* Small “ดูรายละเอียด” button inside cards */
 .features .button.small{
   border-radius: 999px !important;
   font-weight: 900 !important;
@@ -295,11 +280,10 @@ h2{
 }
 
 /* =========================
-   8) SIDEBAR MENU (Luxury, no harsh red)
+   8) SIDEBAR MENU
    ========================= */
 #menu, #menu *{ text-shadow:none; }
 
-/* Divider headings */
 #menu ul li.divider{
   margin: 18px 0 10px 0 !important;
   padding: 10px 12px !important;
@@ -319,7 +303,6 @@ h2{
   color: rgba(168,121,16,.95);
 }
 
-/* Menu links (exclude contact buttons) */
 #menu ul li:not(.divider) > a:not(.button){
   color: rgba(11,18,32,.92) !important;
   font-weight: 800 !important;
@@ -337,187 +320,24 @@ h2{
 /* Active page menu */
 #menu ul li.active > a:not(.button),
 #menu a.active:not(.button){
-  background: linear-gradient(90deg, var(--gold-cream) 0%, var(--gold-cream2) 55%, rgba(255,255,255,.50) 100%) !important;
-  color: var(--ink) !important;
-  font-weight: 950 !important;
-  border-left: 5px solid var(--gold) !important;
-  padding-left: calc(1.65em - 5px) !important;
-  box-shadow: 0 14px 28px rgba(0,0,0,.14), inset 0 0 0 1px rgba(168,121,16,.18) !important;
-}
-
-/* =========================
-   9) CONTACT BUTTONS – DELUXE PREMIUM (Psychology CTA)
-   TEL / LINE / FB / MAP  (Icon top + text bottom)
-   ========================= */
-#menu a.button.btn-line,
-#menu a.button.btn-fb,
-#menu a.button.btn-map{
-  width:100% !important;
-  display:flex !important;
-  flex-direction:column !important;
-  align-items:center !important;
-  justify-content:center !important;
-
-  gap:8px !important;
-  min-height:96px !important;
-  padding:14px 14px !important;
-
-  border-radius: var(--cta-radius) !important;
-  border: 1px solid var(--cta-ring) !important;
-
-  text-align:center !important;
-  font-weight: 950 !important;
-  font-size: 14px !important;
-  line-height: 1.15 !important;
-  letter-spacing: .2px !important;
-  white-space: normal !important;
-
-  box-shadow: var(--cta-s1), inset 0 1px 0 rgba(255,255,255,.75) !important;
-  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease !important;
-
-  position: relative;
-  overflow: hidden;
-}
-
-/* LINE – Friendly chat */
-#menu a.button.btn-line{
-  background: linear-gradient(180deg, #f3fff7 0%, #c7f3d7 55%, #74d39a 100%) !important;
-  color: #06351f !important;
-  border-color: rgba(6,199,85,.35) !important;
-}
-#menu a.button.btn-line .icon{ background: rgba(6,53,31,.10) !important; border-color: rgba(6,53,31,.10) !important; }
-#menu a.button.btn-line .icon:before{ color: #06351f !important; }
-
-/* FB – Trust */
-#menu a.button.btn-fb{
-  background: linear-gradient(180deg, #f3f8ff 0%, #cfe2ff 55%, #88b4ff 100%) !important;
-  color: #0b1a38 !important;
-  border-color: rgba(24,119,242,.28) !important;
-}
-#menu a.button.btn-fb .icon{ background: rgba(11,26,56,.10) !important; border-color: rgba(11,26,56,.10) !important; }
-#menu a.button.btn-fb .icon:before{ color: #0b1a38 !important; }
-
-/* MAP – Clear direction */
-#menu a.button.btn-map{
-  background: linear-gradient(180deg, #fff7ec 0%, #ffe2c0 55%, #f4b27f 100%) !important;
-  color: #3a1d0b !important;
-  border-color: rgba(244,178,127,.55) !important;
-}
-#menu a.button.btn-map .icon{ background: rgba(58,29,11,.10) !important; border-color: rgba(58,29,11,.10) !important; }
-#menu a.button.btn-map .icon:before{ color: #3a1d0b !important;
-}
-/* =========================================================
-   1) TEL BUTTON – YELLOW PREMIUM (เหมือนรูป)
-   2) ACTIVE MENU – NEW COLOR + SHINE/SHADOW RUN FOREVER
-   วางท้ายสุดของ style.css
-   ========================================================= */
-
-/* ---------- 1) ปุ่มโทรสีเหลือง (ปุ่มใน sidebar) ---------- */
-#menu a.button.btn-tel{
   position: relative !important;
   overflow: hidden !important;
-
-  background: linear-gradient(180deg,
-    #fff27a 0%,
-    #ffe100 42%,
-    #ffc800 100%
-  ) !important;
-
-  color: #111827 !important;
-  border: 1px solid rgba(0,0,0,.10) !important;
-
-  box-shadow:
-    0 22px 46px rgba(0,0,0,.22),
-    inset 0 1px 0 rgba(255,255,255,.75) !important;
-}
-
-/* ไอคอนในปุ่มโทรให้ดูเป็นเหรียญ/แบดจ์ */
-#menu a.button.btn-tel .icon{
-  background: rgba(0,0,0,.10) !important;
-  border: 1px solid rgba(0,0,0,.10) !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.35) !important;
-}
-#menu a.button.btn-tel .icon:before{
-  color: #0b1220 !important;
-}
-
-/* เงาวิ่งเบา ๆ บนปุ่มโทร (ช่วยให้ “น่ากด”) */
-#menu a.button.btn-tel::after{
-  content:"";
-  position:absolute;
-  top:-60%;
-  left:-70%;
-  width:60%;
-  height:220%;
-  background: linear-gradient(120deg,
-    rgba(255,255,255,0) 35%,
-    rgba(255,255,255,.55) 50%,
-    rgba(255,255,255,0) 65%
-  );
-  transform: skewX(-15deg);
-  opacity:.55;
-  pointer-events:none;
-  animation: khTelShine 2.8s linear infinite;
-}
-@keyframes khTelShine{
-  0%   { left:-80%; }
-  100% { left:130%; }
-}
-
-/* Hover/Active ให้รู้สึก “กดได้จริง” */
-#menu a.button.btn-tel:hover{
-  filter: brightness(1.03) !important;
-  transform: translateY(-1px);
-  box-shadow:
-    0 28px 60px rgba(0,0,0,.24),
-    inset 0 1px 0 rgba(255,255,255,.80) !important;
-}
-#menu a.button.btn-tel:active{
-  transform: scale(.99);
-  box-shadow:
-    0 16px 34px rgba(0,0,0,.18),
-    inset 0 2px 10px rgba(0,0,0,.12) !important;
-}
-
-/* ---------- 2) เมนูเวลาถูกกด (active) เปลี่ยนสี + เงาวิ่งตลอด ---------- */
-/* ใช้กับเมนูปกติเท่านั้น (ไม่โดนปุ่มติดต่อด่วน) */
-#menu ul li.active > a:not(.button),
-#menu a.active:not(.button){
-  position: relative !important;
-  overflow: hidden !important;
-
-  /* สีใหม่: “ครีม-แชมเปญ” หรู (ไม่แดง) */
-  background: linear-gradient(90deg,
-    rgba(255,255,255,.92) 0%,
-    rgba(255,241,200,.85) 50%,
-    rgba(255,255,255,.92) 100%
-  ) !important;
-
+  background: linear-gradient(90deg, rgba(255,255,255,.92) 0%, rgba(255,241,200,.85) 50%, rgba(255,255,255,.92) 100%) !important;
   color: #0b1220 !important;
   font-weight: 950 !important;
-
   border-left: 6px solid rgba(168,121,16,.95) !important;
   border-radius: 14px !important;
-
-  box-shadow:
-    0 14px 26px rgba(0,0,0,.14),
-    inset 0 0 0 1px rgba(168,121,16,.18) !important;
+  padding-left: calc(1.65em - 5px) !important;
+  box-shadow: 0 14px 26px rgba(0,0,0,.14), inset 0 0 0 1px rgba(168,121,16,.18) !important;
 }
 
-/* แสง/เงาวิ่งตลอดบนเมนู active */
+/* Active menu shine */
 #menu ul li.active > a:not(.button)::after,
 #menu a.active:not(.button)::after{
   content:"";
   position:absolute;
-  top:-65%;
-  left:-80%;
-  width:60%;
-  height:240%;
-  background: linear-gradient(120deg,
-    rgba(255,255,255,0) 38%,
-    rgba(255,255,255,.60) 50%,
-    rgba(255,255,255,0) 62%
-  );
+  top:-65%; left:-80%; width:60%; height:240%;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 38%, rgba(255,255,255,.60) 50%, rgba(255,255,255,0) 62%);
   transform: skewX(-18deg);
   opacity:.45;
   pointer-events:none;
@@ -528,21 +348,119 @@ h2{
   100% { left:135%; }
 }
 
-/* Hover เมนูปกติให้เข้าธีมเดียวกัน */
-#menu ul li:not(.divider) > a:not(.button):hover{
-  background: linear-gradient(90deg,
-    rgba(255,255,255,.90) 0%,
-    rgba(255,241,200,.55) 55%,
-    rgba(255,255,255,.86) 100%
-  ) !important;
-  color:#0b1220 !important;
+/* =========================
+   9) CONTACT BUTTONS – DELUXE (Layout)
+   NOTE: Added .btn-tel here so it matches the size of others
+   ========================= */
+#menu a.button.btn-tel,
+#menu a.button.btn-line,
+#menu a.button.btn-fb,
+#menu a.button.btn-map{
+  width:100% !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:8px !important;
+  min-height:96px !important;
+  padding:14px 14px !important;
+  border-radius: var(--cta-radius) !important;
+  border: 1px solid var(--cta-ring) !important;
+  text-align:center !important;
+  font-weight: 950 !important;
+  font-size: 14px !important;
+  line-height: 1.15 !important;
+  letter-spacing: .2px !important;
+  white-space: normal !important;
+  box-shadow: var(--cta-s1), inset 0 1px 0 rgba(255,255,255,.75) !important;
+  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease !important;
+  position: relative;
+  overflow: hidden;
 }
 
-/* เคารพคนไม่ชอบแอนิเมชัน */
-@media (prefers-reduced-motion: reduce){
-  #menu a.button.btn-tel::after,
-  #menu ul li.active > a:not(.button)::after,
-  #menu a.active:not(.button)::after{
-    animation: none !important;
-  }
+/* =========================
+   10) CONTACT COLORS & ANIMATIONS
+   ========================= */
+
+/* --- 1. PHONE (LUXURY GOLD) --- */
+#menu a.button.btn-tel{
+  /* ไล่สีทอง หรูหรา */
+  background: linear-gradient(180deg, 
+      #fff8d1 0%,    /* Cream/Gold Highlight */
+      #ffdd55 35%,   /* Bright Gold */
+      #ffb300 100%   /* Deep Gold/Orange */
+  ) !important;
+  
+  color: #1a0f00 !important; /* Dark Brown text for contrast */
+  border-color: rgba(184, 134, 11, 0.4) !important;
+  box-shadow: 0 20px 50px rgba(255, 179, 0, 0.25), inset 0 1px 0 rgba(255,255,255,0.8) !important;
+}
+
+#menu a.button.btn-tel .icon{
+  background: rgba(0,0,0,.08) !important;
+  border: 1px solid rgba(0,0,0,.05) !important;
+  border-radius: 50%;
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+}
+#menu a.button.btn-tel .icon:before{ color: #1a0f00 !important; font-size: 1.2em; }
+
+/* Continuous Shine Animation for Phone */
+#menu a.button.btn-tel::after{
+  content:"";
+  position:absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, 
+      rgba(255,255,255,0) 0%, 
+      rgba(255,255,255,0.7) 50%, 
+      rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: goldShine 2s infinite; /* Loop forever */
+  pointer-events: none;
+}
+
+@keyframes goldShine{
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* --- 2. LINE (Green) --- */
+#menu a.button.btn-line{
+  background: linear-gradient(180deg, #f3fff7 0%, #c7f3d7 55%, #74d39a 100%) !important;
+  color: #06351f !important;
+  border-color: rgba(6,199,85,.35) !important;
+}
+#menu a.button.btn-line .icon{ background: rgba(6,53,31,.10) !important; border-color: rgba(6,53,31,.10) !important; }
+#menu a.button.btn-line .icon:before{ color: #06351f !important; }
+
+/* --- 3. FACEBOOK (Blue) --- */
+#menu a.button.btn-fb{
+  background: linear-gradient(180deg, #f3f8ff 0%, #cfe2ff 55%, #88b4ff 100%) !important;
+  color: #0b1a38 !important;
+  border-color: rgba(24,119,242,.28) !important;
+}
+#menu a.button.btn-fb .icon{ background: rgba(11,26,56,.10) !important; border-color: rgba(11,26,56,.10) !important; }
+#menu a.button.btn-fb .icon:before{ color: #0b1a38 !important; }
+
+/* --- 4. MAP (Orange/Red) --- */
+#menu a.button.btn-map{
+  background: linear-gradient(180deg, #fff7ec 0%, #ffe2c0 55%, #f4b27f 100%) !important;
+  color: #3a1d0b !important;
+  border-color: rgba(244,178,127,.55) !important;
+}
+#menu a.button.btn-map .icon{ background: rgba(58,29,11,.10) !important; border-color: rgba(58,29,11,.10) !important; }
+#menu a.button.btn-map .icon:before{ color: #3a1d0b !important; }
+
+/* Hover Effects for all big buttons */
+#menu a.button.btn-tel:hover,
+#menu a.button.btn-line:hover,
+#menu a.button.btn-fb:hover,
+#menu a.button.btn-map:hover{
+  filter: brightness(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 25px 55px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,0.9) !important;
 }
