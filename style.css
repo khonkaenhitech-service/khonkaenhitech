@@ -747,3 +747,44 @@ a[href*="line.me"]:not(.button){
   .kh-review__top{ flex-direction: column; align-items:flex-start; }
   .kh-review__meta{ white-space: normal; overflow: visible; }
 }
+
+/* =========================================================
+   KH – CONTACT QUICK BUTTONS (Icon Top + Text Bottom)
+   วางต่อท้ายไฟล์ style.css หลัง } สุดท้าย
+   ========================================================= */
+
+#menu a.button.btn-tel,
+#menu a.button.btn-line,
+#menu a.button.btn-fb,
+#menu a.button.btn-map{
+  display:flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:96px;
+  padding:14px 14px !important;
+  line-height:1.15 !important;
+  white-space:normal;
+}
+
+#menu a.button.btn-tel .icon,
+#menu a.button.btn-line .icon,
+#menu a.button.btn-fb .icon,
+#menu a.button.btn-map .icon{
+  margin:0 !important;
+  width:46px;
+  height:46px;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  background: rgba(255,255,255,.18);
+}
+
+#menu a.button.btn-tel .icon:before,
+#menu a.button.btn-line .icon:before,
+#menu a.button.btn-fb .icon:before,
+#menu a.button.btn-map .icon:before{
+  font-size:22px;
+  line-height:1;
+}
