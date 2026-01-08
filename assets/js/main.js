@@ -505,3 +505,56 @@
     ensureHeaderIcons();
   }
 })();
+
+
+
+// ==============================
+// KH: Ensure "ข้อมูลเพิ่มเติม" section exists in sidebar menu on every page
+// ==============================
+(function () {
+  function textEq(el, t) {
+    return (el?.textContent || "").trim() === t;
+  }
+
+  function ensureExtraInfoSection() {
+    const menuUl = document.querySelector("#menu > ul");
+    if (!menuUl) return;
+
+    // ถ้ามีหัวข้อ "ข้อมูลเพิ่มเติม" อยู่แล้ว ไม่ทำซ้ำ
+    const hasDivider = Array.from(menuUl.querySelectorAll("li.divider"))
+      .some(li => textEq(li, "ข้อมูลเพิ่มเติม"));
+    if (hasDivider) return;
+
+    // หา "ติดต่อด่วน" เพื่อแทรกก่อน (ถ้าไม่เจอจะต่อท้าย)
+    const contactDivider = Array.from(menuUl.querySelectorAll("li.divider"))
+      .find(li => textEq(li, "ติดต่อด่วน"));
+
+    const frag = document.createDocumentFragment();
+
+    const d = document.createElement("li");
+    d.className = "divider";
+    d.textContent = "ข้อมูลเพิ่มเติม";
+    frag.appendChild(d);
+
+    const li1 = document.createElement("li");
+    li1.innerHTML = `<a href="khonkaen-system.html">บทความ Local SEO</a>`;
+    frag.appendChild(li1);
+
+    const li2 = document.createElement("li");
+    li2.innerHTML = `<a href="elements.html">ผลงาน & รีวิว (Portfolio)</a>`;
+    frag.appendChild(li2);
+
+    if (contactDivider) {
+      menuUl.insertBefore(frag, contactDivider);
+    } else {
+      menuUl.appendChild(frag);
+    }
+  }
+
+  // defer scripts รันหลัง parse แล้ว ปกติเรียกตรงๆ ได้
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", ensureExtraInfoSection);
+  } else {
+    ensureExtraInfoSection();
+  }
+})();
