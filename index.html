@@ -1,6 +1,278 @@
 <!DOCTYPE HTML>
 <html lang="th">
 <head>
+  <!-- =========================
+    SINGLE FILE (Copy/Paste once)
+    - ปุ่มเมนูมุมซ้ายบน: กดแล้ว Sidebar สไลด์ปิดไปทางซ้าย / กดอีกครั้งสไลด์เปิดกลับมาทางขวา (คงทิศทางถูกต้องเสมอ)
+    - ปุ่มลอยด้านขวา: “ตามการเลื่อน” ขึ้น/ลง (มีเอฟเฟกต์ไหลตาม)
+    - SEO-first: canonical + OG + LocalBusiness + Article schema
+    ต้องเปลี่ยน 2 อย่าง:
+      1) https://example.com -> โดเมนจริง
+      2) ที่อยู่/พิกัด/ลิงก์เพจ/ลิงก์แผนที่ (ใน Schema)
+  ========================== -->
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M26CWCKV');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>คุณกำลังหายใจเอา “เชื้อรา” หรืออาบน้ำผสม “ซากตะกอน” อยู่รึเปล่า? | ขอนแก่นไฮเทค</title>
+  <meta name="description" content="บทความให้ความรู้เกี่ยวกับเชื้อรา กลิ่นอับ คราบตะกอนในแอร์/น้ำ พร้อมแนวทางแก้ไข และบริการช่างขอนแก่นแบบจบงานจริง" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#d4af37" />
+
+  <!-- Canonical + Hreflang (เปลี่ยนโดเมนจริง) -->
+  <link rel="canonical" href="https://example.com/article.html" />
+  <link rel="alternate" hreflang="th-TH" href="https://example.com/article.html" />
+
+  <!-- Open Graph / Twitter (เปลี่ยนโดเมนจริง + รูป OG) -->
+  <meta property="og:locale" content="th_TH" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="ขอนแก่นไฮเทค" />
+  <meta property="og:title" content="คุณกำลังหายใจเอา “เชื้อรา” หรืออาบน้ำผสม “ซากตะกอน” อยู่รึเปล่า?" />
+  <meta property="og:description" content="สัญญาณเตือนเชื้อรา/ตะกอนในระบบ พร้อมวิธีแก้และบริการช่างขอนแก่น" />
+  <meta property="og:url" content="https://example.com/article.html" />
+  <meta property="og:image" content="https://example.com/images/pic10.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="บทความ | ขอนแก่นไฮเทค" />
+  <meta name="twitter:description" content="เชื้อรา/ตะกอนมาจากไหน แก้อย่างไร" />
+  <meta name="twitter:image" content="https://example.com/images/pic10.webp" />
+
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Your template CSS -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- LocalBusiness Schema (แก้ข้อมูลจริง) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"ขอนแก่นไฮเทค",
+    "alternateName":"Khon Kaen HiTech Service",
+    "url":"https://example.com/",
+    "logo":"https://example.com/images/logo-khonkaen.webp",
+    "telephone":"+66944749874",
+    "priceRange":"฿฿",
+    "areaServed":[
+      {"@type":"AdministrativeArea","name":"ขอนแก่น"},
+      {"@type":"AdministrativeArea","name":"มหาสารคาม"},
+      {"@type":"AdministrativeArea","name":"กาฬสินธุ์"}
+    ],
+    "address":{
+      "@type":"PostalAddress",
+      "addressCountry":"TH",
+      "addressRegion":"ขอนแก่น",
+      "addressLocality":"ขอนแก่น",
+      "streetAddress":"ใส่ที่อยู่หน้าร้าน/สำนักงาน"
+    },
+    "geo":{"@type":"GeoCoordinates","latitude":16.4419,"longitude":102.8350},
+    "sameAs":[
+      "https://line.me/ti/p/~KKHITECH",
+      "ใส่ลิงก์เพจ Facebook",
+      "ใส่ลิงก์ Google Maps"
+    ]
+  }
+  </script>
+
+  <!-- Article Schema (แก้วันที่จริงได้) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://example.com/article.html"},
+    "headline":"คุณกำลังหายใจเอา “เชื้อรา” หรืออาบน้ำผสม “ซากตะกอน” อยู่รึเปล่า?",
+    "description":"บทความให้ความรู้เกี่ยวกับเชื้อรา กลิ่นอับ และคราบตะกอนในระบบ พร้อมแนวทางแก้ไข",
+    "image":["https://example.com/images/pic10.webp"],
+    "author":{"@type":"Organization","name":"ขอนแก่นไฮเทค"},
+    "publisher":{"@type":"Organization","name":"ขอนแก่นไฮเทค","logo":{"@type":"ImageObject","url":"https://example.com/images/logo-khonkaen.webp"}},
+    "datePublished":"2026-01-01",
+    "dateModified":"2026-01-01"
+  }
+  </script>
+
+  <style>
+    :root{
+      --kh-sidebar-w: 300px;
+      --kh-gold: #d4af37;
+      --kh-line: rgba(0,0,0,0.10);
+      --kh-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    body, input, select, textarea, button { font-family: 'Sarabun', sans-serif; }
+
+    /* ===== Fix layout deterministic: sidebar always left, slide only to LEFT ===== */
+    #wrapper{ display:block; }
+
+    /* Sidebar: fixed-left like screenshot */
+    #sidebar{
+      width: var(--kh-sidebar-w);
+      max-width: 86vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10000;
+      overflow-y: auto;
+      background: #fcfcfc;
+      border-right: 1px solid var(--kh-line);
+      border-left: none !important;
+      transform: translateX(0);
+      transition: transform .26s ease;
+      margin: 0 !important;
+      right: auto !important;
+    }
+    /* CLOSED: always slide out to the LEFT */
+    #sidebar.inactive{
+      transform: translateX(-100%);
+      left: 0 !important;
+      right: auto !important;
+      margin: 0 !important;
+    }
+
+    /* Main: reserve space when sidebar open */
+    #main{
+      margin-left: var(--kh-sidebar-w);
+      transition: margin-left .26s ease;
+      min-height: 100vh;
+    }
+    body.kh-sidebar-closed #main{ margin-left: 0; }
+
+    /* Hide template toggle (we use top-left button) */
+    #sidebar .toggle{ display:none !important; }
+
+    /* ===== Top header hamburger button (like circled left) ===== */
+    .kh-top{
+      display:flex;
+      align-items:center;
+      gap: 14px;
+    }
+    .kh-menu-btn{
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.12);
+      background: #fff;
+      cursor: pointer;
+      display: inline-flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      flex: 0 0 auto;
+    }
+    .kh-menu-btn i{
+      font-size: 18px;
+      color: #111;
+    }
+
+    /* Logo sizing */
+    .kh-brand{ display:flex; align-items:center; gap: 10px; }
+    .kh-brand__img img{ width:44px; height:44px; object-fit:contain; display:block; }
+    .kh-brand__th{ font-weight: 900; }
+    .kh-brand__en{ font-size: 12px; letter-spacing:.4px; color: rgba(0,0,0,.55); text-transform: uppercase; font-weight: 800; }
+
+    /* Sidebar menu look (clean like screenshot) */
+    ul.menu-gold { list-style: none; padding: 0; margin: 0; }
+    ul.menu-gold li { margin-bottom: 8px; padding: 0 !important; border: none !important; }
+    .menu-btn{
+      display:block;
+      background:#fff;
+      border:1px solid rgba(0,0,0,0.08);
+      padding: 10px 12px;
+      border-radius: 12px;
+      color: #222 !important;
+      font-weight: 800;
+      text-decoration: none;
+      transition: .15s ease;
+    }
+    .menu-btn:hover{
+      border-color: rgba(212,175,55,.55);
+      box-shadow: 0 10px 22px rgba(212,175,55,.10);
+      transform: translateY(-1px);
+    }
+    .menu-btn.is-active{
+      border-color: rgba(212,175,55,.95);
+      background: linear-gradient(90deg, rgba(212,175,55,.12), #fff);
+    }
+    .menu-header{
+      font-size: 12px;
+      color: #a87910;
+      margin: 16px 0 8px;
+      text-transform: uppercase;
+      font-weight: 900;
+      padding-left: 4px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding-bottom: 6px;
+    }
+    .btn-contact-gold{
+      background: linear-gradient(135deg, #ffca28 0%, #ff6f00 100%);
+      color:#fff !important;
+      border: none;
+      text-align:center;
+      border-radius: 999px;
+      box-shadow: 0 10px 26px rgba(255, 111, 0, 0.28);
+    }
+
+    /* ===== Floating right buttons (circled right) - scroll-follow (absolute + JS) ===== */
+    #khFloatBar{
+      position: absolute;
+      right: 16px;
+      top: 220px; /* JS will animate this */
+      z-index: 9999;
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+      pointer-events: auto;
+    }
+    .kh-fbtn{
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: var(--kh-shadow);
+      color:#fff !important;
+      text-decoration:none;
+      border: 1px solid rgba(255,255,255,0.55);
+      user-select:none;
+    }
+    .kh-fbtn i{ font-size: 18px; }
+    .kh-fbtn.call{ background:#fbbf24; color:#111 !important; }
+    .kh-fbtn.line{ background:#22c55e; }
+    .kh-fbtn.tool{ background:#ef4444; }
+    .kh-fbtn.fb{ background:#1877f2; }
+
+    /* Overlay (mobile) */
+    #khOverlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.25);
+      z-index: 9998;
+      display: none;
+    }
+    #khOverlay.show{ display:block; }
+
+    /* Mobile behavior */
+    @media screen and (max-width: 1280px){
+      #main{ margin-left: 0; }
+      /* On mobile, sidebar is closed by default (JS will set) */
+    }
+  </style>
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
