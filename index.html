@@ -1,5 +1,115 @@
+
 <!DOCTYPE HTML>
 <html lang="th">
+<head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-M26CWCKV');</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>ช่างขอนแก่นไฮเทค | บริการล้างแอร์และซ่อมบำรุงอันดับ 1</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        .kh-menu-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 10001;
+            background: #fff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            cursor: pointer;
+            border: 1px solid #d4af37;
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+    <div class="kh-menu-btn" id="sidebarToggle">
+        <i class="fas fa-bars" style="color: #a87910;"></i> <span style="font-weight: bold; color: #333; margin-left: 5px;">MENU</span>
+    </div>
+
+    <div id="wrapper">
+        <div id="main">
+            <div class="inner">
+                <header id="header">
+                    <a href="index.html" class="logo">
+                        <strong class="kh-brand__th">ขอนแก่นไฮเทค</strong>
+                        <span class="kh-brand__en">KHON KAEN HITECH</span>
+                    </a>
+                </header>
+
+                <section>
+                    <header class="main">
+                        <h1>บริการล้างแอร์มืออาชีพ ขอนแก่น</h1>
+                    </header>
+                    <p>เนื้อหาบทความของคุณ...</p>
+                </section>
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <div class="inner">
+                <nav id="menu">
+                    <header class="major">
+                        <h2>เมนูบริการ</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index.html" class="menu-btn">หน้าแรก</a></li>
+                        <li><a href="air-cleaning.html" class="menu-btn">ล้างแอร์บ้าน</a></li>
+                        <li><a href="washing-machine.html" class="menu-btn">ล้างเครื่องซักผ้า</a></li>
+                        <li>
+                            <span class="opener menu-btn">พื้นที่ให้บริการ</span>
+                            <ul>
+                                <li><a href="#">ในเมืองขอนแก่น</a></li>
+                                <li><a href="#">มข. / กังสดาล</a></li>
+                                <li><a href="#">บ้านเป็ด / เหล่านาดี</a></li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li>
+                            <a href="tel:0944749874" class="button primary big btn-contact-gold" style="width: 100%;">
+                                <i class="icon solid fa-phone"></i> โทรด่วน 094-474-9874
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <footer id="footer">
+                    <p class="copyright">© ขอนแก่นไฮเทค</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var $sidebar = $('#sidebar');
+            var $toggle = $('#sidebarToggle');
+
+            $toggle.on('click', function() {
+                $sidebar.toggleClass('inactive');
+                // เปลี่ยนไอคอนเมื่อเปิด/ปิด
+                $(this).find('i').toggleClass('fa-bars fa-times');
+            });
+
+            // ปิดอัตโนมัติถ้าหน้าจอเล็ก (Mobile) แล้วมีการคลิกลิงก์
+            $('#menu a').on('click', function() {
+                if ($(window).width() < 1280) {
+                    $sidebar.addClass('inactive');
+                    $toggle.find('i').addClass('fa-bars').removeClass('fa-times');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
 <head>
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
