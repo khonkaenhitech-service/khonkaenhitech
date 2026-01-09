@@ -1,6 +1,7 @@
 /* ==========================================================================
    KHON KAEN HITECH – MASTER STYLE (Full Option: Luxury + Dark Psychology)
    รวม: ธีมทอง, ปุ่มลอย (Inject), แถบมือถือ, รีวิว, และ Animation สะกดจิต
+   Updated: Fix White Gap & Header Button
    ========================================================================== */
 
 /* =========================
@@ -8,11 +9,11 @@
    ========================= */
 :root {
   /* Brand Colors */
-  --kh-primary: #d32f2f;       /* สีแดง: กระตุ้นความเร่งด่วน, อันตราย, ความสนใจ (Dark Psy: Fear/Urgency) */
-  --kh-accent: #2c3e50;        /* สีน้ำเงินเข้ม: ความหนักแน่น, เป็นทางการ */
+  --kh-primary: #d32f2f;       
+  --kh-accent: #2c3e50;        
 
   /* Text & Backgrounds */
-  --ink: #0b1220;              /* ดำหมึก: อ่านง่าย สบายตา */
+  --ink: #0b1220;              
   --ink-2: rgba(11,18,32,.78);
   --paper: #ffffff;
   --paper-2: #f9f9f9;
@@ -23,7 +24,7 @@
   --radius: 12px;
   --shadow: 0 10px 30px rgba(0,0,0,.06);
 
-  /* LUXURY GOLD (Trust & Authority) */
+  /* LUXURY GOLD */
   --gold: #a87910;
   --gold-light: #d4a035;
   --gold-cream: rgba(255, 244, 218, .98);
@@ -54,7 +55,6 @@ img { max-width: 100%; height: auto; border-radius: var(--radius); }
 /* =========================
    3) PSYCHOLOGY BUTTONS & BOXES
    ========================= */
-/* ปุ่มกด (เน้นความนูนเพื่อให้ "น่ากด") */
 .button {
   border-radius: 50px !important; font-weight: 700 !important;
   text-transform: none !important; letter-spacing: 0.5px !important;
@@ -64,42 +64,44 @@ img { max-width: 100%; height: auto; border-radius: var(--radius); }
 .button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important; }
 .button.primary { background: var(--gold-gradient) !important; box-shadow: 0 4px 15px rgba(168, 121, 16, 0.4) !important; }
 
-/* กล่องบริการ (Feature Box) */
-.features article {
-  background: var(--paper); border: 1px solid var(--border); border-radius: 16px;
-  padding: 25px; box-shadow: var(--shadow); transition: 0.3s; height: 100%; margin-bottom: 30px;
-}
-.features article:hover { transform: translateY(-7px); border-color: var(--gold); }
-.features .icon {
-  color: var(--gold); font-size: 1.5em; margin-bottom: 15px; width: 60px; height: 60px;
-  background: #fff8e1; border-radius: 15px; display: flex; align-items: center; justify-content: center;
-}
-
-/* กล่องเตือนใจ (Fear/Pain Point Box) */
-.highlight-box {
-  background-color: #fffbf0; border-left: 5px solid var(--gold);
-  padding: 20px; margin: 30px 0; border-radius: 0 8px 8px 0;
-}
-
 /* =========================
    4) HEADER & MENU
    ========================= */
 #header { display: flex; align-items: center; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid rgba(168,121,16,0.15); margin-bottom: 40px; }
+
+/* ส่วนบนซ้าย: ปุ่มเมนู + โลโก้ */
+#header .kh-top { display: flex; align-items: center; gap: 14px; }
+
+/* ปุ่มเมนู (Custom Hamburger) */
+.kh-menu-btn {
+  width: 46px; height: 46px; border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.12); background: #fff;
+  cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06); color: #111; font-size: 18px;
+  transition: all 0.2s;
+}
+.kh-menu-btn:hover { color: var(--gold); border-color: var(--gold); }
+
+/* โลโก้ */
 #header .kh-brand { display: flex !important; align-items: center; gap: 15px; text-decoration: none !important; border-bottom: none !important; }
 #header .kh-brand__img { width: 56px; height: 56px; border-radius: 14px; background: #fff; display: grid; place-items: center; border: 1px solid rgba(168, 121, 16, 0.25) !important; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08) !important; }
 #header .kh-brand__img img { width: 100%; height: 100%; object-fit: contain; }
 #header .kh-brand__th { font-family: 'Sarabun', sans-serif; font-weight: 800; font-size: 24px; background: var(--gold-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
 #header .kh-brand__en { font-size: 13px; font-weight: 600; color: #607d8b; text-transform: uppercase; letter-spacing: 1px; }
 
+/* ปุ่มขวา (โทร/ไลน์) */
 #header ul.icons { display: flex !important; gap: 12px !important; margin: 0 !important; }
 #header ul.icons li { list-style: none; padding: 0 !important; margin: 0 !important; }
 #header ul.icons a { width: 44px; height: 44px; border-radius: 12px; display: grid !important; place-items: center !important; background: linear-gradient(180deg, #fff 0%, #fff8e1 100%); border: 1px solid rgba(212, 175, 55, 0.3); color: #8c6b1a !important; transition: 0.25s; }
 #header ul.icons a:hover { transform: translateY(-4px); border-color: #d32f2f; color: #d32f2f !important; background: #fff; }
 
 /* =========================
-   5) SIDEBAR & FIXED BUTTONS
+   5) SIDEBAR (MENU)
    ========================= */
-#sidebar { background: #fdfdfd; border-right: 1px solid rgba(0,0,0,0.05); }
+#sidebar { 
+  background: #fdfdfd; border-right: 1px solid rgba(0,0,0,0.05); 
+  width: 300px;
+}
 #menu ul li.divider {
   margin: 18px 0 10px 0 !important; padding: 10px 12px !important;
   background: linear-gradient(90deg, var(--gold-cream) 0%, rgba(255,255,255,0.9) 100%) !important;
@@ -112,19 +114,19 @@ img { max-width: 100%; height: auto; border-radius: var(--radius); }
   background: linear-gradient(90deg, #fff 0%, #fff8e1 100%) !important; color: #000 !important; font-weight: 800 !important; border-left: 4px solid var(--gold) !important; padding-left: 15px !important;
 }
 
-/* Contact Buttons in Sidebar */
-#menu a.button.btn-tel, #menu a.button.btn-line, #menu a.button.btn-fb, #menu a.button.btn-map {
+/* ปุ่มติดต่อในเมนู */
+#menu a.button.btn-tel, #menu a.button.btn-line, #menu a.button.btn-fb {
   width: 100% !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; gap: 6px !important; min-height: 85px !important; padding: 12px !important; border-radius: 16px !important; font-weight: 800 !important; font-size: 15px !important; text-align: center; margin-bottom: 15px !important;
 }
 #menu a.button.btn-tel { background: linear-gradient(180deg, #fff8d1 0%, #ffdd55 35%, #ffb300 100%) !important; color: #2c1a00 !important; border: 1px solid rgba(184, 134, 11, 0.4) !important; box-shadow: 0 10px 20px rgba(255, 179, 0, 0.25) !important; }
 #menu a.button.btn-line { background: linear-gradient(180deg, #f0fff4 0%, #c6f6d5 100%) !important; color: #044622 !important; border: 1px solid #48bb78 !important; }
 #menu a.button.btn-fb { background: linear-gradient(180deg, #ebf8ff 0%, #bee3f8 100%) !important; color: #1a365d !important; border: 1px solid #63b3ed !important; }
+.btn-contact-gold { background: linear-gradient(135deg, #ffca28 0%, #ff6f00 100%); color:#fff !important; border: none; border-radius: 999px; box-shadow: 0 10px 26px rgba(255, 111, 0, 0.28); }
 
 /* =========================
-   6) INJECTED WIDGETS (เขียนโค้ดที่เดียว โชว์ทุกหน้า)
+   6) WIDGETS
    ========================= */
-
-/* --- 6.1 Desktop Floating Widget --- */
+/* Floating Buttons (Desktop) */
 .kh-social-float {
   position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
   display: flex; flex-direction: column; gap: 15px; z-index: 99999;
@@ -134,71 +136,70 @@ img { max-width: 100%; height: auto; border-radius: var(--radius); }
   display: flex; justify-content: center; align-items: center;
   color: #fff !important; text-decoration: none; font-size: 28px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2); position: relative;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s;
 }
 .kh-app-btn:hover { transform: scale(1.15) translateX(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
 
-/* Tooltip (ข้อความลอย) */
-.kh-app-btn::after {
-  content: attr(data-label); position: absolute; right: 70px;
-  background: rgba(0,0,0,0.8); color: #fff; padding: 5px 10px; border-radius: 6px;
-  font-size: 12px; white-space: nowrap; opacity: 0; pointer-events: none;
-  transition: 0.3s; transform: translateX(10px);
+/* Floating Buttons (Custom from HTML) */
+#khFloatBar {
+  position: absolute; right: 16px; top: 220px; z-index: 9999;
+  display:flex; flex-direction: column; gap: 10px;
 }
-.kh-app-btn:hover::after { opacity: 1; transform: translateX(0); }
-
-/* --- 6.2 Mobile Sticky Bar --- */
-.mobile-action-bar { display: none; } /* ซ่อนใน PC */
-
-@media screen and (max-width: 768px) {
-  body { padding-bottom: 80px; } /* ดันเนื้อหาขึ้น */
-  .kh-social-float { display: none; } /* ซ่อนปุ่มลอยในมือถือ */
-
-  .mobile-action-bar {
-    display: flex; position: fixed; bottom: 0; left: 0; width: 100%; height: 65px;
-    background: #fff; box-shadow: 0 -2px 15px rgba(0,0,0,0.1); z-index: 99999; border-top: 1px solid #eee;
-  }
-  .action-btn {
-    flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;
-    text-decoration: none !important; font-size: 0.7em; font-weight: bold;
-    border-bottom: none !important; border-right: 1px solid #f5f5f5; transition: background 0.2s;
-  }
-  .action-btn:last-child { border-right: none; }
-  .action-btn i { font-size: 1.4em; margin-bottom: 2px; }
+.kh-fbtn {
+  width: 46px; height: 46px; border-radius: 12px;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: var(--shadow); color:#fff !important; text-decoration:none;
+  border: 1px solid rgba(255,255,255,0.55);
 }
+.kh-fbtn i { font-size: 18px; }
+.kh-fbtn.call { background:#fbbf24; color:#111 !important; }
+.kh-fbtn.line { background:#22c55e; }
+.kh-fbtn.fb { background:#1877f2; }
 
-/* --- 6.3 COLORS & ANIMATIONS (Dark Psychology: Attention Grabbing) --- */
-@keyframes pulse-red {
-  0% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7); }
-  70% { box-shadow: 0 0 0 10px rgba(211, 47, 47, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
+/* Overlay (Mobile) */
+#khOverlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.25);
+  z-index: 9998; display: none;
 }
-@keyframes pulse-gold {
-  0% { box-shadow: 0 0 0 0 rgba(255, 179, 0, 0.7); }
-  70% { box-shadow: 0 0 0 10px rgba(255, 179, 0, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 179, 0, 0); }
-}
-
-/* สีปุ่ม (ใช้คลาสร่วมกันทั้ง Desktop/Mobile) */
-.btn-tel-color { background: linear-gradient(135deg, #ffb300 0%, #ff8f00 100%); animation: pulse-gold 2s infinite; }
-.btn-line-color { background: linear-gradient(135deg, #06c755 0%, #00b900 100%); }
-.btn-fb-color { background: linear-gradient(135deg, #1877f2 0%, #0056b3 100%); }
-.btn-repair-color { background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); animation: pulse-red 2s infinite; }
-
-/* สีเฉพาะใน Mobile Bar (พื้นขาว ตัวหนังสือสี) */
-.mobile-action-bar .btn-tel-color { background: #fff; color: #a87910 !important; }
-.mobile-action-bar .btn-line-color { background: #06c755; color: #fff !important; }
-.mobile-action-bar .btn-repair-color { background: #d32f2f; color: #fff !important; border-top: 3px solid #b71c1c; }
-.mobile-action-bar .btn-fb-color { background: #1877f2; color: #fff !important; }
+#khOverlay.show { display:block; }
 
 /* =========================
-   7) REVIEWS & SLIDER
+   7) MOBILE FIXES (แก้ขอบขาว + Sidebar)
    ========================= */
-/* (สไตล์เดิมของรีวิวและสไลเดอร์ที่ผมเคยให้ ยังคงอยู่ครบถ้วนในนี้เพื่อให้ไฟล์เดียวจบ) */
-.kh-reviews-marquee { overflow: hidden; background: #fdfdfd; padding: 30px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.05); margin-top: 30px; }
-.kh-review { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 20px; border-left: 4px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-.kh-stars { color: #FFD700; font-size: 1.2em; letter-spacing: 2px; text-shadow: 0 1px 2px rgba(0,0,0,0.1); }
-.kh-review-source { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85em; font-weight: 600; padding: 4px 10px; border-radius: 4px; color: #555; background: #f9f9f9; float: right; }
-.kh-slider-wrapper { position: relative; margin: 2em 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-.kh-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 0; scrollbar-width: none; }
-.kh-slide { flex: 0 0 100%; scroll-snap-align: center; position: relative; }
+@media screen and (max-width: 1280px) {
+    /* 1. ลบขอบขาว: บังคับให้เนื้อหาหลักเต็มจอ */
+    #main {
+        margin-left: 0 !important;
+        padding-top: 20px;
+    }
+
+    /* 2. จัด Sidebar ให้ซ่อนเนียนๆ ทางซ้าย */
+    #sidebar {
+        transform: translateX(0);
+        left: 0;
+        top: 0;
+        height: 100vh;
+        z-index: 10000;
+        position: fixed;
+        transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        box-shadow: 5px 0 25px rgba(0,0,0,0.1);
+    }
+    
+    /* สถานะปิด Sidebar */
+    #sidebar.inactive {
+        transform: translateX(-100%);
+        box-shadow: none;
+    }
+
+    /* 3. ซ่อนปุ่ม Toggle เดิมของเทมเพลต (เราใช้ปุ่มใหม่ใน Header แล้ว) */
+    #sidebar .toggle {
+        display: none !important;
+    }
+
+    /* 4. ปรับปุ่มลอยในมือถือ */
+    #khFloatBar { display: none; } /* ซ่อนปุ่มข้างจอ */
+
+    /* 5. ปรับขนาด Logo มือถือ */
+    #header .kh-brand__th { font-size: 20px; }
+    #header .kh-brand__en { font-size: 11px; }
+}
