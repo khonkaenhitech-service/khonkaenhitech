@@ -1,25 +1,42 @@
-KH ADVANCED PACK (SEO-first + Sidebar Fix + Active Menu + Floating Follow)
+# ขอนแก่นไฮเทค (Khon Kaen HiTech)
+**ศูนย์บริการรับติดตั้งระบบหยอดเหรียญและงานระบบครบวงจร ในจังหวัดขอนแก่น**
 
-Files included:
-1) style.css
-   - Replace your existing style.css with this one.
-   - Keep your <link rel="stylesheet" href="assets/css/main.css"> then <link rel="stylesheet" href="style.css">
+🌐 **เข้าสู่เว็บไซต์หลัก (Website):** https://khonkaenhitech-service.github.io/khonkaenhitech/
 
-2) assets/js/kh-current-tab.js
-   - Replace your existing file with this one.
+---
 
-3) assets/js/kh-advanced-ui.js
-   - Add to your HTML (before </body>), after main.js:
-     <script src="assets/js/kh-advanced-ui.js"></script>
+## 🛠️ เกี่ยวกับเรา (About Us)
+**ขอนแก่นไฮเทค** ให้บริการรับเหมาติดตั้งและวางระบบสำหรับหอพัก อพาร์ตเมนต์ และบ้านพักอาศัย ในเขตพื้นที่ **จังหวัดขอนแก่น (Khon Kaen)** และจังหวัดใกล้เคียง เราเชี่ยวชาญด้านระบบเครื่องซักผ้าหยอดเหรียญ ระบบน้ำ-ไฟ และเทคโนโลยีความปลอดภัย
 
-4) seo-pack-head.html
-   - Paste into <head> of every page (replace SITE_NAME, OG_IMAGE_PATH)
+## ✅ บริการของเรา (Our Services)
 
-5) floatbar-snippet.html
-   - Paste once into <body> (near end) to create right floating buttons.
+### 1. ระบบหยอดเหรียญ (Vending Systems)
+* **เครื่องซักผ้าหยอดเหรียญ (Coin-operated Laundry):** รับติดตั้งเครื่องซักผ้า/เครื่องอบผ้าหยอดเหรียญ พร้อมเดินระบบน้ำ-ไฟ ครบวงจร
+* **ตู้น้ำหยอดเหรียญ (RO Water Vending Machine):** ติดตั้งตู้น้ำดื่มระบบ RO สะอาด ได้มาตรฐาน
+* **ระบบกล่องหยอดเหรียญ (Coin Box):** จำหน่ายและติดตั้งกล่องหยอดเหรียญ QR Code สำหรับเครื่องใช้ไฟฟ้าทุกชนิด
 
-Notes:
-- Sidebar toggle direction bug is fixed by forcing sidebar to left and close only to left.
-- Active menu is set automatically (is-active + aria-current).
-- Floating buttons follow scroll smoothly (up/down).
+### 2. งานระบบไฟฟ้าและอินเทอร์เน็ต (Electrical & Internet)
+* **งานไฟฟ้า (Electrical Work):** รับเดินสายไฟอาคาร ตู้คอนโทรล ตู้ MDB แก้ไขไฟตก ไฟกระชาก
+* **อินเทอร์เน็ตหอพัก (Dorm Hotspot):** วางระบบ WiFi Hotspot, เดินสาย LAN, Fiber Optic และตั้งค่า MikroTik จัดการผู้ใช้งาน
+
+### 3. ความปลอดภัยและกล้องวงจรปิด (Security System)
+* **กล้องวงจรปิด (CCTV):** ติดตั้งกล้องวงจรปิด ดูออนไลน์ผ่านมือถือได้ 24 ชม.
+* **ระบบควบคุมการเข้าออก:** คีย์การ์ด (Keycard Access), ประตูแม่เหล็ก, ไม้กั้นรถยนต์ (Barrier Gate)
+
+### 4. งานก่อสร้างและอื่นๆ (Construction & Others)
+* **โซล่าเซลล์ & แอร์ (Solar & Air Conditioner):** ติดตั้งแอร์ ล้างแอร์ และระบบโซล่าเซลล์เพื่อประหยัดพลังงาน
+* **งานก่อสร้าง (Construction):** รับเหมาต่อเติมบ้าน โรงจอดรถ งานโครงสร้างเหล็ก งานปูน
+
+---
+
+## 📞 ติดต่อเรา (Contact Us)
+หากคุณกำลังมองหาช่างในขอนแก่น ปรึกษาเราได้ฟรี!
+
+* **Tel:** 094-474-9874
+* **Line ID:** KKHITECH ([คลิกแอดไลน์](https://line.me/ti/p/~KKHITECH))
+* **Facebook:** ขอนแก่นไฮเทค
+* **พื้นที่ให้บริการ:** เมืองขอนแก่น, มหาวิทยาลัยขอนแก่น (มข.), และอำเภอใกล้เคียง
+
+---
+Keywords: รับติดตั้งเครื่องซักผ้าหยอดเหรียญ ขอนแก่น, ช่างไฟฟ้า ขอนแก่น, กล้องวงจรปิด ขอนแก่น, ตู้น้ำหยอดเหรียญ ขอนแก่น, ระบบอินเทอร์เน็ตหอพัก, ซ่อมบำรุงงานระบบ ขอนแก่น
 
