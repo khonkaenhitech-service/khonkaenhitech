@@ -97,13 +97,13 @@ body, input, select, textarea {
   font-size: 13pt;
   font-weight: 400;
   line-height: 1.65; }
-  @media screen and (max-width: 1680px) {
+  @media screen and (max-width: 168px) {
     body, input, select, textarea {
       font-size: 11pt; } }
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 128px) {
     body, input, select, textarea {
       font-size: 10pt; } }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 36px) {
     body, input, select, textarea {
       font-size: 9pt; } }
 
@@ -1854,7 +1854,7 @@ button,
   -webkit-flex-shrink: 1;
   -ms-flex-shrink: 1;
   flex-shrink: 1;
-  width: 100%; }
+  width: 50%; }
   #main > .inner {
     padding: 0 6em 0.1em 6em ;
     margin: 0 auto;
@@ -2272,6 +2272,7 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+
 
 
 
