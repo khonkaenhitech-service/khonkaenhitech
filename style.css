@@ -378,3 +378,86 @@ body.kh-sidebar-closed #main{ margin-left:0 !important; }
 @media screen and (max-width:1280px){
   #main{ margin-left:0 !important; }
 }
+
+
+/* -----------------------------
+   6) LUXURY MENU HEADERS (Sidebar)
+   Paste below (overrides previous header style)
+----------------------------- */
+#sidebar #menu .menu-header,
+#sidebar #menu .menu-gold-header,
+#sidebar #menu li.menu-header{
+  /* layout */
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+
+  /* spacing fits the white card */
+  margin:16px 0 10px 0 !important;
+  padding:11px 12px !important;
+
+  /* luxury ribbon */
+  background:
+    linear-gradient(90deg,
+      rgba(168,121,16,.18) 0%,
+      rgba(212,160,53,.12) 18%,
+      rgba(255,255,255,0) 68%,
+      rgba(255,255,255,0) 100%) !important;
+  border:1px solid rgba(168,121,16,.18) !important;
+  border-left:5px solid var(--kh-gold) !important;
+  border-top:none !important;
+
+  border-radius:12px !important;
+  box-shadow: 0 10px 22px rgba(0,0,0,.06) !important;
+
+  /* type */
+  color: #7c5a08 !important;
+  font-weight: 900 !important;
+  font-size: 12px !important;
+  letter-spacing: 1.1px !important;
+  text-transform: uppercase !important;
+
+  position:relative !important;
+  overflow:hidden !important;
+}
+
+/* diamond accent (lux) */
+#sidebar #menu .menu-header::before,
+#sidebar #menu .menu-gold-header::before,
+#sidebar #menu li.menu-header::before{
+  content:"" !important;
+  width:8px !important;
+  height:8px !important;
+  transform: rotate(45deg) !important;
+  border-radius:2px !important;
+  background: var(--kh-gold-grad) !important;
+  box-shadow: 0 6px 14px rgba(168,121,16,.22) !important;
+  flex: 0 0 auto !important;
+}
+
+/* subtle shine sweep */
+#sidebar #menu .menu-header::after,
+#sidebar #menu .menu-gold-header::after,
+#sidebar #menu li.menu-header::after{
+  content:"" !important;
+  position:absolute !important;
+  top:-30% !important;
+  left:-40% !important;
+  width:60% !important;
+  height:160% !important;
+  transform: rotate(18deg) !important;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.35) 50%,
+    rgba(255,255,255,0) 100%) !important;
+  opacity:.35 !important;
+  pointer-events:none !important;
+}
+
+/* If your header text includes "◆", make it look intentional */
+#sidebar #menu .menu-header,
+#sidebar #menu .menu-gold-header,
+#sidebar #menu li.menu-header{
+  text-shadow: 0 1px 0 rgba(255,255,255,.6) !important;
+}
+
