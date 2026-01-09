@@ -1,157 +1,380 @@
 /* ==========================================================================
-   KHON KAEN HITECH – MASTER STYLE (Full Option: Luxury + Dark Psychology)
+   KHON KAEN HITECH – ADVANCED STYLE PACK (SEO + UX + Sidebar Fix + Premium UI)
+   Version: 1.0
+   Drop-in replacement for your style.css (place after assets/css/main.css)
    ========================================================================== */
 
-/* 1) VARIABLES: จิตวิทยาแห่งสี */
-:root {
-  --kh-primary: #d32f2f;       /* แดง: กระตุ้นความกลัว/เร่งด่วน (Fear/Urgency) */
-  --kh-accent: #2c3e50;        /* น้ำเงินเข้ม: ความเป็นมืออาชีพ (Authority) */
-  --gold: #a87910;             /* ทอง: ความมั่งคั่ง/น่าเชื่อถือ (Wealth/Trust) */
-  --gold-light: #d4a035;
-  --gold-gradient: linear-gradient(135deg, #b8870b 0%, #d46a00 100%);
-  --paper: #ffffff;
-  --paper-2: #f9f9f9;
-  --shadow: 0 10px 30px rgba(0,0,0,.06);
-  --radius: 12px;
+/* -----------------------------
+   0) Design Tokens
+----------------------------- */
+:root{
+  --kh-primary:#d32f2f;             /* urgency */
+  --kh-accent:#2c3e50;              /* authority */
+  --kh-gold:#a87910;                /* trust/wealth */
+  --kh-gold-light:#d4a035;
+  --kh-gold-grad:linear-gradient(135deg,#b8870b 0%,#d46a00 100%);
+
+  --kh-paper:#ffffff;
+  --kh-paper-2:#f9fafb;
+  --kh-ink:#111827;
+  --kh-ink-2:#374151;
+  --kh-muted:#6b7280;
+
+  --kh-line:rgba(0,0,0,.08);
+  --kh-shadow:0 10px 30px rgba(0,0,0,.06);
+  --kh-shadow-2:0 18px 45px rgba(0,0,0,.10);
+  --kh-radius:12px;
+
+  --kh-sidebar-w:300px;
+  --kh-fab-size:46px;
 }
 
-/* 2) GLOBAL ELEMENTS */
-html { scroll-behavior: smooth; }
-body { font-family: 'Sarabun', 'Open Sans', sans-serif; color: #333; line-height: 1.7; }
-
-/* หัวข้อขีดเส้นทอง */
-h1, h2, h3 { font-weight: 800; color: #222; }
-h2 { position: relative; display: inline-block; margin-bottom: 1.5em; }
-h2::after {
-  content: ""; position: absolute; bottom: -10px; left: 0; width: 60px; height: 4px;
-  background: var(--gold-gradient); border-radius: 2px;
+/* -----------------------------
+   1) Global / SEO UX
+----------------------------- */
+html{ scroll-behavior:smooth; }
+body{
+  font-family:'Sarabun','Open Sans',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:#333;
+  line-height:1.7;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
-/* ปุ่มกด (3D Button - น่ากด) */
-.button.primary {
-  background: var(--gold-gradient) !important;
-  box-shadow: 0 4px 15px rgba(168, 121, 16, 0.4) !important;
-  border-radius: 50px !important; border: none; font-weight: bold;
-  transition: transform 0.2s;
-}
-.button.primary:hover { transform: translateY(-3px); }
+img{ max-width:100%; height:auto; }
+a{ -webkit-tap-highlight-color:transparent; }
+:focus-visible{ outline:3px solid rgba(168,121,16,.45); outline-offset:2px; border-radius:10px; }
 
-/* 3) MODULES (กล่องต่างๆ) */
-/* กล่อง Feature */
-.features article {
-  background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 16px;
-  padding: 25px; box-shadow: var(--shadow); transition: 0.3s;
-}
-.features article:hover { transform: translateY(-7px); border-color: var(--gold); }
-
-/* กล่องเตือนภัย (Fear Box) */
-.highlight-box {
-  background-color: #fffbf0; border-left: 5px solid var(--kh-primary);
-  padding: 20px; margin: 30px 0; border-radius: 0 8px 8px 0;
+/* Headings */
+h1,h2,h3{ font-weight:800; color:#222; }
+h2{ position:relative; display:inline-block; margin-bottom:1.5em; }
+h2::after{
+  content:""; position:absolute; bottom:-10px; left:0;
+  width:60px; height:4px; background:var(--kh-gold-grad); border-radius:2px;
 }
 
-/* 4) REVIEWS MARQUEE (รีวิวเลื่อนเอง) */
-.kh-reviews-marquee { overflow: hidden; background: #fdfdfd; padding: 30px; border-radius: 16px; margin-top: 30px; border: 1px solid #eee; }
-.kh-review { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 20px; border-left: 4px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-.kh-stars { color: #FFD700; letter-spacing: 2px; }
+/* Primary CTA */
+.button.primary{
+  background:var(--kh-gold-grad) !important;
+  box-shadow:0 6px 18px rgba(168,121,16,.35) !important;
+  border-radius:999px !important;
+  border:none !important;
+  font-weight:900 !important;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.button.primary:hover{ transform:translateY(-3px); box-shadow:0 12px 28px rgba(168,121,16,.30) !important; }
 
-/* 5) MOBILE ACTION BAR (แถบลอยด้านล่างมือถือ) */
-.mobile-action-bar { display: none; }
-@media screen and (max-width: 768px) {
-  body { padding-bottom: 70px; }
-  .mobile-action-bar {
-    display: flex; position: fixed; bottom: 0; left: 0; width: 100%; height: 65px;
-    background: #fff; box-shadow: 0 -2px 15px rgba(0,0,0,0.1); z-index: 9999; border-top: 1px solid #eee;
+/* -----------------------------
+   2) Cards / Modules
+----------------------------- */
+.features article{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:16px;
+  padding:25px;
+  box-shadow:var(--kh-shadow);
+  transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+.features article:hover{
+  transform:translateY(-7px);
+  border-color:rgba(168,121,16,.65);
+  box-shadow:var(--kh-shadow-2);
+}
+
+.highlight-box{
+  background-color:#fffbf0;
+  border-left:5px solid var(--kh-primary);
+  padding:20px;
+  margin:30px 0;
+  border-radius:0 10px 10px 0;
+}
+
+.kh-reviews-marquee{
+  overflow:hidden;
+  background:#fdfdfd;
+  padding:30px;
+  border-radius:16px;
+  margin-top:30px;
+  border:1px solid #eee;
+}
+.kh-review{
+  background:#fff;
+  border-radius:12px;
+  padding:20px;
+  margin-bottom:20px;
+  border-left:4px solid var(--kh-gold);
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+.kh-stars{ color:#FFD700; letter-spacing:2px; }
+
+/* -----------------------------
+   3) Sidebar – FIX DIRECTION + WHITE FIT + CLEAN MENU
+   - prevents the "toggle switches direction" bug
+----------------------------- */
+
+/* Kill row-reverse that breaks toggle direction */
+#wrapper{
+  display:flex !important;
+  flex-direction:row !important;
+}
+
+/* Force sidebar on LEFT, stable */
+#sidebar{
+  position:fixed !important;
+  top:0; left:0 !important; right:auto !important;
+  height:100vh !important;
+
+  width:var(--kh-sidebar-w) !important;
+  max-width:86vw !important;
+
+  background:var(--kh-paper) !important;
+  border-right:1px solid var(--kh-line) !important;
+  border-left:none !important;
+
+  overflow-y:auto !important;
+  z-index:10000 !important;
+
+  transform:translateX(0) !important;
+  transition:transform .26s ease !important;
+  margin:0 !important;
+}
+
+/* Always close to LEFT only */
+#sidebar.inactive{
+  transform:translateX(-100%) !important;
+  left:0 !important;
+  right:auto !important;
+  margin:0 !important;
+}
+
+/* main spacing when sidebar open */
+#main{
+  margin-left:var(--kh-sidebar-w) !important;
+  transition:margin-left .26s ease !important;
+  min-height:100vh;
+}
+body.kh-sidebar-closed #main{ margin-left:0 !important; }
+
+/* inner spacing */
+#sidebar > .inner{ padding:16px 14px !important; }
+
+/* menu card */
+#sidebar #menu{
+  background:#fff !important;
+  border:1px solid rgba(0,0,0,.06) !important;
+  border-radius:14px !important;
+  padding:14px !important;
+  box-shadow:0 10px 26px rgba(0,0,0,.06) !important;
+}
+
+/* menu title */
+#sidebar #menu > header.major{
+  margin:0 0 12px 0 !important;
+  padding:0 0 10px 0 !important;
+  border-bottom:1px solid rgba(0,0,0,.06) !important;
+}
+#sidebar #menu > header.major h2{
+  margin:0 !important;
+  font-size:16px !important;
+  font-weight:900 !important;
+  letter-spacing:.2px !important;
+}
+
+/* list reset */
+#sidebar #menu ul,
+#sidebar #menu ul.menu-gold{
+  list-style:none !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+#sidebar #menu ul li{
+  border-top:none !important;
+  padding:0 !important;
+  margin:0 0 8px 0 !important;
+}
+
+/* section headers (supports div or li) */
+#sidebar #menu .menu-header,
+#sidebar #menu .menu-gold-header,
+#sidebar #menu li.menu-header{
+  display:block !important;
+  margin:14px 0 8px 0 !important;
+  padding:10px 4px 6px 4px !important;
+  font-size:12px !important;
+  font-weight:900 !important;
+  color:var(--kh-gold) !important;
+  text-transform:uppercase !important;
+  border-top:1px solid rgba(0,0,0,.06) !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  border-left:none !important;
+  border-radius:0 !important;
+}
+
+/* menu links: full width and fit in white card */
+#sidebar #menu a.menu-btn{
+  display:block !important;
+  width:100% !important;
+  box-sizing:border-box !important;
+
+  background:#fff !important;
+  border:1px solid rgba(0,0,0,.08) !important;
+  border-radius:12px !important;
+
+  padding:10px 12px !important;
+  font-weight:900 !important;
+  font-size:14px !important;
+  color:var(--kh-ink) !important;
+  text-decoration:none !important;
+
+  white-space:normal !important;
+  word-break:break-word !important;
+  line-height:1.35 !important;
+
+  transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
+}
+#sidebar #menu a.menu-btn:hover{
+  border-color:rgba(212,175,55,.55) !important;
+  background:linear-gradient(90deg, rgba(212,175,55,.10), #fff) !important;
+  box-shadow:0 10px 22px rgba(212,175,55,.10) !important;
+  transform:translateY(-1px);
+}
+
+/* active state */
+#sidebar #menu a.menu-btn.is-active,
+#sidebar #menu a.menu-btn.active,
+#sidebar #menu a.menu-btn[aria-current="page"]{
+  border-color:rgba(212,175,55,.95) !important;
+  background:linear-gradient(90deg, rgba(212,175,55,.14), #fff) !important;
+}
+
+/* urgent call button */
+#sidebar #menu a.menu-btn.btn-contact-gold{
+  border:none !important;
+  background:linear-gradient(135deg, #ffca28 0%, #ff6f00 100%) !important;
+  color:#fff !important;
+  text-align:center !important;
+  border-radius:999px !important;
+  box-shadow:0 12px 26px rgba(255,111,0,.22) !important;
+  padding:11px 14px !important;
+}
+
+/* toggle button: pinned top-left, consistent */
+#sidebar .toggle{
+  position:fixed !important;
+  top:14px !important;
+  left:calc(var(--kh-sidebar-w) + 14px) !important;
+
+  width:46px !important;
+  height:46px !important;
+  border-radius:12px !important;
+
+  border:1px solid rgba(0,0,0,.12) !important;
+  background:#fff !important;
+  box-shadow:0 10px 22px rgba(0,0,0,.08) !important;
+
+  z-index:10001 !important;
+
+  text-indent:-9999px !important;
+  overflow:hidden !important;
+}
+#sidebar.inactive .toggle{ left:14px !important; }
+#sidebar .toggle:before{
+  content:'\f0c9' !important;
+  font-family:'Font Awesome 5 Free' !important;
+  font-weight:900 !important;
+  font-size:18px !important;
+  color:var(--kh-gold) !important;
+
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  transform:translate(-50%,-50%) !important;
+}
+
+/* Scrollbar refined */
+#sidebar{
+  scrollbar-width:thin;
+  scrollbar-color:rgba(0,0,0,0.25) transparent;
+}
+#sidebar::-webkit-scrollbar{ width:10px; }
+#sidebar::-webkit-scrollbar-thumb{
+  background:rgba(0,0,0,0.22);
+  border-radius:999px;
+  border:3px solid transparent;
+  background-clip:content-box;
+}
+#sidebar::-webkit-scrollbar-track{ background:transparent; }
+
+/* -----------------------------
+   4) Floating Buttons (optional)
+   - Provide styles for an element with id="khFloatBar"
+----------------------------- */
+#khFloatBar{
+  position:absolute;
+  right:16px;
+  top:220px;
+  z-index:9999;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  pointer-events:auto;
+}
+#khFloatBar .kh-fbtn{
+  width:var(--kh-fab-size);
+  height:var(--kh-fab-size);
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:var(--kh-shadow-2);
+  color:#fff !important;
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,0.55);
+  user-select:none;
+}
+#khFloatBar .kh-fbtn i{ font-size:18px; }
+#khFloatBar .kh-fbtn.call{ background:#fbbf24; color:#111 !important; }
+#khFloatBar .kh-fbtn.line{ background:#22c55e; }
+#khFloatBar .kh-fbtn.tool{ background:#ef4444; }
+#khFloatBar .kh-fbtn.fb{ background:#1877f2; }
+
+/* -----------------------------
+   5) Mobile bottom action bar
+----------------------------- */
+.mobile-action-bar{ display:none; }
+@media screen and (max-width:768px){
+  body{ padding-bottom:70px; }
+  .mobile-action-bar{
+    display:flex;
+    position:fixed;
+    bottom:0; left:0;
+    width:100%;
+    height:65px;
+    background:#fff;
+    box-shadow:0 -2px 15px rgba(0,0,0,.10);
+    z-index:9999;
+    border-top:1px solid #eee;
   }
-  .action-btn {
-    flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;
-    text-decoration: none !important; font-size: 0.75em; font-weight: bold; border-right: 1px solid #f0f0f0;
+  .action-btn{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none !important;
+    font-size:.75em;
+    font-weight:900;
+    border-right:1px solid #f0f0f0;
   }
-  .action-btn i { font-size: 1.4em; margin-bottom: 3px; }
-  
-  /* สีปุ่มในบาร์ */
-  .call-btn { color: var(--gold); background: #fff; }
-  .line-btn { color: #06c755; background: #f0fff4; }
-  .map-btn { color: #2c3e50; background: #fff; }
-  .repair-btn { color: #fff; background: var(--kh-primary); }
-}
-/* ==========================================================================
-   SIDEBAR GOLD THEME (เมนูทองด้านซ้าย)
-   ========================================================================== */
-
-/* 1. ปรับตำแหน่ง Sidebar ให้อยู่ด้านซ้าย */
-#wrapper {
-    display: flex;
-    flex-direction: row-reverse; /* สลับให้ Sidebar (ตัวหลัง) มาอยู่ซ้ายสุด */
+  .action-btn i{ font-size:1.4em; margin-bottom:3px; }
+  .call-btn{ color:var(--kh-gold); background:#fff; }
+  .line-btn{ color:#06c755; background:#f0fff4; }
+  .map-btn{ color:var(--kh-accent); background:#fff; }
+  .repair-btn{ color:#fff; background:var(--kh-primary); }
 }
 
-/* 2. ดีไซน์ปุ่มเมนู (ตามภาพตัวอย่าง) */
-#menu ul li {
-    border-top: none !important;
-    padding: 0 !important;
-    margin-bottom: 10px;
-}
-
-/* สไตล์หัวข้อเมนู (แถบทอง) */
-.menu-gold-header {
-    background: linear-gradient(90deg, #fff8e1 0%, #ffffff 100%); /* ไล่สีครีมทอง */
-    border-left: 5px solid #a87910; /* แถบทองด้านซ้าย */
-    padding: 12px 15px;
-    border-radius: 0 8px 8px 0;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
-    font-weight: 800;
-    color: #333 !important;
-    display: block;
-    position: relative;
-    transition: 0.3s;
-}
-
-.menu-gold-header:hover {
-    background: linear-gradient(90deg, #ffe082 0%, #ffffff 100%);
-    padding-left: 20px; /* ขยับเมื่อเอาเมาส์ชี้ */
-}
-
-/* สไตล์ลิงก์ย่อย */
-.menu-sub-link {
-    padding: 8px 0 8px 20px !important;
-    border-bottom: 1px solid #eee !important;
-    font-size: 0.9em;
-    color: #555 !important;
-}
-.menu-sub-link:hover {
-    color: #d32f2f !important;
-}
-
-/* 3. ปุ่ม Toggle (3 ขีด) สำหรับมือถือ */
-#sidebar .toggle {
-    background-color: transparent;
-    color: #333;
-    height: 4em;
-    width: 4em;
-    top: 0;
-    left: 0; /* ย้ายปุ่มมาซ้าย */
-    text-align: center;
-    line-height: 4em;
-    position: fixed; /* ลอยติดจอ */
-    z-index: 10001;
-}
-#sidebar .toggle:before {
-    content: '\f0c9'; /* ไอคอน 3 ขีด */
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    font-size: 1.5em;
-    color: #a87910; /* สีทอง */
-}
-
-/* ปรับแต่งสำหรับมือถือ */
-@media screen and (max-width: 1280px) {
-    #sidebar {
-        left: 0; /* Sidebar ออกมาจากซ้าย */
-        box-shadow: 5px 0 15px rgba(0,0,0,0.1);
-    }
-    #sidebar.inactive {
-        left: -26em; /* ซ่อนไปทางซ้าย */
-    }
-    #wrapper {
-        flex-direction: column; /* มือถือเรียงแนวตั้ง */
-    }
+/* Mobile: main not pushed */
+@media screen and (max-width:1280px){
+  #main{ margin-left:0 !important; }
 }
