@@ -78,34 +78,7 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
-body {
-  background: #ffffff; }
-  body.is-preload *, body.is-preload *:before, body.is-preload *:after, body.is-resizing *, body.is-resizing *:before, body.is-resizing *:after {
-    -moz-animation: none !important;
-    -webkit-animation: none !important;
-    -ms-animation: none !important;
-    animation: none !important;
-    -moz-transition: none !important;
-    -webkit-transition: none !important;
-    -ms-transition: none !important;
-    transition: none !important; }
-
-/* Type */
-body, input, select, textarea {
-  color: #7f888f;
-  font-family: "Open Sans", sans-serif;
-  font-size: 13pt;
-  font-weight: 400;
-  line-height: 1.65; }
-  @media screen and (max-width: 168px) {
-    body, input, select, textarea {
-      font-size: 11pt; } }
-  @media screen and (max-width: 128px) {
-    body, input, select, textarea {
-      font-size: 10pt; } }
-  @media screen and (max-width: 36px) {
-    body, input, select, textarea {
-      font-size: 9pt; } }
+b
 
 a {
   -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
