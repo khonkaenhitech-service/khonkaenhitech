@@ -119,3 +119,4 @@
   // you can call window.KH_UPDATE_ACTIVE() manually.
   window.KH_UPDATE_ACTIVE = updateActive;
 })();
+
