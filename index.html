@@ -12,17 +12,18 @@
   
   <title>ขอนแก่นไฮเทค | ศูนย์รวมงานระบบ ครบวงจร อันดับ 1 (ช่างขอนแก่น)</title>
   <meta name="description" content="บริการเครื่องซักผ้าหยอดเหรียญ งานไฟฟ้า กล้องวงจรปิด และระบบอาคารครบวงจร โดยทีมช่างมืออาชีพขอนแก่น งานดี มีประกัน ราคามาตรฐาน" />
-  <meta name="keywords" content="ช่างขอนแก่น, เครื่องซักผ้าหยอดเหรียญ ขอนแก่น, ล้างแอร์ ขอนแก่น, กล้องวงจรปิด ขอนแก่น" />
   <meta name="theme-color" content="#a87910" />
 
   <link rel="canonical" href="https://khonkaenhitech-service.github.io/khonkaenhitech/" />
-  <link rel="icon" href="images/favicon.png" /> <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="images/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="style.css" /> <style>
-    /* --- 1. LUXURY TYPOGRAPHY & HEADER --- */
+    /* --- LUXURY TEXT --- */
     h1.luxury-title {
         font-weight: 800;
         font-size: 2.2rem;
@@ -39,14 +40,13 @@
         margin-bottom: 1.5rem;
     }
     
-    /* --- 2. MOBILE GRID SYSTEM (จัดเลเยอร์ใหม่) --- */
+    /* --- CARD GRID --- */
     .kh-grid-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 25px;
         margin: 40px 0;
     }
-    
     .kh-card {
         background: #fff;
         border-radius: 16px;
@@ -57,105 +57,47 @@
         position: relative;
         overflow: hidden;
     }
-    .kh-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(168, 121, 16, 0.15); /* เงาสีทองจางๆ */
-        border-color: rgba(168, 121, 16, 0.3);
-    }
+    .kh-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(168,121,16,0.15); }
     .kh-card::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; width: 4px; height: 100%;
+        content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
         background: linear-gradient(to bottom, #d4af37, #f5e0a3);
     }
-
     .kh-card-icon {
-        width: 60px; height: 60px;
-        background: #fffdf5;
-        border-radius: 12px;
+        width: 60px; height: 60px; background: #fffdf5; border-radius: 12px;
         display: flex; align-items: center; justify-content: center;
-        font-size: 28px; color: #d4af37;
-        margin-bottom: 15px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        font-size: 28px; color: #d4af37; margin-bottom: 15px;
     }
 
-    .kh-card h3 {
-        font-size: 1.25rem;
-        margin-bottom: 10px;
-        color: #333;
-    }
-    .kh-card p {
-        font-size: 0.95rem;
-        color: #666;
-        margin-bottom: 15px;
-        line-height: 1.6;
-    }
-
-    /* --- 3. REVIEWS MARQUEE (แถบวิ่ง) --- */
+    /* --- REVIEWS MARQUEE --- */
     .kh-reviews-marquee {
-        background: #fcfcfc;
-        border: 1px solid #eee;
-        border-radius: 12px;
-        padding: 20px;
-        height: 280px; /* ความสูงพื้นที่แสดงผล */
-        overflow: hidden;
-        position: relative;
+        background: #fcfcfc; border: 1px solid #eee; border-radius: 12px;
+        padding: 20px; height: 280px; overflow: hidden; position: relative;
         mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
         -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
     }
-    .kh-reviews-track {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        /* Animation จะถูกใส่ด้วย JS */
-    }
+    .kh-reviews-track { display: flex; flex-direction: column; gap: 15px; }
     .kh-review-item {
-        background: #fff;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        border-left: 3px solid #d4af37;
+        background: #fff; padding: 15px; border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 3px solid #d4af37;
     }
 
-    /* --- 4. HERO BANNER IMAGE --- */
+    /* --- HERO IMAGE --- */
     .hero-image-wrapper {
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        margin-bottom: 40px;
-        position: relative;
+        border-radius: 20px; overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15); margin-bottom: 40px;
     }
-    .hero-image-wrapper img {
-        width: 100%;
-        display: block;
-        transition: transform 1.5s ease;
-    }
-    .hero-image-wrapper:hover img {
-        transform: scale(1.03);
-    }
+    .hero-image-wrapper img { width: 100%; display: block; }
 
-    /* Mobile Adjustments */
-    @media screen and (max-width: 768px) {
+    /* --- MOBILE FIXES --- */
+    @media screen and (max-width: 1280px) {
         h1.luxury-title { font-size: 1.8rem; }
-        .kh-grid-container { grid-template-columns: 1fr; } /* เรียงเดี่ยวบนมือถือ */
-        #header { padding-top: 20px; }
+        .kh-grid-container { grid-template-columns: 1fr; }
+        #header { padding-top: 10px; }
+        
+        /* ซ่อนปุ่ม Toggle เดิมของ Template (ใช้ปุ่มใน Header แทน) */
+        #sidebar .toggle { display: none !important; }
     }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "ขอนแก่นไฮเทค",
-    "image": "https://khonkaenhitech-service.github.io/khonkaenhitech/images/logo-khonkaen.webp",
-    "telephone": "+66944749874",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "ขอนแก่น",
-      "addressCountry": "TH"
-    }
-  }
-  </script>
 </head>
 
 <body class="is-preload">
@@ -165,9 +107,9 @@
   <div id="khOverlay" aria-hidden="true"></div>
 
   <div id="khFloatBar">
-    <a class="kh-fbtn call" href="tel:+66944749874" aria-label="โทรหาช่าง"><i class="icon solid fa-phone"></i></a>
-    <a class="kh-fbtn line" href="https://line.me/ti/p/~KKHITECH" aria-label="แอดไลน์"><i class="icon brands fa-line"></i></a>
-    <a class="kh-fbtn fb" href="https://www.facebook.com/Line0944749874" aria-label="Facebook"><i class="icon brands fa-facebook-f"></i></a>
+    <a class="kh-fbtn call" href="tel:+66944749874"><i class="icon solid fa-phone"></i></a>
+    <a class="kh-fbtn line" href="https://line.me/ti/p/~KKHITECH"><i class="icon brands fa-line"></i></a>
+    <a class="kh-fbtn fb" href="https://www.facebook.com/Line0944749874"><i class="icon brands fa-facebook-f"></i></a>
   </div>
 
   <div id="wrapper">
@@ -177,7 +119,8 @@
 
         <header id="header">
           <div class="kh-top">
-            <button id="khMenuBtn" class="kh-menu-btn" type="button" aria-label="เปิดเมนู">
+            
+            <button id="khMenuBtn" class="kh-menu-btn" type="button" aria-label="เมนู">
               <i class="icon solid fa-bars"></i>
             </button>
 
@@ -205,7 +148,7 @@
           </header>
 
           <div class="hero-image-wrapper">
-            <img src="images/pic10.webp" alt="ทีมงานขอนแก่นไฮเทค หน้างานจริง" loading="eager">
+            <img src="images/pic10.webp" alt="ทีมงานขอนแก่นไฮเทค" loading="eager">
           </div>
 
           <div style="text-align:center; margin-bottom:40px;">
@@ -219,35 +162,30 @@
 
           <h2 style="text-align:center; color:#a87910;">บริการยอดนิยมของเรา</h2>
           <div class="kh-grid-container">
-            
             <div class="kh-card">
                <div class="kh-card-icon"><i class="icon solid fa-coins"></i></div>
                <h3>ระบบหยอดเหรียญ</h3>
                <p>ติดตั้งกล่องหยอดเหรียญ เครื่องซักผ้า ตู้น้ำ สแกน QR Code สร้างรายได้ 24 ชม.</p>
                <a href="laundry.html" class="button small">ดูรายละเอียด</a>
             </div>
-
             <div class="kh-card">
                <div class="kh-card-icon"><i class="icon solid fa-bolt"></i></div>
                <h3>งานไฟฟ้า & MDB</h3>
-               <p>เดินสายไฟอาคาร โรงงาน แก้ไขไฟรั่ว ไฟช็อต ติดตั้งตู้คอนโทรลมาตรฐานวิศวกรรม</p>
+               <p>เดินสายไฟอาคาร โรงงาน แก้ไขไฟรั่ว ไฟช็อต ติดตั้งตู้คอนโทรลมาตรฐาน</p>
                <a href="electrical.html" class="button small">ดูรายละเอียด</a>
             </div>
-
             <div class="kh-card">
                <div class="kh-card-icon"><i class="icon solid fa-video"></i></div>
                <h3>กล้องวงจรปิด CCTV</h3>
                <p>ชัดระดับ HD ดูผ่านมือถือได้ทั่วโลก ระบบความปลอดภัย คีย์การ์ด ประตูออโต้</p>
                <a href="security.html" class="button small">ดูรายละเอียด</a>
             </div>
-
-             <div class="kh-card">
+            <div class="kh-card">
                <div class="kh-card-icon"><i class="icon solid fa-home"></i></div>
                <h3>รับสร้างบ้าน & ต่อเติม</h3>
                <p>งานโครงสร้าง งานปูน ต่อเติมครัว โรงจอดรถ รีโนเวทหอพักและอาคารพาณิชย์</p>
                <a href="construction.html" class="button small">ดูรายละเอียด</a>
             </div>
-
           </div>
 
           <hr class="major" />
@@ -255,7 +193,7 @@
           <div class="row">
             <div class="col-6 col-12-small">
                <h2 style="color:#2c3e50;">เสียงตอบรับจากลูกค้า</h2>
-               <p>ความไว้วางใจคือความภูมิใจของเรา เราดูแลลูกค้าในขอนแก่นและจังหวัดใกล้เคียงมากกว่า 500+ ราย</p>
+               <p>เราดูแลลูกค้าในขอนแก่นและจังหวัดใกล้เคียงมากกว่า 500+ ราย</p>
                <ul class="alt">
                  <li><i class="icon solid fa-check" style="color:#2ecc71;"></i> งานจบ งบไม่บานปลาย</li>
                  <li><i class="icon solid fa-check" style="color:#2ecc71;"></i> มีหน้าร้านจริง ตามตัวได้</li>
@@ -265,26 +203,9 @@
             <div class="col-6 col-12-small">
                <div id="khReviewsMarquee" class="kh-reviews-marquee">
                   <div id="khReviewsTrack" class="kh-reviews-track">
-                     <div class="kh-review-item">
-                        <strong>"ทีมช่างมาไวมาก งานเรียบร้อย แนะนำดีครับ"</strong><br>
-                        <small style="color:#888;">- คุณลูกค้า โซนบ้านเป็ด</small>
-                        <div style="color:#FFD700;">★★★★★</div>
-                     </div>
-                     <div class="kh-review-item">
-                        <strong>"ติดตั้งกล่องหยอดเหรียญใช้งานง่าย สแกน QR สะดวกมาก"</strong><br>
-                        <small style="color:#888;">- เจ้าของหอพัก หลังมอ</small>
-                        <div style="color:#FFD700;">★★★★★</div>
-                     </div>
-                     <div class="kh-review-item">
-                        <strong>"แก้งานไฟฟ้าจบจริง ช่างมีความรู้แน่น"</strong><br>
-                        <small style="color:#888;">- โรงงานน้ำดื่ม ขอนแก่น</small>
-                        <div style="color:#FFD700;">★★★★★</div>
-                     </div>
-                     <div class="kh-review-item">
-                        <strong>"บริการดี ราคามาตรฐาน ไม่ทิ้งงาน"</strong><br>
-                        <small style="color:#888;">- ลูกค้างานต่อเติม</small>
-                        <div style="color:#FFD700;">★★★★★</div>
-                     </div>
+                     <div class="kh-review-item"><strong>"ทีมช่างมาไวมาก งานเรียบร้อย แนะนำดีครับ"</strong><br><small style="color:#888;">- คุณลูกค้า โซนบ้านเป็ด</small><div style="color:#FFD700;">★★★★★</div></div>
+                     <div class="kh-review-item"><strong>"ติดตั้งกล่องหยอดเหรียญใช้งานง่าย"</strong><br><small style="color:#888;">- เจ้าของหอพัก หลังมอ</small><div style="color:#FFD700;">★★★★★</div></div>
+                     <div class="kh-review-item"><strong>"แก้งานไฟฟ้าจบจริง"</strong><br><small style="color:#888;">- โรงงานน้ำดื่ม ขอนแก่น</small><div style="color:#FFD700;">★★★★★</div></div>
                   </div>
                </div>
             </div>
@@ -296,36 +217,28 @@
 
     <div id="sidebar" class="inactive">
       <div class="inner">
-        <nav id="menu" aria-label="เมนูหลัก">
-          <header class="major">
-            <h2>เมนูบริการ</h2>
-          </header>
+        <nav id="menu">
+          <header class="major"><h2>เมนูบริการ</h2></header>
           <ul class="menu-gold">
             <li><a href="index.html" class="menu-btn is-active">หน้าแรก</a></li>
             <li><a href="services.html" class="menu-btn">รวมบริการทั้งหมด</a></li>
             <li><a href="contact.html" class="menu-btn">ติดต่อ / แผนที่ร้าน</a></li>
-            
             <div class="menu-header">◆ บริการยอดนิยม</div>
             <li><a href="laundry.html" class="menu-btn">เครื่องซักผ้าหยอดเหรียญ</a></li>
             <li><a href="water.html" class="menu-btn">ตู้น้ำหยอดเหรียญ / RO</a></li>
             <li><a href="vending.html" class="menu-btn">ระบบกล่องหยอดเหรียญ</a></li>
-            
             <div class="menu-header">◆ งานระบบอาคาร</div>
             <li><a href="electrical.html" class="menu-btn">งานไฟฟ้า / ตู้ MDB</a></li>
             <li><a href="security.html" class="menu-btn">CCTV / คีย์การ์ด</a></li>
             <li><a href="solar-air.html" class="menu-btn">แอร์ / โซล่าเซลล์</a></li>
-            
             <div class="menu-header">◆ ติดต่อด่วน</div>
             <li><a href="tel:+66944749874" class="menu-btn btn-contact-gold" style="color:#fff !important;"><i class="icon solid fa-phone"></i> โทร: 094-474-9874</a></li>
             <li><a href="https://line.me/ti/p/~KKHITECH" class="menu-btn btn-line-custom"><i class="icon brands fa-line"></i> ไลน์: KKHITECH</a></li>
           </ul>
         </nav>
-
-        <footer id="footer">
-          <p class="copyright">© <span id="y"></span> ขอนแก่นไฮเทค</p>
-        </footer>
+        <footer id="footer"><p class="copyright">© <span id="y"></span> ขอนแก่นไฮเทค</p></footer>
       </div>
-      <a href="#sidebar" class="toggle">Toggle</a>
+      <a href="#sidebar" class="toggle" style="display:none;">Toggle</a>
     </div>
 
   </div>
@@ -335,21 +248,24 @@
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
-  
-  <script src="assets/js/kh-current-tab.js"></script> <script src="assets/js/kh-advanced-ui.js"></script> <script>
-    // อัปเดตปีอัตโนมัติ
+  <script src="assets/js/kh-current-tab.js"></script>
+  <script src="assets/js/kh-advanced-ui.js"></script>
+
+  <script>
     document.getElementById('y').textContent = new Date().getFullYear();
     
-    // ตั้งค่า Sidebar Toggle (Manual Override หาก JS หลักทำงานไม่ตรงใจ)
-    const btn = document.getElementById('khMenuBtn');
+    // JS สำหรับเปิด-ปิด Sidebar ใหม่ (ใช้ปุ่ม #khMenuBtn แทนปุ่มเดิม)
+    const menuBtn = document.getElementById('khMenuBtn');
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('khOverlay');
 
-    if(btn){
-        btn.addEventListener('click', function(e){
+    if(menuBtn){
+        menuBtn.addEventListener('click', function(e){
             e.preventDefault();
+            e.stopPropagation();
             sidebar.classList.toggle('inactive');
             
+            // เปิด overlay บนมือถือ
             if(!sidebar.classList.contains('inactive') && window.innerWidth <= 1280){
                 overlay.classList.add('show');
                 overlay.style.display = 'block';
@@ -359,11 +275,11 @@
             }
         });
     }
-    
-    // ปิด Sidebar เมื่อกด Overlay (มือถือ)
+
     if(overlay){
         overlay.addEventListener('click', function(){
             sidebar.classList.add('inactive');
+            overlay.classList.remove('show');
             overlay.style.display = 'none';
         });
     }
