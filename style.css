@@ -1,463 +1,379 @@
 /* ==========================================================================
-   KHON KAEN HITECH – ADVANCED STYLE PACK (SEO + UX + Sidebar Fix + Premium UI)
-   Version: 1.0
-   Drop-in replacement for your style.css (place after assets/css/main.css)
+   KHON KAEN HITECH – MASTER STYLE PACK (Final Edition)
+   รวม: Style Pack ใหม่ + โลโก้ทอง 3D + ปุ่มลอยดุ๊กดิ๊ก + แก้บั๊ก Sidebar
    ========================================================================== */
 
 /* -----------------------------
-   0) Design Tokens
+   0) Design Tokens & Variables
 ----------------------------- */
-:root{
-  --kh-primary:#d32f2f;             /* urgency */
-  --kh-accent:#2c3e50;              /* authority */
-  --kh-gold:#a87910;                /* trust/wealth */
-  --kh-gold-light:#d4a035;
-  --kh-gold-grad:linear-gradient(135deg,#b8870b 0%,#d46a00 100%);
+:root {
+  --kh-primary: #d32f2f;           /* urgency */
+  --kh-accent: #2c3e50;            /* authority */
+  --kh-gold: #a87910;              /* trust/wealth */
+  --kh-gold-light: #d4a035;
+  --kh-gold-grad: linear-gradient(135deg,#b8870b 0%,#d46a00 100%);
 
-  --kh-paper:#ffffff;
-  --kh-paper-2:#f9fafb;
-  --kh-ink:#111827;
-  --kh-ink-2:#374151;
-  --kh-muted:#6b7280;
+  --kh-paper: #ffffff;
+  --kh-paper-2: #f9fafb;
+  --kh-ink: #111827;
+  --kh-ink-2: #374151;
+  --kh-muted: #6b7280;
 
-  --kh-line:rgba(0,0,0,.08);
-  --kh-shadow:0 10px 30px rgba(0,0,0,.06);
-  --kh-shadow-2:0 18px 45px rgba(0,0,0,.10);
-  --kh-radius:12px;
+  --kh-line: rgba(0,0,0,.08);
+  --kh-shadow: 0 10px 30px rgba(0,0,0,.06);
+  --kh-shadow-2: 0 18px 45px rgba(0,0,0,.10);
+  --kh-radius: 12px;
 
-  --kh-sidebar-w:300px;
-  --kh-fab-size:46px;
+  --kh-sidebar-w: 300px;
+  --kh-fab-size: 46px;
 }
 
 /* -----------------------------
    1) Global / SEO UX
 ----------------------------- */
-html{ scroll-behavior:smooth; }
-body{
-  font-family:'Sarabun','Open Sans',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  color:#333;
-  line-height:1.7;
-  text-rendering:optimizeLegibility;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  font-family: 'Sarabun','Open Sans',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color: #333;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
 }
-img{ max-width:100%; height:auto; }
-a{ -webkit-tap-highlight-color:transparent; }
-:focus-visible{ outline:3px solid rgba(168,121,16,.45); outline-offset:2px; border-radius:10px; }
+img { max-width: 100%; height: auto; border-radius: var(--kh-radius); }
+a { -webkit-tap-highlight-color: transparent; text-decoration: none; color: var(--kh-primary); transition: 0.2s; border-bottom: 1px dotted rgba(0,0,0,0.2); }
+a:hover { color: var(--kh-gold); border-bottom-color: var(--kh-gold); }
+:focus-visible { outline: 3px solid rgba(168,121,16,.45); outline-offset: 2px; border-radius: 10px; }
 
 /* Headings */
-h1,h2,h3{ font-weight:800; color:#222; }
-h2{ position:relative; display:inline-block; margin-bottom:1.5em; }
-h2::after{
-  content:""; position:absolute; bottom:-10px; left:0;
-  width:60px; height:4px; background:var(--kh-gold-grad); border-radius:2px;
+h1,h2,h3,h4,h5 { font-weight: 800; color: #222; margin-bottom: 1rem; line-height: 1.3; }
+h2 { position: relative; display: inline-block; margin-bottom: 1.5em; }
+h2::after {
+  content: ""; position: absolute; bottom: -10px; left: 0;
+  width: 60px; height: 4px; background: var(--kh-gold-grad); border-radius: 2px;
 }
 
-/* Primary CTA */
-.button.primary{
-  background:var(--kh-gold-grad) !important;
-  box-shadow:0 6px 18px rgba(168,121,16,.35) !important;
-  border-radius:999px !important;
-  border:none !important;
-  font-weight:900 !important;
-  transition:transform .18s ease, box-shadow .18s ease;
-}
-.button.primary:hover{ transform:translateY(-3px); box-shadow:0 12px 28px rgba(168,121,16,.30) !important; }
-
-/* -----------------------------
-   2) Cards / Modules
------------------------------ */
-.features article{
-  background:#fff;
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:16px;
-  padding:25px;
-  box-shadow:var(--kh-shadow);
-  transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
-}
-.features article:hover{
-  transform:translateY(-7px);
-  border-color:rgba(168,121,16,.65);
-  box-shadow:var(--kh-shadow-2);
-}
-
-.highlight-box{
-  background-color:#fffbf0;
-  border-left:5px solid var(--kh-primary);
-  padding:20px;
-  margin:30px 0;
-  border-radius:0 10px 10px 0;
-}
-
-.kh-reviews-marquee{
-  overflow:hidden;
-  background:#fdfdfd;
-  padding:30px;
-  border-radius:16px;
-  margin-top:30px;
-  border:1px solid #eee;
-}
-.kh-review{
-  background:#fff;
-  border-radius:12px;
-  padding:20px;
-  margin-bottom:20px;
-  border-left:4px solid var(--kh-gold);
-  box-shadow:0 6px 18px rgba(0,0,0,.06);
-}
-.kh-stars{ color:#FFD700; letter-spacing:2px; }
-
-/* -----------------------------
-   3) Sidebar – FIX DIRECTION + WHITE FIT + CLEAN MENU
-   - prevents the "toggle switches direction" bug
------------------------------ */
-
-/* Kill row-reverse that breaks toggle direction */
-#wrapper{
-  display:flex !important;
-  flex-direction:row !important;
-}
-
-/* Force sidebar on LEFT, stable */
-#sidebar{
-  position:fixed !important;
-  top:0; left:0 !important; right:auto !important;
-  height:100vh !important;
-
-  width:var(--kh-sidebar-w) !important;
-  max-width:86vw !important;
-
-  background:var(--kh-paper) !important;
-  border-right:1px solid var(--kh-line) !important;
-  border-left:none !important;
-
-  overflow-y:auto !important;
-  z-index:10000 !important;
-
-  transform:translateX(0) !important;
-  transition:transform .26s ease !important;
-  margin:0 !important;
-}
-
-/* Always close to LEFT only */
-#sidebar.inactive{
-  transform:translateX(-100%) !important;
-  left:0 !important;
-  right:auto !important;
-  margin:0 !important;
-}
-
-/* main spacing when sidebar open */
-#main{
-  margin-left:var(--kh-sidebar-w) !important;
-  transition:margin-left .26s ease !important;
-  min-height:100vh;
-}
-body.kh-sidebar-closed #main{ margin-left:0 !important; }
-
-/* inner spacing */
-#sidebar > .inner{ padding:16px 14px !important; }
-
-/* menu card */
-#sidebar #menu{
-  background:#fff !important;
-  border:1px solid rgba(0,0,0,.06) !important;
-  border-radius:14px !important;
-  padding:14px !important;
-  box-shadow:0 10px 26px rgba(0,0,0,.06) !important;
-}
-
-/* menu title */
-#sidebar #menu > header.major{
-  margin:0 0 12px 0 !important;
-  padding:0 0 10px 0 !important;
-  border-bottom:1px solid rgba(0,0,0,.06) !important;
-}
-#sidebar #menu > header.major h2{
-  margin:0 !important;
-  font-size:16px !important;
-  font-weight:900 !important;
-  letter-spacing:.2px !important;
-}
-
-/* list reset */
-#sidebar #menu ul,
-#sidebar #menu ul.menu-gold{
-  list-style:none !important;
-  margin:0 !important;
-  padding:0 !important;
-}
-#sidebar #menu ul li{
-  border-top:none !important;
-  padding:0 !important;
-  margin:0 0 8px 0 !important;
-}
-
-/* section headers (supports div or li) */
-#sidebar #menu .menu-header,
-#sidebar #menu .menu-gold-header,
-#sidebar #menu li.menu-header{
-  display:block !important;
-  margin:14px 0 8px 0 !important;
-  padding:10px 4px 6px 4px !important;
-  font-size:12px !important;
-  font-weight:900 !important;
-  color:var(--kh-gold) !important;
-  text-transform:uppercase !important;
-  border-top:1px solid rgba(0,0,0,.06) !important;
-  background:transparent !important;
-  box-shadow:none !important;
-  border-left:none !important;
-  border-radius:0 !important;
-}
-
-/* menu links: full width and fit in white card */
-#sidebar #menu a.menu-btn{
-  display:block !important;
-  width:100% !important;
-  box-sizing:border-box !important;
-
-  background:#fff !important;
-  border:1px solid rgba(0,0,0,.08) !important;
-  border-radius:12px !important;
-
-  padding:10px 12px !important;
-  font-weight:900 !important;
-  font-size:14px !important;
-  color:var(--kh-ink) !important;
-  text-decoration:none !important;
-
-  white-space:normal !important;
-  word-break:break-word !important;
-  line-height:1.35 !important;
-
-  transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
-}
-#sidebar #menu a.menu-btn:hover{
-  border-color:rgba(212,175,55,.55) !important;
-  background:linear-gradient(90deg, rgba(212,175,55,.10), #fff) !important;
-  box-shadow:0 10px 22px rgba(212,175,55,.10) !important;
-  transform:translateY(-1px);
-}
-
-/* active state */
-#sidebar #menu a.menu-btn.is-active,
-#sidebar #menu a.menu-btn.active,
-#sidebar #menu a.menu-btn[aria-current="page"]{
-  border-color:rgba(212,175,55,.95) !important;
-  background:linear-gradient(90deg, rgba(212,175,55,.14), #fff) !important;
-}
-
-/* urgent call button */
-#sidebar #menu a.menu-btn.btn-contact-gold{
-  border:none !important;
-  background:linear-gradient(135deg, #ffca28 0%, #ff6f00 100%) !important;
-  color:#fff !important;
-  text-align:center !important;
-  border-radius:999px !important;
-  box-shadow:0 12px 26px rgba(255,111,0,.22) !important;
-  padding:11px 14px !important;
-}
-
-/* toggle button: pinned top-left, consistent */
-#sidebar .toggle{
-  position:fixed !important;
-  top:14px !important;
-  left:calc(var(--kh-sidebar-w) + 14px) !important;
-
-  width:46px !important;
-  height:46px !important;
-  border-radius:12px !important;
-
-  border:1px solid rgba(0,0,0,.12) !important;
-  background:#fff !important;
-  box-shadow:0 10px 22px rgba(0,0,0,.08) !important;
-
-  z-index:10001 !important;
-
-  text-indent:-9999px !important;
-  overflow:hidden !important;
-}
-#sidebar.inactive .toggle{ left:14px !important; }
-#sidebar .toggle:before{
-  content:'\f0c9' !important;
-  font-family:'Font Awesome 5 Free' !important;
-  font-weight:900 !important;
-  font-size:18px !important;
-  color:var(--kh-gold) !important;
-
-  position:absolute !important;
-  left:50% !important;
-  top:50% !important;
-  transform:translate(-50%,-50%) !important;
-}
-
-/* Scrollbar refined */
-#sidebar{
-  scrollbar-width:thin;
-  scrollbar-color:rgba(0,0,0,0.25) transparent;
-}
-#sidebar::-webkit-scrollbar{ width:10px; }
-#sidebar::-webkit-scrollbar-thumb{
-  background:rgba(0,0,0,0.22);
-  border-radius:999px;
-  border:3px solid transparent;
-  background-clip:content-box;
-}
-#sidebar::-webkit-scrollbar-track{ background:transparent; }
-
-/* -----------------------------
-   4) Floating Buttons (optional)
-   - Provide styles for an element with id="khFloatBar"
------------------------------ */
-#khFloatBar{
-  position:absolute;
-  right:16px;
-  top:220px;
-  z-index:9999;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  pointer-events:auto;
-}
-#khFloatBar .kh-fbtn{
-  width:var(--kh-fab-size);
-  height:var(--kh-fab-size);
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:var(--kh-shadow-2);
-  color:#fff !important;
-  text-decoration:none;
-  border:1px solid rgba(255,255,255,0.55);
-  user-select:none;
-}
-#khFloatBar .kh-fbtn i{ font-size:18px; }
-#khFloatBar .kh-fbtn.call{ background:#fbbf24; color:#111 !important; }
-#khFloatBar .kh-fbtn.line{ background:#22c55e; }
-#khFloatBar .kh-fbtn.tool{ background:#ef4444; }
-#khFloatBar .kh-fbtn.fb{ background:#1877f2; }
-
-/* -----------------------------
-   5) Mobile bottom action bar
------------------------------ */
-.mobile-action-bar{ display:none; }
-@media screen and (max-width:768px){
-  body{ padding-bottom:70px; }
-  .mobile-action-bar{
-    display:flex;
-    position:fixed;
-    bottom:0; left:0;
-    width:100%;
-    height:65px;
-    background:#fff;
-    box-shadow:0 -2px 15px rgba(0,0,0,.10);
-    z-index:9999;
-    border-top:1px solid #eee;
-  }
-  .action-btn{
-    flex:1;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-decoration:none !important;
-    font-size:.75em;
-    font-weight:900;
-    border-right:1px solid #f0f0f0;
-  }
-  .action-btn i{ font-size:1.4em; margin-bottom:3px; }
-  .call-btn{ color:var(--kh-gold); background:#fff; }
-  .line-btn{ color:#06c755; background:#f0fff4; }
-  .map-btn{ color:var(--kh-accent); background:#fff; }
-  .repair-btn{ color:#fff; background:var(--kh-primary); }
-}
-
-/* Mobile: main not pushed */
-@media screen and (max-width:1280px){
-  #main{ margin-left:0 !important; }
-}
-
-
-/* -----------------------------
-   6) LUXURY MENU HEADERS (Sidebar)
-   Paste below (overrides previous header style)
------------------------------ */
-#sidebar #menu .menu-header,
-#sidebar #menu .menu-gold-header,
-#sidebar #menu li.menu-header{
-  /* layout */
-  display:flex !important;
-  align-items:center !important;
-  gap:10px !important;
-
-  /* spacing fits the white card */
-  margin:16px 0 10px 0 !important;
-  padding:11px 12px !important;
-
-  /* luxury ribbon */
-  background:
-    linear-gradient(90deg,
-      rgba(168,121,16,.18) 0%,
-      rgba(212,160,53,.12) 18%,
-      rgba(255,255,255,0) 68%,
-      rgba(255,255,255,0) 100%) !important;
-  border:1px solid rgba(168,121,16,.18) !important;
-  border-left:5px solid var(--kh-gold) !important;
-  border-top:none !important;
-
-  border-radius:12px !important;
-  box-shadow: 0 10px 22px rgba(0,0,0,.06) !important;
-
-  /* type */
-  color: #7c5a08 !important;
-  font-weight: 900 !important;
-  font-size: 12px !important;
-  letter-spacing: 1.1px !important;
-  text-transform: uppercase !important;
-
-  position:relative !important;
-  overflow:hidden !important;
-}
-
-/* diamond accent (lux) */
-#sidebar #menu .menu-header::before,
-#sidebar #menu .menu-gold-header::before,
-#sidebar #menu li.menu-header::before{
-  content:"" !important;
-  width:8px !important;
-  height:8px !important;
-  transform: rotate(45deg) !important;
-  border-radius:2px !important;
+/* Primary CTA Button */
+.button.primary {
   background: var(--kh-gold-grad) !important;
-  box-shadow: 0 6px 14px rgba(168,121,16,.22) !important;
-  flex: 0 0 auto !important;
+  box-shadow: 0 6px 18px rgba(168,121,16,.35) !important;
+  border-radius: 999px !important;
+  border: none !important;
+  font-weight: 900 !important;
+  padding: 0 2em !important; height: 3.5em !important; line-height: 3.5em !important;
+  transition: transform .18s ease, box-shadow .18s ease !important;
+  color: #fff !important;
+}
+.button.primary:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(168,121,16,.30) !important; }
+
+
+/* =========================
+    2)LUXURY HEADER: SQUARE LOGO + GRAND SWEEP SHINE
+  /* =========================
+   LUXURY HEADER: ROYAL GOLD (SLOW FLOW EDITION)
+   ต้นฉบับ: แสงวิ่งช้า (Slow Motion) + โลโก้สะอาดตา + ทองฉ่ำสว่าง
+   ========================= */
+
+/* ปรับพื้นหลัง Header */
+#header {
+    background: #fff;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15); /* เส้นทองจางๆ */
+    box-shadow: 0 4px 25px rgba(0,0,0,0.03); /* เงาพื้นนุ่มๆ */
+    position: relative; z-index: 1000 !important;
 }
 
-/* subtle shine sweep */
-#sidebar #menu .menu-header::after,
-#sidebar #menu .menu-gold-header::after,
-#sidebar #menu li.menu-header::after{
-  content:"" !important;
-  position:absolute !important;
-  top:-30% !important;
-  left:-40% !important;
-  width:60% !important;
-  height:160% !important;
-  transform: rotate(18deg) !important;
-  background: linear-gradient(90deg,
-    rgba(255,255,255,0) 0%,
-    rgba(255,255,255,.35) 50%,
-    rgba(255,255,255,0) 100%) !important;
-  opacity:.35 !important;
-  pointer-events:none !important;
+.lux-wrapper {
+    display: flex !important;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    padding: 6px;
+    border-radius: 12px;
+    transition: background 0.3s;
+}
+.lux-wrapper:hover {
+    background: rgba(255, 248, 220, 0.3); /* พื้นหลังสีครีมจางๆ เมื่อชี้ */
 }
 
-/* If your header text includes "◆", make it look intentional */
-#sidebar #menu .menu-header,
-#sidebar #menu .menu-gold-header,
-#sidebar #menu li.menu-header{
-  text-shadow: 0 1px 0 rgba(255,255,255,.6) !important;
+/* 1. โลโก้ (Clean & Full) */
+.lux-shape {
+    width: 60px; height: 60px;
+    background: transparent; /* ไม่มีพื้นหลังดำ */
+    border-radius: 14px; /* มุมมนสไตล์ App */
+    padding: 0; /* รูปเต็มกรอบ */
+    
+    /* กรอบทองบางเฉียบ + เงาทองฟุ้ง */
+    border: 1px solid #d4af37;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+    
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+.lux-shape img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* เมาส์ชี้แล้วโลโก้ลอยขึ้นช้าๆ */
+.lux-wrapper:hover .lux-shape {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* 2. ตัวหนังสือภาษาไทย (Liquid Gold Shimmer) */
+.lux-title-th {
+    font-family: 'Sarabun', sans-serif;
+    font-weight: 800; 
+    font-size: 30px;
+    line-height: 1.1;
+    display: block;
+    position: relative;
+    
+    /* สีทองไล่เฉด 5 ระดับ (เทคนิคแสงเงา) */
+    background: linear-gradient(
+        120deg, 
+        #b88a00 0%,    /* ทองเข้ม (เงา) */
+        #eec95e 25%,   /* ทองสว่าง */
+        #fffcf0 50%,   /* แสงขาว (Highlight จุดที่แสงกระทบ) */
+        #d4af37 75%,   /* ทองมาตรฐาน */
+        #8a6200 100%   /* ทองเข้ม (เงา) */
+    );
+    
+    background-size: 250% auto; /* ขยายพื้นหลังเพื่อให้แสงวิ่งได้ไกล */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Animation: แสงวิ่งช้าๆ (Slow Flow) */
+    animation: liquid-gold 8s linear infinite; 
+    
+    /* เงาพื้นหลังนุ่มๆ ให้ตัวหนังสือลอย */
+    filter: drop-shadow(0px 2px 2px rgba(168, 121, 16, 0.15));
+}
+
+/* คีย์เฟรมแสงวิ่ง (วิ่งช้าๆ ลื่นไหล) */
+@keyframes liquid-gold {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+/* 3. ตัวหนังสือภาษาอังกฤษ */
+.lux-subtitle-en {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #a87910; /* สีทองด้าน อ่านง่าย */
+    text-transform: uppercase;
+    letter-spacing: 3.5px; /* ช่องไฟกว้าง ดู Luxury */
+    margin-top: 3px;
+    opacity: 0.9;
+}
+
+/* --- Responsive Mobile --- */
+@media screen and (max-width: 768px) {
+    .lux-title-th { font-size: 24px; }
+    .lux-subtitle-en { font-size: 9px; letter-spacing: 2px; }
+    .lux-shape { width: 48px; height: 48px; }
+    #header { padding-top: 5em; } /* ปรับระยะห่างด้านบนให้พอดี */
+}
+
+/* -----------------------------
+   3) Cards / Modules
+----------------------------- */
+.features article {
+  background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 16px;
+  padding: 25px; box-shadow: var(--kh-shadow);
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+.features article:hover {
+  transform: translateY(-7px); border-color: rgba(168,121,16,.65); box-shadow: var(--kh-shadow-2);
+}
+.highlight-box {
+  background-color: #fffbf0; border-left: 5px solid var(--kh-primary);
+  padding: 20px; margin: 30px 0; border-radius: 0 10px 10px 0;
+}
+.kh-reviews-marquee {
+  overflow: hidden; background: #fdfdfd; padding: 30px; 
+  border-radius: 16px; margin-top: 30px; border: 1px solid #eee;
+}
+.kh-review {
+  background: #fff; border-radius: 12px; padding: 20px; 
+  margin-bottom: 20px; border-left: 4px solid var(--kh-gold); 
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+.kh-stars { color: #FFD700; letter-spacing: 2px; }
+
+/* -----------------------------
+   4) Sidebar – FIX DIRECTION + WHITE FIT + CLEAN MENU
+----------------------------- */
+#wrapper { display: flex !important; flex-direction: row !important; }
+
+#sidebar {
+  position: fixed !important; top: 0; left: 0 !important; right: auto !important;
+  height: 100vh !important; width: var(--kh-sidebar-w) !important; max-width: 86vw !important;
+  background: var(--kh-paper) !important; border-right: 1px solid var(--kh-line) !important;
+  overflow-y: auto !important; z-index: 10000 !important;
+  transform: translateX(0) !important; transition: transform .26s ease !important; margin: 0 !important;
+  box-shadow: 5px 0 25px rgba(0,0,0,0.1);
+}
+#sidebar.inactive { transform: translateX(-100%) !important; box-shadow: none; }
+
+#main { margin-left: var(--kh-sidebar-w) !important; transition: margin-left .26s ease !important; min-height: 100vh; }
+body.kh-sidebar-closed #main { margin-left: 0 !important; }
+
+#sidebar > .inner { padding: 16px 14px !important; }
+
+/* Menu Card Style */
+#sidebar #menu {
+  background: #fff !important; border: 1px solid rgba(0,0,0,.06) !important;
+  border-radius: 14px !important; padding: 14px !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,.06) !important;
+}
+#sidebar #menu > header.major {
+  margin: 0 0 12px 0 !important; padding: 0 0 10px 0 !important;
+  border-bottom: 1px solid rgba(0,0,0,.06) !important;
+}
+#sidebar #menu > header.major h2 { margin: 0 !important; font-size: 16px !important; font-weight: 900 !important; }
+
+#sidebar #menu ul { list-style: none !important; margin: 0 !important; padding: 0 !important; }
+#sidebar #menu ul li { border-top: none !important; padding: 0 !important; margin: 0 0 8px 0 !important; }
+
+/* Menu Headers (Luxury Ribbon) */
+#sidebar #menu .menu-header, #sidebar #menu .menu-gold-header, #sidebar #menu li.menu-header {
+  display: flex !important; align-items: center !important; gap: 10px !important;
+  margin: 16px 0 10px 0 !important; padding: 11px 12px !important;
+  background: linear-gradient(90deg, rgba(168,121,16,.18) 0%, rgba(212,160,53,.12) 18%, rgba(255,255,255,0) 100%) !important;
+  border: 1px solid rgba(168,121,16,.18) !important; border-left: 5px solid var(--kh-gold) !important;
+  border-radius: 12px !important; color: #7c5a08 !important; font-weight: 900 !important; font-size: 12px !important;
+  text-transform: uppercase !important; letter-spacing: 1.1px !important;
+}
+
+/* Menu Links */
+#sidebar #menu a.menu-btn {
+  display: block !important; width: 100% !important; box-sizing: border-box !important;
+  background: #fff !important; border: 1px solid rgba(0,0,0,.08) !important;
+  border-radius: 12px !important; padding: 10px 12px !important;
+  font-weight: 900 !important; font-size: 14px !important; color: var(--kh-ink) !important;
+  transition: all .12s ease;
+}
+#sidebar #menu a.menu-btn:hover, #sidebar #menu a.menu-btn.is-active {
+  border-color: rgba(212,175,55,.55) !important;
+  background: linear-gradient(90deg, rgba(212,175,55,.10), #fff) !important;
+}
+
+/* Hide original toggle */
+#sidebar .toggle, body .toggle { display: none !important; }
+
+/* -----------------------------
+   5) FLOATING BAR (ALIVE & RANDOM MOTION)
+   ----------------------------- */
+#khFloatBar {
+  position: fixed; right: 15px; top: 50%; transform: translateY(-50%);
+  z-index: 10000; display: flex; flex-direction: column; gap: 15px;
+}
+
+.kh-fbtn {
+  width: 55px; height: 55px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff !important; text-decoration: none; font-size: 24px;
+  position: relative; overflow: hidden; transition: all 0.2s ease;
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -3px 0 rgba(0,0,0,0.15);
+}
+
+.kh-fbtn.call   { background: linear-gradient(135deg, #ffca28 0%, #ff6f00 100%); animation: ring-ring 4s infinite ease-in-out; }
+.kh-fbtn.line   { background: linear-gradient(135deg, #00e676 0%, #00a152 100%); animation: bounce-gentle 3.2s infinite ease-in-out; animation-delay: 0.5s; }
+.kh-fbtn.repair { background: linear-gradient(135deg, #ff5252 0%, #d50000 100%); animation: twist-wrench 5s infinite ease-in-out; animation-delay: 1s; }
+.kh-fbtn.fb     { background: linear-gradient(135deg, #448aff 0%, #2962ff 100%); animation: float-calm 3.8s infinite ease-in-out; animation-delay: 1.5s; }
+
+.kh-fbtn::before {
+  content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 45%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.05));
+  border-radius: 12px 12px 60% 60% / 12px 12px 20px 20px; pointer-events: none;
+}
+.kh-fbtn::after {
+  content: ""; position: absolute; top: -50%; left: -120%; width: 60%; height: 200%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.9), transparent);
+  transform: rotate(25deg); animation: shine-sweep 3s infinite; pointer-events: none;
+}
+
+@keyframes ring-ring { 0%,90%,100% { transform: rotate(0deg); } 92% { transform: rotate(-10deg); } 94% { transform: rotate(10deg); } 96% { transform: rotate(-10deg); } 98% { transform: rotate(10deg); } }
+@keyframes bounce-gentle { 0%,20%,50%,80%,100% { transform: translateY(0); } 40% { transform: translateY(-6px); } 60% { transform: translateY(-3px); } }
+@keyframes twist-wrench { 0%,100% { transform: rotate(0deg); } 10% { transform: rotate(-15deg); } 20% { transform: rotate(15deg); } 30% { transform: rotate(-15deg); } 40% { transform: rotate(0deg); } }
+@keyframes float-calm { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes shine-sweep { 0% { left: -120%; opacity: 0; } 10% { opacity: 1; } 20% { left: 200%; opacity: 0; } 100% { left: 200%; opacity: 0; } }
+
+.kh-fbtn:hover { animation: none; transform: scale(1.15) translateX(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); z-index: 10001; }
+.kh-fbtn:active { animation: none; transform: scale(0.9); filter: brightness(1.4); }
+
+/* -----------------------------
+   6) Mobile & Responsive
+----------------------------- */
+.mobile-action-bar { display: none; }
+
+@media screen and (max-width: 768px) { /* สำหรับหน้าจอที่มีความกว้างไม่เกิน 768 พิกเซล (มือถือ/แท็บเล็ต) */
+  
+  body { 
+    padding-bottom: 70px; /* เว้นระยะห่างด้านล่างของหน้าเว็บ 70px เพื่อไม่ให้เนื้อหาถูกแถบเมนูทับ */
+  }
+
+  /* ซ่อนปุ่มลอยบนมือถือ */
+  #khFloatBar { 
+    display: none; /* ปิดการแสดงผลปุ่มลอยเดิมในหน้าจอมือถือ */
+  }
+  
+  /* Mobile Action Bar - แถบเมนูด้านล่าง */
+  .mobile-action-bar {
+    display: flex;             /* จัดวางปุ่มภายในแบบยืดหยุ่น (เรียงต่อกัน) */
+    position: fixed;           /* ตรึงแถบเมนูไว้กับที่ ไม่ให้เลื่อนตามหน้าจอ */
+    bottom: 0;                 /* วางไว้ที่ล่างสุดของหน้าจอ */
+    left: 0;                   /* วางเริ่มจากขอบซ้ายสุด */
+    width: 100%;               /* ขยายความกว้างเต็มหน้าจอ */
+    height: 65px;              /* กำหนดความสูงของแถบเมนูที่ 65px */
+    background: #fff;          /* พื้นหลังสีขาว */
+    box-shadow: 0 -2px 15px rgba(0,0,0,.10); /* ใส่เงาจางๆ ด้านบนของแถบเพื่อให้ดูมีมิติ */
+    z-index: 9999;             /* ตั้งค่าให้อยู่ชั้นบนสุดของทุกองค์ประกอบ */
+    border-top: 1px solid #eee; /* ใส่เส้นขอบบางๆ ด้านบนเพื่อแบ่งแยกจากเนื้อหา */
+  }
+
+  .action-btn {
+    flex: 1;                   /* แบ่งพื้นที่ให้แต่ละปุ่มเท่าๆ กัน */
+    display: flex;             /* จัดเนื้อหาภายในปุ่ม */
+    flex-direction: column;    /* เรียงไอคอนและข้อความในแนวตั้ง (บน-ล่าง) */
+    justify-content: center;   /* จัดให้อยู่กึ่งกลางในแนวตั้ง */
+    align-items: center;       /* จัดให้อยู่กึ่งกลางในแนวนอน */
+    text-decoration: none !important; /* ลบเส้นใต้ของลิงก์ออกทั้งหมด */
+    font-size: .75em;          /* กำหนดขนาดตัวอักษรให้เล็กพอเหมาะกับมือถือ */
+    font-weight: 900;          /* กำหนดตัวอักษรให้มีความหนามากที่สุด */
+    border-right: 1px solid #f0f0f0; /* ใส่เส้นคั่นแนวตั้งระหว่างปุ่ม */
+  }
+
+  .action-btn i { 
+    font-size: 1.4em;          /* ปรับขนาดไอคอนให้ใหญ่กว่าตัวหนังสือ */
+    margin-bottom: 3px;        /* เว้นระยะห่างระหว่างไอคอนกับตัวหนังสือด้านล่าง */
+  }
+  
+  /* Logo Adjustments - การปรับแต่งโลโก้ */
+  #header .kh-brand__img { 
+    width: 52px;               /* ย่อความกว้างรูปโลโก้เหลือ 52px */
+    height: 52px;              /* ย่อความสูงรูปโลโก้เหลือ 52px */
+  }
+
+  .luxury-3d-gold { 
+    font-size: 22px;           /* ปรับขนาดชื่อแบรนด์หลักให้เหลือ 22px */
+  }
+
+  .luxury-subtitle-gold { 
+    font-size: 9px;            /* ปรับขนาดคำบรรยายใต้ชื่อแบรนด์ให้เหลือ 9px */
+    letter-spacing: 2px;       /* เพิ่มระยะห่างระหว่างตัวอักษรให้ดูโปร่งและหรูหรา */
+  }
+}
+
+
+@media screen and (max-width: 1280px) {
+  #main { margin-left: 0 !important; }
+}
