@@ -477,5 +477,18 @@
 });
 
   </script>
+
+	<script>
+  document.addEventListener('click', function(event) {
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar.classList.contains('active') &&
+        !sidebar.contains(event.target) &&
+        !event.target.closest('#menuToggle')) {
+      sidebar.classList.remove('active');
+    }
+  });
+</script>
+
+	
 </body>
 </html>
