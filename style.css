@@ -291,3 +291,7 @@ button#khCloseBtn:hover i {
   padding: 15px;
 }
 
+body {
+  overflow-x: hidden;
+}
+
