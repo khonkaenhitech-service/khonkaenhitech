@@ -1,379 +1,286 @@
 /* ==========================================================================
-   KHON KAEN HITECH – MASTER STYLE PACK (Final Edition)
-   รวม: Style Pack ใหม่ + โลโก้ทอง 3D + ปุ่มลอยดุ๊กดิ๊ก + แก้บั๊ก Sidebar
+   🎨 KHON KAEN HITECH – MASTER STYLE SHEET (ฉบับสมบูรณ์)
+   รวมทุกฟังก์ชัน: ธีมทองหรู, ปุ่มปิดสี่เหลี่ยม, เมนูมือถือ, และเอฟเฟกต์เทพ
    ========================================================================== */
 
-/* -----------------------------
-   0) Design Tokens & Variables
------------------------------ */
+/* -----------------------------------------------------------
+   1. การตั้งค่าตัวแปรสีและค่าหลัก (Variables)
+   ----------------------------------------------------------- */
 :root {
-  --kh-primary: #d32f2f;           /* urgency */
-  --kh-accent: #2c3e50;            /* authority */
-  --kh-gold: #a87910;              /* trust/wealth */
-  --kh-gold-light: #d4a035;
-  --kh-gold-grad: linear-gradient(135deg,#b8870b 0%,#d46a00 100%);
-
-  --kh-paper: #ffffff;
-  --kh-paper-2: #f9fafb;
-  --kh-ink: #111827;
-  --kh-ink-2: #374151;
-  --kh-muted: #6b7280;
-
-  --kh-line: rgba(0,0,0,.08);
-  --kh-shadow: 0 10px 30px rgba(0,0,0,.06);
-  --kh-shadow-2: 0 18px 45px rgba(0,0,0,.10);
-  --kh-radius: 12px;
-
-  --kh-sidebar-w: 300px;
-  --kh-fab-size: 46px;
+  /* โทนสีหลักของเว็บ */
+  --kh-gold: #d4af37;           /* สีทองหลัก */
+  --kh-gold-light: #f9f295;     /* สีทองสว่าง (ใช้ตอนไล่เฉด) */
+  --kh-gold-dark: #ab8e28;      /* สีทองเข้ม (เงา) */
+  
+  /* การไล่สีทองแบบ Luxury (Gradient) */
+  --kh-gold-grad: linear-gradient(135deg, #d4af37 0%, #f9f295 50%, #ab8e28 100%);
+  
+  /* ขนาดและความกว้าง */
+  --kh-sidebar-w: 360px;        /* ความกว้างของเมนู Sidebar */
+  --kh-radius: 12px;            /* ความมนของมุมต่างๆ */
 }
 
-/* -----------------------------
-   1) Global / SEO UX
------------------------------ */
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+/* -----------------------------------------------------------
+   2. การตั้งค่าพื้นฐาน (Global Styles)
+   ----------------------------------------------------------- */
 body {
-  font-family: 'Sarabun','Open Sans',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  color: #333;
-  line-height: 1.7;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Sarabun', sans-serif; /* บังคับใช้ฟอนต์สารบัญทั้งเว็บ */
   background-color: #fff;
-}
-img { max-width: 100%; height: auto; border-radius: var(--kh-radius); }
-a { -webkit-tap-highlight-color: transparent; text-decoration: none; color: var(--kh-primary); transition: 0.2s; border-bottom: 1px dotted rgba(0,0,0,0.2); }
-a:hover { color: var(--kh-gold); border-bottom-color: var(--kh-gold); }
-:focus-visible { outline: 3px solid rgba(168,121,16,.45); outline-offset: 2px; border-radius: 10px; }
-
-/* Headings */
-h1,h2,h3,h4,h5 { font-weight: 800; color: #222; margin-bottom: 1rem; line-height: 1.3; }
-h2 { position: relative; display: inline-block; margin-bottom: 1.5em; }
-h2::after {
-  content: ""; position: absolute; bottom: -10px; left: 0;
-  width: 60px; height: 4px; background: var(--kh-gold-grad); border-radius: 2px;
+  color: #333;
 }
 
-/* Primary CTA Button */
-.button.primary {
-  background: var(--kh-gold-grad) !important;
-  box-shadow: 0 6px 18px rgba(168,121,16,.35) !important;
-  border-radius: 999px !important;
-  border: none !important;
-  font-weight: 900 !important;
-  padding: 0 2em !important; height: 3.5em !important; line-height: 3.5em !important;
-  transition: transform .18s ease, box-shadow .18s ease !important;
-  color: #fff !important;
-}
-.button.primary:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(168,121,16,.30) !important; }
+/* ทำให้การเลื่อนหน้าเว็บนุ่มนวล */
+html { scroll-behavior: smooth; }
 
+/* ปรับแต่งรูปภาพให้มีมุมมนตามธีม */
+img { border-radius: var(--kh-radius); }
 
-/* =========================
-    2)LUXURY HEADER: SQUARE LOGO + GRAND SWEEP SHINE
-  /* =========================
-   LUXURY HEADER: ROYAL GOLD (SLOW FLOW EDITION)
-   ต้นฉบับ: แสงวิ่งช้า (Slow Motion) + โลโก้สะอาดตา + ทองฉ่ำสว่าง
-   ========================= */
-
-/* ปรับพื้นหลัง Header */
+/* -----------------------------------------------------------
+   3. ส่วนหัวเว็บไซต์แบบหรู (Luxury Header)
+   ----------------------------------------------------------- */
 #header {
-    background: #fff;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.15); /* เส้นทองจางๆ */
-    box-shadow: 0 4px 25px rgba(0,0,0,0.03); /* เงาพื้นนุ่มๆ */
-    position: relative; z-index: 1000 !important;
+  background: #fff;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15); /* เส้นขอบทองจางๆ ด้านล่าง */
+  box-shadow: 0 4px 25px rgba(0,0,0,0.03);           /* เงาพื้นหลังนุ่มๆ */
+  position: relative; 
+  z-index: 1000 !important;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  padding: 10px 20px;
 }
 
-.lux-wrapper {
-    display: flex !important;
-    align-items: center;
-    gap: 16px;
-    text-decoration: none !important;
-    border-bottom: none !important;
-    padding: 6px;
-    border-radius: 12px;
-    transition: background 0.3s;
-}
-.lux-wrapper:hover {
-    background: rgba(255, 248, 220, 0.3); /* พื้นหลังสีครีมจางๆ เมื่อชี้ */
-}
-
-/* 1. โลโก้ (Clean & Full) */
+/* กรอบโลโก้ทอง */
 .lux-shape {
-    width: 60px; height: 60px;
-    background: transparent; /* ไม่มีพื้นหลังดำ */
-    border-radius: 14px; /* มุมมนสไตล์ App */
-    padding: 0; /* รูปเต็มกรอบ */
-    
-    /* กรอบทองบางเฉียบ + เงาทองฟุ้ง */
-    border: 1px solid #d4af37;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
-    
-    overflow: hidden;
-    flex-shrink: 0;
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 60px; height: 60px;
+  border: 1px solid #d4af37;
+  border-radius: 14px;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.25); /* เงาทองเรืองแสง */
+  overflow: hidden;
+  transition: transform 0.5s ease;
 }
 
-.lux-shape img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* เมาส์ชี้แล้วโลโก้ลอยขึ้นช้าๆ */
+/* เอฟเฟกต์ตอนชี้โลโก้ */
 .lux-wrapper:hover .lux-shape {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
 }
 
-/* 2. ตัวหนังสือภาษาไทย (Liquid Gold Shimmer) */
+/* ชื่อแบรนด์ภาษาไทย (เอฟเฟกต์ทองไหล) */
 .lux-title-th {
-    font-family: 'Sarabun', sans-serif;
-    font-weight: 800; 
-    font-size: 30px;
-    line-height: 1.1;
-    display: block;
-    position: relative;
-    
-    /* สีทองไล่เฉด 5 ระดับ (เทคนิคแสงเงา) */
-    background: linear-gradient(
-        120deg, 
-        #b88a00 0%,    /* ทองเข้ม (เงา) */
-        #eec95e 25%,   /* ทองสว่าง */
-        #fffcf0 50%,   /* แสงขาว (Highlight จุดที่แสงกระทบ) */
-        #d4af37 75%,   /* ทองมาตรฐาน */
-        #8a6200 100%   /* ทองเข้ม (เงา) */
-    );
-    
-    background-size: 250% auto; /* ขยายพื้นหลังเพื่อให้แสงวิ่งได้ไกล */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
-    /* Animation: แสงวิ่งช้าๆ (Slow Flow) */
-    animation: liquid-gold 8s linear infinite; 
-    
-    /* เงาพื้นหลังนุ่มๆ ให้ตัวหนังสือลอย */
-    filter: drop-shadow(0px 2px 2px rgba(168, 121, 16, 0.15));
+  font-weight: 800; font-size: 26px; line-height: 1.1;
+  background: linear-gradient(120deg, #b88a00 0%, #eec95e 25%, #fffcf0 50%, #d4af37 75%, #8a6200 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: liquid-gold 8s linear infinite; /* สั่งให้สีทองไหล */
 }
 
-/* คีย์เฟรมแสงวิ่ง (วิ่งช้าๆ ลื่นไหล) */
-@keyframes liquid-gold {
-    0% { background-position: -200% center; }
-    100% { background-position: 200% center; }
+@keyframes liquid-gold { 
+  0% { background-position: -200% center; } 
+  100% { background-position: 200% center; } 
 }
 
-/* 3. ตัวหนังสือภาษาอังกฤษ */
+/* ชื่อแบรนด์ภาษาอังกฤษ */
 .lux-subtitle-en {
-    display: block;
-    font-size: 11px;
-    font-weight: 700;
-    color: #a87910; /* สีทองด้าน อ่านง่าย */
-    text-transform: uppercase;
-    letter-spacing: 3.5px; /* ช่องไฟกว้าง ดู Luxury */
-    margin-top: 3px;
-    opacity: 0.9;
+  display: block; font-size: 10px; font-weight: 700;
+  color: #a87910; letter-spacing: 2px; text-transform: uppercase;
 }
 
-/* --- Responsive Mobile --- */
-@media screen and (max-width: 768px) {
-    .lux-title-th { font-size: 24px; }
-    .lux-subtitle-en { font-size: 9px; letter-spacing: 2px; }
-    .lux-shape { width: 48px; height: 48px; }
-    #header { padding-top: 5em; } /* ปรับระยะห่างด้านบนให้พอดี */
-}
-
-/* -----------------------------
-   3) Cards / Modules
------------------------------ */
-.features article {
-  background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 16px;
-  padding: 25px; box-shadow: var(--kh-shadow);
-  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
-}
-.features article:hover {
-  transform: translateY(-7px); border-color: rgba(168,121,16,.65); box-shadow: var(--kh-shadow-2);
-}
-.highlight-box {
-  background-color: #fffbf0; border-left: 5px solid var(--kh-primary);
-  padding: 20px; margin: 30px 0; border-radius: 0 10px 10px 0;
-}
-.kh-reviews-marquee {
-  overflow: hidden; background: #fdfdfd; padding: 30px; 
-  border-radius: 16px; margin-top: 30px; border: 1px solid #eee;
-}
-.kh-review {
-  background: #fff; border-radius: 12px; padding: 20px; 
-  margin-bottom: 20px; border-left: 4px solid var(--kh-gold); 
-  box-shadow: 0 6px 18px rgba(0,0,0,.06);
-}
-.kh-stars { color: #FFD700; letter-spacing: 2px; }
-
-/* -----------------------------
-   4) Sidebar – FIX DIRECTION + WHITE FIT + CLEAN MENU
------------------------------ */
-#wrapper { display: flex !important; flex-direction: row !important; }
-
+/* -----------------------------------------------------------
+   4. เมนู Sidebar ด้านซ้าย (Sidebar & Menu)
+   ----------------------------------------------------------- */
 #sidebar {
-  position: fixed !important; top: 0; left: 0 !important; right: auto !important;
-  height: 100vh !important; width: var(--kh-sidebar-w) !important; max-width: 86vw !important;
-  background: var(--kh-paper) !important; border-right: 1px solid var(--kh-line) !important;
-  overflow-y: auto !important; z-index: 10000 !important;
-  transform: translateX(0) !important; transition: transform .26s ease !important; margin: 0 !important;
-  box-shadow: 5px 0 25px rgba(0,0,0,0.1);
+  width: var(--kh-sidebar-w) !important;
+  background: #fff !important;
+  border-right: 1px solid rgba(0,0,0,0.08) !important;
+  box-shadow: 5px 0 25px rgba(0,0,0,0.05);
 }
-#sidebar.inactive { transform: translateX(-100%) !important; box-shadow: none; }
 
-#main { margin-left: var(--kh-sidebar-w) !important; transition: margin-left .26s ease !important; min-height: 100vh; }
-body.kh-sidebar-closed #main { margin-left: 0 !important; }
-
-#sidebar > .inner { padding: 16px 14px !important; }
-
-/* Menu Card Style */
+/* กรอบเมนู */
 #sidebar #menu {
-  background: #fff !important; border: 1px solid rgba(0,0,0,.06) !important;
-  border-radius: 14px !important; padding: 14px !important;
+  background: #fff !important;
+  border: 1px solid rgba(0,0,0,.06) !important;
+  border-radius: 14px !important;
+  padding: 14px !important;
+  margin-top: 15px;
   box-shadow: 0 10px 26px rgba(0,0,0,.06) !important;
 }
-#sidebar #menu > header.major {
-  margin: 0 0 12px 0 !important; padding: 0 0 10px 0 !important;
-  border-bottom: 1px solid rgba(0,0,0,.06) !important;
-}
-#sidebar #menu > header.major h2 { margin: 0 !important; font-size: 16px !important; font-weight: 900 !important; }
 
-#sidebar #menu ul { list-style: none !important; margin: 0 !important; padding: 0 !important; }
-#sidebar #menu ul li { border-top: none !important; padding: 0 !important; margin: 0 0 8px 0 !important; }
-
-/* Menu Headers (Luxury Ribbon) */
-#sidebar #menu .menu-header, #sidebar #menu .menu-gold-header, #sidebar #menu li.menu-header {
+/* หัวข้อหมวดหมู่เมนู (แถบสีทองอ่อน) */
+.menu-header {
   display: flex !important; align-items: center !important; gap: 10px !important;
   margin: 16px 0 10px 0 !important; padding: 11px 12px !important;
   background: linear-gradient(90deg, rgba(168,121,16,.18) 0%, rgba(212,160,53,.12) 18%, rgba(255,255,255,0) 100%) !important;
-  border: 1px solid rgba(168,121,16,.18) !important; border-left: 5px solid var(--kh-gold) !important;
-  border-radius: 12px !important; color: #7c5a08 !important; font-weight: 900 !important; font-size: 12px !important;
-  text-transform: uppercase !important; letter-spacing: 1.1px !important;
+  border-left: 5px solid var(--kh-gold) !important;
+  border-radius: 12px !important;
+  color: #7c5a08 !important; font-weight: 900 !important; font-size: 12px !important;
 }
 
-/* Menu Links */
-#sidebar #menu a.menu-btn {
-  display: block !important; width: 100% !important; box-sizing: border-box !important;
-  background: #fff !important; border: 1px solid rgba(0,0,0,.08) !important;
-  border-radius: 12px !important; padding: 10px 12px !important;
-  font-weight: 900 !important; font-size: 14px !important; color: var(--kh-ink) !important;
-  transition: all .12s ease;
+/* ปุ่มลิงก์ในเมนู */
+.menu-btn {
+  display: block !important; width: 100% !important;
+  background: #fff !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  border-radius: 12px !important;
+  padding: 10px 12px !important;
+  color: #333 !important; font-weight: 800 !important; text-decoration: none !important;
+  transition: all .2s ease;
 }
-#sidebar #menu a.menu-btn:hover, #sidebar #menu a.menu-btn.is-active {
-  border-color: rgba(212,175,55,.55) !important;
+
+.menu-btn:hover, .menu-btn.is-active {
+  border-color: var(--kh-gold) !important;
   background: linear-gradient(90deg, rgba(212,175,55,.10), #fff) !important;
+  transform: translateX(5px);
 }
 
-/* Hide original toggle */
-#sidebar .toggle, body .toggle { display: none !important; }
+/* ปุ่มติดต่อด่วน (สีทองเด่น) */
+.btn-contact-gold {
+  background: var(--kh-gold-grad) !important;
+  color: #fff !important; text-align: center; border: none !important;
+  box-shadow: 0 5px 15px rgba(168, 121, 16, 0.3);
+  border-radius: 999px !important;
+}
 
-/* -----------------------------
-   5) FLOATING BAR (ALIVE & RANDOM MOTION)
-   ----------------------------- */
+/* -----------------------------------------------------------
+   5. ปุ่มปิดเมนู [สำคัญ: แก้ไขให้เป็นสี่เหลี่ยม] (Close Button Fix)
+   ----------------------------------------------------------- */
+/* ใช้ ID และ Class เพื่อความชัวร์ */
+button#khCloseBtn, .kh-close-btn {
+    /* ล้างค่าเดิมที่ทำให้ปุ่มเบี้ยว */
+    padding: 0 !important;
+    margin: 0 !important;
+    min-width: 0 !important;
+    box-shadow: none !important;
+    background-image: none !important;
+    
+    /* กำหนดขนาดสี่เหลี่ยมจัตุรัส */
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    
+    /* จัดไอคอนให้อยู่กึ่งกลาง */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    /* ดีไซน์ */
+    background-color: #fff !important;
+    border: 1px solid #ddd !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+}
+
+/* ไอคอนกากบาท */
+button#khCloseBtn i, .kh-close-btn i {
+    color: var(--kh-gold) !important;
+    font-size: 18px !important;
+}
+
+/* เอฟเฟกต์ตอนชี้ปุ่มปิด */
+button#khCloseBtn:hover {
+    background: var(--kh-gold-grad) !important;
+    border-color: transparent !important;
+}
+button#khCloseBtn:hover i {
+    color: #fff !important;
+}
+
+/* -----------------------------------------------------------
+   6. ปุ่มลอยด้านขวาสำหรับ PC (Floating Bar PC)
+   ----------------------------------------------------------- */
 #khFloatBar {
   position: fixed; right: 15px; top: 50%; transform: translateY(-50%);
-  z-index: 10000; display: flex; flex-direction: column; gap: 15px;
+  z-index: 9999;
+  display: flex; flex-direction: column; gap: 14px;
 }
 
 .kh-fbtn {
-  width: 55px; height: 55px; border-radius: 14px;
+  width: 52px; height: 52px;
+  border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
-  color: #fff !important; text-decoration: none; font-size: 24px;
-  position: relative; overflow: hidden; transition: all 0.2s ease;
-  border: 1px solid rgba(255,255,255,0.4);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -3px 0 rgba(0,0,0,0.15);
+  color: #fff !important; font-size: 24px; text-decoration: none;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.5);
+  transition: transform 0.2s;
 }
 
-.kh-fbtn.call   { background: linear-gradient(135deg, #ffca28 0%, #ff6f00 100%); animation: ring-ring 4s infinite ease-in-out; }
-.kh-fbtn.line   { background: linear-gradient(135deg, #00e676 0%, #00a152 100%); animation: bounce-gentle 3.2s infinite ease-in-out; animation-delay: 0.5s; }
-.kh-fbtn.repair { background: linear-gradient(135deg, #ff5252 0%, #d50000 100%); animation: twist-wrench 5s infinite ease-in-out; animation-delay: 1s; }
-.kh-fbtn.fb     { background: linear-gradient(135deg, #448aff 0%, #2962ff 100%); animation: float-calm 3.8s infinite ease-in-out; animation-delay: 1.5s; }
+/* สีของปุ่มแต่ละประเภท */
+.kh-fbtn.call   { background: linear-gradient(145deg, #ffc107, #ff8f00); }
+.kh-fbtn.line   { background: linear-gradient(145deg, #00e676, #00a844); }
+.kh-fbtn.repair { background: linear-gradient(145deg, #ff5252, #d32f2f); }
+.kh-fbtn.fb     { background: linear-gradient(145deg, #448aff, #1565c0); }
 
-.kh-fbtn::before {
-  content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 45%;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.05));
-  border-radius: 12px 12px 60% 60% / 12px 12px 20px 20px; pointer-events: none;
-}
-.kh-fbtn::after {
-  content: ""; position: absolute; top: -50%; left: -120%; width: 60%; height: 200%;
-  background: linear-gradient(to right, transparent, rgba(255,255,255,0.9), transparent);
-  transform: rotate(25deg); animation: shine-sweep 3s infinite; pointer-events: none;
-}
+.kh-fbtn:hover { transform: scale(1.15); z-index: 100; }
 
-@keyframes ring-ring { 0%,90%,100% { transform: rotate(0deg); } 92% { transform: rotate(-10deg); } 94% { transform: rotate(10deg); } 96% { transform: rotate(-10deg); } 98% { transform: rotate(10deg); } }
-@keyframes bounce-gentle { 0%,20%,50%,80%,100% { transform: translateY(0); } 40% { transform: translateY(-6px); } 60% { transform: translateY(-3px); } }
-@keyframes twist-wrench { 0%,100% { transform: rotate(0deg); } 10% { transform: rotate(-15deg); } 20% { transform: rotate(15deg); } 30% { transform: rotate(-15deg); } 40% { transform: rotate(0deg); } }
-@keyframes float-calm { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-@keyframes shine-sweep { 0% { left: -120%; opacity: 0; } 10% { opacity: 1; } 20% { left: 200%; opacity: 0; } 100% { left: 200%; opacity: 0; } }
+/* -----------------------------------------------------------
+   7. แถบเมนูล่างสำหรับมือถือ (Mobile Sticky Bar)
+   ----------------------------------------------------------- */
+.kh-mobile-bar { display: none; } /* ซ่อนใน PC */
 
-.kh-fbtn:hover { animation: none; transform: scale(1.15) translateX(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); z-index: 10001; }
-.kh-fbtn:active { animation: none; transform: scale(0.9); filter: brightness(1.4); }
+@media screen and (max-width: 768px) {
+  /* ซ่อนปุ่มลอยเดิม */
+  #khFloatBar { display: none !important; }
 
-/* -----------------------------
-   6) Mobile & Responsive
------------------------------ */
-.mobile-action-bar { display: none; }
-
-@media screen and (max-width: 768px) { /* สำหรับหน้าจอที่มีความกว้างไม่เกิน 768 พิกเซล (มือถือ/แท็บเล็ต) */
-  
-  body { 
-    padding-bottom: 70px; /* เว้นระยะห่างด้านล่างของหน้าเว็บ 70px เพื่อไม่ให้เนื้อหาถูกแถบเมนูทับ */
+  /* แสดงแถบล่าง */
+  .kh-mobile-bar {
+    display: flex;
+    position: fixed; bottom: 0; left: 0; width: 100%; height: 65px;
+    background: #fff;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+    z-index: 9999;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: env(safe-area-inset-bottom); /* รองรับ iPhone จอแหว่ง */
   }
 
-  /* ซ่อนปุ่มลอยบนมือถือ */
-  #khFloatBar { 
-    display: none; /* ปิดการแสดงผลปุ่มลอยเดิมในหน้าจอมือถือ */
+  .m-item {
+    flex: 1;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-decoration: none !important;
+    border-right: 1px solid rgba(0,0,0,0.03);
+    color: #555;
   }
   
-  /* Mobile Action Bar - แถบเมนูด้านล่าง */
-  .mobile-action-bar {
-    display: flex;             /* จัดวางปุ่มภายในแบบยืดหยุ่น (เรียงต่อกัน) */
-    position: fixed;           /* ตรึงแถบเมนูไว้กับที่ ไม่ให้เลื่อนตามหน้าจอ */
-    bottom: 0;                 /* วางไว้ที่ล่างสุดของหน้าจอ */
-    left: 0;                   /* วางเริ่มจากขอบซ้ายสุด */
-    width: 100%;               /* ขยายความกว้างเต็มหน้าจอ */
-    height: 65px;              /* กำหนดความสูงของแถบเมนูที่ 65px */
-    background: #fff;          /* พื้นหลังสีขาว */
-    box-shadow: 0 -2px 15px rgba(0,0,0,.10); /* ใส่เงาจางๆ ด้านบนของแถบเพื่อให้ดูมีมิติ */
-    z-index: 9999;             /* ตั้งค่าให้อยู่ชั้นบนสุดของทุกองค์ประกอบ */
-    border-top: 1px solid #eee; /* ใส่เส้นขอบบางๆ ด้านบนเพื่อแบ่งแยกจากเนื้อหา */
-  }
+  .m-item i { font-size: 20px; margin-bottom: 4px; }
+  .m-item span { font-size: 10px; font-weight: 700; }
 
-  .action-btn {
-    flex: 1;                   /* แบ่งพื้นที่ให้แต่ละปุ่มเท่าๆ กัน */
-    display: flex;             /* จัดเนื้อหาภายในปุ่ม */
-    flex-direction: column;    /* เรียงไอคอนและข้อความในแนวตั้ง (บน-ล่าง) */
-    justify-content: center;   /* จัดให้อยู่กึ่งกลางในแนวตั้ง */
-    align-items: center;       /* จัดให้อยู่กึ่งกลางในแนวนอน */
-    text-decoration: none !important; /* ลบเส้นใต้ของลิงก์ออกทั้งหมด */
-    font-size: .75em;          /* กำหนดขนาดตัวอักษรให้เล็กพอเหมาะกับมือถือ */
-    font-weight: 900;          /* กำหนดตัวอักษรให้มีความหนามากที่สุด */
-    border-right: 1px solid #f0f0f0; /* ใส่เส้นคั่นแนวตั้งระหว่างปุ่ม */
-  }
-
-  .action-btn i { 
-    font-size: 1.4em;          /* ปรับขนาดไอคอนให้ใหญ่กว่าตัวหนังสือ */
-    margin-bottom: 3px;        /* เว้นระยะห่างระหว่างไอคอนกับตัวหนังสือด้านล่าง */
-  }
-  
-  /* Logo Adjustments - การปรับแต่งโลโก้ */
-  #header .kh-brand__img { 
-    width: 52px;               /* ย่อความกว้างรูปโลโก้เหลือ 52px */
-    height: 52px;              /* ย่อความสูงรูปโลโก้เหลือ 52px */
-  }
-
-  .luxury-3d-gold { 
-    font-size: 22px;           /* ปรับขนาดชื่อแบรนด์หลักให้เหลือ 22px */
-  }
-
-  .luxury-subtitle-gold { 
-    font-size: 9px;            /* ปรับขนาดคำบรรยายใต้ชื่อแบรนด์ให้เหลือ 9px */
-    letter-spacing: 2px;       /* เพิ่มระยะห่างระหว่างตัวอักษรให้ดูโปร่งและหรูหรา */
-  }
+  /* สีปุ่มในมือถือ */
+  .m-item.call { color: #ff8f00; background: #fffcf5; }
+  .m-item.line { color: #00c300; }
+  .m-item.msg  { color: #0084ff; }
+  .m-item.menu { color: #333; background: #fafafa; }
 }
 
+/* -----------------------------------------------------------
+   8. การ์ดบริการ (Service Cards)
+   ----------------------------------------------------------- */
+.service-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 16px;
+  padding: 30px;
+  height: 100%;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
 
-@media screen and (max-width: 1280px) {
-  #main { margin-left: 0 !important; }
+/* แถบสีทองคาดหัวการ์ด */
+.service-card::before {
+  content: ""; position: absolute; top: 0; left: 0;
+  width: 100%; height: 4px; background: var(--kh-gold-grad);
+}
+
+.service-card:hover {
+  transform: translateY(-8px); /* ลอยขึ้นเมื่อชี้ */
+  box-shadow: 0 15px 35px rgba(168, 121, 16, 0.15);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.card-icon {
+  width: 60px; height: 60px;
+  background: #fffbf0; color: var(--kh-gold);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; margin-bottom: 20px;
 }

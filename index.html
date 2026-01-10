@@ -49,7 +49,7 @@
 
   <style>
     :root{
-      --kh-sidebar-w: 370px;
+      --kh-sidebar-w: 380px;
       --kh-gold: #d4af37;
       --kh-line: rgba(0,0,0,0.10);
     }
@@ -109,10 +109,10 @@
     .kh-brand{ display:flex; align-items:center; gap: 10px; }
     .kh-brand__img img {
     width: 60px;
-    height: 57.5px;
+    height: 60px;
     object-fit: cover;
     display: block;
-}
+    }
     .kh-brand__th{ font-weight: 900; }
     .kh-brand__en{ font-size: 12px; letter-spacing:.4px; color: rgba(0,0,0,.55); text-transform: uppercase; font-weight: 800; }
 
@@ -244,6 +244,28 @@
       z-index: 9998; display: none;
     }
     #khOverlay.show{ display:block; }
+    
+    /* Mobile Bar Styling */
+    .kh-mobile-bar { display: none; }
+    @media screen and (max-width: 768px) {
+      #khFloatBar { display: none !important; }
+      .kh-mobile-bar {
+        display: flex; position: fixed; bottom: 0; left: 0; width: 100%; height: 65px;
+        background: #fff; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); z-index: 9999;
+        border-top: 1px solid rgba(0,0,0,0.05); padding-bottom: env(safe-area-inset-bottom);
+      }
+      .m-item {
+        flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        text-decoration: none !important; border-right: 1px solid rgba(0,0,0,0.03); color: #555; transition: all 0.2s;
+      }
+      .m-item:last-child { border-right: none; }
+      .m-item i { font-size: 20px; margin-bottom: 4px; }
+      .m-item span { font-size: 10px; font-weight: 700; }
+      .m-item.call { color: #ff8f00; background: #fffcf5; }
+      .m-item.line { color: #00c300; }
+      .m-item.msg  { color: #0084ff; }
+      .m-item.menu { color: #333; background: #fafafa; }
+    }
 
     @media screen and (max-width: 1280px){
       #main{ margin-left: 0; }
@@ -259,21 +281,10 @@
   <div id="khOverlay" aria-hidden="true"></div>
 
   <div id="khFloatBar">
-    <a class="kh-fbtn call" href="tel:0944749874" aria-label="โทรหาช่าง" target="_blank">
-      <i class="icon solid fa-phone"></i>
-    </a>
-    
-    <a class="kh-fbtn line" href="https://line.me/ti/p/~KKHITECH" aria-label="แอดไลน์" target="_blank">
-      <i class="icon brands fa-line"></i>
-    </a>
-    
-    <a class="kh-fbtn repair" href="https://m.me/Line0944749874" aria-label="แจ้งซ่อมด่วน" target="_blank">
-      <i class="icon solid fa-tools"></i>
-    </a>
-    
-    <a class="kh-fbtn fb" href="https://www.facebook.com/Line0944749874" aria-label="Facebook Page" target="_blank">
-      <i class="icon brands fa-facebook-f"></i>
-    </a>
+    <a class="kh-fbtn call" href="tel:0944749874" aria-label="โทรหาช่าง" target="_blank"><i class="icon solid fa-phone"></i></a>
+    <a class="kh-fbtn line" href="https://line.me/ti/p/~KKHITECH" aria-label="แอดไลน์" target="_blank"><i class="icon brands fa-line"></i></a>
+    <a class="kh-fbtn repair" href="https://m.me/Line0944749874" aria-label="แจ้งซ่อมด่วน" target="_blank"><i class="icon solid fa-tools"></i></a>
+    <a class="kh-fbtn fb" href="https://www.facebook.com/Line0944749874" aria-label="Facebook Page" target="_blank"><i class="icon brands fa-facebook-f"></i></a>
   </div>
 
   <div id="wrapper">
@@ -285,23 +296,17 @@
             <button id="khMenuBtn" class="kh-menu-btn" type="button" aria-label="เปิด/ปิดเมนู">
               <i class="icon solid fa-bars" aria-hidden="true"></i>
             </button>
-
-     <a href="index.html" class="logo kh-brand lux-wrapper">
-  
-  <span class="kh-brand__img lux-shape">
-    <img src="images/logo-khonkaen.webp" alt="โลโก้ ขอนแก่นไฮเทค" width="60" height="60">
-  </span>
-
-  <span class="kh-brand__text">
-    <span class="lux-title-th" data-text="ขอนแก่นไฮเทค">ขอนแก่นไฮเทค</span>
-    <span class="lux-subtitle-en">KHON KAEN HITECH</span>
-  </span>
-
-  <span class="lux-shine-overlay"></span>
-</a>
+            <a href="index.html" class="logo kh-brand lux-wrapper">
+              <span class="kh-brand__img lux-shape">
+                <img src="images/logo-khonkaen.webp" alt="โลโก้ ขอนแก่นไฮเทค" width="60" height="60">
+              </span>
+              <span class="kh-brand__text">
+                <span class="lux-title-th" data-text="ขอนแก่นไฮเทค">ขอนแก่นไฮเทค</span>
+                <span class="lux-subtitle-en">KHON KAEN HITECH</span>
+              </span>
+              <span class="lux-shine-overlay"></span>
+            </a>
           </div>
-
-        
         </header>
 
         <section>
@@ -334,25 +339,57 @@
     <div id="sidebar" class="inactive">
       <div class="inner">
         <nav id="menu" aria-label="เมนูด้านซ้าย">
-          <header class="major"><h2>เมนู</h2></header>
+          <header class="major" style="display:flex; justify-content:space-between; align-items:center;">
+            <h2>เมนู</h2>
+
+          </header>
+          
           <ul class="menu-gold">
             <li><a href="index.html" class="menu-btn is-active">หน้าแรก</a></li>
-            <div class="menu-header">◆ การติดต่อ</div>
             <li><a href="contact.html" class="menu-btn">ติดต่อ / แผนที่ร้าน</a></li>
             <li><a href="tel:0944749874" class="menu-btn btn-contact-gold">ติดต่อด่วน (โทรเลย)</a></li>
-            <div class="menu-header">◆ รวมบริการ</div>
-            <li><a href="services.html" class="menu-btn">รวมบริการทั้งหมด</a></li>
-            <div class="menu-header">◆ ธุรกิจหยอดเหรียญ</div>
-            <li><a href="laundry.html" class="menu-btn">เครื่องซักผ้าหยอดเหรียญ</a></li>
-            <li><a href="water.html" class="menu-btn">ตู้กดน้ำ / RO</a></li>
-            <li><a href="vending.html" class="menu-btn">ตู้คาร์แคร์หยอดเหรียญ</a></li>
-            <li><a href="oil-vending.html" class="menu-btn">ตู้น้ำมันหยอดเหรียญ</a></li>
-            <div class="menu-header">◆ งานระบบ / ช่าง / ติดตั้ง</div>
-            <li><a href="cctv.html" class="menu-btn">CCTV / กล้องวงจรปิด</a></li>
-            <li><a href="electrical.html" class="menu-btn">งานไฟฟ้า / ตู้ MDB</a></li>
-            <li><a href="solar.html" class="menu-btn">โซล่าเซลล์</a></li>
-            <div class="menu-header">◆ บทความ LOCAL SEO</div>
-            <li><a href="khonkaen-system.html" class="menu-btn">บทความ LOCAL SEO</a></li>
+
+            <div class="menu-header">◆ 1. ธุรกิจหยอดเหรียญ</div>
+            <li><a href="laundry.html" class="menu-btn">🧼 เครื่องซักผ้าหยอดเหรียญ</a></li>
+            <li><a href="water.html" class="menu-btn">🧃 ตู้น้ำดื่ม RO / น้ำแร่</a></li>
+            <li><a href="oil-vending.html" class="menu-btn">⛽ ตู้น้ำมันหยอดเหรียญ</a></li>
+            <li><a href="franchise.html" class="menu-btn">🏪 แฟรนไชส์ซักผ้า/คาร์แคร์</a></li>
+            <li><a href="coinbox.html" class="menu-btn">📮 กล่องหยอดเหรียญ</a></li>
+
+            <div class="menu-header">◆ 2. ไฟฟ้า & พลังงาน</div>
+            <li><a href="high-voltage.html" class="menu-btn">🔌 หม้อแปลงไฟฟ้า / ไฟแรงสูง</a></li>
+            <li><a href="mdb.html" class="menu-btn">📦 ตู้ MDB / ตู้คอนโทรล</a></li>
+            <li><a href="electrical.html" class="menu-btn">🏢 ระบบไฟฟ้าอาคาร-โรงงาน</a></li>
+            <li><a href="solar.html" class="menu-btn">🌞 โซล่าเซลล์ลดค่าไฟ</a></li>
+
+            <div class="menu-header">◆ 3. ความปลอดภัย & ไอที</div>
+            <li><a href="cctv.html" class="menu-btn">🎥 กล้องวงจรปิด CCTV</a></li>
+            <li><a href="access.html" class="menu-btn">🔐 คีย์การ์ด / สแกนใบหน้า</a></li>
+            <li><a href="autodoor.html" class="menu-btn">🚪 ประตูออโต้ / ไม้กั้นรถ</a></li>
+            <li><a href="network.html" class="menu-btn">📡 วางระบบ WiFi / Mikrotik</a></li>
+
+            <div class="menu-header">◆ 4. ก่อสร้าง & ระบบอาคาร</div>
+            <li><a href="construction.html" class="menu-btn">🏗️ สร้างบ้าน / ต่อเติม / หลังคา</a></li>
+            <li><a href="aircon.html" class="menu-btn">❄️ แอร์บ้าน / ท่อดักท์ / Chiller</a></li>
+            <li><a href="plumbing.html" class="menu-btn">💧 ระบบน้ำ / ปั๊มน้ำ</a></li>
+
+            <div class="menu-header">◆ 5. ซ่อมบำรุง & ทำความสะอาด</div>
+            <li><a href="repair.html" class="menu-btn">🛠️ ซ่อมด่วนทุกชนิด</a></li>
+            <li><a href="repair-electronics.html" class="menu-btn">🖥️ ซ่อมเครื่องใช้ไฟฟ้าทุกชนิด</a></li>
+            <li><a href="cleaning-air.html" class="menu-btn">🧼 ล้างแอร์ฆ่าเชื้อ</a></li>
+            <li><a href="cleaning-washing.html" class="menu-btn">🧺 ล้างถังซักเครื่องซักผ้า</a></li>
+            <li><a href="cleaning-tank.html" class="menu-btn">🚿 ล้างถังเก็บน้ำ 500-20,000 ลิตร</a></li>
+
+            <div class="menu-header">◆ บทความเด็ดสายดาร์ก</div>
+            <li><a href="article-dirty-secret.html" class="menu-btn">😷 ความลับวงการล้างแอร์</a></li>
+            <li><a href="article-solar-fail.html" class="menu-btn">⚠️ ติดโซล่าแล้วไฟไม่ลด เพราะอะไร?</a></li>
+            <li><a href="article-vending-truth.html" class="menu-btn">🧨 หยอดเหรียญ = รวยหรือภาพลวง?</a></li>
+
+            <div class="menu-header">◆ ช่องทางติดต่อ</div>
+            <li><a href="tel:0944749874" class="menu-btn">📞 โทรติดต่อทันที</a></li>
+            <li><a href="https://line.me/ti/p/~KKHITECH" class="menu-btn" target="_blank">💬 แอดไลน์ปรึกษาฟรี</a></li>
+            <li><a href="https://www.facebook.com/Line0944749874" class="menu-btn" target="_blank">🌐 Facebook ผลงาน</a></li>
+            <li><a href="https://maps.app.goo.gl/MEzcUbzq4x3g8kjdA" class="menu-btn" target="_blank">🗺️ แผนที่ร้าน ขอนแก่นไฮเทค</a></li>
           </ul>
         </nav>
         <footer id="footer">
@@ -361,6 +398,26 @@
       </div>
       <a href="#sidebar" class="toggle">Toggle</a>
     </div>
+
+    <div class="kh-mobile-bar">
+      <a href="tel:0944749874" class="m-item call">
+        <i class="fas fa-phone-alt"></i>
+        <span>โทรเลย</span>
+      </a>
+      <a href="https://line.me/ti/p/~KKHITECH" class="m-item line" target="_blank">
+        <i class="fab fa-line"></i>
+        <span>แอดไลน์</span>
+      </a>
+      <a href="https://m.me/Line0944749874" class="m-item msg" target="_blank">
+        <i class="fab fa-facebook-messenger"></i>
+        <span>แชท</span>
+      </a>
+      <a href="#" id="mMenuBtn" class="m-item menu">
+        <i class="fas fa-bars"></i>
+        <span>เมนู</span>
+      </a>
+    </div>
+
   </div>
 
   <script src="assets/js/jquery.min.js"></script>
@@ -376,6 +433,8 @@
     const sidebar = document.getElementById('sidebar');
     const body = document.body;
     const btn = document.getElementById('khMenuBtn');
+    const mBtn = document.getElementById('mMenuBtn'); // ปุ่มเมนูจาก Mobile Bar
+    const closeBtn = document.getElementById('khCloseBtn'); // ปุ่มปิดเมนู
     const overlay = document.getElementById('khOverlay');
 
     function isMobile(){ return window.matchMedia('(max-width: 1280px)').matches; }
@@ -403,9 +462,16 @@
       }
     })();
 
-    btn.addEventListener('click', function(e){ e.preventDefault(); setSidebarClosed(!sidebar.classList.contains('inactive')); });
-    overlay.addEventListener('click', function(){ setSidebarClosed(true); });
+    if(btn) btn.addEventListener('click', function(e){ e.preventDefault(); setSidebarClosed(!sidebar.classList.contains('inactive')); });
+    if(mBtn) mBtn.addEventListener('click', function(e){ e.preventDefault(); setSidebarClosed(!sidebar.classList.contains('inactive')); });
+    if(closeBtn) closeBtn.addEventListener('click', function(e){ e.preventDefault(); setSidebarClosed(true); });
+    if(overlay) overlay.addEventListener('click', function(){ setSidebarClosed(true); });
     window.addEventListener('resize', function(){ setSidebarClosed(sidebar.classList.contains('inactive')); });
+	
+	if (overlay) overlay.addEventListener('click', function () {
+  setSidebarClosed(true); // คลิกที่ว่างเพื่อปิดเมนู
+});
+
   </script>
 </body>
 </html>
