@@ -423,31 +423,6 @@ body.kh-sidebar-closed #main { margin-left: 0 !important; }
   letter-spacing: 1px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media screen and (max-width: 1280px) {
   #main { margin-left: 0 !important; }
 }
