@@ -373,6 +373,67 @@ body.kh-sidebar-closed #main { margin-left: 0 !important; }
   }
 }
 
+/* ตั้งค่าตัวปุ่มหลัก */
+#khMenuBtn {
+  position: relative; /* เพื่อให้คำว่า MENU อ้างอิงตำแหน่งกับปุ่มนี้ */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;  /* ปรับขนาดตามความต้องการ */
+  height: 60px; /* ปรับขนาดตามความต้องการ */
+  border-radius: 12px; /* ความโค้งของมุมปุ่ม */
+  background-color: #ffffff; /* สีพื้นหลังปุ่ม */
+  border: 2px solid #ddd;   /* เส้นขอบปุ่ม */
+  cursor: pointer;
+}
+
+/* ตั้งค่ารูปภาพด้านในปุ่ม */
+#khMenuBtn img {
+  width: 80%;  /* ให้รูปภาพเล็กลงกว่าปุ่มเล็กน้อย */
+  height: 80%;
+  object-fit: contain;
+}
+
+/* สร้างคำว่า MENU ไว้นอกกรอบ (ด้านล่าง) */
+#khMenuBtn::after {
+  content: "MENU"; /* ข้อความที่ต้องการ */
+  position: absolute;
+  bottom: -25px;   /* ดันลงไปด้านล่าง นอกกรอบรูป */
+  left: 50%;
+  transform: translateX(-50%); /* จัดให้อยู่กึ่งกลางพอดี */
+  
+  /* ตกแต่งตัวอักษร */
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 1280px) {
   #main { margin-left: 0 !important; }
