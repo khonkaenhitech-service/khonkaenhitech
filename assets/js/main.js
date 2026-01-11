@@ -174,13 +174,12 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("Khon Kaen Hitech System: Fully Loaded (Widgets + FAQ + SEO)");
 });
 
-const button = document.querySelector('#khMenuBtn');
-const imgElement = button.querySelector('img');
-
 if (imgElement) {
-  imgElement.src = 'images/menukhonkaenhitech.webp';
+  imgElement.src = 'images/menukhonkaenhitech.webp'; // เปลี่ยนที่อยู่รูปภาพเป็นไฟล์ใหม่
+  
   // You might want to adjust the alt text for accessibility
-  imgElement.alt = 'Menu Button'; 
+  imgElement.alt = 'Menu Button'; // กำหนดข้อความอธิบายรูปภาพ (เพื่อการเข้าถึงที่ใช้งานง่าย)
 } else {
-  console.warn('No img element found inside #khMenuBtn');
+  console.warn('No img element found inside #khMenuBtn'); // แจ้งเตือนเมื่อไม่พบแท็กรูปภาพภายในปุ่ม #khMenuBtn
 }
+
