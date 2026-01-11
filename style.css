@@ -359,8 +359,8 @@ body.kh-sidebar-closed #main { margin-left: 0 !important; }
   
   /* Logo Adjustments - การปรับแต่งโลโก้ */
   #header .kh-brand__img { 
-    width: 52px;               /* ย่อความกว้างรูปโลโก้เหลือ 52px */
-    height: 52px;              /* ย่อความสูงรูปโลโก้เหลือ 52px */
+    width: 100px;               /* ย่อความกว้างรูปโลโก้เหลือ 52px */
+    height: 100px;              /* ย่อความสูงรูปโลโก้เหลือ 52px */
   }
 
   .luxury-3d-gold { 
