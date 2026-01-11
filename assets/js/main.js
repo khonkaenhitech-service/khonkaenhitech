@@ -173,3 +173,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     console.log("Khon Kaen Hitech System: Fully Loaded (Widgets + FAQ + SEO)");
 });
+
+const button = document.querySelector('#khMenuBtn');
+const imgElement = button.querySelector('img');
+
+if (imgElement) {
+  imgElement.src = 'images/menukhonkaenhitech.webp';
+  // You might want to adjust the alt text for accessibility
+  imgElement.alt = 'Menu Button'; 
+} else {
+  console.warn('No img element found inside #khMenuBtn');
+}
