@@ -394,35 +394,6 @@ body.kh-sidebar-closed #main { margin-left: 0 !important; }
   object-fit: contain;
 }
 
-#khMenuBtn {
-  position: relative; /* สำคัญ: เพื่อให้ตัวอักษรเกาะไปกับปุ่ม */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;  /* ปรับขนาดความกว้างตามต้องการ */
-  height: 50px; /* ปรับขนาดความสูงตามต้องการ */
-  border: 2px solid #333; /* ขอบปุ่ม */
-  border-radius: 12px;    /* มุมโค้ง */
-  background-color: white;
-  margin-bottom: 25px;    /* เผื่อที่ว่างด้านล่างสำหรับคำว่า MENU */
-}
-
-/* ส่วนที่สร้างคำว่า MENU */
-#khMenuBtn::after {
-  content: "MENU";        /* ข้อความที่ปรากฏ */
-  position: absolute;
-  bottom: -22px;          /* ดันลงมาให้อยู่ใต้ปุ่ม (ปรับตัวเลขได้) */
-  left: 50%;              /* จัดให้อยู่กึ่งกลาง */
-  transform: translateX(-50%); 
-  
-  /* ตกแต่งตัวอักษร */
-  font-family: 'Arial', sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  color: #333;
-  letter-spacing: 1px;
-}
-
 @media screen and (max-width: 1280px) {
   #main { margin-left: 0 !important; }
 }
