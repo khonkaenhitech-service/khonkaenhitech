@@ -10,13 +10,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>รับเหมาก่อสร้าง ขอนแก่น | ต่อเติมโรงรถ หลังคา ไม่ทิ้งงาน - ขอนแก่นไฮเทค</title>
-  <meta name="description" content="ทีมช่างรับเหมาขอนแก่น งานโครงสร้างเหล็ก ต่อเติมครัว หลังคาโรงรถ เมทัลชีท เทพื้นคอนกรีต งานเล็กงานใหญ่รับหมด ไม่ทิ้งงาน ราคามาตรฐาน" />
-  <meta name="keywords" content="รับเหมาก่อสร้างขอนแก่น, ช่างต่อเติมขอนแก่น, ทำหลังคาขอนแก่น, เทพื้นปูน, ช่างเหล็กขอนแก่น" />
+  <!-- ✅ 1. Meta Title & Description -->
+  <title>รับติดตั้งหม้อแปลงไฟฟ้า ขอนแก่น | หม้อแปลงระเบิด = เจ๊ง! บำรุงรักษาก่อนสาย</title>
+  <meta name="description" content="บริการตรวจสอบและบำรุงรักษาหม้อแปลงไฟฟ้าในขอนแก่น กรองน้ำมันหม้อแปลง เปลี่ยนประเก็น ซ่อมรั่วซึม ป้องกันหม้อแปลงระเบิด โดยทีมวิศวกรไฟฟ้ากำลัง" />
+  <meta name="keywords" content="หม้อแปลงไฟฟ้าขอนแก่น, ซ่อมหม้อแปลง, กรองน้ำมันหม้อแปลง, ติดตั้งหม้อแปลง, ไฟแรงสูง, PM หม้อแปลง" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#d4af37" />
 
-  <link rel="canonical" href="https://khonkaenhitech-service.github.io/khonkaenhitech/construction.html" />
+  <link rel="canonical" href="https://khonkaenhitech-service.github.io/khonkaenhitech/high-voltage.html" />
   <link rel="icon" href="images/favicon.webp" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,8 +27,8 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* Reuse CSS Style Block */
-    :root{ --kh-sidebar-w: 380px; --kh-gold: #d4af37; --kh-line: rgba(0,0,0,0.10); }
+    /* ใช้ CSS ร่วมกับ style.css แต่ใส่ Critical CSS ไว้เพื่อความชัวร์ */
+    :root{ --kh-sidebar-w: 380px; --kh-gold: #d4af37; --kh-gold-dark: #a87910; --kh-line: rgba(0,0,0,0.10); }
     body, input, select, textarea, button, h1, h2, h3, h4, h5, h6 { font-family: 'Sarabun', sans-serif; }
     #wrapper{ display:block; }
     #sidebar{ width: var(--kh-sidebar-w); max-width: 86vw; height: 100vh; position: fixed; top: 0; left: 0; z-index: 10000; overflow-y: auto; background: #fcfcfc; border-right: 1px solid var(--kh-line); transform: translateX(0); transition: transform .26s ease; margin: 0 !important; }
@@ -38,6 +39,8 @@
     .kh-top{ display:flex; align-items:center; gap: 14px; }
     .kh-menu-btn{ width: 46px; height: 46px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.12); background: #fff; cursor: pointer; display: inline-flex; align-items:center; justify-content:center; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
     .kh-menu-btn i{ font-size: 18px; color: #111; }
+    
+    /* Logo Style */
     .kh-brand{ display:flex; align-items:center; gap: 12px; text-decoration: none; border-bottom: none; transition: transform 0.2s ease; }
     .kh-brand:hover { transform: scale(1.02); }
     .kh-brand__img img { width: 55px; height: 55px; object-fit: cover; display: block; border-radius: 50%; border: 2px solid #b8860b; box-shadow: 0 4px 12px rgba(184, 134, 11, 0.25); }
@@ -45,13 +48,17 @@
     .lux-title-th { font-weight: 900; font-size: 1.35rem; line-height: 1.1; background: linear-gradient(135deg, #8c4600 0%, #ff8f00 40%, #d4af37 70%, #8c4600 100%); background-size: 300% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0px 2px 4px rgba(0,0,0,0.05); animation: shineText 6s linear infinite; }
     .lux-subtitle-en { font-size: 0.75rem; letter-spacing: 1.5px; color: #a0522d; font-weight: 800; margin-top: 2px; text-transform: uppercase; }
     @keyframes shineText { to { background-position: 300% center; } }
+
+    /* Menu Style (Clean Header) */
     ul.menu-gold { list-style: none; padding: 0; margin: 0; }
     ul.menu-gold li { margin-bottom: 8px; padding: 0 !important; border: none !important; }
     .menu-btn{ display:block; background:#fff; border:1px solid rgba(0,0,0,0.08); padding: 10px 12px; border-radius: 12px; color: #222 !important; font-weight: 800; text-decoration: none; transition: .15s ease; }
     .menu-btn:hover{ border-color: rgba(212,175,55,.55); box-shadow: 0 10px 22px rgba(212,175,55,.10); transform: translateY(-1px); }
     .menu-btn.is-active{ border-color: rgba(212,175,55,.95); background: linear-gradient(90deg, rgba(212,175,55,.12), #fff); }
-    .menu-header { font-size: 0.8em; color: #a87910; margin: 24px 0 8px 0; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; border-bottom: 1px solid rgba(212, 175, 55, 0.25); padding-bottom: 6px; }
+    .menu-header { font-size: 0.8em; color: var(--kh-gold-dark); margin: 24px 0 8px 0; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; border-bottom: 1px solid rgba(212, 175, 55, 0.25); padding-bottom: 6px; }
     .btn-contact-gold{ background: linear-gradient(135deg, #ffca28 0%, #ff6f00 100%); color:#fff !important; border: none; text-align:center; border-radius: 999px; box-shadow: 0 10px 26px rgba(255, 111, 0, 0.28); }
+
+    /* Float & Reviews */
     #khFloatBar{ position: fixed; right: 16px; top: 50%; transform: translateY(-50%); z-index: 9999; display:flex; flex-direction: column; gap: 14px; pointer-events: auto; }
     .kh-fbtn { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 12px rgba(0,0,0,0.25), 0 2px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -2px 0 rgba(0,0,0,0.1); color: #fff !important; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); user-select: none; transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; }
     .kh-fbtn::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 45%; background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, transparent 100%); border-top-left-radius: 14px; border-top-right-radius: 14px; pointer-events: none; }
@@ -62,6 +69,8 @@
     .kh-fbtn.fb { background: linear-gradient(145deg, #448aff 0%, #1565c0 100%); }
     .kh-fbtn:hover { transform: scale(1.15) translateY(-2px); box-shadow: 0 12px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.6); z-index: 10; }
     .kh-fbtn:active { transform: scale(0.95); box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+
+    /* Review Widget */
     #khReviewFloater { position: fixed; bottom: 20px; left: 20px; z-index: 9990; width: 300px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid rgba(212, 175, 55, 0.3); padding: 15px; font-size: 0.9em; transform: translateY(0); transition: transform 0.5s ease, opacity 0.5s ease; overflow: hidden; }
     #khReviewFloater.hidden { transform: translateY(120%); opacity: 0; }
     .review-header { font-size: 0.75em; text-transform: uppercase; color: #a87910; font-weight: 800; margin-bottom: 5px; display: flex; justify-content: space-between; }
@@ -72,6 +81,8 @@
     .social-badge.facebook { background: #1877F2; } .social-badge.tiktok { background: #000000; border: 1px solid #333; } .social-badge.instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); } .social-badge.twitter { background: #000000; }
     .fade-content { animation: fadeIn 0.8s ease-in-out; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Hero Slider */
     #banner { position: relative; overflow: hidden; min-height: 550px; display: flex; align-items: center; }
     #banner .content { position: relative; z-index: 2; transition: opacity 0.5s ease; padding-top: 2em; }
     #banner .image { transition: opacity 0.5s ease; position: relative; }
@@ -84,11 +95,15 @@
     .slider-dots { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 5; flex-wrap: wrap; justify-content: center; width: 90%; }
     .slider-dot { width: 10px; height: 10px; background: rgba(0,0,0,0.2); border-radius: 50%; cursor: pointer; transition: all 0.3s; }
     .slider-dot.active { background: #d4af37; transform: scale(1.2); }
+
+    /* Content & SEO */
     .seo-toc { background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 5px solid #d4af37; margin-bottom: 30px; }
     .seo-toc h3 { margin-top: 0; color: #333; }
     .seo-toc ul { margin-bottom: 0; }
     h2.seo-heading { color: #c62828; font-weight: 800; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 40px; }
     .pain-point { color: #d35400; font-weight: bold; background: #fff3e0; padding: 0 5px; }
+
+    /* Mobile */
     #khOverlay{ position: fixed; inset: 0; background: rgba(0,0,0,0.25); z-index: 9998; display: none; }
     #khOverlay.show{ display:block; }
     .kh-mobile-bar { display: none; }
@@ -125,11 +140,11 @@
           </div>
         </header>
 
-        <!-- Hero Slider (Construction) -->
+        <!-- Hero Slider (High Voltage) -->
         <section id="banner">
           <div class="content" id="heroContent"></div>
           <span class="image object" id="heroImageContainer">
-            <img src="images/pic11.webp" id="heroImage" alt="รับเหมาก่อสร้าง ขอนแก่น">
+            <img src="images/pic11.webp" id="heroImage" alt="ติดตั้งหม้อแปลงไฟฟ้า">
             <div class="hero-watermark"><div class="watermark-logo"><img src="images/logo-khonkaen.webp"></div><div class="watermark-info"><div class="shop-name">ขอนแก่นไฮเทค</div><div class="contact-row"><i class="icon solid fa-phone"></i> 094-474-9874</div></div></div>
           </span>
           <div class="slider-dots" id="heroDots"></div>
@@ -137,61 +152,61 @@
 
         <!-- SEO Content -->
         <section>
-            <header class="main"><h1 style="font-size:2em;">ผู้รับเหมาทิ้งงาน? งบบานปลาย? อย่าเสี่ยง!</h1></header>
-            <p><span class="pain-point">ฝันร้ายของคนทำบ้าน!</span> จ่ายเงินแล้วช่างหาย งานไม่เดิน วัสดุไม่ตรงปก... จบปัญหาปวดหัวด้วยทีมงานมืออาชีพจากขอนแก่นไฮเทค เรามีสัญญาชัดเจน ไม่ทิ้งงาน รับประกันโครงสร้าง</p>
+            <header class="main"><h1 style="font-size:2em;">หม้อแปลงระเบิด! โรงงานหยุดเดิน... เสียหายหลักล้าน</h1></header>
+            <p><span class="pain-point">อย่าเสี่ยง!</span> การละเลยการบำรุงรักษาหม้อแปลงไฟฟ้า คือความเสี่ยงสูงสุดของโรงงาน! น้ำมันเสื่อมสภาพ ซิลิก้าชื้น อาจนำไปสู่การลัดวงจรและระเบิดได้ ตรวจเช็คประจำปี คือทางรอดเดียว</p>
             
             <div class="seo-toc">
-                <h3><i class="fas fa-list"></i> บริการงานก่อสร้าง</h3>
+                <h3><i class="fas fa-list"></i> บริการไฟฟ้าแรงสูง</h3>
                 <ul>
-                    <li><a href="#roof">1. ต่อเติมหลังคาโรงรถ/ครัว</a></li>
-                    <li><a href="#renovate">2. รีโนเวทบ้าน/อาคารพาณิชย์</a></li>
-                    <li><a href="#struct">3. งานโครงสร้างเหล็ก/ปูน</a></li>
+                    <li><a href="#install">1. ติดตั้ง/ย้าย หม้อแปลงไฟฟ้า</a></li>
+                    <li><a href="#pm">2. PM ประจำปี (กรองน้ำมัน/เปลี่ยนประเก็น)</a></li>
+                    <li><a href="#test">3. ทดสอบระบบ (Test Run)</a></li>
                     <li><a href="#faq">4. คำถามที่พบบ่อย (FAQ)</a></li>
                 </ul>
             </div>
 
-            <h2 id="roof" class="seo-heading">1. ต่อเติมหลังคา เมทัลชีท/ไวนิล</h2>
-            <p>งานเนี๊ยบ ไม่รั่วซึม! ออกแบบโครงสร้างเหล็กแข็งแรง มุงหลังคาโรงจอดรถ ครัวไทยหลังบ้าน สวยงาม เข้ากับตัวบ้าน</p>
+            <h2 id="install" class="seo-heading">1. ติดตั้งหม้อแปลงไฟฟ้า (22kV / 33kV)</h2>
+            <p>บริการขอขยายเขตไฟฟ้า ติดตั้งเสา ปักเสา พาดสายแรงสูง พร้อมติดตั้งหม้อแปลงทุกขนาด (50kVA - 2500kVA) โดยวิศวกรไฟฟ้าสามัญ</p>
 
-            <h2 id="renovate" class="seo-heading">2. รีโนเวทบ้านเก่า ให้เหมือนใหม่</h2>
-            <p>รื้อถอน ปูกระเบื้อง ทาสี เดินไฟใหม่ทั้งหลัง เปลี่ยนบ้านโทรมให้เป็นบ้านในฝัน งบไม่บานปลาย ควบคุมงานโดยวิศวกร</p>
+            <h2 id="pm" class="seo-heading">2. บำรุงรักษาเชิงป้องกัน (PM)</h2>
+            <p>กรองน้ำมันหม้อแปลง (Oil Filtering) เปลี่ยนซิลิก้าเจล เช็คจุดต่อหลวม เพื่อยืดอายุการใช้งานและป้องกันเหตุฉุกเฉิน</p>
 
-            <h2 id="struct" class="seo-heading">3. งานเทพื้นคอนกรีต / ทำรั้ว</h2>
-            <p>รับเทพื้นลานจอดรถ ทำรั้วกำแพง ผูกเหล็กมาตรฐาน คอนกรีตผสมเสร็จ CPAC แข็งแรง ทนทาน</p>
+            <h2 id="test" class="seo-heading">3. แก้ไขหม้อแปลงรั่วซึม</h2>
+            <p>น้ำมันหยดตามครีบ หรือบุชชิ่งแรงสูงแตก เรามีทีมเข้าซ่อมด่วน เปลี่ยนซีลยาง ประเก็น เพื่อหยุดการรั่วไหลทันที</p>
 
             <!-- 6 FAQs Dark Psych -->
             <h2 id="faq" class="seo-heading">4. คำถามที่พบบ่อย (FAQ)</h2>
             <div class="row">
                 <div class="col-6 col-12-small">
-                    <h3>Q: กลัวช่างทิ้งงาน ทำไงดี?</h3>
-                    <p><strong>A:</strong> เรามีหน้าร้านชัดเจนในขอนแก่น ทำสัญญาจ้างเป็นลายลักษณ์อักษร เบิกเงินตามงวดงาน สบายใจได้ 100% ครับ</p>
+                    <h3>Q: ควรกรองน้ำมันหม้อแปลงบ่อยแค่ไหน?</h3>
+                    <p><strong>A:</strong> อย่างน้อยปีละ 1 ครั้งครับ เพื่อกำจัดความชื้นและตะกอนที่ปนเปื้อน ยืดอายุขดลวดภายใน</p>
                 </div>
                 <div class="col-6 col-12-small">
-                    <h3>Q: ประเมินราคาหน้างานฟรีไหม?</h3>
-                    <p><strong>A:</strong> ฟรีครับ! เราไปวัดพื้นที่และประเมินราคาเบื้องต้นให้ถึงที่ ไม่มีค่าใช้จ่าย</p>
+                    <h3>Q: หม้อแปลงมีเสียงครางดัง ผิดปกติไหม?</h3>
+                    <p><strong>A:</strong> ผิดปกติครับ อาจเกิดจากแกนเหล็กหลวม หรือน้ำมันแห้ง ควรรีบแจ้งช่างเข้าตรวจสอบด่วนก่อนระเบิด</p>
                 </div>
                 <div class="col-6 col-12-small">
-                    <h3>Q: รับงานเล็กๆ ไหม?</h3>
-                    <p><strong>A:</strong> รับครับ ซ่อมหลังคารั่ว เปลี่ยนฝ้าเพดาน เทพื้นเล็กน้อย เราก็ยินดีให้บริการ</p>
+                    <h3>Q: บริการนอกสถานที่ไหม?</h3>
+                    <p><strong>A:</strong> เราให้บริการทั่วภาคอีสานครับ ขอนแก่น กาฬสินธุ์ มหาสารคาม ชัยภูมิ ไปได้หมด</p>
                 </div>
                 <div class="col-6 col-12-small">
-                    <h3>Q: มีรับประกันผลงานไหม?</h3>
-                    <p><strong>A:</strong> รับประกันงานโครงสร้าง 1 ปี งานรั่วซึม 6 เดือนครับ มีปัญหาเราเข้าไปแก้ไขให้ทันที</p>
+                    <h3>Q: ขอไฟใหม่ การไฟฟ้าทำเรื่องให้ไหม?</h3>
+                    <p><strong>A:</strong> เราดำเนินการยื่นเรื่องขอใช้ไฟกับการไฟฟ้าส่วนภูมิภาค (PEA) ให้ครบจบทุกขั้นตอนครับ</p>
                 </div>
                 <div class="col-6 col-12-small">
-                    <h3>Q: คุมงบประมาณได้ไหม?</h3>
-                    <p><strong>A:</strong> ได้ครับ เราจะเสนอราคาตามวัสดุที่คุณเลือก หากงบจำกัดเราจะแนะนำวัสดุที่เหมาะสมให้ ไม่มียัดเยียด</p>
+                    <h3>Q: มีใบรับรองวิศวกรไหม?</h3>
+                    <p><strong>A:</strong> มีครับ งานทุกชิ้นควบคุมโดยวิศวกรไฟฟ้าภาคี/สามัญ เซ็นรับรองความปลอดภัยถูกต้อง</p>
                 </div>
                 <div class="col-6 col-12-small">
-                    <h3>Q: ใช้เวลากี่วันเสร็จ?</h3>
-                    <p><strong>A:</strong> ขึ้นอยู่กับเนื้องานครับ เช่น ทำโรงรถ 3-5 วัน, ต่อเติมครัว 2-3 สัปดาห์ เราแจ้งกำหนดการชัดเจนก่อนเริ่มงาน</p>
+                    <h3>Q: ราคา PM แพงไหม?</h3>
+                    <p><strong>A:</strong> ราคาเริ่มต้นหลักพันครับ คุ้มกว่าหม้อแปลงระเบิดลูกละหลายแสนแน่นอน</p>
                 </div>
             </div>
 
-            <div class="box" style="background:#fff3cd; border-color:#ffc107; text-align:center; margin-top:30px;">
-                <h3>อยากต่อเติมบ้าน?</h3>
-                <p>ส่งรูปพื้นที่ให้เราประเมินราคาทางไลน์ได้เลย</p>
-                <a href="https://line.me/ti/p/~KKHITECH" class="button primary">ส่งรูปประเมินราคา</a>
+            <div class="box" style="background:#fff3e0; border-color:#ff9800; text-align:center; margin-top:30px;">
+                <h3>โปรโมชั่น PM ประจำปี</h3>
+                <p>ทำสัญญาดูแลรายปี <strong>ลดทันที 10%</strong> พร้อมบริการฉุกเฉิน 24 ชม.</p>
+                <a href="tel:0944749874" class="button primary">ขอใบเสนอราคา</a>
             </div>
         </section>
 
@@ -213,19 +228,18 @@
             <li><a href="franchise.html" class="menu-btn">แฟรนไชส์/วางระบบ</a></li>
             <li><a href="coinbox.html" class="menu-btn">กล่องหยอดเหรียญ</a></li>
             <div class="menu-header">◆ 2. ไฟฟ้า & พลังงาน</div>
+            <li><a href="high-voltage.html" class="menu-btn is-active">หม้อแปลง/แรงสูง</a></li>
+            <li><a href="mdb.html" class="menu-btn">ตู้ MDB/คอนโทรล</a></li>
             <li><a href="electrical.html" class="menu-btn">ระบบไฟฟ้าอาคาร</a></li>
             <li><a href="solar.html" class="menu-btn">โซล่าเซลล์</a></li>
             <div class="menu-header">◆ 3. ความปลอดภัย & ไอที</div>
             <li><a href="cctv.html" class="menu-btn">กล้องวงจรปิด</a></li>
             <li><a href="access.html" class="menu-btn">คีย์การ์ด/สแกนนิ้ว</a></li>
             <li><a href="autodoor.html" class="menu-btn">ประตูรีโมท</a></li>
-            <div class="menu-header">◆ 4. ก่อสร้าง & ระบบอาคาร</div>
-            <li><a href="construction.html" class="menu-btn is-active">ก่อสร้าง/ต่อเติม</a></li>
-            <li><a href="aircon.html" class="menu-btn">แอร์บ้าน/ท่อดักท์</a></li>
-            <li><a href="plumbing.html" class="menu-btn">ระบบประปา/ปั๊มน้ำ</a></li>
-            <div class="menu-header">◆ 5. ซ่อมบำรุง & ความสะอาด</div>
+            <div class="menu-header">◆ 4. ซ่อมบำรุง & ความสะอาด</div>
             <li><a href="cleaning-air.html" class="menu-btn">ล้างแอร์</a></li>
             <li><a href="cleaning-tank.html" class="menu-btn">ล้างถังน้ำ</a></li>
+            <li><a href="plumbing.html" class="menu-btn">ระบบประปา/ปั๊มน้ำ</a></li>
           </ul>
         </nav>
         <footer id="footer"><p class="copyright">© <span id="y"></span> ขอนแก่นไฮเทค</p></footer>
@@ -248,25 +262,47 @@
     if(mBtn)mBtn.addEventListener('click',e=>{e.preventDefault();setSidebar(!sidebar.classList.contains('inactive'))});
     if(overlay)overlay.addEventListener('click',()=>setSidebar(true));
     
-    const reviews=[{t:"ต่อเติมครัวหลังบ้าน งานดีมากครับ",a:"คุณพ่อบ้าน ศิลา",s:"facebook"},{t:"ช่างทำหลังคาโรงรถไวมาก 2 วันเสร็จ",a:"ร้านกาแฟ มข.",s:"tiktok"},{t:"เทพื้นคอนกรีตเรียบเนียน ไม่แตกร้าว",a:"โกดังสินค้า",s:"facebook"},{t:"ราคาไม่แพง ไม่ทิ้งงาน ไว้ใจได้",a:"คุณป้าสมศรี",s:"twitter"}];
-    setInterval(()=>{const r=reviews[Math.floor(Math.random()*reviews.length)];const f=document.getElementById('khReviewFloater');f.classList.add('hidden');setTimeout(()=>{let i='facebook-f',cl='facebook';if(r.s==='tiktok'){i='tiktok';cl='tiktok';}else if(r.s==='twitter'){i='twitter';cl='twitter';}document.getElementById('reviewContent').innerHTML=`<div class="review-text">"${r.t}"</div><div class="review-author">- ${r.a} <span class="social-badge ${cl}"><i class="fab fa-${i}"></i></span></div>`;f.classList.remove('hidden');},600);},5000);
+    // Reviews
+    const reviews=[
+      {t:"ทีมงานมืออาชีพมาก กรองน้ำมันไว",a:"โรงงานน้ำตาล",s:"facebook"},
+      {t:"แก้ไขหม้อแปลงรั่วจบในวันเดียว",a:"โรงสีข้าว",s:"tiktok"},
+      {t:"บริการดี มีใบรับรองวิศวกรครบ",a:"ผจก.โรงงาน",s:"twitter"},
+      {t:"ราคาไม่แพงเมื่อเทียบกับคุณภาพ",a:"เจ้าของโรงแรม",s:"facebook"},
+      {t:"ติดตั้งเสาไฟฟ้าแรงสูง งานเนี๊ยบ",a:"หมู่บ้านจัดสรร",s:"instagram"},
+      {t:"ให้คำปรึกษาดีมากเรื่องขยายเขต",a:"ผู้รับเหมา",s:"facebook"},
+      {t:"เปลี่ยนประเก็นใหม่ แห้งสนิท",a:"อุตสาหกรรมแป้ง",s:"tiktok"},
+      {t:"ตรวจเช็คละเอียด รายงานผลชัดเจน",a:"ฝ่ายซ่อมบำรุง",s:"twitter"},
+      {t:"ทำงานปลอดภัย ใส่ใจรายละเอียด",a:"จป.วิชาชีพ",s:"instagram"},
+      {t:"เรียกใช้บริการประจำครับ ไว้ใจได้",a:"โรงงานพลาสติก",s:"facebook"},
+      {t:"หม้อแปลงระเบิด มาแก้ให้ตอนตี 2 ขอบคุณมาก",a:"โรงน้ำแข็ง",s:"tiktok"},
+      {t:"อุปกรณ์ได้มาตรฐาน มอก.",a:"วิศวกรโยธา",s:"facebook"},
+      {t:"ทีมงานเครื่องมือพร้อม ทันสมัย",a:"เจ้าของตลาด",s:"twitter"},
+      {t:"เคลียร์พื้นที่หลังงานเสร็จ สะอาด",a:"รปภ.โรงงาน",s:"instagram"},
+      {t:"ติดต่อสะดวกรวดเร็ว",a:"จัดซื้อ",s:"facebook"},
+      {t:"PM หม้อแปลงประจำปี ราคาเหมาคุ้มมาก",a:"โรงพยาบาล",s:"tiktok"},
+      {t:"เปลี่ยนซิลิก้าเจลให้ด้วย ใส่ใจดี",a:"ห้างสรรพสินค้า",s:"facebook"},
+      {t:"มีความรู้จริง ถามอะไรตอบได้หมด",a:"ช่างไฟโรงงาน",s:"twitter"},
+      {t:"ออกใบกำกับภาษีได้ ถูกต้อง",a:"บัญชี",s:"instagram"},
+      {t:"แนะนำเลยครับ ทีมงานคุณภาพ",a:"ประธานบริษัท",s:"facebook"}
+    ];
+    setInterval(()=>{const r=reviews[Math.floor(Math.random()*reviews.length)];const f=document.getElementById('khReviewFloater');f.classList.add('hidden');setTimeout(()=>{let i='facebook-f',cl='facebook';if(r.s==='tiktok'){i='tiktok';cl='tiktok';}else if(r.s==='instagram'){i='instagram';cl='instagram';}else if(r.s==='twitter'){i='twitter';cl='twitter';}document.getElementById('reviewContent').innerHTML=`<div class="review-text">"${r.t}"</div><div class="review-author">- ${r.a} <span class="social-badge ${cl}"><i class="fab fa-${i}"></i></span></div>`;f.classList.remove('hidden');},600);},5000);
 
     const heroSlides = [
-        {title:'ผู้รับเหมาทิ้งงาน?',desc:'เราไม่ทิ้ง! งานโครงสร้าง ต่อเติม รับประกันผลงาน',img:'images/pic11.webp',link:'construction.html'},
-        {title:'ต่อเติมหลังคาโรงรถ',desc:'โครงเหล็กแข็งแรง มุงเมทัลชีท/ไวนิล',img:'images/pic11.webp',link:'construction.html'},
-        {title:'รีโนเวทบ้านเก่า',desc:'เปลี่ยนบ้านโทรมให้เป็นบ้านสวย งบไม่บานปลาย',img:'images/pic11.webp',link:'construction.html'},
-        {title:'เดินสายไฟใหม่',desc:'ปลอดภัย มาตรฐานการไฟฟ้า',img:'images/pic11.webp',link:'electrical.html'},
-        {title:'ติดตั้งกล้องวงจรปิด',desc:'เฝ้าบ้านได้ 24 ชม.',img:'images/pic03.webp',link:'cctv.html'},
-        {title:'ประตูรีโมท',desc:'หน้าฝนไม่ต้องลงรถ',img:'images/pic09.webp',link:'autodoor.html'},
-        {title:'ซ่อมประปา',desc:'ท่อแตก น้ำรั่ว ซ่อมด่วน',img:'images/pic04.webp',link:'plumbing.html'},
-        {title:'ล้างแอร์',desc:'เย็นฉ่ำ ประหยัดไฟ',img:'images/pic10.webp',link:'cleaning-air.html'},
-        {title:'โซล่าเซลล์',desc:'ลดค่าไฟระยะยาว',img:'images/pic08.webp',link:'solar.html'},
-        {title:'ติดตั้ง Wifi',desc:'เน็ตแรงทั่วบ้าน',img:'images/pic03.webp',link:'network.html'}
+        {title:'หม้อแปลงระเบิด? เสียหายล้าน!',desc:'อย่ารอให้เกิดเหตุ PM หม้อแปลงประจำปี ป้องกันเหตุร้าย',img:'images/pic11.webp',link:'high-voltage.html'},
+        {title:'กรองน้ำมันหม้อแปลง',desc:'ยืดอายุการใช้งาน ลดความชื้น เพิ่มค่าฉนวน',img:'images/pic11.webp',link:'high-voltage.html'},
+        {title:'ตู้ MDB ไฟไหม้?',desc:'Thermal Scan หาจุดร้อน ป้องกันไฟลัดวงจร',img:'images/pic11.webp',link:'mdb.html'},
+        {title:'ซ่อมไฟฟ้าโรงงาน',desc:'ระบบ 3 เฟส เดินสายเมน',img:'images/pic11.webp',link:'electrical.html'},
+        {title:'ติดตั้งโซล่าเซลล์',desc:'ลดต้นทุนค่าไฟโรงงาน',img:'images/pic08.webp',link:'solar.html'},
+        {title:'กล้องวงจรปิดโรงงาน',desc:'ดูแลความปลอดภัย 24 ชม.',img:'images/pic03.webp',link:'cctv.html'},
+        {title:'ประตูรีโมทโรงงาน',desc:'มอเตอร์อุตสาหกรรม รับน้ำหนักสูง',img:'images/pic09.webp',link:'autodoor.html'},
+        {title:'ระบบแลน/Fiber Optic',desc:'เชื่อมต่อเครื่องจักร อินเตอร์เน็ตเสถียร',img:'images/pic03.webp',link:'network.html'},
+        {title:'ซ่อมปั๊มน้ำอุตสาหกรรม',desc:'ปั๊มดับไลน์ผลิตหยุด แก้ด่วน',img:'images/pic04.webp',link:'plumbing.html'},
+        {title:'โครงสร้างโรงจอดรถ',desc:'หลังคาเมทัลชีท แข็งแรง',img:'images/pic11.webp',link:'construction.html'}
     ];
     let currentHeroIndex=0;
     const heroContent=document.getElementById('heroContent'),heroImage=document.getElementById('heroImage'),heroDots=document.getElementById('heroDots');
     heroSlides.forEach((_,i)=>{const d=document.createElement('div');d.className=`slider-dot ${i===0?'active':''}`;d.onclick=()=>setHero(i);heroDots.appendChild(d);});
-    function setHero(i){currentHeroIndex=i;const s=heroSlides[i];heroContent.style.opacity='0';heroImage.style.opacity='0';setTimeout(()=>{heroContent.innerHTML=`<header class="main"><h1>${s.title}</h1></header><p>${s.desc}</p><ul class="actions"><li><a href="${s.link}" class="button big primary icon solid fa-hard-hat">ปรึกษาช่างฟรี</a></li></ul>`;heroImage.src=s.img;document.querySelectorAll('.slider-dot').forEach((d,x)=>d.className=`slider-dot ${x===i?'active':''}`);heroContent.style.opacity='1';heroImage.style.opacity='1';},500);}
+    function setHero(i){currentHeroIndex=i;const s=heroSlides[i];heroContent.style.opacity='0';heroImage.style.opacity='0';setTimeout(()=>{heroContent.innerHTML=`<header class="main"><h1>${s.title}</h1></header><p>${s.desc}</p><ul class="actions"><li><a href="${s.link}" class="button big primary icon solid fa-bolt">ติดต่อวิศวกร</a></li></ul>`;heroImage.src=s.img;document.querySelectorAll('.slider-dot').forEach((d,x)=>d.className=`slider-dot ${x===i?'active':''}`);heroContent.style.opacity='1';heroImage.style.opacity='1';},500);}
     setInterval(()=>setHero((currentHeroIndex+1)%heroSlides.length),7000);
     setHero(0);
   </script>

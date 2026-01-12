@@ -10,9 +10,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>รับเหมาก่อสร้าง ขอนแก่น | ต่อเติมโรงรถ หลังคา ไม่ทิ้งงาน - ขอนแก่นไฮเทค</title>
-  <meta name="description" content="ทีมช่างรับเหมาขอนแก่น งานโครงสร้างเหล็ก ต่อเติมครัว หลังคาโรงรถ เมทัลชีท เทพื้นคอนกรีต งานเล็กงานใหญ่รับหมด ไม่ทิ้งงาน ราคามาตรฐาน" />
-  <meta name="keywords" content="รับเหมาก่อสร้างขอนแก่น, ช่างต่อเติมขอนแก่น, ทำหลังคาขอนแก่น, เทพื้นปูน, ช่างเหล็กขอนแก่น" />
+  <!-- ✅ 1. Meta Title & Description -->
+  <title>รับเหมาต่อเติม ขอนแก่น | หลังคารั่ว? ช่างทิ้งงาน? เราซ่อมจบ ไม่บานปลาย</title>
+  <meta name="description" content="บริการรับเหมาก่อสร้าง ต่อเติมบ้าน โรงจอดรถ หลังคาเมทัลชีท ในขอนแก่น แก้ปัญหาหลังคารั่วซึม งานปูน งานเหล็ก โดยทีมช่างมืออาชีพ ไม่ทิ้งงาน รับประกันผลงาน" />
+  <meta name="keywords" content="รับเหมาขอนแก่น, ต่อเติมบ้านขอนแก่น, ทำหลังคาขอนแก่น, ช่างเชื่อมขอนแก่น, ซ่อมหลังคารั่ว" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#d4af37" />
 
@@ -26,7 +27,7 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* Reuse CSS Style Block */
+    /* CSS Block (Consistent with other pages) */
     :root{ --kh-sidebar-w: 380px; --kh-gold: #d4af37; --kh-line: rgba(0,0,0,0.10); }
     body, input, select, textarea, button, h1, h2, h3, h4, h5, h6 { font-family: 'Sarabun', sans-serif; }
     #wrapper{ display:block; }
@@ -50,7 +51,7 @@
     .menu-btn{ display:block; background:#fff; border:1px solid rgba(0,0,0,0.08); padding: 10px 12px; border-radius: 12px; color: #222 !important; font-weight: 800; text-decoration: none; transition: .15s ease; }
     .menu-btn:hover{ border-color: rgba(212,175,55,.55); box-shadow: 0 10px 22px rgba(212,175,55,.10); transform: translateY(-1px); }
     .menu-btn.is-active{ border-color: rgba(212,175,55,.95); background: linear-gradient(90deg, rgba(212,175,55,.12), #fff); }
-    .menu-header { font-size: 0.8em; color: #a87910; margin: 24px 0 8px 0; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; border-bottom: 1px solid rgba(212, 175, 55, 0.25); padding-bottom: 6px; }
+    .menu-header { font-size: 0.8em; color: var(--kh-gold-dark); margin: 24px 0 8px 0; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; border-bottom: 1px solid rgba(212, 175, 55, 0.25); padding-bottom: 6px; }
     .btn-contact-gold{ background: linear-gradient(135deg, #ffca28 0%, #ff6f00 100%); color:#fff !important; border: none; text-align:center; border-radius: 999px; box-shadow: 0 10px 26px rgba(255, 111, 0, 0.28); }
     #khFloatBar{ position: fixed; right: 16px; top: 50%; transform: translateY(-50%); z-index: 9999; display:flex; flex-direction: column; gap: 14px; pointer-events: auto; }
     .kh-fbtn { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 12px rgba(0,0,0,0.25), 0 2px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -2px 0 rgba(0,0,0,0.1); color: #fff !important; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); user-select: none; transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; }
@@ -112,8 +113,21 @@
 
 <body class="is-preload">
   <div id="khOverlay"></div>
-  <div id="khReviewFloater"><div class="review-header"><span><i class="fas fa-check-circle"></i> รีวิวล่าสุด</span><span class="review-stars">★★★★★</span></div><div id="reviewContent" class="fade-content"></div></div>
-  <div id="khFloatBar"><a class="kh-fbtn call" href="tel:0944749874"><i class="icon solid fa-phone"></i></a><a class="kh-fbtn line" href="https://line.me/ti/p/~KKHITECH"><i class="icon brands fa-line"></i></a><a class="kh-fbtn repair" href="https://m.me/Line0944749874"><i class="icon solid fa-tools"></i></a><a class="kh-fbtn fb" href="https://www.facebook.com/Line0944749874"><i class="icon brands fa-facebook-f"></i></a></div>
+  
+  <div id="khReviewFloater">
+      <div class="review-header">
+          <span><i class="fas fa-check-circle"></i> รีวิวล่าสุด</span>
+          <span class="review-stars">★★★★★</span>
+      </div>
+      <div id="reviewContent" class="fade-content"></div>
+  </div>
+
+  <div id="khFloatBar">
+    <a class="kh-fbtn call" href="tel:0944749874"><i class="icon solid fa-phone"></i></a>
+    <a class="kh-fbtn line" href="https://line.me/ti/p/~KKHITECH"><i class="icon brands fa-line"></i></a>
+    <a class="kh-fbtn repair" href="https://m.me/Line0944749874"><i class="icon solid fa-tools"></i></a>
+    <a class="kh-fbtn fb" href="https://www.facebook.com/Line0944749874"><i class="icon brands fa-facebook-f"></i></a>
+  </div>
 
   <div id="wrapper">
     <div id="main">
@@ -121,7 +135,10 @@
         <header id="header">
           <div class="kh-top">
             <button id="khMenuBtn" class="kh-menu-btn"><img src="images/menukhonkaenhitech.webp" width="46" style="border-radius:10px"></button>
-            <a href="index.html" class="logo kh-brand lux-wrapper"><span class="kh-brand__img lux-shape"><img src="images/logo-khonkaen.webp"></span><span class="kh-brand__text"><span class="lux-title-th">ขอนแก่นไฮเทค</span><span class="lux-subtitle-en">KHON KAEN HITECH</span></span></a>
+            <a href="index.html" class="logo kh-brand lux-wrapper">
+              <span class="kh-brand__img lux-shape"><img src="images/logo-khonkaen.webp"></span>
+              <span class="kh-brand__text"><span class="lux-title-th">ขอนแก่นไฮเทค</span><span class="lux-subtitle-en">KHON KAEN HITECH</span></span>
+            </a>
           </div>
         </header>
 
@@ -129,7 +146,7 @@
         <section id="banner">
           <div class="content" id="heroContent"></div>
           <span class="image object" id="heroImageContainer">
-            <img src="images/pic11.webp" id="heroImage" alt="รับเหมาก่อสร้าง ขอนแก่น">
+            <img src="images/pic11.webp" id="heroImage" alt="รับเหมาต่อเติม ขอนแก่น">
             <div class="hero-watermark"><div class="watermark-logo"><img src="images/logo-khonkaen.webp"></div><div class="watermark-info"><div class="shop-name">ขอนแก่นไฮเทค</div><div class="contact-row"><i class="icon solid fa-phone"></i> 094-474-9874</div></div></div>
           </span>
           <div class="slider-dots" id="heroDots"></div>
@@ -137,61 +154,61 @@
 
         <!-- SEO Content -->
         <section>
-            <header class="main"><h1 style="font-size:2em;">ผู้รับเหมาทิ้งงาน? งบบานปลาย? อย่าเสี่ยง!</h1></header>
-            <p><span class="pain-point">ฝันร้ายของคนทำบ้าน!</span> จ่ายเงินแล้วช่างหาย งานไม่เดิน วัสดุไม่ตรงปก... จบปัญหาปวดหัวด้วยทีมงานมืออาชีพจากขอนแก่นไฮเทค เรามีสัญญาชัดเจน ไม่ทิ้งงาน รับประกันโครงสร้าง</p>
+            <header class="main"><h1 style="font-size:2em;">บ้านพังเพราะช่างเถื่อน? อย่าเสี่ยงถ้าไม่อยากเสียเงินฟรี!</h1></header>
+            <p><span class="pain-point">เตือนภัย!</span> การจ้างช่างราคาถูกที่ไม่มีประสบการณ์ อาจนำมาซึ่งหายนะ... หลังคารั่วซ้ำซาก, โครงสร้างทรุด, ทิ้งงานกลางคัน เลือก "ขอนแก่นไฮเทค" งานจบ งบไม่บานปลาย สัญญารัดกุม</p>
             
             <div class="seo-toc">
-                <h3><i class="fas fa-list"></i> บริการงานก่อสร้าง</h3>
+                <h3><i class="fas fa-list"></i> บริการงานช่าง</h3>
                 <ul>
-                    <li><a href="#roof">1. ต่อเติมหลังคาโรงรถ/ครัว</a></li>
-                    <li><a href="#renovate">2. รีโนเวทบ้าน/อาคารพาณิชย์</a></li>
-                    <li><a href="#struct">3. งานโครงสร้างเหล็ก/ปูน</a></li>
+                    <li><a href="#roof">1. ต่อเติมโรงรถ/หลังคาเมทัลชีท</a></li>
+                    <li><a href="#fix">2. ซ่อมหลังคารั่ว/ดาดฟ้ารั่ว</a></li>
+                    <li><a href="#struct">3. งานเหล็ก/โครงสร้าง</a></li>
                     <li><a href="#faq">4. คำถามที่พบบ่อย (FAQ)</a></li>
                 </ul>
             </div>
 
-            <h2 id="roof" class="seo-heading">1. ต่อเติมหลังคา เมทัลชีท/ไวนิล</h2>
-            <p>งานเนี๊ยบ ไม่รั่วซึม! ออกแบบโครงสร้างเหล็กแข็งแรง มุงหลังคาโรงจอดรถ ครัวไทยหลังบ้าน สวยงาม เข้ากับตัวบ้าน</p>
+            <h2 id="roof" class="seo-heading">1. ต่อเติมโรงรถ/ครัว (เมทัลชีท/ไวนิล)</h2>
+            <p>ออกแบบและติดตั้งหลังคาโรงจอดรถ หลังคาครัวไทย ด้วยวัสดุคุณภาพ (เมทัลชีท, ไวนิล, สมาร์ทบอร์ด) แข็งแรง ทนทาน สวยงาม เข้ากับตัวบ้าน</p>
 
-            <h2 id="renovate" class="seo-heading">2. รีโนเวทบ้านเก่า ให้เหมือนใหม่</h2>
-            <p>รื้อถอน ปูกระเบื้อง ทาสี เดินไฟใหม่ทั้งหลัง เปลี่ยนบ้านโทรมให้เป็นบ้านในฝัน งบไม่บานปลาย ควบคุมงานโดยวิศวกร</p>
+            <h2 id="fix" class="seo-heading">2. แก้ปัญหาหลังคารั่วซึม (หายขาด 100%)</h2>
+            <p>หาจุดรั่วด้วยความชำนาญ ใช้วัสดุกันซึมเกรดพรีเมียม แก้ไขที่ต้นเหตุ ไม่ใช่แค่อุดซิลิโคน รับประกันงานซ่อม ฝนตกหนักแค่ไหนก็เอาอยู่</p>
 
-            <h2 id="struct" class="seo-heading">3. งานเทพื้นคอนกรีต / ทำรั้ว</h2>
-            <p>รับเทพื้นลานจอดรถ ทำรั้วกำแพง ผูกเหล็กมาตรฐาน คอนกรีตผสมเสร็จ CPAC แข็งแรง ทนทาน</p>
+            <h2 id="struct" class="seo-heading">3. งานเหล็กดัด/โครงสร้าง</h2>
+            <p>รับทำโครงหลังคา, เหล็กดัดหน้าต่าง, ประตูรั้วเหล็ก, งานเชื่อมซ่อมแซมต่างๆ โดยช่างเชื่อมมืออาชีพ รอยเชื่อมแน่นหนา ปลอดภัย</p>
 
             <!-- 6 FAQs Dark Psych -->
             <h2 id="faq" class="seo-heading">4. คำถามที่พบบ่อย (FAQ)</h2>
             <div class="row">
                 <div class="col-6 col-12-small">
-                    <h3>Q: กลัวช่างทิ้งงาน ทำไงดี?</h3>
-                    <p><strong>A:</strong> เรามีหน้าร้านชัดเจนในขอนแก่น ทำสัญญาจ้างเป็นลายลักษณ์อักษร เบิกเงินตามงวดงาน สบายใจได้ 100% ครับ</p>
+                    <h3>Q: ประเมินราคาหน้างานฟรีไหม?</h3>
+                    <p><strong>A:</strong> ฟรีครับ! เราไปวัดพื้นที่และประเมินราคาให้ถึงบ้าน ไม่ทำไม่ว่ากันครับ</p>
                 </div>
                 <div class="col-6 col-12-small">
-                    <h3>Q: ประเมินราคาหน้างานฟรีไหม?</h3>
-                    <p><strong>A:</strong> ฟรีครับ! เราไปวัดพื้นที่และประเมินราคาเบื้องต้นให้ถึงที่ ไม่มีค่าใช้จ่าย</p>
+                    <h3>Q: กลัวช่างทิ้งงาน ทำไงดี?</h3>
+                    <p><strong>A:</strong> เรามีหน้าร้านชัดเจนในขอนแก่น ทำสัญญาจ้างเป็นลายลักษณ์อักษร เบิกเงินตามงวดงาน มั่นใจได้ 100% ครับ</p>
+                </div>
+                <div class="col-6 col-12-small">
+                    <h3>Q: หลังคารั่ว ซ่อมแล้วจะรั่วอีกไหม?</h3>
+                    <p><strong>A:</strong> เรารับประกันงานซ่อมรั่ว 1 ปีครับ ถ้าจุดเดิมรั่วซ้ำ เราเข้าไปแก้ให้ฟรีทันที</p>
                 </div>
                 <div class="col-6 col-12-small">
                     <h3>Q: รับงานเล็กๆ ไหม?</h3>
-                    <p><strong>A:</strong> รับครับ ซ่อมหลังคารั่ว เปลี่ยนฝ้าเพดาน เทพื้นเล็กน้อย เราก็ยินดีให้บริการ</p>
+                    <p><strong>A:</strong> รับครับ เปลี่ยนกระเบื้องไม่กี่แผ่น หรือเชื่อมนิดหน่อยก็ไปครับ เรียกใช้บริการได้เลย</p>
                 </div>
                 <div class="col-6 col-12-small">
-                    <h3>Q: มีรับประกันผลงานไหม?</h3>
-                    <p><strong>A:</strong> รับประกันงานโครงสร้าง 1 ปี งานรั่วซึม 6 เดือนครับ มีปัญหาเราเข้าไปแก้ไขให้ทันที</p>
+                    <h3>Q: ใช้วัสดุเกรดไหน?</h3>
+                    <p><strong>A:</strong> เราใช้วัสดุมาตรฐาน มอก. (เช่น เหล็กเต็ม, เมทัลชีทบลูสโคป) ไม่ลดสเปคเพื่อฟันกำไรครับ</p>
                 </div>
                 <div class="col-6 col-12-small">
-                    <h3>Q: คุมงบประมาณได้ไหม?</h3>
-                    <p><strong>A:</strong> ได้ครับ เราจะเสนอราคาตามวัสดุที่คุณเลือก หากงบจำกัดเราจะแนะนำวัสดุที่เหมาะสมให้ ไม่มียัดเยียด</p>
-                </div>
-                <div class="col-6 col-12-small">
-                    <h3>Q: ใช้เวลากี่วันเสร็จ?</h3>
-                    <p><strong>A:</strong> ขึ้นอยู่กับเนื้องานครับ เช่น ทำโรงรถ 3-5 วัน, ต่อเติมครัว 2-3 สัปดาห์ เราแจ้งกำหนดการชัดเจนก่อนเริ่มงาน</p>
+                    <h3>Q: คิวยาวไหม?</h3>
+                    <p><strong>A:</strong> ขึ้นอยู่กับขนาดงานครับ งานซ่อมเล็กๆ เข้าได้ภายใน 1-2 วัน งานโครงสร้างต้องจองคิวล่วงหน้าครับ</p>
                 </div>
             </div>
 
-            <div class="box" style="background:#fff3cd; border-color:#ffc107; text-align:center; margin-top:30px;">
-                <h3>อยากต่อเติมบ้าน?</h3>
-                <p>ส่งรูปพื้นที่ให้เราประเมินราคาทางไลน์ได้เลย</p>
-                <a href="https://line.me/ti/p/~KKHITECH" class="button primary">ส่งรูปประเมินราคา</a>
+            <div class="box" style="background:#fff3e0; border-color:#ff9800; text-align:center; margin-top:30px;">
+                <h3>หน้าฝนกำลังมา! รีบซ่อมก่อนสาย</h3>
+                <p>นัดสำรวจรอยรั่ววันนี้ <strong>ฟรี! ค่าเดินทางในเขตเมือง</strong></p>
+                <a href="tel:0944749874" class="button primary">นัดช่างสำรวจ</a>
             </div>
         </section>
 
@@ -219,13 +236,11 @@
             <li><a href="cctv.html" class="menu-btn">กล้องวงจรปิด</a></li>
             <li><a href="access.html" class="menu-btn">คีย์การ์ด/สแกนนิ้ว</a></li>
             <li><a href="autodoor.html" class="menu-btn">ประตูรีโมท</a></li>
-            <div class="menu-header">◆ 4. ก่อสร้าง & ระบบอาคาร</div>
-            <li><a href="construction.html" class="menu-btn is-active">ก่อสร้าง/ต่อเติม</a></li>
-            <li><a href="aircon.html" class="menu-btn">แอร์บ้าน/ท่อดักท์</a></li>
-            <li><a href="plumbing.html" class="menu-btn">ระบบประปา/ปั๊มน้ำ</a></li>
-            <div class="menu-header">◆ 5. ซ่อมบำรุง & ความสะอาด</div>
+            <div class="menu-header">◆ 4. ก่อสร้าง & ซ่อมบำรุง</div>
+            <li><a href="construction.html" class="menu-btn is-active">รับเหมา/ต่อเติม</a></li>
             <li><a href="cleaning-air.html" class="menu-btn">ล้างแอร์</a></li>
             <li><a href="cleaning-tank.html" class="menu-btn">ล้างถังน้ำ</a></li>
+            <li><a href="plumbing.html" class="menu-btn">ระบบประปา/ปั๊มน้ำ</a></li>
           </ul>
         </nav>
         <footer id="footer"><p class="copyright">© <span id="y"></span> ขอนแก่นไฮเทค</p></footer>
@@ -248,25 +263,47 @@
     if(mBtn)mBtn.addEventListener('click',e=>{e.preventDefault();setSidebar(!sidebar.classList.contains('inactive'))});
     if(overlay)overlay.addEventListener('click',()=>setSidebar(true));
     
-    const reviews=[{t:"ต่อเติมครัวหลังบ้าน งานดีมากครับ",a:"คุณพ่อบ้าน ศิลา",s:"facebook"},{t:"ช่างทำหลังคาโรงรถไวมาก 2 วันเสร็จ",a:"ร้านกาแฟ มข.",s:"tiktok"},{t:"เทพื้นคอนกรีตเรียบเนียน ไม่แตกร้าว",a:"โกดังสินค้า",s:"facebook"},{t:"ราคาไม่แพง ไม่ทิ้งงาน ไว้ใจได้",a:"คุณป้าสมศรี",s:"twitter"}];
-    setInterval(()=>{const r=reviews[Math.floor(Math.random()*reviews.length)];const f=document.getElementById('khReviewFloater');f.classList.add('hidden');setTimeout(()=>{let i='facebook-f',cl='facebook';if(r.s==='tiktok'){i='tiktok';cl='tiktok';}else if(r.s==='twitter'){i='twitter';cl='twitter';}document.getElementById('reviewContent').innerHTML=`<div class="review-text">"${r.t}"</div><div class="review-author">- ${r.a} <span class="social-badge ${cl}"><i class="fab fa-${i}"></i></span></div>`;f.classList.remove('hidden');},600);},5000);
+    // Reviews
+    const reviews=[
+      {t:"ต่อเติมครัวหลังบ้าน งานดีมากครับ",a:"หมู่บ้านชลลดา",s:"facebook"},
+      {t:"ซ่อมหลังคารั่ว หายขาดเลย",a:"คุณป้าสมศรี",s:"tiktok"},
+      {t:"ช่างเป็นกันเอง ราคาคุยกันได้",a:"คุณวิชัย",s:"twitter"},
+      {t:"ทำโรงจอดรถ แข็งแรง สวยงาม",a:"เสี่ยตง",s:"instagram"},
+      {t:"ไม่ทิ้งงาน ไว้ใจได้",a:"ร้านกาแฟ",s:"facebook"},
+      {t:"เก็บงานเรียบร้อย สะอาด",a:"คุณหมอ",s:"tiktok"},
+      {t:"แก้งานจากช่างเดิมได้จบ",a:"คุณอาร์ต",s:"facebook"},
+      {t:"ใช้วัสดุดี ตรงปก",a:"ผู้รับเหมาช่วง",s:"twitter"},
+      {t:"ทำงานไว เสร็จตามกำหนด",a:"หอพัก",s:"instagram"},
+      {t:"แนะนำเพื่อนต่อแน่นอนครับ",a:"คุณก้อง",s:"facebook"},
+      {t:"ซ่อมฝ้าเพดาน เนียนกริบ",a:"ร้านอาหาร",s:"tiktok"},
+      {t:"เชื่อมเหล็กแข็งแรง",a:"โรงงาน",s:"facebook"},
+      {t:"ประเมินราคาชัดเจน",a:"คุณจอย",s:"twitter"},
+      {t:"ทีมงานมืออาชีพ",a:"สถาปนิก",s:"instagram"},
+      {t:"บริการดีตั้งแต่วัดหน้างาน",a:"ครูระเบียบ",s:"facebook"},
+      {t:"แก้ไขปัญหาหน้างานเก่ง",a:"วิศวกร",s:"tiktok"},
+      {t:"รับประกันงานซ่อมจริง",a:"นิติบุคคล",s:"facebook"},
+      {t:"ราคาเหมาะสมกับคุณภาพ",a:"เจ้าของบ้าน",s:"twitter"},
+      {t:"ทำรางน้ำฝน ดีมาก",a:"ร้านค้า",s:"instagram"},
+      {t:"ซ่อมประตูกระจก งานดี",a:"ออฟฟิศ",s:"facebook"}
+    ];
+    setInterval(()=>{const r=reviews[Math.floor(Math.random()*reviews.length)];const f=document.getElementById('khReviewFloater');f.classList.add('hidden');setTimeout(()=>{let i='facebook-f',cl='facebook';if(r.s==='tiktok'){i='tiktok';cl='tiktok';}else if(r.s==='instagram'){i='instagram';cl='instagram';}else if(r.s==='twitter'){i='twitter';cl='twitter';}document.getElementById('reviewContent').innerHTML=`<div class="review-text">"${r.t}"</div><div class="review-author">- ${r.a} <span class="social-badge ${cl}"><i class="fab fa-${i}"></i></span></div>`;f.classList.remove('hidden');},600);},5000);
 
     const heroSlides = [
-        {title:'ผู้รับเหมาทิ้งงาน?',desc:'เราไม่ทิ้ง! งานโครงสร้าง ต่อเติม รับประกันผลงาน',img:'images/pic11.webp',link:'construction.html'},
-        {title:'ต่อเติมหลังคาโรงรถ',desc:'โครงเหล็กแข็งแรง มุงเมทัลชีท/ไวนิล',img:'images/pic11.webp',link:'construction.html'},
-        {title:'รีโนเวทบ้านเก่า',desc:'เปลี่ยนบ้านโทรมให้เป็นบ้านสวย งบไม่บานปลาย',img:'images/pic11.webp',link:'construction.html'},
-        {title:'เดินสายไฟใหม่',desc:'ปลอดภัย มาตรฐานการไฟฟ้า',img:'images/pic11.webp',link:'electrical.html'},
-        {title:'ติดตั้งกล้องวงจรปิด',desc:'เฝ้าบ้านได้ 24 ชม.',img:'images/pic03.webp',link:'cctv.html'},
-        {title:'ประตูรีโมท',desc:'หน้าฝนไม่ต้องลงรถ',img:'images/pic09.webp',link:'autodoor.html'},
-        {title:'ซ่อมประปา',desc:'ท่อแตก น้ำรั่ว ซ่อมด่วน',img:'images/pic04.webp',link:'plumbing.html'},
+        {title:'หลังคารั่ว? ฝ้าพัง!',desc:'ซ่อมด่วน หายขาด 100% ด้วยวัสดุเกรดพรีเมียม',img:'images/pic11.webp',link:'construction.html'},
+        {title:'ต่อเติมโรงรถ/ครัว',desc:'โครงสร้างแข็งแรง ลงเข็มมาตรฐาน ไม่ทรุด',img:'images/pic11.webp',link:'construction.html'},
+        {title:'งานเหล็กดัด/โครงสร้าง',desc:'เชื่อมแน่น แข็งแรง ปลอดภัย สวยงาม',img:'images/pic11.webp',link:'construction.html'},
+        {title:'ซ่อมไฟฟ้าด่วน',desc:'ไฟดับ ไฟช็อต',img:'images/pic11.webp',link:'electrical.html'},
+        {title:'ติดตั้งโซล่าเซลล์',desc:'ลดค่าไฟบ้าน',img:'images/pic08.webp',link:'solar.html'},
+        {title:'กล้องวงจรปิด',desc:'เฝ้าบ้าน 24 ชม.',img:'images/pic03.webp',link:'cctv.html'},
+        {title:'ประตูรีโมท',desc:'เปิดปิดสะดวก',img:'images/pic09.webp',link:'autodoor.html'},
+        {title:'ซ่อมปั๊มน้ำ',desc:'น้ำแรง ไม่สะดุด',img:'images/pic04.webp',link:'plumbing.html'},
         {title:'ล้างแอร์',desc:'เย็นฉ่ำ ประหยัดไฟ',img:'images/pic10.webp',link:'cleaning-air.html'},
-        {title:'โซล่าเซลล์',desc:'ลดค่าไฟระยะยาว',img:'images/pic08.webp',link:'solar.html'},
-        {title:'ติดตั้ง Wifi',desc:'เน็ตแรงทั่วบ้าน',img:'images/pic03.webp',link:'network.html'}
+        {title:'ซ่อมกล่องหยอดเหรียญ',desc:'บริการถึงที่',img:'images/pic09.webp',link:'coinbox.html'}
     ];
     let currentHeroIndex=0;
     const heroContent=document.getElementById('heroContent'),heroImage=document.getElementById('heroImage'),heroDots=document.getElementById('heroDots');
     heroSlides.forEach((_,i)=>{const d=document.createElement('div');d.className=`slider-dot ${i===0?'active':''}`;d.onclick=()=>setHero(i);heroDots.appendChild(d);});
-    function setHero(i){currentHeroIndex=i;const s=heroSlides[i];heroContent.style.opacity='0';heroImage.style.opacity='0';setTimeout(()=>{heroContent.innerHTML=`<header class="main"><h1>${s.title}</h1></header><p>${s.desc}</p><ul class="actions"><li><a href="${s.link}" class="button big primary icon solid fa-hard-hat">ปรึกษาช่างฟรี</a></li></ul>`;heroImage.src=s.img;document.querySelectorAll('.slider-dot').forEach((d,x)=>d.className=`slider-dot ${x===i?'active':''}`);heroContent.style.opacity='1';heroImage.style.opacity='1';},500);}
+    function setHero(i){currentHeroIndex=i;const s=heroSlides[i];heroContent.style.opacity='0';heroImage.style.opacity='0';setTimeout(()=>{heroContent.innerHTML=`<header class="main"><h1>${s.title}</h1></header><p>${s.desc}</p><ul class="actions"><li><a href="${s.link}" class="button big primary icon solid fa-hammer">ปรึกษาช่าง</a></li></ul>`;heroImage.src=s.img;document.querySelectorAll('.slider-dot').forEach((d,x)=>d.className=`slider-dot ${x===i?'active':''}`);heroContent.style.opacity='1';heroImage.style.opacity='1';},500);}
     setInterval(()=>setHero((currentHeroIndex+1)%heroSlides.length),7000);
     setHero(0);
   </script>
