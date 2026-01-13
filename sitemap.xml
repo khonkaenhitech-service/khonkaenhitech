@@ -2,7 +2,7 @@
 <!-- 
   Sitemap for Khon Kaen Hitech 
   Generated for Strategic SEO Indexing 2026 - Master Edition
-  ครอบคลุมหน้าบริการทั้งหมด หน้าปิดยอดขายด้วย AI และบทความเชิงจิตวิทยา
+  ครอบคลุมหน้าบริการทั้งหมด หน้าปิดยอดขายด้วย AI บทความเชิงจิตวิทยา และหน้าวิเคราะห์กลยุทธ์
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <!-- 1. หน้าหลัก: ศูนย์รวมแบรนด์และความเชื่อถือ -->
@@ -29,7 +29,15 @@
       <priority>0.90</priority>
    </url>
 
-   <!-- 4. หมวดบริการไฟฟ้าและอุตสาหกรรม -->
+   <!-- 4. Master Strategic Dashboard (หน้าวิเคราะห์ข้อมูลระดับเทพ) -->
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/strategic-dashboard.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.85</priority>
+   </url>
+
+   <!-- 5. หมวดบริการไฟฟ้าและอุตสาหกรรม -->
    <url>
       <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/electrical.html</loc>
       <lastmod>2026-01-13</lastmod>
@@ -55,7 +63,7 @@
       <priority>0.85</priority>
    </url>
 
-   <!-- 5. หมวดธุรกิจหยอดเหรียญและแฟรนไชส์ -->
+   <!-- 6. หมวดธุรกิจหยอดเหรียญและแฟรนไชส์ -->
    <url>
       <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/laundry.html</loc>
       <lastmod>2026-01-13</lastmod>
@@ -87,7 +95,7 @@
       <priority>0.75</priority>
    </url>
 
-   <!-- 6. หมวดระบบความปลอดภัยและไอที -->
+   <!-- 7. หมวดระบบความปลอดภัยและไอที -->
    <url>
       <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/cctv.html</loc>
       <lastmod>2026-01-13</lastmod>
@@ -113,7 +121,7 @@
       <priority>0.80</priority>
    </url>
 
-   <!-- 7. หมวดซ่อมบำรุงและทำความสะอาด -->
+   <!-- 8. หมวดซ่อมบำรุงและทำความสะอาด -->
    <url>
       <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/cleaning-air.html</loc>
       <lastmod>2026-01-13</lastmod>
@@ -157,7 +165,7 @@
       <priority>0.80</priority>
    </url>
 
-   <!-- 8. หมวดบทความ Hook Traffic (SEO Articles) -->
+   <!-- 9. หมวดบทความ Hook Traffic (SEO Articles) -->
    <url>
       <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/article-dirty-secret.html</loc>
       <lastmod>2026-01-13</lastmod>
