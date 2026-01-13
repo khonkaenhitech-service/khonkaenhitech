@@ -1,890 +1,449 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="th">
 <head>
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-M26CWCKV');
-  </script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- SEO Meta Tags -->
-  <title>ล้างแอร์ ซ่อมไฟ กล้องวงจรปิด ขอนแก่น | อันตรายจากเชื้อราและไฟรั่วที่คุณไม่รู้! - ขอนแก่นไฮเทค</title>
-  <meta name="description" content="รู้ทันภัยเงียบ! แอร์มีเชื้อราเสี่ยงปอดพัง สายไฟเก่าเสี่ยงไฟไหม้ แก้ไขด่วนด้วยช่างขอนแก่นมืออาชีพ อันดับ 1 บริการล้างแอร์ ซ่อมไฟ ติดตั้งกล้องวงจรปิด รับประกันงานซ่อม" />
-  <meta name="keywords" content="ล้างแอร์ขอนแก่น, ช่างไฟขอนแก่น, ซ่อมกล้องวงจรปิดขอนแก่น, ล้างถังน้ำขอนแก่น, ช่างซ่อมบำรุงขอนแก่น, ร้านแอร์ใกล้ฉัน" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="theme-color" content="#d4af37" />
-  <meta name="geo.region" content="TH-40" />
-  <meta name="geo.placename" content="Khon Kaen" />
-
-  <link rel="canonical" href="https://khonkaenhitech-service.github.io/khonkaenhitech/" />
-  <link rel="icon" href="images/favicon.webp" />
-
-  <!-- Open Graph -->
-  <meta property="og:locale" content="th_TH" />
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="ขอนแก่นไฮเทค" />
-  <meta property="og:title" content="คุณกำลังหายใจเอา “เชื้อรา” หรืออาบน้ำผสม “ซากตะกอน” อยู่รึเปล่า?" />
-  <meta property="og:description" content="สัญญาณเตือนเชื้อรา/ตะกอนในระบบ พร้อมวิธีแก้และบริการช่างขอนแก่น" />
-  <meta property="og:image" content="https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.webp" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"ขอนแก่นไฮเทค",
-    "image":"https://khonkaenhitech-service.github.io/khonkaenhitech/images/pic10.webp",
-    "telephone":"+66944749874",
-    "address":{
-      "@type":"PostalAddress",
-      "addressLocality":"ขอนแก่น",
-      "addressRegion":"ขอนแก่น",
-      "postalCode":"40000",
-      "addressCountry":"TH"
-    },
-    "priceRange": "฿฿",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "08:00",
-      "closes": "18:00"
-    },
-    "url": "https://khonkaenhitech-service.github.io/khonkaenhitech/"
-  }
-  </script>
-
-  <style>
-    :root{
-      --kh-sidebar-w: 380px; /* กำหนดตัวแปรความกว้างของเมนูบาร์ด้านข้าง */
-      --kh-gold: #d4af37; /* กำหนดตัวแปรสีทองหลักของธีมเว็บไซต์ */
-      --kh-line: rgba(0,0,0,0.10); /* กำหนดสีเส้นขอบแบบโปร่งใสจางๆ */
-    }
-
-    body, input, select, textarea, button, h1, h2, h3, h4, h5, h6 { 
-        font-family: 'Sarabun', sans-serif; /* ตั้งค่าฟอนต์ภาษาไทยสารบัญให้แสดงผลทั่วทั้งเว็บ */
-    } 
-
-    /* ===== Layout Fixes (การแก้ไขโครงสร้างการจัดวางหน้าเว็บ) ===== */
-    #wrapper{ 
-        display:block; /* กำหนดให้กรอบใหญ่สุดแสดงผลแบบบล็อกเต็มบรรทัด */
-    } 
-
-    /* Sidebar: fixed-left (เมนูบาร์ด้านซ้ายแบบตรึงอยู่กับที่) */
-    #sidebar{
-      width: var(--kh-sidebar-w); /* กำหนดความกว้างโดยดึงค่ามาจากตัวแปรที่ตั้งไว้ */
-      max-width: 86vw; /* กำหนดความกว้างสูงสุดไม่เกิน 86% ของหน้าจอ */
-      height: 100vh; /* กำหนดความสูงให้เต็มหน้าจอ 100% */
-      position: fixed; /* ตรึงตำแหน่งไว้ไม่ให้เลื่อนตามการสกอลล์เมาส์ */
-      top: 0; /* จัดตำแหน่งให้ชิดขอบบนสุด */
-      left: 0; /* จัดตำแหน่งให้ชิดขอบซ้ายสุด */
-      z-index: 10000; /* กำหนดลำดับชั้นความลึกให้ลอยอยู่บนสุด (ทับเลเยอร์อื่น) */
-      overflow-y: auto; /* ถ้าเนื้อหาเมนูยาวเกินจอ ให้แสดงแถบเลื่อนแนวตั้งอัตโนมัติ */
-      background: #fcfcfc; /* กำหนดสีพื้นหลังเป็นสีขาวเกือบสุด */
-      border-right: 1px solid var(--kh-line); /* ใส่เส้นขอบทางขวาสีจางๆ */
-      transform: translateX(0); /* กำหนดตำแหน่งแกน X ปกติ (สถานะแสดงผล) */
-      transition: transform .26s ease; /* ใส่เอฟเฟกต์การเลื่อนเข้าออกให้นุ่มนวล */
-      margin: 0 !important; /* บังคับไม่ให้มีระยะห่างรอบนอกเด็ดขาด */
-    }
-    #sidebar.inactive{
-      transform: translateX(-100%); /* เมื่อคลาส inactive ทำงาน ให้เลื่อนเมนูไปทางซ้ายจนพ้นจอ */
-    }
-
-    /* Main Content (เนื้อหาหลักด้านขวา) */
-    #main{
-      margin-left: var(--kh-sidebar-w); /* เว้นระยะห่างด้านซ้ายเท่ากับความกว้างของเมนูบาร์ */
-      transition: margin-left .26s ease; /* ใส่เอฟเฟกต์การยืดหดพื้นที่ให้นุ่มนวลเมื่อเมนูเปิดปิด */
-      min-height: 100vh; /* กำหนดความสูงขั้นต่ำให้เต็มหน้าจอเสมอ */
-    }
-    body.kh-sidebar-closed #main{ 
-        margin-left: 0; /* เมื่อปิดเมนู ให้เนื้อหาขยายเต็มจอ (ระยะห่างซ้ายเป็น 0) */
-    } 
-
-    /* Hide template toggle (ซ่อนปุ่มเมนูเดิมของเทมเพลตที่ติดมา) */
-    #sidebar .toggle{ 
-        display:none !important; /* บังคับซ่อนการแสดงผลปุ่มนี้ */
-    } 
-
-    /* Top Header Hamburger (แถบหัวเว็บด้านบนและปุ่มเมนู) */
-    .kh-top{ 
-        display:flex; /* แสดงผลแบบยืดหยุ่น (Flexbox) เพื่อจัดเรียงแนวนอน */
-        align-items:center; /* จัดองค์ประกอบภายในให้กึ่งกลางแนวตั้ง */
-        gap: 14px; /* เว้นระยะห่างระหว่างปุ่มเมนูกับโลโก้ 14px */
-    } 
-    .kh-menu-btn{
-      width: 46px; height: 46px; /* กำหนดขนาดปุ่มเมนู กว้าง 46px สูง 46px */
-      border-radius: 12px; /* ทำมุมโค้งมน 12px */
-      border: 1px solid rgba(0,0,0,0.12); /* ใส่เส้นขอบสีดำจางๆ */
-      background: #fff; /* ใส่สีพื้นหลังเป็นสีขาว */
-      cursor: pointer; /* เปลี่ยนรูปเมาส์เป็นรูปนิ้วมือเมื่อชี้ */
-      display: inline-flex; /* แสดงผลแบบบล็อกในบรรทัดเพื่อจัดไอคอน */
-      align-items:center; /* จัดไอคอนกึ่งกลางแนวตั้ง */
-      justify-content:center; /* จัดไอคอนกึ่งกลางแนวนอน */
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06); /* ใส่เงาใต้ปุ่มแบบนุ่มนวล */
-    }
-    .kh-menu-btn i{ 
-        font-size: 18px; color: #111; /* กำหนดขนาดไอคอน 18px และสีดำเข้ม */
-    } 
-
-    /* Logo - Proportional & Dark Golden Orange Theme (ส่วนโลโก้และชื่อร้าน) */
-    .kh-brand{ 
-        display:flex; /* แสดงผลแบบยืดหยุ่นเพื่อเรียงรูปคู่กับข้อความ */
-        align-items:center; /* จัดให้กึ่งกลางแนวตั้ง */
-        gap: 12px; /* เว้นระยะห่างระหว่างโลโก้กับชื่อร้าน */
-        text-decoration: none; /* เอาเส้นขีดใต้ออก */
-        border-bottom: none; /* เอาเส้นขอบล่างออก */
-        transition: transform 0.2s ease; /* ใส่เอฟเฟกต์ขยายเมื่อเอาเมาส์ชี้ */
-    }
-    .kh-brand:hover {
-        transform: scale(1.02); /* ขยายขนาดขึ้น 2% เมื่อเอาเมาส์ชี้ */
-    }
-    .kh-brand__img img {
-        width: 55px; /* กำหนดความกว้างรูปโลโก้ 55px */
-        height: 55px; /* กำหนดความสูงรูปโลโก้ 55px */
-        object-fit: cover; /* ปรับรูปให้เต็มกรอบโดยไม่เสียสัดส่วน */
-        display: block; /* แสดงผลเป็นบล็อก */
-        border-radius: 50%; /* ตัดขอบรูปเป็นวงกลม */
-        border: 2px solid #b8860b; /* ใส่ขอบสีทองเข้มหนา 2px */
-        box-shadow: 0 4px 12px rgba(184, 134, 11, 0.25); /* ใส่เงาสีทองฟุ้งๆ รอบโลโก้ */
-    }
-    .kh-brand__text { 
-        display: flex; /* แสดงผลแบบยืดหยุ่น */
-        flex-direction: column; /* จัดเรียงข้อความแนวตั้ง (ชื่อไทยอยู่บน อังกฤษอยู่ล่าง) */
-        justify-content: center; /* จัดกึ่งกลาง */
-    }
-    .lux-title-th { 
-        font-weight: 900; /* กำหนดตัวหนามากพิเศษ */
-        font-size: 1.35rem; /* กำหนดขนาดตัวอักษรใหญ่ */
-        line-height: 1.1; /* กำหนดระยะห่างระหว่างบรรทัด */
-        /* Dark Golden Orange Gradient (สีไล่เฉดส้มทองเข้ม) */
-        background: linear-gradient(135deg, #8c4600 0%, #ff8f00 40%, #d4af37 70%, #8c4600 100%); /* ไล่สีพื้นหลังตัวอักษร */
-        background-size: 300% auto; /* ขยายขนาดพื้นหลังเพื่อทำอนิเมชั่น */
-        -webkit-background-clip: text; /* ตัดพื้นหลังให้เหลือแค่รูปตัวอักษร */
-        -webkit-text-fill-color: transparent; /* ถมสีตัวอักษรให้โปร่งใส (เพื่อให้เห็นพื้นหลังที่ไล่สี) */
-        text-shadow: 0px 2px 4px rgba(0,0,0,0.05); /* ใส่เงาตัวอักษรบางๆ */
-        animation: shineText 6s linear infinite; /* เล่นอนิเมชั่นแสงวิบวับวนไปเรื่อยๆ */
-    }
-    .lux-subtitle-en { 
-        font-size: 0.75rem; /* กำหนดขนาดตัวอักษรเล็ก */
-        letter-spacing: 1.5px; /* เพิ่มระยะห่างระหว่างตัวอักษร */
-        color: #a0522d; /* กำหนดสีน้ำตาลทองเข้ม */
-        font-weight: 800; /* กำหนดตัวหนา */
-        margin-top: 2px; /* เว้นระยะห่างด้านบน 2px */
-        text-transform: uppercase; /* แปลงเป็นตัวพิมพ์ใหญ่ทั้งหมด */
-    }
-
-    @keyframes shineText {
-        to { background-position: 300% center; } /* กำหนดจุดสิ้นสุดของอนิเมชั่นเลื่อนพื้นหลัง */
-    }
-
-    /* Sidebar Menu (เมนูรายการด้านซ้าย) */
-    ul.menu-gold { list-style: none; padding: 0; margin: 0; } /* ลบจุดหน้าหัวข้อและระยะขอบทั้งหมด */
-    ul.menu-gold li { margin-bottom: 8px; padding: 0 !important; border: none !important; } /* กำหนดระยะห่างระหว่างปุ่มเมนู */
-    .menu-btn{
-      display:block; background:#fff; border:1px solid rgba(0,0,0,0.08); /* ปุ่มพื้นขาวขอบจาง */
-      padding: 10px 12px; border-radius: 12px; /* กำหนดระยะภายในและมุมโค้งมน */
-      color: #222 !important; font-weight: 800; text-decoration: none; /* สีดำ ตัวหนา ไม่ขีดเส้นใต้ */
-      transition: .15s ease; /* ใส่เอฟเฟกต์เปลี่ยนสถานะ */
-    }
-    .menu-btn:hover{
-      border-color: rgba(212,175,55,.55); /* เปลี่ยนสีขอบเป็นสีทองเมื่อชี้ */
-      box-shadow: 0 10px 22px rgba(212,175,55,.10); /* เพิ่มเงาสีทองเมื่อชี้ */
-      transform: translateY(-1px); /* ลอยขึ้นเล็กน้อยเมื่อชี้ */
-    }
-    .menu-btn.is-active{
-      border-color: rgba(212,175,55,.95); /* สีขอบเข้มเมื่อถูกเลือก */
-      background: linear-gradient(90deg, rgba(212,175,55,.12), #fff); /* ไล่สีพื้นหลังจางๆ เมื่อถูกเลือก */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ขอนแก่นไฮเทค Super Hub | ช่างมืออาชีพอันดับ 1</title>
     
-    /* ========== 3D LUXURY MODERN HEADERS (หัวข้อเมนูแบบ 3D หรูหรา) ========== */
-    .menu-header {
-      font-size: 0.85em; /* ขนาดตัวอักษร */
-      text-transform: uppercase; /* ตัวพิมพ์ใหญ่ */
-      font-weight: 900; /* ตัวหนามาก */
-      padding: 12px 18px; /* ระยะห่างภายใน */
-      margin: 24px 0 10px 0; /* ระยะห่างภายนอก */
-      border-radius: 50px; /* ทรงแคปซูลโมเดิร์น */
-      position: relative; /* ตำแหน่งอ้างอิง */
-      overflow: hidden; /* ซ่อนส่วนเกิน */
-      display: flex; /* จัดเรียง */
-      align-items: center; /* กึ่งกลางแนวตั้ง */
-      letter-spacing: 1px; /* ระยะห่างตัวอักษร */
-      color: #fff; /* ตัวอักษรสีขาว */
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* เงาตัวหนังสือให้นูน */
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* เอฟเฟกต์นุ่มนวล */
-      
-      /* 3D Box Shadow (สร้างมิติความลึก) */
-      box-shadow: 
-        0 4px 6px rgba(0,0,0,0.1), /* เงาพื้น */
-        inset 0 1px 0 rgba(255,255,255,0.4), /* แสงสะท้อนขอบบน */
-        inset 0 -2px 0 rgba(0,0,0,0.1); /* เงาขอบล่าง */
-      border: 1px solid rgba(255,255,255,0.2); /* เส้นขอบบางๆ */
-    }
-
-    /* Hover Interaction (เอฟเฟกต์เมื่อชี้เมาส์) */
-    .menu-header:hover {
-      transform: translateY(-2px) scale(1.02); /* ลอยขึ้นและขยาย */
-      box-shadow: 
-        0 8px 15px rgba(0,0,0,0.2), /* เงาลึกขึ้น */
-        inset 0 1px 0 rgba(255,255,255,0.4),
-        inset 0 -2px 0 rgba(0,0,0,0.1);
-    }
-
-    /* Shimmer Animation (แสงวิบวับวิ่งผ่าน) */
-    .menu-header::after {
-      content: '';
-      position: absolute;
-      top: 0; left: -150%;
-      width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); /* แสงขาวจางๆ */
-      transform: skewX(-20deg); /* เอียงแสง */
-      animation: shineHeader 4s infinite; /* วิ่งวนทุก 4 วิ */
-    }
+    <!-- ✅ External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
-    @keyframes shineHeader {
-      0% { left: -150%; }
-      20% { left: 150%; }
-      100% { left: 150%; }
-    }
+    <!-- ✅ jQuery for smooth interactions -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    /* --- 1. Business (Luxury Gold - ทองคำหรู) --- */
-    .menu-header:nth-of-type(1) {
-      background: linear-gradient(135deg, #ffd700 0%, #fdb931 50%, #d4af37 100%);
-      border-left: 5px solid #b8860b;
-    }
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;800&display=swap');
+        
+        :root {
+            --gold: #d4af37;
+            --navy: #1a252f;
+            --green: #008148;
+            --line-green: #06c755;
+            --orange: #f26522;
+            --red: #ee1c25;
+            --fb-blue: #0084ff;
+            --bg-cream: #fcfbf7;
+        }
 
-    /* --- 2. Electrical (Cyber Blue - ฟ้าไฟฟ้า) --- */
-    .menu-header:nth-of-type(2) {
-      background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
-      border-left: 5px solid #0041a3;
-    }
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: var(--bg-cream);
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-    /* --- 3. Security (Emerald Guard - เขียวมรกต) --- */
-    .menu-header:nth-of-type(3) {
-      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-      border-left: 5px solid #0b665e;
-    }
+        /* 🎯 Layout & Responsive Containers */
+        .app-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-    /* --- 4. Construction (Industrial Copper - ส้มทองแดง) --- */
-    .menu-header:nth-of-type(4) {
-      background: linear-gradient(135deg, #FF512F 0%, #F09819 100%);
-      border-left: 5px solid #bf360c;
-    }
+        /* Golden Aura for AI Centerpiece - Psychological Attraction */
+        .gold-glow {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+            animation: pulse-gold 2.5s infinite ease-in-out;
+        }
+        @keyframes pulse-gold {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); }
+            50% { transform: scale(1.08); box-shadow: 0 0 35px rgba(212, 175, 55, 0.9); }
+        }
 
-    /* --- 5. Maintenance (Royal Amethyst - ม่วงพรีเมียม) --- */
-    .menu-header:nth-of-type(5) {
-      background: linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%);
-      border-left: 5px solid #31009c;
-    }
-    
-    /* Default for others (6, 7) - สีดำด้านหรูหรา */
-    .menu-header:nth-of-type(n+6) {
-        background: linear-gradient(135deg, #434343 0%, #000000 100%);
-        border-left: 5px solid #333;
-    }
-    /* ========== END 3D LUXURY HEADERS ========== */
+        /* Realistic Social Icons Styling for Social Proof */
+        .social-badge {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 24px; height: 24px; border-radius: 6px; color: #fff; font-size: 13px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15); vertical-align: middle;
+            margin-left: 6px;
+        }
+        .social-badge.facebook { background-color: #1877F2; }
+        .social-badge.tiktok { background-color: #000; border: 1px solid #333; }
+        .social-badge.instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+        .social-badge.twitter { background-color: #000; }
+        .social-badge.line { background-color: #06C755; }
 
-    .btn-contact-gold{
-      background: linear-gradient(135deg, #ffca28 0%, #ff6f00 100%); /* ไล่สีปุ่มจากเหลืองไปส้ม */
-      color:#fff !important; border: none; text-align:center; /* ตัวอักษรสีขาว จัดกลาง */
-      border-radius: 999px; box-shadow: 0 10px 26px rgba(255, 111, 0, 0.28); /* ปุ่มมนรีและใส่เงา */
-    }
+        /* Floating Review Widget - Social Validation */
+        #khReviewFloater {
+            position: fixed; bottom: 90px; left: 16px; z-index: 50; width: 280px;
+            background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px);
+            border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            border: 1px solid rgba(212, 175, 55, 0.3); padding: 12px;
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        #khReviewFloater.hidden { transform: translateY(200%); opacity: 0; }
 
-    /* Floating Right Buttons (ปุ่มลอยด้านขวา) */
-    #khFloatBar{
-      position: fixed; right: 16px; top: 50%; transform: translateY(-50%); z-index: 9999; /* ตรึงตำแหน่งขวากึ่งกลางจอ */
-      display:flex; flex-direction: column; gap: 14px; pointer-events: auto; /* เรียงปุ่มแนวตั้ง เว้นระยะห่าง */
-    }
+        /* Sidebar & Auto-Scaling System */
+        #sidebar {
+            position: fixed; top: 0; left: 0; width: 330px; height: 100%;
+            background: #fff; z-index: 5000; transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out; overflow-y: auto;
+            border-right: 1px solid #eee;
+        }
+        #sidebar.active { transform: translateX(0); }
+        .sidebar-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+            z-index: 4500; display: none; backdrop-filter: blur(2px);
+        }
+        .sidebar-overlay.active { display: block; }
 
-    .kh-fbtn {
-      width: 52px; height: 52px; border-radius: 14px; /* กำหนดขนาดปุ่มและมุมมน */
-      display: flex; align-items: center; justify-content: center; /* จัดไอคอนกึ่งกลาง */
-      box-shadow: 0 6px 12px rgba(0,0,0,0.25), 0 2px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -2px 0 rgba(0,0,0,0.1); /* ใส่เงาแบบมีมิติและแสงสะท้อน */
-      color: #fff !important; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); /* สีไอคอนขาว เส้นขอบบาง */
-      user-select: none; transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* อนิเมชั่นเด้งดึ๋งเวลาชี้ */
-      position: relative; overflow: hidden; /* ซ่อนส่วนเกิน */
-    }
+        /* Side Bar Header Branding */
+        .menu-header {
+            font-size: 0.85em; text-transform: uppercase; font-weight: 900;
+            padding: 12px 18px; margin: 25px 0 10px 0; border-radius: 50px;
+            color: #fff; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.4);
+            position: relative; overflow: hidden;
+        }
+        .menu-header::after {
+            content: ''; position: absolute; top: 0; left: -150%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shine 4s infinite;
+        }
+        @keyframes shine { 0% { left: -150%; } 20% { left: 150%; } 100% { left: 150%; } }
 
-    .kh-fbtn::after {
-      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 45%; /* สร้างเลเยอร์แสงสะท้อนด้านบน */
-      background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, transparent 100%); /* ไล่สีขาวจางๆ ลงมา */
-      border-top-left-radius: 14px; border-top-right-radius: 14px; pointer-events: none; /* โค้งตามรูปปุ่ม */
-    }
+        .menu-btn { 
+            display: block; padding: 12px 16px; border-radius: 12px; margin-bottom: 6px; 
+            font-weight: 800; color: #333 !important; text-decoration: none !important; 
+            border: 1px solid rgba(0,0,0,0.05); transition: 0.2s; background: #fff;
+        }
+        .menu-btn:hover { border-color: var(--gold); background: #fcfbf7; transform: translateX(5px); }
+        .menu-btn.is-active { border-color: var(--gold); background: linear-gradient(90deg, rgba(212,175,55,0.1), #fff); color: var(--gold) !important; }
 
-    .kh-fbtn i { font-size: 24px; position: relative; z-index: 2; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); } /* ขนาดไอคอนและเงา */
-    .kh-fbtn.call { background: linear-gradient(145deg, #ffc107 0%, #ff8f00 100%); } /* สีปุ่มโทร (ไล่สีส้มเหลือง) */
-    .kh-fbtn.line { background: linear-gradient(145deg, #00e676 0%, #00a844 100%); } /* สีปุ่มไลน์ (ไล่สีเขียว) */
-    .kh-fbtn.repair { background: linear-gradient(145deg, #ff5252 0%, #d32f2f 100%); } /* สีปุ่มแจ้งซ่อม (ไล่สีแดง) */
-    .kh-fbtn.fb { background: linear-gradient(145deg, #448aff 0%, #1565c0 100%); } /* สีปุ่มเฟสบุ๊ค (ไล่สีน้ำเงิน) */
+        /* Bottom Nav Components */
+        .nav-item { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; transition: 0.2s; text-decoration: none !important; }
+        .nav-item:active { transform: scale(0.9); }
+        .c-call { color: var(--orange); }
+        .c-line { color: var(--line-green); }
+        .c-msg { color: var(--fb-blue); }
+        .c-menu { color: var(--navy); }
 
-    .kh-fbtn:hover { transform: scale(1.15) translateY(-2px); box-shadow: 0 12px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.6); z-index: 10; } /* ขยายและลอยขึ้นเมื่อชี้ */
-    .kh-fbtn:active { transform: scale(0.95); box-shadow: 0 2px 5px rgba(0,0,0,0.2); } /* ยุบลงเมื่อกด */
+        .fade-in { animation: fadeIn 0.4s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* Floating Review Widget (กล่องรีวิวลอยด้านล่างซ้าย) */
-    #khReviewFloater {
-        position: fixed; /* ตรึงตำแหน่ง */
-        bottom: 20px; /* ระยะห่างจากขอบล่าง */
-        left: 20px; /* ระยะห่างจากขอบซ้าย */
-        z-index: 9990; /* ลำดับชั้น (ต่ำกว่าปุ่มแชทเล็กน้อย) */
-        width: 300px; /* ความกว้างกล่อง */
-        background: rgba(255, 255, 255, 0.95); /* สีพื้นหลังขาวโปร่งแสง */
-        backdrop-filter: blur(5px); /* เบลอฉากหลัง */
-        border-radius: 12px; /* มุมโค้งมน */
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* เงาฟุ้ง */
-        border: 1px solid rgba(212, 175, 55, 0.3); /* ขอบสีทองจางๆ */
-        padding: 15px; /* ระยะห่างภายใน */
-        font-size: 0.9em; /* ขนาดตัวอักษร */
-        transform: translateY(0); /* ตำแหน่งปกติ */
-        transition: transform 0.5s ease, opacity 0.5s ease; /* เอฟเฟกต์การเลื่อนและเฟด */
-        overflow: hidden; /* ซ่อนส่วนเกิน */
-    }
-    #khReviewFloater.hidden { transform: translateY(120%); opacity: 0; } /* ซ่อนโดยเลื่อนลงล่างและจางหาย */
-    
-    .review-header {
-        font-size: 0.75em; /* ขนาดหัวข้อรีวิว */
-        text-transform: uppercase; /* ตัวพิมพ์ใหญ่ */
-        color: #a87910; /* สีทองเข้ม */
-        font-weight: 800; /* ตัวหนา */
-        margin-bottom: 5px; /* ระยะห่างด้านล่าง */
-        display: flex; /* จัดเรียงแนวนอน */
-        justify-content: space-between; /* แยกซ้ายขวา */
-    }
-    .review-stars { color: #ffc107; } /* สีดาวเป็นสีเหลืองทอง */
-    .review-text { font-weight: 600; color: #333; line-height: 1.4; margin-bottom: 5px; } /* สไตล์ข้อความรีวิว */
-    .review-author { font-size: 0.8em; color: #777; text-align: right; font-style: italic; } /* สไตล์ชื่อผู้รีวิว (ตัวเอียง) */
-    
-    /* Social Badge Styles (สไตล์ป้ายโลโก้โซเชียล) */
-    .social-badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 6px; border-radius: 4px; font-size: 0.8em; font-weight: bold; color: #fff; margin-left: 5px; } /* กำหนดรูปแบบพื้นฐานป้าย */
-    .social-badge.facebook { background: #1877F2; } /* สี Facebook */
-    .social-badge.tiktok { background: #000000; border: 1px solid #333; } /* สี TikTok */
-    .social-badge.instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); } /* สี Instagram (Gradient) */
-    .social-badge.twitter { background: #000000; } /* สี Twitter/X */
-    
-    .fade-content { animation: fadeIn 0.8s ease-in-out; } /* เรียกใช้อนิเมชั่นเฟดเข้า */
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } } /* อนิเมชั่นเลื่อนขึ้นและชัดขึ้น */
-
-    /* Hero Slider Styles (ส่วนสไลด์แบนเนอร์หลัก) */
-    #banner { position: relative; overflow: hidden; min-height: 550px; display: flex; align-items: center; } /* กรอบสไลด์ */
-    #banner .content { position: relative; z-index: 2; transition: opacity 0.5s ease; padding-top: 2em; } /* เนื้อหาสไลด์ */
-    #banner .image { transition: opacity 0.5s ease; position: relative; } /* รูปภาพสไลด์ */
-    
-    /* Hero Watermark Overlay (ลายน้ำบนภาพสไลด์) */
-    .hero-watermark {
-        position: absolute; /* ตรึงตำแหน่งเทียบกับกรอบภาพ */
-        bottom: 30px; /* ระยะห่างจากล่าง */
-        right: 30px; /* ระยะห่างจากขวา */
-        background: rgba(255, 255, 255, 0.9); /* พื้นหลังขาวโปร่ง */
-        backdrop-filter: blur(8px); /* เบลอฉากหลัง */
-        padding: 15px 20px; /* ระยะห่างภายใน */
-        border-radius: 12px; /* มุมมน */
-        box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* เงาลึก */
-        display: flex; /* จัดเรียงแนวนอน */
-        align-items: center; /* จัดกึ่งกลางแนวตั้ง */
-        gap: 15px; /* ระยะห่างระหว่างโลโก้และข้อความ */
-        border: 1px solid rgba(212, 175, 55, 0.4); /* ขอบทอง */
-        z-index: 10; /* อยู่ชั้นบน */
-        max-width: 90%; /* ความกว้างสูงสุด */
-        animation: floatUp 1.2s ease-out; /* อนิเมชั่นลอยขึ้น */
-        background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%); /* ไล่สีพื้นหลัง */
-    }
-    
-    @keyframes floatUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } } /* อนิเมชั่นเลื่อนขึ้น */
-
-    .watermark-logo img { width: 55px; height: 55px; border-radius: 50%; border: 2px solid #d4af37; object-fit: cover; } /* สไตล์รูปโลโก้ในลายน้ำ */
-    .watermark-info .shop-name { font-weight: 900; color: #333; font-size: 1.1em; background: linear-gradient(90deg, #b8860b, #d4af37, #a87910); -webkit-background-clip: text; -webkit-text-fill-color: transparent; } /* ชื่อร้านแบบไล่สีทอง */
-    .watermark-info .contact-row { font-size: 0.8em; color: #444; font-weight: 700; display: flex; align-items: center; gap: 6px; } /* แถวข้อมูลติดต่อ */
-    .watermark-info .contact-row i { color: #d4af37; font-size: 1em; } /* ไอคอนสีทอง */
-
-    .slider-dots { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 5; flex-wrap: wrap; justify-content: center; width: 90%; } /* จุดนำทางสไลด์ */
-    .slider-dot { width: 10px; height: 10px; background: rgba(0,0,0,0.2); border-radius: 50%; cursor: pointer; transition: all 0.3s; } /* จุดปกติ */
-    .slider-dot.active { background: #d4af37; transform: scale(1.2); } /* จุดที่กำลังเลือก */
-
-    /* SEO Article Styles (สไตล์บทความ SEO) */
-    .seo-toc { background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 5px solid #d4af37; margin-bottom: 30px; } /* กล่องสารบัญ */
-    .seo-toc h3 { margin-top: 0; color: #333; } /* หัวข้อสารบัญ */
-    .seo-toc ul { margin-bottom: 0; } /* รายการสารบัญ */
-    h2.seo-heading { color: #c62828; font-weight: 800; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 40px; } /* หัวข้อบทความ H2 */
-    .pain-point { color: #d35400; font-weight: bold; } /* ข้อความเน้นปัญหา (สีส้มแดง) */
-    
-    /* Overlay (mobile) (แผ่นบังพื้นหลังเมื่อเปิดเมนูมือถือ) */
-    #khOverlay{ position: fixed; inset: 0; background: rgba(0,0,0,0.25); z-index: 9998; display: none; } /* ซ่อนโดยปกติ */
-    #khOverlay.show{ display:block; } /* แสดงเมื่อมีคลาส show */
-    
-    /* Mobile Bar Styling (แถบเมนูล่างสำหรับมือถือ) */
-    .kh-mobile-bar { display: none; } /* ซ่อนใน PC */
-    @media screen and (max-width: 768px) { /* เฉพาะหน้าจอขนาดเล็กกว่า 768px (มือถือ) */
-      #khFloatBar, #khReviewFloater { display: none !important; } /* ซ่อนปุ่มลอยและรีวิว */
-      .kh-mobile-bar {
-        display: flex; position: fixed; bottom: 0; left: 0; width: 100%; height: 65px; /* แถบบาร์ติดล่าง */
-        background: #fff; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); z-index: 9999; /* พื้นขาวและเงา */
-        border-top: 1px solid rgba(0,0,0,0.05); padding-bottom: env(safe-area-inset-bottom); /* เส้นขอบและเว้นระยะ Notch */
-      }
-      .m-item { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none !important; border-right: 1px solid rgba(0,0,0,0.03); color: #555; } /* รายการเมนูย่อย */
-      .m-item:last-child { border-right: none; } /* ลบเส้นขอบตัวสุดท้าย */
-      .m-item i { font-size: 20px; margin-bottom: 4px; } /* ขนาดไอคอน */
-      .m-item span { font-size: 10px; font-weight: 700; } /* ขนาดข้อความ */
-      .m-item.call { color: #ff8f00; background: #fffcf5; } /* ปุ่มโทรสีส้ม */
-      .m-item.line { color: #00c300; } /* ปุ่มไลน์สีเขียว */
-      
-      .hero-watermark { bottom: 10px; right: 10px; padding: 10px; gap: 10px; } /* ปรับตำแหน่งลายน้ำในมือถือ */
-      .watermark-logo img { width: 40px; height: 40px; } /* ลดขนาดโลโก้ */
-      .watermark-info .shop-name { font-size: 0.9em; } /* ลดขนาดชื่อร้าน */
-      .slider-dots { bottom: 10px; } /* ปรับตำแหน่งจุดสไลด์ */
-    }
-
-    @media screen and (max-width: 1280px){
-      #main{ margin-left: 0; } /* ปรับเนื้อหาเต็มจอเมื่อหน้าจอเล็กลง */
-    }
-  </style>
+        /* Mobile specific adjustment */
+        @media (max-width: 640px) {
+            #sidebar { width: 85vw; }
+            .hero-title { font-size: 1.8rem !important; line-height: 1.2 !important; }
+        }
+    </style>
 </head>
+<body class="antialiased">
 
-<body class="is-preload">
-  <div id="khOverlay"></div>
-  
-  <!-- ✅ Review Widget (20 Reviews) -->
-  <div id="khReviewFloater">
-      <div class="review-header">
-          <span><i class="fas fa-check-circle"></i> เสียงจากลูกค้าจริง</span>
-          <span class="review-stars">★★★★★</span>
-      </div>
-      <div id="reviewContent" class="fade-content"></div>
-  </div>
+<div class="app-container">
+    <!-- 🏛️ Executive Sticky Header -->
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-[4000] border-b border-gray-100 px-4 py-3 shadow-sm">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <button onclick="toggleSidebar()" class="w-10 h-10 flex items-center justify-center bg-gray-50 rounded-xl border border-gray-200 active:scale-95 transition-all">
+                    <i class="fas fa-bars text-gray-800"></i>
+                </button>
+                <div class="flex flex-col">
+                    <span class="text-base font-black text-gray-800 leading-none">ขอนแก่นไฮเทค</span>
+                    <span class="text-[9px] font-black text-gold uppercase tracking-widest mt-1">Master Tech Center</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <span class="text-[10px] font-bold text-green-600 uppercase tracking-tighter">ออนไลน์ 24 ชม.</span>
+            </div>
+        </div>
+    </header>
 
-  <div id="khFloatBar">
-    <a class="kh-fbtn call" href="tel:0944749874"><i class="icon solid fa-phone"></i></a>
-    <a class="kh-fbtn line" href="https://line.me/ti/p/~KKHITECH"><i class="icon brands fa-line"></i></a>
-    <a class="kh-fbtn repair" href="https://m.me/Line0944749874"><i class="icon solid fa-tools"></i></a>
-    <a class="kh-fbtn fb" href="https://www.facebook.com/Line0944749874"><i class="icon brands fa-facebook-f"></i></a>
-  </div>
+    <!-- 🚀 Main Viewport for Auto-Layout Content -->
+    <main id="main-viewport" class="flex-1 px-4 py-6">
+        <!-- Content will be auto-arranged here via navigate() -->
+    </main>
 
-  <div id="wrapper">
-    <div id="main">
-      <div class="inner">
-        <header id="header">
-          <div class="kh-top">
-            <button id="khMenuBtn" class="kh-menu-btn"><img src="images/menukhonkaenhitech.webp" alt="เมนู ขอนแก่นไฮเทค" width="46" height="46" loading="lazy" style="border-radius: 10px;">
-            </button>
-            <a href="index.html" class="logo kh-brand lux-wrapper">
-              <span class="kh-brand__img lux-shape"><img src="images/logo-khonkaen.webp" alt="โลโก้ ขอนแก่นไฮเทค" width="60" height="60"></span>
-              <span class="kh-brand__text"><span class="lux-title-th">ขอนแก่นไฮเทค</span><span class="lux-subtitle-en">KHON KAEN HITECH</span></span>
+    <!-- 📱 Bottom Navigation Bar - Optimized for One-Handed Use -->
+    <nav class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-100 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] z-[6000] pb-safe">
+        <div class="flex items-center justify-around h-20 max-w-lg mx-auto">
+            <!-- 1. โทร (Urgency Orange) -->
+            <a href="tel:0944749874" class="nav-item c-call">
+                <i class="fas fa-phone-alt text-xl mb-1"></i>
+                <span class="text-[9px] font-black uppercase">โทรด่วน</span>
             </a>
-          </div>
-        </header>
-
-        <!-- ✅ Hero Slider (10 Dark Psychology Slides) -->
-        <section id="banner">
-          <div class="content" id="heroContent"></div>
-          <span class="image object" id="heroImageContainer">
-            <img src="images/pic10.webp" id="heroImage" alt="บริการช่างขอนแก่น">
-            <div class="hero-watermark">
-                <div class="watermark-logo"><img src="images/logo-khonkaen.webp" alt="Logo"></div>
-                <div class="watermark-info"><div class="shop-name">ขอนแก่นไฮเทค</div><div class="contact-row"><i class="icon solid fa-phone"></i> 094-474-9874</div><div class="contact-row"><i class="icon brands fa-line"></i> Line: ~KKHITECH</div></div>
-            </div>
-          </span>
-          <div class="slider-dots" id="heroDots"></div>
-        </section>
-
-        <!-- ✅ Full SEO Article Structure -->
-        <section>
-            <!-- H1 -->
-            <header class="main">
-                <h1 style="font-size: 2em; line-height: 1.3;">10 อันดับ อาการเตือน! แอร์พัง ไฟรั่ว กล้องดับ? ขอนแก่นไฮเทค ช่วยคุณได้ (ฉบับปี 2026)</h1>
-                <p style="color:#777;">โดย ทีมงานช่างขอนแก่นมืออาชีพ | อัปเดตล่าสุด: มกราคม 2026</p>
-            </header>
-
-            <!-- Introduction -->
-            <p><span class="pain-point">ชาวขอนแก่นทราบหรือไม่?</span> 80% ของโรคภูมิแพ้ทางเดินหายใจในบ้าน เกิดจาก "แอร์สกปรก" ที่ไม่ได้ล้างเกิน 6 เดือน และสถิติไฟไหม้บ้านส่วนใหญ่ เริ่มต้นจากจุดเล็กๆ อย่าง "เบรกเกอร์ทริปบ่อย" หรือ "สายไฟเก่า" ที่คุณมองข้าม...</p>
-            <p>วันนี้ <strong>ขอนแก่นไฮเทค</strong> จะมากางความจริงที่คุณอาจไม่เคยรู้ เกี่ยวกับภัยเงียบในบ้าน และวิธีแก้ไขที่คุ้มค่าที่สุด เพื่อความปลอดภัยของคนที่คุณรัก</p>
-
-            <!-- Table of Contents -->
-            <div class="seo-toc">
-                <h3><i class="fas fa-list"></i> สารบัญเนื้อหา</h3>
-                <ul>
-                    <li><a href="#sec1">1. ภัยเงียบจากเชื้อราในแอร์ และวิธีสังเกต</a></li>
-                    <li><a href="#sec2">2. สัญญาณเตือนไฟรั่ว ที่ห้ามมองข้ามเด็ดขาด</a></li>
-                    <li><a href="#sec3">3. ทำไมต้อง "ขอนแก่นไฮเทค" (อันดับ 1 ในขอนแก่น)</a></li>
-                    <li><a href="#services-grid">4. รวมบริการของเรา</a></li>
-                    <li><a href="#faq">5. คำถามที่พบบ่อย (FAQ)</a></li>
-                </ul>
-            </div>
-
-            <!-- Body Content -->
-            <h2 id="sec1" class="seo-heading">1. ภัยเงียบจากเชื้อราในแอร์ และวิธีสังเกต</h2>
-            <p>แอร์ที่ไม่เย็น ไม่ใช่แค่เรื่องของความร้อน แต่มันคือสัญญาณว่า "แผงคอยล์ตัน" ซึ่งเป็นแหล่งเพาะพันธุ์ของเชื้อราดำ (Black Mold) หากคุณได้กลิ่นอับตอนเปิดแอร์ นั่นคือคุณกำลังสูดสปอร์เชื้อราเข้าปอดทุกคืน</p>
-            <h3>อาการที่บ่งบอกว่าต้องล้างแอร์ "แบบถอดล้างใหญ่"</h3>
-            <ul>
-                <li>❌ ลมแอร์เบา แม้จะเร่งพัดลมสุด</li>
-                <li>❌ มีน้ำหยดไหลย้อนออกมาจากตัวเครื่อง</li>
-                <li>❌ ค่าไฟแพงผิดปกติ (เพราะคอมเพรสเซอร์ทำงานหนักตลอดเวลา)</li>
-            </ul>
-
-            <h2 id="sec2" class="seo-heading">2. สัญญาณเตือนไฟรั่ว ที่ห้ามมองข้ามเด็ดขาด</h2>
-            <p>ระบบไฟฟ้าคือเส้นเลือดใหญ่ของบ้าน หากเก่าหรือชำรุด อาจนำไปสู่โศกนาฏกรรมได้ สังเกตง่ายๆ: หากสัมผัสเครื่องใช้ไฟฟ้าแล้วรู้สึกดูดจี๊ดๆ หรือหลอดไฟกระพริบถี่ๆ อย่าเสี่ยงซ่อมเองเด็ดขาด!</p>
-
-            <h2 id="sec3" class="seo-heading">3. ทำไมต้อง "ขอนแก่นไฮเทค" (อันดับ 1 ในขอนแก่น)</h2>
-            <blockquote>
-                "เราไม่ใช่แค่ช่าง แต่เราคือวิศวกรดูแลบ้านของคุณ งานจบ งบไม่บานปลาย ไม่ทิ้งงาน"
-            </blockquote>
-            <p>ด้วยประสบการณ์กว่า 10 ปี ในพื้นที่ขอนแก่น เราเข้าใจโครงสร้างบ้านและปัญหาน้ำไฟในพื้นที่ดีที่สุด ทีมงานของเราผ่านการตรวจสอบประวัติ และมีเครื่องมือทันสมัยระดับอุตสาหกรรม</p>
-
-            <!-- Services Grid -->
-            <h2 id="services-grid" class="seo-heading">4. รวมบริการของเรา</h2>
-            <div class="posts">
-                <article>
-                    <a href="cleaning-air.html" class="image"><img src="images/pic10.webp" alt="ล้างแอร์ขอนแก่น"></a>
-                    <h3>ล้างแอร์ฆ่าเชื้อโรค</h3>
-                    <p>ล้างสะอาดทุกซอกมุม รับประกันความเย็น</p>
-                    <ul class="actions"><li><a href="cleaning-air.html" class="button">ดูรายละเอียด</a></li></ul>
-                </article>
-                <article>
-                    <a href="electrical.html" class="image"><img src="images/pic11.webp" alt="ช่างไฟขอนแก่น"></a>
-                    <h3>แก้ไขระบบไฟฟ้า</h3>
-                    <p>ตรวจเช็คไฟรั่ว ไฟช็อต เดินสายไฟใหม่</p>
-                    <ul class="actions"><li><a href="electrical.html" class="button">ดูรายละเอียด</a></li></ul>
-                </article>
-                <article>
-                    <a href="cctv.html" class="image"><img src="images/pic03.webp" alt="กล้องวงจรปิดขอนแก่น"></a>
-                    <h3>ติดตั้งกล้องวงจรปิด</h3>
-                    <p>ชัดระดับ 4K ดูออนไลน์ได้ทั่วโลก</p>
-                    <ul class="actions"><li><a href="cctv.html" class="button">ดูรายละเอียด</a></li></ul>
-                </article>
-                <article>
-                    <a href="cleaning-tank.html" class="image"><img src="images/pic04.webp" alt="ล้างถังน้ำขอนแก่น"></a>
-                    <h3>ล้างถังเก็บน้ำ</h3>
-                    <p>ขจัดตะกอนดิน โคลน และเชื้อโรคก้นถัง</p>
-                    <ul class="actions"><li><a href="cleaning-tank.html" class="button">ดูรายละเอียด</a></li></ul>
-                </article>
-            </div>
-
-            <!-- FAQ Section -->
-            <h2 id="faq" class="seo-heading">5. คำถามที่พบบ่อย (FAQ)</h2>
-            <div class="row">
-                <div class="col-6 col-12-small">
-                    <h3>Q: ร้านตั้งอยู่ที่ไหนในขอนแก่น?</h3>
-                    <p><strong>A:</strong> เรามีศูนย์บริการหลักในตัวเมืองขอนแก่น และมีทีมช่างหน่วยเคลื่อนที่กระจายตามจุดต่างๆ ทั้ง ม.ข., ศิลา, บ้านเป็ด, และท่าพระ เพื่อให้เข้าถึงลูกค้าได้ไวที่สุด</p>
+            <!-- 2. LINE (Trust Green) -->
+            <a href="https://line.me/ti/p/~KKHITECH" class="nav-item c-line">
+                <i class="fab fa-line text-2xl mb-0.5"></i>
+                <span class="text-[9px] font-black uppercase">LINE</span>
+            </a>
+            <!-- 3. AI ผู้ช่วยคุณ (Authority Centerpiece) -->
+            <button onclick="navigate('ai')" id="n-ai" class="nav-item relative">
+                <div class="w-14 h-14 bg-[#1a252f] rounded-full flex items-center justify-center -mt-12 border-4 border-white text-white gold-glow">
+                    <i class="fas fa-robot text-2xl"></i>
                 </div>
-                <div class="col-6 col-12-small">
-                    <h3>Q: รับประกันงานซ่อมไหม?</h3>
-                    <p><strong>A:</strong> งานซ่อมและติดตั้งทุกชิ้นมีการรับประกัน หากมีปัญหาจุดเดิม เราเข้าไปแก้ไขให้ฟรีทันที สบายใจได้ครับ</p>
+                <span class="text-[9px] font-black uppercase mt-1 text-navy">AI ผู้ช่วย</span>
+            </button>
+            <!-- 4. ข้อความเพจ (Friendship Blue) -->
+            <a href="https://m.me/Line0944749874" class="nav-item c-msg">
+                <i class="fab fa-facebook-messenger text-2xl mb-0.5"></i>
+                <span class="text-[9px] font-black uppercase">แชทเพจ</span>
+            </a>
+            <!-- 5. เมนู (Structure Navy) -->
+            <button onclick="toggleSidebar()" class="nav-item c-menu">
+                <i class="fas fa-th-large text-xl mb-1"></i>
+                <span class="text-[9px] font-black uppercase">เมนู</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 🏰 SIDE BAR: RESTORED ORIGINAL CATEGORIES -->
+    <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+    <aside id="sidebar">
+        <div class="p-6">
+            <div class="flex items-center gap-4 mb-8 border-b pb-6">
+                <div class="w-14 h-14 rounded-full border-2 border-gold p-0.5 bg-white">
+                    <img src="images/logo-khonkaen.webp" class="w-full h-full rounded-full object-cover" alt="KH" onerror="this.src='https://via.placeholder.com/100?text=KH'">
+                </div>
+                <div>
+                    <h2 class="text-xl font-black italic">ศูนย์บัญชาการ</h2>
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Master Tech Authority</p>
                 </div>
             </div>
 
-            <!-- Conclusion & CTA -->
-            <div class="box" style="background:#fff3cd; border-color:#d4af37; margin-top:30px;">
-                <h3 style="color:#a87910; text-align:center;">อย่าปล่อยให้ปัญหาเล็ก กลายเป็นเรื่องใหญ่!</h3>
-                <p style="text-align:center;">ไม่ว่าคุณจะอยู่ที่ไหนในขอนแก่น ถ้าเจอปัญหาเรื่องบ้าน... โทรหาเราเดี๋ยวนี้</p>
-                <ul class="actions special">
-                    <li><a href="tel:0944749874" class="button primary big icon solid fa-phone-alt">โทรเรียกช่าง 094-474-9874</a></li>
-                    <li><a href="https://line.me/ti/p/~KKHITECH" class="button big icon brands fa-line">แอดไลน์ปรึกษาฟรี</a></li>
+            <nav id="sidebar-menu">
+                <ul class="space-y-1">
+                    <li><a href="#" onclick="navigate('home'); toggleSidebar()" class="menu-btn is-active">🏠 หน้าแรก (Authority Hub)</a></li>
+                    <li><a href="#" onclick="navigate('ai'); toggleSidebar()" class="menu-btn" style="background:var(--navy); color:#fff !important;"><i class="fas fa-robot mr-2 text-gold"></i>แชทสอบถามผู้ช่วย 24 ชม.</a></li>
+
+                    <div class="menu-header" style="background: linear-gradient(135deg, #ffd700, #d4af37);">◆ 1. ธุรกิจหยอดเหรียญ</div>
+                    <li><a href="laundry.html" class="menu-btn">🧼 เครื่องซักผ้าหยอดเหรียญ</a></li>
+                    <li><a href="water.html" class="menu-btn">🧃 ตู้น้ำดื่ม RO / น้ำแร่</a></li>
+                    <li><a href="oil-vending.html" class="menu-btn">⛽ ตู้น้ำมันหยอดเหรียญ</a></li>
+                    <li><a href="franchise.html" class="menu-btn">🏪 แฟรนไชส์ซักผ้า/คาร์แคร์</a></li>
+                    <li><a href="coinbox.html" class="menu-btn">📮 กล่องหยอดเหรียญ</a></li>
+
+                    <div class="menu-header" style="background: linear-gradient(135deg, #00c6ff, #0072ff);">◆ 2. ไฟฟ้า & พลังงาน</div>
+                    <li><a href="high-voltage.html" class="menu-btn">🔌 หม้อแปลงไฟฟ้า / ไฟแรงสูง</a></li>
+                    <li><a href="mdb.html" class="menu-btn">📦 ตู้ MDB / ตู้คอนโทรล</a></li>
+                    <li><a href="electrical.html" class="menu-btn">🏢 ระบบไฟฟ้าอาคาร-โรงงาน</a></li>
+                    <li><a href="solar.html" class="menu-btn">🌞 โซล่าเซลล์ลดค่าไฟ</a></li>
+
+                    <div class="menu-header" style="background: linear-gradient(135deg, #11998e, #38ef7d);">◆ 3. ความปลอดภัย & ไอที</div>
+                    <li><a href="cctv.html" class="menu-btn">🎥 กล้องวงจรปิด CCTV</a></li>
+                    <li><a href="access.html" class="menu-btn">🔐 คีย์การ์ด / สแกนใบหน้า</a></li>
+                    <li><a href="autodoor.html" class="menu-btn">🚪 ประตูออโต้ / ไม้กั้นรถ</a></li>
+                    <li><a href="network.html" class="menu-btn">📡 วางระบบ WiFi / Mikrotik</a></li>
+
+                    <div class="menu-header" style="background: linear-gradient(135deg, #FF512F, #F09819);">◆ 4. ก่อสร้าง & ระบบอาคาร</div>
+                    <li><a href="construction.html" class="menu-btn">🏗️ สร้างบ้าน / ต่อเติม / หลังคา</a></li>
+                    <li><a href="aircon.html" class="menu-btn">❄️ แอร์บ้าน / ท่อดักท์ / Chiller</a></li>
+                    <li><a href="plumbing.html" class="menu-btn">💧 ระบบน้ำ / ปั๊มน้ำ</a></li>
+
+                    <div class="menu-header" style="background: linear-gradient(135deg, #8E2DE2, #4A00E0);">◆ 5. ซ่อมบำรุง & ทำความสะอาด</div>
+                    <li><a href="repair.html" class="menu-btn">🛠️ ซ่อมด่วนทุกชนิด</a></li>
+                    <li><a href="repair-electronics.html" class="menu-btn">🖥️ ซ่อมเครื่องใช้ไฟฟ้าทุกชนิด</a></li>
+                    <li><a href="cleaning-air.html" class="menu-btn">🧼 ล้างแอร์ฆ่าเชื้อ</a></li>
+                    <li><a href="cleaning-washing.html" class="menu-btn">🧺 ล้างถังซักเครื่องซักผ้า</a></li>
+                    <li><a href="cleaning-tank.html" class="menu-btn">🚿 ล้างถังเก็บน้ำ 500-20,000 ลิตร</a></li>
+                    
+                    <div class="menu-header" style="background: #434343;">◆ บทความเสริมความรู้</div>
+                    <li><a href="article-dirty-secret.html" class="menu-btn">😷 ความลับวงการล้างแอร์</a></li>
+                    <li><a href="article-solar-fail.html" class="menu-btn">⚠️ ติดโซล่าแล้วไฟไม่ลด</a></li>
+                    <li><a href="article-vending-truth.html" class="menu-btn">🧨 หยอดเหรียญ = รวยจริง?</a></li>
                 </ul>
-            </div>
-        </section>
+            </nav>
+            <footer class="mt-10 py-6 border-t border-gray-100 text-center">
+                <p class="text-[10px] text-gray-400">© 2026 ขอนแก่นไฮเทค - กองบัญชาการช่าง</p>
+            </footer>
+        </div>
+    </aside>
 
-      </div>
+    <!-- 🔔 Notification Review Widget - Psychological Validation -->
+    <div id="khReviewFloater" class="hidden">
+        <div class="flex justify-between items-center mb-2 border-b pb-2 border-gray-50">
+            <span class="text-[10px] font-black text-gold uppercase tracking-widest"><i class="fas fa-check-circle"></i> รีวิวจริงจากลูกค้า</span>
+            <span class="text-[10px] text-yellow-500 font-bold">★★★★★</span>
+        </div>
+        <div id="reviewContent">
+            <!-- Content injected via rotateReview() -->
+        </div>
     </div>
+</div>
 
-    <div id="sidebar" class="inactive">
-      <div class="inner">
-        <nav id="menu" aria-label="เมนูด้านซ้าย">
-          <header class="major"><h2>เมนู</h2></header>
-          <ul class="menu-gold">
-            <li><a href="index.html" class="menu-btn is-active">หน้าแรก</a></li>
-            <li><a href="contact.html" class="menu-btn">ติดต่อ / แผนที่ร้าน</a></li>
-            <li><a href="tel:0944749874" class="menu-btn btn-contact-gold">ติดต่อด่วน (โทรเลย)</a></li>
+<script>
+    // --- Application State & Data ---
+    const appData = {
+        reviews: [
+            { t: "ล้างแอร์สะอาดมากครับ ลมแรงเหมือนซื้อใหม่เลย", a: "คุณก้อง เมืองขอนแก่น", s: "facebook" },
+            { t: "ช่างไฟมาไวมาก แก้ไฟช็อตจบใน 15 นาที แนะนำเลย!", a: "ร้านกาแฟ ริมบึง", s: "tiktok" },
+            { t: "ติดกล้อง CCTV ชัดแจ๋ว ดูผ่านมือถือลื่นมากครับ", a: "หมู่บ้านชลลดา", s: "instagram" },
+            { t: "ติดโซล่าเซลล์แล้วประหยัดไฟได้จริง คืนทุนไวครับ", a: "คุณวิชัย กังสดาล", s: "twitter" },
+            { t: "ตู้น้ำหยอดเหรียญซ่อมจบ ไม่เสียบ่อยแล้ว ไว้ใจได้", a: "หอพักป้าแดง", s: "line" }
+        ],
+        iconMap: {
+            'facebook': { i: 'fa-facebook-f', c: 'facebook' },
+            'tiktok': { i: 'fa-tiktok', c: 'tiktok' },
+            'instagram': { i: 'fa-instagram', c: 'instagram' },
+            'twitter': { i: 'fa-x-twitter', c: 'twitter' },
+            'line': { i: 'fa-line', c: 'line' }
+        }
+    };
 
-            <div class="menu-header">◆ 1. ธุรกิจหยอดเหรียญ</div>
-            <li><a href="laundry.html" class="menu-btn">🧼 เครื่องซักผ้าหยอดเหรียญ</a></li>
-            <li><a href="water.html" class="menu-btn">🧃 ตู้น้ำดื่ม RO / น้ำแร่</a></li>
-            <li><a href="oil-vending.html" class="menu-btn">⛽ ตู้น้ำมันหยอดเหรียญ</a></li>
-            <li><a href="franchise.html" class="menu-btn">🏪 แฟรนไชส์ซักผ้า/คาร์แคร์</a></li>
-            <li><a href="coinbox.html" class="menu-btn">📮 กล่องหยอดเหรียญ</a></li>
+    let currentPage = 'home';
 
-            <div class="menu-header">◆ 2. ไฟฟ้า & พลังงาน</div>
-            <li><a href="high-voltage.html" class="menu-btn">🔌 หม้อแปลงไฟฟ้า / ไฟแรงสูง</a></li>
-            <li><a href="mdb.html" class="menu-btn">📦 ตู้ MDB / ตู้คอนโทรล</a></li>
-            <li><a href="electrical.html" class="menu-btn">🏢 ระบบไฟฟ้าอาคาร-โรงงาน</a></li>
-            <li><a href="solar.html" class="menu-btn">🌞 โซล่าเซลล์ลดค่าไฟ</a></li>
-
-            <div class="menu-header">◆ 3. ความปลอดภัย & ไอที</div>
-            <li><a href="cctv.html" class="menu-btn">🎥 กล้องวงจรปิด CCTV</a></li>
-            <li><a href="access.html" class="menu-btn">🔐 คีย์การ์ด / สแกนใบหน้า</a></li>
-            <li><a href="autodoor.html" class="menu-btn">🚪 ประตูออโต้ / ไม้กั้นรถ</a></li>
-            <li><a href="network.html" class="menu-btn">📡 วางระบบ WiFi / Mikrotik</a></li>
-
-            <div class="menu-header">◆ 4. ก่อสร้าง & ระบบอาคาร</div>
-            <li><a href="construction.html" class="menu-btn">🏗️ สร้างบ้าน / ต่อเติม / หลังคา</a></li>
-            <li><a href="aircon.html" class="menu-btn">❄️ แอร์บ้าน / ท่อดักท์ / Chiller</a></li>
-            <li><a href="plumbing.html" class="menu-btn">💧 ระบบน้ำ / ปั๊มน้ำ</a></li>
-
-            <div class="menu-header">◆ 5. ซ่อมบำรุง & ทำความสะอาด</div>
-            <li><a href="repair.html" class="menu-btn">🛠️ ซ่อมด่วนทุกชนิด</a></li>
-            <li><a href="repair-electronics.html" class="menu-btn">🖥️ ซ่อมเครื่องใช้ไฟฟ้าทุกชนิด</a></li>
-            <li><a href="cleaning-air.html" class="menu-btn">🧼 ล้างแอร์ฆ่าเชื้อ</a></li>
-            <li><a href="cleaning-washing.html" class="menu-btn">🧺 ล้างถังซักเครื่องซักผ้า</a></li>
-            <li><a href="cleaning-tank.html" class="menu-btn">🚿 ล้างถังเก็บน้ำ 500-20,000 ลิตร</a></li>
-
-            <div class="menu-header">◆ บทความเเสริมความรู้</div>
-            <li><a href="article-dirty-secret.html" class="menu-btn">😷 ความลับวงการล้างแอร์</a></li>
-            <li><a href="article-solar-fail.html" class="menu-btn">⚠️ ติดโซล่าแล้วไฟไม่ลด เพราะอะไร?</a></li>
-            <li><a href="article-vending-truth.html" class="menu-btn">🧨 หยอดเหรียญ = รวยหรือภาพลวง?</a></li>
-
-            <div class="menu-header">◆ ช่องทางติดต่อ</div>
-            <li><a href="tel:0944749874" class="menu-btn">📞 โทรติดต่อทันที</a></li>
-            <li><a href="https://line.me/ti/p/~KKHITECH" class="menu-btn" target="_blank">💬 แอดไลน์ปรึกษาฟรี</a></li>
-            <li><a href="https://www.facebook.com/Line0944749874" class="menu-btn" target="_blank">🌐 Facebook ผลงาน</a></li>
-            <li><a href="https://maps.app.goo.gl/MEzcUbzq4x3g8kjdA" class="menu-btn" target="_blank">🗺️ แผนที่ร้าน ขอนแก่นไฮเทค</a></li>
-          </ul>
-        </nav>
-        <footer id="footer">
-          <p class="copyright">© <span id="y"></span> ขอนแก่นไฮเทค</p>
-        </footer>
-      </div>
-      <a href="#sidebar" class="toggle">Toggle</a>
-    </div>
-
-    <div class="kh-mobile-bar">
-      <a href="tel:0944749874" class="m-item call"><i class="fas fa-phone-alt"></i><span>โทรเลย</span></a>
-      <a href="https://line.me/ti/p/~KKHITECH" class="m-item line"><i class="fab fa-line"></i><span>แอดไลน์</span></a>
-      <a href="https://m.me/Line0944749874" class="m-item msg"><i class="fab fa-facebook-messenger"></i><span>แชท</span></a>
-      <a href="#" id="mMenuBtn" class="m-item menu"><i class="fas fa-bars"></i><span>เมนู</span></a>
-    </div>
-
-  </div>
-
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Sidebar Logic
-    const sidebar = document.getElementById('sidebar');
-    const body = document.body;
-    const btn = document.getElementById('khMenuBtn');
-    const mBtn = document.getElementById('mMenuBtn');
-    const overlay = document.getElementById('khOverlay');
-
-    function isMobile(){ return window.matchMedia('(max-width: 1280px)').matches; }
-
-    function setSidebarClosed(closed){
-      sidebar.classList.toggle('inactive', closed);
-      body.classList.toggle('kh-sidebar-closed', closed);
-      if(isMobile() && !closed){
-        overlay.classList.add('show');
-      } else {
-        overlay.classList.remove('show');
-      }
-      try { localStorage.setItem('kh_sidebar_open', closed ? '0' : '1'); } catch(e){}
+    // --- Core Navigation & Interaction ---
+    function toggleSidebar() {
+        $('#sidebar').toggleClass('active');
+        $('#sidebar-overlay').toggleClass('active');
     }
 
-    (function initSidebar(){
-      const saved = (() => { try { return localStorage.getItem('kh_sidebar_open'); } catch(e) { return null; } })();
-      if(isMobile()){ setSidebarClosed(true); } 
-      else { if(saved === '1') setSidebarClosed(false); else setSidebarClosed(false); } // Default open on PC
-    })();
+    function navigate(page) {
+        currentPage = page;
+        renderPageContent();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-    if(btn) btn.addEventListener('click', function(e){ e.preventDefault(); setSidebarClosed(!sidebar.classList.contains('inactive')); });
-    if(mBtn) mBtn.addEventListener('click', function(e){ e.preventDefault(); setSidebarClosed(!sidebar.classList.contains('inactive')); });
-    if(overlay) overlay.addEventListener('click', function(){ setSidebarClosed(true); });
-    window.addEventListener('resize', function(){ setSidebarClosed(sidebar.classList.contains('inactive')); });
+    function renderPageContent() {
+        const vp = document.getElementById('main-viewport');
+        vp.innerHTML = '';
+        vp.className = 'fade-in flex-1 px-2 py-4 overflow-x-hidden';
 
-    // ✅ RANDOM REVIEWS LOGIC (20 items - Selected)
-    const reviews = [
-        { text: "ล้างแอร์สะอาดมาก หายใจโล่งเลยครับ", author: "คุณก้อง เมืองขอนแก่น", source: "facebook" },
-        { text: "ช่างไฟมาไว แก้ไฟดับตอนดึกได้ทันใจมาก", author: "ร้านกาแฟ ริมบึง", source: "instagram" },
-        { text: "ติดตั้งกล้องวงจรปิด ภาพชัดแจ๋ว ดูผ่านมือถือลื่น", author: "คุณแม่บ้าน หมู่บ้านชลลดา", source: "tiktok" },
-        { text: "ตู้น้ำหยอดเหรียญซ่อมจบ ไม่เสียบ่อยแล้ว", author: "หอพักป้าแดง", source: "facebook" },
-        { text: "บริการดี พูดจาไพเราะ ไม่ทิ้งงาน", author: "คุณวิชัย กังสดาล", source: "twitter" },
-        { text: "แอร์ไม่เย็น เรียกช่างขอนแก่นไฮเทค แป๊บเดียวฉ่ำ", author: "คลินิกหมอฟัน", source: "facebook" },
-        { text: "ไฟช็อตน่ากลัวมาก โชคดีช่างมาแก้ทัน", author: "คุณเล็ก ศิลา", source: "instagram" },
-        { text: "ล้างถังน้ำ ตะกอนเยอะมาก เห็นแล้วสยอง ขอบคุณที่ล้างให้ครับ", author: "บ้านเลขที่ 99/8", source: "tiktok" },
-        { text: "ซ่อมเครื่องซักผ้าหยอดเหรียญ ราคาไม่แพง", author: "หอพักนักศึกษา", source: "facebook" },
-        { text: "เดินไฟโรงงานมาตรฐานสูง วิศวกรคุมงานดี", author: "โรงน้ำแข็ง ท่าพระ", source: "twitter" },
-        { text: "แนะนำร้านนี้ครับ จบทุกปัญหาบ้านจริงๆ", author: "คุณเอก บ้านเป็ด", source: "facebook" },
-        { text: "ล้างแอร์สะอาดกว่าเจ้าอื่นที่เคยจ้าง", author: "คุณนุ่น ม.ข.", source: "instagram" },
-        { text: "กล้อง CCTV ชัดมาก จับขโมยได้จริง", author: "ร้านทอง ในเมือง", source: "tiktok" },
-        { text: "ระบบโซล่าเซลล์ประหยัดไฟได้เยอะ", author: "คุณสมศักดิ์", source: "facebook" },
-        { text: "งานไว งานเนี๊ยบ ต้องเจ้านี้", author: "ร้านอาหาร บึงแก่นนคร", source: "twitter" },
-        { text: "ช่างสุภาพ เก็บกวาดงานเรียบร้อย", author: "คุณยายสมศรี", source: "facebook" },
-        { text: "ซ่อมปั๊มน้ำเสร็จไว น้ำไหลแรงสะใจ", author: "หมู่บ้านวราสิริ", source: "instagram" },
-        { text: "ไว้ใจขอนแก่นไฮเทค ดูแลหอพักผมมา 5 ปีแล้ว", author: "เสี่ยตง", source: "tiktok" },
-        { text: "ราคามาตรฐาน ไม่ฟันหัวแบะ", author: "คุณจอย", source: "facebook" },
-        { text: "เรียกง่าย มาไว ไม่เทงาน", author: "คุณพงษ์", source: "twitter" }
-    ];
+        if (currentPage === 'home') {
+            vp.innerHTML = `
+                <div class="space-y-8">
+                    <!-- Hero Component - Dark Psychology Hook -->
+                    <div class="bg-navy rounded-[2rem] p-6 md:p-10 text-white relative overflow-hidden shadow-2xl border-t-4 border-gold">
+                        <div class="relative z-10">
+                            <span class="inline-block px-3 py-1 bg-red-600 text-[10px] font-black rounded-full mb-4 uppercase tracking-tighter">🚨 Danger Level Detected</span>
+                            <h1 class="hero-title text-2xl md:text-4xl font-black mb-4 leading-tight">บ้านคุณปลอดภัย <br><span class="text-gold">"จริงๆ หรือแค่โชคดี?"</span></h1>
+                            <p class="text-sm opacity-80 mb-8 font-bold italic">เราไม่ได้มาแค่ซ่อม... แต่เรามาเพื่อกู้คืนความปลอดภัย<br>ให้ครอบครัวพรีเมียมเช่นท่านค่ะ</p>
+                            <button onclick="navigate('ai')" class="bg-gold text-white px-6 py-3 rounded-full font-black text-sm uppercase shadow-xl gold-glow active:scale-95 transition-all">วิเคราะห์สัญญาณอันตรายด่วน</button>
+                        </div>
+                        <div class="absolute -bottom-10 -right-10 opacity-10 text-[120px] font-black italic">KH</div>
+                    </div>
 
-    function startReviewRotator() {
+                    <!-- Intro Section -->
+                    <div class="bg-white p-6 rounded-[1.5rem] shadow-sm border border-gray-50">
+                        <h2 class="text-xl font-black text-navy mb-3 italic underline decoration-gold decoration-4 underline-offset-4">10 สัญญาณอันตรายที่ห้ามมองข้าม!</h2>
+                        <p class="text-sm text-gray-600 leading-relaxed font-semibold">
+                            สัญญาณเตือนเชื้อราในแอร์ หรือจุดต่อหลวมในตู้ไฟ คือจุดเริ่มต้นของหายนะ... ขอนแก่นไฮเทคพร้อมเข้าช่วยท่านระงับเหตุทันทีค่ะ
+                        </p>
+                    </div>
+
+                    <!-- Grid Layout for Services (Auto-responsive) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-green-600 flex items-center gap-4">
+                            <div class="text-3xl">🦠</div>
+                            <div>
+                                <h3 class="font-black text-sm text-navy uppercase">ล้างแอร์ฆ่าเชื้อรา</h3>
+                                <p class="text-[9px] text-gray-400 font-bold uppercase italic">Protect your lungs today.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-red-600 flex items-center gap-4">
+                            <div class="text-3xl">⚡</div>
+                            <div>
+                                <h3 class="font-black text-sm text-navy uppercase">ซ่อมไฟฟ้าเร่งด่วน</h3>
+                                <p class="text-[9px] text-gray-400 font-bold uppercase italic">Stop the sparks now.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Market Insights - Establishing Authority -->
+                    <div class="bg-white p-8 rounded-[2rem] shadow-xl border border-gray-100 text-center">
+                        <h3 class="text-navy font-black mb-6 uppercase text-xs tracking-widest italic">Service Demand Analytics (Khon Kaen)</h3>
+                        <div class="chart-container">
+                            <canvas id="donutChart"></canvas>
+                        </div>
+                        <p class="mt-4 text-[9px] text-gray-400 font-bold italic italic">"ข้อมูลระบุว่าช่วงนี้ความเสี่ยงไฟรั่วในขอนแก่นพุ่งสูงขึ้น 45%"</p>
+                    </div>
+                </div>
+            `;
+            initCharts();
+        }
+
+        if (currentPage === 'ai') {
+            vp.innerHTML = `
+                <div class="flex flex-col h-[75vh] bg-white rounded-[2rem] shadow-2xl border border-gray-100 overflow-hidden">
+                    <div class="bg-[#1a252f] p-4 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <img src="images/logo-khonkaen.webp" class="w-10 h-10 rounded-full border border-gold bg-white">
+                            <div>
+                                <h3 class="text-white text-xs font-black italic">ช่างผู้ชำนาญการ ข้อมูล</h3>
+                                <span class="text-[8px] text-green-400 font-bold uppercase tracking-widest italic">● ออนไลน์ | วิเคราะห์ระดับอันตราย</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-shield-alt text-gold/50 text-lg"></i>
+                    </div>
+                    <div id="chat-scroller" class="flex-1 overflow-y-auto p-4 space-y-4 bg-[#fcfcfc]">
+                        <div class="flex flex-col gap-2">
+                            <div class="bg-white border border-gray-100 p-4 rounded-2xl rounded-tl-none max-w-[85%] text-[13px] font-semibold italic shadow-sm">
+                                สวัสดียามเช้าครับ... ผมคือหัวหน้าช่างผู้ชำนาญการ ข้อมูล 🤖<br><br>
+                                สัญญาณอันตรายที่คุณพบ อาจเป็นเพียง 1% ของหายนะที่ซ่อนอยู่... ระบุอาการ หรือถ่ายรูปส่งมาให้ผมวิเคราะห์ความเสี่ยงด่วนครับ
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white border-t border-gray-100 flex gap-2">
+                        <input type="text" placeholder="พิมพ์อาการที่ท่านกังวล..." class="flex-1 bg-gray-50 border-none rounded-full px-5 py-3 text-sm outline-none focus:ring-2 focus:ring-gold/30">
+                        <button class="w-10 h-10 bg-navy text-white rounded-full flex items-center justify-center active:scale-90 shadow-lg"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    // --- Visualization & UI Logic ---
+    function initCharts() {
+        const ctx = document.getElementById('donutChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['แอร์', 'ไฟฟ้า', 'CCTV', 'หยอดเหรียญ', 'อื่นๆ'],
+                datasets: [{
+                    data: [35, 25, 15, 15, 10],
+                    backgroundColor: ['#008148', '#ee1c25', '#1a252f', '#f26522', '#d4af37'],
+                    borderWidth: 0,
+                    hoverOffset: 12
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { font: { size: 9, weight: 'bold', family: 'Sarabun' } } }
+                },
+                cutout: '75%'
+            }
+        });
+    }
+
+    function rotateReview() {
         const floater = document.getElementById('khReviewFloater');
         const content = document.getElementById('reviewContent');
-        let index = Math.floor(Math.random() * reviews.length);
+        const r = appData.reviews[Math.floor(Math.random() * appData.reviews.length)];
+        const info = appData.iconMap[r.s];
 
-        setInterval(() => {
-            // Slide Out
-            floater.classList.add('hidden');
-            setTimeout(() => {
-                // Update Content
-                index = (index + 1) % reviews.length;
-                const review = reviews[index];
-                
-                // Select Icon Class
-                let iconClass = 'facebook';
-                let iconName = 'facebook-f';
-                if(review.source === 'instagram') { iconClass = 'instagram'; iconName = 'instagram'; }
-                else if(review.source === 'tiktok') { iconClass = 'tiktok'; iconName = 'tiktok'; }
-                else if(review.source === 'twitter') { iconClass = 'twitter'; iconName = 'twitter'; }
-
-                content.innerHTML = `
-                    <div class="review-text">"${review.text}"</div>
-                    <div class="review-author">
-                        - ${review.author} 
-                        <span class="social-badge ${iconClass}"><i class="fab fa-${iconName}"></i></span>
-                    </div>
-                `;
-                // Slide In
-                floater.classList.remove('hidden');
-            }, 600); // Wait for slide out animation
-        }, 5000); // Change every 5 seconds
-    }
-    startReviewRotator();
-
-    // ✅ HERO SLIDER LOGIC (10 Dark Psychology Slides)
-    const heroSlides = [
-        {
-            title: 'คุณกำลังหายใจเอา “เชื้อรา” เข้าปอดอยู่รึเปล่า?',
-            desc: 'แอร์มีกลิ่นอับ น้ำหยด คือสัญญาณของเชื้อราสะสม เสี่ยงโรคปอดและภูมิแพ้ร้ายแรง อย่ารอให้ป่วย!',
-            img: 'images/pic10.webp',
-            link: 'cleaning-air.html'
-        },
-        {
-            title: 'ไฟไหม้บ้าน... เริ่มต้นจากจุดเล็กๆ ที่คุณมองข้าม!',
-            desc: 'สายไฟเก่า เบรกเกอร์ตัดบ่อย มีกลิ่นไหม้ อย่าเสี่ยง! ตรวจสอบระบบไฟก่อนจะสายเกินไป กับทีมงานมืออาชีพ',
-            img: 'images/pic11.webp',
-            link: 'electrical.html'
-        },
-        {
-            title: 'ขโมยไม่รอให้คุณพร้อม... รู้ตัวอีกทีก็หมดตัว',
-            desc: 'ปกป้องทรัพย์สินและคนที่คุณรัก ติดตั้งกล้องวงจรปิดวันนี้ ดูออนไลน์ได้ 24 ชม. อุ่นใจกว่า ภาพชัดระดับ 4K',
-            img: 'images/pic03.webp',
-            link: 'cctv.html'
-        },
-        {
-            title: 'อาบน้ำตะกอน? ผิวพัง สิวขึ้นไม่รู้สาเหตุ',
-            desc: 'ถังเก็บน้ำไม่ได้ล้างมานานแค่ไหน? ตะกอน จิ้งจก และเชื้อโรค อาจปะปนอยู่ในน้ำที่คุณใช้ทุกวัน ล้างด่วน!',
-            img: 'images/pic04.webp',
-            link: 'cleaning-tank.html'
-        },
-        {
-            title: 'จ่ายค่าไฟแพงไปทำไม? ในเมื่อแดดเมืองไทยฟรี',
-            desc: 'บิลค่าไฟพุ่งทุกเดือน? ติดโซล่าเซลล์วันนี้ ลดค่าไฟทันที คืนทุนไว ใช้ไฟฟรีตลอดวัน โดยทีมวิศวกร',
-            img: 'images/pic08.webp',
-            link: 'solar.html'
-        },
-        {
-            title: 'เสื้อผ้าเหม็นอับหลังซัก? เชื้อราในถังซักผ้าคือต้นเหตุ!',
-            desc: 'ถังซักผ้าสกปรกกว่าที่คุณคิด คราบเมือกและเชื้อโรคสะสม ล้างถังซักด่วนเพื่อสุขอนามัยที่ดีของครอบครัว',
-            img: 'images/pic04.webp', 
-            link: 'cleaning-washing.html'
-        },
-        {
-            title: 'ตู้น้ำหยอดเหรียญเสีย? รายได้หด ลูกค้าหนี',
-            desc: 'อย่าปล่อยให้ตู้ทำเงินของคุณหยุดทำงาน ซ่อมไว คืนทุนเร็ว บริการซ่อมตู้น้ำมาตรฐาน อะไหล่ครบ',
-            img: 'images/pic04.webp',
-            link: 'water.html'
-        },
-        {
-            title: 'ปั๊มน้ำไม่ตัด? ค่าไฟพุ่ง ปั๊มไหม้!',
-            desc: 'น้ำไม่ไหลเรื่องใหญ่ ปั๊มทำงานตลอดเวลาเปลืองไฟมหาศาล ซ่อมปั๊มน้ำด่วน บริการถึงบ้าน แก้ปัญหาจบไว',
-            img: 'images/pic04.webp',
-            link: 'plumbing.html'
-        },
-        {
-            title: 'ประตูรั้วรีโมทตาย? ฝนตกต้องลงมาเปิดเอง',
-            desc: 'ความสะดวกสบายหายไป ซ่อมมอเตอร์ประตูรีโมท ให้ชีวิตง่ายขึ้นเหมือนเดิม ไม่ต้องตากฝน',
-            img: 'images/pic09.webp',
-            link: 'autodoor.html'
-        },
-        {
-            title: 'เครื่องหยอดเหรียญกินเหรียญ? ลูกค้าบ่น เสียชื่อร้าน',
-            desc: 'แก้ปัญหากล่องหยอดเหรียญรวน รับเหรียญแม่นยำ ลูกค้าประทับใจ รายได้ไม่สะดุด ธุรกิจราบรื่น',
-            img: 'images/pic09.webp',
-            link: 'coinbox.html'
-        }
-    ];
-
-    let currentHeroIndex = 0;
-    
-    // Shuffle slides
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-    }
-    shuffleArray(heroSlides);
-
-    const heroContent = document.getElementById('heroContent');
-    const heroImage = document.getElementById('heroImage');
-    const heroDots = document.getElementById('heroDots');
-
-    // Init Dots
-    heroSlides.forEach((_, i) => {
-        const dot = document.createElement('div');
-        dot.className = `slider-dot ${i === 0 ? 'active' : ''}`;
-        dot.onclick = () => setHero(i);
-        heroDots.appendChild(dot);
-    });
-
-    function setHero(index) {
-        currentHeroIndex = index;
-        const slide = heroSlides[index];
-        
-        // Fade Out
-        heroContent.style.opacity = '0';
-        heroImage.style.opacity = '0';
-
+        $(floater).addClass('hidden');
         setTimeout(() => {
-            // Update
-            heroContent.innerHTML = `
-                <header class="main">
-                    <h1>${slide.title}</h1>
-                </header>
-                <p>${slide.desc}</p>
-                <ul class="actions">
-                    <li><a href="${slide.link}" class="button big primary icon solid fa-exclamation-triangle">ดูวิธีแก้ไขด่วน</a></li>
-                </ul>
+            content.innerHTML = `
+                <p class="text-[12px] font-bold text-gray-800 leading-snug mb-2 italic">"${r.t}"</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-[9px] font-black text-gray-400">- ${r.a}</span>
+                    <div class="flex items-center gap-1">
+                        <span class="text-[8px] font-black text-gray-300 uppercase">${r.s} Source</span>
+                        <div class="social-badge ${info.c}"><i class="fab ${info.i}"></i></div>
+                    </div>
+                </div>
             `;
-            heroImage.src = slide.img;
-            
-            // Update Dots
-            document.querySelectorAll('.slider-dot').forEach((d, i) => {
-                d.className = `slider-dot ${i === index ? 'active' : ''}`;
-            });
-
-            // Fade In
-            heroContent.style.opacity = '1';
-            heroImage.style.opacity = '1';
-        }, 500);
+            $(floater).removeClass('hidden');
+        }, 600);
     }
 
-    // Auto Slide
-    setInterval(() => {
-        setHero((currentHeroIndex + 1) % heroSlides.length);
-    }, 7000); // Every 7 seconds
+    // --- Bootstrap App ---
+    $(document).ready(function() {
+        navigate('home');
+        setInterval(rotateReview, 9000);
+        setTimeout(rotateReview, 3000);
+    });
+</script>
 
-    // Initial Load
-    setHero(0);
-
-  </script>
 </body>
 </html>
