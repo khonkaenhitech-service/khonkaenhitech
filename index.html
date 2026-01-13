@@ -1,449 +1,307 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ขอนแก่นไฮเทค Super Hub | ช่างมืออาชีพอันดับ 1</title>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M26CWCKV');
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <!-- ✅ SEO Master Tags -->
+  <title>ล้างแอร์ ซ่อมไฟ กล้องวงจรปิด ขอนแก่น | อันตรายจากเชื้อราและไฟรั่วที่คุณไม่รู้! - ขอนแก่นไฮเทค</title>
+  <meta name="description" content="รู้ทันภัยเงียบ! แอร์มีเชื้อราเสี่ยงปอดพัง สายไฟเก่าเสี่ยงไฟไหม้ แก้ไขด่วนด้วยช่างขอนแก่นมืออาชีพ อันดับ 1 บริการล้างแอร์ ซ่อมไฟ ติดตั้งกล้องวงจรปิด รับประกันงานซ่อม" />
+  <meta name="keywords" content="ล้างแอร์ขอนแก่น, ช่างไฟขอนแก่น, ซ่อมกล้องวงจรปิดขอนแก่น, ล้างถังน้ำขอนแก่น, ช่างซ่อมบำรุงขอนแก่น, ร้านแอร์ใกล้ฉัน" />
+  
+  <link rel="icon" href="images/favicon.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Load jQuery and FontAwesome -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    /* -----------------------------------------------------------
+       🛡️ MASTER HUB CSS (Self-Contained & Mobile Friendly)
+       ----------------------------------------------------------- */
+    :root {
+      --kh-gold: #d4af37;
+      --kh-navy: #1a252f;
+      --kh-red: #ee1c25;
+      --kh-green: #008148;
+      --kh-sidebar-w: 320px;
+    }
+
+    * { box-sizing: border-box; }
+    body { font-family: 'Sarabun', sans-serif; background-color: #fcfbf7; margin: 0; padding-bottom: 85px; overflow-x: hidden; }
+
+    /* Header Styling */
+    #header {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid #eee;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+    .kh-top { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; }
+    .kh-menu-btn { border: none; background: #f9f9f9; padding: 10px; border-radius: 12px; cursor: pointer; border: 1px solid #eee; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+    .kh-menu-btn:active { transform: scale(0.9); }
+    .kh-brand { text-align: right; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px; }
+    .kh-brand img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--kh-gold); }
+    .lux-title-th { font-weight: 900; font-size: 1.1rem; display: block; color: #333; }
+    .lux-subtitle-en { font-size: 0.6rem; font-weight: 800; color: var(--kh-gold); letter-spacing: 1px; display: block; text-transform: uppercase; }
+
+    /* Sidebar Content Fix */
+    #sidebar {
+      position: fixed; top: 0; left: 0; width: var(--kh-sidebar-w); height: 100%;
+      background: #fff; z-index: 5000; transform: translateX(-100%);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto; border-right: 1px solid #eee; padding: 30px 20px;
+    }
+    #sidebar.active { transform: translateX(0); }
+    .sidebar-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 4000; display: none; backdrop-filter: blur(2px); }
+    .sidebar-overlay.active { display: block; }
+
+    /* Menu & Category Headers */
+    .menu-header {
+      font-size: 0.8em; text-transform: uppercase; font-weight: 900;
+      padding: 10px 15px; margin: 20px 0 8px 0; border-radius: 50px;
+      color: #fff; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.4);
+      position: relative; overflow: hidden;
+    }
+    .menu-header::after { content: ''; position: absolute; top: 0; left: -150%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transform: skewX(-20deg); animation: shine 4s infinite; }
+    @keyframes shine { 0% { left: -150%; } 20% { left: 150%; } 100% { left: 150%; } }
+
+    .menu-btn { display: block; padding: 10px 15px; border-radius: 10px; margin-bottom: 5px; font-weight: 800; color: #333 !important; text-decoration: none !important; border: 1px solid rgba(0,0,0,0.03); transition: 0.2s; background: #fff; font-size: 0.9rem; }
+    .menu-btn:hover { background: #f9f9f9; border-color: var(--kh-gold); transform: translateX(5px); }
+    .menu-btn.is-active { background: linear-gradient(90deg, rgba(212,175,55,0.1), #fff); border-left: 4px solid var(--kh-gold); color: var(--kh-gold) !important; }
+
+    /* 📱 Bottom Navigation Bar (The "Favorite" Feature) */
+    .kh-bottom-nav {
+      display: flex; position: fixed; bottom: 0; left: 0; width: 100%; height: 80px;
+      background: #fff; box-shadow: 0 -10px 30px rgba(0,0,0,0.08); z-index: 3000;
+      border-top: 1px solid #f0f0f0; padding-bottom: env(safe-area-inset-bottom);
+    }
+    .nav-item { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none !important; transition: 0.2s; position: relative; }
+    .nav-item:active { transform: scale(0.9); }
+    .nav-item i { font-size: 22px; margin-bottom: 4px; }
+    .nav-item span { font-size: 9px; font-weight: 900; text-transform: uppercase; }
     
-    <!-- ✅ External Libraries -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    .c-call { color: #f26522; }
+    .c-line { color: #06c755; }
+    .c-msg { color: #0084ff; }
+    .c-menu { color: var(--kh-navy); }
     
-    <!-- ✅ jQuery for smooth interactions -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    /* Center AI Circle */
+    .ai-circle-btn {
+        width: 60px; height: 60px; background: var(--kh-navy); color: #fff;
+        border-radius: 50%; display: flex; align-items: center; justify-content: center;
+        margin-top: -45px; border: 4px solid #fff; box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    .gold-aura { animation: aura 2.5s infinite ease-in-out; }
+    @keyframes aura { 0% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); } 50% { box-shadow: 0 0 35px rgba(212, 175, 55, 0.9); transform: scale(1.05); } 100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); } }
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;800&display=swap');
-        
-        :root {
-            --gold: #d4af37;
-            --navy: #1a252f;
-            --green: #008148;
-            --line-green: #06c755;
-            --orange: #f26522;
-            --red: #ee1c25;
-            --fb-blue: #0084ff;
-            --bg-cream: #fcfbf7;
-        }
+    /* Review Notification */
+    #khReviewFloater {
+      position: fixed; bottom: 100px; left: 15px; z-index: 2500; width: 290px;
+      background: rgba(255, 255, 255, 0.98); border-radius: 15px; border: 1.5px solid rgba(212,175,55,0.3);
+      padding: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: 0.5s;
+    }
+    #khReviewFloater.hidden { transform: translateY(200%); opacity: 0; }
+    .review-text { font-weight: 700; color: #222; line-height: 1.5; font-size: 0.9em; font-style: italic; margin-bottom: 8px; }
+    .review-author { font-size: 0.75em; font-weight: 800; color: #777; display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+    
+    /* Social Icons Colors */
+    .social-badge { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 6px; color: #fff; font-size: 13px; }
+    .sb-fb { background: #1877F2; } .sb-tt { background: #000; } .sb-ig { background: linear-gradient(45deg, #f09433, #bc1888); } .sb-line { background: #06C755; }
 
-        body {
-            font-family: 'Sarabun', sans-serif;
-            background-color: var(--bg-cream);
-            overflow-x: hidden;
-            -webkit-tap-highlight-color: transparent;
-        }
+    /* Hero Section */
+    #banner { padding: 40px 15px; text-align: center; }
+    .hero-card { background: var(--kh-navy); color: #fff; padding: 35px 25px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); position: relative; overflow: hidden; margin-bottom: 25px; }
+    .hero-card h1 { font-size: 1.8rem; font-weight: 900; line-height: 1.2; margin: 15px 0; }
+    .hero-card p { font-size: 0.9rem; opacity: 0.8; margin-bottom: 25px; font-weight: 600; }
+    .hero-btn { background: var(--kh-gold); color: #fff; padding: 12px 30px; border-radius: 50px; font-weight: 900; text-decoration: none; display: inline-block; box-shadow: 0 8px 20px rgba(212,175,55,0.3); }
 
-        /* 🎯 Layout & Responsive Containers */
-        .app-container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; padding: 0 15px; }
+    .service-card { background: #fff; border-radius: 20px; padding: 25px; border: 1px solid #eee; }
 
-        /* Golden Aura for AI Centerpiece - Psychological Attraction */
-        .gold-glow {
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
-            animation: pulse-gold 2.5s infinite ease-in-out;
-        }
-        @keyframes pulse-gold {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); }
-            50% { transform: scale(1.08); box-shadow: 0 0 35px rgba(212, 175, 55, 0.9); }
-        }
-
-        /* Realistic Social Icons Styling for Social Proof */
-        .social-badge {
-            display: inline-flex; align-items: center; justify-content: center;
-            width: 24px; height: 24px; border-radius: 6px; color: #fff; font-size: 13px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15); vertical-align: middle;
-            margin-left: 6px;
-        }
-        .social-badge.facebook { background-color: #1877F2; }
-        .social-badge.tiktok { background-color: #000; border: 1px solid #333; }
-        .social-badge.instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
-        .social-badge.twitter { background-color: #000; }
-        .social-badge.line { background-color: #06C755; }
-
-        /* Floating Review Widget - Social Validation */
-        #khReviewFloater {
-            position: fixed; bottom: 90px; left: 16px; z-index: 50; width: 280px;
-            background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px);
-            border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-            border: 1px solid rgba(212, 175, 55, 0.3); padding: 12px;
-            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        #khReviewFloater.hidden { transform: translateY(200%); opacity: 0; }
-
-        /* Sidebar & Auto-Scaling System */
-        #sidebar {
-            position: fixed; top: 0; left: 0; width: 330px; height: 100%;
-            background: #fff; z-index: 5000; transform: translateX(-100%);
-            transition: transform 0.3s ease-in-out; overflow-y: auto;
-            border-right: 1px solid #eee;
-        }
-        #sidebar.active { transform: translateX(0); }
-        .sidebar-overlay {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.5);
-            z-index: 4500; display: none; backdrop-filter: blur(2px);
-        }
-        .sidebar-overlay.active { display: block; }
-
-        /* Side Bar Header Branding */
-        .menu-header {
-            font-size: 0.85em; text-transform: uppercase; font-weight: 900;
-            padding: 12px 18px; margin: 25px 0 10px 0; border-radius: 50px;
-            color: #fff; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.4);
-            position: relative; overflow: hidden;
-        }
-        .menu-header::after {
-            content: ''; position: absolute; top: 0; left: -150%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            animation: shine 4s infinite;
-        }
-        @keyframes shine { 0% { left: -150%; } 20% { left: 150%; } 100% { left: 150%; } }
-
-        .menu-btn { 
-            display: block; padding: 12px 16px; border-radius: 12px; margin-bottom: 6px; 
-            font-weight: 800; color: #333 !important; text-decoration: none !important; 
-            border: 1px solid rgba(0,0,0,0.05); transition: 0.2s; background: #fff;
-        }
-        .menu-btn:hover { border-color: var(--gold); background: #fcfbf7; transform: translateX(5px); }
-        .menu-btn.is-active { border-color: var(--gold); background: linear-gradient(90deg, rgba(212,175,55,0.1), #fff); color: var(--gold) !important; }
-
-        /* Bottom Nav Components */
-        .nav-item { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; transition: 0.2s; text-decoration: none !important; }
-        .nav-item:active { transform: scale(0.9); }
-        .c-call { color: var(--orange); }
-        .c-line { color: var(--line-green); }
-        .c-msg { color: var(--fb-blue); }
-        .c-menu { color: var(--navy); }
-
-        .fade-in { animation: fadeIn 0.4s ease-out forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* Mobile specific adjustment */
-        @media (max-width: 640px) {
-            #sidebar { width: 85vw; }
-            .hero-title { font-size: 1.8rem !important; line-height: 1.2 !important; }
-        }
-    </style>
+    @media screen and (min-width: 769px) {
+      .nav-text { font-size: 10px !important; }
+      #banner { display: flex; align-items: center; gap: 30px; max-width: 1100px; margin: 0 auto; text-align: left; }
+      .hero-card { flex: 1.2; }
+      .hero-img-wrap { flex: 1; border-radius: 30px; overflow: hidden; height: 400px; }
+      .hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    }
+  </style>
 </head>
-<body class="antialiased">
 
-<div class="app-container">
-    <!-- 🏛️ Executive Sticky Header -->
-    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-[4000] border-b border-gray-100 px-4 py-3 shadow-sm">
-        <div class="flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <button onclick="toggleSidebar()" class="w-10 h-10 flex items-center justify-center bg-gray-50 rounded-xl border border-gray-200 active:scale-95 transition-all">
-                    <i class="fas fa-bars text-gray-800"></i>
-                </button>
-                <div class="flex flex-col">
-                    <span class="text-base font-black text-gray-800 leading-none">ขอนแก่นไฮเทค</span>
-                    <span class="text-[9px] font-black text-gold uppercase tracking-widest mt-1">Master Tech Center</span>
-                </div>
-            </div>
-            <div class="flex items-center gap-2">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                </span>
-                <span class="text-[10px] font-bold text-green-600 uppercase tracking-tighter">ออนไลน์ 24 ชม.</span>
-            </div>
-        </div>
-    </header>
-
-    <!-- 🚀 Main Viewport for Auto-Layout Content -->
-    <main id="main-viewport" class="flex-1 px-4 py-6">
-        <!-- Content will be auto-arranged here via navigate() -->
-    </main>
-
-    <!-- 📱 Bottom Navigation Bar - Optimized for One-Handed Use -->
-    <nav class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-100 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] z-[6000] pb-safe">
-        <div class="flex items-center justify-around h-20 max-w-lg mx-auto">
-            <!-- 1. โทร (Urgency Orange) -->
-            <a href="tel:0944749874" class="nav-item c-call">
-                <i class="fas fa-phone-alt text-xl mb-1"></i>
-                <span class="text-[9px] font-black uppercase">โทรด่วน</span>
-            </a>
-            <!-- 2. LINE (Trust Green) -->
-            <a href="https://line.me/ti/p/~KKHITECH" class="nav-item c-line">
-                <i class="fab fa-line text-2xl mb-0.5"></i>
-                <span class="text-[9px] font-black uppercase">LINE</span>
-            </a>
-            <!-- 3. AI ผู้ช่วยคุณ (Authority Centerpiece) -->
-            <button onclick="navigate('ai')" id="n-ai" class="nav-item relative">
-                <div class="w-14 h-14 bg-[#1a252f] rounded-full flex items-center justify-center -mt-12 border-4 border-white text-white gold-glow">
-                    <i class="fas fa-robot text-2xl"></i>
-                </div>
-                <span class="text-[9px] font-black uppercase mt-1 text-navy">AI ผู้ช่วย</span>
-            </button>
-            <!-- 4. ข้อความเพจ (Friendship Blue) -->
-            <a href="https://m.me/Line0944749874" class="nav-item c-msg">
-                <i class="fab fa-facebook-messenger text-2xl mb-0.5"></i>
-                <span class="text-[9px] font-black uppercase">แชทเพจ</span>
-            </a>
-            <!-- 5. เมนู (Structure Navy) -->
-            <button onclick="toggleSidebar()" class="nav-item c-menu">
-                <i class="fas fa-th-large text-xl mb-1"></i>
-                <span class="text-[9px] font-black uppercase">เมนู</span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- 🏰 SIDE BAR: RESTORED ORIGINAL CATEGORIES -->
-    <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
-    <aside id="sidebar">
-        <div class="p-6">
-            <div class="flex items-center gap-4 mb-8 border-b pb-6">
-                <div class="w-14 h-14 rounded-full border-2 border-gold p-0.5 bg-white">
-                    <img src="images/logo-khonkaen.webp" class="w-full h-full rounded-full object-cover" alt="KH" onerror="this.src='https://via.placeholder.com/100?text=KH'">
-                </div>
-                <div>
-                    <h2 class="text-xl font-black italic">ศูนย์บัญชาการ</h2>
-                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Master Tech Authority</p>
-                </div>
-            </div>
-
-            <nav id="sidebar-menu">
-                <ul class="space-y-1">
-                    <li><a href="#" onclick="navigate('home'); toggleSidebar()" class="menu-btn is-active">🏠 หน้าแรก (Authority Hub)</a></li>
-                    <li><a href="#" onclick="navigate('ai'); toggleSidebar()" class="menu-btn" style="background:var(--navy); color:#fff !important;"><i class="fas fa-robot mr-2 text-gold"></i>แชทสอบถามผู้ช่วย 24 ชม.</a></li>
-
-                    <div class="menu-header" style="background: linear-gradient(135deg, #ffd700, #d4af37);">◆ 1. ธุรกิจหยอดเหรียญ</div>
-                    <li><a href="laundry.html" class="menu-btn">🧼 เครื่องซักผ้าหยอดเหรียญ</a></li>
-                    <li><a href="water.html" class="menu-btn">🧃 ตู้น้ำดื่ม RO / น้ำแร่</a></li>
-                    <li><a href="oil-vending.html" class="menu-btn">⛽ ตู้น้ำมันหยอดเหรียญ</a></li>
-                    <li><a href="franchise.html" class="menu-btn">🏪 แฟรนไชส์ซักผ้า/คาร์แคร์</a></li>
-                    <li><a href="coinbox.html" class="menu-btn">📮 กล่องหยอดเหรียญ</a></li>
-
-                    <div class="menu-header" style="background: linear-gradient(135deg, #00c6ff, #0072ff);">◆ 2. ไฟฟ้า & พลังงาน</div>
-                    <li><a href="high-voltage.html" class="menu-btn">🔌 หม้อแปลงไฟฟ้า / ไฟแรงสูง</a></li>
-                    <li><a href="mdb.html" class="menu-btn">📦 ตู้ MDB / ตู้คอนโทรล</a></li>
-                    <li><a href="electrical.html" class="menu-btn">🏢 ระบบไฟฟ้าอาคาร-โรงงาน</a></li>
-                    <li><a href="solar.html" class="menu-btn">🌞 โซล่าเซลล์ลดค่าไฟ</a></li>
-
-                    <div class="menu-header" style="background: linear-gradient(135deg, #11998e, #38ef7d);">◆ 3. ความปลอดภัย & ไอที</div>
-                    <li><a href="cctv.html" class="menu-btn">🎥 กล้องวงจรปิด CCTV</a></li>
-                    <li><a href="access.html" class="menu-btn">🔐 คีย์การ์ด / สแกนใบหน้า</a></li>
-                    <li><a href="autodoor.html" class="menu-btn">🚪 ประตูออโต้ / ไม้กั้นรถ</a></li>
-                    <li><a href="network.html" class="menu-btn">📡 วางระบบ WiFi / Mikrotik</a></li>
-
-                    <div class="menu-header" style="background: linear-gradient(135deg, #FF512F, #F09819);">◆ 4. ก่อสร้าง & ระบบอาคาร</div>
-                    <li><a href="construction.html" class="menu-btn">🏗️ สร้างบ้าน / ต่อเติม / หลังคา</a></li>
-                    <li><a href="aircon.html" class="menu-btn">❄️ แอร์บ้าน / ท่อดักท์ / Chiller</a></li>
-                    <li><a href="plumbing.html" class="menu-btn">💧 ระบบน้ำ / ปั๊มน้ำ</a></li>
-
-                    <div class="menu-header" style="background: linear-gradient(135deg, #8E2DE2, #4A00E0);">◆ 5. ซ่อมบำรุง & ทำความสะอาด</div>
-                    <li><a href="repair.html" class="menu-btn">🛠️ ซ่อมด่วนทุกชนิด</a></li>
-                    <li><a href="repair-electronics.html" class="menu-btn">🖥️ ซ่อมเครื่องใช้ไฟฟ้าทุกชนิด</a></li>
-                    <li><a href="cleaning-air.html" class="menu-btn">🧼 ล้างแอร์ฆ่าเชื้อ</a></li>
-                    <li><a href="cleaning-washing.html" class="menu-btn">🧺 ล้างถังซักเครื่องซักผ้า</a></li>
-                    <li><a href="cleaning-tank.html" class="menu-btn">🚿 ล้างถังเก็บน้ำ 500-20,000 ลิตร</a></li>
-                    
-                    <div class="menu-header" style="background: #434343;">◆ บทความเสริมความรู้</div>
-                    <li><a href="article-dirty-secret.html" class="menu-btn">😷 ความลับวงการล้างแอร์</a></li>
-                    <li><a href="article-solar-fail.html" class="menu-btn">⚠️ ติดโซล่าแล้วไฟไม่ลด</a></li>
-                    <li><a href="article-vending-truth.html" class="menu-btn">🧨 หยอดเหรียญ = รวยจริง?</a></li>
-                </ul>
-            </nav>
-            <footer class="mt-10 py-6 border-t border-gray-100 text-center">
-                <p class="text-[10px] text-gray-400">© 2026 ขอนแก่นไฮเทค - กองบัญชาการช่าง</p>
-            </footer>
-        </div>
-    </aside>
-
-    <!-- 🔔 Notification Review Widget - Psychological Validation -->
-    <div id="khReviewFloater" class="hidden">
-        <div class="flex justify-between items-center mb-2 border-b pb-2 border-gray-50">
-            <span class="text-[10px] font-black text-gold uppercase tracking-widest"><i class="fas fa-check-circle"></i> รีวิวจริงจากลูกค้า</span>
-            <span class="text-[10px] text-yellow-500 font-bold">★★★★★</span>
-        </div>
-        <div id="reviewContent">
-            <!-- Content injected via rotateReview() -->
+<body>
+  <div id="khOverlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+  
+  <!-- 🏰 SIDE BAR: RESTORED ORIGINAL CATEGORIES -->
+  <aside id="sidebar">
+    <div style="display:flex; align-items:center; gap:15px; margin-bottom:25px; border-bottom:1px solid #eee; padding-bottom:20px;">
+        <img src="images/logo-khonkaen.webp" style="width:55px; height:55px; border-radius:50%; border:2px solid var(--kh-gold);">
+        <div>
+          <h2 style="margin:0; font-size:1.2rem; font-weight:900;">ศูนย์บัญชาการ</h2>
+          <p style="margin:0; font-size:0.7rem; font-weight:800; color:var(--kh-gold);">KHON KAEN HITECH</p>
         </div>
     </div>
-</div>
+    
+    <nav id="menu" aria-label="เมนูด้านซ้าย">
+      <ul class="menu-gold">
+        <li><a href="index.html" class="menu-btn is-active">🏠 หน้าแรก</a></li>
+        <li><a href="ai-service.html" class="menu-btn" style="background:var(--kh-navy); color:#fff !important;"><i class="fas fa-robot text-gold mr-2"></i>แชทสอบถามผู้ช่วย 24 ชม.</a></li>
 
-<script>
-    // --- Application State & Data ---
-    const appData = {
-        reviews: [
-            { t: "ล้างแอร์สะอาดมากครับ ลมแรงเหมือนซื้อใหม่เลย", a: "คุณก้อง เมืองขอนแก่น", s: "facebook" },
-            { t: "ช่างไฟมาไวมาก แก้ไฟช็อตจบใน 15 นาที แนะนำเลย!", a: "ร้านกาแฟ ริมบึง", s: "tiktok" },
-            { t: "ติดกล้อง CCTV ชัดแจ๋ว ดูผ่านมือถือลื่นมากครับ", a: "หมู่บ้านชลลดา", s: "instagram" },
-            { t: "ติดโซล่าเซลล์แล้วประหยัดไฟได้จริง คืนทุนไวครับ", a: "คุณวิชัย กังสดาล", s: "twitter" },
-            { t: "ตู้น้ำหยอดเหรียญซ่อมจบ ไม่เสียบ่อยแล้ว ไว้ใจได้", a: "หอพักป้าแดง", s: "line" }
-        ],
-        iconMap: {
-            'facebook': { i: 'fa-facebook-f', c: 'facebook' },
-            'tiktok': { i: 'fa-tiktok', c: 'tiktok' },
-            'instagram': { i: 'fa-instagram', c: 'instagram' },
-            'twitter': { i: 'fa-x-twitter', c: 'twitter' },
-            'line': { i: 'fa-line', c: 'line' }
-        }
-    };
+        <div class="menu-header" style="background: linear-gradient(135deg, #ffd700, #d4af37);">◆ 1. ธุรกิจหยอดเหรียญ</div>
+        <li><a href="laundry.html" class="menu-btn">🧼 เครื่องซักผ้าหยอดเหรียญ</a></li>
+        <li><a href="water.html" class="menu-btn">🧃 ตู้น้ำดื่ม RO / น้ำแร่</a></li>
+        <li><a href="oil-vending.html" class="menu-btn">⛽ ตู้น้ำมันหยอดเหรียญ</a></li>
+        <li><a href="franchise.html" class="menu-btn">🏪 แแฟรนไชส์ซักผ้า/คาร์แคร์</a></li>
+        <li><a href="coinbox.html" class="menu-btn">📮 กล่องหยอดเหรียญ</a></li>
 
-    let currentPage = 'home';
+        <div class="menu-header" style="background: linear-gradient(135deg, #00c6ff, #0072ff);">◆ 2. ไฟฟ้า & พลังงาน</div>
+        <li><a href="high-voltage.html" class="menu-btn">🔌 หม้อแปลงไฟฟ้า / ไฟแรงสูง</a></li>
+        <li><a href="mdb.html" class="menu-btn">📦 ตู้ MDB / ตู้คอนโทรล</a></li>
+        <li><a href="electrical.html" class="menu-btn">🏢 ระบบไฟฟ้าอาคาร-โรงงาน</a></li>
+        <li><a href="solar.html" class="menu-btn">🌞 โซล่าเซลล์ลดค่าไฟ</a></li>
 
-    // --- Core Navigation & Interaction ---
+        <div class="menu-header" style="background: linear-gradient(135deg, #11998e, #38ef7d);">◆ 3. ความปลอดภัย & ไอที</div>
+        <li><a href="cctv.html" class="menu-btn">🎥 กล้องวงจรปิด CCTV</a></li>
+        <li><a href="access.html" class="menu-btn">🔐 คีย์การ์ด / สแกนใบหน้า</a></li>
+        <li><a href="autodoor.html" class="menu-btn">🚪 ประตูออโต้ / ไม้กั้นรถ</a></li>
+        <li><a href="network.html" class="menu-btn">📡 วางระบบ WiFi / Mikrotik</a></li>
+
+        <div class="menu-header" style="background: linear-gradient(135deg, #FF512F, #F09819);">◆ 4. ก่อสร้าง & ระบบอาคาร</div>
+        <li><a href="construction.html" class="menu-btn">🏗️ สร้างบ้าน / ต่อเติม / หลังคา</a></li>
+        <li><a href="aircon.html" class="menu-btn">❄️ แอร์บ้าน / ท่อดักท์ / Chiller</a></li>
+        <li><a href="plumbing.html" class="menu-btn">💧 ระบบน้ำ / ปั๊มน้ำ</a></li>
+
+        <div class="menu-header" style="background: linear-gradient(135deg, #8E2DE2, #4A00E0);">◆ 5. ซ่อมบำรุง & ความสะอาด</div>
+        <li><a href="repair.html" class="menu-btn">🛠️ ซ่อมด่วนทุกชนิด</a></li>
+        <li><a href="repair-electronics.html" class="menu-btn">🖥️ ซ่อมเครื่องใช้ไฟฟ้าทุกชนิด</a></li>
+        <li><a href="cleaning-air.html" class="menu-btn">🧼 ล้างแอร์ฆ่าเชื้อ</a></li>
+        <li><a href="cleaning-washing.html" class="menu-btn">🧺 ล้างถังซักเครื่องซักผ้า</a></li>
+        <li><a href="cleaning-tank.html" class="menu-btn">🚿 ล้างถังเก็บน้ำ 500-20,000 ลิตร</a></li>
+
+        <div class="menu-header" style="background:#434343;">◆ บทความเสริมความรู้</div>
+        <li><a href="article-dirty-secret.html" class="menu-btn">😷 ความลับวงการล้างแอร์</a></li>
+        <li><a href="article-solar-fail.html" class="menu-btn">⚠️ ติดโซล่าแล้วไฟไม่ลด</a></li>
+        <li><a href="article-vending-truth.html" class="menu-btn">🧨 หยอดเหรียญ = รวยจริง?</a></li>
+
+        <div class="menu-header" style="background:var(--kh-red);">◆ ช่องทางติดต่อ</div>
+        <li><a href="tel:0944749874" class="menu-btn">📞 โทรติดต่อทันที</a></li>
+        <li><a href="https://line.me/ti/p/~KKHITECH" class="menu-btn" target="_blank">💬 แอดไลน์ปรึกษาฟรี</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- 🔔 Floating Review Notification -->
+  <div id="khReviewFloater" class="hidden">
+      <div class="review-header">
+          <span><i class="fas fa-check-circle"></i> เสียงจากลูกค้าจริง</span>
+          <span style="color: #FFC107;">★★★★★</span>
+      </div>
+      <div id="reviewContent"></div>
+  </div>
+
+  <!-- ✅ THE BOTTOM NAV (Psychological Colors) -->
+  <div class="kh-bottom-nav">
+    <a href="tel:0944749874" class="nav-item c-call"><i class="fas fa-phone-alt"></i><span>โทรเลย</span></a>
+    <a href="https://line.me/ti/p/~KKHITECH" class="nav-item c-line"><i class="fab fa-line"></i><span>แอดไลน์</span></a>
+    <a href="ai-service.html" class="nav-item">
+        <div class="ai-circle-btn gold-aura"><i class="fas fa-robot"></i></div>
+        <span style="margin-top:2px;" class="c-menu">AI ผู้ช่วย</span>
+    </a>
+    <a href="https://m.me/Line0944749874" class="nav-item c-msg"><i class="fab fa-facebook-messenger"></i><span>แชท</span></a>
+    <a href="javascript:void(0)" onclick="toggleSidebar()" class="nav-item c-menu"><i class="fas fa-bars"></i><span>เมนู</span></a>
+  </div>
+
+  <!-- Main View -->
+  <div id="wrapper">
+    <header id="header">
+      <div class="kh-top">
+        <button class="kh-menu-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+        <a href="index.html" class="kh-brand">
+          <span class="kh-brand__text">
+            <span class="lux-title-th">ขอนแก่นไฮเทค</span>
+            <span class="lux-subtitle-en">Master Tech Authority</span>
+          </span>
+          <img src="images/logo-khonkaen.webp">
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section id="banner">
+        <div class="hero-card">
+          <span style="background:red; color:#fff; padding:2px 10px; border-radius:20px; font-size:10px; font-weight:900;">🚨 CRISIS DETECTED</span>
+          <h1>บ้านคุณ "ปลอดภัย" <br><span style="color:gold;">จริงๆ หรือแค่โชคดี?</span></h1>
+          <p>สัญญาณเตือนไฟรั่วหรือเชื้อราในแอร์ คือจุดเริ่มต้นของหายนะ ให้วิศวกรผู้เชี่ยวชาญวิเคราะห์ทางรอดด่วนวันนี้</p>
+          <a href="ai-service.html" class="hero-btn">วิเคราะห์สัญญาณอันตรายด่วน</a>
+        </div>
+        <div class="hero-img-wrap">
+          <img src="images/pic10.webp" alt="ช่างขอนแก่น">
+        </div>
+      </section>
+
+      <section class="service-grid">
+        <div class="service-card">
+          <h3 style="font-weight:900;"><i class="fas fa-snowflake text-blue-500"></i> ล้างแอร์ฆ่าเชื้อ</h3>
+          <p style="font-size:0.9rem;">ล้างสะอาดถึงคอยล์หลัง กำจัดสปอร์เชื้อรา 100% เพื่อสุขภาพคนในบ้าน</p>
+        </div>
+        <div class="service-card">
+          <h3 style="font-weight:900;"><i class="fas fa-bolt text-red-500"></i> ซ่อมไฟฟ้า 24 ชม.</h3>
+          <p style="font-size:0.9rem;">ตรวจไฟรั่ว ไฟช็อต ด้วย Thermal Scan หาจุดร้อนก่อนเกิดไฟไหม้จริง</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
     function toggleSidebar() {
-        $('#sidebar').toggleClass('active');
-        $('#sidebar-overlay').toggleClass('active');
+      $('#sidebar').toggleClass('active');
+      $('#khOverlay').toggleClass('active');
     }
 
-    function navigate(page) {
-        currentPage = page;
-        renderPageContent();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function renderPageContent() {
-        const vp = document.getElementById('main-viewport');
-        vp.innerHTML = '';
-        vp.className = 'fade-in flex-1 px-2 py-4 overflow-x-hidden';
-
-        if (currentPage === 'home') {
-            vp.innerHTML = `
-                <div class="space-y-8">
-                    <!-- Hero Component - Dark Psychology Hook -->
-                    <div class="bg-navy rounded-[2rem] p-6 md:p-10 text-white relative overflow-hidden shadow-2xl border-t-4 border-gold">
-                        <div class="relative z-10">
-                            <span class="inline-block px-3 py-1 bg-red-600 text-[10px] font-black rounded-full mb-4 uppercase tracking-tighter">🚨 Danger Level Detected</span>
-                            <h1 class="hero-title text-2xl md:text-4xl font-black mb-4 leading-tight">บ้านคุณปลอดภัย <br><span class="text-gold">"จริงๆ หรือแค่โชคดี?"</span></h1>
-                            <p class="text-sm opacity-80 mb-8 font-bold italic">เราไม่ได้มาแค่ซ่อม... แต่เรามาเพื่อกู้คืนความปลอดภัย<br>ให้ครอบครัวพรีเมียมเช่นท่านค่ะ</p>
-                            <button onclick="navigate('ai')" class="bg-gold text-white px-6 py-3 rounded-full font-black text-sm uppercase shadow-xl gold-glow active:scale-95 transition-all">วิเคราะห์สัญญาณอันตรายด่วน</button>
-                        </div>
-                        <div class="absolute -bottom-10 -right-10 opacity-10 text-[120px] font-black italic">KH</div>
-                    </div>
-
-                    <!-- Intro Section -->
-                    <div class="bg-white p-6 rounded-[1.5rem] shadow-sm border border-gray-50">
-                        <h2 class="text-xl font-black text-navy mb-3 italic underline decoration-gold decoration-4 underline-offset-4">10 สัญญาณอันตรายที่ห้ามมองข้าม!</h2>
-                        <p class="text-sm text-gray-600 leading-relaxed font-semibold">
-                            สัญญาณเตือนเชื้อราในแอร์ หรือจุดต่อหลวมในตู้ไฟ คือจุดเริ่มต้นของหายนะ... ขอนแก่นไฮเทคพร้อมเข้าช่วยท่านระงับเหตุทันทีค่ะ
-                        </p>
-                    </div>
-
-                    <!-- Grid Layout for Services (Auto-responsive) -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-green-600 flex items-center gap-4">
-                            <div class="text-3xl">🦠</div>
-                            <div>
-                                <h3 class="font-black text-sm text-navy uppercase">ล้างแอร์ฆ่าเชื้อรา</h3>
-                                <p class="text-[9px] text-gray-400 font-bold uppercase italic">Protect your lungs today.</p>
-                            </div>
-                        </div>
-                        <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-red-600 flex items-center gap-4">
-                            <div class="text-3xl">⚡</div>
-                            <div>
-                                <h3 class="font-black text-sm text-navy uppercase">ซ่อมไฟฟ้าเร่งด่วน</h3>
-                                <p class="text-[9px] text-gray-400 font-bold uppercase italic">Stop the sparks now.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Market Insights - Establishing Authority -->
-                    <div class="bg-white p-8 rounded-[2rem] shadow-xl border border-gray-100 text-center">
-                        <h3 class="text-navy font-black mb-6 uppercase text-xs tracking-widest italic">Service Demand Analytics (Khon Kaen)</h3>
-                        <div class="chart-container">
-                            <canvas id="donutChart"></canvas>
-                        </div>
-                        <p class="mt-4 text-[9px] text-gray-400 font-bold italic italic">"ข้อมูลระบุว่าช่วงนี้ความเสี่ยงไฟรั่วในขอนแก่นพุ่งสูงขึ้น 45%"</p>
-                    </div>
-                </div>
-            `;
-            initCharts();
-        }
-
-        if (currentPage === 'ai') {
-            vp.innerHTML = `
-                <div class="flex flex-col h-[75vh] bg-white rounded-[2rem] shadow-2xl border border-gray-100 overflow-hidden">
-                    <div class="bg-[#1a252f] p-4 flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <img src="images/logo-khonkaen.webp" class="w-10 h-10 rounded-full border border-gold bg-white">
-                            <div>
-                                <h3 class="text-white text-xs font-black italic">ช่างผู้ชำนาญการ ข้อมูล</h3>
-                                <span class="text-[8px] text-green-400 font-bold uppercase tracking-widest italic">● ออนไลน์ | วิเคราะห์ระดับอันตราย</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-shield-alt text-gold/50 text-lg"></i>
-                    </div>
-                    <div id="chat-scroller" class="flex-1 overflow-y-auto p-4 space-y-4 bg-[#fcfcfc]">
-                        <div class="flex flex-col gap-2">
-                            <div class="bg-white border border-gray-100 p-4 rounded-2xl rounded-tl-none max-w-[85%] text-[13px] font-semibold italic shadow-sm">
-                                สวัสดียามเช้าครับ... ผมคือหัวหน้าช่างผู้ชำนาญการ ข้อมูล 🤖<br><br>
-                                สัญญาณอันตรายที่คุณพบ อาจเป็นเพียง 1% ของหายนะที่ซ่อนอยู่... ระบุอาการ หรือถ่ายรูปส่งมาให้ผมวิเคราะห์ความเสี่ยงด่วนครับ
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-white border-t border-gray-100 flex gap-2">
-                        <input type="text" placeholder="พิมพ์อาการที่ท่านกังวล..." class="flex-1 bg-gray-50 border-none rounded-full px-5 py-3 text-sm outline-none focus:ring-2 focus:ring-gold/30">
-                        <button class="w-10 h-10 bg-navy text-white rounded-full flex items-center justify-center active:scale-90 shadow-lg"><i class="fas fa-paper-plane"></i></button>
-                    </div>
-                </div>
-            `;
-        }
-    }
-
-    // --- Visualization & UI Logic ---
-    function initCharts() {
-        const ctx = document.getElementById('donutChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: ['แอร์', 'ไฟฟ้า', 'CCTV', 'หยอดเหรียญ', 'อื่นๆ'],
-                datasets: [{
-                    data: [35, 25, 15, 15, 10],
-                    backgroundColor: ['#008148', '#ee1c25', '#1a252f', '#f26522', '#d4af37'],
-                    borderWidth: 0,
-                    hoverOffset: 12
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { position: 'bottom', labels: { font: { size: 9, weight: 'bold', family: 'Sarabun' } } }
-                },
-                cutout: '75%'
-            }
-        });
-    }
+    // Reviews Logic
+    const reviews = [
+      { t: "ล้างแอร์สะอาดมากครับ ลมแรงเหมือนใหม่เลย", a: "คุณก้อง (กังสดาล)", s: "facebook" },
+      { t: "ช่างไฟมาไว แก้ไฟช็อตจบใน 15 นาที แนะนำเลย", a: "เจ๊แดง ร้านชำ", s: "line" },
+      { t: "ติดตั้งกล้อง CCTV ภาพชัดแจ๋ว ดูมือถือลื่นมาก", a: "คุณนุ่น มข.", s: "tiktok" },
+      { t: "ซ่อมเครื่องซักผ้าไวมาก รายได้ไม่สะดุดเลยครับ", a: "หอพักป้าแดง", s: "facebook" },
+      { t: "ถังน้ำใสสะอาดมาก เห็นตะกอนแล้วสยอง ขอบคุณครับ", a: "บ้านเลขที่ 9/1", s: "line" }
+    ];
+    const iconClasses = { 'facebook':'sb-fb', 'tiktok':'sb-tt', 'line':'sb-line' };
+    const faIcons = { 'facebook':'fa-facebook-f', 'tiktok':'fa-tiktok', 'line':'fa-line' };
 
     function rotateReview() {
-        const floater = document.getElementById('khReviewFloater');
-        const content = document.getElementById('reviewContent');
-        const r = appData.reviews[Math.floor(Math.random() * appData.reviews.length)];
-        const info = appData.iconMap[r.s];
-
-        $(floater).addClass('hidden');
-        setTimeout(() => {
-            content.innerHTML = `
-                <p class="text-[12px] font-bold text-gray-800 leading-snug mb-2 italic">"${r.t}"</p>
-                <div class="flex items-center justify-between">
-                    <span class="text-[9px] font-black text-gray-400">- ${r.a}</span>
-                    <div class="flex items-center gap-1">
-                        <span class="text-[8px] font-black text-gray-300 uppercase">${r.s} Source</span>
-                        <div class="social-badge ${info.c}"><i class="fab ${info.i}"></i></div>
-                    </div>
-                </div>
-            `;
-            $(floater).removeClass('hidden');
-        }, 600);
+      const f = document.getElementById('khReviewFloater');
+      const c = document.getElementById('reviewContent');
+      const r = reviews[Math.floor(Math.random() * reviews.length)];
+      
+      f.classList.add('hidden');
+      setTimeout(() => {
+        const icon = faIcons[r.s] || 'fa-facebook-f';
+        const cl = iconClasses[r.s] || 'sb-fb';
+        c.innerHTML = `<p class="review-text">"${r.t}"</p><div class="review-author">- ${r.a} <span class="social-badge ${cl}"><i class="fab ${icon}"></i></span></div>`;
+        f.classList.remove('hidden');
+      }, 600);
     }
 
-    // --- Bootstrap App ---
     $(document).ready(function() {
-        navigate('home');
-        setInterval(rotateReview, 9000);
-        setTimeout(rotateReview, 3000);
+      setInterval(rotateReview, 8000);
+      rotateReview();
     });
-</script>
-
+  </script>
 </body>
 </html>
