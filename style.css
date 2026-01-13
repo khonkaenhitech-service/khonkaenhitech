@@ -1,514 +1,301 @@
 /* ==========================================================================
-   KHON KAEN HITECH – MASTER STYLE PACK (Final Edition)
-   รวม: Style Pack ใหม่ + โลโก้ทอง 3D + ปุ่มลอยดุ๊กดิ๊ก + แก้บั๊ก Sidebar
+   KHON KAEN HITECH – MASTER STYLE PACK (ฉบับสมบูรณ์ + คำอธิบายไทยทุกบรรทัด)
+   ใช้สำหรับ: ทุกหน้าในเว็บไซต์
    ========================================================================== */
 
 /* -----------------------------
-   0) Design Tokens & Variables - เก็บค่าสีและขนาดที่ใช้บ่อย
------------------------------ */
+   1. ตัวแปรหลัก (Variables) - แหล่งเก็บค่าสีและขนาดที่ใช้บ่อย
+   ----------------------------- */
 :root {
-  --kh-primary: #d32f2f;           /* urgency: สีแดงสดสำหรับแจ้งเตือนหรือเรื่องเร่งด่วน */
-  --kh-accent: #2c3e50;            /* authority: สีน้ำเงินเข้มสื่อถึงความน่าเชื่อถือและความเป็นมืออาชีพ */
-  --kh-gold: #a87910;              /* trust/wealth: สีทองเข้มสื่อถึงความมั่งคั่งและความไว้วางใจ */
-  --kh-gold-light: #d4a035;        /* สีทองอ่อนสำหรับไฮไลท์ */
-  --kh-gold-grad: linear-gradient(135deg,#b8870b 0%,#d46a00 100%); /* ไล่เฉดสีทองให้ดูหรูหรา */
-
-  --kh-paper: #ffffff;             /* สีพื้นหลังขาว */
-  --kh-paper-2: #f9fafb;           /* สีพื้นหลังเทาอ่อนมากๆ สำหรับสลับชั้นเนื้อหา */
-  --kh-ink: #111827;               /* สีตัวอักษรดำเข้ม */
-  --kh-ink-2: #374151;             /* สีตัวอักษรเทาเข้ม */
-  --kh-muted: #6b7280;             /* สีตัวอักษรเทาจางๆ */
-
-  --kh-line: rgba(0,0,0,.08);      /* สีเส้นขอบจางๆ */
-  --kh-shadow: 0 10px 30px rgba(0,0,0,.06); /* เงาอ่อนๆ */
-  --kh-shadow-2: 0 18px 45px rgba(0,0,0,.10); /* เงาเข้มขึ้น */
-  --kh-radius: 12px;               /* ความโค้งมนของมุม */
-
-  --kh-sidebar-w: 300px;           /* ความกว้างของเมนูบาร์ด้านข้าง */
-  --kh-fab-size: 50px;             /* ขนาดของปุ่มลอย (Floating Action Button) */
+  --kh-sidebar-w: 300px;           /* ความกว้างของเมนูบาร์ด้านซ้าย */
+  --kh-gold: #d4af37;              /* สีทองหลักของแบรนด์ */
+  --kh-gold-dark: #a87910;         /* สีทองเข้ม สำหรับตัวหนังสือ */
+  --kh-primary: #d32f2f;           /* สีแดงสำหรับแจ้งเตือน/เรื่องด่วน */
+  --kh-accent: #2c3e50;            /* สีน้ำเงินเข้มสำหรับหัวข้อทางการ */
+  --kh-line: rgba(0,0,0,0.10);     /* สีเส้นขอบจางๆ */
+  --kh-shadow: 0 10px 30px rgba(0,0,0,0.15); /* ค่าเงามาตรฐาน */
+  --kh-fab-size: 50px;             /* ขนาดปุ่มลอยด้านขวา */
 }
 
 /* -----------------------------
-   1. Global Reset & Base - ตั้งค่าพื้นฐานให้ทั้งเว็บ
+   2. การตั้งค่าพื้นฐาน (Global)
    ----------------------------- */
 body, input, select, textarea, button, h1, h2, h3, h4, h5, h6 { 
-  font-family: 'Sarabun', sans-serif; /* บังคับใช้ฟอนต์ Sarabun เพื่อรองรับภาษาไทยสวยงาม */
+  font-family: 'Sarabun', sans-serif; /* บังคับใช้ฟอนต์ Sarabun เพื่อรองรับภาษาไทย */
+}
+
+#wrapper { 
+  display: block; /* กำหนดให้กรอบใหญ่สุดแสดงผลเต็มบรรทัด */
 }
 
 /* -----------------------------
-   2. Layout Fixes - จัดการโครงสร้างหน้าเว็บ
+   3. เมนูด้านข้าง (Sidebar)
    ----------------------------- */
-#wrapper { 
-  display: block; /* กำหนดให้กรอบใหญ่สุดแสดงผลเป็นบล็อกเต็มบรรทัด */
-}
-
-/* Sidebar (เมนูบาร์ด้านซ้าย) */
 #sidebar {
-  width: var(--kh-sidebar-w); /* ดึงค่าความกว้างจากตัวแปรมาใช้ */
-  max-width: 86vw; /* ความกว้างสูงสุดไม่เกิน 86% ของหน้าจอ (กันบังมิดในจอมือถือ) */
-  height: 100vh; /* กำหนดความสูงให้เต็มหน้าจอ 100% (จากบนลงล่าง) */
-  position: fixed; /* ตรึงตำแหน่งไว้ด้านซ้าย ไม่ให้เลื่อนตามเมื่อเลื่อนเมาส์ */
-  top: 0; /* จัดตำแหน่งให้ชิดขอบบนสุด */
-  left: 0; /* จัดตำแหน่งให้ชิดขอบซ้ายสุด */
-  z-index: 10000; /* กำหนดลำดับชั้นให้ลอยอยู่บนสุด ทับทุกอย่างในหน้าเว็บ */
-  overflow-y: auto; /* ถ้าเนื้อหาเมนูยาวเกินจอ ให้แสดงแถบเลื่อนแนวตั้งอัตโนมัติ */
-  background: #fcfcfc; /* กำหนดสีพื้นหลังเป็นสีขาวนวลสบายตา */
-  border-right: 1px solid var(--kh-line); /* ใส่เส้นขอบทางขวาสีจางๆ กั้นส่วนเมนูกับเนื้อหา */
-  transform: translateX(0); /* กำหนดตำแหน่งแกน X ปกติ (สถานะเปิดเมนูอยู่) */
-  transition: transform .26s ease; /* ใส่เอฟเฟกต์การเลื่อนเข้า-ออกให้นุ่มนวล ใช้เวลา 0.26 วินาที */
-  margin: 0 !important; /* บังคับไม่ให้มีระยะห่างรอบนอกเด็ดขาด */
+  width: var(--kh-sidebar-w); /* ดึงค่าความกว้างจากตัวแปร */
+  max-width: 86vw; /* ไม่เกิน 86% ของหน้าจอ (สำหรับมือถือ) */
+  height: 100vh; /* ความสูงเต็มจอ */
+  position: fixed; /* ตรึงตำแหน่งไว้ด้านซ้าย */
+  top: 0; left: 0; /* ชิดขอบบนและซ้าย */
+  z-index: 10000; /* อยู่ชั้นบนสุด */
+  overflow-y: auto; /* มีแถบเลื่อนถ้าเมนูยาว */
+  background: #fcfcfc; /* สีพื้นหลังขาวนวล */
+  border-right: 1px solid var(--kh-line); /* เส้นแบ่งขวาสีจาง */
+  transform: translateX(0); /* สถานะเปิด (อยู่ตำแหน่งปกติ) */
+  transition: transform .26s ease; /* เอฟเฟกต์เลื่อนนุ่มนวล */
+  margin: 0 !important; /* ล้างระยะขอบ */
 }
 
 #sidebar.inactive {
-  transform: translateX(-100%); /* เมื่อคลาส inactive ทำงาน ให้เลื่อนเมนูไปทางซ้ายจนพ้นจอ (-100%) */
+  transform: translateX(-100%); /* สถานะปิด (เลื่อนไปทางซ้ายจนพ้นจอ) */
 }
 
-/* Hide template toggle (ซ่อนปุ่มเมนูเดิมของเทมเพลต) */
 #sidebar .toggle { 
-  display: none !important; /* บังคับซ่อนปุ่มเมนูเดิมของเทมเพลตไม่ให้แสดง */
+  display: none !important; /* ซ่อนปุ่มเดิมของเทมเพลต */
 }
 
-/* Main Content (พื้นที่เนื้อหาหลัก) */
+/* -----------------------------
+   4. พื้นที่เนื้อหาหลัก (Main Content)
+   ----------------------------- */
 #main {
-  margin-left: var(--kh-sidebar-w); /* เว้นระยะห่างด้านซ้ายเท่ากับความกว้างของเมนู */
-  transition: margin-left .26s ease; /* ใส่เอฟเฟกต์การยืดหดพื้นที่ให้นุ่มนวลพร้อมกับเมนู */
-  min-height: 100vh; /* กำหนดความสูงขั้นต่ำให้เต็มหน้าจอเสมอ */
+  margin-left: var(--kh-sidebar-w); /* เว้นที่ด้านซ้ายให้เมนู */
+  transition: margin-left .26s ease; /* เอฟเฟกต์ยืดหด */
+  min-height: 100vh; /* สูงเต็มจอเสมอ */
 }
 
 body.kh-sidebar-closed #main { 
-  margin-left: 0; /* ถ้าปิดเมนู (class sidebar-closed) ให้เนื้อหาขยายเต็มจอ (ระยะซ้ายเป็น 0) */
+  margin-left: 0; /* ถ้าปิดเมนู เนื้อหาขยายเต็มจอ */
 }
 
 /* -----------------------------
-   3. Header & Logo - ส่วนหัวและโลโก้ (ปรับปรุงใหม่: เส้นหรูหราเต็มจอ)
+   5. ส่วนหัว (Header)
    ----------------------------- */
 #header {
-    display: flex;             /* ใช้ Flexbox เพื่อจัดตำแหน่ง */
-    justify-content: center;   /* จัดกึ่งกลางแนวนอน */
-    align-items: center;       /* จัดกึ่งกลางแนวตั้ง */
-    text-align: center;        /* จัดข้อความกึ่งกลาง */
-    position: relative;        /* ตำแหน่งอ้างอิง */
-    z-index: 999;              /* ลำดับชั้น */
-    padding-bottom: 20px;      /* เว้นระยะด้านล่างให้เส้นขีด */
-    margin-bottom: 30px;       /* เว้นระยะห่างจากเนื้อหา */
-    border-bottom: none !important; /* ลบเส้นขอบเดิมออก */
+    display: flex; /* จัดเรียงแบบยืดหยุ่น */
+    justify-content: center; /* กึ่งกลางแนวนอน */
+    align-items: center; /* กึ่งกลางแนวตั้ง */
+    position: sticky; /* ติดขอบบนเมื่อเลื่อนลง */
+    top: 0; 
+    z-index: 999; /* อยู่เหนือเนื้อหา */
+    background: rgba(255, 255, 255, 0.98); /* พื้นหลังขาวเกือบทึบ */
+    backdrop-filter: blur(10px); /* เบลอฉากหลัง */
+    padding: 15px 20px; /* ระยะห่างภายใน */
+    margin-bottom: 2em; /* ระยะห่างจากเนื้อหา */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03); /* เงาบางๆ */
 }
 
-/* เส้นขีดยาวหรูหรา (Luxury Line Full Width) */
+/* เส้นขีดทองคำยาวสุดจอ (Luxury Line) */
 #header::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%); /* จัดกึ่งกลาง */
-    width: 100vw; /* กว้างเต็มความกว้างหน้าจอ (Viewport Width) */
-    height: 4px; /* ความหนาของเส้น */
-    
-    /* ไล่เฉดสีทองหรูหรา (หัวท้ายจาง ตรงกลางเข้ม) */
+    bottom: 0; left: 0;
+    width: 100%; /* ยาวเต็มจอ */
+    height: 3px; /* ความหนา */
     background: linear-gradient(90deg, 
         rgba(255,255,255,0) 0%, 
-        rgba(212,175,55,0.3) 15%, 
-        rgba(212,175,55,1) 30%, 
-        #a87910 50%, 
-        rgba(212,175,55,1) 70%, 
-        rgba(212,175,55,0.3) 85%, 
+        rgba(212,175,55,0.4) 20%, 
+        rgba(168,121,16,1) 50%, /* สีเข้มตรงกลาง */
+        rgba(212,175,55,0.4) 80%, 
         rgba(255,255,255,0) 100%
     );
-    
-    box-shadow: 0 4px 10px rgba(168, 121, 16, 0.2); /* เงาสีทองเรืองรอง */
 }
 
 .kh-top { 
-  display: flex; /* แสดงผลแบบยืดหยุ่น (Flexbox) เพื่อจัดเรียงแนวนอน */
-  align-items: center; /* จัดองค์ประกอบภายในให้กึ่งกลางแนวตั้ง */
-  justify-content: center; /* จัดกึ่งกลางหน้าจอ */
-  gap: 20px; /* เพิ่มระยะห่างระหว่างปุ่มเมนูกับโลโก้ให้ดูโปร่ง */
-  width: 100%; /* กว้างเต็มพื้นที่ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
 }
 
-/* Menu Button (ปุ่มเมนู) */
+/* ปุ่มเมนู (ซ้ายสุด) */
 .kh-menu-btn {
-  width: 50px; height: 50px; /* ขยายขนาดปุ่มเมนูเล็กน้อย */
-  border-radius: 14px; /* ทำมุมโค้งมน */
-  border: 1px solid rgba(212,175,55,0.3); /* ขอบสีทองจางๆ */
-  background: #fff; /* ใส่สีพื้นหลังเป็นสีขาว */
-  cursor: pointer; /* เปลี่ยนรูปเมาส์เป็นรูปนิ้วมือเมื่อชี้ */
-  display: inline-flex; /* แสดงผลแบบบล็อกในบรรทัดเพื่อจัดไอคอน */
-  align-items: center; /* จัดไอคอนกึ่งกลางแนวตั้ง */
-  justify-content: center; /* จัดไอคอนกึ่งกลางแนวนอน */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* ใส่เงาใต้ปุ่มแบบนุ่มนวล */
-  transition: all 0.3s ease;
+  position: absolute; /* ลอยอิสระ */
+  left: 0; /* ชิดซ้าย */
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-.kh-menu-btn:hover {
-  transform: scale(1.05); /* ขยายเมื่อชี้ */
-  box-shadow: 0 6px 20px rgba(212,175,55,0.2); /* เงาสีทองเมื่อชี้ */
-}
-
-.kh-menu-btn img {
-  border-radius: 12px; /* ทำมุมโค้งมนให้กับรูปภาพในปุ่ม */
-}
-
-/* Brand Logo (โลโก้แบรนด์ - ปรับขนาดใหญ่ขึ้น) */
+/* โลโก้ (กึ่งกลาง) */
 .kh-brand { 
-  display: flex; /* แสดงผลแบบยืดหยุ่นเพื่อเรียงรูปคู่กับข้อความ */
-  align-items: center; /* จัดให้กึ่งกลางแนวตั้ง */
-  gap: 15px; /* เพิ่มระยะห่างระหว่างรูปโลโก้กับชื่อร้าน */
-  text-decoration: none; /* เอาเส้นขีดใต้ออก */
-  border-bottom: none; /* เอาเส้นขอบล่างออก */
-  transition: transform 0.2s ease; /* ใส่เอฟเฟกต์ขยายเมื่อเอาเมาส์ชี้ */
-}
-
-.kh-brand:hover {
-  transform: scale(1.02); /* ขยายขนาดขึ้น 2% เมื่อเอาเมาส์ชี้ */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-bottom: none;
 }
 
 .kh-brand__img img {
-  width: 110px; /* ขยายขนาดโลโก้ให้ใหญ่ขึ้น (จาก 80px เป็น 110px) */
-  height: 110px; /* ความสูงเท่ากัน */
-  object-fit: cover; /* ปรับรูปให้เต็มกรอบโดยไม่เสียสัดส่วน */
-  display: block; /* แสดงผลเป็นบล็อก */
-  border-radius: 50%; /* ตัดขอบรูปเป็นวงกลม */
-  border: 3px solid #d4af37; /* ขอบสีทองหนาขึ้น */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* เงาลึกขึ้น */
-}
-
-.kh-brand__text { 
-  display: flex; /* แสดงผลแบบยืดหยุ่น */
-  flex-direction: column; /* จัดเรียงข้อความแนวตั้ง (ชื่อไทยอยู่บน อังกฤษอยู่ล่าง) */
-  justify-content: center; /* จัดข้อความกึ่งกลาง */
-  text-align: left; /* ข้อความชิดซ้าย (เทียบกับโลโก้) */
+  width: 80px; height: 80px; /* ขนาดโลโก้ */
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--kh-gold); /* ขอบทอง */
+  box-shadow: 0 4px 10px rgba(168, 121, 16, 0.15); /* เงาทอง */
+  margin-bottom: 5px;
 }
 
 .lux-title-th { 
-  font-weight: 900; /* กำหนดตัวหนามากพิเศษ */
-  font-size: 1.5rem; /* ขยายขนาดตัวอักษรชื่อร้าน */
-  line-height: 1.1; /* กำหนดระยะห่างระหว่างบรรทัด */
-  color: #333; /* กำหนดสีตัวอักษรเป็นสีเทาเข้ม */
+  font-weight: 900;
+  font-size: 1.4rem;
+  background: linear-gradient(135deg, #8c4600 0%, #d4af37 50%, #8c4600 100%); /* ไล่สีตัวอักษร */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .lux-subtitle-en { 
-  font-size: 0.85rem; /* ขยายตัวอักษรภาษาอังกฤษ */
-  letter-spacing: 2px; /* เพิ่มระยะห่างระหว่างตัวอักษรให้ดูหรู */
-  color: var(--kh-gold); /* กำหนดสีเป็นสีทองเข้ม (ดึงจากตัวแปร) */
-  font-weight: 800; /* กำหนดตัวหนา */
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: var(--kh-gold);
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 /* -----------------------------
-   3.5 Page Titles (หัวข้อหน้าเพจ H1) - ปรับปรุงใหม่
+   6. เมนูใน Sidebar (3D Buttons)
    ----------------------------- */
-header.main {
-  text-align: center !important; /* บังคับจัดกึ่งกลาง */
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 900px; /* จำกัดความกว้างไม่ให้ตัวหนังสือยาวเกินไปจนอ่านยาก */
-  padding-bottom: 1em; /* เว้นระยะด้านล่าง */
-}
-
-header.main h1 {
-  /* ใช้ clamp เพื่อให้ขนาดตัวอักษรยืดหดตามจออัตโนมัติ (ต่ำสุด 1.8rem, ปกติ 5vw, สูงสุด 3.5rem) */
-  font-size: clamp(1.8rem, 5vw, 3.5rem) !important;
-  line-height: 1.3;
-  margin-bottom: 0.5em;
-  color: #2c3e50; /* สีเข้มอ่านง่าย */
-  word-wrap: break-word; /* ตัดคำถ้ายาวเกินจอ */
-}
-
-header.main p {
-  text-align: center;
-  font-size: 1.1em;
-  color: #666;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* -----------------------------
-   4. Menu Navigation - เมนูนำทาง
-   ----------------------------- */
-ul.menu-gold { 
-  list-style: none; /* ลบจุดหน้าหัวข้อรายการ (Bullet points) ออก */
-  padding: 0; /* ล้างระยะห่างภายใน */
-  margin: 0; /* ล้างระยะห่างภายนอก */
-}
-
-ul.menu-gold li { 
-  margin-bottom: 8px; /* กำหนดระยะห่างด้านล่างระหว่างแต่ละเมนู 8px */
-  padding: 0 !important; /* ล้างระยะภายใน (บังคับ) */
-  border: none !important; /* ลบเส้นขอบ (บังคับ) */
-}
+ul.menu-gold { list-style: none; padding: 0; margin: 0; }
+ul.menu-gold li { margin-bottom: 8px; padding: 0 !important; border: none !important; }
 
 .menu-btn {
-  display: block; /* แสดงผลเต็มบรรทัด */
-  background: #fff; /* พื้นหลังสีขาว */
-  border: 1px solid rgba(0,0,0,0.08); /* เส้นขอบบางๆ จางๆ */
-  padding: 10px 12px; /* ระยะห่างภายใน บนล่าง 10px ซ้ายขวา 12px */
-  border-radius: 12px; /* มุมโค้งมน 12px */
-  color: #222 !important; /* สีตัวอักษรดำเข้ม (บังคับ) */
-  font-weight: 800; /* ตัวหนา */
-  text-decoration: none; /* ไม่ขีดเส้นใต้ */
-  transition: .15s ease; /* เอฟเฟกต์เปลี่ยนสีเมื่อชี้ */
+  display: block;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: #222 !important;
+  font-weight: 800;
+  text-decoration: none;
+  transition: .15s ease;
 }
 
 .menu-btn:hover {
-  border-color: rgba(212,175,55,.55); /* เปลี่ยนสีขอบเป็นสีทองเมื่อเอาเมาส์ชี้ */
-  box-shadow: 0 10px 22px rgba(212,175,55,.10); /* เพิ่มเงาสีทองเมื่อชี้ */
-  transform: translateY(-1px); /* ลอยขึ้นเล็กน้อยเมื่อชี้ */
+  border-color: var(--kh-gold);
+  box-shadow: 0 5px 15px rgba(212,175,55,.15);
+  transform: translateY(-1px);
 }
 
 .menu-btn.is-active {
-  border-color: rgba(212,175,55,.95); /* สีขอบเข้มเมื่อเมนูนี้ถูกเลือกอยู่ */
-  background: linear-gradient(90deg, rgba(212,175,55,.12), #fff); /* ไล่สีพื้นหลังจางๆ เมื่อถูกเลือก */
+  border-color: var(--kh-gold);
+  background: linear-gradient(90deg, rgba(212,175,55,.10), #fff);
 }
 
-.btn-contact-gold {
-  background: linear-gradient(135deg, #ffca28 0%, #ff6f00 100%); /* ไล่สีปุ่มจากเหลืองไปส้ม */
-  color: #fff !important; /* ตัวอักษรสีขาว (บังคับ) */
-  border: none; /* ไม่มีเส้นขอบ */
-  text-align: center; /* จัดตัวอักษรกึ่งกลาง */
-  border-radius: 999px; /* ทำปุ่มเป็นรูปวงรี (แคปซูล) */
-  box-shadow: 0 10px 26px rgba(255, 111, 0, 0.28); /* ใส่เงาสีส้มใต้ปุ่ม */
-}
-
-/* Menu Header (หัวข้อเมนูแบบเรียบหรู) */
+/* หัวข้อเมนู 3D */
 .menu-header {
-  font-size: 0.8em; /* ขนาดตัวอักษรพอดีตา */
-  color: var(--kh-gold); /* สีทองเข้ม */
-  margin: 24px 0 8px 0; /* ระยะห่างด้านบน 24px ด้านล่าง 8px */
-  text-transform: uppercase; /* แปลงเป็นตัวพิมพ์ใหญ่ */
-  font-weight: 800; /* ตัวหนา */
-  letter-spacing: 1px; /* ระยะห่างระหว่างตัวอักษร */
-  border-bottom: 1px solid rgba(212, 175, 55, 0.25); /* เส้นขีดเส้นใต้สีทองจางๆ */
-  padding-bottom: 6px; /* ระยะห่างจากเส้น */
+  font-size: 0.85em;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 12px 18px;
+  margin: 24px 0 10px 0;
+  border-radius: 50px; /* ทรงแคปซูล */
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.4);
+  position: relative;
+  overflow: hidden;
 }
+
+/* เอฟเฟกต์แสงวิ่งผ่านหัวข้อ (Shimmer) */
+.menu-header::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -150%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: skewX(-20deg);
+  animation: shineHeader 4s infinite;
+}
+@keyframes shineHeader { 0% { left: -150%; } 20% { left: 150%; } 100% { left: 150%; } }
+
+/* สีหัวข้อแต่ละหมวด */
+.menu-header:nth-of-type(1) { background: linear-gradient(135deg, #ffd700, #d4af37); border-left: 5px solid #b8860b; }
+.menu-header:nth-of-type(2) { background: linear-gradient(135deg, #00c6ff, #0072ff); border-left: 5px solid #0041a3; }
+.menu-header:nth-of-type(3) { background: linear-gradient(135deg, #11998e, #38ef7d); border-left: 5px solid #0b665e; }
+.menu-header:nth-of-type(4) { background: linear-gradient(135deg, #FF512F, #F09819); border-left: 5px solid #bf360c; }
+.menu-header:nth-of-type(5) { background: linear-gradient(135deg, #8E2DE2, #4A00E0); border-left: 5px solid #31009c; }
 
 /* -----------------------------
-   5. Floating Bar & Mobile Bar - ปุ่มลอยและแถบมือถือ
+   7. ปุ่มลอย & รีวิว (Floating Widgets)
    ----------------------------- */
-/* Desktop Floating Bar (ปุ่มลอยด้านขวา) */
 #khFloatBar { 
-  position: fixed; /* ตรึงตำแหน่ง */
-  right: 16px; /* ชิดขวา */
-  top: 50%; /* กึ่งกลางแนวตั้ง */
-  transform: translateY(-50%); /* จัดกึ่งกลางเป๊ะๆ */
-  z-index: 9999; /* อยู่ชั้นบนสุด */
-  display: flex; /* เรียงปุ่ม */
-  flex-direction: column; /* แนวตั้ง */
-  gap: 14px; /* ระยะห่างปุ่ม */
-  pointer-events: auto; /* รับการคลิก */
+  position: fixed; right: 16px; top: 50%; transform: translateY(-50%); 
+  z-index: 9999; display: flex; flex-direction: column; gap: 14px; pointer-events: auto; 
 }
 
 .kh-fbtn { 
-  width: var(--kh-fab-size); height: var(--kh-fab-size); /* ขนาดปุ่มตามตัวแปร */
-  border-radius: 14px; /* มุมโค้งมน */
-  display: flex; /* จัดไอคอน */
-  align-items: center; /* กึ่งกลาง */
-  justify-content: center; /* กึ่งกลาง */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.5); /* เงาและแสงสะท้อน */
-  color: #fff !important; /* สีขาว */
-  text-decoration: none; /* ไม่ขีดเส้นใต้ */
-  border: 1px solid rgba(255,255,255,0.15); /* ขอบบาง */
-  user-select: none; /* ห้ามลากคลุมดำ */
-  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* อนิเมชั่นเด้ง */
-  position: relative; /* ตำแหน่งอ้างอิง */
-  overflow: hidden; /* ซ่อนส่วนเกิน */
+  width: 50px; height: 50px; border-radius: 14px; 
+  display: flex; align-items: center; justify-content: center; 
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.4); 
+  color: #fff !important; text-decoration: none; 
+  transition: all 0.2s; 
 }
+.kh-fbtn:hover { transform: scale(1.1); }
+.kh-fbtn.call { background: linear-gradient(145deg, #ffc107, #ff8f00); }
+.kh-fbtn.line { background: linear-gradient(145deg, #00e676, #00a844); }
+.kh-fbtn.repair { background: linear-gradient(145deg, #ff5252, #d32f2f); }
+.kh-fbtn.fb { background: linear-gradient(145deg, #448aff, #1565c0); }
 
-.kh-fbtn::after { 
-  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 45%; /* แสงสะท้อนด้านบน */
-  background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, transparent 100%); /* ไล่สีขาว */
-  border-top-left-radius: 14px; border-top-right-radius: 14px; /* โค้งตามปุ่ม */
-  pointer-events: none; /* ทะลุการคลิก */
-}
-
-.kh-fbtn i { 
-  font-size: 24px; position: relative; z-index: 2; /* ขนาดไอคอน */
-  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); /* เงาไอคอน */
-}
-
-/* สีปุ่มแยกตามประเภท */
-.kh-fbtn.call { background: linear-gradient(145deg, #ffc107 0%, #ff8f00 100%); } /* ปุ่มโทรสีส้ม */
-.kh-fbtn.line { background: linear-gradient(145deg, #00e676 0%, #00a844 100%); } /* ปุ่มไลน์สีเขียว */
-.kh-fbtn.repair { background: linear-gradient(145deg, #ff5252 0%, #d32f2f 100%); } /* ปุ่มซ่อมสีแดง */
-.kh-fbtn.fb { background: linear-gradient(145deg, #448aff 0%, #1565c0 100%); } /* ปุ่มเฟสสีน้ำเงิน */
-
-.kh-fbtn:hover { 
-  transform: scale(1.15) translateY(-2px); /* ขยายเมื่อชี้ */
-  z-index: 10; 
-}
-
-/* Review Floating Widget (กล่องรีวิวลอย) */
+/* กล่องรีวิว */
 #khReviewFloater { 
-  position: fixed; bottom: 20px; left: 20px; z-index: 9990; /* ตรึงตำแหน่งซ้ายล่าง */
-  width: 300px; /* ความกว้าง */
-  background: rgba(255, 255, 255, 0.95); /* พื้นหลังขาวโปร่ง */
-  backdrop-filter: blur(5px); /* เบลอหลัง */
-  border-radius: 12px; /* มุมมน */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* เงาฟุ้ง */
-  border: 1px solid rgba(212, 175, 55, 0.3); /* ขอบทอง */
-  padding: 15px; /* ระยะห่าง */
-  font-size: 0.9em; /* ขนาดตัวอักษร */
-  transform: translateY(0); /* ตำแหน่งปกติ */
-  transition: transform 0.5s ease, opacity 0.5s ease; /* เอฟเฟกต์เลื่อน */
-  overflow: hidden; /* ซ่อนส่วนเกิน */
+  position: fixed; bottom: 20px; left: 20px; z-index: 9990; width: 300px; 
+  background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); 
+  border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); 
+  border: 1px solid rgba(212, 175, 55, 0.3); padding: 15px; 
+  transition: 0.5s; 
 }
+#khReviewFloater.hidden { transform: translateY(120%); opacity: 0; }
 
-#khReviewFloater.hidden { 
-  transform: translateY(120%); /* เลื่อนลงล่างเมื่อซ่อน */
-  opacity: 0; /* จางหาย */
-}
-
-.review-header { 
-  font-size: 0.75em; 
-  text-transform: uppercase; 
-  color: var(--kh-gold); 
-  font-weight: 800; 
-  margin-bottom: 5px; 
-  display: flex; 
-  justify-content: space-between; 
-}
-
-.review-stars { color: #ffc107; } /* ดาวสีทอง */
-.review-text { font-weight: 600; color: #333; line-height: 1.4; margin-bottom: 5px; } /* ข้อความรีวิว */
-.review-author { font-size: 0.8em; color: #777; text-align: right; font-style: italic; } /* ชื่อคนรีวิว */
-
-/* Social Icons as Images (รูปไอคอนแอป) */
-.social-icon-img { 
-  width: 24px; 
-  height: 24px; 
-  vertical-align: middle; 
-  margin-left: 8px; 
-  border-radius: 6px; 
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
-  object-fit: contain; 
-  background: #fff; /* พื้นขาวรองหลัง */
-}
-
-.fade-content { animation: fadeIn 0.8s ease-in-out; } /* อนิเมชั่นเฟดเข้า */
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.social-icon-img { width: 20px; height: 20px; vertical-align: middle; margin-left: 6px; border-radius: 4px; }
 
 /* -----------------------------
-   8. เนื้อหาบทความ (Article)
+   8. เนื้อหา (Hero & SEO)
    ----------------------------- */
-.seo-toc { 
-  background: #f9f9f9; /* พื้นหลังเทาอ่อน */
-  padding: 20px; /* ระยะห่าง */
-  border-radius: 8px; /* มุมมน */
-  border-left: 5px solid #d4af37; /* ขอบซ้ายทอง */
-  margin-bottom: 30px; 
-}
+#banner { position: relative; overflow: hidden; min-height: 500px; display: flex; align-items: center; justify-content: center; }
+#banner .content { position: relative; z-index: 2; width: 100%; max-width: 1200px; padding: 2em; }
+#banner .image { position: absolute; width: 100%; height: 100%; top:0; left:0; z-index: 1; opacity: 0.15; }
+#heroImage { width: 100%; height: 100%; object-fit: cover; }
+.hero-watermark { display: none; } /* ซ่อนลายน้ำใน PC */
 
-.seo-toc h3 { margin-top: 0; color: #333; } /* หัวข้อสารบัญ */
-.seo-toc ul { margin-bottom: 0; } /* รายการ */
-
-h2.seo-heading { 
-  color: #c62828; /* สีแดงเข้มเน้นความสำคัญ */
-  font-weight: 800; /* ตัวหนา */
-  border-bottom: 2px solid #eee; /* เส้นใต้บางๆ */
-  padding-bottom: 10px; 
-  margin-top: 40px; 
-}
-
-.pain-point { 
-  color: #d35400; /* สีส้มแดง */
-  font-weight: bold; 
-  background: #fff3e0; /* พื้นหลังส้มอ่อน */
-  padding: 0 5px; 
-}
+h2.seo-heading { color: var(--kh-primary); font-weight: 800; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 40px; }
+.pain-point { color: #d35400; font-weight: bold; background: #fff3e0; padding: 2px 6px; border-radius: 4px; }
 
 /* -----------------------------
-   9. สำหรับมือถือ (Mobile Responsive)
+   9. Mobile Responsive (มือถือ)
    ----------------------------- */
-#khOverlay { 
-  position: fixed; inset: 0; 
-  background: rgba(0,0,0,0.25); /* ฉากหลังดำจางๆ */
-  z-index: 9998; 
-  display: none; 
-}
-#khOverlay.show { display: block; } /* แสดงเมื่อเปิดเมนู */
-
-.kh-mobile-bar { display: none; } /* ซ่อนใน PC */
+#khOverlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 9998; display: none; }
+#khOverlay.show { display: block; }
+.kh-mobile-bar { display: none; }
 
 @media screen and (max-width: 768px) {
-  /* ซ่อนปุ่มลอยและรีวิวในมือถือเพื่อไม่ให้เกะกะ */
-  #khFloatBar, #khReviewFloater { display: none !important; }
-  
-  /* ปรับการจัดวางส่วนหัวให้ติดบนสุด (Sticky) */
-  #header {
-    position: sticky; /* ติดขอบบน */
-    top: 0;
-    z-index: 1000;
-    background: #fff; /* พื้นหลังขาวทับเนื้อหาตอนเลื่อน */
-    border-bottom: 1px solid rgba(0,0,0,0.05); /* เส้นขอบบางๆ (มีเส้นขีดยาวทองทับอีกที) */
-    padding: 15px 0; /* ลดความสูง */
-    margin-bottom: 1em;
-  }
-  
-  /* เส้นขีดยาวบนมือถือ (ยังคงอยู่) */
-  #header::after {
-    height: 3px; /* ลดความหนาลงนิดหน่อย */
-    width: 100%; /* เต็มจอ */
-  }
+  #khFloatBar, #khReviewFloater { display: none !important; } /* ซ่อนปุ่มลอย */
 
-  /* ปรับขนาดโลโก้ในมือถือ */
-  .kh-brand__img img {
-    width: 60px; /* ลดขนาดโลโก้ในมือถือให้พอดี */
-    height: 60px;
-    border-width: 2px;
-  }
-  
-  .lux-title-th { font-size: 1.1rem; } /* ลดขนาดชื่อร้าน */
-  .lux-subtitle-en { font-size: 0.6rem; letter-spacing: 0.5px; } /* ลดขนาดอังกฤษ */
-  
-  /* ปรับเลย์เอาต์แบนเนอร์ */
-  #banner { display: block; padding: 1em 0; }
-  #banner .content { width: 100%; padding-right: 0; margin-bottom: 1.5em; text-align: center; }
-  #banner .image { width: 100%; margin: 0; }
-  
-  /* ปรับปุ่มในแบนเนอร์ให้เต็มจอ */
-  #banner .actions { display: flex; justify-content: center; }
-
-  /* แสดงแถบเมนูล่าง */
   .kh-mobile-bar { 
-    display: flex; /* แสดงผล */
-    position: fixed; /* ตรึงล่าง */
-    bottom: 0; left: 0; width: 100%; height: 65px; 
-    background: #fff; /* พื้นขาว */
-    box-shadow: 0 -5px 20px rgba(0,0,0,0.1); /* เงาด้านบน */
-    z-index: 9999; /* อยู่บนสุด */
-    border-top: 1px solid rgba(0,0,0,0.05); 
-    padding-bottom: env(safe-area-inset-bottom); /* รองรับจอแหว่ง iPhone */
+    display: flex; position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; 
+    background: #fff; box-shadow: 0 -5px 20px rgba(0,0,0,0.05); z-index: 9999; 
+    padding-bottom: env(safe-area-inset-bottom); 
   }
-
-  .m-item { 
-    flex: 1; /* แบ่งพื้นที่เท่ากัน */
-    display: flex; 
-    flex-direction: column; /* เรียงแนวตั้ง */
-    align-items: center; /* กึ่งกลาง */
-    justify-content: center; 
-    text-decoration: none !important; 
-    border-right: 1px solid rgba(0,0,0,0.03); /* เส้นคั่น */
-    color: #555; 
-  }
-
-  .m-item:last-child { border-right: none; } /* ตัวสุดท้ายไม่มีเส้น */
-  .m-item i { font-size: 20px; margin-bottom: 4px; } /* ขนาดไอคอน */
-  .m-item span { font-size: 10px; font-weight: 700; } /* ขนาดข้อความ */
-  .m-item.call { color: #ff8f00; background: #fffcf5; } /* สีปุ่มโทร */
-  .m-item.line { color: #00c300; } /* สีปุ่มไลน์ */
+  .m-item { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #555; text-decoration: none !important; font-size: 0.7rem; font-weight: 700; border-right: 1px solid rgba(0,0,0,0.03); }
+  .m-item i { font-size: 1.2rem; margin-bottom: 4px; }
   
-  /* ปรับลายน้ำในมือถือ */
-  .hero-watermark { 
-    bottom: 10px; right: 10px; 
-    padding: 8px; 
-    gap: 8px; 
-    max-width: 95%;
-  }
-  .watermark-logo img { width: 35px; height: 35px; border-width: 1px; }
-  .watermark-info .shop-name { font-size: 0.85em; }
-  .watermark-info .contact-row { font-size: 0.65em; }
-  .slider-dots { bottom: 10px; }
+  /* Header มือถือ */
+  #header { padding: 10px 15px; }
+  .kh-menu-btn { left: 0; width: 40px; height: 40px; }
+  .kh-brand__img img { width: 50px; height: 50px; }
+  .lux-title-th { font-size: 1.1rem; }
+  
+  /* Banner มือถือ */
+  #banner { min-height: auto; padding: 3em 1em; }
+  #banner .content { padding: 0; text-align: center; }
+  
+  /* ลายน้ำมือถือ */
+  .hero-watermark { display: flex; bottom: 10px; right: 10px; padding: 8px; gap: 8px; font-size: 0.8em; }
 }
 
-@media screen and (max-width: 1280px){ 
-  #main { margin-left: 0; } /* ปิดเมนูข้างในจอแท็บเล็ต */
-}
+@media screen and (max-width: 1280px){ #main { margin-left: 0; } }
