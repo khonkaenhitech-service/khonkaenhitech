@@ -491,9 +491,6 @@ PHRASE_LIBRARY.call_close = [
 ];
 </script>
 
-  add("bot", getPhrase("legal_safety"));
-add("bot", getPhrase("mobile_short"));
-add("bot", getPhrase("call_close"));
 
   <script>
 PHRASE_LIBRARY.resistance = [
@@ -651,9 +648,7 @@ function autoSelectPhrase(text){
 }
 </script>
 
-  add("bot", autoSelectPhrase(userText));
-  add("bot", getPhrase("call_close"));
-  add("bot", getPhrase("mobile_short"));
+
 <script>
 const BEHAVIOR_WEIGHT = {
   emergency: 100,        // ฉุกเฉิน ชนะทุกอย่าง
