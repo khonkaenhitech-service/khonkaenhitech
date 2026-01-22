@@ -2,159 +2,180 @@
 <html lang="th">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>AI Risk Control | KhonKaen HiTech</title>
 
 <style>
-:root{
-  --gold:#d4af37;--red:#ff4d4d;--green:#2ecc71;
-}
+:root{--gold:#d4af37;--red:#ff4d4d;--green:#2ecc71}
+*{box-sizing:border-box}
 body{margin:0;font-family:-apple-system,Segoe UI;background:#0c0f14;color:#eee}
-header{padding:16px;text-align:center;border-bottom:3px solid var(--gold)}
-h1{margin:0;font-size:1.3rem;color:var(--gold)}
+header{padding:14px;text-align:center;border-bottom:3px solid var(--gold)}
+h1{margin:0;color:var(--gold);font-size:1.2rem}
 small{color:#aaa}
-#app{max-width:900px;margin:auto}
-.chat{padding:16px;min-height:65vh}
-.msg{margin-bottom:14px}
+#app{max-width:920px;margin:auto}
+.chat{padding:14px;min-height:62vh}
+.msg{margin-bottom:12px}
 .user{text-align:right}
-.bubble{display:inline-block;max-width:85%;padding:14px;border-radius:14px;line-height:1.6}
-.user .bubble{background:#27364a;border-bottom-right-radius:4px}
+.bubble{display:inline-block;max-width:88%;padding:13px;border-radius:14px;line-height:1.6}
+.user .bubble{background:#263445;border-bottom-right-radius:4px}
 .bot .bubble{background:#1a202c;border-left:5px solid var(--gold)}
 .input{display:flex;gap:8px;padding:12px;border-top:1px solid #222}
-input{flex:1;padding:14px;font-size:1rem;border-radius:8px;border:none}
-button{padding:0 18px;border:none;border-radius:8px;background:var(--gold);font-weight:700}
+input{flex:1;padding:14px;border-radius:8px;border:none;font-size:1rem}
+button{padding:0 18px;border:none;border-radius:8px;background:var(--gold);font-weight:800}
 .cta{margin-top:12px;padding:14px;border:2px solid var(--gold);border-radius:12px;background:#0b0e13}
 .cta strong{color:var(--red)}
-.cta a{display:block;margin-top:10px;padding:14px;border-radius:8px;
-text-align:center;text-decoration:none;font-weight:800}
+.cta a{display:block;margin-top:10px;padding:14px;border-radius:8px;text-align:center;text-decoration:none;font-weight:900}
 .call{background:var(--red);color:#fff}
 .line{background:var(--green);color:#111}
-#dash{position:fixed;bottom:10px;right:10px;
-background:#000;padding:10px;border-radius:10px;font-size:.75rem;opacity:.9}
+#dash{position:fixed;right:10px;bottom:10px;background:#000;padding:10px;border-radius:10px;font-size:.75rem;opacity:.9}
+@media(max-width:520px){
+  .bubble{max-width:92%}
+  button{padding:0 14px}
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>ระบบควบคุมความเสี่ยง</h1>
-<small>ขอนแก่นไฮเทค · ตัดสินใจผิด = เสียมากกว่าที่คิด</small>
+  <h1>ระบบควบคุมความเสี่ยง</h1>
+  <small>ขอนแก่นไฮเทค · เลือกผิด = เสียหาย</small>
 </header>
 
 <div id="app">
-<div class="chat" id="chat">
-<div class="msg bot"><div class="bubble">
-ผมคือระบบประเมินความเสี่ยงเบื้องต้น  
-หน้าที่ของผมไม่ใช่การขาย  
-แต่คือป้องกันการตัดสินใจผิดที่อาจทำให้คุณเสียหายหนัก  
-<br><br>โปรดอธิบายอาการที่พบครับ
-</div></div>
-</div>
+  <div class="chat" id="chat">
+    <div class="msg bot"><div class="bubble">
+      ผมคือระบบประเมินความเสี่ยงเบื้องต้นของขอนแก่นไฮเทค<br>
+      หน้าที่ของผมไม่ใช่การขาย แต่คือป้องกันการตัดสินใจผิดที่อาจลุกลามเป็นความเสียหายรุนแรง<br><br>
+      โปรดอธิบายอาการหรือปัญหาที่พบครับ
+    </div></div>
+  </div>
 
-<div class="input">
-<input id="input" placeholder="พิมพ์อาการที่พบ…" />
-<button onclick="send()">ส่ง</button>
-</div>
+  <div class="input">
+    <input id="input" placeholder="พิมพ์อาการที่พบ…" />
+    <button onclick="send()">ส่ง</button>
+  </div>
 </div>
 
 <div id="dash">
-Emergency: <span id="ec">0</span><br>
-Normal: <span id="nc">0</span>
+  Emergency: <span id="ec">0</span><br>
+  Normal: <span id="nc">0</span>
 </div>
 
 <script>
-/* CONFIG */
+/* ================= CONFIG ================= */
 const API_KEY="PUT_API_KEY";
 const PHONE="0944749874";
-const LINE="https://line.me/ti/p/~KKHITECH";
+const LINE_URL="https://line.me/ti/p/~KKHITECH";
 
-/* TIME */
-const h=new Date().getHours();
-const NIGHT=(h>=20||h<6);
+/* ================= TIME ================= */
+const hour=new Date().getHours();
+const NIGHT=(hour>=20||hour<6);
 
-/* STATE */
-let LOCK=false,COUNT=0,CASE="NORMAL",RISK=0;
-let EM=0,NR=0;
+/* ================= STATE ================= */
+let LOCK=false, MSG_COUNT=0, CASE="NORMAL";
+let EM=0, NR=0;
 
-/* SERVICE PROFILES */
-const SERVICE={
-  electric:{k:["ไฟ","เบรกเกอร์","สายไฟ","ตู้เมน"],base:7},
-  heat:{k:["ร้อน","ไหม้","กลิ่น"],base:8},
-  network:{k:["เน็ต","wifi","หลุด"],base:4},
-  general:{k:[],base:3}
+/* ================= TRIGGERS ================= */
+const EMERGENCY_WORDS=["ไฟไหม้","ควัน","กลิ่นไหม้","ประกายไฟ","ไฟดูด","ช็อต","เบรกเกอร์ตัด","ร้อนจัด"];
+const HIGH_INTENT_WORDS=["กลัว","อันตราย","เสียหาย","พัง","ถ้าไม่ซ่อม","ปล่อยไว้","คุ้มไหม","แพงไหม"];
+
+/* ================= PERSONA PROFILES ================= */
+const PERSONA={
+  electric:{k:["ไฟ","เบรกเกอร์","สายไฟ","ตู้เมน","ปลั๊ก"],base:8,
+    prompt:`คุณคือผู้เชี่ยวชาญความปลอดภัยระบบไฟฟ้า พูดสั้น จริงจัง เน้นความเสี่ยง ห้ามขาย`},
+  heat:{k:["ร้อน","ไหม้","กลิ่น","ควัน"],base:9,
+    prompt:`คุณคือผู้เชี่ยวชาญความล้มเหลวจากความร้อน อธิบายผลลัพธ์ลุกลามสั้นๆ ห้ามขาย`},
+  hvac:{k:["แอร์","ไม่เย็น","น้ำหยด"],base:5,
+    prompt:`คุณคือวิศวกรระบบปรับอากาศ วิเคราะห์เชิงระบบ สุขุม`},
+  security:{k:["กล้อง","cctv","โจร","ขโมย"],base:6,
+    prompt:`คุณคือที่ปรึกษาความปลอดภัย เน้นช่องโหว่และผลกระทบ`},
+  network:{k:["เน็ต","wifi","หลุด","ช้า"],base:4,
+    prompt:`คุณคือวิศวกรเครือข่าย อธิบายความไม่เสถียรเชิงเหตุผล`},
+  general:{k:[],base:3,
+    prompt:`คุณคือผู้ตรวจสอบระบบทั่วไป พูดสั้น สุขุม`}
 };
 
-const EMERGENCY=["ไฟไหม้","ควัน","ประกายไฟ","ไฟดูด","ช็อต","เบรกเกอร์ตัด"];
-const HIGH=["กลัว","อันตราย","เสียหาย","พัง","ถ้าไม่ซ่อม","ปล่อยไว้"];
-
-function $(id){return document.getElementById(id)}
-function add(r,h){
- const d=document.createElement("div");
- d.className="msg "+r;
- d.innerHTML=`<div class="bubble">${h}</div>`;
- $("chat").appendChild(d);
- $("chat").scrollTop=99999;
+function detectPersona(t){
+  for(const p in PERSONA){
+    if(PERSONA[p].k.some(w=>t.includes(w))) return p;
+  }
+  return "general";
 }
 
-function detectService(t){
- for(let s in SERVICE){
-  if(SERVICE[s].k.some(w=>t.includes(w))) return s;
- }
- return "general";
+/* ================= UI ================= */
+function add(role,html){
+  const d=document.createElement("div");
+  d.className="msg "+role;
+  d.innerHTML=`<div class="bubble">${html}</div>`;
+  document.getElementById("chat").appendChild(d);
+  document.getElementById("chat").scrollTop=999999;
 }
 
+/* ================= CORE ================= */
 async function send(){
- const t=$("input").value.trim(); if(!t||LOCK)return;
- $("input").value="";
- add("user",t);
+  const input=document.getElementById("input");
+  const t=input.value.trim();
+  if(!t||LOCK) return;
+  input.value="";
+  add("user",t);
+  MSG_COUNT++;
 
- COUNT++;
- if(COUNT>=4) LOCK=true;
+  // Detect emergency / intent
+  const isEmergency=EMERGENCY_WORDS.some(w=>t.includes(w));
+  const isHigh=HIGH_INTENT_WORDS.some(w=>t.includes(w));
 
- if(EMERGENCY.some(w=>t.includes(w))){CASE="EMERGENCY";LOCK=true;}
- else if(HIGH.some(w=>t.includes(w))){LOCK=true;}
+  if(isEmergency){ CASE="EMERGENCY"; LOCK=true; }
+  else if(isHigh || MSG_COUNT>=3){ LOCK=true; }
 
- const sv=detectService(t);
- RISK=SERVICE[sv].base+(NIGHT?1:0);
+  const persona=detectPersona(t);
+  let risk=PERSONA[persona].base + (NIGHT?1:0);
 
- if(LOCK){
-   if(CASE==="EMERGENCY"){
-     EM++; $("ec").textContent=EM;
-     add("bot",`
-⚠️ <strong>เคสฉุกเฉิน (Risk ${RISK}/10)</strong><br>
-${NIGHT?"ช่วงกลางคืน ความผิดพลาดอาจรุนแรงทันที":"มีความเสี่ยงต่ออันตราย"}
-<div class="cta">
-<strong>ห้ามประเมินต่อผ่านแชท</strong>
-<a class="call" href="tel:${PHONE}">📞 โทรทันที</a>
-</div>`);
-   }else{
-     NR++; $("nc").textContent=NR;
-     add("bot",`
-ความเสี่ยงประมาณ <strong>${RISK}/10</strong><br>
-อาการนี้ไม่ควรตัดสินใจจากข้อมูลไม่ครบ
-<div class="cta">
-<strong>การโทรคือทางเลือกที่ปลอดภัยที่สุด</strong>
-<a class="call" href="tel:${PHONE}">📞 โทรปรึกษาช่าง</a>
-<a class="line" href="${LINE}">💬 LINE</a>
-</div>`);
-   }
-   $("input").disabled=true;
-   return;
- }
+  // Hard stop
+  if(LOCK){
+    if(CASE==="EMERGENCY"){
+      EM++; document.getElementById("ec").textContent=EM;
+      add("bot",`
+        <strong>เคสฉุกเฉิน ${NIGHT?"(ช่วงกลางคืน)":""} · Risk ${risk}/10</strong><br>
+        ${NIGHT
+          ?"ช่วงเวลากลางคืนจัดเป็นช่วงความเสี่ยงสูง การประเมินผ่านแชทอาจก่ออันตรายทันที"
+          :"เข้าข่ายฉุกเฉิน ไม่ควรประเมินต่อผ่านระบบอัตโนมัติ"}
+        <div class="cta">
+          <strong>เพื่อความปลอดภัย ควรติดต่อผู้ชำนาญการโดยตรง</strong>
+          <a class="call" href="tel:${PHONE}">📞 โทรด่วนทันที</a>
+        </div>
+      `);
+    }else{
+      NR++; document.getElementById("nc").textContent=NR;
+      add("bot",`
+        ประเมินความเสี่ยงประมาณ <strong>${risk}/10</strong><br>
+        อาการลักษณะนี้ไม่ควรตัดสินใจจากข้อมูลไม่ครบ
+        <div class="cta">
+          <strong>การโทรคือทางเลือกที่ปลอดภัยที่สุด</strong>
+          <a class="call" href="tel:${PHONE}">📞 โทรปรึกษาช่าง</a>
+          <a class="line" href="${LINE_URL}">💬 LINE</a>
+        </div>
+      `);
+    }
+    input.disabled=true; return;
+  }
 
- try{
- const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,{
-  method:"POST",headers:{"Content-Type":"application/json"},
-  body:JSON.stringify({
-   contents:[{role:"user",parts:[{text:t}]}],
-   systemInstruction:{parts:[{text:"วิเคราะห์เชิงเทคนิค พูดสั้น สุขุม ห้ามขาย"}]}
-  })
- });
- const d=await r.json();
- add("bot",d.candidates?.[0]?.content?.parts?.[0]?.text||"ขอข้อมูลเพิ่มเล็กน้อยครับ");
- }catch{
- add("bot","ระบบไม่เสถียร กรุณาโทรปรึกษาช่างโดยตรง");
- }
+  // AI analysis (short, refuse-to-guess)
+  try{
+    const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,{
+      method:"POST", headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        contents:[{role:"user",parts:[{text:t}]}],
+        systemInstruction:{parts:[{text:PERSONA[persona].prompt+`
+ห้ามปิดการขาย ห้ามให้ราคา ห้ามนัด
+หากข้อมูลไม่พอ ให้ระบุว่าไม่ควรประเมินผ่านแชท
+พูดสั้น มีเหตุผล`}]} })
+    });
+    const d=await r.json();
+    add("bot", d.candidates?.[0]?.content?.parts?.[0]?.text || "ขอข้อมูลเพิ่มเติมเล็กน้อยครับ");
+  }catch{
+    add("bot", "ระบบไม่เสถียร เพื่อความปลอดภัย แนะนำให้ติดต่อช่างโดยตรง");
+  }
 }
 </script>
 
