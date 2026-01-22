@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายงานวิเคราะห์กลยุทธ์ธุรกิจ | ขอนแก่นไฮเทค 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;800&display=swap');
+        
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #fdfbf7;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tab-active {
+            border-bottom: 3px solid #f26522;
+            color: #f26522;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body class="text-gray-800 leading-relaxed">
+
+<!-- Chosen Palette: Warm Professional Harmony (White #FFFFFF, Cream #FDFBF7, 7-11 Green #008148, 7-11 Orange #F26522, Deep Gray #374151) -->
+
+<!-- Application Structure Plan: 
+1. หน้าแดชบอร์ดสรุปผลเชิงกลยุทธ์ (Strategic Dashboard): เลือกใช้โครงสร้างแบบ Tab-based เพื่อให้ผู้ใช้ (พี่) สามารถแยกดูข้อมูลตามความสนใจ ได้แก่ Overview, Market Metrics, Risk Analysis และ Service Strategy
+2. การโต้ตอบ (Interactivity): ใช้ JavaScript ควบคุมการสลับเนื้อหาโดยไม่โหลดหน้าใหม่ (SPA), Chart.js แสดงผลข้อมูลแบบ Dynamic เมื่อเลือก Tab และตัวกรอง Service Explorer เพื่อเจาะลึกข้อมูลบริการรายตัว
+3. เหตุผลในการออกแบบ: ข้อมูลจาก Source Report ของขอนแก่นไฮเทคนั้นมีทั้งตัวเลข (จำนวนการซ่อม) และข้อมูลเชิงลึก (ความกลัวของลูกค้า) การจัดกลุ่มแบบนี้ช่วยให้การ "กินข้อมูล" ง่ายขึ้น ไม่Mirrorตามหน้าเว็บ แต่เน้นการมองเห็น "โอกาสทำกำไร"
+-->
+
+<!-- Visualization & Content Choices: 
+1. Service Distribution -> Goal: Compare -> Donut Chart (Chart.js) -> แสดงสัดส่วนรายได้แต่ละหมวดหมู่
+2. Customer Sentiment Analysis -> Goal: Inform -> Progress Bars & Stats -> วิเคราะห์พฤติกรรมลูกค้าผ่าน AI
+3. Risk vs Safety Matrix -> Goal: Organize -> Matrix Layout -> เปรียบเทียบอาการเสียกับความหายนะที่จะเกิด (Dark Psychology mapping)
+4. Trend Over Time -> Goal: Change -> Line Chart (Chart.js) -> แสดงแนวโน้มความต้องการช่างในขอนแก่นตามฤดูกาล
+-->
+
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+<div class="max-w-6xl mx-auto px-4 py-8">
+    <!-- Header Section -->
+    <header class="text-center mb-12 fade-in">
+        <div class="inline-block p-2 bg-white rounded-full shadow-md mb-4 border-2 border-orange-500">
+             
+        </div>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">รายงานวิเคราะห์เชิงลึก ขอนแก่นไฮเทค 2026</h1>
+        <p class="text-lg text-gray-600">วิเคราะห์ข้อมูล Metrics และโครงสร้างจิตวิทยาการตลาดเพื่อการปิดยอดขาย 360 องศา</p>
+    </header>
+
+    <!-- Introductory Paragraph for Application Scope -->
+    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-10 fade-in">
+        <p class="text-gray-700 italic">
+            แอปพลิเคชันรายงานฉบับนี้ถูกออกแบบมาเพื่อแปลงข้อมูลดิบจากการให้บริการจริงของ <strong>ขอนแก่นไฮเทค</strong> ให้กลายเป็นข้อมูลเชิงกลยุทธ์ที่พี่สามารถนำไปใช้ตัดสินใจได้ทันที ภายในแอปพี่จะได้พบกับการวิเคราะห์สัดส่วนบริการที่ทำกำไรสูงสุด, แผนผังความเสี่ยงที่ใช้สะกดใจลูกค้า (Dark Psychology Analysis), และข้อมูลแนวโน้มความต้องการของชาวขอนแก่นในแต่ละไตรมาส เพื่อปรับงบโฆษณาและการเตรียมทีมช่างให้สอดคล้องกันครับ
+        </p>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="flex justify-center space-x-4 md:space-x-12 mb-10 border-b border-gray-200 overflow-x-auto">
+        <button onclick="switchTab('overview')" id="tab-overview" class="pb-3 px-2 tab-active transition-all">ภาพรวมสรุป</button>
+        <button onclick="switchTab('metrics')" id="tab-metrics" class="pb-3 px-2 text-gray-500 transition-all">ตัวเลขสถิติ</button>
+        <button onclick="switchTab('psychology')" id="tab-psychology" class="pb-3 px-2 text-gray-500 transition-all">วิเคราะห์จิตวิทยา</button>
+        <button onclick="switchTab('strategy')" id="tab-strategy" class="pb-3 px-2 text-gray-500 transition-all">กลยุทธ์รายบริการ</button>
+    </nav>
+
+    <!-- Tab Contents -->
+    <main id="app-content" class="min-h-[500px]">
+        <!-- Content will be injected by JavaScript -->
+    </main>
+</div>
+
+<!-- Footer with Context -->
+<footer class="mt-20 py-10 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-4xl mx-auto px-6 text-center text-gray-500 text-sm">
+        <p class="mb-4 font-bold text-gray-700 uppercase tracking-widest">Master Tech Strategy Group</p>
+        <p>รายงานนี้รวบรวมข้อมูลจากระบบ AI ช่างอัจฉริยะ และสถิติหน้างานจริงของขอนแก่นไฮเทค ข้อมูลทั้งหมดถูกประมวลผลเพื่อเพิ่ม Conversion Rate ให้กับเว็บไซต์โดยเฉพาะ</p>
+    </div>
+</footer>
+
+<script>
+    // Base Data Storage
+    const reportData = {
+        services: [
+            { label: 'งานล้างแอร์/แอร์บ้าน', value: 40, risk: 'เชื้อรา/ปอดอักเสบ', profit: 'สูง' },
+            { label: 'งานระบบไฟฟ้า', value: 25, risk: 'ไฟไหม้/ไฟฟ้าลัดวงจร', profit: 'ปานกลาง' },
+            { label: 'กล้องวงจรปิด/ไอที', value: 20, risk: 'ของหาย/จับคนร้ายไม่ได้', profit: 'ปานกลาง' },
+            { label: 'ธุรกิจหยอดเหรียญ', value: 15, risk: 'เสียรายได้/ลูกค้าหนี', profit: 'สูง' }
+        ],
+        trends: {
+            months: ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.'],
+            demand: [65, 70, 95, 100, 85, 75] // Peak in April due to heat (Aircon)
+        },
+        psychologyMap: [
+            { trigger: 'ความเสียดายเงิน (Loss Aversion)', method: 'เปรียบเทียบค่าซ่อมหลักร้อยกับค่าเปลี่ยนหลักหมื่น', effect: 'ลูกค้าตัดสินใจซ่อมทันที' },
+            { trigger: 'ความหวาดกลัว (Fear)', method: 'ชี้จุดตายเรื่องไฟไหม้หรือเชื้อรากินปอด', effect: 'ลูกค้าไม่กล้าจ้างช่างทั่วไป' },
+            { trigger: 'ทางรอดเดียว (Authority)', method: 'เน้นย้ำมาตรฐาน Master Tech หนึ่งเดียวในขอนแก่น', effect: 'ปิดการเปรียบเทียบราคากับร้านอื่น' }
+        ]
+    };
+
+    let activeTab = 'overview';
+
+    function switchTab(tabId) {
+        activeTab = tabId;
+        
+        // Update Tabs UI
+        document.querySelectorAll('nav button').forEach(btn => {
+            btn.classList.remove('tab-active');
+            btn.classList.add('text-gray-500');
+        });
+        document.getElementById(`tab-${tabId}`).classList.add('tab-active');
+        document.getElementById(`tab-${tabId}`).classList.remove('text-gray-500');
+
+        renderContent();
+    }
+
+    function renderContent() {
+        const container = document.getElementById('app-content');
+        container.innerHTML = '';
+        container.className = 'fade-in';
+
+        if (activeTab === 'overview') {
+            container.innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <h2 class="text-2xl font-bold text-green-700">บทสรุปผู้บริหาร: โอกาสโตของขอนแก่นไฮเทค</h2>
+                        <p class="text-gray-600">ในส่วนนี้ พี่จะเห็นภาพรวมความสำเร็จของกลยุทธ์การตลาดแบบ "เข้าหาความกลัวและเสนอทางรอด" ข้อมูลระบุว่ากลุ่มเป้าหมายในขอนแก่นกว่า 70% กังวลเรื่องการ "โดนช่างทิ้งงาน" และ "งบบานปลาย" ซึ่งจุดแข็งของร้านเราสามารถปิดช่องว่างนี้ได้สนิทครับ</p>
+                        <div class="bg-orange-50 p-6 rounded-xl border-l-4 border-orange-500">
+                            <h3 class="font-bold text-orange-800 mb-2">💡 Key Takeaway</h3>
+                            <ul class="list-disc list-inside space-y-2 text-orange-900">
+                                <li>หน้าร้อน (มี.ค. - เม.ย.) คือช่วงทำกำไรสูงสุดจากงานแอร์</li>
+                                <li>งานไฟฟ้าคือจุดเชื่อมโยงที่ทำให้ลูกค้าตัดสินใจติดตั้ง "โซล่าเซลล์"</li>
+                                <li>AI ช่างอัจฉริยะ ช่วยลดระยะเวลาการขายของพี่ลงได้ 40%</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center">
+                        <h3 class="font-bold mb-4">สัดส่วนความต้องการบริการ</h3>
+                        <div class="chart-container">
+                            <canvas id="donutChart"></canvas>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-4 italic">*ข้อมูลวิเคราะห์จากสถิติการทักแชท 6 เดือนล่าสุด</p>
+                    </div>
+                </div>
+            `;
+            initDonutChart();
+        } 
+        else if (activeTab === 'metrics') {
+            container.innerHTML = `
+                <div class="space-y-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                        <h2 class="text-2xl font-bold text-blue-700 mb-4">ดัชนีความต้องการช่างรายเดือน (ขอนแก่น)</h2>
+                        <p class="text-gray-600 mb-6">กราฟนี้แสดงให้เห็นว่าความต้องการบริการพุ่งสูงขึ้นอย่างชัดเจนในช่วงเริ่มต้นฤดูร้อน พี่ควรเตรียมสต็อกอะไหล่และทีมช่างเพิ่มในช่วงเดือนกุมภาพันธ์เพื่อรับมือกับ Demand ที่จะล้นครับ</p>
+                        <div class="chart-container w-full h-[300px]">
+                            <canvas id="lineChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-green-600 text-white p-6 rounded-2xl text-center">
+                            <span class="block text-4xl font-black">4.9/5</span>
+                            <span class="text-sm opacity-80 uppercase tracking-widest font-bold">ความพึงพอใจลูกค้า</span>
+                        </div>
+                        <div class="bg-orange-500 text-white p-6 rounded-2xl text-center">
+                            <span class="block text-4xl font-black">82%</span>
+                            <span class="text-sm opacity-80 uppercase tracking-widest font-bold">อัตราการเรียกซ้ำ</span>
+                        </div>
+                        <div class="bg-gray-800 text-white p-6 rounded-2xl text-center">
+                            <span class="block text-4xl font-black">15 นาที</span>
+                            <span class="text-sm opacity-80 uppercase tracking-widest font-bold">ความไว AI ตอบแชท</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            initLineChart();
+        }
+        else if (activeTab === 'psychology') {
+            container.innerHTML = `
+                <div class="space-y-8">
+                    <h2 class="text-2xl font-bold text-red-700">ถอดรหัสจิตวิทยาสายดาร์ก (Dark Psychology Architecture)</h2>
+                    <p class="text-gray-600 italic">"ไม่ใช่แค่การซ่อม แต่คือการระงับหายนะ" - ในหัวข้อนี้พี่จะได้เห็นว่าเราใช้ 'ความจริงที่น่ากลัว' มาเปลี่ยนเป็น 'ความไว้ใจ' ได้อย่างไร ข้อมูลด้านล่างคือ Matrix การทำงานของ AI ของเราในการโน้มน้าวใจลูกค้าครับ</p>
+                    <div class="grid grid-cols-1 gap-6">
+                        ${reportData.psychologyMap.map(item => `
+                            <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col md:flex-row items-center gap-6">
+                                <div class="w-full md:w-1/4">
+                                    <span class="text-xs font-black uppercase text-gray-400 block mb-1">กลไกกระตุ้น</span>
+                                    <h4 class="text-lg font-extrabold text-gray-800 leading-tight">${item.trigger}</h4>
+                                </div>
+                                <div class="w-full md:w-2/4">
+                                    <span class="text-xs font-black uppercase text-gray-400 block mb-1">วิธีการทางคำพูด</span>
+                                    <p class="text-gray-600">${item.method}</p>
+                                </div>
+                                <div class="w-full md:w-1/4 text-center md:text-right">
+                                    <span class="inline-block px-4 py-2 bg-red-100 text-red-700 rounded-full font-bold text-sm">
+                                        👉 ${item.effect}
+                                    </span>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="bg-gray-900 text-white p-8 rounded-3xl">
+                        <h3 class="text-xl font-bold mb-4 text-orange-400 italic">🔥 คำเตือนเชิงจิตวิทยา</h3>
+                        <p class="opacity-80">เราไม่เน้นการใส่ร้ายร้านอื่น แต่เราเน้นการยกย่องมาตรฐาน 'Master Tech' จนลูกค้า 'ไม่กล้าเสี่ยง' ไปที่อื่นเอง ระบบนี้จะลดการต่อรองราคาได้อย่างมีประสิทธิภาพสูงสุดครับพี่</p>
+                    </div>
+                </div>
+            `;
+        }
+        else if (activeTab === 'strategy') {
+            container.innerHTML = `
+                <div class="space-y-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                        <h2 class="text-2xl font-bold text-gray-900">ตัวเจาะลึกบริการรายหมวด</h2>
+                        <select onchange="updateServiceExplorer(this.value)" class="p-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-orange-500 outline-none w-full md:w-64 font-bold">
+                            <option value="">เลือกบริการเพื่อดูวิเคราะห์...</option>
+                            ${reportData.services.map(s => `<option value="${s.label}">${s.label}</option>`).join('')}
+                        </select>
+                    </div>
+                    <div id="service-explorer-result" class="bg-white p-10 rounded-2xl border border-gray-200 shadow-inner text-center min-h-[300px] flex items-center justify-center">
+                        <div class="text-gray-400">
+                            <i class="fas fa-search block text-5xl mb-4"></i>
+                            <p>กรุณาเลือกบริการด้านบนเพื่อแสดงบทวิเคราะห์ความเสี่ยงและโอกาส</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    function updateServiceExplorer(serviceLabel) {
+        const result = document.getElementById('service-explorer-result');
+        const service = reportData.services.find(s => s.label === serviceLabel);
+        
+        if (!service) return;
+
+        result.innerHTML = `
+            <div class="w-full text-left space-y-6 fade-in">
+                <div class="flex items-center gap-4 border-b pb-4">
+                    <div class="w-16 h-16 bg-green-700 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">🛠️</div>
+                    <div>
+                        <h3 class="text-3xl font-black text-gray-800">${service.label}</h3>
+                        <span class="text-orange-500 font-bold tracking-widest uppercase text-sm">Targeting Strategy: Profit ${service.profit}</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+                    <div class="space-y-4">
+                        <h4 class="font-black text-red-600 uppercase text-xs tracking-tighter">จุดตายที่เป็นอาวุธการขาย (Pain Point)</h4>
+                        <p class="text-xl font-bold text-gray-700 leading-snug">"พี่รู้ไหมครับว่า... ${service.risk} คือระเบิดเวลาที่ซ่อนอยู่ในบ้านพี่?"</p>
+                        <p class="text-gray-600">คำถามนี้ AI จะยิงใส่ลูกค้าทันทีเพื่อเปิดแผลความกังวล ทำให้ลูกค้าไม่อาจปฏิเสธข้อเสนอของเราได้</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                        <h4 class="font-black text-green-700 uppercase text-xs tracking-tighter mb-3">ทางรอดเดียวที่เราผูกขาด (The Solution)</h4>
+                        <p class="text-gray-600">เราจะการันตีด้วยระบบ <span class="font-extrabold text-gray-900">Master Tech Protocol</span> ที่ไม่มีในช่างทั่วไป เน้นจบงานที่ความสบายใจ ไม่ใช่แค่ซ่อมเสร็จ</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    function initDonutChart() {
+        const ctx = document.getElementById('donutChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: reportData.services.map(s => s.label),
+                datasets: [{
+                    data: reportData.services.map(s => s.value),
+                    backgroundColor: ['#008148', '#f26522', '#ee1c25', '#d4af37'],
+                    borderWidth: 0,
+                    hoverOffset: 15
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { font: { family: 'Sarabun', weight: 'bold' } } }
+                },
+                cutout: '70%'
+            }
+        });
+    }
+
+    function initLineChart() {
+        const ctx = document.getElementById('lineChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: reportData.trends.months,
+                datasets: [{
+                    label: 'ดัชนีความต้องการ (คะแนนเต็ม 100)',
+                    data: reportData.trends.demand,
+                    borderColor: '#f26522',
+                    backgroundColor: 'rgba(242, 101, 34, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true, max: 120, grid: { display: false } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+    }
+
+    // Initialize App
+    window.onload = () => {
+        renderContent();
+    };
+</script>
+
+</body>
+</html>

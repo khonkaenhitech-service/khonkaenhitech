@@ -1,0 +1,72 @@
+<!-- =========================
+KH SEO PACK (Paste inside <head> of EVERY page)
+- Auto canonical + og:url from current URL
+- Auto og:title from <title>
+- Auto og:description from meta description
+Replace:
+  - SITE_NAME
+  - OG_IMAGE_PATH (prefer 1200x630 webp)
+========================= -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#d4af37">
+
+<link rel="canonical" href="">
+<meta property="og:url" content="">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="th_TH">
+<meta property="og:site_name" content="SITE_NAME">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:image" content="OG_IMAGE_PATH">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<script>
+(function(){
+  var canonical = document.querySelector('link[rel="canonical"]');
+  var ogUrl = document.querySelector('meta[property="og:url"]');
+  var ogTitle = document.querySelector('meta[property="og:title"]');
+  var ogDesc  = document.querySelector('meta[property="og:description"]');
+  var desc    = document.querySelector('meta[name="description"]');
+
+  var url = location.origin + location.pathname;
+  if (canonical) canonical.href = url;
+  if (ogUrl) ogUrl.content = url;
+
+  if (ogTitle) ogTitle.content = document.title || 'SITE_NAME';
+  if (ogDesc) ogDesc.content = (desc && desc.content) ? desc.content : 'บริการช่างขอนแก่น ล้างแอร์ ไฟฟ้า CCTV โซล่าเซลล์ และงานระบบครบวงจร';
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"SITE_NAME",
+  "alternateName":"Khon Kaen HiTech Service",
+  "url":"",
+  "logo":"/images/logo-khonkaen.webp",
+  "telephone":"+66944749874",
+  "areaServed":[
+    {"@type":"AdministrativeArea","name":"ขอนแก่น"},
+    {"@type":"AdministrativeArea","name":"มหาสารคาม"},
+    {"@type":"AdministrativeArea","name":"กาฬสินธุ์"}
+  ]
+}
+</script>
+<script>
+(function(){
+  // set LocalBusiness url to site root
+  var blocks = document.querySelectorAll('script[type="application/ld+json"]');
+  for (var i=0;i<blocks.length;i++){
+    try{
+      var json = JSON.parse(blocks[i].textContent);
+      if (json && json["@type"] === "LocalBusiness"){
+        json.url = location.origin + "/";
+        blocks[i].textContent = JSON.stringify(json);
+      }
+    }catch(e){}
+  }
+})();
+</script>

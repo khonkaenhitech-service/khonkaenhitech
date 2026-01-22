@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Sitemap for Khon Kaen Hitech 
+  Generated for Strategic SEO Indexing 2026 - Master Edition
+  ครอบคลุมหน้าบริการทั้งหมด หน้าปิดยอดขายด้วย AI บทความเชิงจิตวิทยา และหน้าวิเคราะห์กลยุทธ์
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <!-- 1. หน้าหลัก: ศูนย์รวมแบรนด์และความเชื่อถือ -->
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/index.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>1.0</priority>
+   </url>
+   
+   <!-- 2. หน้าปิดยอดขายอัจฉริยะ (High Priority) -->
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/ai-service.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>always</changefreq>
+      <priority>0.95</priority>
+   </url>
+   
+   <!-- 3. หน้าติดต่อ: จุดเชือดสุดท้ายในการปิดยอด -->
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/contact.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.90</priority>
+   </url>
+
+   <!-- 4. Master Strategic Dashboard (หน้าวิเคราะห์ข้อมูลระดับเทพ) -->
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/strategic-dashboard.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.85</priority>
+   </url>
+
+   <!-- 5. หมวดบริการไฟฟ้าและอุตสาหกรรม -->
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/electrical.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.85</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/high-voltage.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.85</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/mdb.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.85</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/solar.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.85</priority>
+   </url>
+
+   <!-- 6. หมวดธุรกิจหยอดเหรียญและแฟรนไชส์ -->
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/laundry.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/water.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/oil-vending.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/franchise.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/coinbox.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.75</priority>
+   </url>
+
+   <!-- 7. หมวดระบบความปลอดภัยและไอที -->
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/cctv.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.85</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/access.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/autodoor.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/network.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.80</priority>
+   </url>
+
+   <!-- 8. หมวดซ่อมบำรุงและทำความสะอาด -->
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/cleaning-air.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.85</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/aircon.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/cleaning-washing.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/cleaning-tank.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/plumbing.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/repair.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/repair-electronics.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.80</priority>
+   </url>
+
+   <!-- 9. หมวดบทความ Hook Traffic (SEO Articles) -->
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/article-dirty-secret.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/article-solar-fail.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://khonkaenhitech-service.github.io/khonkaenhitech/article-vending-truth.html</loc>
+      <lastmod>2026-01-13</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.80</priority>
+   </url>
+</urlset>

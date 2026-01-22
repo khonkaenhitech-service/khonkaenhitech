@@ -1,0 +1,76 @@
+==========================================================
+
+Robots.txt for Khon Kaen Hitech
+
+Optimized for Googlebot, Bingbot, and SEO Efficiency 2026
+
+Role: Information Architect & SEO Strategic Command
+
+==========================================================
+
+User-agent: *
+
+--- 1. หน้าหลักและระบบปิดการขาย (High Priority) ---
+
+Allow: /
+Allow: /index.html
+Allow: /ai-service.html
+Allow: /contact.html
+
+--- 2. หน้าบริการเชิงเทคนิคและอุตสาหกรรม ---
+
+Allow: /cleaning-air.html
+Allow: /electrical.html
+Allow: /high-voltage.html
+Allow: /mdb.html
+Allow: /solar.html
+Allow: /autodoor.html
+Allow: /plumbing.html
+Allow: /aircon.html
+
+--- 3. หน้าธุรกิจหยอดเหรียญและแฟรนไชส์ ---
+
+Allow: /laundry.html
+Allow: /water.html
+Allow: /oil-vending.html
+Allow: /coinbox.html
+Allow: /franchise.html
+
+--- 4. หน้าซ่อมบำรุงและทำความสะอาด ---
+
+Allow: /repair.html
+Allow: /repair-electronics.html
+Allow: /cleaning-washing.html
+Allow: /cleaning-tank.html
+
+--- 5. บทความดึง Traffic (SEO Hook Pages) ---
+
+Allow: /article-dirty-secret.html
+Allow: /article-solar-fail.html
+Allow: /article-vending-truth.html
+
+--- 6. ส่วนที่ต้องปิดกั้นเพื่อประหยัด Crawl Budget ---
+
+ไม่ต้องให้ Bot เสียเวลาเก็บไฟล์ระบบและรูปภาพส่วนตัว
+
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /images/private/
+Disallow: /temp/
+Disallow: /cgi-bin/
+
+--- 7. การตั้งค่าเพิ่มเติม ---
+
+ป้องกันการเก็บข้อมูลหน้าที่มี Parameter ซ้ำซ้อน (ถ้ามีในอนาคต)
+
+Disallow: /?
+
+แจ้งพิกัดแผนผังเว็บไซต์ (Sitemap) เพื่อความแม่นยำ 100%
+
+Sitemap: https://khonkaenhitech-service.github.io/khonkaenhitech/sitemap.xml
+
+==========================================================
+
+End of Robots.txt
+
+========================================================

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ขอนแก่นไฮเทค Super Hub | ช่างมืออาชีพอันดับ 1</title>
+    
+    <!-- ✅ External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;800&display=swap');
+        
+        :root {
+            --gold: #d4af37;
+            --navy: #1a252f;
+            --green: #008148;
+            --line-green: #06c755;
+            --orange: #f26522;
+            --red: #ee1c25;
+            --fb-blue: #0084ff;
+            --bg-cream: #fcfbf7;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: var(--bg-cream);
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* 🎯 Chart Styling */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            height: 280px;
+            max-height: 350px;
+        }
+
+        /* Golden Divine Aura for AI Button */
+        .gold-glow {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+            animation: pulse-gold 2.5s infinite ease-in-out;
+        }
+        @keyframes pulse-gold {
+            0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); }
+            50% { transform: scale(1.05); opacity: 0.9; box-shadow: 0 0 30px rgba(212, 175, 55, 0.9); }
+        }
+
+        .fade-in { animation: fadeIn 0.4s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* 📱 Bottom Navigation Design */
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        .nav-item:active { transform: scale(0.9); }
+        
+        /* Psychological Colors for Nav */
+        .c-call { color: var(--orange); }
+        .c-line { color: var(--line-green); }
+        .c-msg { color: var(--fb-blue); }
+        .c-menu { color: var(--navy); }
+        
+        .tab-active { font-weight: 900 !important; }
+        .tab-active span { text-decoration: underline; text-underline-offset: 4px; }
+
+        /* AI Chat Bubbles */
+        .bubble { padding: 14px 18px; border-radius: 18px; font-size: 1em; line-height: 1.6; max-width: 88%; }
+        .bubble-bot { background: #fff; border: 1px solid #eee; border-left: 6px solid var(--green); color: #222; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+        .bubble-user { background: var(--navy); color: #fff; border-bottom-right-radius: 2px; }
+
+        .service-card { transition: all 0.2s ease; border: 1px solid rgba(0,0,0,0.03); }
+        .service-card:active { transform: scale(0.96); background: #f0f0f0; }
+
+        /* Hide Scrollbar */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Bottom Nav Badge */
+        .nav-badge {
+            position: absolute;
+            top: 10px;
+            right: 20%;
+            width: 8px;
+            height: 8px;
+            background: var(--red);
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+    </style>
+</head>
+<body class="text-gray-900 pb-24">
+
+<!-- Chosen Palette: Golden Strategic Mastery -->
+<!-- Application Structure Plan: 
+1. Bottom-Nav Focused SPA: ปรับปรุงแถบเมนูด้านล่างให้เป็น 5 ฟังก์ชันตามจิตวิทยาการปิดการขาย 
+2. Navigation Hub: 
+   - Call/LINE/FB: ลิงก์ตรงสู่การปิดยอด (Conversion Focus)
+   - AI: ระบบวิเคราะห์จิตวิทยาหน้าเดียว (The Closer)
+   - Menu: รวบรวมทางเข้าบริการทั้งหมด (The Hub)
+3. Responsive Engine: ใช้ Grid 2 คอลัมน์บนมือถือทุกรุ่นเพื่อให้รูปภาพบริการดูชัดเจนและน่าจ้างครับ
+-->
+
+<div class="min-h-screen flex flex-col">
+    <!-- 🏛️ Executive Header -->
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100 shadow-sm px-4 py-2">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-full border-2 border-gold-500 overflow-hidden shadow-sm">
+                    <img src="images/logo-khonkaen.webp" alt="KH Logo" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/100?text=KH'">
+                </div>
+                <div>
+                    <h1 class="text-base font-black leading-none text-gray-800">ขอนแก่นไฮเทค</h1>
+                    <p class="text-[9px] font-bold text-gold uppercase tracking-tighter">Master Tech Authority</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    <span class="text-[9px] font-black text-green-600 uppercase">วิศวกรออนไลน์</span>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 🚀 Main App Viewport -->
+    <main id="main-viewport" class="flex-1 w-full max-w-7xl mx-auto px-4 py-5 overflow-x-hidden">
+        <!-- Content dynamically injected -->
+    </main>
+
+    <!-- 📱 Bottom Navigation Bar (5-Tabs with Psychology Colors) -->
+    <nav class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-100 shadow-[0_-10px_30px_rgba(0,0,0,0.08)] z-[60] pb-safe">
+        <div class="flex items-center justify-between h-20 max-w-lg mx-auto px-2">
+            
+            <!-- 1. โทร (Urgency Orange) -->
+            <a href="tel:0944749874" class="nav-item c-call">
+                <i class="fas fa-phone-alt text-xl mb-1"></i>
+                <span class="text-[9px] font-black uppercase">โทรด่วน</span>
+            </a>
+
+            <!-- 2. LINE (Trust Green) -->
+            <a href="https://line.me/ti/p/~KKHITECH" class="nav-item c-line">
+                <i class="fab fa-line text-2xl mb-0.5"></i>
+                <span class="text-[9px] font-black uppercase">LINE</span>
+            </a>
+
+            <!-- 3. AI ผู้ช่วยคุณ (Authority Centerpiece) -->
+            <button onclick="nav('ai')" id="n-ai" class="nav-item relative">
+                <div class="w-14 h-14 bg-navy rounded-full flex items-center justify-center -mt-12 shadow-2xl border-4 border-white text-white gold-glow">
+                    <i class="fas fa-robot text-2xl"></i>
+                </div>
+                <span class="text-[9px] font-black uppercase mt-1 text-navy">AI ผู้ช่วย</span>
+                <div class="nav-badge"></div>
+            </button>
+
+            <!-- 4. ข้อความ (Social Proof Blue) -->
+            <a href="https://m.me/Line0944749874" class="nav-item c-msg">
+                <i class="fab fa-facebook-messenger text-2xl mb-0.5"></i>
+                <span class="text-[9px] font-black uppercase">ข้อความ</span>
+            </a>
+
+            <!-- 5. เมนู (Structure Navy) -->
+            <button onclick="nav('menu')" id="n-menu" class="nav-item c-menu">
+                <i class="fas fa-bars text-xl mb-1"></i>
+                <span class="text-[9px] font-black uppercase">เมนู</span>
+            </button>
+
+        </div>
+    </nav>
+</div>
+
+<script>
+    const apiKey = "";
+    const appData = {
+        services: [
+            { id: 1, name: 'ล้างแอร์ฆ่าเชื้อ', icon: '❄️', risk: 'เชื้อรา/ปอด', color: 'bg-green-700', link: 'cleaning-air.html' },
+            { id: 2, name: 'ซ่อมไฟ/MDB', icon: '⚡', risk: 'ไฟไหม้/ไฟฟ้า', color: 'bg-red-700', link: 'electrical.html' },
+            { id: 3, name: 'กล้องวงจรปิด', icon: '🎥', risk: 'ทรัพย์สินหาย', color: 'bg-blue-700', link: 'cctv.html' },
+            { id: 4, name: 'ตู้น้ำ/หยอดเหรียญ', icon: '💧', risk: 'เสียรายได้', color: 'bg-teal-700', link: 'water.html' },
+            { id: 5, name: 'โซล่าเซลล์', icon: '☀️', risk: 'ค่าไฟพุ่ง', color: 'bg-yellow-600', link: 'solar.html' },
+            { id: 6, name: 'ซ่อมปั๊มน้ำ', icon: '🔩', risk: 'น้ำไม่ไหล', color: 'bg-orange-700', link: 'plumbing.html' },
+            { id: 7, name: 'ประตูรีโมท', icon: '🚪', risk: 'ไม่ปลอดภัย', color: 'bg-indigo-700', link: 'autodoor.html' },
+            { id: 8, name: 'ซ่อมบำรุงทั่วไป', icon: '🛠️', risk: 'บ้านพังบานปลาย', color: 'bg-gray-700', link: 'repair.html' }
+        ]
+    };
+
+    let currentPage = 'ai'; // Default to AI Assistant as per user focus
+    let msgCount = 0;
+
+    function nav(pageId) {
+        currentPage = pageId;
+        document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('tab-active'));
+        const activeBtn = document.getElementById(`n-${pageId}`);
+        if(activeBtn) activeBtn.classList.add('tab-active');
+        
+        renderContent();
+        window.scrollTo(0, 0);
+    }
+
+    function renderContent() {
+        const vp = document.getElementById('main-viewport');
+        vp.innerHTML = '';
+        vp.className = 'fade-in flex-1 w-full max-w-7xl mx-auto px-4 py-5 overflow-x-hidden';
+
+        if (currentPage === 'ai') renderAI(vp);
+        if (currentPage === 'menu') renderMenu(vp);
+    }
+
+    // --- Tab: AI ผู้ช่วยคุณ (The Closer) ---
+    function renderAI(vp) {
+        vp.innerHTML = `
+            <div class="flex flex-col h-[72vh] bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden relative">
+                <div class="bg-navy p-4 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full border border-gold overflow-hidden bg-white"><img src="images/logo-khonkaen.webp"></div>
+                        <div>
+                            <h4 class="text-white text-xs font-black">ช่างผู้ชำนาญการ ข้อมูล</h4>
+                            <span class="text-[8px] text-green-400 font-bold uppercase tracking-widest italic">● พร้อมวิเคราะห์ความเสี่ยง 24 ชม.</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-shield-alt text-gold opacity-50"></i>
+                </div>
+                <div id="chat-scroller" class="flex-1 overflow-y-auto p-4 space-y-5 no-scrollbar bg-[#fdfdfd]">
+                    <div class="message flex items-start gap-2">
+                        <div class="bubble bubble-bot font-semibold">
+                            สวัสดียามเช้าครับ... ผมคือหัวหน้าช่างผู้ชำนาญการ ข้อมูล 🤖<br><br>
+                            สัญญาณผิดปกติที่คุณพบ อาจเป็นเพียง 1% ของหายนะที่กำลังซ่อนตัวอยู่... ระบุอาการ หรือส่งรูปมาให้ผมวิเคราะห์ดัชนีความเสี่ยงทันทีครับ
+                        </div>
+                    </div>
+                </div>
+                <div id="ai-loading" class="hidden px-5 py-2 text-[10px] text-green-700 font-bold italic animate-pulse">
+                    <i class="fas fa-microchip fa-spin"></i> ระบบกำลังประมวลผลดัชนีความรุนแรง...
+                </div>
+                <div class="p-4 bg-white border-t border-gray-100 flex gap-2 items-center">
+                    <input type="text" id="ai-input" placeholder="พิมพ์อาการเสียหรือสิ่งที่กังวล..." class="flex-1 bg-gray-50 border-none rounded-full px-5 py-3 text-sm outline-none focus:ring-2 focus:ring-gold/30">
+                    <button onclick="handleAI()" class="w-12 h-12 bg-navy text-white rounded-full flex items-center justify-center active:scale-90 shadow-lg transition-all"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        `;
+        const scroller = document.getElementById('chat-scroller');
+        scroller.scrollTop = scroller.scrollHeight;
+    }
+
+    // --- Tab: เมนู (The Service Hub) ---
+    function renderMenu(vp) {
+        vp.innerHTML = `
+            <div class="space-y-6">
+                <div class="bg-navy rounded-3xl p-6 text-white relative overflow-hidden shadow-2xl gold-glow">
+                    <h2 class="text-2xl font-black mb-1 italic">ศูนย์รวมกับดักกู้ชีพ</h2>
+                    <p class="text-[11px] opacity-70 font-bold uppercase tracking-widest">ทางรอดเดียวที่สมบูรณ์แบบในขอนแก่น</p>
+                    <div class="absolute -right-4 -bottom-4 opacity-10 text-[100px] pointer-events-none italic font-black">KH</div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    ${appData.services.map(s => `
+                        <a href="${s.link}" class="service-card bg-white p-5 rounded-2xl shadow-sm text-center flex flex-col items-center">
+                            <div class="w-14 h-14 ${s.color} text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg mb-4">${s.icon}</div>
+                            <h4 class="text-xs font-black text-gray-800">${s.name}</h4>
+                            <p class="text-[9px] text-red-600 font-black mt-1 uppercase tracking-tighter italic">วิกฤต: ${s.risk}</p>
+                        </a>
+                    `).join('')}
+                </div>
+
+                <div class="bg-yellow-50 p-6 rounded-3xl border border-yellow-100">
+                    <h3 class="text-sm font-black text-yellow-800 mb-2 italic"><i class="fas fa-award mr-2"></i>Master Tech Guarantee</h3>
+                    <p class="text-[12px] text-yellow-900 leading-relaxed font-semibold">
+                        "งานจบที่ความสบายใจ ไม่ใช่แค่ซ่อมเสร็จ" ทุกบริการที่เราเลือกมา คือรางวัลแห่งการพักผ่อนของท่านค่ะ
+                    </p>
+                </div>
+            </div>
+        `;
+    }
+
+    // --- AI Engine Logic ---
+    async function handleAI() {
+        const input = document.getElementById('ai-input');
+        const scroller = document.getElementById('chat-scroller');
+        const loading = document.getElementById('ai-loading');
+        const val = input.value.trim();
+        if (!val) return;
+
+        msgCount++;
+        const userMsg = document.createElement('div');
+        userMsg.className = 'flex justify-end';
+        userMsg.innerHTML = `<div class="bubble bubble-user font-bold">${val}</div>`;
+        scroller.appendChild(userMsg);
+        input.value = '';
+        scroller.scrollTop = scroller.scrollHeight;
+
+        loading.classList.remove('hidden');
+
+        try {
+            const systemPrompt = `
+                คุณคือ 'ช่างผู้ชำนาญการ ข้อมูล' (Expert Data Technician) ประจำร้าน 'ขอนแก่นไฮเทค'
+                สรรพนาม: แทนตัวเองว่า 'ผม' หรือ 'ทางเรา' เรียกลูกค้าว่า 'คุณ' หรือ 'ท่าน'
+                กลยุทธ์การเชือดขาย:
+                - msg 1-2: ชวนคุย วิเคราะห์นิสัย ชมความรอบคอบ
+                - msg 3+: ชี้จุดตายทางวิศวกรรม เปรียบเทียบความปลอดภัย vs ความเสียดายเงิน
+                - ใส่คำว่า [SHOW_QR] ท้ายประโยคเมื่อถึงเวลาปิดการขาย
+            `;
+
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    contents: [{ parts: [{ text: `(Chat Count: ${msgCount}) Message: ${val}` }] }],
+                    systemInstruction: { parts: [{ text: systemPrompt }] }
+                })
+            });
+
+            const data = await response.json();
+            const aiMsg = data.candidates?.[0]?.content?.parts?.[0]?.text || "โปรดโทรหาเราที่ 094-474-9874 เพื่อระงับเหตุทันทีครับ";
+
+            const botMsg = document.createElement('div');
+            botMsg.className = 'flex flex-col items-start gap-2';
+            
+            let hasQR = aiMsg.includes("[SHOW_QR]");
+            let cleanText = aiMsg.replace("[SHOW_QR]", "");
+
+            let qrCard = hasQR ? `
+                <div class="w-full p-5 border-2 border-gold rounded-3xl bg-white shadow-2xl mt-3 fade-in">
+                    <div class="flex items-center gap-3 border-b pb-3 mb-3 text-red-600">
+                        <i class="fas fa-exclamation-triangle animate-bounce"></i>
+                        <span class="text-[11px] font-black uppercase">ระงับเหตุและกู้คืนเสถียรภาพทันที</span>
+                    </div>
+                    <div class="flex gap-4 items-center">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://line.me/ti/p/~KKHITECH" class="w-20 h-20 rounded-xl border-2 border-gold-100">
+                        <div class="flex-1 space-y-2">
+                            <p class="text-[11px] font-black leading-tight text-navy">ทางรอดเดียวที่สมบูรณ์แบบ <br>ส่งภาพมาวิเคราะห์ด่วนครับ</p>
+                            <a href="tel:0944749874" class="block w-full text-center py-2 text-[10px] font-black text-white bg-orange-500 rounded-lg shadow-md active:scale-95 transition-all uppercase italic">โทรระงับเหตุเลย</a>
+                        </div>
+                    </div>
+                </div>
+            ` : "";
+
+            botMsg.innerHTML = `<div class="bubble bubble-bot font-semibold shadow-sm">${cleanText}</div>${qrCard}`;
+            scroller.appendChild(botMsg);
+
+        } catch (e) {
+            const err = document.createElement('div');
+            err.className = 'text-[10px] text-red-600 italic px-4 font-bold';
+            err.innerText = "สัญญาณรบกวน... โปรดติดต่อ 094-474-9874 ทันทีครับ";
+            scroller.appendChild(err);
+        } finally {
+            loading.classList.add('hidden');
+            scroller.scrollTop = scroller.scrollHeight;
+        }
+    }
+
+    // --- Initialization ---
+    window.onload = () => {
+        nav('ai');
+    };
+</script>
+
+</body>
+</html>
