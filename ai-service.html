@@ -585,7 +585,198 @@ PHRASE_LIBRARY.deescalate = [
 ];
 </script>
 
+  <script>
+const BEHAVIOR_SIGNALS = {
+  emergency: [
+    "ไฟไหม้","ควัน","กลิ่นไหม้","ประกายไฟ",
+    "ไฟดูด","ช็อต","เบรกเกอร์ตัด","ร้อนจัด"
+  ],
+  price: [
+    "ราคา","แพง","ถูก","คุ้ม","เทียบ","ร้านอื่น"
+  ],
+  hesitation: [
+    "ขอคิดดูก่อน","ขอดูก่อน","ยังไม่แน่ใจ","ลังเล"
+  ],
+  resistance: [
+    "ไม่เชื่อ","ไม่น่าจะ","ไม่น่ามีปัญหา","เคยทำแล้ว"
+  ],
+  still_working: [
+    "ยังใช้ได้","ยังปกติ","ไม่เป็นไร","ใช้งานได้"
+  ],
+  has_technician: [
+    "มีช่างแล้ว","ให้ช่างดูแล้ว","มีคนดูให้แล้ว"
+  ],
+  panic: [
+    "กลัวมาก","ตกใจ","เครียด","กังวลมาก","จะพังไหม"
+  ]
+};
+</script>
+
+  <script>
+const BEHAVIOR_TO_PACK = [
+  { match: "emergency", pack: "legal_safety" },
+  { match: "panic", pack: "deescalate" },
+  { match: "price", pack: "price_objection" },
+  { match: "hesitation", pack: "hesitation" },
+  { match: "has_technician", pack: "has_technician" },
+  { match: "still_working", pack: "still_working" },
+  { match: "resistance", pack: "resistance" }
+];
+</script>
+
+  <script>
+function detectBehavior(text){
+  const found = [];
+  for(const type in BEHAVIOR_SIGNALS){
+    if(BEHAVIOR_SIGNALS[type].some(w => text.includes(w))){
+      found.push(type);
+    }
+  }
+  return found;
+}
+</script>
+
+  <script>
+function autoSelectPhrase(text){
+  const behaviors = detectBehavior(text);
+
+  for(const rule of BEHAVIOR_TO_PACK){
+    if(behaviors.includes(rule.match)){
+      return getPhrase(rule.pack);
+    }
+  }
+
+  // fallback กลาง ๆ
+  return buildMessage("transfer");
+}
+</script>
+
+  add("bot", autoSelectPhrase(userText));
+  add("bot", getPhrase("call_close"));
+  add("bot", getPhrase("mobile_short"));
+<script>
+const BEHAVIOR_WEIGHT = {
+  emergency: 100,        // ฉุกเฉิน ชนะทุกอย่าง
+  panic: 40,
+  resistance: 30,
+  price: 25,
+  hesitation: 20,
+  still_working: 20,
+  has_technician: 15
+};
+</script>
+
+<script>
+function calculateBehaviorScore(text){
+  let score = 0;
+  const detected = detectBehavior(text);
+
+  detected.forEach(type=>{
+    score += BEHAVIOR_WEIGHT[type] || 0;
+  });
+
+  return {
+    score,
+    detected
+  };
+}
+</script>
+
+
+  <script>
+function getEscalationLevel(score){
+  if(score >= 100) return "EMERGENCY";
+  if(score >= 60)  return "HIGH";
+  if(score >= 35)  return "MEDIUM";
+  return "LOW";
+}
+</script>
+
+  <script>
+function selectPackByScore(text){
+  const { score, detected } = calculateBehaviorScore(text);
+  const level = getEscalationLevel(score);
+
+  // ฉุกเฉินจริง
+  if(level === "EMERGENCY"){
+    return getPhrase("legal_safety");
+  }
+
+  // พฤติกรรมซ้อนแรง
+  if(level === "HIGH"){
+    return getPhrase("resistance") + " " + getPhrase("price_objection");
+  }
+
+  if(level === "MEDIUM"){
+    return autoSelectPhrase(text);
+  }
+
+  // LOW
+  return buildMessage("transfer");
+}
+</script>
+
+  <script>
+const CONTEXT_MEMORY = {
+  count: {},
+  lastEscalation: "LOW"
+};
+</script>
+
+
+  <script>
+function updateContextMemory(detected){
+  detected.forEach(type=>{
+    CONTEXT_MEMORY.count[type] = (CONTEXT_MEMORY.count[type] || 0) + 1;
+  });
+}
+</script>
+
+
+  <script>
+function hasRepeatedBehavior(threshold = 2){
+  return Object.values(CONTEXT_MEMORY.count)
+    .some(v => v >= threshold);
+}
+</script>
+
+
+  <script>
+function contextAwareResponse(text){
+  const { score, detected } = calculateBehaviorScore(text);
+  updateContextMemory(detected);
+
+  let level = getEscalationLevel(score);
+
+  // ถ้าพฤติกรรมซ้ำ → ยกระดับอัตโนมัติ
+  if(hasRepeatedBehavior()){
+    if(level === "LOW") level = "MEDIUM";
+    else if(level === "MEDIUM") level = "HIGH";
+  }
+
+  CONTEXT_MEMORY.lastEscalation = level;
+
+  // เลือก Pack ตามระดับใหม่
+  switch(level){
+    case "EMERGENCY":
+      return getPhrase("legal_safety");
+    case "HIGH":
+      return getPhrase("resistance") + " " + getPhrase("decision");
+    case "MEDIUM":
+      return autoSelectPhrase(text);
+    default:
+      return buildMessage("transfer");
+  }
+}
+</script>
+
+
+  add("bot", contextAwareResponse(userText));
+
+
   
+  
+
 
   
 
