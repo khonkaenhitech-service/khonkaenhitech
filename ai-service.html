@@ -64,24 +64,15 @@ button{padding:0 18px;border:none;border-radius:8px;background:var(--gold);font-
 
   <script>
 function send(){
-  const input = document.getElementById("input");
+  const input = document.getElementById("input"); // ✅ เพิ่มบรรทัดนี้
   const t = input.value.trim();
-  if(!t || LOCK) return;
+  if(!t) return;
 
   input.value = "";
   add("user", t);
-  MSG_COUNT++;
-
-  // ใช้ระบบ Auto + Score + Memory ขั้นสุดท้าย
-  const response = contextAwareResponse(t);
-  add("bot", response);
-
-  // ถ้าเป็นฉุกเฉิน ให้ล็อกทันที
-  if(response.includes("ความปลอดภัย") || response.includes("หยุด")){
-    LOCK = true;
-    input.disabled = true;
-  }
+  add("bot", contextAwareResponse(t));
 }
+
 </script>
 
 
